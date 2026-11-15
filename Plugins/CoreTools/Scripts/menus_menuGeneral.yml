@@ -28,3 +28,9 @@ menumain_bounty_click:
   Mechanics:
   - 'playsound{sound="minecraft:block.note_block.hat";volume=0.6;pitch=0.8} @Self'
   - 'command{c="bounty";runas=player} @Self'
+menumain_discord_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.note_block.chime";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <#5865F2><bold>Discord</bold> <dark_gray>» <#C9CDD6>Únete a la comunidad: <click:open_url:''https://discord.gg/CDnyqZPh''><hover:show_text:''<#9FB4FF>Abrir Discord''><#9FB4FF><underlined>discord.gg/CDnyqZPh</underlined></hover></click>"} @Self'

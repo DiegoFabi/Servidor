@@ -6,3 +6,10 @@ icono_casa:
   Pack:
     texture: iconos/casa
     custom_model_data: 1183
+icono_discord:
+  itemname: <white>Discord
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/discord
+    custom_model_data: 1184
