@@ -169,8 +169,8 @@ menuMain:
       location: top
       slots:
       - 14
-      source: nexo
-      id: comfortablechairred
+      source: vanilla
+      material: painting
       name: <white><glyph:art_palette> <gradient:#FFE29A:#FFB347>Personalización</gradient>
       lore:
       - <#C9CDD6>Dale tu estilo a tu casa

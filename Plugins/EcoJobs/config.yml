@@ -256,24 +256,29 @@ gui:
     leave-click: right
     join-lore:
     - ''
-    - '&f &aClick: unirte a este trabajo'
+    - '&#FF6B6B✘ ¡No estás trabajando aquí!'
+    - ''
+    - '&#C9A8FF<glyph:raton_izq> ¡Click para unirte al &#C9A8FF&lTRABAJO&#C9A8FF!'
     lore:
+    - '&#9EA3AEProfesiones del reino <glyph:pickaxe>'
+    - ''
     - '%description%'
-    - '&f'
-    - '&fRecompensas del Trabajo:'
+    - ''
+    - '&#C9A8FF<glyph:trophy> &#E6E8EERecompensas del nivel'
     - '%effects%'
     - ''
-    - '&fProgreso:'
-    - '&8» &e%percentage_progress%%'
-    - '&8» &e%current_xp%&8/&7%required_xp% &fXP'
-    name: '%job% &fNv. &a%level%'
+    - '&#5C6370■ &#E6E8EENivel actual: &#7FFF9E%level%'
+    - '&#5C6370■ &#E6E8EEProgreso: &#FFD36B%percentage_progress%% &#5C6370(&#FFD36B%current_xp%&#5C6370/&#9EA3AE%required_xp% XP&#5C6370)'
+    name: '&#C9A8FFJob: %job% &#5C6370• &#9EA3AENv. &#7FFF9E%level%'
     too-many-jobs-lore:
     - ''
-    - '&cYa tienes el máximo de trabajos activos'
+    - '&#FF6B6B✘ Ya tienes el máximo de trabajos activos'
     active-lore:
     - ''
-    - '&f &eClick: ver progreso de niveles'
-    - '&f &cClick derecho: salir del trabajo'
+    - '&#7FFF9E✔ ¡Estás trabajando aquí!'
+    - ''
+    - '&#7FB2FF<glyph:raton_izq> Click: ver tus niveles'
+    - '&#FF6B6B<glyph:raton_der> Click derecho: salir del trabajo'
     click:
       volume: 1
       sound: ui_button_click

@@ -2,7 +2,7 @@
  "providers": [
   {
    "type": "bitmap",
-   "file": "hud:font/bg_1.png",
+   "file": "hud:font/cap_l.png",
    "ascent": 7,
    "height": 13,
    "chars": [
@@ -11,20 +11,11 @@
   },
   {
    "type": "bitmap",
-   "file": "hud:font/bg_2.png",
+   "file": "hud:font/cap_r.png",
    "ascent": 7,
    "height": 13,
    "chars": [
     ""
-   ]
-  },
-  {
-   "type": "bitmap",
-   "file": "hud:font/bg_3.png",
-   "ascent": 7,
-   "height": 13,
-   "chars": [
-    ""
    ]
   },
   {

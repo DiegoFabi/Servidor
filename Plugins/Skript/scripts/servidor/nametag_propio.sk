@@ -1,0 +1,81 @@
+# ============================================================
+#  nametag_propio.sk - Ver tu propio nametag (en F5)
+#  Requiere: Skript 2.10+ (display entities y visibilidad de entidades)
+#            y Vault + LuckPerms (prefijo del rango)
+#
+#  Minecraft nunca dibuja el nametag de uno mismo, así que SunLight no
+#  puede mostrarlo. Aquí se monta un text display como PASAJERO del
+#  jugador: el cliente lo mueve junto al jugador en cada frame (no hay
+#  teletransportes ni retraso al caminar, como pasaba con armor stands).
+#  El display solo lo ve su dueño; los demás ven el nametag de SunLight.
+#
+#  Rendimiento: un display por jugador y solo eventos (entrar, salir,
+#  reaparecer, teletransporte y cambio de mundo). Sin temporizadores.
+# ============================================================
+
+function ntpTexto(p: player) :: text:
+    set {_pre} to prefix of {_p}
+    if {_pre} is set:
+        return "<white>%{_pre}%</white> <white>%name of {_p}%"
+    return "<white>%name of {_p}%"
+
+function ntpBorrar(p: player):
+    set {_u} to uuid of {_p}
+    {-ntp::%{_u}%} is set
+    set {_d} to {-ntp::%{_u}%}
+    delete {-ntp::%{_u}%}
+    if {_d} is alive:
+        kill {_d}
+
+function ntpCrear(p: player):
+    {_p} is online
+    ntpBorrar({_p})
+    gamemode of {_p} is not spectator
+    spawn text display at location of {_p}:
+        set {_d} to entity
+        hide entity from all players
+    set text of {_d} to formatted ntpTexto({_p})
+    set billboard of {_d} to center
+    reveal {_d} to {_p}
+    make {_d} ride {_p}
+    set {-ntp::%uuid of {_p}%} to {_d}
+
+# Esperas cortas: tras teletransportes o reapariciones el pasajero se suelta
+function ntpRehacer(p: player):
+    wait 2 ticks
+    ntpCrear({_p})
+
+on join:
+    # Los displays de los demás no deben verse por quien acaba de entrar
+    loop {-ntp::*}:
+        loop-value is alive
+        hide loop-value from player
+    ntpRehacer(player)
+
+on quit:
+    ntpBorrar(player)
+
+on respawn:
+    ntpRehacer(player)
+
+on teleport:
+    ntpRehacer(player)
+
+on world change:
+    ntpRehacer(player)
+
+on gamemode change:
+    ntpRehacer(player)
+
+on death of a player:
+    ntpBorrar(victim)
+
+on unload:
+    loop {-ntp::*}:
+        if loop-value is alive:
+            kill loop-value
+    delete {-ntp::*}
+
+on load:
+    loop all players:
+        ntpRehacer(loop-player)

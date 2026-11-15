@@ -95,8 +95,8 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
             set {_a} to {_b} * {_r}
             set {_s} to "÷"
         set {-mg::respuesta} to "%{_r}%"
-        set {_titulo} to "<aqua><bold>✚ MATEMÁTICAS</bold>"
-        set {_reto} to "<gray>Resuelve: <white><bold>%{_a}% <gold>%{_s}%<white> %{_b}% <gold>= <yellow>?"
+        set {_reto} to "<white>¡Resuelve <#FFD36B>(%{_a}% %{_s}% %{_b}%)</#FFD36B> en menos de <#7FFF9E>{@duracion}s</#7FFF9E> para ganar!"
+        set {_plano} to "¡Resuelve (%{_a}% %{_s}% %{_b}%) en menos de {@duracion}s para ganar!"
     else:
         set {_w} to random element out of {-mg::palabras::*}
         set {-mg::respuesta} to {_w}
@@ -108,8 +108,8 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
             set {_mezcla} to join (shuffled {_c::*}) with ""
             if {_mezcla} is not {_w}:
                 exit loop
-        set {_titulo} to "<light_purple><bold>✎ ORDENA LA PALABRA</bold>"
-        set {_reto} to "<gray>Descifra: <white><bold>%{_mezcla} in uppercase%"
+        set {_reto} to "<white>¡Ordena <#FFD36B>(%{_mezcla}%)</#FFD36B> en menos de <#7FFF9E>{@duracion}s</#7FFF9E> para ganar!"
+        set {_plano} to "¡Ordena (%{_mezcla}%) en menos de {@duracion}s para ganar!"
 
     if {_premio} > 0:
         set {-mg::premio} to rounded {_premio}
@@ -118,22 +118,36 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
     set {-mg::id} to {_id}
     set {-mg::inicio} to now
 
-    send "" to all players
-    send "<dark_gray><strikethrough>                                                  " to all players
-    send "  {@prefijo} %{_titulo}%" to all players
-    send "" to all players
-    send "    %{_reto}%" to all players
-    send "    <gray>Premio: <gradient:#55FF55:#00AA00><bold>$%{-mg::premio}%</bold></gradient> <dark_gray>• <gray>Tiempo: <yellow>{@duracion}s" to all players
-    send "    <dark_gray><italic>Escribe la respuesta en el chat" to all players
-    send "<dark_gray><strikethrough>                                                  " to all players
-    send "" to all players
+    mgAnuncio({_reto}, {_plano}, "<#9EA3AE>Premio: <#7FFF9E>$%{-mg::premio}% <dark_gray>• <#9EA3AE>Escribe la respuesta en el chat", "Premio: $%{-mg::premio}% • Escribe la respuesta en el chat")
     play sound "block.note_block.pling" with volume 0.6 and pitch 1.4 to all players
 
     # Una sola tarea diferida (no es un temporizador repetitivo)
     wait {@duracion} seconds
     {-mg::id} = {_id}
-    send "  {@prefijo} <red>⌛ Tiempo agotado. <gray>La respuesta era: <yellow><bold>%{-mg::respuesta}%" to all players
+    mgAnuncio("<#FF6B6B>⌛ ¡Tiempo agotado!", "⌛ ¡Tiempo agotado!", "<#9EA3AE>La respuesta era: <#FFD36B>%{-mg::respuesta}%", "La respuesta era: %{-mg::respuesta}%")
     mgLimpiar()
+
+# ------------------------------------------------------------
+#  Anuncio con el formato de eventos (líneas centradas en el chat)
+# ------------------------------------------------------------
+function mgCentrar(t: text, plano: text) :: text:
+    set {_n} to rounded down ((320 - (length of {_plano}) * 5.6) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"
+
+function mgAnuncio(a: text, aplano: text, b: text, bplano: text):
+    send "" to all players
+    send "                     <#7FDCE6>— ✧ Anuncios de eventos ✧ —" to all players
+    send "                        <#3FD0DE><bold>MINIJUEGOS DEL CHAT" to all players
+    send "" to all players
+    send mgCentrar({_a}, {_aplano}) to all players
+    send mgCentrar({_b}, {_bplano}) to all players
+    send "" to all players
+    send "                               <#9EA3AE>⟐ cloudsblues" to all players
+    send "" to all players
 
 function mgLimpiar():
     delete {-mg::id}
@@ -161,10 +175,7 @@ on chat:
     set {_t} to difference between {-mg::inicio} and now
     mgLimpiar()
     add {_premio} to player's balance
-    send "" to all players
-    send "  {@prefijo} <gradient:#FFD700:#FFAA00><bold>¡%player's name%</bold></gradient> <gray>ganó el minijuego!" to all players
-    send "    <gray>Respuesta: <white><bold>%{_resp}%</bold> <dark_gray>• <gray>Premio: <green><bold>+$%{_premio}%</bold> <dark_gray>• <gray>Tiempo: <aqua>%{_t}%" to all players
-    send "" to all players
+    mgAnuncio("<#FFD36B>¡<white>%player's name%<#FFD36B> ganó el minijuego!", "¡%player's name% ganó el minijuego!", "<#9EA3AE>Respuesta: <white>%{_resp}% <dark_gray>• <#9EA3AE>Premio: <#7FFF9E>+$%{_premio}% <dark_gray>• <#9EA3AE>Tiempo: <#7FDCE6>%{_t}%", "Respuesta: %{_resp}% • Premio: +$%{_premio}% • Tiempo: %{_t}%")
     play sound "entity.player.levelup" with volume 0.7 and pitch 1.2 to player
     play sound "entity.experience_orb.pickup" with volume 0.4 and pitch 1.6 to all players
 
@@ -210,7 +221,7 @@ command /minijuego [<text>] [<text>] [<text>]:
             if {-mg::id} is set:
                 set {_resp} to {-mg::respuesta}
                 mgLimpiar()
-                send "  {@prefijo} <yellow>El minijuego fue detenido por un administrador. <gray>Respuesta: <white><bold>%{_resp}%" to all players
+                mgAnuncio("<#FFB347>El minijuego fue detenido por un administrador", "El minijuego fue detenido por un administrador", "<#9EA3AE>La respuesta era: <#FFD36B>%{_resp}%", "La respuesta era: %{_resp}%")
             else:
                 send "{@prefijo} <red>No hay ningún minijuego activo."
         else if arg-1 is "on":
