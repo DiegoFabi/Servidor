@@ -1,0 +1,258 @@
+# ============================================================
+#  tres_en_raya.sk - Minijuego "Tres en Raya" (Tic Tac Toe) 1v1
+#  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
+#
+#  - Cada 40 minutos se anuncia en el chat (formato de eventos) con una
+#    apuesta aleatoria y un botón para unirse (60 s, 2 jugadores).
+#  - Al unirse se cobra la apuesta. Con 2 jugadores se abre a ambos el
+#    mismo inventario: tablero 3x3 en el centro, turno abajo.
+#  - X (barrera roja) empieza; cada turno dura 30 s o se pierde.
+#  - El ganador se lleva el bote (las dos apuestas). Empate: se devuelve.
+#  - Si un jugador sale del servidor, gana el rival.
+#
+#  Comandos: /tresenraya unirse | salir | abrir
+#            /tresenraya iniciar (admin: tresenraya.admin)
+#  Rendimiento: un solo "every 40 minutes"; los clics solo se procesan
+#  si el inventario es el de la partida. Variables en memoria {-tt::*}.
+# ============================================================
+
+options:
+    inscripcion: 60
+    turno: 30
+    min-apuesta: 500
+    max-apuesta: 2500
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:aqua:dark_aqua><bold>Tres en Raya</bold></gradient> <dark_gray>»<reset>
+
+on load:
+    delete {-tt::*}
+    # Casillas del tablero (índice 1-9 -> slot del inventario)
+    set {-tt::slots::*} to 3, 4, 5, 12, 13, 14, 21, 22 and 23
+    # Líneas ganadoras (índices)
+    set {-tt::lineas::*} to "1,2,3", "4,5,6", "7,8,9", "1,4,7", "2,5,8", "3,6,9", "1,5,9" and "3,5,7"
+
+# ------------------------------------------------------------
+#  Anuncio en el chat
+# ------------------------------------------------------------
+function ttCentrar(t: text, plano: text) :: text:
+    set {_n} to rounded down ((320 - (length of {_plano}) * 5.6) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"
+
+function ttAnunciar():
+    {-tt::estado} is not set
+    add 1 to {-tt::id}
+    set {_id} to {-tt::id}
+    set {-tt::apuesta} to (random integer between ({@min-apuesta} / 100) and ({@max-apuesta} / 100)) * 100
+    set {-tt::estado} to "inscripcion"
+    delete {-tt::jugadores::*}
+    set {_a} to "<white>¡Reta a otro jugador y apuesta <#7FFF9E>$%{-tt::apuesta}%</#7FFF9E> en el <#FFD36B>tres en raya</#FFD36B>!"
+    set {_ap} to "¡Reta a otro jugador y apuesta $%{-tt::apuesta}% en el tres en raya!"
+    set {_b} to "<#7FDCE6>✧ <click:run_command:'/tresenraya unirse'><hover:show_text:'<#7FB2FF>Apostar $%{-tt::apuesta}% y unirte'><#7FDCE6>¡Click para <bold>UNIRTE</bold>!</hover></click> <#7FDCE6>✧"
+    loop all players:
+        notificar(loop-player)
+        send "" to loop-player
+        send "                     <#7FDCE6>— ✧ Anuncios de eventos ✧ —" to loop-player
+        send "                           <#3FD0DE><bold>TRES EN RAYA" to loop-player
+        send "" to loop-player
+        send formatted ttCentrar({_a}, {_ap}) to loop-player
+        send "" to loop-player
+        send formatted ttCentrar({_b}, "✧ ¡Click para UNIRTE! ✧") to loop-player
+        send "" to loop-player
+        send "                               <#9EA3AE>⟐ cloudsblues" to loop-player
+        send "" to loop-player
+    wait {@inscripcion} seconds
+    {-tt::id} = {_id}
+    {-tt::estado} is "inscripcion"
+    ttDevolver()
+    send "{@prefijo} <#9EA3AE>Nadie más se unió; la partida se canceló." to all players
+    ttLimpiar()
+
+function ttDevolver():
+    loop {-tt::jugadores::*}:
+        add {-tt::apuesta} to loop-value's balance
+        if loop-value is online:
+            send "{@prefijo} <#C9CDD6>Se te devolvieron <#7FFF9E>$%{-tt::apuesta}%<#C9CDD6>." to loop-value
+
+function ttLimpiar():
+    if {-tt::inv} is set:
+        loop {-tt::jugadores::*}:
+            if loop-value is online:
+                if loop-value's current inventory is {-tt::inv}:
+                    close loop-value's inventory
+    delete {-tt::estado}
+    delete {-tt::jugadores::*}
+    delete {-tt::tablero::*}
+    delete {-tt::inv}
+    delete {-tt::turno}
+
+# ------------------------------------------------------------
+#  Partida
+# ------------------------------------------------------------
+function ttFicha(n: integer) :: item:
+    if {_n} = 1:
+        return barrier named "<#FF5555><bold>X</bold> <#9EA3AE>• %{-tt::jugadores::1}%"
+    return heart of the sea named "<#5FE3FF><bold>O</bold> <#9EA3AE>• %{-tt::jugadores::2}%"
+
+function ttDibujarTurno():
+    set {_p} to {-tt::jugadores::%{-tt::turno}%}
+    set {_marca} to "<#FF5555><bold>X</bold>"
+    if {-tt::turno} = 2:
+        set {_marca} to "<#5FE3FF><bold>O</bold>"
+    set slot 31 of {-tt::inv} to skull of {_p} named "<white>Turno de <#FFD36B>%{_p}% <dark_gray>(%{_marca}%<dark_gray>)" with lore "<#9EA3AE>Tienes {@turno} segundos para jugar."
+
+function ttEmpezar():
+    set {-tt::estado} to "juego"
+    set {-tt::inv} to chest inventory with 4 rows named "<dark_gray>— ✧ Tres en Raya ✧ —"
+    loop 9 times:
+        set {-tt::tablero::%loop-number%} to 0
+        set slot {-tt::slots::%loop-number%} of {-tt::inv} to white stained glass pane named "<#9EA3AE>Casilla libre" with lore "<#7FB2FF>Clic para marcar en tu turno"
+    loop 9 times:
+        set slot (26 + loop-number) of {-tt::inv} to gray stained glass pane named " "
+    set slot 35 of {-tt::inv} to nether star named "<#FFD36B>Bote: <#7FFF9E>$%{-tt::apuesta} * 2%" with lore "<#9EA3AE>Haz tres en línea para ganar.", "<#9EA3AE>Empate: se devuelve la apuesta." and "<#9EA3AE>Si cierras, usa <#FFD36B>/tresenraya abrir"
+    set {-tt::turno} to 1
+    ttDibujarTurno()
+    loop {-tt::jugadores::*}:
+        open {-tt::inv} to loop-value
+        play sound "block.note_block.pling" with volume 0.6 and pitch 1.2 to loop-value
+    ttVigilarTurno()
+
+# Cada turno dura {@turno} segundos; si no juega, pierde
+function ttVigilarTurno():
+    add 1 to {-tt::mov}
+    set {_m} to {-tt::mov}
+    set {_t} to {-tt::turno}
+    wait {@turno} seconds
+    {-tt::mov} = {_m}
+    {-tt::estado} is "juego"
+    set {_rival} to 3 - {_t}
+    send "{@prefijo} <white>%{-tt::jugadores::%{_t}%}% <#9EA3AE>no jugó a tiempo." to {-tt::jugadores::*}
+    ttGanar({-tt::jugadores::%{_rival}%})
+
+function ttGanador() :: integer:
+    loop {-tt::lineas::*}:
+        set {_i::*} to split loop-value at ","
+        set {_a} to {-tt::tablero::%{_i::1}%}
+        if {_a} > 0:
+            if {-tt::tablero::%{_i::2}%} = {_a}:
+                if {-tt::tablero::%{_i::3}%} = {_a}:
+                    return {_a}
+    return 0
+
+function ttGanar(p: player):
+    {-tt::estado} is "juego"
+    set {-tt::estado} to "fin"
+    add 1 to {-tt::mov}
+    set {_bote} to {-tt::apuesta} * 2
+    add {_bote} to {_p}'s balance
+    if {_p} is online:
+        send title "<#7FFF9E><bold>¡Ganaste!" with subtitle "<#C9CDD6>+$%{_bote}%" to {_p} for 3 seconds with fadein 5 ticks and fadeout 10 ticks
+        play sound "ui.toast.challenge_complete" with volume 0.6 to {_p}
+    send "{@prefijo} <white>%{_p}% <#C9CDD6>ganó el tres en raya y se lleva <#7FFF9E><bold>$%{_bote}%</bold><#C9CDD6>." to all players
+    wait 2 seconds
+    ttLimpiar()
+
+function ttEmpate():
+    set {-tt::estado} to "fin"
+    add 1 to {-tt::mov}
+    send "{@prefijo} <#FFD36B>¡Empate! <#C9CDD6>Se devuelve la apuesta a ambos." to {-tt::jugadores::*}
+    ttDevolver()
+    wait 2 seconds
+    ttLimpiar()
+
+on inventory click:
+    {-tt::inv} is set
+    event-inventory is {-tt::inv}
+    cancel event
+    {-tt::estado} is "juego"
+    # Solo el inventario de arriba (el tablero), no el del jugador
+    clicked inventory is {-tt::inv}
+    set {_s} to index of event-slot
+    loop {-tt::slots::*}:
+        if loop-value = {_s}:
+            set {_n} to loop-index parsed as integer
+    {_n} is set
+    if {-tt::jugadores::%{-tt::turno}%} is not player:
+        send action bar "<#FFB347>✦ <#C9CDD6>Espera tu turno" to player
+        stop
+    {-tt::tablero::%{_n}%} = 0
+    set {-tt::tablero::%{_n}%} to {-tt::turno}
+    set slot {_s} of {-tt::inv} to ttFicha({-tt::turno})
+    play sound "block.wooden_button.click_on" with volume 0.7 and pitch 1.1 to {-tt::jugadores::*}
+    set {_g} to ttGanador()
+    if {_g} > 0:
+        ttGanar({-tt::jugadores::%{_g}%})
+        stop
+    set {_libres} to 0
+    loop 9 times:
+        if {-tt::tablero::%loop-number%} = 0:
+            add 1 to {_libres}
+    if {_libres} = 0:
+        ttEmpate()
+        stop
+    set {-tt::turno} to 3 - {-tt::turno}
+    ttDibujarTurno()
+    ttVigilarTurno()
+
+on quit:
+    {-tt::jugadores::*} contains player
+    if {-tt::estado} is "inscripcion":
+        add {-tt::apuesta} to player's balance
+        remove player from {-tt::jugadores::*}
+    else if {-tt::estado} is "juego":
+        loop {-tt::jugadores::*}:
+            if loop-value is not player:
+                set {_rival} to loop-value
+        if {_rival} is online:
+            ttGanar({_rival})
+
+every 40 minutes:
+    number of all players >= 2
+    ttAnunciar()
+
+# ------------------------------------------------------------
+#  Comando
+# ------------------------------------------------------------
+command /tresenraya [<text>]:
+    aliases: /ttt, /tictactoe
+    trigger:
+        if arg-1 is "unirse":
+            if {-tt::estado} is not "inscripcion":
+                send "{@prefijo} <#FF6B6B>No hay ninguna partida abierta."
+                stop
+            if {-tt::jugadores::*} contains player:
+                send "{@prefijo} <#FFB347>Ya estás inscrito."
+                stop
+            if size of {-tt::jugadores::*} >= 2:
+                send "{@prefijo} <#FF6B6B>La partida ya está completa."
+                stop
+            if player's balance < {-tt::apuesta}:
+                send "{@prefijo} <#FF6B6B>Necesitas <#7FFF9E>$%{-tt::apuesta}% <#FF6B6B>para unirte."
+                stop
+            remove {-tt::apuesta} from player's balance
+            add player to {-tt::jugadores::*}
+            send "{@prefijo} <white>%player% <#C9CDD6>se une al tres en raya <dark_gray>(%size of {-tt::jugadores::*}%/2)" to all players
+            if size of {-tt::jugadores::*} >= 2:
+                ttEmpezar()
+        else if arg-1 is "salir":
+            {-tt::estado} is "inscripcion"
+            {-tt::jugadores::*} contains player
+            remove player from {-tt::jugadores::*}
+            add {-tt::apuesta} to player's balance
+            send "{@prefijo} <#9EA3AE>Saliste de la partida y recuperaste tu apuesta."
+        else if arg-1 is "abrir":
+            if {-tt::estado} is "juego":
+                if {-tt::jugadores::*} contains player:
+                    open {-tt::inv} to player
+                    stop
+            send "{@prefijo} <#FF6B6B>No estás en una partida."
+        else if arg-1 is "iniciar":
+            if player does not have permission "tresenraya.admin":
+                send "{@prefijo} <#FF6B6B>No tienes permiso."
+                stop
+            ttAnunciar()
+        else:
+            send "{@prefijo} <#C9CDD6>Cada 40 minutos se abre un tres en raya 1v1 con apuesta en el chat."

@@ -11,18 +11,21 @@ KeepInventory:
   - admin
 JoinCommands:
   # Sets whether or not Join Commands feature is enabled.
-  Enabled: false
+  Enabled: true
+  # Bienvenida privada, sonidos y efectos al entrar (antes en Skript join_leave_message.sk).
+  # El anuncio público de entrada/salida está en modules/greetings/settings.yml.
   # List of commands to execute when player joined server for the first time.
-  # Use 'player:' prefix to run command by a player.
-  # Use '%player_name%' for a player name.
-  # You can use PlaceholderAPI here.
   FirstJoin:
-  - 'broadcast Welcome new player: %player_name%!'
+  - 'tellraw %player_name% [{"text":"\n","color":"gray"},{"text":"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n","color":"dark_gray","strikethrough":true},{"text":"\n","color":"gray"},{"text":"    ✦ ","color":"#FFB347","bold":true},{"text":"Bienvenido a CloudsBlues","color":"#FFD36B","bold":true},{"text":" ✦\n\n","color":"#FFB347","bold":true},{"text":"    Disfruta tu gameplay con nosotros y tus amigos.\n","color":"gray"},{"text":"    El sistema de recompensas por tiempo está activo:\n","color":"gray"},{"text":"    juega de forma continua y recibe dinero cada hora.\n\n","color":"gray"},{"text":"    ▸ ","color":"white"},{"text":"Jugadores online","color":"green"},{"text":": ","color":"dark_gray"},{"text":"%server_online%","color":"yellow"},{"text":"/","color":"gray"},{"text":"%server_max_players%\n","color":"yellow"},{"text":"    ▸ ","color":"white"},{"text":"Versiones","color":"green"},{"text":": ","color":"dark_gray"},{"text":"1.21.4 - 1.21.8\n","color":"yellow"},{"text":"    ▸ ","color":"white"},{"text":"Tu ping","color":"green"},{"text":": ","color":"dark_gray"},{"text":"%player_ping% ms\n\n","color":"yellow"},{"text":"    ● Redes sociales\n","color":"gold"},{"text":"    ● Discord","color":"dark_purple"},{"text":": ","color":"dark_gray"},{"text":"discord.gg/CDnyqZPh\n","color":"white","underlined":true,"click_event":{"action":"open_url","url":"https://discord.gg/CDnyqZPh"}},{"text":"    ● YouTube","color":"red"},{"text":": ","color":"dark_gray"},{"text":"Próximamente...\n\n","color":"gray"},{"text":"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━","color":"dark_gray","strikethrough":true}]'
+  - 'execute at %player_name% run playsound minecraft:entity.player.levelup master %player_name% ~ ~ ~ 0.5 1.2'
+  - 'execute as @a[name=!%player_name%] at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.3 1.5'
+  - 'effect give %player_name% minecraft:glowing 10 0 true'
   # List of commands to execute when player joins the server and has played before.
-  # Use 'player:' prefix to run command by a player.
-  # Use '%player_name%' for a player name.
-  # You can use PlaceholderAPI here.
-  Default: []
+  Default:
+  - 'tellraw %player_name% [{"text":"\n","color":"gray"},{"text":"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n","color":"dark_gray","strikethrough":true},{"text":"\n","color":"gray"},{"text":"    ✦ ","color":"#FFB347","bold":true},{"text":"Bienvenido a CloudsBlues","color":"#FFD36B","bold":true},{"text":" ✦\n\n","color":"#FFB347","bold":true},{"text":"    Disfruta tu gameplay con nosotros y tus amigos.\n","color":"gray"},{"text":"    El sistema de recompensas por tiempo está activo:\n","color":"gray"},{"text":"    juega de forma continua y recibe dinero cada hora.\n\n","color":"gray"},{"text":"    ▸ ","color":"white"},{"text":"Jugadores online","color":"green"},{"text":": ","color":"dark_gray"},{"text":"%server_online%","color":"yellow"},{"text":"/","color":"gray"},{"text":"%server_max_players%\n","color":"yellow"},{"text":"    ▸ ","color":"white"},{"text":"Versiones","color":"green"},{"text":": ","color":"dark_gray"},{"text":"1.21.4 - 1.21.8\n","color":"yellow"},{"text":"    ▸ ","color":"white"},{"text":"Tu ping","color":"green"},{"text":": ","color":"dark_gray"},{"text":"%player_ping% ms\n\n","color":"yellow"},{"text":"    ● Redes sociales\n","color":"gold"},{"text":"    ● Discord","color":"dark_purple"},{"text":": ","color":"dark_gray"},{"text":"discord.gg/CDnyqZPh\n","color":"white","underlined":true,"click_event":{"action":"open_url","url":"https://discord.gg/CDnyqZPh"}},{"text":"    ● YouTube","color":"red"},{"text":": ","color":"dark_gray"},{"text":"Próximamente...\n\n","color":"gray"},{"text":"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━","color":"dark_gray","strikethrough":true}]'
+  - 'execute at %player_name% run playsound minecraft:entity.player.levelup master %player_name% ~ ~ ~ 0.5 1.2'
+  - 'execute as @a[name=!%player_name%] at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.3 1.5'
+  - 'sr applyskin %player_name%'
 Anvil_Colors:
   # Sets whether or not Anvil Colors feature is enabled.
   # Players with 'sunlight.extras.anvils.color' permission will be able to use colors on anvils.

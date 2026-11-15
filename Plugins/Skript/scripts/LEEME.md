@@ -11,10 +11,10 @@ Skript carga las subcarpetas automáticamente. Un archivo que empieza con `-` es
 | `magia/malditos/` | `objetos_malditos.sk` (/maldicion <tipo>: 5 poderes con precio para el portador) |
 | `magia/avanzados/` | `clase_humano.sk` (/humano), `ira_del_cielo.sk` (/iradelcielo), `meteoro_arcano.sk` (/meteoro) |
 | `economia/` | Sistemas con money de ExcellentEconomy: `coinflip.sk`, `subasta.sk` |
-| `minijuegos/` | `chat_minigames.sk`, `ruleta.sk`, `busca_objetos.sk` (1v1 cada hora y evento de la ruleta roja), `veneno_toxico.sk` (evento de la ruleta roja), `reto_clicks.sk` (/retoclicks) |
+| `minijuegos/` | `chat_minigames.sk`, `ruleta.sk`, `busca_objetos.sk` (1v1 cada hora y evento de la ruleta roja), `veneno_toxico.sk` (evento de la ruleta roja), `reto_clicks.sk` (/retoclicks), `tres_en_raya.sk` (/tresenraya, 1v1 con apuesta cada 40 min) |
 | `items/` | Comportamiento global de items: `tooltip_style.sk` (fondo de tooltip por custom_data), `durabilidad.sk` (usos limitados por custom_data `usos`, /desgastar) |
 | `personalizacion/` | `particulas_cosmeticas.sk` (7 partículas decorativas que se compran con Shards en CoreTools) |
-| `servidor/` | MOTD, mensajes de entrada/salida y `tutorial.sk` (puente del tutorial de TypeWriter + menú `/historia`) |
+| `servidor/` | MOTD, `nametag_propio.sk` y `tutorial.sk` (puente del tutorial de TypeWriter + menú `/historia`) |
 | `examples/` | Ejemplos de Skript (desactivados) |
 
 ## Librería global `utils/items.sk`

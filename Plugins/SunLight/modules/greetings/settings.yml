@@ -12,7 +12,7 @@ Messages:
       Ranks:
       - '*'
       Priority: 0
-      Message: <gray>[<green>+</green>] %player_prefix%%player_display_name%</gray>
+      Message: '<#55FF55><b>+</b> <gray>%player_name% <#55FF55>se ha unido al servidor, ¡bienvenido!'
   # Create custom quit messages here.
   # [>] Text Formations: https://nightexpressdev.com/nightcore/configuration/text-formation/
   # [>] Placeholders to use in messages:
@@ -26,4 +26,4 @@ Messages:
       Ranks:
       - '*'
       Priority: 0
-      Message: <gray>[<red>-</red>] %player_prefix%%player_display_name%</gray>
+      Message: '<#FF5555><b>-</b> <gray>%player_name% <#FF5555>ha salido del servidor.'

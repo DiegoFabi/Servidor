@@ -14,50 +14,86 @@ Ranks:
 # PlaceholderAPI - https://wiki.placeholderapi.com/
 Texts:
   discord:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                     <#8C8CFF><bold>ÚNETE A NUESTRO DISCORD</bold>'
   - ' '
-  - <blue><b>¡Únete al Discord de CloudsBlues!</b></blue>
-  - <dark_gray><b>|</b></dark_gray> <gray>Entérate primero de las <blue>novedades</blue>, </gray>
-  - <dark_gray><b>|</b></dark_gray> <gray><blue>sorteos</blue>, <blue>eventos</blue> y mucho más.</gray>
+  - '<#5C6370>■ <white>¡Al unirte al <#5865F2>Discord</#5865F2> te enterarás primero'
+  - '  <white>de las <#7FFF9E>novedades</#7FFF9E>, <#FFD36B>sorteos</#FFD36B> y <#F28BB6>eventos</#F28BB6>!'
   - ' '
-  - <blue>➥ <click:open_url:"https://discord.gg/CDnyqZPh">Clic para unirte</click></blue>
+  - '                         <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Abrir el Discord de CloudsBlues"><click:open_url:"https://discord.gg/CDnyqZPh">¡Click para <#8C8CFF><bold>UNIRTE</bold></#8C8CFF>!</click></hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
   - ' '
   subasta:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                      <#8C8CFF><bold>SUBASTAS DE JUGADORES</bold>'
   - ' '
-  - <green><b>Subastas de CloudsBlues</b></green>
-  - <dark_gray><b>|</b></dark_gray> <gray>¿Tienes algo que no usas? <green>Subástalo</green> y deja</gray>
-  - <dark_gray><b>|</b></dark_gray> <gray>que los demás <green>pujen</green> por él con su dinero.</gray>
+  - '<#5C6370>■ <white>¿Tienes algo que no usas? <#7FFF9E>Subástalo</#7FFF9E> y deja que'
+  - '  <white>los demás <#FFD36B>pujen</#FFD36B> por él con su <#7FFF9E>dinero</#7FFF9E>!'
   - ' '
-  - <green>➥ <click:suggest_command:"/subasta ">Sostén el objeto y usa /subasta (puja inicial)</click></green>
+  - '                       <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Sostén el objeto y escribe la puja inicial"><click:suggest_command:"/subasta ">¡Click para <#8C8CFF><bold>SUBASTAR</bold></#8C8CFF>!</click></hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
   - ' '
   tienda:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                         <#8C8CFF><bold>TIENDA DEL SERVIDOR</bold>'
   - ' '
-  - <orange><b>Tienda de CloudsBlues</b></orange>
-  - <dark_gray><b>|</b></dark_gray> <gray>Compra y vende <orange>bloques</orange>, <orange>minerales</orange>, comida</gray>
-  - <dark_gray><b>|</b></dark_gray> <gray>y <orange>objetos únicos</orange> con tu dinero del juego.</gray>
+  - '<#5C6370>■ <white>Compra y vende <#FFB347>bloques</#FFB347>, <#7FD8FF>minerales</#7FD8FF>, comida'
+  - '  <white>y <#F28BB6>objetos únicos</#F28BB6> con tu dinero del juego.'
   - ' '
-  - <orange>➥ <hover:show_text:"<gray>Libro del último slot de tu barra">Abre el Menú de Opciones y entra a Tienda</hover></orange>
+  - '                  <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Libro del último slot de tu barra › Tienda">¡Abre el <#8C8CFF><bold>MENÚ DE OPCIONES</bold></#8C8CFF>!</hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
   - ' '
   trabajos:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                          <#8C8CFF><bold>TRABAJOS Y OFICIOS</bold>'
   - ' '
-  - <green><b>Trabajos en CloudsBlues</b></green>
-  - <dark_gray><b>|</b></dark_gray> <gray>Mina, tala, pesca o cultiva y gana <green>dinero</green></gray>
-  - <dark_gray><b>|</b></dark_gray> <gray>mientras <green>subes de nivel</green> en tu oficio.</gray>
+  - '<#5C6370>■ <white>Mina, tala, pesca o cultiva y gana <#7FFF9E>dinero</#7FFF9E>'
+  - '  <white>mientras <#FFD36B>subes de nivel</#FFD36B> en tu oficio.'
   - ' '
-  - <green>➥ <click:run_command:"/jobs">Clic para elegir un trabajo</click></green>
+  - '                       <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Elegir un trabajo"><click:run_command:"/jobs">¡Click para <#8C8CFF><bold>TRABAJAR</bold></#8C8CFF>!</click></hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
   - ' '
   coinflip:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                     <#8C8CFF><bold>¿TE SIENTES CON SUERTE?</bold>'
   - ' '
-  - <orange><b>¿Te sientes con suerte?</b></orange>
-  - <dark_gray><b>|</b></dark_gray> <gray>Reta a otro jugador a un <orange>coinflip</orange> y</gray>
-  - <dark_gray><b>|</b></dark_gray> <gray>el ganador se lleva <orange>todo el dinero</orange>.</gray>
+  - '<#5C6370>■ <white>Reta a otro jugador a un <#FFD36B>coinflip</#FFD36B> y el'
+  - '  <white>ganador se lleva <#7FFF9E>todo el dinero</#7FFF9E>!'
   - ' '
-  - <orange>➥ <click:run_command:"/cf">Clic para apostar</click></orange>
+  - '                        <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Abrir el coinflip"><click:run_command:"/coinflip">¡Click para <#8C8CFF><bold>APOSTAR</bold></#8C8CFF>!</click></hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
   - ' '
   mascotas:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                  <#8C8CFF><bold>MASCOTAS Y PERSONALIZACIÓN</bold>'
   - ' '
-  - <blue><b>Mascotas y Personalización</b></blue>
-  - <dark_gray><b>|</b></dark_gray> <gray>Consigue <blue>mascotas</blue>, <blue>muebles</blue> y <blue>partículas</blue></gray>
-  - <dark_gray><b>|</b></dark_gray> <gray>para darle tu estilo a la aventura.</gray>
+  - '<#5C6370>■ <white>Consigue <#F28BB6>mascotas</#F28BB6>, <#FFB347>muebles</#FFB347> y <#C9A8FF>partículas</#C9A8FF>'
+  - '  <white>para darle tu estilo a la aventura.'
   - ' '
-  - <blue>➥ <hover:show_text:"<gray>Libro del último slot de tu barra">Abre el Menú de Opciones</hover></blue>
+  - '                  <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Libro del último slot de tu barra">¡Abre el <#8C8CFF><bold>MENÚ DE OPCIONES</bold></#8C8CFF>!</hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
+  - ' '
+  historia:
+  - '<sound:"block_amethyst_block_chime"> '
+  - '                     <#B9A8FF>— ✧ Anuncios automáticos ✧ —'
+  - '                        <#8C8CFF><bold>LA HISTORIA DEL REINO</bold>'
+  - ' '
+  - '<#5C6370>■ <white>Habla con los <#FFD36B>NPCs</#FFD36B> del reino y descubre qué'
+  - '  <white>le pasó al <#C9A8FF>Rey</#C9A8FF> y a la <#9EE37D>Maleza</#9EE37D>.'
+  - ' '
+  - '                          <#B9A8FF>✧ <hover:show_text:"<#C9CDD6>Abrir tu historia"><click:run_command:"/historia">¡Click para <#8C8CFF><bold>LEER</bold></#8C8CFF>!</click></hover> <#B9A8FF>✧'
+  - ' '
+  - '                               <#9EA3AE>⟐ cloudsblues'
   - ' '
