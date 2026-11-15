@@ -3,7 +3,7 @@
   {
    "type": "bitmap",
    "file": "hud:font/bg_1.png",
-   "ascent": 10,
+   "ascent": 7,
    "height": 13,
    "chars": [
     ""
@@ -12,7 +12,7 @@
   {
    "type": "bitmap",
    "file": "hud:font/bg_2.png",
-   "ascent": 10,
+   "ascent": 7,
    "height": 13,
    "chars": [
     ""
@@ -21,10 +21,37 @@
   {
    "type": "bitmap",
    "file": "hud:font/bg_3.png",
-   "ascent": 10,
+   "ascent": 7,
    "height": 13,
    "chars": [
     ""
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "hud:font/ico_earth.png",
+   "ascent": 6,
+   "height": 10,
+   "chars": [
+    ""
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "hud:font/ico_sun.png",
+   "ascent": 6,
+   "height": 10,
+   "chars": [
+    ""
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "hud:font/ico_mag_glass.png",
+   "ascent": 6,
+   "height": 10,
+   "chars": [
+    ""
    ]
   },
   {
