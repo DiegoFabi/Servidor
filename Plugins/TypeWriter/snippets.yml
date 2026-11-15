@@ -93,8 +93,10 @@ action:
   message:
     format: |2
 
-      <gray> <bold><speaker></bold><reset>
+      <#9EA3AE> ⋄ <bold><speaker></bold><reset>
+
       <reset><white> <message>
+
 content:
   road_network:
     # Distancia a la que todavía se muestran las partículas de los bordes

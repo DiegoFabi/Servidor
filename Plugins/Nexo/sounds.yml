@@ -23,7 +23,8 @@ settings:
 
 sounds:
 - id: nexo:music.observatory
-  # Música del tutorial (Observatory). OGG Vorbis mono q0: 497 KB (el MP3 pesaba 1,2 MB)
+  # Música del tutorial (Observatory). OGG Vorbis estéreo q0: 728 KB (el MP3 pesaba 1,2 MB).
+  # Estéreo = no posicional: suena igual aunque el jugador se mueva.
   sound: nexo:music/observatory.ogg
   stream: true
   volume: 1.0
