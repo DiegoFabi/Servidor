@@ -20,7 +20,7 @@ road_network:
   distance:
     # The maximum distance that can be between two nodes. 
     # Therefore it is also the maximum radius the player can be from a node to be inside the road network
-    max: 30.0
+    max: 100.0
   path_stream:
     # When path streams are forcefully canceled after this amount of time in milliseconds
     timeout: 15000
