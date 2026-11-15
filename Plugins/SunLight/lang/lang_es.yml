@@ -2571,7 +2571,7 @@ Scoreboard:
   Command:
     Scoreboard:
       Desc: Activar/desactivar marcador.
-      Notify: '<lgray>Marcador: <lyellow>%state%</lyellow>.</lgray>'
+      Notify: ''
       Target: <lgray>Se estableció el marcador en <lyellow>%state%</lyellow> para <lyellow>%player_name%</lyellow>.</lgray>
     Scoreboard-Toggle:
       Desc: Toggle scoreboard.
