@@ -300,3 +300,129 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: moon_wizard_cloak
+  xmas_mini_costume_gingerbread_plushie:
+    slots:
+    - 13
+    item:
+      material: hmccosmetics:xmas_mini_costume_gingerbread_plushie
+      lore:
+      - '<#9EA3AE>Colección: <white>Mini Disfraz Navideño'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_xmas_mini_costume_gingerbread_plushie%%HMCCosmetics_equipped_xmas_mini_costume_gingerbread_plushie%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Navidad
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: xmas_mini_costume_gingerbread_plushie
+  xmas_mini_costume_snowman_plushie:
+    slots:
+    - 14
+    item:
+      material: hmccosmetics:xmas_mini_costume_snowman_plushie
+      lore:
+      - '<#9EA3AE>Colección: <white>Mini Disfraz Navideño'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_xmas_mini_costume_snowman_plushie%%HMCCosmetics_equipped_xmas_mini_costume_snowman_plushie%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Navidad
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: xmas_mini_costume_snowman_plushie
+  ero_summer_vehicles_v2_cosmetics_bus_backpack:
+    slots:
+    - 15
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_bus_backpack
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_bus_backpack%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_bus_backpack%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_bus_backpack
+  ero_summer_vehicles_v2_cosmetics_car_backpack:
+    slots:
+    - 16
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_car_backpack
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_car_backpack%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_car_backpack%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_car_backpack
+  ero_summer_vehicles_v2_cosmetics_motorcycle_backpack:
+    slots:
+    - 17
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_motorcycle_backpack
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_motorcycle_backpack%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_motorcycle_backpack%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_motorcycle_backpack
+  ero_summer_vehicles_v2_cosmetics_van_backpack:
+    slots:
+    - 19
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_van_backpack
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_van_backpack%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_van_backpack%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_van_backpack

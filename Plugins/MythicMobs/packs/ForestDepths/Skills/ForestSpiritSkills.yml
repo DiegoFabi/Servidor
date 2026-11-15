@@ -1,0 +1,524 @@
+  S1:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 20
+   - offgcd true
+   Skills:
+   - gcd{ticks=35}
+   - state{state=attack1} @Self
+   - sound{s=entity.evoker.prepare_summon;p=2;v=4} @Self 
+   - summon{type=Shaman_roots;amount=1;radius=0;delay=7;os=true} @PIR{r=50}
+   - summon{type=Shaman_roots;amount=15;radius=9;delay=9;os=true} @PIR{r=50}
+   - setspeed{s=0} @Self
+   - setspeed{s=0.7;delay=29} @Self
+  S1_2:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 20
+   - offgcd true
+   Skills:
+   - gcd{ticks=35}
+   - state{state=attack1} @Self
+   - sound{s=entity.evoker.prepare_summon;p=2;v=4} @Self
+   - summon{type=Forest_roots;amount=1;radius=0;delay=7;os=true} @PIR{r=50}
+   - summon{type=Forest_roots;amount=5;radius=5;delay=9;os=true} @PIR{r=50}
+   - setspeed{s=0} @Self
+   - setspeed{s=0.7;delay=29} @Self
+  S2:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 25
+   - offgcd true
+   Skills:
+   - gcd{ticks=55}
+   - state{state=attack2} @Self
+   - setspeed{s=0} @Self
+   - delay 26
+   - sound{s=entity.witch.throw;p=0.4;v=4} @Self
+   - sound{s=entity.wither.shoot;p=1.2;v=4} @Self
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Projectile_4;v=13;i=0.1;hR=0.2;vR=0.01;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=0;mr=30} @Target
+   - delay 25
+   - setspeed{s=0.7} @Self
+  S3:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 25
+   - offgcd true
+   Skills:
+   - gcd{ticks=55}
+   - state{state=attack3} @Self
+   - setspeed{s=0} @Self
+   - delay 26
+   - sound{s=entity.wither.shoot;p=1.2;v=4} @Self
+   - sound{s=entity.witch.throw;p=0.4;v=4} @Self
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Projectile_2;v=13;i=0.1;hR=1.6;vR=0.01;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=0;mr=30} @Target
+   - delay 25
+   - setspeed{s=0.7} @Self
+  S4:
+   Cooldown: 10
+   Conditions:
+   - targetWithin 20
+   - offgcd true
+   Skills:
+   - gcd{ticks=95}
+   - state{state=attack4small} @Self
+   - setspeed{s=0} @Self
+   - delay 28
+   - sound{s=entity.allay.hurt;p=0.9;v=4} @Self
+   - sound{s=entity.witch.throw;p=0.6;v=4} @Self
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=SProjectile_2;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0;syo=1.5;tyo=0.5;eso=0} @Target
+   - delay 15
+   - sound{s=entity.allay.hurt;p=0.9;v=4} @Self
+   - sound{s=entity.witch.throw;p=0.4;v=4} @Self
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=SProjectile_2;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0;syo=1.5;tyo=0.5;eso=0} @Target
+   - delay 17
+   - sound{s=entity.allay.hurt;p=0.9;v=4} @Self
+   - sound{s=entity.witch.throw;p=0.4;v=4} @Self
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=SProjectile_2;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0;syo=1.5;tyo=0.5;eso=0} @Target
+   - delay 10
+   - setspeed{s=0.7} @Self
+  S5:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=35}
+   - state{state=attack5} @Self
+   - summon{type=SExplosion;amount=1;radius=0;os=true} @self
+   - setspeed{s=0} @Self
+   - sound{s=entity.firework_rocket.blast;p=0.5;v=4;delay=8} @Self
+   - sound{s=entity.blaze.hurt;p=0;v=4;delay=8} @Self
+   - delay 12
+   - damage{a=15} @EIR{r=4.5}
+   - throw{velocity=24;velocityY=6} @PlayersInRadius{r=4.5}
+   - delay 30
+   - setspeed{s=0.7} @Self
+  S6:
+   Cooldown: 4
+   Conditions:
+   - targetWithin 8
+   - offgcd true
+   Skills:
+   - gcd{ticks=45}
+   - state{state=attack6} @Self
+   - setspeed{s=0} @Self
+   - sound{s=entity.illusioner.mirror_move;p=1;v=4;delay=6} @Self
+   - disengage{v=3;delay=15} @target
+   - delay 40
+   - setspeed{s=0.7} @Self
+  S7:
+   Cooldown: 10
+   Conditions:
+   - targetWithin 30
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - state{state=attack7} @Self
+   - setspeed{s=0} @Self
+   - sound{s=entity.evoker.prepare_summon;p=2;v=4} @Self
+   - delay 38
+   - sound{s=entity.witch.throw;p=0.5;v=4} @Self
+   - projectile{
+      oT=[
+         - effect:particles{particle=soul_fire_flame;amount=1;hS=0.2;vS=0.2;y=0} @self
+      ];oH=[
+         - stun{d=32} 
+         - damage{a=12}
+         - summon{type=SArrow2;amount=1;radius=0;delay=1} @target
+      ];bullet=MOB;mob=SArrow;v=18;i=1;hR=0.1;vR=0.2;hnp=false;sE=true;sB=true;g=0;syo=2.5;tyo=1;mr=30} @TargetLocation
+   - delay 15
+   - setspeed{s=0.7} @Self
+  S8:
+   Cooldown: 30
+   Conditions:
+   - targetWithin 40
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - setspeed{s=0} @Self
+   - state{state=attack8} @Self
+   - sound{s=entity.evoker.prepare_summon;p=1;v=4;delay=15} @Self
+   - sound{s=entity.allay.item_taken;p=0;v=4;delay=15} @Self
+   - summon{type=flying_skull;amount=4;radius=8;delay=25;os=true} @self
+   - summon{type=flying_skull;amount=3;radius=5;delay=25;os=true} @PIR{r=50}
+   - summon{type=lost_explorer;amount=1;radius=3;delay=18;os=true} @self
+   - delay 50
+   - setspeed{s=0.7} @Self
+  AS1:
+   Cooldown: 3
+   Conditions:
+   - targetWithin 3
+   - offgcd true
+   Skills:
+   - gcd{ticks=25}
+   - state{state=attack1} @Self
+   - setspeed{s=0} @Self
+   - delay 15
+   - sound{s=entity.fox.bite;p=0.9;v=2.5} @Self
+   - damage{a=10} @EIC{r=3}
+   - delay 5
+   - setspeed{s=1.2} @Self
+  EX1:
+   Cooldown: 3
+   Conditions:
+   - targetWithin 3
+   - offgcd true
+   Skills:
+   - gcd{ticks=25}
+   - state{state=attack} @Self
+   - setspeed{s=0;delay=5} @Self
+   - delay 16
+   - sound{s=entity.witch.throw;p=0.7;v=4} @Self
+   - damage{a=10} @EIC{r=3}
+   - delay 20
+   - setspeed{s=0.7} @Self
+  EX2:
+   Cooldown: 3
+   Conditions:
+   - targetWithin 3
+   - offgcd true
+   Skills:
+   - gcd{ticks=25}
+   - state{state=attack2} @Self
+   - setspeed{s=0;delay=5} @Self
+   - delay 16
+   - sound{s=entity.witch.throw;p=0.7;v=4} @Self
+   - damage{a=10} @EIC{r=3}
+   - delay 20
+   - setspeed{s=0.7} @Self
+  EX3:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 10
+   - offgcd true
+   Skills:
+   - gcd{ticks=25}
+   - state{state=attack3} @Self
+   - setspeed{s=0;delay=5} @Self
+   - delay 24
+   - sound{s=entity.witch.throw;p=0.5;v=4} @Self
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=ELantern;v=9;i=0.1;hR=0.2;vR=0.01;sE=true;sB=true;g=0.25;syo=1.2;tyo=1.8;eso=0} @Target
+   - delay 20
+   - setspeed{s=0.7} @Self
+  FS1:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 12
+   - offgcd true
+   Skills:
+   - gcd{ticks=95}
+   - state{state=attack1} @Self
+   - delay 43
+   - sound{s=entity.firework_rocket.large_blast;p=0;v=5} @Self
+   - sound{s=entity.wither_skeleton.step;p=0.8;v=5} @Self
+   - sound{s=entity.player.attack.knocback;p=0;v=5} @Self
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=5;hS=0.1;vS=0.1;s=0;y=0;}
+        - effect:particles{particle=sneeze;amount=5;hS=0.3;vS=0.1;s=0;y=0;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=SProjectile_1;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=0;mr=35;hs=true;origin=@forward{f=7.5}} @RingAroundOrigin{r=3;p=6} 
+   - metaskill{s=FS1_2;origin=@forward{f=7.5}} @Forward{f=7.5}
+  FS1_2:
+   Cooldown: 8
+   Skills:
+   - effect:particles{particle=glow_squid_ink;amount=35;hS=0.3;vS=0.3;s=1;y=0;}
+   - effect:particles{particle=sneeze;amount=35;hS=0.3;vS=0.3;s=1;y=0;}
+   - effect:particles{particle=block;m=dirt;amount=60;hS=2;vS=0;y=0.1;s=0.5}
+   - damage{a=35;pi=true} @PlayersNearOrigin{r=4}
+   - shieldbreak{duration=150} @PlayersNearOrigin{r=4}
+  FS2:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 12
+   - offgcd true
+   Skills:
+   - gcd{ticks=110}
+   - state{state=attack2} @Self
+   - sound{s=entity.player.attack.sweep;p=0;v=5;delay=43} @Self
+   - delay 58
+   - sound{s=entity.firework_rocket.large_blast;p=0;v=5} @Self
+   - sound{s=entity.wither_skeleton.step;p=0.8;v=5} @Self
+   - sound{s=entity.player.attack.knocback;p=0;v=5} @Self
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.95;}
+        - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.95;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_2;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1;tyo=1;eso=0;mr=35;hs=false;origin=@forward{f=7.5}} @RingAroundOrigin{r=3;p=6} 
+   - metaskill{s=FS2_2;origin=@forward{f=7.5}} @Forward{f=7.5}
+  FS2_2:
+   Cooldown: 8
+   Skills:
+   - effect:particles{particle=glow_squid_ink;amount=35;hS=0.3;vS=0.3;s=1;y=0;}
+   - effect:particles{particle=sneeze;amount=35;hS=0.3;vS=0.3;s=1;y=0;}
+   - damage{a=35;pi=true} @PlayersNearOrigin{r=4}
+   - shieldbreak{duration=150} @PlayersNearOrigin{r=4}
+  FS3:
+   Cooldown: 10
+   Conditions:
+   - targetWithin 25
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - state{state=attack3} @Self
+   - setAI{ai=false;delay=15} @self ~onSpawn
+   - sound{s=entity.player.attack.sweep;p=0;v=5;delay=24} @Self
+   - delay 28
+   - sound{s=entity.wither.shoot;p=0;v=5} @Self
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.95;}
+        - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.95;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_6;v=14;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=15;tyo=1;eso=0;mr=35;hs=false} @Target
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+        - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_6;v=14;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=15;tyo=1;eso=2;mr=35;hs=false} @Target 
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+        - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_6;v=14;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=15;tyo=1;eso=-2;mr=35;hs=false} @Target
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+        - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_6;v=14;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=15;tyo=1;eso=5;mr=35;hs=false} @Target 
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+        - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_6;v=14;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=15;tyo=1;eso=-5;mr=35;hs=false} @Target 
+   - setAI{ai=true;delay=15} @self 
+  FS4:
+   Cooldown: 40
+   Conditions:
+   - targetWithin 40
+   - offgcd true
+   Skills:
+   - gcd{ticks=95}
+   - state{state=attack4} @Self
+   - sound{s=entity.skeleton_horse.death;p=0.6;v=8;delay=34} @Self
+   - summon{type=flying_skull;amount=3;radius=7;delay=45;os=true;sio=false;sip=false} @self
+   - summon{type=flying_skull;amount=2;radius=4;delay=58;os=true;sio=false;sip=false} @PIR{r=50}
+   - summon{type=lost_explorer;amount=1;radius=7;delay=58;os=true;sio=false;sip=false} @self
+  FS5:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 12
+   - offgcd true
+   Skills:
+   - gcd{ticks=95}
+   - state{state=attack5} @Self
+   - delay 42
+   - sound{s=entity.firework_rocket.large_blast;p=0;v=5} @Self
+   - sound{s=entity.wither_skeleton.step;p=0.8;v=5} @Self
+   - sound{s=entity.player.attack.knocback;p=0;v=5} @Self
+   - summon{type=SExplosion1;amount=1;radius=0;os=true} @Forward{f=9}
+   - sound{s=entity.wither.shoot;p=0.6;v=7;delay=4} @Self
+  FSEP:
+   Cooldown: 5
+   Skills:
+   - projectile{
+     oT=[
+        - damage{a=5} @PlayersNearOrigin{r=1}
+        - effect:particles{particle=glow_squid_ink;amount=5;hS=0.1;vS=0.1;s=0;y=0;}
+        - effect:particles{particle=sneeze;amount=5;hS=0.3;vS=0.1;s=0;y=0;}
+     ];oH=[
+        - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=SProjectile_1;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=0;mr=35;hs=true} @Ring{r=3;p=7}
+  FS71:
+   Cooldown: 10
+   Conditions:
+   - targetWithin 35
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - state{state=attack7} @Self
+   - delay 23
+   - sound{s=entity.allay.hurt;p=0.4;v=8} @Self
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+         - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.95;}
+         - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.95;}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Projectile_3;v=17;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=17;tyo=1;eso=0;mr=35;hs=false} @Target
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+         - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+         - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+      ];oH=[
+         - damage{a=8;pi=true} 
+     ];bullet=MOB;mob=Projectile_3;v=17;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=17;tyo=1;eso=2;mr=35;hs=false} @Target 
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+         - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+         - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Projectile_3;v=17;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=17;tyo=1;eso=-2;mr=35;hs=false} @Target
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+         - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+         - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Projectile_3;v=17;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=17;tyo=1;eso=5;mr=35;hs=false} @Target 
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+         - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.5;}
+         - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.5;}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Projectile_3;v=17;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=17;tyo=1;eso=-5;mr=35;hs=false} @Target
+  FS72:
+   Cooldown: 10
+   Conditions:
+   - targetWithin 35
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - state{state=attack7} @Self
+   - delay 23
+   - sound{s=entity.allay.hurt;p=0.4;v=8} @Self
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+         - effect:particles{particle=glow_squid_ink;amount=1;hS=0.1;vS=0.1;s=0;y=-0.95;}
+         - effect:particles{particle=sneeze;amount=2;hS=0.3;vS=0.1;s=0;y=-0.95;}
+      ];oE=[
+         - summon{type=SExplosion1;amount=1;radius=0;os=true}
+         - sound{s=entity.firework_rocket.large_blast;p=0;v=5} 
+         - sound{s=entity.wither_skeleton.step;p=0.8;v=5} 
+         - sound{s=entity.player.attack.knocback;p=0;v=5} 
+         - sound{s=entity.wither.shoot;p=0.6;v=7;delay=4}        
+      ];bullet=MOB;mob=Projectile_5;v=17;i=0.1;hR=1;vR=1;sE=false;sB=true;g=0;syo=17;tyo=1;eso=0;mr=35;hs=false} @Target
+  FSM1:
+   Cooldown: 30
+   Conditions:
+   - targetWithin 35
+   - offgcd true
+   Skills:
+   - gcd{ticks=240}
+   - state{state=attack6} @Self
+   - state{state=death} @Children
+   - sound{s=item.firecharge.use;p=0;v=5;delay=5} @Self
+   - setspeed{s=2.1;delay=15} @Self
+   - remove{delay=20} @Children 
+   - delay 65
+   - setspeed{s=0} @Self
+   - delay 28
+   - damage{a=15;pi=true;repeat=10;repeatInterval=3} @PIR{r=6.5}
+   - delay 30
+   - teleport @Parent
+   - delay 75
+   - summon{type=Forest_Spirit_Base;amount=1;radius=0;os=true} @Self
+  FSM2:
+   Cooldown: 120
+   Conditions:
+   - targetWithin 35
+   - offgcd true
+   Skills:
+   - gcd{ticks=600}
+   - state{state=attack8} @Self
+   - state{state=death} @Children
+   - sound{s=item.firecharge.use;p=0;v=5;delay=25} @Self
+   - sound{s=item.firecharge.use;p=0;v=5;delay=140} @Self
+   - sound{s=item.firecharge.use;p=0;v=5;delay=280} @Self
+   - setspeed{s=1.4;delay=15} @Self
+   - remove{delay=20} @Children 
+   - delay 94
+   - damage{a=20;pi=true;repeat=4;repeatInterval=3} @PIR{r=5}
+   - delay 135
+   - damage{a=20;pi=true;repeat=4;repeatInterval=3} @PIR{r=5}
+   - delay 137
+   - damage{a=15;pi=true;repeat=4;repeatInterval=3} @PIR{r=5}
+   - setspeed{s=0} @Self
+   - delay 50
+   - teleport @Parent
+   - delay 190
+   - summon{type=Forest_Spirit_Base;amount=1;radius=0;os=true} @Self 
+  HP1:
+   Conditions:
+   - playersinradius{a=2;r=256} true
+   Skills:
+   - setmaxhealth{amount=700;mode=STATIC} @self
+   - healpercent{m=1;delay=5} @self 
+  HP2:
+   Conditions:
+   - playersinradius{a=3;r=256} true
+   Skills:
+   - setmaxhealth{amount=900;mode=STATIC} @self
+   - healpercent{m=1;delay=5} @self 
+  HP3:
+   Conditions:
+   - playersinradius{a=4;r=256} true
+   Skills:
+   - setmaxhealth{amount=1100;mode=STATIC} @self
+   - healpercent{m=1;delay=5} @self 
+  HP4:
+   Conditions:
+   - playersinradius{a=5;r=256} true
+   Skills:
+   - setmaxhealth{amount=1300;mode=STATIC} @self
+   - healpercent{m=1;delay=5} @self
+
+  

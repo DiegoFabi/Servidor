@@ -1,0 +1,363 @@
+  Feral1:
+   Cooldown: 10
+   Conditions:
+   - targetWithin 7
+   - targetnotwithin{d=2} true
+   - offgcd true
+   Skills:
+   - gcd{ticks=55}
+   - state{state=attack1} @Self
+   - setspeed{s=0} @Self
+   - delay 10
+   - lunge{v=1.5} @targetlocation
+   - delay 4
+   - damage{a=10} @EIR{r=3.5}
+   - sound{s=entity.player.attack.sweep;p=1;v=1} @Self
+   - delay 15
+   - setspeed{s=2} @Self
+  Feral2:
+   Cooldown: 15
+   Conditions:
+   - targetWithin 12
+   - targetnotwithin{d=5} true
+   - offgcd true
+   Skills:
+   - gcd{ticks=68}
+   - state{state=attack2} @Self
+   - setspeed{s=0} @Self
+   - sound{s=entity.wolf.growl;p=0.8;v=1;delay=2} @Self
+   - delay 18
+   - lunge{v=2} @targetlocation
+   - sound{s=entity.evoker_fangs.attack;p=1.7;v=1;delay=2} @Self
+   - delay 5
+   - damage{a=10} @EIR{r=3.5}
+   - delay 28
+   - setspeed{s=2} @Self
+  Feral3:
+   Cooldown: 4
+   Conditions:
+   - targetWithin 4
+   - offgcd true
+   Skills:
+   - gcd{ticks=35}
+   - state{state=attack3} @Self
+   - setspeed{s=0} @Self
+   - delay 15
+   - damage{a=10} @EIC{r=4.5}
+   - sound{s=entity.player.attack.sweep;p=1;v=1} @Self
+   - delay 10
+   - setspeed{s=2} @Self
+  Feral4:
+   Cooldown: 4
+   Conditions:
+   - targetWithin 4
+   - offgcd true
+   Skills:
+   - gcd{ticks=35}
+   - state{state=attack4} @Self
+   - setspeed{s=0} @Self
+   - delay 13
+   - damage{a=10} @EIC{r=4.5}
+   - sound{s=entity.player.attack.sweep;p=1;v=1} @Self
+   - delay 10
+   - setspeed{s=2} @Self
+  Ram1:
+   Cooldown: 15
+   Conditions:
+   - targetWithin 15
+   - targetnotwithin{d=5} true
+   - offgcd true
+   Skills:
+   - gcd{ticks=80}
+   - state{state=attack1} @Self
+   - setspeed{s=1;delay=5} @Self
+   - delay 30
+   - sound{s=item.trident.throw;p=1;v=0.5;delay=2} @Self 
+   - projectile{
+      oT=[
+         - effect:particles{particle=soul_fire_flame;amount=0;hS=0.2;vS=0.2;y=0} @self
+      ];oH=[
+         - stun{d=40} 
+         - damage{a=12}
+         - summon{type=Ram_Spear;amount=1;radius=0;delay=1} @target
+      ];bullet=MOB;mob=Ram_Spear2;v=18;i=1;hR=1;vR=1;hnp=false;sE=true;sB=true;g=0;syo=4.5;sso=0.4;tyo=1;mr=20;delay=1} @TargetLocation
+   - setspeed{s=2;delay=10} @Self
+  Ram2:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - state{state=attack2} @Self
+   - setspeed{s=0.8} @Self
+   - delay 28
+   - damage{a=13} @EIC{r=4.5}
+   - throw{velocity=1;velocityY=9} @EIC{r=4.5}
+   - sound{s=entity.player.attack.knockback;p=0.4;v=2} @Self
+   - delay 10
+   - setspeed{s=2} @Self
+  Ram3:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=45}
+   - state{state=attack3} @Self
+   - setspeed{s=0} @Self
+   - sound{s=entity.goat.long_jump;p=0;v=1;delay=7} @Self 
+   - disengage{v=2;delay=8} @target
+   - setspeed{s=2;delay=42} @Self
+  Ram4:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=40}
+   - state{state=attack4} @Self
+   - setspeed{s=0} @Self
+   - delay 11
+   - damage{a=13} @EIC{r=4.5}
+   - throw{velocity=10;velocityY=4} @EIC{r=4.5}
+   - sound{s=entity.player.attack.knockback;p=0.4;v=2} @Self
+   - delay 10
+   - setspeed{s=2} @Self
+  Ram5:
+   Cooldown: 15
+   Conditions:
+   - targetWithin 30
+   - offgcd true
+   Skills:
+   - gcd{ticks=55}
+   - state{state=attack5} @Self
+   - setspeed{s=0;delay=3} @Self
+   - sound{s=entity.sheep.death;p=0.4;v=1;delay=12} @Self 
+   - delay 24
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Ram_Projectile;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=0;mr=35;hs=true} @Target
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Ram_Projectile;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=2.5;mr=35;hs=true} @Target
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Ram_Projectile;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1;tyo=1;eso=-2.5;mr=35;hs=true} @Target
+   - setspeed{s=2;delay=10} @Self
+  Ram6:
+   Cooldown: 15
+   Conditions:
+   - targetWithin 6
+   - offgcd true
+   Skills:
+   - gcd{ticks=75}
+   - state{state=attack6} @Self
+   - setspeed{s=0} @Self
+   - disengage{v=2;delay=8} @target
+   - sound{s=entity.goat.long_jump;p=0;v=1;delay=7} @Self
+   - sound{s=entity.sheep.death;p=0.4;v=1;delay=33} @Self 
+   - delay 46
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Ram_Projectile;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=0;mr=35;hs=true} @Target
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Ram_Projectile;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1.5;tyo=0.5;eso=2.5;mr=35;hs=true} @Target
+   - projectile{
+      oT=[
+         - damage{a=5} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Ram_Projectile;v=10;i=0.1;hR=1;vR=1;sE=false;sB=false;g=0;syo=1;tyo=1;eso=-2.5;mr=35;hs=true} @Target
+   - setspeed{s=2;delay=10} @Self
+  Ram7:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=40}
+   - state{state=attack7} @Self
+   - setspeed{s=0} @Self
+   - delay 11
+   - damage{a=13} @EIC{r=4}
+   - throw{velocity=10;velocityY=3} @EIC{r=4}
+   - sound{s=entity.player.attack.knockback;p=0.4;v=2} @Self
+   - delay 18
+   - setspeed{s=2} @Self
+  W1:
+   Cooldown: 4
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=45}
+   - state{state=attack1} @Self
+   - setspeed{s=0} @Self
+   - delay 12
+   - damage{a=12} @EIC{r=5.5}
+   - sound{s=entity.player.attack.sweep;p=0.7;v=1} @Self
+   - delay 18
+   - setspeed{s=1} @Self
+  W2:
+   Cooldown: 6
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=45}
+   - state{state=attack2} @Self
+   - setspeed{s=0} @Self
+   - sound{s=entity.evoker_fangs.attack;p=0.8;v=1;delay=10} @Self
+   - delay 14
+   - damage{a=15} @EIC{r=5.5}
+   - delay 18
+   - setspeed{s=1} @Self
+  W3:
+   Cooldown: 6
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=50}
+   - state{state=attack3} @Self
+   - setspeed{s=0} @Self
+   - delay 20
+   - damage{a=12} @EIC{r=5.5}
+   - throw{velocity=10;velocityY=3} @EIC{r=5.5}
+   - sound{s=entity.player.attack.knockback;p=0.4;v=2} @Self
+   - delay 18
+   - setspeed{s=1} @Self
+  W4:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 5
+   - offgcd true
+   Skills:
+   - gcd{ticks=55}
+   - state{state=attack4} @Self
+   - setspeed{s=0} @Self
+   - sound{s=entity.player.attack.sweep;p=0.6;v=1;delay=8} @Self
+   - delay 10
+   - damage{a=18} @EIC{r=6}
+   - delay 15
+   - setspeed{s=1} @Self
+  Root1:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 20
+   - offgcd true
+   Skills:
+   - gcd{ticks=60}
+   - state{state=attack5} @Self
+   - summon{type=WendigoRoots1;amount=1;radius=0;delay=15;os=true} @PIR{r=50}
+   - summon{type=WendigoRoots1;amount=15;radius=11;delay=20;os=true} @PIR{r=50}
+   - setspeed{s=0} @Self
+   - setspeed{s=1;delay=40} @Self
+  Root2:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 20
+   - offgcd true
+   Skills:
+   - gcd{ticks=60}
+   - state{state=attack5} @Self
+   - summon{type=WendigoRoots2;amount=1;radius=0;delay=15;os=true} @PIR{r=50}
+   - summon{type=WendigoRoots2;amount=5;radius=6;delay=20;os=true} @PIR{r=50}
+   - setspeed{s=0} @Self
+   - setspeed{s=1;delay=40} @Self
+  Root3:
+   Cooldown: 9
+   Conditions:
+   - targetWithin 6
+   - offgcd true
+   Skills:
+   - gcd{ticks=60}
+   - state{state=attack5} @Self
+   - summon{type=WendigoRoots3;amount=1;radius=0;delay=15;os=true} @self
+   - setspeed{s=0} @Self
+   - setspeed{s=1;delay=40} @Self
+  W6:
+   Cooldown: 8
+   Conditions:
+   - targetWithin 25
+   - offgcd true
+   Skills:
+   - gcd{ticks=80}
+   - state{state=attack6} @Self
+   - setspeed{s=0} @Self
+   - delay 20
+   - sound{s=entity.allay.hurt;p=0.6;v=1} @Self
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Spirit_Projectile;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0;syo=1.5;tyo=0.5;eso=0} @Target
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Spirit_Projectile;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0;syo=1.5;tyo=0.5;eso=2.5} @Target
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Spirit_Projectile;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0;syo=1.5;tyo=0.5;eso=4.5} @Target
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Spirit_Projectile;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0.;syo=1.5;tyo=0.5;eso=-2.5} @Target
+   - projectile{
+      oT=[
+         - damage{a=2} @PlayersNearOrigin{r=1}
+      ];oH=[
+         - damage{a=8;pi=true} 
+      ];bullet=MOB;mob=Spirit_Projectile;v=16;i=0.1;hR=0.2;vR=0.01;sE=false;sB=true;g=0.;syo=1.5;tyo=1;eso=-5} @Target
+   - setspeed{s=1;delay=65} @Self
+  W7:
+   Cooldown: 80
+   Conditions:
+   - targetWithin 40
+   - offgcd true
+   Skills:
+   - gcd{ticks=75}
+   - setspeed{s=0} @Self
+   - state{state=attack7} @Self
+   - sound{s=entity.skeleton_horse.death;p=1;v=1;delay=15} @Self
+   - summon{type=Ram_Rider;amount=1;radius=5;delay=48;os=true} @self
+   - setspeed{s=1;delay=55} @Self
+  W7V:
+   Cooldown: 80
+   Conditions:
+   - targetWithin 40
+   - offgcd true
+   Skills:
+   - gcd{ticks=75}
+   - state{state=attack7} @Self
+   - sound{s=entity.skeleton_horse.death;p=1;v=1;delay=15} @Self
+   - summon{type=Feral_Spirit;amount=1;radius=5;delay=48;os=true} @self
+   - setspeed{s=0} @Self
+   - setspeed{s=1;delay=55} @Self
+
+# 9997ZH5RHSRNQ6CCVCVYC78ZG33M

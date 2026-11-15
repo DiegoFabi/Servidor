@@ -1,0 +1,611 @@
+Shaman:
+  Type: VINDICATOR
+  Display: Cultist Shaman
+  Health: 400
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  BossBar:
+    Enabled: true
+    Title: '&l&2Cultist Shaman'
+    Range: 80
+    Color: GREEN
+    Style: SEGMENTED_20
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: true
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0.185
+    AttackSpeed: 1
+    NoAI: false
+    Silent: true
+  Skills:
+  - gcd{ticks=30} @self ~onSpawn
+  - state{s=death;delay=25} @Children ~onDeath
+  - remove{delay=186} @Children ~onDeath
+  - summon{type=Totem1;amount=1;radius=0;os=true} @self ~onSpawn
+  - signal{s=summon} @Children ~onDeath
+  - randomskill{s=S1 1, S1_2 1, S2 1, S3 1, S4 1, S5 3, S6 4, S7 1, S8 3} ~onTimer:5
+  - state{state=spawn} @Self ~onSpawn
+  - setAI{ai=false} @self ~onSpawn
+  - setAI{ai=true;delay=25} @self ~onSpawn
+  - potion{type=DAMAGE_RESISTANCE;duration=20;level=100;hasparticles=false} @Self ~onSpawn
+  - cancelevent @self ~onAttack
+  - model{modelid=shaman;damagetint=false} @Self ~onSpawn
+  - state{state=damage} @self ~onDamaged
+  - sound{s=entity.evoker.hurt;p=0.9;v=1.5} @Self ~onDamaged
+  - sound{s=entity.evoker.death;p=0.9;v=3} @Self ~onDeath
+  - skill{s=HP1} @self ~onSpawn
+  - skill{s=HP2} @self ~onSpawn
+  - skill{s=HP3} @self ~onSpawn
+  - skill{s=HP4} @self ~onSpawn
+Shaman_roots:
+ Type: SKELETON
+ Health: 100
+ Display: Roots
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=shaman_roots_1;damagetint=false} @Self ~onSpawn
+ - remove{delay=60} @self ~onSpawn
+ - throw{velocity=1;velocityY=15;delay=21} @PIR{r=0.8} ~onSpawn
+ - damage{a=12;delay=21;pi=true} @EIR{r=0.8} ~onSpawn
+ - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+Spirit_roots:
+ Type: SKELETON
+ Health: 100
+ Display: Roots
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_spike;damagetint=false} @Self ~onSpawn
+ - remove{delay=75} @self ~onSpawn
+ - throw{velocity=5;velocityY=15;delay=13} @PlayersInRadius{r=1.3} ~onSpawn
+ - damage{a=12;delay=13;pi=true} @EIR{r=1.3} ~onSpawn
+ - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+Forest_roots:
+ Type: SKELETON
+ Health: 100
+ Display: Roots
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_roots;damagetint=false} @Self ~onSpawn
+ - remove{delay=76} @self ~onSpawn
+ - stun{d=48;delay=17} @PIR{r=1.1} ~onSpawn
+ - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+Projectile_4:
+ Type: SKELETON
+ Display: Spirit Cut
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_projectile_4;damagetint=false} @Self ~onSpawn
+Projectile_2:
+ Type: SKELETON
+ Display: Spirit Cut
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_projectile_2;damagetint=false} @Self ~onSpawn
+SProjectile_2:
+ Type: SKELETON
+ Display: Spirit 
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=spirit_projectile_2;damagetint=false} @Self ~onSpawn
+SProjectile_1:
+ Type: SKELETON
+ Display: Spirit Cut
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_projectile_1;damagetint=false} @Self ~onSpawn
+SExplosion:
+ Type: SKELETON
+ Display: Spirit 
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=small_spirit_explode;damagetint=false} @Self ~onSpawn
+ - remove{delay=37} @self ~onSpawn
+SArrow:
+ Type: SKELETON
+ Display: Spirit 
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=spirit_arrow;damagetint=false} @Self ~onSpawn
+SArrow2:
+ Type: SKELETON
+ Display: Spirit 
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=spirit_arrow_2;damagetint=false} @Self ~onSpawn
+ - remove{delay=40} @self ~onSpawn
+flying_skull:
+  Type: VINDICATOR
+  Health: 5
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: true
+    FollowRange: 32
+    Silent: true
+    KnockbackResistance: 100
+    MovementSpeed: 0.22
+    AttackSpeed: 1
+  Skills: 
+  - cancelevent @self ~onAttack
+  - gcd{15} @self ~onSpawn
+  - potion{type=SLOW;duration=10;level=6;hasparticles=false} @self ~onSpawn
+  - metaskill{skill=AS1} @Self ~onTimer:20
+  - model{modelid=flying_skull;damagetint=false} @Self ~onSpawn
+  - state{state=damage} @Self ~onDamaged
+  - sound{s=entity.skeleton.hurt;p=1.2;v=1.5} @Self ~onDamaged
+  - sound{s=entity.skeleton.death;p=1.2;v=1.5} @Self ~onDeath
+  - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+  - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+  - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+  - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+  - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+lost_explorer:
+  Type: VINDICATOR
+  Health: 5
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: true
+    FollowRange: 32
+    Silent: true
+    KnockbackResistance: 100
+    MovementSpeed: 0.18
+    AttackSpeed: 1
+  Skills: 
+  - cancelevent @self ~onAttack
+  - gcd{25} @self ~onSpawn
+  - potion{type=SLOW;duration=25;level=6;hasparticles=false} @self ~onSpawn
+  - randomskill{skills=EX1 1, EX2 1, EX3 0.8} @Self ~onTimer:20
+  - model{modelid=lost_explorer;damagetint=false} @Self ~onSpawn
+  - state{state=damage} @Self ~onDamaged
+  - sound{s=entity.skeleton.hurt;p=0.9;v=1.5} @Self ~onDamaged
+  - sound{s=entity.skeleton.death;p=0.9;v=1.5} @Self ~onDeath
+  - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+  - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+  - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+  - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+  - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+ELantern:
+ Type: SKELETON
+ Display: Spirit 
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=lost_explorer_lantern;damagetint=false} @Self ~onSpawn
+Totem1:
+ Type: SKELETON
+ Display: Totem
+ Health: 10000
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - summon{type=Spirit_Totem;amount=1;radius=0;os=true;sip=false;sio=false;delay=176} @Self ~onSignal
+ - model{modelid=forest_spirit_totem;damagetint=false} @Self ~onSpawn
+ - sound{s=block.respawn_anchor.charge;p=1;v=5;delay=100} @Self ~onSignal
+ - sound{s=block.grass.break;p=0;v=0.5;delay=50} @Self ~onSignal
+ - sound{s=block.grass.break;p=0;v=0.5;delay=55} @Self ~onSignal
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=45} @Self ~onSignal
+ - sound{s=block.roots.break;p=0;v=0.5;delay=60} @Self ~onSignal
+Spirit_Totem:
+  Type: VINDICATOR
+  Display: Spirit Totem
+  Health: 550
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  BossBar:
+    Enabled: true
+    Title: '&l&2Spirit Totem'
+    Range: 80
+    Color: GREEN
+    Style: SEGMENTED_20
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: false
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0.185
+    AttackSpeed: 1
+    NoAI: true
+    Silent: true
+  Skills:
+  - potion{type=DAMAGE_RESISTANCE;duration=250;level=100;hasparticles=false} @Self ~onSpawn
+  - summon{type=Forest_Spirit;amount=1;radius=0;os=true;delay=35} @Self ~onSpawn
+  - cancelevent @self ~onAttack
+  - signal{s=die} @Children ~onDeath
+  - damage{a=20000;pi=true} @Children ~onDeath
+  - summon{type=Storm;amount=1;radius=0;os=true;delay=150} @Self ~onSpawn
+  - state{state=damage} @self ~onDamaged
+  - sound{s=block.mangrove_roots.break;p=0.8;v=1.5} @Self ~onDamaged
+  - sound{s=block.respawn_anchor.deplete;p=0.4;v=5} @Self ~onDeath
+  - sound{s=entity.zombie.break_wooden_door;p=0;v=5} @Self ~onDeath
+  - sound{s=entity.allay.hurt;p=0.5;v=4;delay=10} @Self ~onDeath
+  - sound{s=entity.allay.item_taken;p=0;v=5} @Self ~onSpawn
+  - sound{s=block.sculk_shrieker.shriek;p=0;v=5;delay=16} @Self ~onSpawn
+  - model{modelid=forest_spirit_activated_totem;damagetint=false} @Self ~onSpawn
+  - skill{s=HP1} @self ~onSpawn
+  - skill{s=HP2} @self ~onSpawn
+  - skill{s=HP3} @self ~onSpawn
+  - skill{s=HP4} @self ~onSpawn
+Forest_Spirit:
+  Type: SKELETON
+  Display: Forest Spirit
+  Health: 10000
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  Modules:
+   ThreatTable: true
+  Options:
+    NoGravity: false
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: false
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0
+    AttackSpeed: 1
+    Invincible: false
+    NoAI: false
+    Silent: true
+  Skills:
+  - gcd{ticks=325} @self ~onSpawn
+  - summon{type=Spirit_roots;amount=1;radius=0;os=true} @PIR{r=50} ~onTimer:200
+  - summon{type=Forest_roots;amount=1;radius=0;os=true} @PIR{r=50} ~onTimer:160
+  - summon{type=Spirit_roots;amount=5;radius=8;os=true} @PIR{r=50} ~onTimer:278
+  - randomskill{s=FS1 1, FS2 1, FS3 1, FS4 1, FS5 1, FS71 1, FS72 1, FSM1 0.4, FSM2 0.2} ~onTimer:20
+  - look{headOnly=true;immediately=true} @Target ~onTimer:1
+  - suicide @self ~onSignal
+  - summon{type=Forest_Spirit_Base;amount=1;radius=0;os=true;delay=280} @Self ~onSpawn
+  - threat{mode=forcetop} @NearestPlayer ~onTimer:80
+  - sound{s=item.firecharge.use;p=0;v=5;delay=100} @Self ~onSpawn
+  - sound{s=entity.skeleton_horse.death;p=0;v=5;delay=125} @Self ~onSpawn
+  - sound{s=entity.wither_skeleton.hurt;p=0;v=5;delay=69} @Self ~onDeath
+  - model{modelid=forest_spirit;damagetint=false} @Self ~onSpawn
+  - state{s=death} @Children ~onDeath
+  - remove{delay=20} @Children ~onDeath
+Forest_Spirit_Base:
+  Type: COD
+  Display: Forest Spirit
+  Health: 400
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  Modules:
+   ThreatTable: true
+  Options:
+    NoGravity: true
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: false
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0
+    AttackSpeed: 1
+    Invincible: true
+    NoAI: true
+    Silent: true
+  Skills:
+  - model{modelid=forest_spirit_base;damagetint=false} @Self ~onSpawn
+  - damage{a=10;pi=true} @PIR{r=5.5} ~onTimer:8
+SExplosion1:
+ Type: SKELETON
+ Display: Spirit 
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=small_spirit_explode;damagetint=false} @Self ~onSpawn
+ - damage{a=50;pi=true} @PIR{r=4.5} ~onSpawn
+ - shieldbreak{duration=150} @PIR{r=4.5} ~onSpawn
+ - throw{velocity=24;velocityY=6} @PlayersInRadius{r=4.5} ~onSpawn
+ - skill{s=FSEP} @self ~onSpawn
+ - remove{delay=37} @self ~onSpawn
+Projectile_3:
+ Type: SKELETON
+ Display: Spirit Cut
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_projectile_3;damagetint=false} @Self ~onSpawn
+Projectile_5:
+ Type: SKELETON
+ Display: Spirit Cut
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_projectile_5;damagetint=false} @Self ~onSpawn
+Projectile_6:
+ Type: SKELETON
+ Display: Spirit Cut
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=forest_spirit_projectile_6;damagetint=false} @Self ~onSpawn
+Storm:
+ Type: SKELETON
+ Display: Totem
+ Health: 10000
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: false
+  NoAI: true
+  Invincible: false
+ Skills:
+ - model{modelid=forest_spirit_storm;damagetint=false} @Self ~onSpawn
+ - summon{type=Slightning;amount=1;radius=0;os=true} @PIR{r=50} ~onTimer:100
+ - summon{type=Slightning;amount=4;radius=5;os=true} @PIR{r=50} ~onTimer:231
+ - suicide @self ~onSignal
+ - state{s=attack} @self ~onTimer:100
+Slightning:
+ Type: SKELETON
+ Display: Totem
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: false
+  NoAI: true
+  Invincible: true
+ Skills:
+ - sound{s=entity.lightning_bolt.thunder;p=1;v=1.2;delay=23} @Self ~onSpawn
+ - sound{s=entity.lightning_bolt.impact;p=2;v=1;delay=23} @Self ~onSpawn
+ - model{modelid=spirit_lightning_bolt;damagetint=false} @Self ~onSpawn
+ - damage{a=15;pi=true;delay=23} @PIR{r=1.2} ~onSpawn
+ - remove{delay=45} @self ~onSpawn

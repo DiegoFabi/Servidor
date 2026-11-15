@@ -1,0 +1,277 @@
+Feral_Spirit:
+  Type: VINDICATOR
+  Display: Feral Spirit
+  Health: 65
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: true
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0.38
+    AttackSpeed: 1
+    Invincible: false
+    NoAI: false
+    Silent: true
+  Skills:
+  - randomskill{s=Feral1 0.5, Feral2 0.5, Feral3 1, Feral4 1} ~onTimer:10
+  - gcd{ticks=100} @self ~onSpawn
+  - setAI{ai=false} @self ~onSpawn
+  - setAI{ai=true;delay=90} @self ~onSpawn
+  - cancelevent @self ~onAttack
+  - model{modelid=feral_spirit;damagetint=false} @Self ~onSpawn
+  - state{state=damage} @Self ~onDamaged
+  - sound{s=entity.husk.hurt;p=0;v=0.5} @Self ~onDamaged
+  - sound{s=entity.allay.hurt;p=0.6;v=0.5;delay=15} @Self ~onDeath
+  - sound{s=entity.husk.death;p=0;v=0.5} @Self ~onDeath
+  - sound{s=item.armor.equip_elytra;p=0.2;v=0.5;delay=35} @Self ~onDeath
+  - sound{s=entity.blaze.ambient;p=2;v=0.7} @Self ~onSpawn
+  - sound{s=block.beacon.ambient;p=0.3;v=1;delay=5} @Self ~onSpawn
+  - sound{s=block.respawn_anchor.ambient;p=2;v=1;delay=3} @Self ~onSpawn
+  - sound{s=block.basalt.fall;p=0.2;v=1;delay=80} @Self ~onSpawn
+Ram_Rider:
+  Type: VINDICATOR
+  Display: Ram Rider
+  Health: 65
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: true
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0.42
+    AttackSpeed: 1
+    Invincible: false
+    NoAI: false
+    Silent: true
+  Skills:
+  - sound{s=entity.allay.hurt;p=0.6;v=0.5;delay=15} @Self ~onDeath
+  - sound{s=item.armor.equip_elytra;p=0.2;v=0.5;delay=35} @Self ~onDeath
+  - sound{s=entity.goat.prepare_ram;p=0.4;v=1} @Self ~onDeath
+  - sound{s=entity.pillager.death;p=1;v=0.5} @Self ~onDeath
+  - sound{s=entity.zombie_horse.hurt;p=0.9;v=0.5} @Self ~onDamaged
+  - sound{s=entity.pillager.hurt;p=1;v=0.5} @Self ~onDamaged
+  - randomskill{s=Ram1 1,Ram2 1, Ram3 1, Ram4 1, Ram5 1, Ram6 1, Ram7 1} ~onTimer:15
+  - gcd{ticks=60} @self ~onSpawn
+  - setAI{ai=false} @self ~onSpawn
+  - setAI{ai=true;delay=50} @self ~onSpawn
+  - cancelevent @self ~onAttack
+  - model{modelid=ram_rider;damagetint=false} @Self ~onSpawn
+  - state{state=damage} @Self ~onDamaged
+Wendigo:
+  Type: VINDICATOR
+  Display: Wendigo
+  Health: 200
+  Faction: Forest Depths
+  Damage: 0
+  Armor: 0
+  DamageModifiers:
+  - FALL 0
+  Modules:
+   ThreatTable: true
+  Options:
+    PreventOtherDrops: true
+    Despawn: false
+    MaxCombatDistance: 256
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    AttackSpeed: 0.18
+    Collidable: true
+    FollowRange: 80
+    KnockbackResistance: 100
+    MovementSpeed: 0.20
+    AttackSpeed: 1
+    Invincible: false
+    NoAI: false
+    Silent: true
+  Skills:
+  - randomskill{s=W1 1, W2 1, W3 1, W4 1, Root1 0.7, Root2 0.7, Root3 0.7, W6 1, W7 0.4, W7V 0.5} ~onTimer:40
+  - sound{s=entity.allay.hurt;p=0.6;v=0.5;delay=38} @Self ~onDeath
+  - sound{s=item.armor.equip_elytra;p=0.2;v=0.5;delay=65} @Self ~onDeath
+  - sound{s=entity.camel.death;p=0;v=2} @Self ~onDeath
+  - effect:particles{particle=block;m=dirt;amount=40;hS=2;vS=0;y=0;repeat=40;repeatinterval=3;delay=40} @self ~onSpawn
+  - sound{s=block.gravel.break;p=0;v=1;repeat=20;repeatinterval=5;delay=40} @Self ~onSpawn
+  - gcd{ticks=245} @self ~onSpawn
+  - setAI{ai=false} @self ~onSpawn
+  - setAI{ai=true;delay=230} @self ~onSpawn
+  - cancelevent @self ~onAttack
+  - model{modelid=wendigo;damagetint=false} @Self ~onSpawn
+  - state{state=damage} @Self ~onDamaged
+  - sound{s=entity.camel.hurt;p=0.5;v=0.5} @Self ~onDamaged
+  - sound{s=entity.blaze.ambient;p=2;v=0.8;delay=20} @Self ~onSpawn
+  - sound{s=block.beacon.ambient;p=0.3;v=3;delay=85} @Self ~onSpawn
+  - sound{s=item.armor.equip_elytra;p=0.2;v=0.5;delay=185} @Self ~onSpawn
+  - sound{s=block.respawn_anchor.ambient;p=2;v=3;delay=85} @Self ~onSpawn
+Spirit_Projectile:
+ Type: SKELETON
+ Display: Spirit
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=spirit_projectile;damagetint=false} @Self ~onSpawn
+Ram_Projectile:
+ Type: SKELETON
+ Display: Spirit
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=ram_rider_projectile;damagetint=false} @Self ~onSpawn
+Ram_Spear:
+ Type: SKELETON
+ Health: 100
+ Display: Ram Spear
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=ram_rider_spear2;damagetint=false} @Self ~onSpawn
+ - state{state=spawn} @self ~onSpawn
+ - remove{delay=40} @self ~onSpawn
+ - sound{s=item.trident.hit;p=0.4;v=0.5;delay=1} @Self ~onSpawn
+Ram_Spear2:
+ Type: SKELETON
+ Display: Spear
+ Health: 100
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=ram_rider_spear;damagetint=false} @Self ~onSpawn
+WendigoRoots1:
+ Type: SKELETON
+ Health: 100
+ Display: Roots
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=wendigo_roots_1;damagetint=false} @Self ~onSpawn
+ - remove{delay=60} @self ~onSpawn
+ - throw{velocity=1;velocityY=15;delay=21} @EIR{r=1.1} ~onSpawn
+ - damage{a=12;delay=21;pi=true} @EIR{r=1.1} ~onSpawn
+ - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+WendigoRoots2:
+ Type: SKELETON
+ Health: 100
+ Display: Roots
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=wendigo_roots_2;damagetint=false} @Self ~onSpawn
+ - remove{delay=76} @self ~onSpawn
+ - stun{d=48;delay=11} @EIR{r=0.8} ~onSpawn
+ - effect:particles{particle=block;m=dirt;amount=25;hS=0.1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn
+WendigoRoots3:
+ Type: SKELETON
+ Health: 100
+ Display: Roots
+ Faction: Forest Depths
+ Options:
+  PreventOtherDrops: true
+  Despawn: false
+  MaxCombatDistance: 256
+  Silent: true
+  PreventRandomEquipment: true
+  PreventSunburn: true
+  AttackSpeed: 0.18
+  Collidable: true
+  NoAI: true
+  Invincible: true
+ Skills:
+ - model{modelid=wendigo_roots_3;damagetint=false} @Self ~onSpawn
+ - remove{delay=42} @self ~onSpawn
+ - damage{a=20;delay=12;pi=true} @EIR{r=6} ~onSpawn
+ - effect:particles{particle=block;m=dirt;amount=100;hS=1;vS=0;y=0;repeat=5;repeatinterval=4} @self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=1} @Self ~onSpawn
+ - sound{s=block.grass.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.mangrove_roots.break;p=0;v=0.5;delay=18} @Self ~onSpawn
+ - sound{s=block.roots.break;p=0;v=0.5;delay=20} @Self ~onSpawn

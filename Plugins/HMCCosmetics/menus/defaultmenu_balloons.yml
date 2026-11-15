@@ -80,3 +80,87 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: bat_balloon
+  ero_summer_vehicles_v2_cosmetics_bus_stop_balloon:
+    slots:
+    - 2
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_bus_stop_balloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_bus_stop_balloon%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_bus_stop_balloon%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_bus_stop_balloon
+  ero_summer_vehicles_v2_cosmetics_can_balloon:
+    slots:
+    - 3
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_can_balloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_can_balloon%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_can_balloon%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_can_balloon
+  ero_summer_vehicles_v2_cosmetics_cloud_balloon:
+    slots:
+    - 4
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_cloud_balloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_cloud_balloon%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_cloud_balloon%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_cloud_balloon
+  ero_summer_vehicles_v2_cosmetics_sunflower_balloon:
+    slots:
+    - 5
+    item:
+      material: hmccosmetics:ero_summer_vehicles_v2_cosmetics_sunflower_balloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Vehículos de Verano'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ero_summer_vehicles_v2_cosmetics_sunflower_balloon%%HMCCosmetics_equipped_ero_summer_vehicles_v2_cosmetics_sunflower_balloon%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Evento de Verano
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ero_summer_vehicles_v2_cosmetics_sunflower_balloon

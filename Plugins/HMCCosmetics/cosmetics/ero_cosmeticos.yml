@@ -1,0 +1,170 @@
+# Cosméticos de los packs de Erocavontic (Mini Disfraz Navideño y Vehículos de Verano Vol. 2).
+# Modelos e items en Nexo: Nexo/items/ero_cosmetics/*.yml y Nexo/pack/assets/ero_*
+# Globos: modelos ModelEngine en ModelEngine/blueprints/ero_summer_vehicles_v2
+# Permiso de cada uno: hmccosmetics.<id>
+xmas_mini_costume_gingerbread_hat:
+  slot: HELMET
+  permission: hmccosmetics.xmas_mini_costume_gingerbread_hat
+  dyeable: true
+  item:
+    material: nexo:xmas_mini_costume_cosmetics_gingerbread_hat
+    name: <gradient:#FF6B6B:#2E8B57>Gorro de Jengibre</gradient>
+    amount: 1
+xmas_mini_costume_snowman_santa:
+  slot: HELMET
+  permission: hmccosmetics.xmas_mini_costume_snowman_santa
+  dyeable: true
+  item:
+    material: nexo:xmas_mini_costume_cosmetics_snowman_santa
+    name: <gradient:#FF6B6B:#2E8B57>Muñeco de Nieve Santa</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_bus_driver_hat:
+  slot: HELMET
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_bus_driver_hat
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_bus_driver_hat
+    name: <gradient:#FFD36B:#4FC3F7>Gorra de Chofer de Bus</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_drinking_helmet:
+  slot: HELMET
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_drinking_helmet
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_drinking_helmet
+    name: <gradient:#FFD36B:#4FC3F7>Casco Bebedor</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_pink_helmet:
+  slot: HELMET
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_pink_helmet
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_pink_helmet
+    name: <gradient:#FFD36B:#4FC3F7>Casco Rosa</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_umbrella_hat:
+  slot: HELMET
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_umbrella_hat
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_umbrella_hat
+    name: <gradient:#FFD36B:#4FC3F7>Sombrero Paraguas</gradient>
+    amount: 1
+xmas_mini_costume_gingerbread_plushie:
+  slot: BACKPACK
+  permission: hmccosmetics.xmas_mini_costume_gingerbread_plushie
+  dyeable: true
+  height: 4
+  item:
+    material: nexo:xmas_mini_costume_cosmetics_gingerbread_plushie_normal_2
+    name: <gradient:#FF6B6B:#2E8B57>Peluche de Jengibre</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:xmas_mini_costume_cosmetics_gingerbread_plushie_self_2
+    name: <gradient:#FF6B6B:#2E8B57>Peluche de Jengibre</gradient>
+    amount: 1
+xmas_mini_costume_snowman_plushie:
+  slot: BACKPACK
+  permission: hmccosmetics.xmas_mini_costume_snowman_plushie
+  dyeable: true
+  height: 4
+  item:
+    material: nexo:xmas_mini_costume_cosmetics_snowman_plushie_normal_2
+    name: <gradient:#FF6B6B:#2E8B57>Peluche de Muñeco de Nieve</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:xmas_mini_costume_cosmetics_snowman_plushie_self_2
+    name: <gradient:#FF6B6B:#2E8B57>Peluche de Muñeco de Nieve</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_bus_backpack:
+  slot: BACKPACK
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_bus_backpack
+  height: 4
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_bus_backpack_normal_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Autobús</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_bus_backpack_self_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Autobús</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_car_backpack:
+  slot: BACKPACK
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_car_backpack
+  height: 4
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_car_backpack_normal_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Coche</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_car_backpack_self_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Coche</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_motorcycle_backpack:
+  slot: BACKPACK
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_motorcycle_backpack
+  height: 4
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_motorcycle_backpack_normal_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Moto</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_motorcycle_backpack_self_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Moto</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_van_backpack:
+  slot: BACKPACK
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_van_backpack
+  height: 4
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_van_backpack_normal_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Furgoneta</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_van_backpack_self_2
+    name: <gradient:#FFD36B:#4FC3F7>Mochila Furgoneta</gradient>
+    amount: 1
+xmas_mini_costume_marshmello_whipped_cream:
+  slot: OFFHAND
+  permission: hmccosmetics.xmas_mini_costume_marshmello_whipped_cream
+  dyeable: true
+  item:
+    material: nexo:xmas_mini_costume_marshmello_whipped_cream_offhand_cosmetic
+    name: <gradient:#FF6B6B:#2E8B57>Chocolate con Malvaviscos</gradient>
+    amount: 1
+xmas_mini_costume_snowglobe:
+  slot: OFFHAND
+  permission: hmccosmetics.xmas_mini_costume_snowglobe
+  dyeable: true
+  item:
+    material: nexo:xmas_mini_costume_snowglobe_offhand_cosmetic
+    name: <gradient:#FF6B6B:#2E8B57>Bola de Nieve de Cristal</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_bus_stop_balloon:
+  slot: BALLOON
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_bus_stop_balloon
+  model: ero_summer_vehicles_v2_cosmetics_bus_stop_balloon
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_bus_stop_balloon
+    name: <gradient:#FFD36B:#4FC3F7>Globo Parada de Bus</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_can_balloon:
+  slot: BALLOON
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_can_balloon
+  model: ero_summer_vehicles_v2_cosmetics_can_balloon
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_can_balloon
+    name: <gradient:#FFD36B:#4FC3F7>Globo Lata de Refresco</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_cloud_balloon:
+  slot: BALLOON
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_cloud_balloon
+  model: ero_summer_vehicles_v2_cosmetics_cloud_balloon
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_cloud_balloon
+    name: <gradient:#FFD36B:#4FC3F7>Globo Nube</gradient>
+    amount: 1
+ero_summer_vehicles_v2_cosmetics_sunflower_balloon:
+  slot: BALLOON
+  permission: hmccosmetics.ero_summer_vehicles_v2_cosmetics_sunflower_balloon
+  model: ero_summer_vehicles_v2_cosmetics_sunflower_balloon
+  item:
+    material: nexo:ero_summer_vehicles_v2_cosmetics_sunflower_balloon
+    name: <gradient:#FFD36B:#4FC3F7>Globo Girasol</gradient>
+    amount: 1
