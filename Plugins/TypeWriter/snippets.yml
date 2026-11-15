@@ -1,7 +1,5 @@
 entity:
-  nameplate: |-
-    <other>
-    <reset><display_name>
+  nameplate: <other>
   name:
     offset: 0.2
     color: '#40000000'
