@@ -22,6 +22,12 @@ settings:
 #      description: Description
 
 sounds:
+- id: nexo:music.observatory
+  # Música del tutorial (Observatory). OGG Vorbis mono q0: 497 KB (el MP3 pesaba 1,2 MB)
+  sound: nexo:music/observatory.ogg
+  stream: true
+  volume: 1.0
+  pitch: 1.0
 - id: nexo:music.talking
   sound: nexo:music/talking.ogg
   stream: true
