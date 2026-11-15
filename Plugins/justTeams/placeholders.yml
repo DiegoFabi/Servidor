@@ -262,7 +262,7 @@ team_display:
   format: "<team_color><team_icon><team_tag></team_color>"
   
   # Fallback when player is not in a team
-  no_team: "<gray>No Team</gray>"
+  no_team: "<gray>Sin Equipo</gray>"
   
   # Display options
   # show_name puts the team name in front of the tag. With features.team_tag: false

@@ -31,6 +31,8 @@ Chat:
     Components:
       player_info:
         Text: '<hover:show_text:"<gray>Player: <light_purple>%player_name%</light_purple><br>Nickname: <light_purple>%player_display_name%</light_purple><br><br><gray>(Click to message)</gray></gray>"><click:suggest_command:"/msg %player_name% ">%player_display_name%</click></hover>'
+      clan:
+        Text: '<hover:show_text:"<gray>Clan: <white>%justteams_name%</white><br><gray>Usa <soft_green>/team</soft_green> para gestionarlo">%justteams_display%</hover> '
       rank_owner:
         Text: <hover:show_text:"<gray>This player is the server <soft_yellow>Owner</soft_yellow></gray>">%player_prefix%</hover>
       rank_member:
@@ -44,13 +46,13 @@ Chat:
     User:
       owner:
         Priority: 100
-        Format: '%rank_owner%%player_info%: <gray>%message%</gray>'
+        Format: '%clan%%rank_owner%%player_info%: <gray>%message%</gray>'
         Ranks:
         - owner
         - admin
       default:
         Priority: 0
-        Format: '%rank_member%%player_info%: <gray>%message%</gray>'
+        Format: '%clan%%rank_member%%player_info%: <gray>%message%</gray>'
         Ranks:
         - '*'
     # Fallback chat message format used when no other format is available for a player.
