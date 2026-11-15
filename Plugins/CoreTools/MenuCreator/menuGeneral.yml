@@ -1,5 +1,5 @@
 # Menu principal (fondo wallet_1). Abrir: /coremenu menuMain
-# Cuadricula 3x4: 4, 5, 6 / 13, 14, 15 / 22, 23, 24 / 31, 32, 33 (libres)
+# Cuadricula 3x4: 4, 5, 6 / 13, 14, 15 / 22, 23, 24 / 31 subastas, 32 historia, 33 encantamientos
 # Retrato: perfil (cabeza grande, slot 10) y Discord (slot 19)
 # Iconos de los tooltips: glyphs de Nexo (<glyph:id>)
 menuMain:
@@ -168,6 +168,102 @@ menuMain:
       shift_right_click:
         Scripts:
         - menumain_discord_click
+    subastas:
+      location: top
+      slots:
+      - 31
+      source: vanilla
+      material: gold_ingot
+      name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Subastas</gradient>
+      lore:
+      - <#C9CDD6>Compra y vende objetos con
+      - <#C9CDD6>otros jugadores del servidor.
+      - ''
+      - '<#9EA3AE>Incluye:'
+      - <white><glyph:shopping_cart> <#E6E8EE>Publica tus objetos a la venta
+      - <white><glyph:gold_coin> <#E6E8EE>Pago en <#FFD36B>Moneda
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir las subastas
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_subastas_click
+      right_click:
+        Scripts:
+        - menumain_subastas_click
+      shift_left_click:
+        Scripts:
+        - menumain_subastas_click
+      shift_right_click:
+        Scripts:
+        - menumain_subastas_click
+    historia:
+      location: top
+      slots:
+      - 32
+      source: vanilla
+      material: writable_book
+      name: <white><glyph:stacked_books> <gradient:#FFE29A:#FFB347>Historia</gradient>
+      lore:
+      - <#C9CDD6>Revive el Capítulo 1 del reino
+      - <#C9CDD6>y las partes que ya descubriste.
+      - ''
+      - '<#9EA3AE>Incluye:'
+      - <white><glyph:crown> <#E6E8EE>El Rey sin Memoria y la Maleza
+      - <white><glyph:star> <#E6E8EE>Avanza hablando con los NPCs
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para leer tu historia
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_historia_click
+      right_click:
+        Scripts:
+        - menumain_historia_click
+      shift_left_click:
+        Scripts:
+        - menumain_historia_click
+      shift_right_click:
+        Scripts:
+        - menumain_historia_click
+    encantamientos:
+      location: top
+      slots:
+      - 33
+      source: vanilla
+      material: enchanted_book
+      name: <white><glyph:high_voltage> <gradient:#FFE29A:#FFB347>Encantamientos</gradient>
+      lore:
+      - <#C9CDD6>Descubre los encantamientos
+      - <#C9CDD6>personalizados del servidor.
+      - ''
+      - '<#9EA3AE>Incluye:'
+      - <white><glyph:potion> <#E6E8EE>Efectos, rarezas y niveles
+      - <white><glyph:light_bulb> <#E6E8EE>Para qué objeto sirve cada uno
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para ver los encantamientos
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_encantamientos_click
+      right_click:
+        Scripts:
+        - menumain_encantamientos_click
+      shift_left_click:
+        Scripts:
+        - menumain_encantamientos_click
+      shift_right_click:
+        Scripts:
+        - menumain_encantamientos_click
     tienda:
       location: top
       slots:

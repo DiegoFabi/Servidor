@@ -2,7 +2,7 @@
 panelTP:
   permission: ''
   bottom_inventory: false
-  name: '㈮㈮&f㈽'
+  name: ㈮㈮&f㈽
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -43,21 +43,22 @@ panelTP:
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      name: '<#A6F25B>Mundo: Overworld'
       lore:
-      - '<#7CFC9A>Descripción:'
-      - '&8• &fViaja al centro del mundo de'
-      - '  &fsupervivencia, consigue recursos'
-      - '  &fy empieza a construir tu hogar.'
-      - '&7'
-      - '<#7CFC9A>Información'
-      - '  &8• &7Tamaño: &f30,000 x 30,000'
-      - '  &8• &7Precio RTP: &f&aGratis'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '&e➜ Click para teletransportarte'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Mundo <#A6F25B>normal</#A6F25B> donde podrás <#F28BB6>crear</#F28BB6>
+      - <white>tu casa y <#C9A8FF>desarrollar</#C9A8FF> tu survival.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>30.000 x 30.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
+      - ''
+      - <#A6F25B>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - paneltp_b1_click
@@ -77,16 +78,19 @@ panelTP:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5ZDkxNGExMmMxN2NjY2I1NTg5OTI4NWEwNjY5MDJiYTUzOTc2ODA3NDA3ZmNiODY5NmRiZTE5YWVmNzcifX19
-      name: '<#E296F3>&l⚑ Lugares del Servidor'
+      name: <#E296F3>Lugares del Servidor
       lore:
-      - '<#E296F3>Descripción:'
-      - '&8• &fDimensiones, ciudades, dungeons,'
-      - '  &fjefes y mucho más; todo'
-      - '  &fpersonalizado y optimizado.'
-      - '&7'
-      - '&e➜ Click para ver los lugares disponibles'
+      - <#9EA3AE>Selector de lugares <glyph:castle_entrance>
+      - ''
+      - <white><#E296F3>Dimensiones</#E296F3>, <#FFD54F>ciudades</#FFD54F>, <#7FD8FF>dungeons</#7FD8FF>,
+      - <white><#FF7A8A>jefes</#FF7A8A> y mucho más por descubrir.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Todo: <#E296F3>Personalizado y optimizado ✔'
+      - ''
+      - <#E296F3>❖ ¡Click para <bold>EXPLORAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - paneltp_b2_click
@@ -106,26 +110,24 @@ panelTP:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM0NTg3NWU5MjFhMTQ1ZjkyMDM4ODU4YWVlY2MzYzJmMDgzNDQxZWJjNWM4MjY1ZDMxYTI4MWQyNjhlMzY1YiJ9fX0=
-      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      name: '<#FF7A8A>Mundo: El Nether'
       lore:
-      - '<#FF6B5C>Descripción:'
-      - '&8• &fEntra solo si cuentas con buen'
-      - '  &fequipo y los recursos necesarios'
-      - '  &fpara sobrevivir a criaturas fuertes.'
-      - '&7'
-      - '<#FF6B5C>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,000'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#FF6B5C>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '&e➜ Click para ver el menú de Nether'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Viaja al <#FF7A8A>Nether</#FF7A8A> y consigue
+      - <white>varios <#FFD36B>materiales</#FFD36B> con buen equipo.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.000 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#FF7A8A>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - paneltp_b3_click
@@ -145,21 +147,22 @@ panelTP:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEyYTAzYTRjMTFiNGQ0NzI0NzJlN2U0NTkzZDJlMTI2YTYyNTllMzNjYzgxZjQ0ZWIwNWNmMDQyZDA3Njk2NyJ9fX0=
-      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      name: '<#A6F25B>Mundo: Overworld'
       lore:
-      - '<#7CFC9A>Descripción:'
-      - '&8• &fViaja al centro del mundo de'
-      - '  &fsupervivencia, consigue recursos'
-      - '  &fy empieza a construir tu hogar.'
-      - '&7'
-      - '<#7CFC9A>Información'
-      - '  &8• &7Tamaño: &f30,000 x 30,000'
-      - '  &8• &7Precio RTP: &f&aGratis'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '&e➜ Click para teletransportarte'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Mundo <#A6F25B>normal</#A6F25B> donde podrás <#F28BB6>crear</#F28BB6>
+      - <white>tu casa y <#C9A8FF>desarrollar</#C9A8FF> tu survival.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>30.000 x 30.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
+      - ''
+      - <#A6F25B>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - paneltp_b4_click
@@ -179,29 +182,24 @@ panelTP:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjZjZTljODFkODRhNjk4MWQ0YzViM2RjMDlhYmIxMjFlYzdhODA3OTE5MjY1Zjg3MWE1YTdiMWE4ZjIxIn19fQ==
-      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      name: '<#C9A8FF>Mundo: El End'
       lore:
-      - '<#B48CFF>Descripción:'
-      - '&8• &fEsta dimensión no es el final del'
-      - '  &fjuego: aquí conseguirás materiales'
-      - '  &fy herramientas únicas del mundo.'
-      - '&7'
-      - '<#B48CFF>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,800'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#B48CFF>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '<#B48CFF>Evento'
-      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
-      - '&7'
-      - '&e➜ Click para ver el menú de The End'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Consigue <#C9A8FF>materiales</#C9A8FF> únicos
+      - <white>y ve a matar a la <#F28BB6>dragona</#F28BB6>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dragona: <#E296F3>Reaparece cada semana <glyph:star>'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.800 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#C9A8FF>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - paneltp_b5_click
@@ -220,20 +218,22 @@ panelTP:
       - 43
       source: vanilla
       material: SHIELD
-      name: '<#FFD54F>&l♜ Imperio del Rey &8- &7Orian'
+      name: '<#FFD54F>Mundo: Orian'
       lore:
-      - '<#FFD54F>Descripción:'
-      - '&8• &fEncanta tus armas, compra objetos,'
-      - '  &fpelea contra mobs y mucho más.'
-      - '&7'
-      - '<#FFD54F>Información'
-      - '  &8• &7Mundo: &fOrian'
-      - '  &8• &7Precio: &f&aGratis'
-      - '&7'
-      - '&e➜ Click para viajar a la ciudad'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - '<white>La ciudad del <#FFD54F>Imperio del Rey</#FFD54F>: encanta,'
+      - <white><#7FD8FF>compra</#7FD8FF> objetos y pelea contra <#FF7A8A>mobs</#FF7A8A>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Tipo: <#FFD54F>Ciudad principal <glyph:crown>'
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Precio: <#7FFF9E>Gratis ✔'
+      - ''
+      - <#FFD54F>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
       enchantments:
       - unbreaking 1
       left_click:
@@ -251,7 +251,7 @@ panelTP:
 NetherMenu:
   permission: ''
   bottom_inventory: false
-  name: '㈮㈮&f㉝'
+  name: ㈮㈮&f㉝
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -290,26 +290,24 @@ NetherMenu:
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      name: '<#FF7A8A>Mundo: El Nether'
       lore:
-      - '<#FF6B5C>Descripción:'
-      - '&8• &fEntra solo si cuentas con buen'
-      - '  &fequipo y los recursos necesarios'
-      - '  &fpara sobrevivir a criaturas fuertes.'
-      - '&7'
-      - '<#FF6B5C>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,000'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#FF6B5C>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '&e➜ Click para teletransportarte'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Viaja al <#FF7A8A>Nether</#FF7A8A> y consigue
+      - <white>varios <#FFD36B>materiales</#FFD36B> con buen equipo.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.000 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#FF7A8A>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - nethermenu_b1_click
@@ -329,16 +327,19 @@ NetherMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5ZDkxNGExMmMxN2NjY2I1NTg5OTI4NWEwNjY5MDJiYTUzOTc2ODA3NDA3ZmNiODY5NmRiZTE5YWVmNzcifX19
-      name: '<#E296F3>&l⚑ Lugares del Servidor'
+      name: <#E296F3>Lugares del Servidor
       lore:
-      - '<#E296F3>Descripción:'
-      - '&8• &fDimensiones, ciudades, dungeons,'
-      - '  &fjefes y mucho más; todo'
-      - '  &fpersonalizado y optimizado.'
-      - '&7'
-      - '&e➜ Click para ver los lugares disponibles'
+      - <#9EA3AE>Selector de lugares <glyph:castle_entrance>
+      - ''
+      - <white><#E296F3>Dimensiones</#E296F3>, <#FFD54F>ciudades</#FFD54F>, <#7FD8FF>dungeons</#7FD8FF>,
+      - <white><#FF7A8A>jefes</#FF7A8A> y mucho más por descubrir.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Todo: <#E296F3>Personalizado y optimizado ✔'
+      - ''
+      - <#E296F3>❖ ¡Click para <bold>EXPLORAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - nethermenu_b2_click
@@ -358,26 +359,24 @@ NetherMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM0NTg3NWU5MjFhMTQ1ZjkyMDM4ODU4YWVlY2MzYzJmMDgzNDQxZWJjNWM4MjY1ZDMxYTI4MWQyNjhlMzY1YiJ9fX0=
-      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      name: '<#FF7A8A>Mundo: El Nether'
       lore:
-      - '<#FF6B5C>Descripción:'
-      - '&8• &fEntra solo si cuentas con buen'
-      - '  &fequipo y los recursos necesarios'
-      - '  &fpara sobrevivir a criaturas fuertes.'
-      - '&7'
-      - '<#FF6B5C>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,000'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#FF6B5C>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '&e➜ Click para teletransportarte'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Viaja al <#FF7A8A>Nether</#FF7A8A> y consigue
+      - <white>varios <#FFD36B>materiales</#FFD36B> con buen equipo.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.000 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#FF7A8A>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - nethermenu_b3_click
@@ -397,21 +396,22 @@ NetherMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEyYTAzYTRjMTFiNGQ0NzI0NzJlN2U0NTkzZDJlMTI2YTYyNTllMzNjYzgxZjQ0ZWIwNWNmMDQyZDA3Njk2NyJ9fX0=
-      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      name: '<#A6F25B>Mundo: Overworld'
       lore:
-      - '<#7CFC9A>Descripción:'
-      - '&8• &fViaja al centro del mundo de'
-      - '  &fsupervivencia, consigue recursos'
-      - '  &fy empieza a construir tu hogar.'
-      - '&7'
-      - '<#7CFC9A>Información'
-      - '  &8• &7Tamaño: &f30,000 x 30,000'
-      - '  &8• &7Precio RTP: &f&aGratis'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '&e➜ Click para ver el menú de Survival'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Mundo <#A6F25B>normal</#A6F25B> donde podrás <#F28BB6>crear</#F28BB6>
+      - <white>tu casa y <#C9A8FF>desarrollar</#C9A8FF> tu survival.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>30.000 x 30.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
+      - ''
+      - <#A6F25B>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - nethermenu_b4_click
@@ -431,29 +431,24 @@ NetherMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjZjZTljODFkODRhNjk4MWQ0YzViM2RjMDlhYmIxMjFlYzdhODA3OTE5MjY1Zjg3MWE1YTdiMWE4ZjIxIn19fQ==
-      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      name: '<#C9A8FF>Mundo: El End'
       lore:
-      - '<#B48CFF>Descripción:'
-      - '&8• &fEsta dimensión no es el final del'
-      - '  &fjuego: aquí conseguirás materiales'
-      - '  &fy herramientas únicas del mundo.'
-      - '&7'
-      - '<#B48CFF>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,800'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#B48CFF>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '<#B48CFF>Evento'
-      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
-      - '&7'
-      - '&e➜ Click para ver el menú de The End'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Consigue <#C9A8FF>materiales</#C9A8FF> únicos
+      - <white>y ve a matar a la <#F28BB6>dragona</#F28BB6>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dragona: <#E296F3>Reaparece cada semana <glyph:star>'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.800 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#C9A8FF>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - nethermenu_b5_click
@@ -472,20 +467,22 @@ NetherMenu:
       - 43
       source: vanilla
       material: SHIELD
-      name: '<#FFD54F>&l♜ Imperio del Rey &8- &7Orian'
+      name: '<#FFD54F>Mundo: Orian'
       lore:
-      - '<#FFD54F>Descripción:'
-      - '&8• &fEncanta tus armas, compra objetos,'
-      - '  &fpelea contra mobs y mucho más.'
-      - '&7'
-      - '<#FFD54F>Información'
-      - '  &8• &7Mundo: &fOrian'
-      - '  &8• &7Precio: &f&aGratis'
-      - '&7'
-      - '&e➜ Click para viajar a la ciudad'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - '<white>La ciudad del <#FFD54F>Imperio del Rey</#FFD54F>: encanta,'
+      - <white><#7FD8FF>compra</#7FD8FF> objetos y pelea contra <#FF7A8A>mobs</#FF7A8A>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Tipo: <#FFD54F>Ciudad principal <glyph:crown>'
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Precio: <#7FFF9E>Gratis ✔'
+      - ''
+      - <#FFD54F>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
       enchantments:
       - unbreaking 1
       left_click:
@@ -503,7 +500,7 @@ NetherMenu:
 EndMenu:
   permission: ''
   bottom_inventory: false
-  name: '㈮㈮&f㉍'
+  name: ㈮㈮&f㉍
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -542,29 +539,24 @@ EndMenu:
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      name: '<#C9A8FF>Mundo: El End'
       lore:
-      - '<#B48CFF>Descripción:'
-      - '&8• &fEsta dimensión no es el final del'
-      - '  &fjuego: aquí conseguirás materiales'
-      - '  &fy herramientas únicas del mundo.'
-      - '&7'
-      - '<#B48CFF>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,800'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#B48CFF>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '<#B48CFF>Evento'
-      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
-      - '&7'
-      - '&e➜ Click para teletransportarte'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Consigue <#C9A8FF>materiales</#C9A8FF> únicos
+      - <white>y ve a matar a la <#F28BB6>dragona</#F28BB6>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dragona: <#E296F3>Reaparece cada semana <glyph:star>'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.800 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#C9A8FF>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - endmenu_b1_click
@@ -584,16 +576,19 @@ EndMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5ZDkxNGExMmMxN2NjY2I1NTg5OTI4NWEwNjY5MDJiYTUzOTc2ODA3NDA3ZmNiODY5NmRiZTE5YWVmNzcifX19
-      name: '<#E296F3>&l⚑ Lugares del Servidor'
+      name: <#E296F3>Lugares del Servidor
       lore:
-      - '<#E296F3>Descripción:'
-      - '&8• &fDimensiones, ciudades, dungeons,'
-      - '  &fjefes y mucho más; todo'
-      - '  &fpersonalizado y optimizado.'
-      - '&7'
-      - '&e➜ Click para ver los lugares disponibles'
+      - <#9EA3AE>Selector de lugares <glyph:castle_entrance>
+      - ''
+      - <white><#E296F3>Dimensiones</#E296F3>, <#FFD54F>ciudades</#FFD54F>, <#7FD8FF>dungeons</#7FD8FF>,
+      - <white><#FF7A8A>jefes</#FF7A8A> y mucho más por descubrir.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Todo: <#E296F3>Personalizado y optimizado ✔'
+      - ''
+      - <#E296F3>❖ ¡Click para <bold>EXPLORAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - endmenu_b2_click
@@ -613,26 +608,24 @@ EndMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM0NTg3NWU5MjFhMTQ1ZjkyMDM4ODU4YWVlY2MzYzJmMDgzNDQxZWJjNWM4MjY1ZDMxYTI4MWQyNjhlMzY1YiJ9fX0=
-      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      name: '<#FF7A8A>Mundo: El Nether'
       lore:
-      - '<#FF6B5C>Descripción:'
-      - '&8• &fEntra solo si cuentas con buen'
-      - '  &fequipo y los recursos necesarios'
-      - '  &fpara sobrevivir a criaturas fuertes.'
-      - '&7'
-      - '<#FF6B5C>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,000'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#FF6B5C>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '&e➜ Click para ver el menú de Nether'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Viaja al <#FF7A8A>Nether</#FF7A8A> y consigue
+      - <white>varios <#FFD36B>materiales</#FFD36B> con buen equipo.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.000 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#FF7A8A>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - endmenu_b3_click
@@ -652,21 +645,22 @@ EndMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEyYTAzYTRjMTFiNGQ0NzI0NzJlN2U0NTkzZDJlMTI2YTYyNTllMzNjYzgxZjQ0ZWIwNWNmMDQyZDA3Njk2NyJ9fX0=
-      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      name: '<#A6F25B>Mundo: Overworld'
       lore:
-      - '<#7CFC9A>Descripción:'
-      - '&8• &fViaja al centro del mundo de'
-      - '  &fsupervivencia, consigue recursos'
-      - '  &fy empieza a construir tu hogar.'
-      - '&7'
-      - '<#7CFC9A>Información'
-      - '  &8• &7Tamaño: &f30,000 x 30,000'
-      - '  &8• &7Precio RTP: &f&aGratis'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '&e➜ Click para ver el menú de Survival'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Mundo <#A6F25B>normal</#A6F25B> donde podrás <#F28BB6>crear</#F28BB6>
+      - <white>tu casa y <#C9A8FF>desarrollar</#C9A8FF> tu survival.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>30.000 x 30.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
+      - ''
+      - <#A6F25B>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - endmenu_b4_click
@@ -686,49 +680,46 @@ EndMenu:
       source: vanilla
       material: player_head
       texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjZjZTljODFkODRhNjk4MWQ0YzViM2RjMDlhYmIxMjFlYzdhODA3OTE5MjY1Zjg3MWE1YTdiMWE4ZjIxIn19fQ==
-      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      name: '<#C9A8FF>Mundo: El End'
       lore:
-      - '<#B48CFF>Descripción:'
-      - '&8• &fEsta dimensión no es el final del'
-      - '  &fjuego: aquí conseguirás materiales'
-      - '  &fy herramientas únicas del mundo.'
-      - '&7'
-      - '<#B48CFF>Información'
-      - '  &8• &7Tamaño: &f10,000 x 10,000'
-      - '  &8• &7Precio RTP: &f&6$1,800'
-      - '  &8• &7Permitido: &fTodo'
-      - '&7'
-      - '<#B48CFF>Reglas'
-      - '  &8• &c✘ &7Reinicio cada 2 meses'
-      - '  &8• &c✘ &7No hacer construcciones'
-      - '  &8• &c✘ &7Las tumbas no funcionan'
-      - '&7'
-      - '<#B48CFF>Evento'
-      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
-      - '&7'
-      - '&e➜ Ya estás en este menú'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - <white>Consigue <#C9A8FF>materiales</#C9A8FF> únicos
+      - <white>y ve a matar a la <#F28BB6>dragona</#F28BB6>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#7FFF9E>Cada 2 meses ✔'
+      - '<#5C6370>■ <#9EA3AE>Dragona: <#E296F3>Reaparece cada semana <glyph:star>'
+      - '<#5C6370>■ <#9EA3AE>Dimensiones: <#7FD8FF>10.000 x 10.000 <glyph:earth>'
+      - '<#5C6370>■ <#9EA3AE>Precio RTP: <#FFD36B>$1.800 <glyph:gold_coin>'
+      - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
+      - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
+      - ''
+      - <#C9A8FF>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
     b6:
       location: top
       slots:
       - 43
       source: vanilla
       material: SHIELD
-      name: '<#FFD54F>&l♜ Imperio del Rey &8- &7Orian'
+      name: '<#FFD54F>Mundo: Orian'
       lore:
-      - '<#FFD54F>Descripción:'
-      - '&8• &fEncanta tus armas, compra objetos,'
-      - '  &fpelea contra mobs y mucho más.'
-      - '&7'
-      - '<#FFD54F>Información'
-      - '  &8• &7Mundo: &fOrian'
-      - '  &8• &7Precio: &f&aGratis'
-      - '&7'
-      - '&e➜ Click para viajar a la ciudad'
+      - <#9EA3AE>Selector de mundos <glyph:earth>
+      - ''
+      - '<white>La ciudad del <#FFD54F>Imperio del Rey</#FFD54F>: encanta,'
+      - <white><#7FD8FF>compra</#7FD8FF> objetos y pelea contra <#FF7A8A>mobs</#FF7A8A>.
+      - ''
+      - '<#5C6370>■ <#9EA3AE>Tipo: <#FFD54F>Ciudad principal <glyph:crown>'
+      - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
+      - '<#5C6370>■ <#9EA3AE>Precio: <#7FFF9E>Gratis ✔'
+      - ''
+      - <#FFD54F>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
       enchantments:
       - unbreaking 1
       left_click:
