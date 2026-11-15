@@ -1,0 +1,12 @@
+# Jester Cosmetics (iplexity). El globo usa el modelo de ModelEngine:
+#  ModelEngine/blueprints/jester_cosmetics/jester_balloon.bbmodel
+# Permiso: hmccosmetics.<id>
+jester_balloon:
+  slot: BALLOON
+  permission: hmccosmetics.jester_balloon
+  show-lead: true
+  model: jester_balloon
+  item:
+    material: PAPER
+    name: <gradient:#E8443A:#7A3FD1>Globo del Bufón</gradient>
+    amount: 1

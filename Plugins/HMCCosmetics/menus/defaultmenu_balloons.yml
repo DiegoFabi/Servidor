@@ -80,3 +80,21 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: bat_balloon
+  jester_balloon:
+    slots:
+    - 2
+    item:
+      material: hmccosmetics:jester_balloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Bufón'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_jester_balloon%%HMCCosmetics_equipped_jester_balloon%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: jester_balloon
