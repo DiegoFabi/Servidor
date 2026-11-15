@@ -1,0 +1,496 @@
+scene_guard_stand:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - state{m=scene_guards;s=idle} @self ~onSpawn
+  - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+
+scene_guard_interactive:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  - lookatplayers{r=10}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - state{m=scene_guards;s=idle} @self ~onSpawn
+  - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=guard_see_player_1} @PIR{r=10} ~onTimer:10
+  - skill{s=guard_lock_head_1} @PIR{r=10} ~onTimer:10
+  - skill{s=guard_interact_1} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+
+scene_guard_salute:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - state{m=scene_guards;s=idle} @self ~onSpawn
+  - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pantt_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=guard_salute} @PIR{r=6} ~onTimer:10
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+ 
+
+scene_guard_salute_2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - state{m=scene_guards;s=idle} @self ~onSpawn
+  - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=guard_salute2} @PIR{r=6} ~onTimer:10
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  
+
+scene_guard_sleep_stand:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - state{s=sleep_stand;delay=30} @self ~onLoad
+  - defaultstate{m=scene_guards;t=idle;s=sleep_stand} @self ~onSpawn
+  - defaultstate{m=scene_guards;t=idle;s=sleep_stand;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=interact_guard_sleep_stand} ~onInteract
+  - skill{s=dialogo_guardia_dormido} @trigger ~onInteract
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_guards;p=guardr_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+scene_guard_walk_1:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookatplayers{r=6}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=walk} @self ~onSpawn
+  - defaultstate{t=walk;s=walk;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle2} @self ~onSpawn
+  - defaultstate{t=idle;s=idle2;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=guard1} ~onTimer:10 ?stance{stance=goguard1}
+  - goto{speed=1} @pin{name=guard2} ~onTimer:10 ?stance{stance=goguard2}
+  - setStance{stance=goguard1;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=guard2;distance=<2}
+  - setStance{stance=goguard2;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=guard1;distance=<2}
+  - setStance{stance=goguard1} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onLoad  
+  
+
+scene_guard_walk_2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookatplayers{r=6}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=walk} @self ~onSpawn
+  - defaultstate{t=walk;s=walk;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle2} @self ~onSpawn
+  - defaultstate{t=idle;s=idle2;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=guard3} ~onTimer:10 ?stance{stance=goguard3}
+  - goto{speed=1} @pin{name=guard4} ~onTimer:10 ?stance{stance=goguard4}
+  - setStance{stance=goguard3;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=guard4;distance=<2}
+  - setStance{stance=goguard4;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=guard3;distance=<2}
+  - setStance{stance=goguard3} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onLoad  
+  
+scene_guard_walk_3:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookatplayers{r=3}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=walk} @self ~onSpawn
+  - defaultstate{t=walk;s=walk;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle2} @self ~onSpawn
+  - defaultstate{t=idle;s=idle2;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=guard5} ~onTimer:10 ?stance{stance=goguard5}
+  - goto{speed=1} @pin{name=guard6} ~onTimer:10 ?stance{stance=goguard6}
+  - setStance{stance=goguard5;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=guard6;distance=<2}
+  - setStance{stance=goguard6;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=guard5;distance=<2}
+  - setStance{stance=goguard5} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onLoad 
+  
+
+scene_guard_march_1:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.14
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=march} @self ~onSpawn
+  - defaultstate{t=walk;s=march;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle3} @self ~onSpawn
+  - defaultstate{t=idle;s=idle3;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=march1} ~onTimer:10 ?stance{stance=gomarch1}
+  - goto{speed=1} @pin{name=march2} ~onTimer:10 ?stance{stance=gomarch2}
+  - setStance{stance=gomarch1;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=march2;distance=<2}
+  - setStance{stance=gomarch2;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=march1;distance=<2}
+  - setStance{stance=gomarch1} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onLoad  
+  
+
+scene_guard_march_2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.14
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=march} @self ~onSpawn
+  - defaultstate{t=walk;s=march;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle3} @self ~onSpawn
+  - defaultstate{t=idle;s=idle3;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=march3} ~onTimer:10 ?stance{stance=gomarch3}
+  - goto{speed=1} @pin{name=march4} ~onTimer:10 ?stance{stance=gomarch4}
+  - setStance{stance=gomarch3;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=march4;distance=<2}
+  - setStance{stance=gomarch4;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=march3;distance=<2}
+  - setStance{stance=gomarch3} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onLoad  
+ 
+
+scene_guard_march_3:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.14
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards;save=true} @self ~onSpawn
+  - model{mid=scene_guards;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=march} @self ~onSpawn
+  - defaultstate{t=walk;s=march;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle3} @self ~onSpawn
+  - defaultstate{t=idle;s=idle3;delay=10} @self ~onLoad
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant;delay=20} @self ~onLoad
+  - changepart{m=scene_guards;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant;delay=20} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=march5} ~onTimer:10 ?stance{stance=gomarch5}
+  - goto{speed=1} @pin{name=march6} ~onTimer:10 ?stance{stance=gomarch6}
+  - setStance{stance=gomarch5;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=march6;distance=<2}
+  - setStance{stance=gomarch6;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=march5;distance=<2}
+  - setStance{stance=gomarch5} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onLoad 
+  
+
+scene_guards_duo:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_guards2;save=true} @self ~onSpawn
+  - model{mid=scene_guards2;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_guards2;t=idle;s=sawing} @self ~onSpawn
+  - defaultstate{m=scene_guards2;t=idle;s=sawing;delay=10} @self ~onLoad
+  - state{s=idle;delay=20} @self ~onLoad
+  - remapmodel{m=scene_guards2;n=<global.var.skin<caster.uuid>|scene_guards2>;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_guardia} @trigger ~onInteract
+  - skill{s=scene_openmenu_2npcs} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_guards2;type=STRING;save=true} @self ~onInteract
+  - skill{s=guards_closed} @PIR{r=5} ~onTimer:10
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=head2;delay=20} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_leg2;delay=20} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_leg2;delay=20} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_arm2;delay=20} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_arm2;delay=20} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=body2;delay=20} @self ~onLoad
+  
+#2e0cb3a1db267f791b37263774972968

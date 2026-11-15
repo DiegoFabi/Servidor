@@ -1,0 +1,23 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: WITHER_SKELETON
+mainHand: NETHERITE_SWORD
+name: $eventBossLevel &fMoonlight Devourer
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 0.9
+isPersistent: true
+powers:
+- meteor_shower.yml
+- invulnerability_fire.yml
+uniqueLootList:
+- filename=moonlight_devourer_drop_axe.yml:amount=1:chance=0.5
+movementSpeedAttribute: 0.36
+followDistance: 80
+locationMessage: '&cMoonlight Devourer: $distance blocks away!'
+deathMessage: '&aThe Moonlight Devourer was sent back to sleep by $players!'
+escapeMessage: '&4The Moonlight Devourer has vanished!'
+announcementPriority: 2

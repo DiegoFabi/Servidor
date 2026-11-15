@@ -1,0 +1,45 @@
+# ============================================================
+#  durabilidad.sk - Durabilidad GLOBAL para items con usos limitados
+#  Requiere: Skript 2.10+ (1.20.5+: cualquier item puede tener
+#  durabilidad) y SkBee (custom nbt)
+#
+#  Cualquier item con el texto "usos" en su minecraft:custom_data tiene
+#  esa cantidad de usos. Cada vez que su poder se ejecuta se gasta uno
+#  y se ve la barra de durabilidad; al llegar a 0 el item se rompe.
+#
+#  Cómo usarlo:
+#   - ItemJoin: properties: 'tooltip_style:minecraft:red, usos:40'
+#               y añadir 'op: desgastar' después del comando del poder
+#               (así solo se gasta cuando el poder se ejecuta de verdad,
+#               respetando el cooldown de ItemJoin).
+#   - Cualquier otro plugin/script: ejecutar /desgastar como el jugador.
+#
+#  Rendimiento: sin eventos ni temporizadores, solo al usar el item.
+# ============================================================
+
+command /desgastar:
+    trigger:
+        set {_u} to string tag "usos" of custom nbt of player's tool
+        {_u} is set
+        set {_max} to {_u} parsed as integer
+        {_max} > 0
+        # Primera vez: el item pasa a tener durabilidad real (barra visible)
+        if max durability of player's tool is not {_max}:
+            set max stack size of player's tool to 1
+            set max durability of player's tool to {_max}
+        set {_d} to (damage of player's tool) + 1
+        set {_resto} to {_max} - {_d}
+        if {_resto} <= 0:
+            set {_n} to name of player's tool
+            set player's tool to air
+            play sound "entity.item.break" with volume 1 and pitch 0.8 at player
+            play sound "block.amethyst_block.break" with volume 0.8 and pitch 0.6 at player
+            make 20 of large_smoke at location of player offset by vector(0, 1, 0) with offset vector(0.3, 0.4, 0.3) with extra 0.02
+            send title "<#FF6B6B>✖" with subtitle "<#C9CDD6>%{_n}% <#C9CDD6>se ha roto" to player for 2 seconds with fadein 5 ticks and fadeout 10 ticks
+            stop
+        set damage of player's tool to {_d}
+        if {_resto} <= 3:
+            send action bar "<#FFB347>⚠ <#C9CDD6>¡Le quedan <#FF6B6B>%{_resto}% <#C9CDD6>uso(s)!" to player
+            play sound "block.note_block.bass" with volume 0.6 and pitch 0.6 at player
+        else:
+            send action bar "<#9EA3AE>Usos restantes <dark_gray>» <#FFD36B>%{_resto}%<dark_gray>/<#9EA3AE>%{_max}%" to player

@@ -1,0 +1,38 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ZOGLIN
+disguise: COW
+name: $eventBossLevel &cNether Bovine
+level: dynamic
+healthMultiplier: 3.8
+damageMultiplier: 1.0
+isPersistent: true
+powers:
+- bonus_loot.yml
+- bonus_coins.yml:10
+- shield_wall.yml
+- attack_poison.yml
+- attack_push.yml
+- attack_freeze.yml
+- attack_fire.yml
+- invulnerability_fire.yml
+uniqueLootList:
+- filename=nether_bovine_drop_leggings.yml:amount=1:chance=0.005
+movementSpeedAttribute: 0.48
+followDistance: 40
+locationMessage: '&cNether Bovine: $distance blocks away!'
+spawnMessage: '&cA hellish creature from the Nether has appeared! Caution!'
+deathMessage: '&aThe Nether Bovine was vanquished by $players!'
+escapeMessage: '&4The Nether Bovine has escaped back to the Nether!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Nether Bovine has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

@@ -1,0 +1,106 @@
+# ============================================================
+#  Bola de Fuego  [RARO]
+#  Comando: /explosionmagic
+#  Proyectil de fuego que explota al chocar (no rompe bloques).
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+    perm: admin.particles
+    nopermiso: &cNo tienes permiso para usar este comando.
+    cd: 2 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+    radio-trayecto: 2
+    dano-trayecto: 4
+    radio-final: 5
+    dano-final: 8
+
+# ------------------------------------------------------------
+#  Explosion Magic (bola de fuego)
+# ------------------------------------------------------------
+command /explosionmagic:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        fxAnuncio({_p}, "☄", "Bola de Fuego", "Desatas tu poder", "#FFB347", "#FF5A2D", "Raro")
+        play sound "entity.blaze.shoot" at {_p}
+        wait 2 ticks
+        play sound "entity.ghast.shoot" at {_p}
+        wait 4 ticks
+        if {_p} is not online:
+            stop
+
+        # Direccion horizontal hacia donde mira el jugador (0.5 bloques por paso)
+        set {_start} to location of {_p}
+        set {_yaw} to yaw of {_p}
+        set {_stepX} to -0.5 * sin({_yaw})
+        set {_stepZ} to 0.5 * cos({_yaw})
+        set {_pos} to {_start} offset by vector(0, 1.6, 0)
+
+        # Vuelo: 25 pasos, 2 pasos por tick. Se detiene al chocar con un bloque.
+        loop 25 times:
+            set {_i} to loop-number
+            set {_next} to {_start} offset by vector({_stepX} * {_i}, 1.6, {_stepZ} * {_i})
+            if block at {_next} is not passable:
+                exit loop
+            set {_pos} to {_next}
+            set {_spiral} to {_pos} offset by vector(0.3 * cos({_i} * 40), 0, 0.3 * sin({_i} * 40))
+
+            make 6 of flame at {_pos} with offset vector(0.15, 0.15, 0.15) with extra 0.01 {@force}
+            make 2 of lava at {_pos} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+            make 2 of large_smoke at {_pos} with offset vector(0.15, 0.15, 0.15) with extra 0.01 {@force}
+            make 2 of flame at {_spiral} with offset vector(0.05, 0.05, 0.05) with extra 0 {@force}
+
+            # Dano de trayectoria: una sola vez por entidad
+            loop all monsters in radius {@radio-trayecto} around {_pos}:
+                if loop-entity is not {_p}:
+                    if {_hit::%uuid of loop-entity%} is not set:
+                        set {_hit::%uuid of loop-entity%} to true
+                        damage loop-entity by {@dano-trayecto}
+                        push loop-entity away from {_pos} with force 0.8
+                        set {_hl} to location of loop-entity
+                        make 4 of flame at {_hl} with offset vector(0.3, 0.5, 0.3) with extra 0 {@force}
+
+            if mod({_i}, 5) is 0:
+                play sound "entity.firework_rocket.blast" at {_pos}
+            if mod({_i}, 2) is 0:
+                wait 1 tick
+
+        # Carga previa a la explosion
+        play sound "entity.creeper.primed" at {_pos}
+        loop 12 times:
+            set {_a} to (loop-number) * 30
+            set {_l} to {_pos} offset by vector(1.5 * cos({_a}), 0, 1.5 * sin({_a}))
+            make 4 of flame at {_l} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+            make 2 of large_smoke at {_l} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+            wait 1 tick
+        play sound "entity.tnt.primed" at {_pos}
+        wait 5 ticks
+
+        # Explosion final (sin romper bloques)
+        play sound "entity.generic.explode" with volume 2 at {_pos}
+        play sound "entity.dragon_fireball.explode" at {_pos}
+        play sound "entity.lightning_bolt.thunder" with volume 0.6 at {_pos}
+        make 1 of explosion_emitter at {_pos} {@force}
+        make 40 of flame at {_pos} with offset vector(1.2, 0.8, 1.2) with extra 0.08 {@force}
+        make 25 of large_smoke at {_pos} with offset vector(1.5, 1, 1.5) with extra 0.03 {@force}
+        make 15 of lava at {_pos} with offset vector(1.5, 0.5, 1.5) with extra 0 {@force}
+
+        loop all monsters in radius {@radio-final} around {_pos}:
+            if loop-entity is not {_p}:
+                damage loop-entity by {@dano-final}
+                push loop-entity away from {_pos} with force 2
+
+        # Dos ondas expansivas en anillo
+        loop 2 times:
+            set {_ring::*} to fxRing({_pos}, 1.5 * (loop-number), 16, 0.2)
+            make 3 of flame at {_ring::*} with offset vector(0.2, 0.4, 0.2) with extra 0.02 {@force}
+            make 2 of large_smoke at {_ring::*} with offset vector(0.2, 0.4, 0.2) with extra 0.01 {@force}
+            play sound "entity.firework_rocket.large_blast" at {_pos}
+            wait 2 ticks

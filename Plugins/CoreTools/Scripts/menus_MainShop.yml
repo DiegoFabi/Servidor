@@ -1,0 +1,377 @@
+# Acciones de los menus convertidos desde CommandPanels
+mainshop_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+mainshop_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b3_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b5_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b6_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b7_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b8_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_redstone {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b9_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_spawners {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+mainshop_b10_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_misc {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_blocks_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+# Volver al menú de categorías (botón central de cada tienda)
+shop_blocks_nav48_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu MainShop {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+shop_valuables_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_valuables_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_valuables_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_valuables_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_valuables_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_valuables_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_valuables_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_mobdrops_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_mobdrops_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_mobdrops_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_mobdrops_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_mobdrops_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_mobdrops_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_mobdrops_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_food_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_food_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_food_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_food_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_food_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_food_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_food_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_farming_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_farming_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_farming_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_farming_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_farming_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_farming_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_farming_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_dyes_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_dyes_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_dyes_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_dyes_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_dyes_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_dyes_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_dyes_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_redstone_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_redstone_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_redstone_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_redstone_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_redstone_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_redstone_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_redstone_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_spawners_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_spawners_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_spawners_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_spawners_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_spawners_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_spawners_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_spawners_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'
+shop_spawners_nav8_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu MainShop {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+shop_misc_middlebar_12_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_blocks {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_misc_middlebar_13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_valuables {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_misc_middlebar_14_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_mobdrops {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_misc_middlebar_21_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_food {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_misc_middlebar_22_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_farming {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_misc_middlebar_23_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-shops shop_dyes {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+shop_misc_shopbar_0_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.wooden_trapdoor.close";volume=1;pitch=1} @Self'

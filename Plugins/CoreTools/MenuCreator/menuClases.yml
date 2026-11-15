@@ -1,0 +1,1596 @@
+# Selección de clases (Lemon Class Selection GUI, adaptado de Oraxen a Nexo).
+# Fondos: Nexo/pack/external_packs/ClassSelection (U+3290 = desplazamiento -64, U+3291 = selección, U+3292-3296 = confirmación).
+# Iconos: Nexo/items/lemon_class_selection.yml. Acciones: Scripts/menus_menuClases.yml (aún sin funcionalidad).
+# Orden del carrusel: Guerrero > Mago > Arquero > Clérigo > Pícaro. Abrir: /coremenu menuClaseGuerrero
+menuClaseGuerrero:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊑'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    info:
+      location: top
+      slots:
+      - 3
+      - 4
+      - 5
+      - 12
+      - 13
+      - 14
+      - 21
+      - 23
+      - 30
+      - 31
+      - 32
+      source: nexo
+      id: clase_invisible
+      name: <gradient:#FFCC00:#FFFFFF><bold>Guerrero</bold></gradient>
+      lore: &id001
+      - <#FFCC00>Su espíritu está templado por el fuego
+      - <#FFCC00>y su ira se convierte en pura
+      - <#FFCC00>violencia en combate. El guerrero es
+      - <#FFCC00>una máquina de guerra imparable,
+      - <#FFCC00>resistente a la muerte y sin miedo
+      - <#FFCC00>ante ella.
+      - ''
+      - <#9EA3AE><i>Acumula furia al lanzar habilidades,
+      - <#9EA3AE><i>aumentando temporalmente su daño base.
+      - ''
+      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    modelo:
+      location: top
+      slots:
+      - 22
+      source: nexo
+      id: clase_guerrero
+      name: <gradient:#FFCC00:#FFFFFF><bold>Guerrero</bold></gradient>
+      lore: *id001
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    anterior:
+      location: top
+      slots:
+      - 19
+      source: nexo
+      id: clase_picaro_sombra
+      name: <#9494B8>Pícaro
+      lore: &id002
+      - <#9EA3AE>Clic para ver esta clase
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    anterior_flecha:
+      location: top
+      slots:
+      - 20
+      source: nexo
+      id: clase_flecha_siguiente
+      name: <#9494B8>« Pícaro
+      lore: *id002
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    anterior_zona:
+      location: top
+      slots:
+      - 28
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Pícaro
+      lore: *id002
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    siguiente_flecha:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: clase_flecha_anterior
+      name: <#9494B8>Mago »
+      lore: *id002
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    siguiente:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_mago_sombra
+      name: <#9494B8>Mago
+      lore: *id002
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    siguiente_zona:
+      location: top
+      slots:
+      - 34
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Mago
+      lore: *id002
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    cerrar:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Cerrar
+      lore:
+      - <#9EA3AE>Cerrar el menú
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_cerrar
+      right_click:
+        Scripts:
+        - clases_cerrar
+      shift_left_click:
+        Scripts:
+        - clases_cerrar
+      shift_right_click:
+        Scripts:
+        - clases_cerrar
+    confirmar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Siguiente
+      lore:
+      - <#9EA3AE>Confirmar la clase <#FFCC00>Guerrero
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_confirmar_guerrero
+      right_click:
+        Scripts:
+        - clases_confirmar_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_confirmar_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_confirmar_guerrero
+menuConfirmarGuerrero:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊒'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    modelo:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_guerrero
+      name: <gradient:#FFCC00:#FFFFFF><bold>Guerrero</bold></gradient>
+      lore:
+      - <#FFCC00>Su espíritu está templado por el fuego
+      - <#FFCC00>y su ira se convierte en pura
+      - <#FFCC00>violencia en combate. El guerrero es
+      - <#FFCC00>una máquina de guerra imparable,
+      - <#FFCC00>resistente a la muerte y sin miedo
+      - <#FFCC00>ante ella.
+      - ''
+      - <#9EA3AE><i>Acumula furia al lanzar habilidades,
+      - <#9EA3AE><i>aumentando temporalmente su daño base.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    volver:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Volver
+      lore:
+      - <#9EA3AE>Volver a <#FFCC00>Guerrero
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    aceptar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Confirmar
+      lore:
+      - <#9EA3AE>Elegir la clase <#FFCC00>Guerrero
+      - ''
+      - <#FFB347>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_elegir_guerrero
+      right_click:
+        Scripts:
+        - clases_elegir_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_elegir_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_elegir_guerrero
+menuClaseMago:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊑'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    info:
+      location: top
+      slots:
+      - 3
+      - 4
+      - 5
+      - 12
+      - 13
+      - 14
+      - 21
+      - 23
+      - 30
+      - 31
+      - 32
+      source: nexo
+      id: clase_invisible
+      name: <gradient:#7FB2FF:#FFFFFF><bold>Mago</bold></gradient>
+      lore: &id003
+      - <#7FB2FF>Aprendió las artes mágicas estudiando
+      - <#7FB2FF>el cosmos y ahora puede moldear el
+      - <#7FB2FF>flujo de maná que impregna la tierra.
+      - <#7FB2FF>El mago domina lo desconocido con el
+      - <#7FB2FF>conocimiento.
+      - ''
+      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    modelo:
+      location: top
+      slots:
+      - 22
+      source: nexo
+      id: clase_mago
+      name: <gradient:#7FB2FF:#FFFFFF><bold>Mago</bold></gradient>
+      lore: *id003
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    anterior:
+      location: top
+      slots:
+      - 19
+      source: nexo
+      id: clase_guerrero_sombra
+      name: <#9494B8>Guerrero
+      lore: &id004
+      - <#9EA3AE>Clic para ver esta clase
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    anterior_flecha:
+      location: top
+      slots:
+      - 20
+      source: nexo
+      id: clase_flecha_siguiente
+      name: <#9494B8>« Guerrero
+      lore: *id004
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    anterior_zona:
+      location: top
+      slots:
+      - 28
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Guerrero
+      lore: *id004
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    siguiente_flecha:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: clase_flecha_anterior
+      name: <#9494B8>Arquero »
+      lore: *id004
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    siguiente:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_arquero_sombra
+      name: <#9494B8>Arquero
+      lore: *id004
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    siguiente_zona:
+      location: top
+      slots:
+      - 34
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Arquero
+      lore: *id004
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    cerrar:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Cerrar
+      lore:
+      - <#9EA3AE>Cerrar el menú
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_cerrar
+      right_click:
+        Scripts:
+        - clases_cerrar
+      shift_left_click:
+        Scripts:
+        - clases_cerrar
+      shift_right_click:
+        Scripts:
+        - clases_cerrar
+    confirmar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Siguiente
+      lore:
+      - <#9EA3AE>Confirmar la clase <#7FB2FF>Mago
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_confirmar_mago
+      right_click:
+        Scripts:
+        - clases_confirmar_mago
+      shift_left_click:
+        Scripts:
+        - clases_confirmar_mago
+      shift_right_click:
+        Scripts:
+        - clases_confirmar_mago
+menuConfirmarMago:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊓'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    modelo:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_mago
+      name: <gradient:#7FB2FF:#FFFFFF><bold>Mago</bold></gradient>
+      lore:
+      - <#7FB2FF>Aprendió las artes mágicas estudiando
+      - <#7FB2FF>el cosmos y ahora puede moldear el
+      - <#7FB2FF>flujo de maná que impregna la tierra.
+      - <#7FB2FF>El mago domina lo desconocido con el
+      - <#7FB2FF>conocimiento.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    volver:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Volver
+      lore:
+      - <#9EA3AE>Volver a <#7FB2FF>Mago
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    aceptar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Confirmar
+      lore:
+      - <#9EA3AE>Elegir la clase <#7FB2FF>Mago
+      - ''
+      - <#FFB347>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_elegir_mago
+      right_click:
+        Scripts:
+        - clases_elegir_mago
+      shift_left_click:
+        Scripts:
+        - clases_elegir_mago
+      shift_right_click:
+        Scripts:
+        - clases_elegir_mago
+menuClaseArquero:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊑'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    info:
+      location: top
+      slots:
+      - 3
+      - 4
+      - 5
+      - 12
+      - 13
+      - 14
+      - 21
+      - 23
+      - 30
+      - 31
+      - 32
+      source: nexo
+      id: clase_invisible
+      name: <gradient:#7FFF9E:#FFFFFF><bold>Arquero</bold></gradient>
+      lore: &id005
+      - <#7FFF9E>Creció entre lobos y es un experto en
+      - <#7FFF9E>la caza salvaje. Maestro de las armas
+      - <#7FFF9E>a distancia y las trampas, se mueve
+      - <#7FFF9E>con agilidad disparando flechas como
+      - <#7FFF9E>relámpagos.
+      - ''
+      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    modelo:
+      location: top
+      slots:
+      - 22
+      source: nexo
+      id: clase_arquero
+      name: <gradient:#7FFF9E:#FFFFFF><bold>Arquero</bold></gradient>
+      lore: *id005
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    anterior:
+      location: top
+      slots:
+      - 19
+      source: nexo
+      id: clase_mago_sombra
+      name: <#9494B8>Mago
+      lore: &id006
+      - <#9EA3AE>Clic para ver esta clase
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    anterior_flecha:
+      location: top
+      slots:
+      - 20
+      source: nexo
+      id: clase_flecha_siguiente
+      name: <#9494B8>« Mago
+      lore: *id006
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    anterior_zona:
+      location: top
+      slots:
+      - 28
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Mago
+      lore: *id006
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_mago
+      right_click:
+        Scripts:
+        - clases_ver_mago
+      shift_left_click:
+        Scripts:
+        - clases_ver_mago
+      shift_right_click:
+        Scripts:
+        - clases_ver_mago
+    siguiente_flecha:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: clase_flecha_anterior
+      name: <#9494B8>Clérigo »
+      lore: *id006
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    siguiente:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_clerigo_sombra
+      name: <#9494B8>Clérigo
+      lore: *id006
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    siguiente_zona:
+      location: top
+      slots:
+      - 34
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Clérigo
+      lore: *id006
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    cerrar:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Cerrar
+      lore:
+      - <#9EA3AE>Cerrar el menú
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_cerrar
+      right_click:
+        Scripts:
+        - clases_cerrar
+      shift_left_click:
+        Scripts:
+        - clases_cerrar
+      shift_right_click:
+        Scripts:
+        - clases_cerrar
+    confirmar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Siguiente
+      lore:
+      - <#9EA3AE>Confirmar la clase <#7FFF9E>Arquero
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_confirmar_arquero
+      right_click:
+        Scripts:
+        - clases_confirmar_arquero
+      shift_left_click:
+        Scripts:
+        - clases_confirmar_arquero
+      shift_right_click:
+        Scripts:
+        - clases_confirmar_arquero
+menuConfirmarArquero:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊔'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    modelo:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_arquero
+      name: <gradient:#7FFF9E:#FFFFFF><bold>Arquero</bold></gradient>
+      lore:
+      - <#7FFF9E>Creció entre lobos y es un experto en
+      - <#7FFF9E>la caza salvaje. Maestro de las armas
+      - <#7FFF9E>a distancia y las trampas, se mueve
+      - <#7FFF9E>con agilidad disparando flechas como
+      - <#7FFF9E>relámpagos.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    volver:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Volver
+      lore:
+      - <#9EA3AE>Volver a <#7FFF9E>Arquero
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    aceptar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Confirmar
+      lore:
+      - <#9EA3AE>Elegir la clase <#7FFF9E>Arquero
+      - ''
+      - <#FFB347>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_elegir_arquero
+      right_click:
+        Scripts:
+        - clases_elegir_arquero
+      shift_left_click:
+        Scripts:
+        - clases_elegir_arquero
+      shift_right_click:
+        Scripts:
+        - clases_elegir_arquero
+menuClaseClerigo:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊑'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    info:
+      location: top
+      slots:
+      - 3
+      - 4
+      - 5
+      - 12
+      - 13
+      - 14
+      - 21
+      - 23
+      - 30
+      - 31
+      - 32
+      source: nexo
+      id: clase_invisible
+      name: <gradient:#FFE7A3:#FFFFFF><bold>Clérigo</bold></gradient>
+      lore: &id007
+      - <#FFE7A3>Una fe, un dios ante sus ojos. El
+      - <#FFE7A3>clérigo usa las palabras de su fe para
+      - <#FFE7A3>luchar y proteger.
+      - ''
+      - <#9EA3AE><i>«Bendice esta arma para purificarlos en
+      - <#9EA3AE><i>tu nombre».
+      - ''
+      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    modelo:
+      location: top
+      slots:
+      - 22
+      source: nexo
+      id: clase_clerigo
+      name: <gradient:#FFE7A3:#FFFFFF><bold>Clérigo</bold></gradient>
+      lore: *id007
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    anterior:
+      location: top
+      slots:
+      - 19
+      source: nexo
+      id: clase_arquero_sombra
+      name: <#9494B8>Arquero
+      lore: &id008
+      - <#9EA3AE>Clic para ver esta clase
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    anterior_flecha:
+      location: top
+      slots:
+      - 20
+      source: nexo
+      id: clase_flecha_siguiente
+      name: <#9494B8>« Arquero
+      lore: *id008
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    anterior_zona:
+      location: top
+      slots:
+      - 28
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Arquero
+      lore: *id008
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_arquero
+      right_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_left_click:
+        Scripts:
+        - clases_ver_arquero
+      shift_right_click:
+        Scripts:
+        - clases_ver_arquero
+    siguiente_flecha:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: clase_flecha_anterior
+      name: <#9494B8>Pícaro »
+      lore: *id008
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    siguiente:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_picaro_sombra
+      name: <#9494B8>Pícaro
+      lore: *id008
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    siguiente_zona:
+      location: top
+      slots:
+      - 34
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Pícaro
+      lore: *id008
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    cerrar:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Cerrar
+      lore:
+      - <#9EA3AE>Cerrar el menú
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_cerrar
+      right_click:
+        Scripts:
+        - clases_cerrar
+      shift_left_click:
+        Scripts:
+        - clases_cerrar
+      shift_right_click:
+        Scripts:
+        - clases_cerrar
+    confirmar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Siguiente
+      lore:
+      - <#9EA3AE>Confirmar la clase <#FFE7A3>Clérigo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_confirmar_clerigo
+      right_click:
+        Scripts:
+        - clases_confirmar_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_confirmar_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_confirmar_clerigo
+menuConfirmarClerigo:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊕'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    modelo:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_clerigo
+      name: <gradient:#FFE7A3:#FFFFFF><bold>Clérigo</bold></gradient>
+      lore:
+      - <#FFE7A3>Una fe, un dios ante sus ojos. El
+      - <#FFE7A3>clérigo usa las palabras de su fe para
+      - <#FFE7A3>luchar y proteger.
+      - ''
+      - <#9EA3AE><i>«Bendice esta arma para purificarlos en
+      - <#9EA3AE><i>tu nombre».
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    volver:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Volver
+      lore:
+      - <#9EA3AE>Volver a <#FFE7A3>Clérigo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    aceptar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Confirmar
+      lore:
+      - <#9EA3AE>Elegir la clase <#FFE7A3>Clérigo
+      - ''
+      - <#FFB347>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_elegir_clerigo
+      right_click:
+        Scripts:
+        - clases_elegir_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_elegir_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_elegir_clerigo
+menuClasePicaro:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊑'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    info:
+      location: top
+      slots:
+      - 3
+      - 4
+      - 5
+      - 12
+      - 13
+      - 14
+      - 21
+      - 23
+      - 30
+      - 31
+      - 32
+      source: nexo
+      id: clase_invisible
+      name: <gradient:#C9A8FF:#FFFFFF><bold>Pícaro</bold></gradient>
+      lore: &id009
+      - <#C9A8FF>Se mueve entre las sombras para
+      - <#C9A8FF>ejecutar asaltos rápidos y letales.
+      - <#C9A8FF>Sus armas son una extensión de su
+      - <#C9A8FF>cuerpo y vive para la venganza. El
+      - <#C9A8FF>pícaro elimina a quien se cruce en su
+      - <#C9A8FF>camino.
+      - ''
+      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    modelo:
+      location: top
+      slots:
+      - 22
+      source: nexo
+      id: clase_picaro
+      name: <gradient:#C9A8FF:#FFFFFF><bold>Pícaro</bold></gradient>
+      lore: *id009
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    anterior:
+      location: top
+      slots:
+      - 19
+      source: nexo
+      id: clase_clerigo_sombra
+      name: <#9494B8>Clérigo
+      lore: &id010
+      - <#9EA3AE>Clic para ver esta clase
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    anterior_flecha:
+      location: top
+      slots:
+      - 20
+      source: nexo
+      id: clase_flecha_siguiente
+      name: <#9494B8>« Clérigo
+      lore: *id010
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    anterior_zona:
+      location: top
+      slots:
+      - 28
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Clérigo
+      lore: *id010
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_clerigo
+      right_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_left_click:
+        Scripts:
+        - clases_ver_clerigo
+      shift_right_click:
+        Scripts:
+        - clases_ver_clerigo
+    siguiente_flecha:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: clase_flecha_anterior
+      name: <#9494B8>Guerrero »
+      lore: *id010
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    siguiente:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_guerrero_sombra
+      name: <#9494B8>Guerrero
+      lore: *id010
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    siguiente_zona:
+      location: top
+      slots:
+      - 34
+      source: nexo
+      id: clase_invisible
+      name: <#9494B8>Guerrero
+      lore: *id010
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_guerrero
+      right_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_left_click:
+        Scripts:
+        - clases_ver_guerrero
+      shift_right_click:
+        Scripts:
+        - clases_ver_guerrero
+    cerrar:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Cerrar
+      lore:
+      - <#9EA3AE>Cerrar el menú
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_cerrar
+      right_click:
+        Scripts:
+        - clases_cerrar
+      shift_left_click:
+        Scripts:
+        - clases_cerrar
+      shift_right_click:
+        Scripts:
+        - clases_cerrar
+    confirmar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Siguiente
+      lore:
+      - <#9EA3AE>Confirmar la clase <#C9A8FF>Pícaro
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_confirmar_picaro
+      right_click:
+        Scripts:
+        - clases_confirmar_picaro
+      shift_left_click:
+        Scripts:
+        - clases_confirmar_picaro
+      shift_right_click:
+        Scripts:
+        - clases_confirmar_picaro
+menuConfirmarPicaro:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㊐㊖'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    modelo:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: clase_picaro
+      name: <gradient:#C9A8FF:#FFFFFF><bold>Pícaro</bold></gradient>
+      lore:
+      - <#C9A8FF>Se mueve entre las sombras para
+      - <#C9A8FF>ejecutar asaltos rápidos y letales.
+      - <#C9A8FF>Sus armas son una extensión de su
+      - <#C9A8FF>cuerpo y vive para la venganza. El
+      - <#C9A8FF>pícaro elimina a quien se cruce en su
+      - <#C9A8FF>camino.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    volver:
+      location: top
+      slots:
+      - 45
+      - 46
+      - 47
+      source: nexo
+      id: clase_invisible
+      name: <#FF6B6B>Volver
+      lore:
+      - <#9EA3AE>Volver a <#C9A8FF>Pícaro
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_ver_picaro
+      right_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_left_click:
+        Scripts:
+        - clases_ver_picaro
+      shift_right_click:
+        Scripts:
+        - clases_ver_picaro
+    aceptar:
+      location: top
+      slots:
+      - 51
+      - 52
+      - 53
+      source: nexo
+      id: clase_invisible
+      name: <#7FFF9E>Confirmar
+      lore:
+      - <#9EA3AE>Elegir la clase <#C9A8FF>Pícaro
+      - ''
+      - <#FFB347>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - clases_elegir_picaro
+      right_click:
+        Scripts:
+        - clases_elegir_picaro
+      shift_left_click:
+        Scripts:
+        - clases_elegir_picaro
+      shift_right_click:
+        Scripts:
+        - clases_elegir_picaro

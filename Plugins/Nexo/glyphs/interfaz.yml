@@ -1,0 +1,24 @@
+# Glyphs de interfaz. Uso: <glyph:id> (CoreTools, TAB, chat, etc.)
+# font: minecraft:default -> el caracter directo tambien se ve en textos de
+# plugins que no procesan <glyph:...> (ItemJoin lore, etc.). Sin choques:
+# U+EC00-EC02 no se usa en ningun otro pack.
+clic_interactuar:
+  texture: interfaz/clic_interactuar
+  ascent: 9
+  height: 10
+  char: 
+  font: minecraft:default
+  placeholders:
+  - ':clic:'
+raton_izq:
+  texture: interfaz/raton_izq
+  ascent: 8
+  height: 9
+  char: 
+  font: minecraft:default
+raton_der:
+  texture: interfaz/raton_der
+  ascent: 8
+  height: 9
+  char: 
+  font: minecraft:default

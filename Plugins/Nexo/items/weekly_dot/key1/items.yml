@@ -1,0 +1,116 @@
+# Creator: Hungry(Hungry22)
+# Discord: https://discord.gg/uNcADBt3Kb
+key1_wood_key1:
+  itemname: Wood Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200150
+    texture: key1:items/wood_key1.png
+key1_wood_key2:
+  itemname: Wood Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200151
+    texture: key1:items/wood_key2.png
+key1_stone_key1:
+  itemname: Stone Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200152
+    texture: key1:items/stone_key1.png
+key1_stone_key2:
+  itemname: Stone Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200153
+    texture: key1:items/stone_key2.png
+key1_ice_key1:
+  itemname: Ice Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200154
+    texture: key1:items/ice_key1.png
+key1_ice_key2:
+  itemname: Ice Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200155
+    texture: key1:items/ice_key2.png
+key1_fire_key1:
+  itemname: Fire Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200156
+    texture: key1:items/fire_key1.png
+key1_fire_key2:
+  itemname: Fire Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200157
+    texture: key1:items/fire_key2.png
+key1_copper_key1:
+  itemname: Copper Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200158
+    texture: key1:items/copper_key1.png
+key1_copper_key2:
+  itemname: Copper Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200159
+    texture: key1:items/copper_key2.png
+key1_iron_key1:
+  itemname: Iron Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200160
+    texture: key1:items/iron_key1.png
+key1_iron_key2:
+  itemname: Iron Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200161
+    texture: key1:items/iron_key2.png
+key1_golden_key1:
+  itemname: Golden Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200162
+    texture: key1:items/golden_key1.png
+key1_golden_key2:
+  itemname: Golden Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200163
+    texture: key1:items/golden_key2.png
+key1_mythic_key1:
+  itemname: Mythic Key 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200164
+    texture: key1:items/mythic_key1.png
+key1_mythic_key2:
+  itemname: Mythic Key 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200165
+    texture: key1:items/mythic_key2.png
+
+# a8cfdd6abe9e319cd85a574193eda9a0

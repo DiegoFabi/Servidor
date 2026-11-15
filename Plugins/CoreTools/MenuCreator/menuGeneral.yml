@@ -1,0 +1,324 @@
+# Menu principal (fondo wallet_1). Abrir: /coremenu menuMain
+# Cuadricula: 1=slot 4, 2=5, 3=6, 4=13, 5=14, 6=15, 7=22, 8=23, 9=24
+# Iconos de los tooltips: glyphs de Nexo (<glyph:id>)
+menuMain:
+  permission: ''
+  bottom_inventory: false
+  name: '&f㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㉭'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    trabajos:
+      location: top
+      slots:
+      - 4
+      source: vanilla
+      material: golden_pickaxe
+      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Trabajos</gradient>
+      lore:
+      - <#C9CDD6>Únete a un trabajo, sube de nivel
+      - <#C9CDD6>y gana dinero mientras juegas.
+      - ''
+      - '<#9EA3AE>Incluye:'
+      - <white><glyph:pickaxe> <#E6E8EE>Minería, tala, pesca y granja
+      - <white><glyph:gold_coin> <#E6E8EE>Pago en <#FFD36B>Moneda
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para ver los trabajos
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_jobs_click
+      right_click:
+        Scripts:
+        - menumain_jobs_click
+      shift_left_click:
+        Scripts:
+        - menumain_jobs_click
+      shift_right_click:
+        Scripts:
+        - menumain_jobs_click
+    mascotas:
+      location: top
+      slots:
+      - 5
+      source: nexo
+      id: pet_category_epic
+      name: <white><glyph:heart> <gradient:#FFE29A:#FFB347>Mascotas</gradient>
+      lore:
+      - <#C9CDD6>Elige entre mascotas vanilla
+      - <#C9CDD6>o con modelos personalizados.
+      - ''
+      - '<#9EA3AE>Tipos:'
+      - '<white><glyph:heart> <#E6E8EE>Vanilla: <#FFD36B>suben de nivel'
+      - '<white><glyph:star> <#E6E8EE>Custom: <#FFD36B>grifos y monturas'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para elegir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_mascotas_click
+      right_click:
+        Scripts:
+        - menumain_mascotas_click
+      shift_left_click:
+        Scripts:
+        - menumain_mascotas_click
+      shift_right_click:
+        Scripts:
+        - menumain_mascotas_click
+    opciones:
+      location: top
+      slots:
+      - 6
+      source: vanilla
+      material: bundle
+      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Más Opciones</gradient>
+      lore:
+      - <#C9CDD6>Baúles, Homes, Más Buscados, Buzón,
+      - <#C9CDD6>Historia, Subastas y Duelos.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para ver todas las opciones
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_opciones_click
+      right_click:
+        Scripts:
+        - menumain_opciones_click
+      shift_left_click:
+        Scripts:
+        - menumain_opciones_click
+      shift_right_click:
+        Scripts:
+        - menumain_opciones_click
+    perfil:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: player_head
+      texture: player
+      name: <white><glyph:person> <gradient:#FFE29A:#FFB347>Mi Perfil</gradient>
+      lore:
+      - <#C9CDD6>Tu equipamiento, habilidades
+      - <#C9CDD6>y opciones de jugador.
+      - ''
+      - '<white><glyph:person> <#E6E8EE>Jugador: <#FFD36B>{caster_name}'
+      - '<white><glyph:gold_coin> <#E6E8EE>Moneda: <#FFD36B>%excellenteconomy_balance_short_money%'
+      - '<white><glyph:diamond> <#E6E8EE>Shards: <#FFD36B>%excellenteconomy_balance_short_shards%'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para ver tu perfil
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_b1_click
+      right_click:
+        Scripts:
+        - menumain_b1_click
+      shift_left_click:
+        Scripts:
+        - menumain_b1_click
+      shift_right_click:
+        Scripts:
+        - menumain_b1_click
+    tienda:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1YmNmZjJlNzRkZWVkMzdhMzE5YTFmNDA0ZTcwZDA2YTVmMzYwY2FjZWU5OWM3MTM0NmYzODU2MGNiZDcyYSJ9fX0=
+      name: <white><glyph:shopping_cart> <gradient:#FFE29A:#FFB347>Tienda</gradient>
+      lore:
+      - <#C9CDD6>Compra y vende bloques, minerales,
+      - <#C9CDD6>comida y objetos únicos.
+      - ''
+      - <white><glyph:gold_coin> <#E6E8EE>Pago en <#FFD36B>Moneda
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir la tienda
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_b3_click
+      right_click:
+        Scripts:
+        - menumain_b3_click
+      shift_left_click:
+        Scripts:
+        - menumain_b3_click
+      shift_right_click:
+        Scripts:
+        - menumain_b3_click
+    personalizacion:
+      location: top
+      slots:
+      - 14
+      source: nexo
+      id: comfortablechairred
+      name: <white><glyph:art_palette> <gradient:#FFE29A:#FFB347>Personalización</gradient>
+      lore:
+      - <#C9CDD6>Dale tu estilo a tu casa
+      - <#C9CDD6>y a tu personaje.
+      - ''
+      - '<#9EA3AE>Incluye:'
+      - <white><glyph:treasure> <#E6E8EE>Muebles <#FFD36B>(Moneda)
+      - <white><glyph:pack1_magic> <#E6E8EE>Partículas
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_personalizacion_click
+      right_click:
+        Scripts:
+        - menumain_personalizacion_click
+      shift_left_click:
+        Scripts:
+        - menumain_personalizacion_click
+      shift_right_click:
+        Scripts:
+        - menumain_personalizacion_click
+    pase:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: nether_star
+      name: <white><glyph:trophy> <gradient:#FFE29A:#FFB347>Pase de Batalla</gradient>
+      lore:
+      - <#C9CDD6>Completa misiones de temporada
+      - <#C9CDD6>y desbloquea recompensas.
+      - ''
+      - <white><glyph:present_box> <#E6E8EE>Recompensas por nivel
+      - <white><glyph:clock> <#E6E8EE>Misiones diarias y semanales
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir el pase
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_bp_click
+      right_click:
+        Scripts:
+        - menumain_bp_click
+      shift_left_click:
+        Scripts:
+        - menumain_bp_click
+      shift_right_click:
+        Scripts:
+        - menumain_bp_click
+    protecciones:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: icono_casa
+      name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Protecciones</gradient>
+      lore:
+      - <#C9CDD6>Protege tu casa y tus terrenos
+      - <#C9CDD6>para que nadie los rompa.
+      - ''
+      - <white><glyph:shield> <#E6E8EE>Reclama y administra tus zonas
+      - <white><glyph:person> <#E6E8EE>Agrega a tus amigos
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir las protecciones
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_nclaim_click
+      right_click:
+        Scripts:
+        - menumain_nclaim_click
+      shift_left_click:
+        Scripts:
+        - menumain_nclaim_click
+      shift_right_click:
+        Scripts:
+        - menumain_nclaim_click
+    teletransporte:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM5ZjFjMGRkY2Y1MzgzM2JhYzVmYmY1NzcxNWY3YzI1M2VlZmQyODcyZmYyN2U0YTg5M2JlMzA1MjliYzY4NSJ9fX0=
+      name: <white><glyph:airplane> <gradient:#FFE29A:#FFB347>Teletransporte</gradient>
+      lore:
+      - <#C9CDD6>Viaja rápido a las diferentes
+      - <#C9CDD6>partes del mundo.
+      - ''
+      - <white><glyph:earth> <#E6E8EE>Mundo, Nether y End
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para viajar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_b9_click
+      right_click:
+        Scripts:
+        - menumain_b9_click
+      shift_left_click:
+        Scripts:
+        - menumain_b9_click
+      shift_right_click:
+        Scripts:
+        - menumain_b9_click
+    warps:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: book
+      name: <white><glyph:light_bulb> <gradient:#FFE29A:#FFB347>Ayuda</gradient>
+      lore:
+      - <#C9CDD6>Aprende a usar las funciones
+      - <#C9CDD6>especiales del servidor.
+      - ''
+      - <white><glyph:tree> <#E6E8EE>Tala, veinminer y recolección
+      - <white><glyph:warning> <#E6E8EE>Cómo soltar objetos
+      - <white><glyph:envelope> <#E6E8EE>Buzón, subastas y más
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir la guía
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_b10_click
+      right_click:
+        Scripts:
+        - menumain_b10_click
+      shift_left_click:
+        Scripts:
+        - menumain_b10_click
+      shift_right_click:
+        Scripts:
+        - menumain_b10_click

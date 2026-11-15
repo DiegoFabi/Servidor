@@ -1,0 +1,70 @@
+red_bed:
+  itemname: <dark_red>Red Bed
+  lore:
+  - Your first spawn point -
+  - and your last hope.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: RED_BED
+  Components:
+    tooltip_style: minecraft:dark_red
+purple_candle:
+  itemname: <dark_purple>Purple Candle
+  lore:
+  - Smells like ancient magic.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: PURPLE_CANDLE
+  Components:
+    tooltip_style: minecraft:dark_purple
+blue_banner:
+  itemname: <blue>Blue Banner
+  lore:
+  - Some say it's a flag.
+  - Others, a target.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: BLUE_BANNER
+  Components:
+    tooltip_style: minecraft:blue
+gray_shulker_box:
+  itemname: <gray>Light Gray Shulker Box
+  lore:
+  - Inventory problems?
+  - Not anymore.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: LIGHT_GRAY_SHULKER_BOX
+  Components:
+    tooltip_style: minecraft:gray
+yellow_stained_glass:
+  itemname: <yellow>Yellow Stained Glass
+  lore:
+  - Sunshine, now in block form.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: YELLOW_STAINED_GLASS
+  Components:
+    tooltip_style: minecraft:yellow
+blue_concrete:
+  itemname: <dark_blue>Dark Blue Concrete
+  lore:
+  - Many thought it was water.
+  - Few survived.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: BLUE_CONCRETE
+  Components:
+    tooltip_style: minecraft:dark_blue
+green_wool:
+  itemname: <dark_green>Green Wool
+  lore:
+  - Soft.
+  - Sneaky.
+  - Creeper-approved.
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: GREEN_WOOL
+  Components:
+    tooltip_style: minecraft:dark_green
+# 1b21ce5f5cc3170730c8326106c592fb

@@ -1,0 +1,383 @@
+# ====================================
+# CLASE HUMANO  [AVANZADO] - TODOS LOS PODERES
+# ====================================
+# Poder 1: Impacto Celestial    - /humano impacto
+# Poder 2: Furia Titánica       - /humano furia
+# Poder 3: Invocar Guardianes   - /humano guardian  (alias: guardianes)
+# Poder 4: Tormenta de Relámpagos - /humano tormenta (alias: rayo)
+# Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...", dustOption)
+# Usa fxRing() y la proteccion de caida de magia/nucleo_magia.sk
+# ====================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+
+    prefix: <dark_gray>┃ <gold><bold>Humano</bold> <dark_gray>»<reset> 
+    cd-impacto: 30
+    cd-furia: 45
+    cd-guardian: 90
+    cd-tormenta: 60
+
+# ------------------------------------------------------------
+#  Cooldowns (en segundos, guardados en memoria)
+#  Devuelve true si el poder todavía está en cooldown.
+# ------------------------------------------------------------
+function huEnCooldown(p: player, poder: text) :: boolean:
+    set {_fin} to {-humano::cd::%{_poder}%::%uuid of {_p}%}
+    if {_fin} is set:
+        set {_rest} to {_fin} - (unix timestamp of now)
+        if {_rest} > 0:
+            send "{@prefix}&cDebes esperar &e%ceil({_rest})% segundos &cantes de usar este poder nuevamente!" to {_p}
+            play sound "entity.villager.no" with volume 0.5 and pitch 1 at {_p}
+            return true
+    return false
+
+function huPonerCooldown(p: player, poder: text, segundos: number):
+    set {-humano::cd::%{_poder}%::%uuid of {_p}%} to (unix timestamp of now) + {_segundos}
+    send action bar "&6⏳ &eCooldown: &c%{_segundos}% segundos" to {_p}
+
+function huMenu(p: player):
+    send "{@prefix}&cComandos disponibles:" to {_p}
+    send "&e/humano impacto &7- Impacto Celestial" to {_p}
+    send "&e/humano furia &7- Furia Titánica" to {_p}
+    send "&e/humano guardian &7- Invocar Guardianes" to {_p}
+    send "&e/humano tormenta &7- Tormenta de Relámpagos" to {_p}
+
+# ------------------------------------------------------------
+#  Comando principal
+# ------------------------------------------------------------
+command /humano [<text>]:
+    trigger:
+        if arg-1 is not set:
+            huMenu(player)
+            stop
+        set {_arg} to lowercase arg-1
+        if {_arg} is "impacto":
+            huImpacto(player)
+        else if {_arg} is "furia":
+            huFuria(player)
+        else if {_arg} is "guardian" or "guardianes":
+            huGuardian(player)
+        else if {_arg} is "tormenta" or "rayo":
+            huTormenta(player)
+        else:
+            send "{@prefix}&cComando desconocido!" to player
+            huMenu(player)
+
+# ------------------------------------------------------------
+#  PODER 1: IMPACTO CELESTIAL
+# ------------------------------------------------------------
+function huImpacto(p: player):
+    if huEnCooldown({_p}, "impacto") is true:
+        stop
+    if {_p} is not on ground:
+        send "{@prefix}&cDebes estar en el suelo para usar este poder!" to {_p}
+        stop
+    huPonerCooldown({_p}, "impacto", {@cd-impacto})
+    set {_id} to uuid of {_p}
+    set {-nofall::%{_id}%::humano} to true
+
+    fxAnuncio({_p}, "✧", "Impacto Celestial", "Preparándote para despegar...", "#BFE3FF", "#7FB8FF", "Avanzado")
+    play sound "block.beacon.activate" with volume 0.8 and pitch 1.5 at {_p}
+    play sound "entity.ender_dragon.flap" with volume 0.3 and pitch 2 at {_p}
+
+    set {_amarillo} to dustOption(yellow, 1.5)
+    set {_naranja} to dustOption(orange, 1.2)
+    set {_naranja2} to dustOption(orange, 2)
+
+    # Carga (20 ticks)
+    set {_l} to location of {_p}
+    loop 20 times:
+        make 4 of dust using {_amarillo} at {_l} with offset vector(0.5, 0.1, 0.5) {@force}
+        make 3 of dust using {_naranja} at {_l} with offset vector(0.5, 0.1, 0.5) {@force}
+        make 2 of end_rod at {_l} with offset vector(0.3, 0.5, 0.3) with extra 0.02 {@force}
+        wait 1 tick
+    if {_p} is not online:
+        stop
+
+    play sound "entity.firework_rocket.launch" with volume 1 and pitch 0.8 at {_p}
+    play sound "item.trident.riptide_3" with volume 0.8 and pitch 1.2 at {_p}
+    push {_p} upwards with force 1.5
+
+    # Ascenso (60 ticks) con dos llamas girando
+    loop 60 times:
+        if {_p} is not online:
+            stop
+        set {_i} to loop-number
+        set {_c} to location of {_p}
+        set {_x} to cos({_i} * 30) * 0.8
+        set {_z} to sin({_i} * 30) * 0.8
+        set {_l1} to {_c} offset by vector({_x}, -0.5, {_z})
+        set {_l2} to {_c} offset by vector(-1 * {_x}, -0.5, -1 * {_z})
+        make 1 of flame at {_l1} with extra 0 {@force}
+        make 1 of soul_fire_flame at {_l2} with extra 0 {@force}
+        make 1 of dust using {_naranja} at {_l1} with offset vector(0.05, 0.1, 0.05) {@force}
+        if mod({_i}, 2) is 0:
+            make 2 of end_rod at {_c} with offset vector(0.2, 0, 0.2) with extra 0.01 {@force}
+            make 1 of electric_spark at {_c} with offset vector(0.3, 0.5, 0.3) with extra 0 {@force}
+        if mod({_i}, 20) is 0:
+            play sound "entity.phantom.flap" with volume 0.4 and pitch 1.8 at {_p}
+        wait 1 tick
+
+    send title "<#FF6B6B>⚠" with subtitle "<#FFB3B3>¡Prepárate para el aterrizaje!" to {_p} for 1 second with fadein 0 ticks and fadeout 10 ticks
+    play sound "block.bell.use" with volume 1 and pitch 0.5 at {_p}
+
+    # Caída (máximo 10 segundos)
+    set {_t} to 0
+    while {_p} is online:
+        if {_p} is on ground:
+            exit loop
+        add 1 to {_t}
+        if {_t} > 200:
+            exit loop
+        set {_f} to location of {_p}
+        make 3 of flame at {_f} with offset vector(0.3, 0.5, 0.3) with extra 0 {@force}
+        make 1 of lava at {_f} with offset vector(0.2, 0.3, 0.2) with extra 0 {@force}
+        if mod({_t}, 2) is 0:
+            make 1 of large_smoke at {_f} with offset vector(0.4, 0.2, 0.4) with extra 0 {@force}
+        if mod({_t}, 10) is 0:
+            play sound "entity.firework_rocket.twinkle" with volume 0.5 and pitch 0.8 at {_p}
+        wait 1 tick
+    if {_p} is not online:
+        delete {-nofall::%{_id}%::humano}
+        stop
+
+    # Impacto
+    set {_imp} to location of {_p}
+    play sound "entity.generic.explode" with volume 2 and pitch 0.7 at {_imp}
+    play sound "entity.lightning_bolt.thunder" with volume 1.5 and pitch 1 at {_imp}
+    play sound "item.totem.use" with volume 1 and pitch 0.8 at {_imp}
+    make 1 of explosion_emitter at {_imp} {@force}
+
+    # Anillo de explosión (24 puntos, radio 3)
+    set {_ring::*} to fxRing({_imp}, 3, 24, 0.1)
+    make 2 of flame at {_ring::*} with offset vector(0.1, 0.1, 0.1) with extra 0.02 {@force}
+    set {_ring::*} to fxRing({_imp}, 3, 8, 0.1)
+    make 1 of explosion at {_ring::*} with extra 0 {@force}
+    make 1 of lava at {_ring::*} with extra 0 {@force}
+
+    # Daño por distancia (una vez por entidad)
+    loop all monsters in radius 5 around {_imp}:
+        if loop-entity is not {_p}:
+            if loop-entity is not an armor stand:
+                set {_dano} to 12 - ((distance between loop-entity and {_imp}) * 1.5)
+                if {_dano} > 0:
+                    damage loop-entity by {_dano}
+                    push loop-entity away from {_imp} with force 1.5
+                    set {_el} to location of loop-entity
+                    make 4 of damage_indicator at {_el} with offset vector(0.3, 0.6, 0.3) with extra 0 {@force}
+                    make 3 of crit at {_el} with offset vector(0.3, 0.6, 0.3) with extra 0.2 {@force}
+
+    # Tres ondas expansivas
+    loop 3 times:
+        wait 3 ticks
+        set {_r} to (loop-number) * 2
+        set {_ring::*} to fxRing({_imp}, {_r}, 24, 0.1)
+        make 1 of dust using {_naranja2} at {_ring::*} {@force}
+        make 1 of electric_spark at {_ring::*} with extra 0 {@force}
+        make 10 of large_smoke at {_imp} with offset vector({_r}, 0.3, {_r}) with extra 0.01 {@force}
+
+    make 25 of flame at {_imp} with offset vector(2, 0.5, 2) with extra 0.2 {@force}
+    make 25 of large_smoke at {_imp} with offset vector(2, 1, 2) with extra 0.02 {@force}
+
+    if {_p} is online:
+        send "{@prefix}&a¡Has usado &eImpacto Celestial&a!" to {_p}
+        send "{@prefix}&7Daño infligido en un radio de &e5 bloques&7." to {_p}
+    wait 1 second
+    delete {-nofall::%{_id}%::humano}
+
+# ------------------------------------------------------------
+#  PODER 2: FURIA TITÁNICA
+# ------------------------------------------------------------
+function huFuria(p: player):
+    if huEnCooldown({_p}, "furia") is true:
+        stop
+    huPonerCooldown({_p}, "furia", {@cd-furia})
+
+    fxAnuncio({_p}, "❣", "Furia Titánica", "El poder del titán despierta", "#FF9A9A", "#E04848", "Avanzado")
+    play sound "entity.ender_dragon.growl" with volume 1 and pitch 0.8 at {_p}
+    play sound "block.anvil.land" with volume 0.6 and pitch 1.5 at {_p}
+
+    set {_rojo} to dustOption(red, 2)
+    set {_rojo2} to dustOption(red, 1.5)
+
+    # Carga (25 ticks)
+    set {_loc} to location of {_p}
+    loop 25 times:
+        make 6 of dust using {_rojo} at {_loc} with offset vector(0.6, 1, 0.6) {@force}
+        make 3 of flame at {_loc} with offset vector(0.5, 0.8, 0.5) with extra 0.01 {@force}
+        make 2 of lava at {_loc} with offset vector(0.4, 0.5, 0.4) with extra 0 {@force}
+        wait 1 tick
+    if {_p} is not online:
+        stop
+
+    play sound "entity.wither.spawn" with volume 0.8 and pitch 1.5 at {_p}
+    make 1 of explosion_emitter at {_loc} {@force}
+    make 20 of large_smoke at {_loc} with offset vector(1.5, 0.5, 1.5) with extra 0.02 {@force}
+
+    apply strength 3 to {_p} for 15 seconds
+    apply resistance 2 to {_p} for 15 seconds
+    apply speed 2 to {_p} for 15 seconds
+    apply regeneration 1 to {_p} for 15 seconds
+
+    loop all monsters in radius 3 around {_loc}:
+        if loop-entity is not {_p}:
+            damage loop-entity by 6
+            push loop-entity away from {_loc} with force 1
+
+    send "{@prefix}&a¡Has usado &4Furia Titánica&a!" to {_p}
+    send "{@prefix}&7Efectos: &cFuerza III&7, &7Resistencia II&7, &bVelocidad II&7 por 15s" to {_p}
+
+    # Aura durante 15 segundos (cada 2 ticks en lugar de cada tick)
+    loop 150 times:
+        if {_p} is not online:
+            stop
+        set {_i} to loop-number
+        set {_c} to location of {_p}
+        make 2 of dust using {_rojo2} at {_c} with offset vector(0.8, 1.2, 0.8) {@force}
+        make 1 of flame at {_c} with offset vector(0.5, 0.8, 0.5) with extra 0 {@force}
+        set {_s} to {_c} offset by vector(cos({_i} * 40) * 1.2, 0.5, sin({_i} * 40) * 1.2)
+        make 1 of flame at {_s} with extra 0 {@force}
+        if mod({_i}, 30) is 0:
+            play sound "entity.blaze.ambient" with volume 0.3 and pitch 1.2 at {_p}
+        wait 2 ticks
+
+# ------------------------------------------------------------
+#  PODER 3: INVOCAR GUARDIANES
+# ------------------------------------------------------------
+function huGuardian(p: player):
+    if huEnCooldown({_p}, "guardian") is true:
+        stop
+    # El cooldown empieza al invocar (antes se podía repetir durante 60 s)
+    huPonerCooldown({_p}, "guardian", {@cd-guardian})
+    set {_id} to uuid of {_p}
+
+    fxAnuncio({_p}, "✠", "Invocar Guardianes", "Llamando a los protectores...", "#D6E6FF", "#8FB3FF", "Avanzado")
+    play sound "entity.evoker.prepare_summon" with volume 1 and pitch 1 at {_p}
+    play sound "block.portal.trigger" with volume 0.7 and pitch 1.5 at {_p}
+
+    set {_amarillo} to dustOption(yellow, 1.8)
+    set {_centro} to location of {_p}
+
+    loop 3 times:
+        set {_a} to (loop-number-1) * 120
+        set {_spawn} to {_centro} offset by vector(cos({_a}) * 3, 0, sin({_a}) * 3)
+
+        # Columna de luz que sube durante 15 ticks
+        loop 15 times:
+            set {_col} to {_spawn} offset by vector(0, (loop-number-2) * 0.2, 0)
+            make 4 of dust using {_amarillo} at {_col} with offset vector(0.4, 0.1, 0.4) {@force}
+            make 2 of end_rod at {_col} with offset vector(0.3, 0.1, 0.3) with extra 0.01 {@force}
+            wait 1 tick
+
+        spawn an iron golem at {_spawn}
+        set {_g} to last spawned entity
+        add {_g} to {_golems::*}
+        add {_g} to {-humano::golems::%{_id}%::*}
+
+        play sound "entity.evoker.prepare_summon" with volume 1 and pitch 1.5 at {_spawn}
+        make 1 of explosion_emitter at {_spawn} {@force}
+        make 15 of electric_spark at {_spawn} with offset vector(1, 1.5, 1) with extra 0 {@force}
+        make 10 of end_rod at {_spawn} with offset vector(1, 1.5, 1) with extra 0.05 {@force}
+
+        apply strength 1 to {_g} for 60 seconds
+        apply resistance 1 to {_g} for 60 seconds
+        apply speed 1 to {_g} for 60 seconds
+        apply glowing to {_g} for 60 seconds
+        wait 5 ticks
+
+    if {_p} is online:
+        send "{@prefix}&a¡Has invocado 3 Guardianes de Hierro!" to {_p}
+        send "{@prefix}&7Duración: &e60 segundos" to {_p}
+
+    wait 60 seconds
+
+    # Retirar solo los golems de esta invocación, estén donde estén
+    loop {_golems::*}:
+        if loop-value is alive:
+            set {_gl} to location of loop-value
+            make 15 of cloud at {_gl} with offset vector(1, 1, 1) with extra 0.02 {@force}
+            make 10 of dust using {_amarillo} at {_gl} with offset vector(1, 1, 1) {@force}
+            play sound "entity.evoker.cast_spell" with volume 0.8 and pitch 1.2 at {_gl}
+            kill loop-value
+        remove loop-value from {-humano::golems::%{_id}%::*}
+
+# ------------------------------------------------------------
+#  PODER 4: TORMENTA DE RELÁMPAGOS
+# ------------------------------------------------------------
+function huTormenta(p: player):
+    if huEnCooldown({_p}, "tormenta") is true:
+        stop
+    huPonerCooldown({_p}, "tormenta", {@cd-tormenta})
+
+    fxAnuncio({_p}, "⚡", "Tormenta de Relámpagos", "El cielo te obedece", "#FFF3A6", "#FFD84D", "Avanzado")
+    play sound "entity.lightning_bolt.thunder" with volume 0.8 and pitch 1.5 at {_p}
+    play sound "item.trident.thunder" with volume 1 and pitch 1.2 at {_p}
+
+    set {_aqua} to dustOption(aqua, 1.5)
+    set {_aqua2} to dustOption(aqua, 2)
+    set {_aqua3} to dustOption(aqua, 2.5)
+    set {_centro} to location of {_p}
+
+    # Carga (30 ticks). El sonido suena cada 5 ticks en lugar de cada tick.
+    loop 30 times:
+        make 4 of electric_spark at {_centro} with offset vector(1, 2, 1) with extra 0 {@force}
+        make 4 of dust using {_aqua} at {_centro} with offset vector(0.8, 1.5, 0.8) {@force}
+        if mod(loop-number, 2) is 0:
+            make 2 of end_rod at {_centro} with offset vector(0.5, 1.8, 0.5) with extra 0.01 {@force}
+        if mod(loop-number, 5) is 0:
+            play sound "block.beacon.ambient" with volume 0.3 and pitch 2 at {_centro}
+        wait 1 tick
+
+    # 8 rayos en círculo
+    loop 8 times:
+        set {_a} to (loop-number-1) * 45
+        set {_rayo} to {_centro} offset by vector(cos({_a}) * 7, 0, sin({_a}) * 7)
+        strike lightning effect at {_rayo}
+        make 20 of electric_spark at {_rayo} with offset vector(1.5, 2.5, 1.5) with extra 0 {@force}
+        make 15 of dust using {_aqua2} at {_rayo} with offset vector(1.5, 2, 1.5) {@force}
+        make 10 of soul_fire_flame at {_rayo} with offset vector(1, 1, 1) with extra 0.02 {@force}
+        play sound "entity.lightning_bolt.impact" with volume 1.5 and pitch 1 at {_rayo}
+
+        loop all monsters in radius 3 around {_rayo}:
+            if loop-entity is not {_p}:
+                damage loop-entity by 8
+                apply glowing to loop-entity for 3 seconds
+                set {_el} to location of loop-entity
+                make 8 of electric_spark at {_el} with offset vector(0.5, 1, 0.5) with extra 0 {@force}
+        wait 5 ticks
+
+    # Rayo central final
+    wait 10 ticks
+    play sound "entity.wither.spawn" with volume 1 and pitch 1.8 at {_centro}
+    strike lightning effect at {_centro}
+    make 40 of electric_spark at {_centro} with offset vector(3, 4, 3) with extra 0 {@force}
+    make 30 of dust using {_aqua3} at {_centro} with offset vector(2, 3, 2) {@force}
+    make 20 of end_rod at {_centro} with offset vector(2, 3, 2) with extra 0.05 {@force}
+    make 15 of soul_fire_flame at {_centro} with offset vector(1.5, 2, 1.5) with extra 0.02 {@force}
+
+    loop all monsters in radius 4 around {_centro}:
+        if loop-entity is not {_p}:
+            damage loop-entity by 15
+            push loop-entity away from {_centro} with force 1.5
+            apply slowness 2 to loop-entity for 5 seconds
+            ignite loop-entity for 3 seconds
+
+    if {_p} is online:
+        send "{@prefix}&a¡Has desatado una &3Tormenta de Relámpagos&a!" to {_p}
+        send "{@prefix}&79 rayos fulminantes cayeron del cielo" to {_p}
+
+# ------------------------------------------------------------
+#  Eventos
+# ------------------------------------------------------------
+# La proteccion de caida esta en magia/nucleo_magia.sk.
+# Al salir, se retiran los guardianes del jugador. Los cooldowns se
+# mantienen para que no se puedan reiniciar saliendo y entrando.
+on quit:
+    set {_id} to uuid of player
+    loop {-humano::golems::%{_id}%::*}:
+        if loop-value is alive:
+            kill loop-value
+    delete {-humano::golems::%{_id}%::*}

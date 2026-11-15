@@ -1,0 +1,39 @@
+announcementPriority: 0
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: DROWNED
+helmet: IRON_HELMET
+chestplate: IRON_CHESTPLATE
+leggings: IRON_LEGGINGS
+boots: IRON_BOOTS
+mainHand: TRIDENT
+name: $eventBossLevel &3Storm Caller
+level: dynamic
+healthMultiplier: 5
+damageMultiplier: 0.6
+isPersistent: true
+powers:
+- attack_fire.yml
+- lightning_bolts.yml
+- thunderstorm.yml
+- invulnerability_fire.yml
+- summonType: ON_HIT
+  filename: storm_caller_summon.yml
+  spawnNearby: true
+  inheritAggro: true
+  inheritLevel: true
+  amount: 1
+  chance: 0.2
+trails:
+- ELECTRIC_SPARK
+- ELECTRIC_SPARK
+- ELECTRIC_SPARK
+- SPELL_MOB
+uniqueLootList:
+- filename=storm_caller_drop_trident.yml:amount=1:chance=0.25
+movementSpeedAttribute: 0.38
+followDistance: 80
+locationMessage: '&cStorm Caller: $distance blocks away!'

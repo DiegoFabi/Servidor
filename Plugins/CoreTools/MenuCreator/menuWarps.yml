@@ -1,0 +1,278 @@
+# Convertido desde CommandPanels (panels/menuWarps.yml). Abrir: /coremenu <menu>
+menuWarps:
+  permission: ''
+  bottom_inventory: false
+  name: '      &9✈ ᴍᴇɴᴜ ᴅᴇ ᴜʙɪᴄᴀᴄɪᴏɴᴇꜱ'
+  size: 5
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: cake
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b2:
+      location: top
+      slots:
+      - 11
+      - 20
+      - 29
+      source: vanilla
+      material: black_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    b3:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTkyZWFhY2QyOTBlYWQzN2ViMWEyMDJhYzczNjdmMzJiZTc0Y2Y0YWM3NzIzZTA2N2M0NjU4YmY2MmMzZGJkNiJ9fX0=
+      name: '§7⚔ §e¡Arena de Combate!'
+      lore:
+      - '§8/Warp Arena'
+      - '§7'
+      - '§7| §fPuedes pelear por §arecompensas'
+      - '§7| §fy participar en §aeventos§f!'
+      - '§7'
+      - '§a§l⤷ §a¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+    b4:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjg5NTEzOTlkMGViZDBkZmU4N2U1MGYwZDZkZWUyNTI3NGQ5M2YxZmJiMzg1MDVlYzk3MWI2MDFkMWMyY2I5In19fQ==
+      name: '§7❂ §5¡Encantamientos Avanzados!'
+      lore:
+      - '§8/Warp Encantamientos'
+      - '§7'
+      - '§7| §fEcanta tus herramientas con'
+      - '§7| §fefectos §dExclusivos §fy §dÚnicos§f!'
+      - '§7'
+      - '§a§l⤷ §a¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuwarps_b4_click
+      right_click:
+        Scripts:
+        - menuwarps_b4_click
+      shift_left_click:
+        Scripts:
+        - menuwarps_b4_click
+      shift_right_click:
+        Scripts:
+        - menuwarps_b4_click
+    b5:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: CROSSBOW
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b6:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: PUFFERFISH_BUCKET
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b7:
+      location: top
+      slots:
+      - 19
+      source: vanilla
+      material: slime_ball
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b8:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDEwNmE0ZjIyYjViNTIzYTI2OWU1OWNhYjkzNmQzMjIxYTdhZjk4NzIwMTgzOGUxZjgwNmMwMGMxMzM2ODRhMiJ9fX0=
+      name: '&7🔥 &d¡Habilidades Avanzadas!'
+      lore:
+      - '&8/Warp Habilidades'
+      - '&7'
+      - '&7| &f¡Aumenta tus &5Habildiades &fy'
+      - '&7| &fdesbloquea &5Poderes &fúnicos!'
+      - '&7'
+      - '§a§l⤷ §a¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuwarps_b8_click
+      right_click:
+        Scripts:
+        - menuwarps_b8_click
+      shift_left_click:
+        Scripts:
+        - menuwarps_b8_click
+      shift_right_click:
+        Scripts:
+        - menuwarps_b8_click
+    b9:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMThmNzk0ZTRhNTY0OThkOTI1NzIwODAzYjkyMDUxODYzZWRlMjA0NTBlYTQ1MzEwMmI0N2ZhM2U5Y2M0ZWIwNCJ9fX0=
+      name: '&7✠ &a¡Herreria Avanzada!'
+      lore:
+      - '§8/Warp Herreria'
+      - '§7'
+      - '§7| §fPuedes §5combinar tus §5Armas'
+      - '§7| §fy obtener objetos §5Magicos§f!'
+      - '§7'
+      - '§a§l⤷ §a¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuwarps_b9_click
+      right_click:
+        Scripts:
+        - menuwarps_b9_click
+      shift_left_click:
+        Scripts:
+        - menuwarps_b9_click
+      shift_right_click:
+        Scripts:
+        - menuwarps_b9_click
+    b10:
+      location: top
+      slots:
+      - 24
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjQ3ZTJlNWQ1NWI2ZDA0OTQzNTE5YmVkMjU1N2M2MzI5ZTMzYjYwYjkwOWRlZTg5MjNjZDg4YjExNTIxMCJ9fX0=
+      name: '§7☠ §c¡Dungeon de Combate!'
+      lore:
+      - '§8/Warp Dungeon'
+      - '§7'
+      - '§7| §fEntra a una &eCueva &fllena de mobs'
+      - '§7| §fcon &ePoderes Mejorados&f. ¿Para que?'
+      - '§7| §eRecompensas §fy §eDinero ⛃'
+      - '§7'
+      - '§a§l⤷ §a¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuwarps_b10_click
+      right_click:
+        Scripts:
+        - menuwarps_b10_click
+      shift_left_click:
+        Scripts:
+        - menuwarps_b10_click
+      shift_right_click:
+        Scripts:
+        - menuwarps_b10_click
+    b11:
+      location: top
+      slots:
+      - 25
+      source: vanilla
+      material: NETHER_STAR
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b12:
+      location: top
+      slots:
+      - 28
+      source: vanilla
+      material: enchanting_table
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b13:
+      location: top
+      slots:
+      - 31
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjRmMTEyN2M1MTg4ODYxZmNjOTg3MjhhODcyYjJmYTBmZDE1MzdlN2JiNjE4YzNmOTAyMDFlNWQwMjA4ZmJjZiJ9fX0=
+      name: '&7✦ &e¡Jugadores en el Top!'
+      lore:
+      - '§8/Warp Tops'
+      - '§7'
+      - '§7| §f¡Se mostraran los §6Tops §fde las'
+      - '§7| §fcategorias, §6Asesinatos§f, §6Dinero,'
+      - '§7| §6Mineria §fy mucho más!'
+      - '§7'
+      - '§a§l⤷ §a¡Toca para viajar!"'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuwarps_b13_click
+      right_click:
+        Scripts:
+        - menuwarps_b13_click
+      shift_left_click:
+        Scripts:
+        - menuwarps_b13_click
+      shift_right_click:
+        Scripts:
+        - menuwarps_b13_click
+    b14:
+      location: top
+      slots:
+      - 32
+      - 33
+      source: vanilla
+      material: GOLDEN_HOE
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b15:
+      location: top
+      slots:
+      - 34
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQyMTBiNmYwMGM4NThhODRhMjJmNWMxODQ3MTExNzRiZjdkNDY3MmUyYjdmZmE3MjNhNmJjNjQ5MjNkN2Y1YiJ9fX0=
+      name: '§7＄ §a¡Subasta de Objetos! §7| &8Manual'
+      lore:
+      - '§8/Warp Subastas'
+      - '§7'
+      - '§7| §f¡Se subastaran §eSemanal §fo §eMensualmente'
+      - '§7| §eHerramientas §fu Objetos con habilidades'
+      - '§7| §fo encantamientos especiales!'
+      - '§7'
+      - '§a§l⤷ §a¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuwarps_b15_click
+      right_click:
+        Scripts:
+        - menuwarps_b15_click
+      shift_left_click:
+        Scripts:
+        - menuwarps_b15_click
+      shift_right_click:
+        Scripts:
+        - menuwarps_b15_click

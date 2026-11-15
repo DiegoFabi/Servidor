@@ -1,0 +1,12 @@
+isEnabled: true
+material: IRON_AXE
+name: "&fGlowing Axe"
+lore:
+- "&fIt seems like a normal axe but there"
+- "&fis a dim light being emitted from"
+- "&fthe handle."
+enchantments:
+- "DAMAGE_ALL,3"
+potionEffects: 
+- "INCREASE_DAMAGE,0,self,continuous"
+itemType: UNIQUE

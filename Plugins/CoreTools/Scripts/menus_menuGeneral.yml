@@ -1,0 +1,30 @@
+# Acciones de los menus convertidos desde CommandPanels
+menumain_b1_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+  - 'command{c="perfil";runas=player} @Self'
+menumain_b3_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.experience_orb.pickup";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu MainShop {caster_name}";runas=console} @Self'
+menumain_b6_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.wolf.ambient";volume=1;pitch=1} @Self'
+  - 'command{c="pets collection";runas=op} @Self'
+menumain_b9_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu panelTP {caster_name}";runas=console} @Self'
+menumain_b10_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:item.book.page_turn";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuAyuda {caster_name}";runas=console} @Self'
+menumain_bounty_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=0.6;pitch=0.8} @Self'
+  - 'command{c="bounty";runas=player} @Self'

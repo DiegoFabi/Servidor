@@ -1,0 +1,11 @@
+validBiomesV2: []
+isEnabled: true
+validWorlds: []
+validWorldEnvironments:
+- NORMAL
+- CUSTOM
+validBiomes:
+- BEACH
+- SNOWY_BEACH
+isSurfaceSpawn: true
+canSpawnInLight: true

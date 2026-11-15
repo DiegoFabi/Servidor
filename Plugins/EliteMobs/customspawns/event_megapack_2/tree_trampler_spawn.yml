@@ -1,0 +1,14 @@
+validBiomesV2: []
+isEnabled: true
+validWorlds: []
+validWorldEnvironments:
+- NORMAL
+- CUSTOM
+validBiomes:
+- BIRCH_FOREST
+- OLD_GROWTH_BIRCH_FOREST
+- FOREST
+- DARK_FOREST
+- WOODED_BADLANDS
+isSurfaceSpawn: true
+canSpawnInLight: true

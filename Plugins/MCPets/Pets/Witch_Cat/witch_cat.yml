@@ -1,0 +1,26 @@
+Id: WitchCat
+MythicMob: WitchCat
+Permission: mcpets.witchcat
+Mountable: false
+DespawnSkill: WitchCat_Despawn
+Distance: 6
+SpawnRange: 1
+ComingBackRange: 3
+Icon:
+  Name: §dGato de Bruja
+  TextureBase64: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQxNzA2YzU1ODFkZDU5YmUxOGEwOTE1OWU0ZTc0ZTI3YzFlMDM1N2RlMmNjZTQ4NzY4ZGFhYjhkNzE2M2I4OCJ9fX0=
+  Description:
+  - §7Un gatito mágico que te seguirá a todas partes.
+Levels: {}
+Signals:
+  Values:
+  - SIT
+  - UNSIT
+  - TRICK
+  Item:
+    GetFromMenu: true
+    Material: STICK
+    Name: Signal stick
+    Description:
+    - Left click to change signal
+    - Right click to send signal

@@ -1,0 +1,224 @@
+blacksmith_anvil:
+  itemname: Blacksmith Anvil
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_anvil
+    custom_model_data: 1031
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0..1,0
+blacksmith_forge:
+  itemname: Blacksmith Forge
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_forge
+    custom_model_data: 1032
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0..1,0,0
+        - 0..1,0..2,1
+blacksmith_grinding_wheel:
+  itemname: Blacksmith Grinding Wheel
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_grinding_wheel
+    custom_model_data: 1033
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0..1,0..1,0
+blacksmith_shield_wall_rack:
+  itemname: Blacksmith Shield Wall Rack
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_shield_wall_rack
+    custom_model_data: 1034
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+blacksmith_sword_wall_rack:
+  itemname: Blacksmith Sword Wall Rack
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_sword_wall_rack
+    custom_model_data: 1035
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+blacksmith_sword_wall_rack_empty:
+  itemname: Blacksmith Sword Wall Rack Empty
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_sword_wall_rack_empty
+    custom_model_data: 1036
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+blacksmith_water_bath:
+  itemname: Blacksmith Water Bath
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_water_bath
+    custom_model_data: 1037
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0..1,0,0
+blacksmith_weapon_stand:
+  itemname: Blacksmith Weapon Stand
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_weapon_stand
+    custom_model_data: 1038
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0..1,0..1,0
+blacksmith_weapon_stand_empty:
+  itemname: Blacksmith Weapon Stand Empty
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_weapon_stand_empty
+    custom_model_data: 1039
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0..1,0..1,0
+blacksmith_weapon_stand_small:
+  itemname: Blacksmith Weapon Stand Small
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_weapon_stand_small
+    custom_model_data: 1040
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0..1,0
+blacksmith_weapon_stand_small_empty:
+  itemname: Blacksmith Weapon Stand Small Empty
+  material: PAPER
+  Pack:
+    model: workshop_six/blacksmith_forge_furniture/blacksmith_weapon_stand_small_empty
+    custom_model_data: 1041
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0..1,0
+# 326FL2KQVRZM0WF

@@ -1,0 +1,21 @@
+Id: Horse_Pegasus
+MythicMob: Horse_Pegasus
+Permission: skin.horse_pegasus
+Mountable: true
+MountType: flying
+Distance: 6
+DismountOnDamaged: false
+SpawnRange: 3
+ComingBackRange: 10
+Icon:
+  Name: §fPegaso
+  Material: BRICK
+  CustomModelData: 2523
+  Description:
+  - §fGet your pet Pegasus!
+Signals:
+  Values:
+  - DASH
+  Item:
+    Name: §bSignal Feather
+    Material: FEATHER

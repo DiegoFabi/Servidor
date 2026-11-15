@@ -1,0 +1,14 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: BEE
+name: $eventBossLevel &cHive Wasp
+level: dynamic
+healthMultiplier: 1.0
+damageMultiplier: 0.25
+powers:
+- invulnerability_fire.yml
+movementSpeedAttribute: 0.25
+followDistance: 35

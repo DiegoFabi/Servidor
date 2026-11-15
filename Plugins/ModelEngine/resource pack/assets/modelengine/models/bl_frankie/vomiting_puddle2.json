@@ -1,0 +1,1 @@
+{"textures":{"4":"modelengine:entity/models/bl_frankie_vfx","particle":"#4"},"elements":[{"from":[-10.5,8.0,-10.5],"to":[26.5,8.0,26.5],"faces":{"up":{"uv":[5.2857146,5.2857146,0.0,0.0],"tintindex":0,"rotation":0,"texture":"#4"},"down":{"uv":[5.2857146,5.2857146,0.0,10.571429],"tintindex":0,"rotation":0,"texture":"#4"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

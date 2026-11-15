@@ -1,0 +1,65 @@
+# Lemon MCPets GUI - iconos del menu de MCPets (convertido de Oraxen a Nexo)
+# Los CustomModelData coinciden con MCPets/menuIcons.yml y MCPets/Categories
+pet_category_common:
+  itemname: <white>Category Common
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_category_common
+    custom_model_data: 121
+pet_category_rare:
+  itemname: <white>Category Rare
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_category_rare
+    custom_model_data: 122
+pet_category_epic:
+  itemname: <white>Category Epic
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_category_epic
+    custom_model_data: 123
+pet_category_legendary:
+  itemname: <white>Category Legendary
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_category_legendary
+    custom_model_data: 124
+pet_item_name:
+  itemname: <white>Item Name
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_item_name
+    custom_model_data: 125
+pet_item_mount:
+  itemname: <white>Item Mount
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_item_mount
+    custom_model_data: 126
+pet_item_inventory:
+  itemname: <white>Item Inventory
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_item_inventory
+    custom_model_data: 127
+pet_item_back:
+  itemname: <white>Item Back
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_item_back
+    custom_model_data: 128
+pet_item_skin:
+  itemname: <white>Item Skin
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    texture: lemon_mcpets/pet_item_skin
+    custom_model_data: 129

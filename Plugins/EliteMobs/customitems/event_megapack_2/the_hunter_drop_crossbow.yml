@@ -1,0 +1,12 @@
+isEnabled: true
+material: CROSSBOW
+name: "&aHunter's Friend"
+lore:
+- "&aLet the hunt begin."
+enchantments:
+- "PIERCING,3"
+- "QUICK_CHARGE,1"
+- "DURABILITY,1"
+potionEffects: 
+- "NIGHT_VISION,1,self,onHit"
+itemType: UNIQUE

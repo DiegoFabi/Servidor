@@ -1,0 +1,745 @@
+# Convertido desde CommandPanels (panels/panelTP.yml). Abrir: /coremenu <menu>
+panelTP:
+  permission: ''
+  bottom_inventory: false
+  name: '㈮㈮&f㈽'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  start_script:
+  - paneltp_open
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      lore:
+      - '<#7CFC9A>Descripción:'
+      - '&8• &fViaja al centro del mundo de'
+      - '  &fsupervivencia, consigue recursos'
+      - '  &fy empieza a construir tu hogar.'
+      - '&7'
+      - '<#7CFC9A>Información'
+      - '  &8• &7Tamaño: &f30,000 x 30,000'
+      - '  &8• &7Precio RTP: &f&aGratis'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '&e➜ Click para teletransportarte'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - paneltp_b1_click
+      right_click:
+        Scripts:
+        - paneltp_b1_click
+      shift_left_click:
+        Scripts:
+        - paneltp_b1_click
+      shift_right_click:
+        Scripts:
+        - paneltp_b1_click
+    b2:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5ZDkxNGExMmMxN2NjY2I1NTg5OTI4NWEwNjY5MDJiYTUzOTc2ODA3NDA3ZmNiODY5NmRiZTE5YWVmNzcifX19
+      name: '<#E296F3>&l⚑ Lugares del Servidor'
+      lore:
+      - '<#E296F3>Descripción:'
+      - '&8• &fDimensiones, ciudades, dungeons,'
+      - '  &fjefes y mucho más; todo'
+      - '  &fpersonalizado y optimizado.'
+      - '&7'
+      - '&e➜ Click para ver los lugares disponibles'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - paneltp_b2_click
+      right_click:
+        Scripts:
+        - paneltp_b2_click
+      shift_left_click:
+        Scripts:
+        - paneltp_b2_click
+      shift_right_click:
+        Scripts:
+        - paneltp_b2_click
+    b3:
+      location: top
+      slots:
+      - 39
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM0NTg3NWU5MjFhMTQ1ZjkyMDM4ODU4YWVlY2MzYzJmMDgzNDQxZWJjNWM4MjY1ZDMxYTI4MWQyNjhlMzY1YiJ9fX0=
+      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      lore:
+      - '<#FF6B5C>Descripción:'
+      - '&8• &fEntra solo si cuentas con buen'
+      - '  &fequipo y los recursos necesarios'
+      - '  &fpara sobrevivir a criaturas fuertes.'
+      - '&7'
+      - '<#FF6B5C>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,000'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#FF6B5C>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '&e➜ Click para ver el menú de Nether'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - paneltp_b3_click
+      right_click:
+        Scripts:
+        - paneltp_b3_click
+      shift_left_click:
+        Scripts:
+        - paneltp_b3_click
+      shift_right_click:
+        Scripts:
+        - paneltp_b3_click
+    b4:
+      location: top
+      slots:
+      - 40
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEyYTAzYTRjMTFiNGQ0NzI0NzJlN2U0NTkzZDJlMTI2YTYyNTllMzNjYzgxZjQ0ZWIwNWNmMDQyZDA3Njk2NyJ9fX0=
+      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      lore:
+      - '<#7CFC9A>Descripción:'
+      - '&8• &fViaja al centro del mundo de'
+      - '  &fsupervivencia, consigue recursos'
+      - '  &fy empieza a construir tu hogar.'
+      - '&7'
+      - '<#7CFC9A>Información'
+      - '  &8• &7Tamaño: &f30,000 x 30,000'
+      - '  &8• &7Precio RTP: &f&aGratis'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '&e➜ Click para teletransportarte'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - paneltp_b4_click
+      right_click:
+        Scripts:
+        - paneltp_b4_click
+      shift_left_click:
+        Scripts:
+        - paneltp_b4_click
+      shift_right_click:
+        Scripts:
+        - paneltp_b4_click
+    b5:
+      location: top
+      slots:
+      - 41
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjZjZTljODFkODRhNjk4MWQ0YzViM2RjMDlhYmIxMjFlYzdhODA3OTE5MjY1Zjg3MWE1YTdiMWE4ZjIxIn19fQ==
+      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      lore:
+      - '<#B48CFF>Descripción:'
+      - '&8• &fEsta dimensión no es el final del'
+      - '  &fjuego: aquí conseguirás materiales'
+      - '  &fy herramientas únicas del mundo.'
+      - '&7'
+      - '<#B48CFF>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,800'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#B48CFF>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '<#B48CFF>Evento'
+      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
+      - '&7'
+      - '&e➜ Click para ver el menú de The End'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - paneltp_b5_click
+      right_click:
+        Scripts:
+        - paneltp_b5_click
+      shift_left_click:
+        Scripts:
+        - paneltp_b5_click
+      shift_right_click:
+        Scripts:
+        - paneltp_b5_click
+    b6:
+      location: top
+      slots:
+      - 43
+      source: vanilla
+      material: SHIELD
+      name: '<#FFD54F>&l♜ Imperio del Rey &8- &7Orian'
+      lore:
+      - '<#FFD54F>Descripción:'
+      - '&8• &fEncanta tus armas, compra objetos,'
+      - '  &fpelea contra mobs y mucho más.'
+      - '&7'
+      - '<#FFD54F>Información'
+      - '  &8• &7Mundo: &fOrian'
+      - '  &8• &7Precio: &f&aGratis'
+      - '&7'
+      - '&e➜ Click para viajar a la ciudad'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      enchantments:
+      - unbreaking 1
+      left_click:
+        Scripts:
+        - paneltp_b6_click
+      right_click:
+        Scripts:
+        - paneltp_b6_click
+      shift_left_click:
+        Scripts:
+        - paneltp_b6_click
+      shift_right_click:
+        Scripts:
+        - paneltp_b6_click
+NetherMenu:
+  permission: ''
+  bottom_inventory: false
+  name: '㈮㈮&f㉝'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      lore:
+      - '<#FF6B5C>Descripción:'
+      - '&8• &fEntra solo si cuentas con buen'
+      - '  &fequipo y los recursos necesarios'
+      - '  &fpara sobrevivir a criaturas fuertes.'
+      - '&7'
+      - '<#FF6B5C>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,000'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#FF6B5C>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '&e➜ Click para teletransportarte'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - nethermenu_b1_click
+      right_click:
+        Scripts:
+        - nethermenu_b1_click
+      shift_left_click:
+        Scripts:
+        - nethermenu_b1_click
+      shift_right_click:
+        Scripts:
+        - nethermenu_b1_click
+    b2:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5ZDkxNGExMmMxN2NjY2I1NTg5OTI4NWEwNjY5MDJiYTUzOTc2ODA3NDA3ZmNiODY5NmRiZTE5YWVmNzcifX19
+      name: '<#E296F3>&l⚑ Lugares del Servidor'
+      lore:
+      - '<#E296F3>Descripción:'
+      - '&8• &fDimensiones, ciudades, dungeons,'
+      - '  &fjefes y mucho más; todo'
+      - '  &fpersonalizado y optimizado.'
+      - '&7'
+      - '&e➜ Click para ver los lugares disponibles'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - nethermenu_b2_click
+      right_click:
+        Scripts:
+        - nethermenu_b2_click
+      shift_left_click:
+        Scripts:
+        - nethermenu_b2_click
+      shift_right_click:
+        Scripts:
+        - nethermenu_b2_click
+    b3:
+      location: top
+      slots:
+      - 39
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM0NTg3NWU5MjFhMTQ1ZjkyMDM4ODU4YWVlY2MzYzJmMDgzNDQxZWJjNWM4MjY1ZDMxYTI4MWQyNjhlMzY1YiJ9fX0=
+      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      lore:
+      - '<#FF6B5C>Descripción:'
+      - '&8• &fEntra solo si cuentas con buen'
+      - '  &fequipo y los recursos necesarios'
+      - '  &fpara sobrevivir a criaturas fuertes.'
+      - '&7'
+      - '<#FF6B5C>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,000'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#FF6B5C>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '&e➜ Click para teletransportarte'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - nethermenu_b3_click
+      right_click:
+        Scripts:
+        - nethermenu_b3_click
+      shift_left_click:
+        Scripts:
+        - nethermenu_b3_click
+      shift_right_click:
+        Scripts:
+        - nethermenu_b3_click
+    b4:
+      location: top
+      slots:
+      - 40
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEyYTAzYTRjMTFiNGQ0NzI0NzJlN2U0NTkzZDJlMTI2YTYyNTllMzNjYzgxZjQ0ZWIwNWNmMDQyZDA3Njk2NyJ9fX0=
+      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      lore:
+      - '<#7CFC9A>Descripción:'
+      - '&8• &fViaja al centro del mundo de'
+      - '  &fsupervivencia, consigue recursos'
+      - '  &fy empieza a construir tu hogar.'
+      - '&7'
+      - '<#7CFC9A>Información'
+      - '  &8• &7Tamaño: &f30,000 x 30,000'
+      - '  &8• &7Precio RTP: &f&aGratis'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '&e➜ Click para ver el menú de Survival'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - nethermenu_b4_click
+      right_click:
+        Scripts:
+        - nethermenu_b4_click
+      shift_left_click:
+        Scripts:
+        - nethermenu_b4_click
+      shift_right_click:
+        Scripts:
+        - nethermenu_b4_click
+    b5:
+      location: top
+      slots:
+      - 41
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjZjZTljODFkODRhNjk4MWQ0YzViM2RjMDlhYmIxMjFlYzdhODA3OTE5MjY1Zjg3MWE1YTdiMWE4ZjIxIn19fQ==
+      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      lore:
+      - '<#B48CFF>Descripción:'
+      - '&8• &fEsta dimensión no es el final del'
+      - '  &fjuego: aquí conseguirás materiales'
+      - '  &fy herramientas únicas del mundo.'
+      - '&7'
+      - '<#B48CFF>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,800'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#B48CFF>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '<#B48CFF>Evento'
+      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
+      - '&7'
+      - '&e➜ Click para ver el menú de The End'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - nethermenu_b5_click
+      right_click:
+        Scripts:
+        - nethermenu_b5_click
+      shift_left_click:
+        Scripts:
+        - nethermenu_b5_click
+      shift_right_click:
+        Scripts:
+        - nethermenu_b5_click
+    b6:
+      location: top
+      slots:
+      - 43
+      source: vanilla
+      material: SHIELD
+      name: '<#FFD54F>&l♜ Imperio del Rey &8- &7Orian'
+      lore:
+      - '<#FFD54F>Descripción:'
+      - '&8• &fEncanta tus armas, compra objetos,'
+      - '  &fpelea contra mobs y mucho más.'
+      - '&7'
+      - '<#FFD54F>Información'
+      - '  &8• &7Mundo: &fOrian'
+      - '  &8• &7Precio: &f&aGratis'
+      - '&7'
+      - '&e➜ Click para viajar a la ciudad'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      enchantments:
+      - unbreaking 1
+      left_click:
+        Scripts:
+        - nethermenu_b6_click
+      right_click:
+        Scripts:
+        - nethermenu_b6_click
+      shift_left_click:
+        Scripts:
+        - nethermenu_b6_click
+      shift_right_click:
+        Scripts:
+        - nethermenu_b6_click
+EndMenu:
+  permission: ''
+  bottom_inventory: false
+  name: '㈮㈮&f㉍'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      lore:
+      - '<#B48CFF>Descripción:'
+      - '&8• &fEsta dimensión no es el final del'
+      - '  &fjuego: aquí conseguirás materiales'
+      - '  &fy herramientas únicas del mundo.'
+      - '&7'
+      - '<#B48CFF>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,800'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#B48CFF>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '<#B48CFF>Evento'
+      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
+      - '&7'
+      - '&e➜ Click para teletransportarte'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - endmenu_b1_click
+      right_click:
+        Scripts:
+        - endmenu_b1_click
+      shift_left_click:
+        Scripts:
+        - endmenu_b1_click
+      shift_right_click:
+        Scripts:
+        - endmenu_b1_click
+    b2:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE5ZDkxNGExMmMxN2NjY2I1NTg5OTI4NWEwNjY5MDJiYTUzOTc2ODA3NDA3ZmNiODY5NmRiZTE5YWVmNzcifX19
+      name: '<#E296F3>&l⚑ Lugares del Servidor'
+      lore:
+      - '<#E296F3>Descripción:'
+      - '&8• &fDimensiones, ciudades, dungeons,'
+      - '  &fjefes y mucho más; todo'
+      - '  &fpersonalizado y optimizado.'
+      - '&7'
+      - '&e➜ Click para ver los lugares disponibles'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - endmenu_b2_click
+      right_click:
+        Scripts:
+        - endmenu_b2_click
+      shift_left_click:
+        Scripts:
+        - endmenu_b2_click
+      shift_right_click:
+        Scripts:
+        - endmenu_b2_click
+    b3:
+      location: top
+      slots:
+      - 39
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM0NTg3NWU5MjFhMTQ1ZjkyMDM4ODU4YWVlY2MzYzJmMDgzNDQxZWJjNWM4MjY1ZDMxYTI4MWQyNjhlMzY1YiJ9fX0=
+      name: '<#FF6B5C>&l☄ Nether &8- &7Infierno'
+      lore:
+      - '<#FF6B5C>Descripción:'
+      - '&8• &fEntra solo si cuentas con buen'
+      - '  &fequipo y los recursos necesarios'
+      - '  &fpara sobrevivir a criaturas fuertes.'
+      - '&7'
+      - '<#FF6B5C>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,000'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#FF6B5C>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '&e➜ Click para ver el menú de Nether'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - endmenu_b3_click
+      right_click:
+        Scripts:
+        - endmenu_b3_click
+      shift_left_click:
+        Scripts:
+        - endmenu_b3_click
+      shift_right_click:
+        Scripts:
+        - endmenu_b3_click
+    b4:
+      location: top
+      slots:
+      - 40
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjEyYTAzYTRjMTFiNGQ0NzI0NzJlN2U0NTkzZDJlMTI2YTYyNTllMzNjYzgxZjQ0ZWIwNWNmMDQyZDA3Njk2NyJ9fX0=
+      name: '<#7CFC9A>&l⛏ Survival &8- &7Overworld'
+      lore:
+      - '<#7CFC9A>Descripción:'
+      - '&8• &fViaja al centro del mundo de'
+      - '  &fsupervivencia, consigue recursos'
+      - '  &fy empieza a construir tu hogar.'
+      - '&7'
+      - '<#7CFC9A>Información'
+      - '  &8• &7Tamaño: &f30,000 x 30,000'
+      - '  &8• &7Precio RTP: &f&aGratis'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '&e➜ Click para ver el menú de Survival'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - endmenu_b4_click
+      right_click:
+        Scripts:
+        - endmenu_b4_click
+      shift_left_click:
+        Scripts:
+        - endmenu_b4_click
+      shift_right_click:
+        Scripts:
+        - endmenu_b4_click
+    b5:
+      location: top
+      slots:
+      - 41
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWRjZjZjZTljODFkODRhNjk4MWQ0YzViM2RjMDlhYmIxMjFlYzdhODA3OTE5MjY1Zjg3MWE1YTdiMWE4ZjIxIn19fQ==
+      name: '<#B48CFF>&l✦ The End &8- &7Mundo del Vacío'
+      lore:
+      - '<#B48CFF>Descripción:'
+      - '&8• &fEsta dimensión no es el final del'
+      - '  &fjuego: aquí conseguirás materiales'
+      - '  &fy herramientas únicas del mundo.'
+      - '&7'
+      - '<#B48CFF>Información'
+      - '  &8• &7Tamaño: &f10,000 x 10,000'
+      - '  &8• &7Precio RTP: &f&6$1,800'
+      - '  &8• &7Permitido: &fTodo'
+      - '&7'
+      - '<#B48CFF>Reglas'
+      - '  &8• &c✘ &7Reinicio cada 2 meses'
+      - '  &8• &c✘ &7No hacer construcciones'
+      - '  &8• &c✘ &7Las tumbas no funcionan'
+      - '&7'
+      - '<#B48CFF>Evento'
+      - '  &8• &7Dragón: &fse reinicia cada &d1 semana'
+      - '&7'
+      - '&e➜ Ya estás en este menú'
+      flags:
+      - HIDE_ATTRIBUTES
+    b6:
+      location: top
+      slots:
+      - 43
+      source: vanilla
+      material: SHIELD
+      name: '<#FFD54F>&l♜ Imperio del Rey &8- &7Orian'
+      lore:
+      - '<#FFD54F>Descripción:'
+      - '&8• &fEncanta tus armas, compra objetos,'
+      - '  &fpelea contra mobs y mucho más.'
+      - '&7'
+      - '<#FFD54F>Información'
+      - '  &8• &7Mundo: &fOrian'
+      - '  &8• &7Precio: &f&aGratis'
+      - '&7'
+      - '&e➜ Click para viajar a la ciudad'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      enchantments:
+      - unbreaking 1
+      left_click:
+        Scripts:
+        - endmenu_b6_click
+      right_click:
+        Scripts:
+        - endmenu_b6_click
+      shift_left_click:
+        Scripts:
+        - endmenu_b6_click
+      shift_right_click:
+        Scripts:
+        - endmenu_b6_click

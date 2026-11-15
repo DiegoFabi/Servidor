@@ -1,0 +1,67 @@
+# ============================================================
+#  tooltip_style.sk - Fondo de tooltip GLOBAL por custom_data
+#  Requiere: Skript 2.10+ y SkBee 3.8+ (item-component: true)
+#
+#  Cualquier item de cualquier plugin que tenga en su
+#  minecraft:custom_data el texto "tooltip_style" recibe ese fondo
+#  como componente real tooltip_style (sprites de Nexo en
+#  pack/assets/minecraft/textures/gui/sprites/tooltip).
+#
+#  Cómo marcar items:
+#  - ItemJoin:  properties: 'tooltip_style:minecraft:dark_aqua'
+#  - /give:     custom_data={tooltip_style:"minecraft:gold"}
+#  - Otro plugin que escriba custom_data / PDC con esa clave.
+#  Fondos disponibles: minecraft:<color> (aqua, black, blue, dark_aqua,
+#  dark_blue, dark_gray, dark_green, dark_purple, dark_red, gold, gray,
+#  green, light_purple, red, white, yellow).
+#
+#  Rendimiento: sin temporizadores. Solo se revisa:
+#  - al entrar (slots del inventario con custom_data)
+#  - tras /ij o /itemjoin (solo el jugador que recibe el item)
+#  - al cambiar de slot (solo el item en mano)
+#  Si el item ya tiene el fondo correcto no se modifica.
+# ============================================================
+
+# Aplica el fondo al slot si el item lo pide y aún no lo tiene
+function tsSlot(p: player, i: integer):
+    slot {_i} of inventory of {_p} is not air
+    set {_e} to string tag "tooltip_style" of custom nbt of slot {_i} of inventory of {_p}
+    {_e} is set
+    tooltip style of slot {_i} of inventory of {_p} is not {_e}
+    set tooltip style of slot {_i} of inventory of {_p} to {_e}
+
+function tsInventario(p: player):
+    loop integers between 0 and 40:
+        tsSlot({_p}, loop-value)
+
+on join:
+    wait 1 tick
+    player is online
+    tsInventario(player)
+
+# Entregas de ItemJoin: revisa solo al jugador nombrado en el comando
+# (o a quien lo ejecutó si no se nombró a nadie)
+on command "ij" or "itemjoin":
+    # full command = "ij get item_7 Jugador" (siempre un texto)
+    set {_texto} to full command
+    set {_args::*} to split {_texto} at " "
+    loop {_args::*}:
+        set {_t} to loop-value parsed as player
+        if {_t} is set:
+            exit loop
+    if {_t} is not set:
+        player is set
+        set {_t} to player
+    wait 1 tick
+    {_t} is online
+    tsInventario({_t})
+
+on item held change:
+    wait 1 tick
+    player's tool is not air
+    # Atajo barato: los items vanilla sin nombre no tienen tooltip_style
+    name of player's tool is set
+    set {_e} to string tag "tooltip_style" of custom nbt of player's tool
+    {_e} is set
+    tooltip style of player's tool is not {_e}
+    set tooltip style of player's tool to {_e}

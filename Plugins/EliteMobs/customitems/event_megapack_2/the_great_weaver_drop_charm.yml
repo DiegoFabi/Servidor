@@ -1,0 +1,10 @@
+potionEffects: []
+isEnabled: true
+material: STRING
+name: '&cWeavers Silk'
+lore:
+- '&cGreat power is imbued into this silk.'
+enchantments:
+- PROTECTION_FIRE,4
+- DAMAGE_ARTHROPODS,3
+

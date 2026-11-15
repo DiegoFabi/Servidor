@@ -1,0 +1,86 @@
+Settings:
+  MenuType: minecraft:generic_9x5
+  Title: <black>[%type%] List</black>
+  AutoRefresh:
+    Interval: 0
+  PlaceholderAPI:
+    Enabled: false
+Buttons:
+  next_page:
+    Slots: '41'
+    States:
+      default:
+        Icon:
+          Material: minecraft:arrow
+          Display_Name: <white><b><u>Next Page</u> →</b></white>
+          Lore: []
+          Hide_Components: true
+        Actions:
+          Base: next_page
+        Condition: has_next_page
+  previous_page:
+    Slots: '39'
+    States:
+      default:
+        Icon:
+          Material: minecraft:arrow
+          Display_Name: <white><b>← <u>Previous Page</u></b></white>
+          Lore: []
+          Hide_Components: true
+        Actions:
+          Base: previous_page
+        Condition: has_previous_page
+  black_stained_glass_pane_f673f:
+    Slots: 0,1,2,3,4,5,6,7,8
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  black_stained_glass_pane_79452:
+    Slots: 36,37,38,39,40,41,42,43,44
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  sort_mode:
+    Slots: '43'
+    States:
+      default:
+        Icon:
+          Material: minecraft:comparator
+          Display_Name: <gold>Sorting Mode</gold>
+          Lore:
+          - '<dark_gray>»<gray> Selected: </gray><white>%mode%</white></dark_gray>'
+          - ''
+          - <gray>Sets display order.</gray>
+          - ''
+          - <gold>→ <u>Click to toggle</u></gold>
+  show_expired:
+    Slots: '37'
+    States:
+      default:
+        Icon:
+          Material: minecraft:clock
+          Display_Name: <yellow>Show Expired</yellow>
+          Lore:
+          - '<dark_gray>»<gray> Status: </gray><white>%state%</white></dark_gray>'
+          - ''
+          - <gray>Whether to show expired entries.</gray>
+          - ''
+          - <yellow>→ <u>Click to toggle</u></yellow>
+Punishment:
+  Icon:
+    Player:
+      Material: minecraft:player_head
+      Lore: []
+    Inet:
+      Material: minecraft:comparator
+      Lore: []
+History:
+  Slots: 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35

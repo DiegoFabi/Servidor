@@ -1,0 +1,67 @@
+##=============================================##
+##                                             ##
+##             Developed by T1n C4n            ##
+##                    My Shop                  ##
+##  https://mcmodels.net/vendors/119/t1n-c4n   ##
+##                                             ##
+##=============================================##
+
+
+
+
+shark:
+  Type: shark
+  Worlds: survivalMain
+  Chance: .01
+  Priority: 1
+  Action: REPLACE
+  Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
+  Conditions:
+  - blocktype{t=WATER} true
+  - mobsinradius{t=shark;a=<3;r=30} true
+
+shark_hammer:
+  Type: shark_hammer
+  Worlds: survivalMain
+  Chance: .01
+  Priority: 1
+  Action: REPLACE
+  Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
+  Conditions:
+  - blocktype{t=WATER} true
+  - mobsinradius{t=shark_hammer;a=<3;r=30} true
+
+t_jellypink:
+  Type: t_jellypink
+  Worlds: survivalMain
+  Chance: .01
+  Priority: 75
+  Action: REPLACE
+  Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
+  Conditions:
+  - blocktype{t=WATER} true
+  - mobsinradius{t=t_jellypink;a=<3;r=30} true
+  
+
+t_jellyblue:
+  Type: t_jellyblue
+  Worlds: survivalMain
+  Chance: .01
+  Priority: 75
+  Action: REPLACE
+  Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
+  Conditions:
+  - blocktype{t=WATER} true
+  - mobsinradius{t=t_jellyblue;a=<3;r=30} true
+ 
+t_jellygreen:
+  Type: t_jellygreen
+  Worlds: survivalMain
+  Chance: .01
+  Priority: 75
+  Action: REPLACE
+  Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
+  Conditions:
+  - blocktype{t=WATER} true
+  - mobsinradius{t=t_jellygreen;a=<3;r=30} true
+  

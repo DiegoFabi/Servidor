@@ -1,0 +1,219 @@
+# ============================================================
+#  autopickup.sk - Auto-Pickup sin entidades + control de drop
+#  Requiere: Skript 2.10+ (MC 1.21.x). Sin addons.
+#
+#  - 100% por eventos: CERO timers / loops periódicos.
+#  - Bloques y mobs: los drops nunca se crean como entidad Item,
+#    van directo al inventario. Lo que no cabe cae al suelo.
+#  - Indicador en actionbar: "+1 stone, +2 bone".
+#  - Soltar objetos con Q funciona normal (sin Shift + Q).
+#  - apGive() es la API común. Cada rotura pasa por hvBreak()
+#    (harvest.sk), que entrega bloque + veta/arbol en un solo envio.
+#    autopickup.sk y harvest.sk deben estar cargados juntos.
+#  - Variables {-...} solo en memoria (no se guardan en disco).
+# ============================================================
+
+options:
+    prefix: &6&lAutoPickup &8» &r
+    # Segundos que permanece visible el actionbar de recoleccion
+    barra-seg: 4
+    # Sonido suave al recoger (solo lo oye el jugador)
+    sonido-pick: entity.item.pickup
+    # --- Aviso de inventario lleno (chat) ---
+    vault-cmd: /pv
+    sonido-lleno: block.amethyst_block.chime
+    # Ventana (seg) desde el primer aviso en la que se puede repetir
+    lleno-ventana: 300
+    # Separacion minima (seg) entre avisos dentro de la ventana
+    lleno-cd: 60
+    # Silencio total (seg) desde el primer aviso hasta reactivarse
+    lleno-reset: 1800
+
+# ------------------------------------------------------------
+#  API común: entrega items al jugador y muestra el resumen.
+#  - Stack que cabe entero  -> inventario.
+#  - Stack que cabe a medias -> lo que quepa al inventario, el
+#    resto al suelo (antes caía todo el stack).
+#  - Jugador desconectado    -> todo al suelo en {_l}.
+# ------------------------------------------------------------
+function apGive(p: player, items: items, l: location, xp: number = 0):
+    # XP vanilla del bloque inicial (guardada por "on break") + extra
+    set {_id} to uuid of {_p}
+    if {-ap::xp0::%{_id}%} is set:
+        add {-ap::xp0::%{_id}%} to {_xp}
+        delete {-ap::xp0::%{_id}%}
+    if {_p} is not online:
+        loop {_items::*}:
+            drop loop-value at {_l}
+        stop
+    loop {_items::*}:
+        set {_it} to loop-value
+        set {_k} to "%type of {_it}%"
+        if {_p} can hold {_it}:
+            give {_it} to {_p}
+            add item amount of {_it} to {_c::%{_k}%}
+        else:
+            # Solo pasa con el inventario casi lleno. Bucle acotado al
+            # tamaño del stack (máx. 64) y corta en cuanto no cabe más.
+            set {_uno} to 1 of {_it}
+            set {_n} to item amount of {_it}
+            set {_dados} to 0
+            loop {_n} times:
+                if {_p} can't hold {_uno}:
+                    exit loop
+                give {_uno} to {_p}
+                add 1 to {_dados}
+            if {_dados} > 0:
+                add {_dados} to {_c::%{_k}%}
+            if {_dados} < {_n}:
+                drop ({_n} - {_dados}) of {_it} at {_l}
+                set {_lleno} to true
+    # Lleno = algo cayo al suelo, o ya no queda ningun slot vacio
+    # (si no cabe 1 barrera, no hay slot libre). Una sola comprobacion.
+    if {_lleno} is not set:
+        if {_c::*} is set:
+            if {_p} can't hold 1 barrier:
+                set {_lleno} to true
+    if {_lleno} is set:
+        apLleno({_p})
+    {_c::*} is set
+    set {_msg} to ""
+    loop {_c::*}:
+        # "oak log" -> "Oak Log" (title case nativo de Skript, sin listas)
+        set {_nom} to title case loop-index
+        if {_msg} is "":
+            set {_msg} to "&a+%loop-value% &f%{_nom}%"
+        else:
+            set {_msg} to "%{_msg}%&7, &a+%loop-value% &f%{_nom}%"
+    if {_xp} > 0:
+        set {_msg} to "%{_msg}%&7, &b+%{_xp}% xp"
+    if {_lleno} is set:
+        set {_msg} to "%{_msg}% &c⚠ Inventario lleno"
+    play sound "{@sonido-pick}" with volume 0.15 and pitch 1.7 to {_p}
+    apBarra({_p}, {_msg})
+
+# Experience -> number (conversion nativa de Skript al pasar el argumento)
+function apNum(n: number) :: number:
+    return {_n}
+
+# ------------------------------------------------------------
+#  XP agrupada estilo Clumps: en vez de N orbes (uno por bloque),
+#  se suelta el total en muy pocos orbes grandes A LOS PIES del
+#  jugador, sin velocidad. Se recogen al instante y Mending sigue
+#  funcionando como en vanilla. Skript solo acepta cantidades fijas
+#  de XP, asi que se descompone en 64/16/4/1: maximo ~3 orbes por
+#  escalon (p. ej. 37 XP = 2 orbes de 16 + 1 de 4 + 1 de 1).
+#  Si el jugador no esta, se suelta en {_l}.
+# ------------------------------------------------------------
+function apXp(p: player, xp: number, l: location):
+    {_xp} > 0
+    if {_p} is online:
+        set {_l} to location of {_p}
+    loop floor({_xp} / 64) times:
+        drop 64 xp at {_l} without velocity
+    set {_xp} to mod({_xp}, 64)
+    loop floor({_xp} / 16) times:
+        drop 16 xp at {_l} without velocity
+    set {_xp} to mod({_xp}, 16)
+    loop floor({_xp} / 4) times:
+        drop 4 xp at {_l} without velocity
+    set {_xp} to mod({_xp}, 4)
+    loop {_xp} times:
+        drop 1 xp at {_l} without velocity
+
+# ------------------------------------------------------------
+#  Actionbar persistente ({@barra-seg} s) sin timers globales.
+#  El cliente lo muestra ~2 s; se reenvia el ULTIMO mensaje con un
+#  unico retardo diferido por jugador (flag "pend"): minar seguido
+#  no crea mas tareas, solo actualiza el texto y la marca de tiempo.
+# ------------------------------------------------------------
+function apBarra(p: player, msg: text):
+    set {_id} to uuid of {_p}
+    send action bar {_msg} to {_p}
+    set {-ap::bar::%{_id}%} to {_msg}
+    set {-ap::barT::%{_id}%} to unix timestamp of now
+    {-ap::barP::%{_id}%} is not set
+    set {-ap::barP::%{_id}%} to true
+    loop {@barra-seg} times:
+        wait 1.5 seconds
+        if {_p} is not online:
+            exit loop
+        set {_e} to (unix timestamp of now) - {-ap::barT::%{_id}%}
+        if {_e} >= {@barra-seg}:
+            exit loop
+        send action bar {-ap::bar::%{_id}%} to {_p}
+    delete {-ap::barP::%{_id}%}
+
+# ------------------------------------------------------------
+#  Aviso de inventario lleno (chat + sonido suave), anti-spam:
+#  - Primer aviso: abre una ventana de {@lleno-ventana} s.
+#  - Dentro de la ventana: puede repetirse cada {@lleno-cd} s.
+#  - Pasada la ventana: silencio hasta {@lleno-reset} s desde el
+#    primer aviso; despues vuelve a avisar si se llena.
+#  Solo comparaciones de numeros en memoria: coste O(1).
+# ------------------------------------------------------------
+function apLleno(p: player):
+    set {_id} to uuid of {_p}
+    set {_now} to unix timestamp of now
+    set {_ini} to {-ap::llenoIni::%{_id}%}
+    if {_ini} is not set:
+        set {-ap::llenoIni::%{_id}%} to {_now}
+    else if {_now} - {_ini} >= {@lleno-reset}:
+        set {-ap::llenoIni::%{_id}%} to {_now}
+    else if {_now} - {_ini} >= {@lleno-ventana}:
+        stop
+    else if {_now} - {-ap::llenoUlt::%{_id}%} < {@lleno-cd}:
+        stop
+    set {-ap::llenoUlt::%{_id}%} to {_now}
+    send "{@prefix}&cTu inventario esta lleno. &7Guarda tus cosas en tu &6Vault &7con &e{@vault-cmd}&7." to {_p}
+    play sound "{@sonido-lleno}" with volume 0.4 and pitch 1.2 to {_p}
+
+# ------------------------------------------------------------
+#  1) AUTO-PICKUP DE BLOQUES
+#  Prioridad HIGHEST: corre después de WorldGuard / NClaim, y como
+#  "listen to cancelled events" es false, los breaks cancelados por
+#  protecciones no llegan aquí.
+# ------------------------------------------------------------
+on break with priority highest:
+    player's gamemode is survival or adventure
+    # Contenedores (cofres, shulkers, hornos...): drop vanilla para
+    # no perder ni duplicar su contenido.
+    inventory of event-block is not set
+    # Respeta herramienta correcta, Fortuna y Toque de Seda.
+    set {_drops::*} to drops of event-block using player's tool
+    {_drops::*} is set
+    # Solo cancela los items; la experiencia sigue soltándose normal.
+    cancel the drops of items
+    # XP vanilla del bloque (solo se muestra; vanilla la sigue soltando)
+    set {_xp} to apNum(dropped experience)
+    if {_xp} > 0:
+        set {-ap::xp0::%uuid of player%} to {_xp}
+    # harvest.sk decide: veta/arbol completo o solo este bloque.
+    # Todo termina en apGive(): mismo inventario, actionbar y avisos.
+    hvBreak(player, event-block, {_drops::*})
+
+# ------------------------------------------------------------
+#  2) AUTO-PICKUP DE MOBS
+#  Sin timers ni rastreo de mobs: el evento de muerte ya trae el
+#  último golpe (attacker). Si fue un jugador (o su flecha/tridente),
+#  los drops van a su inventario. Coste O(1) por muerte.
+#  Las muertes de jugadores no se tocan (tumbas/graves intactas).
+#  OJO: "clear drops" a secas tambien borra la XP; por eso se usa
+#  "clear the drops of items": la XP del mob se suelta normal
+#  (Paper ya fusiona los orbes cercanos).
+# ------------------------------------------------------------
+on death with priority highest:
+    victim is not a player
+    attacker is a player
+    set {_drops::*} to drops
+    {_drops::*} is set
+    clear the drops of items
+    apGive(attacker, {_drops::*}, location of victim)
+
+# Limpieza de memoria
+on quit:
+    set {_id} to uuid of player
+    delete {-ap::xp0::%{_id}%}
+    delete {-ap::bar::%{_id}%}
+    delete {-ap::barT::%{_id}%}
+    delete {-ap::barP::%{_id}%}

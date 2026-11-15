@@ -1,0 +1,1437 @@
+# --{ =-=-=-=-=-=-=-=-=-= ItemJoin's Custom Item Configurations, by RockinChaos =-=-=-=-=-=-=-=-=-= }--
+# See the tutorial page for a more in-depth explanation; https://github.com/RockinChaos/ItemJoin/wiki
+# Join the discord for easy plugin support; https://discord.gg/D5FnJ7C
+
+# Modifying the Version will cause this file to break and regenerate.
+items-Version: 8
+
+# General options that apply to the custom items functionality.
+items-Delay: 2
+items-Overwrite: false
+items-Spamming: false
+items-RestrictCount: false
+
+# This is the section that the custom created items will be stored.
+# All created items should be saved under the 'items' section for each 'custom-item' subsection.
+items:
+  item_7:
+    id: PAPER
+    model-data: '200359'
+    properties: 'tooltip_style:minecraft:dark_aqua, usos:30'
+    name: '&#7FE7FF⚔ &#5FD0FFInvocador de Dragón'
+    lore:
+    - '&#5C9DFF&lÉpico &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#7FE7FFFuria Dracónica'
+    - ' &7Desata una secuencia de garras de'
+    - ' &7dragón que golpea y empuja.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FE7FFGarras de Dragón'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B6 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B30 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Forjado en la penumbra, guarda el'
+    - ' &8&oespíritu de un dragón caído.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: clawstrike'
+    - 'op: desgastar'
+    commands-sound: BLOCK.NOTE_BLOCK.BANJO
+    commands-particle: WITCH:64
+    commands-cooldown: 6
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, DEATH-DROPS, ITEM-MODIFIABLE
+    triggers: DISABLED
+  item_8:
+    id: PAPER
+    model-data: '200371'
+    properties: 'tooltip_style:minecraft:blue, usos:30'
+    name: '&#9FE8FF☂ &#6FB8FFBastón de las Mareas'
+    lore:
+    - '&#5C9DFF&lÉpico &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#7FC8FFOla Arrolladora'
+    - ' &7Dispara un torrente de agua que'
+    - ' &7empapa a los enemigos cercanos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FC8FFMisil de Agua'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36BInstantánea'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B30 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Tallado en coral de un templo'
+    - ' &8&ohundido bajo la marea eterna.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: watermisil'
+    - 'op: desgastar'
+    commands-sound: BLOCK.NOTE_BLOCK.BANJO
+    commands-particle: END_ROD:64
+    itemflags: PLACEMENT, GLOWING, ITEM-MODIFIABLE
+    triggers: DISABLED
+  item_11:
+    id: STONE_PICKAXE
+    name: '&7► &eᴘɪᴄᴏ ᴅᴇ ᴘɪᴇᴅʀᴀ'
+    lore:
+    - '&8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ɪɴɪᴄɪᴏ'
+    - '&7'
+    - '&7  | &aʙɪᴇɴᴠᴇɴɪᴅᴏ &7ᴀʟ ꜱᴇʀᴠɪᴅᴏʀ'
+    - '&7  | ᴇꜱᴛᴇ ꜱᴇʀᴀ ᴛᴜ &aᴋɪᴛ &7ᴘᴀʀᴀ'
+    - '&7  | &aᴇᴍᴘᴇᴢᴀʀ &7ᴄᴏɴ ᴛᴜ &aᴀᴠᴇɴᴛᴜʀᴀ'
+    - '&7'
+    - '&a✔ &fʀᴇᴄᴜᴇʀᴅᴀ ᴜꜱᴀʀ &6/ᴍᴇɴᴜ &fᴘᴀʀᴀ'
+    - '&f   ᴍᴏᴠᴇʀᴛᴇ ᴘᴏʀ ʟᴏꜱ &6ᴍᴜɴᴅᴏꜱ'
+    - '&f   ʏ ᴜꜱᴀʀ ʟᴀꜱ &6ᴏᴘᴄɪᴏɴᴇꜱ'
+    - '&7'
+    - '&7  | &dʙᴜᴇɴᴀ ꜱᴜᴇʀᴛᴇ, ᴅɪᴠɪᴇʀᴛᴇᴛᴇ ☺'
+    itemflags: HIDE-ATTRIBUTES, HIDE-ENCHANTS, HIDE-FLAGS
+    triggers: DISABLED
+    leather-color: LIGHT_BLUE
+  item_6:
+    id: PAPER
+    model-data: '200370'
+    properties: 'tooltip_style:minecraft:dark_red, usos:20'
+    name: '&#FFB347☄ &#FF7A45Bastón del Obispo'
+    lore:
+    - '&#B45CFF&lLegendario &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF8A5CRezo Corrompido'
+    - ' &7Lanza una carga de fuego que arrasa'
+    - ' &7con todo a su paso.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8A5CCarga de Fuego'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B4 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Un obispo bendijo este bastón, pero la'
+    - ' &8&omaldad convirtió sus rezos en llamas.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: explosionmagic'
+    - 'op: desgastar'
+    commands-sound: BLOCK.NOTE_BLOCK.BANJO
+    commands-cooldown: 4
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos &#C9CDD6para Invocar de Nuevo'
+    itemflags: NOT-HAT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  item_5:
+    id: PAPER
+    model-data: '200386'
+    properties: 'tooltip_style:minecraft:light_purple'
+    name: '&#FF9AB8❤ &#F0607CPoción del Emperador'
+    lore:
+    - '&#5C9DFF&lÉpico &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF8FA8Elixir Imperial'
+    - ' &7Recupera toda tu vida al instante'
+    - ' &7con una espiral de corazones.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8FA8Vida Completa'
+    - ' &#9EA3AE⚗ Usos &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:rocket> &#9EA3AEInfinito &8» &#FF6B6BNo'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Un emperador maligno buscaba la'
+    - ' &8&oinmortalidad; solo logró curar heridas.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right:
+    - 'op: health restore %player_name%'
+    - 'op: spiralheart'
+    itemflags: UNBREAKABLE, NOT-HAT, PLACEMENT, GLOWING, DEATH-KEEP, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  item_1:
+    id: FISHING_ROD
+    name: '&7► &bᴄᴀɴᴀ ᴅᴇ ᴘᴇꜱᴄᴀʀ &7| &bᴛɪᴇʀ ɪɪɪ'
+    lore:
+    - '&8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ꜱᴏʟᴅᴀᴅᴏ'
+    - '&7'
+    - '&7  | ɢʀᴀᴄɪᴀꜱ ᴘᴏʀ ᴀᴅǫᴜɪʀɪʀ ᴇʟ ʀᴀɴɢᴏ'
+    - '&7  | &aꜱᴏʟᴅᴀᴅᴏ ʏ ᴀᴘᴏʏᴀʀ &7ᴀʟ ꜱᴇʀᴠɪᴅᴏʀ.'
+    - '&7  | &aᴄᴏᴍʙᴀᴛɪʀ &7ᴄᴏɴᴛʀᴀ &aᴇɴᴛɪᴅᴀᴅᴇꜱ...'
+    - '&7  | &7ꜱᴇʀᴀ ᴀʜᴏʀᴀ ᴜɴ ᴘᴏᴄᴏ ᴍᴀꜱ ꜰᴀᴄɪʟ'
+    - '&7'
+    - '&a✔ &eɴᴏᴛᴀ. &fʀᴇᴠɪꜱᴀ ᴛᴜꜱ ʙᴇɴᴇꜰɪᴄɪᴏꜱ'
+    - '&f   ᴇɴ ɴᴜᴇꜱᴛʀᴀ ᴘᴀɢɪɴᴀ ʏ ᴀᴘʀᴏᴠᴇᴄʜᴀ'
+    - '&f   ᴛᴜ ʀᴀɴɢᴏ ʏ ᴏᴘᴄɪᴏɴᴇꜱ ᴀʟ ᴍᴀxɪᴍᴏ'
+    - '&7'
+    - '&7  | &dʙᴜᴇɴᴀ ꜱᴜᴇʀᴛᴇ, ᴅɪᴠɪᴇʀᴛᴇᴛᴇ ☺'
+    - ''
+    itemflags: HIDE-ATTRIBUTES, HIDE-ENCHANTS, HIDE-FLAGS
+    triggers: DISABLED
+  item_9:
+    id:
+      '1': <delay:20>BOOK
+    slot: 8
+    name:
+      '1': '&f&eMenú de Opciones'
+    lore:
+      '1':
+      - '&7'
+      - '&f¡Usa esto para no &aescribir'
+      - '&amuchos comandos &fa mano!'
+    interact:
+    - 'op: coremenu menuMain'
+    commands-sound: ITEM_BOOK_PAGE_TURN:31.0:31.0
+    itemflags: UNBREAKABLE, HIDE-ATTRIBUTES, NOT-HAT, HIDE-FLAGS, PLACEMENT, INVENTORY-MODIFY, DYNAMIC, GLOWING, DEATH-KEEP, DEATH-DROPS, SELF-DROPS, OVERWRITE
+    triggers: JOIN, RESPAWN, WORLD-SWITCH
+  # pack1_water_rune (Nexo weekly_dot/pack1) -> /escarcha
+  item_12:
+    id: PAPER
+    model-data: '200377'
+    properties: 'tooltip_style:minecraft:aqua, usos:60'
+    name: '&#BFF4FF❄ &#7FD8FFRuna de Escarcha'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#7FD8FFNova de Escarcha'
+    - ' &7Libera una onda de hielo que daña'
+    - ' &7y ralentiza a los monstruos cercanos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FD8FFOnda de Hielo'
+    - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36B7 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B8 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B60 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Grabada en hielo que nunca'
+    - ' &8&ose derrite.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: escarcha'
+    - 'op: desgastar'
+    commands-sound: BLOCK.AMETHYST_BLOCK.CHIME
+    commands-particle: SNOWFLAKE:32
+    commands-cooldown: 8
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_thunder_staff (Nexo weekly_dot/pack1) -> /cadenarayos
+  item_13:
+    id: PAPER
+    model-data: '200369'
+    properties: 'tooltip_style:minecraft:yellow, usos:40'
+    name: '&#FFF3A6⚡ &#FFD84DBastón de la Tormenta'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFD84DCadena de Rayos'
+    - ' &7Un rayo salta de enemigo en enemigo,'
+    - ' &7hasta cinco veces seguidas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFD84DRayo Encadenado'
+    - ' &f<glyph:rocket> &#9EA3AESaltos &8» &#FFD36B5 Enemigos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B12 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Quien lo sostiene oye truenos'
+    - ' &8&oincluso en días despejados.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: cadenarayos'
+    - 'op: desgastar'
+    commands-sound: ITEM.TRIDENT.THUNDER
+    commands-particle: ELECTRIC_SPARK:32
+    commands-cooldown: 12
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_fire_element (Nexo weekly_dot/pack1) -> /meteoro
+  item_14:
+    id: PAPER
+    model-data: '200367'
+    properties: 'tooltip_style:minecraft:gold, usos:25'
+    name: '&#FFC27A☄ &#FF8A3DNúcleo del Meteoro'
+    lore:
+    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF8A3DMeteoro Arcano'
+    - ' &7Invoca un meteoro sobre el bloque'
+    - ' &7que miras y arrasa la zona.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8A3DLluvia Ígnea'
+    - ' &f<glyph:mag_glass> &#9EA3AEImpacto &8» &#FFD36B6 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B30 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Aún late con el calor de la'
+    - ' &8&oestrella de la que cayó.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: meteoro'
+    - 'op: desgastar'
+    commands-sound: ENTITY.BLAZE.SHOOT
+    commands-particle: FLAME:48
+    commands-cooldown: 30
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_potion2 (Nexo weekly_dot/pack1) -> /blastpower
+  item_15:
+    id: PAPER
+    model-data: '200387'
+    properties: 'tooltip_style:minecraft:red, usos:60'
+    name: '&#FFB38A✸ &#FF7A45Elixir Explosivo'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF7A45Salto Explosivo'
+    - ' &7Te impulsa hacia el cielo y al caer'
+    - ' &7provoca una explosión a tu alrededor.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF7A45Impulso y Explosión'
+    - ' &f<glyph:cloud> &#9EA3AECaída &8» &#FFD36BSin Daño'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B10 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B60 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Huele a pólvora y a malas'
+    - ' &8&odecisiones.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right:
+    - 'op: blastpower'
+    - 'op: desgastar'
+    commands-sound: ENTITY.FIREWORK_ROCKET.LAUNCH
+    commands-particle: CLOUD:32
+    commands-cooldown: 10
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll4 (Nexo weekly_dot/pack1) -> /gravity
+  item_16:
+    id: PAPER
+    model-data: '200381'
+    properties: 'tooltip_style:minecraft:dark_purple, usos:40'
+    name: '&#D8B4FF⚫ &#A66BFFPergamino del Vacío'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#A66BFFCampo de Gravedad'
+    - ' &7Abre un campo que atrae y aplasta'
+    - ' &7a todo lo que se acerque.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#A66BFFAtracción'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B10 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B20 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Escrito por alguien que miró'
+    - ' &8&oal vacío demasiado tiempo.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: gravity'
+    - 'op: desgastar'
+    commands-sound: ENTITY.WARDEN.SONIC_BOOM
+    commands-particle: PORTAL:48
+    commands-cooldown: 20
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_thunder_book (Nexo weekly_dot/pack1) -> /humano impacto
+  item_17:
+    id: PAPER
+    model-data: '200372'
+    properties: 'tooltip_style:minecraft:blue, usos:25'
+    name: '&#BFE3FF✧ &#7FB8FFTomo Celestial'
+    lore:
+    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#7FB8FFImpacto Celestial'
+    - ' &7Saltas hacia el cielo y caes como'
+    - ' &7una estrella sobre tus enemigos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FB8FFImpacto en Área'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B5 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B30 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Sus páginas brillan con la luz'
+    - ' &8&ode las constelaciones.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: humano impacto'
+    - 'op: desgastar'
+    commands-sound: BLOCK.BEACON.POWER_SELECT
+    commands-particle: END_ROD:32
+    commands-cooldown: 30
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_ruby (Nexo weekly_dot/pack1) -> /humano furia
+  item_18:
+    id: PAPER
+    model-data: '200350'
+    properties: 'tooltip_style:minecraft:dark_red, usos:25'
+    name: '&#FF9A9A❣ &#E04848Corazón del Titán'
+    lore:
+    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#E04848Furia Titánica'
+    - ' &7Despierta la fuerza de los titanes'
+    - ' &7y golpea todo a tu alrededor.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#E04848Fuerza Desatada'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B4 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B45 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Todavía late, aunque su dueño'
+    - ' &8&ocayó hace siglos.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: humano furia'
+    - 'op: desgastar'
+    commands-sound: ENTITY.RAVAGER.ROAR
+    commands-particle: CRIT:32
+    commands-cooldown: 45
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_thunder_element (Nexo weekly_dot/pack1) -> /iradelcielo
+  item_19:
+    id: PAPER
+    model-data: '200366'
+    properties: 'tooltip_style:minecraft:light_purple, usos:25'
+    name: '&#E7C6FF⚡ &#B45CFFEsencia de la Tormenta'
+    lore:
+    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#B45CFFIra del Cielo'
+    - ' &7Desata 20 segundos de tormenta:'
+    - ' &7rayos, vórtice y un juicio final.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#B45CFFTormenta Viviente'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B20 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B90 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«El cielo no perdona a quien'
+    - ' &8&olo despierta.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: iradelcielo'
+    - 'op: desgastar'
+    commands-sound: ENTITY.LIGHTNING_BOLT.THUNDER
+    commands-particle: ELECTRIC_SPARK:48
+    commands-cooldown: 90
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Cargando Magia&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_potion3 (Nexo weekly_dot/pack1) -> /bendicion vitalidad
+  item_20:
+    id: PAPER
+    model-data: '200388'
+    properties: 'tooltip_style:minecraft:green'
+    name: '&#B8FFC9✚ &#5FE38AElixir de Vitalidad'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#5FE38APulso de Vida'
+    - ' &7Libera un pulso que te cura y sana'
+    - ' &7a los aliados que tengas cerca.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#5FE38ACuración en Área'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B5 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Sabe a menta y a hierba'
+    - ' &8&orecién cortada.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right:
+    - 'op: bendicion vitalidad'
+    commands-sound: ENTITY.GENERIC.DRINK
+    commands-particle: HEART:12
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_potion4 (Nexo weekly_dot/pack1) -> /bendicion celeridad
+  item_21:
+    id: PAPER
+    model-data: '200389'
+    properties: 'tooltip_style:minecraft:aqua'
+    name: '&#BFEFFF➹ &#5FC8FFElixir de Celeridad'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#5FC8FFEmbestida del Viento'
+    - ' &7Sales disparado hacia delante y'
+    - ' &7dejas una estela de viento.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#5FC8FFEmbestida + Velocidad II'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B20 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Burbujea como si quisiera'
+    - ' &8&osalir corriendo.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right:
+    - 'op: bendicion celeridad'
+    commands-sound: ENTITY.GENERIC.DRINK
+    commands-particle: CLOUD:16
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_potion5 (Nexo weekly_dot/pack1) -> /bendicion sombra
+  item_22:
+    id: PAPER
+    model-data: '200390'
+    properties: 'tooltip_style:minecraft:dark_purple'
+    name: '&#E3C6FF☾ &#B07BFFElixir de Sombra'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#B07BFFPaso de Sombra'
+    - ' &7Estallas en humo, saltas 6 bloques'
+    - ' &7al frente y te vuelves invisible.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#B07BFFSalto de Sombra'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B20 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Nadie recuerda haberla'
+    - ' &8&opreparado.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right:
+    - 'op: bendicion sombra'
+    commands-sound: ENTITY.GENERIC.DRINK
+    commands-particle: WITCH:16
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_potion6 (Nexo weekly_dot/pack1) -> /bendicion fortaleza
+  item_23:
+    id: PAPER
+    model-data: '200391'
+    properties: 'tooltip_style:minecraft:light_purple'
+    name: '&#FFD1E6⛨ &#FF7FB0Elixir de Fortaleza'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF7FB0Piel de Piedra'
+    - ' &7Una onda aparta a los monstruos y'
+    - ' &7tu piel se endurece como la roca.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF7FB0Repulsión + Escudo'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B4 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Amarga, pero aguanta lo'
+    - ' &8&oque le echen.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right:
+    - 'op: bendicion fortaleza'
+    commands-sound: ENTITY.GENERIC.DRINK
+    commands-particle: END_ROD:12
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_ruby_ring (Nexo weekly_dot/pack1) -> /bendicion rubi
+  item_24:
+    id: PAPER
+    model-data: '200357'
+    properties: 'tooltip_style:minecraft:red, usos:40'
+    name: '&#FFB3B3◆ &#FF5C5CAnillo de Rubí'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF5C5CSangre de Rubí'
+    - ' &7Cada golpe que das te devuelve'
+    - ' &7parte de la vida que arrebatas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF5C5CRobo de Vida 25%'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B60 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B5 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Perteneció a un general que'
+    - ' &8&onunca perdió un duelo.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion rubi'
+    - 'op: desgastar'
+    commands-sound: BLOCK.RESPAWN_ANCHOR.CHARGE
+    commands-particle: CRIMSON_SPORE:24
+    commands-cooldown: 300
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_topaz_ring (Nexo weekly_dot/pack1) -> /bendicion topacio
+  item_25:
+    id: PAPER
+    model-data: '200358'
+    properties: 'tooltip_style:minecraft:yellow, usos:40'
+    name: '&#FFEBA6◆ &#FFC83DAnillo de Topacio'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFC83DOjo de Topacio'
+    - ' &7Revela los minerales valiosos que'
+    - ' &7se esconden en la roca cercana.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFC83DDetectar Minerales'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B7 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B5 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Los mineros juran que da'
+    - ' &8&osuerte bajo tierra.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion topacio'
+    - 'op: desgastar'
+    commands-sound: BLOCK.RESPAWN_ANCHOR.CHARGE
+    commands-particle: WAX_ON:16
+    commands-cooldown: 300
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_emerald_ring (Nexo weekly_dot/pack1) -> /bendicion esmeralda
+  item_26:
+    id: PAPER
+    model-data: '200356'
+    properties: 'tooltip_style:minecraft:green, usos:40'
+    name: '&#C2FFD1◆ &#4FD97AAnillo de Esmeralda'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#4FD97ABendición Verde'
+    - ' &7Hace crecer los cultivos cercanos'
+    - ' &7y regenera a tus aliados.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#4FD97ACrecimiento + Regeneración'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B5 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B5 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Los aldeanos se inclinan'
+    - ' &8&oal verlo.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion esmeralda'
+    - 'op: desgastar'
+    commands-sound: BLOCK.RESPAWN_ANCHOR.CHARGE
+    commands-particle: HAPPY_VILLAGER:16
+    commands-cooldown: 300
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_aquamarine (Nexo weekly_dot/pack1) -> /bendicion aguamarina
+  item_27:
+    id: PAPER
+    model-data: '200352'
+    properties: 'tooltip_style:minecraft:aqua, usos:40'
+    name: '&#C6F3FF◈ &#5FD0FFLágrima de Aguamarina'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEGema &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#5FD0FFLágrima del Océano'
+    - ' &7Un vórtice de agua atrae y daña'
+    - ' &7a los monstruos cercanos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#5FD0FFVórtice + Conducto'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B6 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B3 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Dicen que es una lágrima'
+    - ' &8&odel mismo océano.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion aguamarina'
+    - 'op: desgastar'
+    commands-sound: BLOCK.CONDUIT.ACTIVATE
+    commands-particle: SPLASH:24
+    commands-cooldown: 180
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_topaz (Nexo weekly_dot/pack1) -> /bendicion banquete
+  item_28:
+    id: PAPER
+    model-data: '200351'
+    properties: 'tooltip_style:minecraft:gold'
+    name: '&#FFE2A6◈ &#FFB43DTopacio del Banquete'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEGema &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFB43DBanquete Compartido'
+    - ' &7Sacia el hambre de todos los'
+    - ' &7jugadores que te rodean.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFB43DSaciar en Área'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B6 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Brilla como pan recién'
+    - ' &8&ohorneado.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion banquete'
+    commands-sound: ENTITY.PLAYER.BURP
+    commands-particle: HAPPY_VILLAGER:12
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_water_element (Nexo weekly_dot/pack1) -> /bendicion marea
+  item_29:
+    id: PAPER
+    model-data: '200368'
+    properties: 'tooltip_style:minecraft:blue, usos:40'
+    name: '&#C6E6FF≈ &#6FB8FFEsencia de Marea'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEElemento &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#6FB8FFOla de Marea'
+    - ' &7Una ola barre a los monstruos que'
+    - ' &7tienes delante y los aparta.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#6FB8FFOla + Gracia de Delfín'
+    - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36B8 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B3 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Se mueve sola, como una ola'
+    - ' &8&oatrapada.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion marea'
+    - 'op: desgastar'
+    commands-sound: ENTITY.DOLPHIN.PLAY
+    commands-particle: BUBBLE_POP:24
+    commands-cooldown: 180
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_fire_book (Nexo weekly_dot/pack1) -> /bendicion ignea
+  item_30:
+    id: PAPER
+    model-data: '200373'
+    properties: 'tooltip_style:minecraft:dark_red, usos:40'
+    name: '&#FFC2A6✹ &#FF6F45Grimorio Ígneo'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AETomo &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF6F45Llama Interior'
+    - ' &7Los monstruos que te golpeen'
+    - ' &7arderán; el fuego no te daña.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF6F45Espinas de Fuego'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B60 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B4 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Sus páginas están tibias'
+    - ' &8&oal tacto.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: bendicion ignea'
+    - 'op: desgastar'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: FLAME:24
+    commands-cooldown: 240
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_water_book (Nexo weekly_dot/pack1) -> /bendicion sabiduria
+  item_31:
+    id: PAPER
+    model-data: '200374'
+    properties: 'tooltip_style:minecraft:blue, usos:40'
+    name: '&#C6E3FF✎ &#6FA8FFGrimorio del Sabio'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AETomo &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#6FA8FFOjos del Sabio'
+    - ' &7Revela monstruos y te dice cuántos'
+    - ' &7jugadores hay a tu alrededor.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#6FA8FFRevelar + Visión Nocturna'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B32 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B2 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Escrito por alguien que'
+    - ' &8&onunca durmió.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: bendicion sabiduria'
+    - 'op: desgastar'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: ENCHANT:32
+    commands-cooldown: 120
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_fire_rune (Nexo weekly_dot/pack1) -> /bendicion llamas
+  item_32:
+    id: PAPER
+    model-data: '200376'
+    properties: 'tooltip_style:minecraft:red, usos:40'
+    name: '&#FFB89A✹ &#FF5A2DRuna de Llamas'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AERuna &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF5A2DCírculo de Llamas'
+    - ' &7Un anillo de fuego se expande e'
+    - ' &7incendia a los monstruos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF5A2DIncendiar'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B6 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B15 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Quema a todos menos a'
+    - ' &8&oquien la sostiene.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion llamas'
+    - 'op: desgastar'
+    commands-sound: ENTITY.BLAZE.SHOOT
+    commands-particle: FLAME:32
+    commands-cooldown: 15
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_thunder_rune (Nexo weekly_dot/pack1) -> /humano tormenta
+  item_33:
+    id: PAPER
+    model-data: '200375'
+    properties: 'tooltip_style:minecraft:yellow, usos:25'
+    name: '&#FFF3A6⚡ &#FFD84DRuna del Trueno'
+    lore:
+    - '&#B45CFF&lAvanzado &8• &#9EA3AERuna &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFD84DTormenta de Relámpagos'
+    - ' &7Llama a los relámpagos sobre'
+    - ' &7tus enemigos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFD84DRayos en Área'
+    - ' &f<glyph:rocket> &#9EA3AERayos &8» &#FFD36B8 Impactos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B60 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Vibra antes de cada'
+    - ' &8&otormenta.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: humano tormenta'
+    - 'op: desgastar'
+    commands-sound: ENTITY.LIGHTNING_BOLT.THUNDER
+    commands-particle: ELECTRIC_SPARK:32
+    commands-cooldown: 60
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll3 (Nexo weekly_dot/pack1) -> /humano guardian
+  item_34:
+    id: PAPER
+    model-data: '200380'
+    properties: 'tooltip_style:minecraft:blue, usos:25'
+    name: '&#D6E6FF✠ &#8FB3FFPergamino de Invocación'
+    lore:
+    - '&#B45CFF&lAvanzado &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#8FB3FFInvocar Guardianes'
+    - ' &7Convoca guardianes de hierro que'
+    - ' &7luchan a tu lado.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#8FB3FFAliados Temporales'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B60 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B90 Segundos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Los nombres escritos en él'
+    - ' &8&oresponden a la llamada.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: humano guardian'
+    - 'op: desgastar'
+    commands-sound: BLOCK.BEACON.ACTIVATE
+    commands-particle: END_ROD:24
+    commands-cooldown: 90
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /spawn
+  item_35:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:white'
+    name: '&#F2F2F2↺ &#C9CDD6Pergamino de Retorno'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#C9CDD6Retorno'
+    - ' &7Te lleva de vuelta al punto'
+    - ' &7de aparición del mundo.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#C9CDD6Volver al Spawn'
+    - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36BMundo'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Huele a casa.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: spawn'
+    commands-sound: ENTITY.ENDERMAN.TELEPORT
+    commands-particle: PORTAL:32
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll2 (Nexo weekly_dot/pack1) -> /home
+  item_36:
+    id: PAPER
+    model-data: '200379'
+    properties: 'tooltip_style:minecraft:dark_red'
+    name: '&#FFC9C9⌂ &#FF8A8APergamino del Hogar'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF8A8AHogar'
+    - ' &7Te devuelve a tu hogar'
+    - ' &7principal.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8A8AIr a tu Home'
+    - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36BMundo'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Atado con la cinta roja que'
+    - ' &8&ousaba tu abuela.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: home'
+    commands-sound: ENTITY.ENDERMAN.TELEPORT
+    commands-particle: PORTAL:32
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_battery1 (Nexo weekly_dot/pack1) -> /bendicion energia
+  item_37:
+    id: PAPER
+    model-data: '200364'
+    properties: 'tooltip_style:minecraft:yellow, usos:40'
+    name: '&#FFF6B8⚡ &#FFE24DBatería Arcana'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEArtefacto &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFE24DSobrecarga'
+    - ' &7Cada golpe que das libera una'
+    - ' &7descarga eléctrica extra.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFE24DGolpes Eléctricos'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B30 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B3 Minutos'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Nadie sabe qué hay dentro,'
+    - ' &8&opero zumba.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion energia'
+    - 'op: desgastar'
+    commands-sound: BLOCK.BEACON.POWER_SELECT
+    commands-particle: ELECTRIC_SPARK:24
+    commands-cooldown: 180
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Recargando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_syringe (Nexo weekly_dot/pack1) -> /bendicion adrenalina
+  item_38:
+    id: PAPER
+    model-data: '200385'
+    properties: 'tooltip_style:minecraft:green'
+    name: '&#D2FFB8✚ &#8FE34DJeringa de Adrenalina'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#8FE34DAdrenalina'
+    - ' &7Un estallido de fuerza y'
+    - ' &7velocidad... con bajón después.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#8FE34DVelocidad III + Fuerza II'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B8 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Úsala solo cuando no haya'
+    - ' &8&ootra salida.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion adrenalina'
+    commands-sound: ENTITY.PLAYER.HURT_SWEET_BERRY_BUSH
+    commands-particle: CRIT:16
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_aid_kit (Nexo weekly_dot/pack1) -> /bendicion botiquin
+  item_39:
+    id: PAPER
+    model-data: '200384'
+    properties: 'tooltip_style:minecraft:white'
+    name: '&#FFD6D6✚ &#FF6B6BBotiquín'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF6B6BPrimeros Auxilios'
+    - ' &7Restaura toda tu vida y limpia'
+    - ' &7venenos, debilidad y fuego.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF6B6BCuración + Limpieza'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36BInstantánea'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Vendas, alcohol y mucha'
+    - ' &8&opaciencia.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right:
+    - 'op: bendicion botiquin'
+    commands-sound: ITEM.ARMOR.EQUIP_LEATHER
+    commands-particle: HEART:12
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /pergamino luz
+  item_40:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:yellow'
+    name: '&#FFF6C2☀ &#FFD84DPergamino de Luz'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFD84DLuz Sagrada'
+    - ' &7Orbes de luz te acompañan y'
+    - ' &7disipan la ceguera y la oscuridad.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFD84DOrbes + Visión Nocturna'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B3 Minutos'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Escrito con tinta de'
+    - ' &8&oluciérnaga.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: pergamino luz'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: GLOW:24
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /pergamino purificacion
+  item_41:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:aqua'
+    name: '&#E6FFF6✧ &#7FE3C4Pergamino de Purificación'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#7FE3C4Purificación'
+    - ' &7Limpia venenos y maldiciones,'
+    - ' &7apaga el fuego y cura heridas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FE3C4Limpiar Efectos'
+    - ' &f<glyph:heart> &#9EA3AECura &8» &#FFD36B2 Corazones'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Sus letras se borran al'
+    - ' &8&oterminar de leerlas.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: pergamino purificacion'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: HAPPY_VILLAGER:16
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /pergamino revelacion
+  item_42:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:dark_purple'
+    name: '&#E3D6FF◉ &#9A85F0Pergamino de Revelación'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#9A85F0Revelación'
+    - ' &7Hace brillar a jugadores y monstruos'
+    - ' &7y señala al jugador más cercano.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#9A85F0Revelar + Rastrear'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B40 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Dibujado por un cartógrafo'
+    - ' &8&oque nunca se perdió.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: pergamino revelacion'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: ENCHANT:24
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /pergamino viento
+  item_43:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:aqua'
+    name: '&#E6F7FF➶ &#8FD8FFPergamino del Viento'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#8FD8FFRáfaga'
+    - ' &7Una ráfaga te impulsa hacia donde'
+    - ' &7miras y te deja caer suave.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#8FD8FFImpulso + Caída Lenta'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B6 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Se agita aunque no haya'
+    - ' &8&oviento.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: pergamino viento'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: CLOUD:24
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /pergamino proteccion
+  item_44:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:blue'
+    name: '&#D6E6FF⛨ &#8FB3FFPergamino de Protección'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#8FB3FFCírculo Sagrado'
+    - ' &7Un círculo de fuego de alma'
+    - ' &7mantiene lejos a los monstruos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#8FB3FFRepeler Monstruos'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B8 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Bendecido en el templo'
+    - ' &8&omás antiguo del reino.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: pergamino proteccion'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: SOUL_FIRE_FLAME:24
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # pack1_scroll1 (Nexo weekly_dot/pack1) -> /pergamino saber
+  item_45:
+    id: PAPER
+    model-data: '200378'
+    properties: 'tooltip_style:minecraft:green'
+    name: '&#C6FFE0✎ &#4FD99APergamino del Saber'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#4FD99AConocimiento'
+    - ' &7Absorbes lo que está escrito y'
+    - ' &7ganas experiencia al instante.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#4FD99AExperiencia'
+    - ' &f<glyph:trophy> &#9EA3AENiveles &8» &#FFD36B+5'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Cada palabra pesa como un'
+    - ' &8&oaño de estudio.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right:
+    - 'op: pergamino saber'
+    commands-sound: ENTITY.PLAYER.LEVELUP
+    commands-particle: ENCHANT:32
+    commands-cooldown: 2
+    itemflags: PLACEMENT, GLOWING, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # rune1_red (Nexo weekly_dot/rune1) -> /maldicion pacto  [MALDITO]
+  item_46:
+    id: PAPER
+    model-data: '200553'
+    properties: 'tooltip_style:minecraft:dark_red, usos:20'
+    name: '&#FF8A8A☠ &#C0392BRuna del Pacto de Sangre'
+    lore:
+    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - ''
+    - '&f<glyph:star> &#FF5C5CPacto de Sangre'
+    - ' &7Fuerza, velocidad y regeneración'
+    - ' &7desmedidas; cada golpe te devuelve vida.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF5C5CFuerza III + Velocidad II'
+    - ' &f<glyph:heart> &#9EA3AEExtra &8» &#FFD36BRegen. II + Robo de vida 30%'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B45 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B90 Segundos'
+    - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A3 corazones al usarla'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Cada uso la vuelve un poco'
+    - ' &8&omás roja.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: maldicion pacto'
+    - 'op: desgastar'
+    commands-sound: ENTITY.WARDEN.HEARTBEAT
+    commands-particle: DAMAGE_INDICATOR:24
+    commands-cooldown: 90
+    cooldown-message: '&#B22222☠ &8» &#C9A8A8La runa aún se está alimentando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # rune1_red (Nexo weekly_dot/rune1) -> /maldicion abismo  [MALDITO]
+  item_47:
+    id: PAPER
+    model-data: '200553'
+    properties: 'tooltip_style:minecraft:dark_red, usos:20'
+    name: '&#C9A8FF◉ &#6A1B9ARuna del Ojo del Abismo'
+    lore:
+    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - ''
+    - '&f<glyph:star> &#B07BFFOjo del Abismo'
+    - ' &7Devasta, frena y marca a todos los'
+    - ' &7monstruos y te deja ver en la oscuridad.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#B07BFF12 de Daño + Lentitud IV'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B14 Bloques'
+    - ' &f<glyph:clock> &#9EA3AEVisión &8» &#FFD36B60 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B60 Segundos'
+    - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A4 s de oscuridad'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Si miras al abismo el tiempo'
+    - ' &8&osuficiente, te devuelve la mirada.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: maldicion abismo'
+    - 'op: desgastar'
+    commands-sound: ENTITY.WARDEN.SONIC_CHARGE
+    commands-particle: SCULK_SOUL:24
+    commands-cooldown: 60
+    cooldown-message: '&#B22222☠ &8» &#C9A8A8La runa aún se está alimentando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # rune1_red (Nexo weekly_dot/rune1) -> /maldicion almas  [MALDITO]
+  item_48:
+    id: PAPER
+    model-data: '200553'
+    properties: 'tooltip_style:minecraft:dark_red, usos:20'
+    name: '&#9FE8FF☁ &#2B5F75Runa del Grito de Almas'
+    lore:
+    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - ''
+    - '&f<glyph:star> &#9FE8FFGrito de Almas'
+    - ' &7Drena la vida de cada monstruo cercano;'
+    - ' &7lo que sobra te protege como absorción.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#9FE8FFDrenar 6 a cada Monstruo'
+    - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B10 Bloques'
+    - ' &f<glyph:heart> &#9EA3AEExtra &8» &#FFD36BCuración + Absorción'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B45 Segundos'
+    - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A10 s de hambre'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Se oyen voces cuando nadie'
+    - ' &8&ola sostiene.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: maldicion almas'
+    - 'op: desgastar'
+    commands-sound: PARTICLE.SOUL_ESCAPE
+    commands-particle: SOUL:24
+    commands-cooldown: 45
+    cooldown-message: '&#B22222☠ &8» &#C9A8A8La runa aún se está alimentando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # rune1_red (Nexo weekly_dot/rune1) -> /maldicion muerte  [MALDITO]
+  item_49:
+    id: PAPER
+    model-data: '200553'
+    properties: 'tooltip_style:minecraft:dark_red, usos:20'
+    name: '&#E0C0C0☠ &#5A0000Runa de la Marca de la Muerte'
+    lore:
+    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - ''
+    - '&f<glyph:star> &#C9A8A8Marca de la Muerte'
+    - ' &7Marca a los tres monstruos más cercanos:'
+    - ' &7a los tres segundos, la muerte llama.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#C9A8A840 de Daño + Rayo'
+    - ' &f<glyph:rocket> &#9EA3AEObjetivos &8» &#FFD36B3 Monstruos'
+    - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36B18 Bloques'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B75 Segundos'
+    - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A4 s de marchitamiento'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«La muerte no olvida un nombre'
+    - ' &8&oescrito en rojo.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: maldicion muerte'
+    - 'op: desgastar'
+    commands-sound: ENTITY.WITHER.SPAWN
+    commands-particle: SOUL_FIRE_FLAME:24
+    commands-cooldown: 75
+    cooldown-message: '&#B22222☠ &8» &#C9A8A8La runa aún se está alimentando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  # rune1_red (Nexo weekly_dot/rune1) -> /maldicion corona  [MALDITO]
+  item_50:
+    id: PAPER
+    model-data: '200553'
+    properties: 'tooltip_style:minecraft:dark_red, usos:20'
+    name: '&#FFE7A3♛ &#B8860BRuna de la Corona del Caído'
+    lore:
+    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - ''
+    - '&f<glyph:star> &#FFE7A3Corona del Caído'
+    - ' &7Casi nada puede herirte y quien te'
+    - ' &7golpee recibe la mitad de su daño.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFE7A3Resistencia IV + Fuerza II'
+    - ' &f<glyph:shield> &#9EA3AEExtra &8» &#FFD36BRefleja 50% + Inmune al Fuego'
+    - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B15 Segundos'
+    - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B120 Segundos'
+    - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A2 corazones al terminar'
+    - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
+    - ''
+    - ' &8&o«Perteneció a un rey que se'
+    - ' &8&ocreyó inmortal.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right:
+    - 'op: maldicion corona'
+    - 'op: desgastar'
+    commands-sound: ITEM.TOTEM.USE
+    commands-particle: TOTEM_OF_UNDYING:24
+    commands-cooldown: 120
+    cooldown-message: '&#B22222☠ &8» &#C9A8A8La runa aún se está alimentando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED

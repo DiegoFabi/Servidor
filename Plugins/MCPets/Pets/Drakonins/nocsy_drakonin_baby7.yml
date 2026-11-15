@@ -1,0 +1,15 @@
+Id: Nocsy_Drakonin_Baby-Forest
+MythicMob: Nocsy_Drakonin-Forest-Baby
+Permission: mcpets.nocsy_drakonin_baby.forest
+DespawnSkill: Nocsy_Drakonin_Despawn
+Mountable: false
+Distance: 5
+SpawnRange: 2
+ComingBackRange: 2
+Icon:
+  Material: BLAZE_ROD
+  Name: §aDrakonin Bebé del Bosque
+  CustomModelData: 96407
+  Description:
+  - §7A cute little drakonin
+  - §7that'll follow you everywhere !

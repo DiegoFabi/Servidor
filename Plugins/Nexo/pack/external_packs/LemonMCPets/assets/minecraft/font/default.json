@@ -1,0 +1,148 @@
+{
+ "providers": [
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued00"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui2.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued01"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui3.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued02"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_common.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued03"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_rare.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued04"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_epic.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued05"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_legendary.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued06"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_inventory.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ued07"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a0"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui2.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a1"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui3.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a2"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_common.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a3"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_rare.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a4"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_epic.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a5"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_legendary.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a6"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "lemon_mcpets:gui/pets_gui_inventory.png",
+   "ascent": 221,
+   "height": 256,
+   "chars": [
+    "\ue6a7"
+   ]
+  }
+ ]
+}

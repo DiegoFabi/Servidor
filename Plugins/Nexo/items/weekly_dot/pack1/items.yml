@@ -1,0 +1,466 @@
+# Creator: Hungry(Hungry22)
+# Discord: https://discord.gg/uNcADBt3Kb
+pack1_ruby:
+  itemname: Ruby
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200350
+    texture: pack1:items/ruby.png
+pack1_topaz:
+  itemname: Topaz
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200351
+    texture: pack1:items/topaz.png
+pack1_aquamarine:
+  itemname: Aquamarine
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200352
+    texture: pack1:items/aquamarine.png
+pack1_raw_silver:
+  itemname: Raw Silver
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200353
+    texture: pack1:items/raw_silver.png
+pack1_silver_ingot:
+  itemname: Silver Ingot
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200354
+    texture: pack1:items/silver_ingot.png
+pack1_ring:
+  itemname: Ring
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200355
+    texture: pack1:items/ring.png
+pack1_emerald_ring:
+  itemname: Emerald Ring
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200356
+    texture: pack1:items/emerald_ring.png
+pack1_ruby_ring:
+  itemname: Ruby Ring
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200357
+    texture: pack1:items/ruby_ring.png
+pack1_topaz_ring:
+  itemname: Topaz Ring
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200358
+    texture: pack1:items/topaz_ring.png
+pack1_aquamarine_ring:
+  itemname: Aquamarine Ring
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200359
+    texture: pack1:items/aquamarine_ring.png
+pack1_raw_lithium:
+  itemname: Raw Lithium
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200360
+    texture: pack1:items/raw_lithium.png
+pack1_lithium_ingot:
+  itemname: Lithium Ingot
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200361
+    texture: pack1:items/lithium_ingot.png
+pack1_can1:
+  itemname: Can 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200362
+    texture: pack1:items/can1.png
+pack1_can2:
+  itemname: Can 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200363
+    texture: pack1:items/can2.png
+pack1_battery1:
+  itemname: Battery 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200364
+    texture: pack1:items/battery1.png
+pack1_battery2:
+  itemname: Battery 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200365
+    texture: pack1:items/battery2.png
+pack1_thunder_element:
+  itemname: Thunder Element
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200366
+    texture: pack1:items/thunder_element.png
+pack1_fire_element:
+  itemname: Fire Element
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200367
+    texture: pack1:items/fire_element.png
+pack1_water_element:
+  itemname: Water Element
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200368
+    texture: pack1:items/water_element.png
+pack1_thunder_staff:
+  itemname: Thunder Staff
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200369
+    texture: pack1:items/thunder_staff.png
+pack1_fire_staff:
+  itemname: Fire Staff
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200370
+    texture: pack1:items/fire_staff.png
+pack1_water_staff:
+  itemname: Water Staff
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200371
+    texture: pack1:items/water_staff.png
+pack1_thunder_book:
+  itemname: Thunder Book
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200372
+    texture: pack1:items/thunder_book.png
+pack1_fire_book:
+  itemname: Fire Book
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200373
+    texture: pack1:items/fire_book.png
+pack1_water_book:
+  itemname: Water Book
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200374
+    texture: pack1:items/water_book.png
+pack1_thunder_rune:
+  itemname: Thunder Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200375
+    texture: pack1:items/thunder_rune.png
+pack1_fire_rune:
+  itemname: Fire Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200376
+    texture: pack1:items/fire_rune.png
+pack1_water_rune:
+  itemname: Water Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200377
+    texture: pack1:items/water_rune.png
+pack1_scroll1:
+  itemname: Scroll 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200378
+    texture: pack1:items/scroll1.png
+pack1_scroll2:
+  itemname: Scroll 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200379
+    texture: pack1:items/scroll2.png
+pack1_scroll3:
+  itemname: Scroll 3
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200380
+    texture: pack1:items/scroll3.png
+pack1_scroll4:
+  itemname: Scroll 4
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200381
+    texture: pack1:items/scroll4.png
+pack1_band:
+  itemname: Band
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200382
+    texture: pack1:items/band.png
+pack1_bandage:
+  itemname: Bandage
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200383
+    texture: pack1:items/bandage.png
+pack1_aid_kit:
+  itemname: Aid Kit
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200384
+    texture: pack1:items/aid_kit.png
+pack1_syringe:
+  itemname: Syringe
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200385
+    texture: pack1:items/syringe.png
+pack1_potion1:
+  itemname: Potion 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200386
+    texture: pack1:items/potion1.png
+pack1_potion2:
+  itemname: Potion 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200387
+    texture: pack1:items/potion2.png
+pack1_potion3:
+  itemname: Potion 3
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200388
+    texture: pack1:items/potion3.png
+pack1_potion4:
+  itemname: Potion 4
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200389
+    texture: pack1:items/potion4.png
+pack1_potion5:
+  itemname: Potion 5
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200390
+    texture: pack1:items/potion5.png
+pack1_potion6:
+  itemname: Potion 6
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200391
+    texture: pack1:items/potion6.png
+pack1_bolak:
+  itemname: Bolak
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200392
+    texture: pack1:items/bolak.png
+pack1_flatfish:
+  itemname: Flatfish
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200393
+    texture: pack1:items/flatfish.png
+pack1_mullet:
+  itemname: Mullet
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200394
+    texture: pack1:items/mullet.png
+pack1_squid:
+  itemname: Squid
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200395
+    texture: pack1:items/squid.png
+pack1_yellowtail:
+  itemname: Yellowtail
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200396
+    texture: pack1:items/yellowtail.png
+pack1_eel:
+  itemname: Eel
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200397
+    texture: pack1:items/eel.png
+pack1_raw_bolak:
+  itemname: Raw Bolak
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200398
+    texture: pack1:items/raw_bolak.png
+pack1_raw_flatfish:
+  itemname: Raw Flatfish
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200399
+    texture: pack1:items/raw_flatfish.png
+pack1_raw_mullet:
+  itemname: Raw Mullet
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200400
+    texture: pack1:items/raw_mullet.png
+pack1_raw_squid:
+  itemname: Raw Squid
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200401
+    texture: pack1:items/raw_squid.png
+pack1_raw_yellowtail:
+  itemname: Raw Yellowtail
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200402
+    texture: pack1:items/raw_yellowtail.png
+pack1_raw_eel:
+  itemname: Raw Eel
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200403
+    texture: pack1:items/raw_eel.png
+pack1_red_flower:
+  itemname: Red Flower
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200404
+    texture: pack1:items/red_flower.png
+pack1_orange_flower:
+  itemname: Orange Flower
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200405
+    texture: pack1:items/orange_flower.png
+pack1_yellow_flower:
+  itemname: Yellow Flower
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200406
+    texture: pack1:items/yellow_flower.png
+pack1_green_flower:
+  itemname: Green Flower
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200407
+    texture: pack1:items/green_flower.png
+pack1_blue_flower:
+  itemname: Blue Flower
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200408
+    texture: pack1:items/blue_flower.png
+pack1_purple_flower:
+  itemname: Purple Flower
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200409
+    texture: pack1:items/purple_flower.png
+pack1_red_petal:
+  itemname: Red Petal
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200410
+    texture: pack1:items/red_petal.png
+pack1_orange_petal:
+  itemname: Orange Petal
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200411
+    texture: pack1:items/orange_petal.png
+pack1_yellow_petal:
+  itemname: Yellow Petal
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200412
+    texture: pack1:items/yellow_petal.png
+pack1_green_petal:
+  itemname: Green Petal
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200413
+    texture: pack1:items/green_petal.png
+pack1_blue_petal:
+  itemname: Blue Petal
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200414
+    texture: pack1:items/blue_petal.png
+pack1_purple_petal:
+  itemname: Purple Petal
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200415
+    texture: pack1:items/purple_petal.png
+
+# 97d14ee02b2f1a087d9fc5032082c677

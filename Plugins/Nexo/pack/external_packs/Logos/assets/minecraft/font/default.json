@@ -1,0 +1,48 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "minecraft:logo/classmagetitle.png",
+            "ascent": 66,
+            "height": 106,
+            "chars": ["ボ"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:logo/humanoancestral.png",
+            "ascent": 66,
+            "height": 106,
+            "chars": ["ぴ"]
+        },
+	{
+            "type": "bitmap",
+            "file": "minecraft:logo/godwarlogo.png",
+            "ascent": 66,
+            "height": 106,
+            "chars": ["我"]
+        },
+	{
+            "type": "bitmap",
+            "file": "minecraft:logo/forasterologo.png",
+            "ascent": 66,
+            "height": 106,
+            "chars": ["他"]
+        },
+	{
+            "type": "bitmap",
+            "file": "minecraft:logo/paladinlogo.png",
+            "ascent": 66,
+            "height": 106,
+            "chars": ["们"]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:logo/cloudslogo.png",
+            "ascent": 66,
+            "height": 106,
+            "chars": ["叫"]
+        }
+
+
+    ]
+}

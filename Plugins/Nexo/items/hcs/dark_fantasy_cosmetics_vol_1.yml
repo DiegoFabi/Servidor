@@ -1,0 +1,96 @@
+cemetery_witch_hat:
+  displayname: <gradient:#B57BFF:#6B2FB3>Sombrero de la Bruja del Cementerio</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/cemetery_witch_hat
+    custom_model_data: 1114
+cemetery_witch_cloak:
+  displayname: <gradient:#B57BFF:#6B2FB3>Capa de la Bruja del Cementerio</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/cemetery_witch_cloak
+    custom_model_data: 1115
+cemetery_witch_cloak_fp:
+  displayname: <gradient:#B57BFF:#6B2FB3>Capa de la Bruja del Cementerio</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/cemetery_witch_cloak_fp
+    custom_model_data: 1117
+cemetery_witch_broom:
+  displayname: <gradient:#B57BFF:#6B2FB3>Escoba de la Bruja del Cementerio</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/cemetery_witch_broom
+    custom_model_data: 1118
+chained_monstruosity_collar:
+  displayname: <gradient:#C9CDD6:#6E7380>Collar de la Monstruosidad Encadenada</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/chained_monstruosity_collar
+    custom_model_data: 1119
+chained_monstruosity_back:
+  displayname: <gradient:#C9CDD6:#6E7380>Cadenas de la Monstruosidad Encadenada</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/chained_monstruosity_back
+    custom_model_data: 1120
+chained_monstruosity_back_fp:
+  displayname: <gradient:#C9CDD6:#6E7380>Cadenas de la Monstruosidad Encadenada</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/chained_monstruosity_back_fp
+    custom_model_data: 1132
+chained_monstruosity_sword:
+  displayname: <gradient:#C9CDD6:#6E7380>Espada de la Monstruosidad Encadenada</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/chained_monstruosity_sword
+    custom_model_data: 1133
+crow_lord_hat:
+  displayname: <gradient:#8FA3C7:#2E3A55>Sombrero del Señor de los Cuervos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/crow_lord_hat
+    custom_model_data: 1134
+crow_lord_wings:
+  displayname: <gradient:#8FA3C7:#2E3A55>Alas del Señor de los Cuervos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/crow_lord_wings
+    custom_model_data: 1135
+crow_lord_wings_fp:
+  displayname: <gradient:#8FA3C7:#2E3A55>Alas del Señor de los Cuervos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/crow_lord_wings_fp
+    custom_model_data: 1136
+crow_lord_staff:
+  displayname: <gradient:#8FA3C7:#2E3A55>Bastón del Señor de los Cuervos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/crow_lord_staff
+    custom_model_data: 1137
+noir_elegance_tophat:
+  displayname: <gradient:#FF8A8A:#7A1F2B>Chistera de la Elegancia Noir</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/noir_elegance_tophat
+    custom_model_data: 1138
+noir_elegance_shoulderpads:
+  displayname: <gradient:#FF8A8A:#7A1F2B>Hombreras de la Elegancia Noir</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/noir_elegance_shoulderpads
+    custom_model_data: 1139
+noir_elegance_shoulderpads_fp:
+  displayname: <gradient:#FF8A8A:#7A1F2B>Hombreras de la Elegancia Noir</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/noir_elegance_shoulderpads_fp
+    custom_model_data: 1140
+noir_elegance_staff:
+  displayname: <gradient:#FF8A8A:#7A1F2B>Bastón de la Elegancia Noir</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/noir_elegance_staff
+    custom_model_data: 1141

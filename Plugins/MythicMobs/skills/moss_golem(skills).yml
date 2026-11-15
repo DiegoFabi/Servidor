@@ -1,0 +1,69 @@
+MossGolemAttack:
+  Cooldown: 1.1
+  Skills:
+  - skill{s=MossGolemAttack1}
+  - skill{s=MossGolemAttack2}
+  - skill{s=MossGolemAttackEmpowered}
+MossGolemAttack1:
+  Conditions:
+  - hasaura{aura=EmpoweredAttackReady} false
+  - hasaura{aura=SecondAttack} false
+  Skills:
+  - state{m=moss_golem;s=attack1;li=2;lo=8} @self
+  - sound{s=entity.player.attack.sweep;p=0.1;v=0.4;delay=8} @self
+  - delay 10
+  - aura{auraName=SecondAttack;d=30} @self
+  - skill{s=[
+            - damage{a=<caster.var.damage>}
+            - effect:particles{p=reddust;color=#7f7f7f;a=7;y=0.3;hs=0.3;vs=0.3}
+            - sound{s=block.basalt.hit;p=0.1}
+            ]} @target{conditions=[
+                                  - distance{d=0to2.8}
+                                  - fov{a=170}
+                                  ]}
+MossGolemAttack2:
+  Conditions:
+  - hasaura{aura=EmpoweredAttackReady} false
+  - hasaura{aura=SecondAttack}
+  Skills:
+  - state{m=moss_golem;s=attack2;li=2;lo=8} @self
+  - sound{s=entity.player.attack.sweep;p=0.1;v=0.4;delay=8} @self
+  - delay 10
+  - auraremove{aura=SecondAttack} @self
+  - skill{s=[
+            - damage{a=<caster.var.damage>}
+            - effect:particles{p=reddust;color=#7f7f7f;a=7;y=0.3;hs=0.3;vs=0.3}
+            - sound{s=block.basalt.hit;p=0.1}
+            ]} @target{conditions=[
+                                  - distance{d=0to2.8}
+                                  - fov{a=170}
+                                  ]}
+MossGolemAttackEmpowered:
+  Conditions:
+  - hasaura{aura=EmpoweredAttackReady}
+  Skills:
+  - state{m=moss_golem;s=powerful_attack;li=3;lo=8} @self
+  - sound{s=entity.player.attack.sweep;p=0.1;v=0.4;delay=8} @self
+  - delay 10
+  - aura{auraName=SecondAttack;d=30} @self
+  - auraremove{aura=EmpoweredAttackReady} @self
+  - aura{auraName=EmpoweredAttackReady;d=999999;delay=200} @self
+  - defaultstate{m=moss_golem;t=WALK;s=walk} @self
+  - defaultstate{m=moss_golem;t=WALK;s=walk_powerful;delay=200} @self
+  - skill{s=[
+            - damage{a="<caster.var.damage>*2";pk=true}
+            - effect:particles{p=reddust;color=#7f7f7f;a=7;y=0.3;hs=0.3;vs=0.3}
+            - sound{s=block.anvil.land;p=0.7;v=0.2} 
+            - throw{v=9;vy=3}
+            ]} @target{conditions=[
+                                  - distance{d=0to2.8}
+                                  - fov{a=170}
+                                  ]}
+                                  
+MossGolemDeath:
+  Skills:
+  - sound{s=block.basalt.break;p=1.2;v=0.7;delay=2} @self
+  - sound{s=block.basalt.break;p=1;v=0.7;delay=7} @self
+  - sound{s=block.basalt.break;p=0.1;v=0.7;delay=14} @self
+  - effect:particles{p=reddust;color=#7f7f7f;a=20;y=0.1;hs=0.5;vs=0.1;forwardOffset=1;delay=22} @self
+  - sound{s=block.basalt.break;p=0.1;v=0.7;delay=22} @self

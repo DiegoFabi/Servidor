@@ -1,0 +1,36 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: EVOKER
+name: $eventBossLevel &dWarlock
+healthMultiplier: 3.0
+damageMultiplier: 0.7
+isPersistent: true
+uniqueLootList:
+- filename=warlock_drop_chestplate.yml:amount=1:chance=0.5
+- filename=warlock_drop_helmet.yml:amount=1:chance=0.5
+powers:
+- bonus_loot.yml
+- invulnerability_fire.yml
+- skeleton_tracking_arrow.yml
+- plasma_blaster.yml
+- thunderstorm.yml
+mountedEntity: warlock_mount.yml
+movementSpeedAttribute: 0.3
+followDistance: 50
+locationMessage: '&cWarlock: $distance blocks away!'
+spawnMessage: '&cA demon riding Warlock has appeared!'
+deathMessage: '&aThe Warlock was slain by $players!'
+escapeMessage: '&4The Warlock ran away on his demon!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Warlock has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

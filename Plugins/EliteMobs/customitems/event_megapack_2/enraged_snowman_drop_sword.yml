@@ -1,0 +1,12 @@
+isEnabled: true
+material: NETHERITE_SWORD
+name: "&9Snowman's Nose"
+lore:
+- "&9No wonder that the Snowman's"
+- "&9nose was so pointy..."
+enchantments:
+- "DAMAGE_ALL,4"
+- "DURABILITY,1"
+potionEffects: 
+- "POISON,1,target,onHit"
+itemType: UNIQUE

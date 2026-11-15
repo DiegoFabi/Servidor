@@ -1,0 +1,277 @@
+FantasyNPC_DMG:
+  Conditions:
+  - faction{faction=NPC} false
+  Skills:
+  - damage{a=5;hnp=true;hp=true;pi=true} @LivingNearTargetLocation{r=4}
+  - throw{velocity=4;velocityY=4} @LivingNearTargetLocation{r=4}
+
+FantasyNPC_NagaInteract:
+  Conditions:
+  - (stance interacting true || stance quirk true) castinstead FantasyNPC_NagaInteract_NO_ANIM
+  Skills:
+  - state{s=interact;li=3;lo=3} @Self
+  - setstance{stance=interacting} @Self
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+  - delay 50
+  - setstance{stance=idling} @Self
+
+FantasyNPC_NagaInteract_NO_ANIM:
+  Skills:
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+
+FantasyNPC_NagaQuirk:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=50} false
+  Skills:
+  - state{s=quirk;li=3;lo=3} @Self
+  - setstance{stance=quirk} @Self
+  - delay 60
+  - setstance{stance=idling} @Self
+
+FantasyNPC_NagaAttack:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=6} true
+  Skills:
+  - setstance{stance=attacking} @Self
+  - partvisibility{pid=trident;child=true;v=true} @Self
+  - state{s=attack;li=3;lo=3} @Self
+  - delay 20
+  - skill{s=FantasyNPC_DMG} @ModelPart{pid=trident3}
+  - delay 20
+  - setstance{stance=idling} @Self
+
+FantasyNPC_NagaDamaged:
+  Skills:
+  - state{s=quirk;li=3;lo=3;r=true} @Self
+  - state{s=interact;li=3;lo=3;r=true} @Self
+
+FantasyNPC_NagaDeath:
+  Skills:
+  - delay 30
+  - particles{p=cloud;hs=1.2;vs=1;a=60} @SelfLocation
+
+FantasyNPC_CultistInteract:
+  Conditions:
+  - targetwithin{d=50} false
+  - (stance interacting true || stance quirk true) castinstead FantasyNPC_CultistInteract_NO_ANIM
+  Skills:
+  - state{s=interact;li=3;lo=3} @Self
+  - setstance{stance=interacting} @Self
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+  - delay 50
+  - setstance{stance=idling} @Self
+
+FantasyNPC_CultistInteract_NO_ANIM:
+  Skills:
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+
+FantasyNPC_CultistQuirk:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=50} false
+  Skills:
+  - state{s=quirk;li=3;lo=3} @Self
+  - setstance{stance=quirk} @Self
+  - delay 120
+  - setstance{stance=idling} @Self
+
+FantasyNPC_CultistAttack:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=5} true
+  Skills:
+  - setstance{stance=attacking} @Self
+  - partvisibility{pid=dagger2;child=true;v=true} @Self
+  - state{s=attack;li=3;lo=3} @Self
+  - delay 10
+  - skill{s=FantasyNPC_DMG} @ModelPart{pid=dagger2}
+  - delay 18
+  - skill{s=FantasyNPC_DMG} @ModelPart{pid=dagger2}
+  - delay 6
+  - setstance{stance=idling} @Self
+
+FantasyNPC_CultistDamaged:
+  Skills:
+  - state{s=quirk;li=3;lo=3;r=true} @Self
+  - state{s=interact;li=3;lo=3;r=true} @Self
+
+FantasyNPC_CultistDeath:
+  Skills:
+  - delay 100
+  - particles{p=cloud;hs=1.2;vs=1;a=60} @SelfLocation
+
+FantasyNPC_TuskerInteract:
+  Conditions:
+  - targetwithin{d=50} false
+  - (stance interacting true || stance quirk true) castinstead FantasyNPC_TuskerInteract_NO_ANIM
+  Skills:
+  - state{s=interact;li=3;lo=3} @Self
+  - setstance{stance=interacting} @Self
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+  - delay 50
+  - setstance{stance=idling} @Self
+
+FantasyNPC_TuskerInteract_NO_ANIM:
+  Skills:
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+
+FantasyNPC_TuskerQuirk:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=50} false
+  Skills:
+  - state{s=quirk;li=3;lo=3} @Self
+  - setstance{stance=quirk} @Self
+  - delay 3
+  - partvisibility{pid=anchor;child=true;v=true} @Self
+  - partvisibility{pid=anchor;child=true;v=true} @Self
+  - delay 41
+  - setstance{stance=idling} @Self
+  - partvisibility{pid=anchor;child=true;v=false} @Self
+  - partvisibility{pid=anchor;child=true;v=false} @Self
+
+FantasyNPC_TuskerAttack:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=5} true
+  Skills:
+  - setstance{stance=attacking} @Self
+  - partvisibility{pid=anchor;child=true;v=true} @Self
+  - state{s=attack;li=3;lo=3} @Self
+  - delay 17
+  - skill{s=FantasyNPC_DMG} @ModelPart{pid=anchor}
+  - delay 13
+  - setstance{stance=idling} @Self
+
+FantasyNPC_TuskerDamaged:
+  Skills:
+  - state{s=quirk;li=3;lo=3;r=true} @Self
+  - state{s=interact;li=3;lo=3;r=true} @Self
+
+FantasyNPC_TuskerDeath:
+  Skills:
+  - delay 38
+  - particles{p=cloud;hs=1.2;vs=1;a=60} @SelfLocation
+
+FantasyNPC_FishkinInteract:
+  Conditions:
+  - targetwithin{d=50} false
+  - (stance interacting true || stance quirk true) castinstead FantasyNPC_FishkinInteract_NO_ANIM
+  Skills:
+  - state{s=interact;li=3;lo=3} @Self
+  - setstance{stance=interacting} @Self
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+  - delay 50
+  - setstance{stance=idling} @Self
+
+FantasyNPC_FishkinInteract_NO_ANIM:
+  Skills:
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+
+FantasyNPC_FishkinQuirk:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=50} false
+  Skills:
+  - setspeed{speed=0;type=WALKING} @Self
+  - state{s=quirk;li=3;lo=3} @Self
+  - setstance{stance=quirk} @Self
+  - delay 2
+  - partvisibility{pid=weapon;child=true;v=true} @Self
+  - partvisibility{pid=weapon;child=true;v=true} @Self
+  - delay 165
+  - setstance{stance=idling} @Self
+  - partvisibility{pid=weapon;child=true;v=false} @Self
+  - partvisibility{pid=weapon;child=true;v=false} @Self
+  - setspeed{speed=1;type=WALKING} @Self
+
+FantasyNPC_FishkinAttack:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=5} true
+  Skills:
+  - setstance{stance=attacking} @Self
+  - partvisibility{pid=weapon;child=true;v=true} @Self
+  - state{s=attack;li=3;lo=3} @Self
+  - delay 17
+  - skill{s=FantasyNPC_DMG} @ModelPart{pid=weapon}
+  - delay 7
+  - skill{s=FantasyNPC_DMG} @ModelPart{pid=weapon}
+  - delay 8
+  - setstance{stance=idling} @Self
+
+FantasyNPC_FishkinDamaged:
+  Skills:
+  - state{s=quirk;li=3;lo=3;r=true} @Self
+  - state{s=interact;li=3;lo=3;r=true} @Self
+
+FantasyNPC_FishkinDeath:
+  Skills:
+  - delay 32
+  - particles{p=cloud;hs=1.2;vs=1;a=60} @SelfLocation
+
+FantasyNPC_SandGuardianInteract:
+  Conditions:
+  - targetwithin{d=50} false
+  - (stance interacting true || stance quirk true) castinstead FantasyNPC_SandGuardianInteract_NO_ANIM
+  Skills:
+  - state{s=interact;li=3;lo=3} @Self
+  - setstance{stance=interacting} @Self
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+  - delay 40
+  - setstance{stance=idling} @Self
+
+FantasyNPC_SandGuardianInteract_NO_ANIM:
+  Skills:
+  - message{m="<green>This is a configurable message sent to your players! Thanks for using Crescent Studios :)"}
+
+FantasyNPC_SandGuardianQuirk:
+  Conditions:
+  - stance idling true
+  - targetwithin{d=50} false
+  Skills:
+  - state{s=quirk;li=3;lo=3} @Self
+  - setstance{stance=quirk} @Self
+  - delay 40
+  - setstance{stance=idling} @Self
+
+FantasyNPC_SandGuardianAttack:
+  Cooldown: 7
+  Conditions:
+  - stance idling true
+  - targetwithin{d=15} true
+  Skills:
+  - setspeed{speed=0;type=WALKING} @Self
+  - setstance{stance=attacking} @Self
+  - partvisibility{pid=weapon;child=true;v=true} @Self
+  - state{s=attack;li=3;lo=3} @Self
+  - delay 40
+  - Aura{oT=FantasyNPC_SandGuardian_PROJ_T;d=40} @Self
+  - delay 40
+  - setstance{stance=idling} @Self
+
+FantasyNPC_SandGuardian_PROJ_T:
+  Skills:
+  - projectile{origin=@modelpart{pid=weapon};fromOrigin=true;oT=FantasyNPC_SandGuardian_PROJ_TICK;oH=FantasyNPC_SandGuardian_PROJ_HIT;v=20;i=1;hR=0.5;vR=0.5;mr=15;hnp=true;hO=0;sE=true;sB=true;tyo=0.5} @Target
+
+FantasyNPC_SandGuardian_PROJ_TICK:
+  Skills:
+  - particles{p=reddust;color=#e4b021;hs=0.1;vs=0.1;a=60} @Origin
+
+FantasyNPC_SandGuardian_PROJ_HIT:
+  Conditions:
+  - faction{faction=NPC} false
+  Skills:
+  - damage{a=5;hnp=true;hp=true}
+
+FantasyNPC_SandGuardianDamaged:
+  Skills:
+  - state{s=quirk;li=3;lo=3;r=true} @Self
+  - state{s=interact;li=3;lo=3;r=true} @Self
+
+FantasyNPC_SandGuardianDeath:
+  Skills:
+  - delay 37
+  - particles{p=cloud;hs=1.2;vs=1;a=60} @SelfLocation

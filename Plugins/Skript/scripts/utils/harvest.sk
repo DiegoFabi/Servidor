@@ -1,0 +1,335 @@
+# ============================================================
+#  harvest.sk - Veinminer + Treecapitator (+ soporte MCPets)
+#  Requiere: Skript 2.17+ (blockdata, etiquetas). Sin addons.
+#
+#  RENDIMIENTO
+#  - Solo eventos nativos: todo arranca en "on break". No hay
+#    "every X", ni "while", ni tareas repetitivas.
+#  - Todos los recorridos usan "loop N times" con un maximo fijo
+#    (nunca crecen sin limite) y busquedas O(1) en variables de
+#    memoria {-...} preparadas una sola vez al cargar el script.
+#  - Los bloques extra se rompen por lotes ({@vm-lote} por tick) con
+#    una espera de 1 tick entre lotes: no es un timer, es repartir el
+#    trabajo de UNA activacion para no cargar un solo tick.
+#  - Los bloques rotos aqui no disparan otro "on break" (sin recursion).
+#
+#  MCPETS (opcional, sin dependencia): MCPets marca sus mascotas con
+#  la metadata "AlmPet". Si el jugador va montado en una mascota, los
+#  dos sistemas se ignoran (evita talar/minar en cadena volando o con
+#  la hitbox del modelo). Si MCPets no esta, la comprobacion no hace nada.
+# ============================================================
+
+options:
+    # ---------------- VEINMINER ----------------
+    vm-permiso: harvest.veinminer
+    # true = solo se activa agachado | false = de pie o agachado
+    vm-agachado: false
+    # Maximo de bloques EXTRA que rompe una activacion
+    vm-max: 32
+    # Bloques rotos por tick (reparte la carga de una activacion)
+    vm-lote: 8
+    # (tambien se usa como lote para la tala)
+    # Lista editable "grupo:id" (id de Minecraft sin "minecraft:").
+    # Solo se rompe la veta del MISMO grupo
+    # que el bloque inicial. Cualquier bloque fuera de esta lista
+    # (piedra, deepslate, tierra...) jamas se toca.
+    # XP vanilla por mena "id:min:max" (MC 1.21). Iron/gold/copper = 0.
+    # Con Toque de Seda no se da XP (igual que vanilla).
+    vm-xp: coal_ore:0:2,deepslate_coal_ore:0:2,nether_gold_ore:0:1,diamond_ore:3:7,deepslate_diamond_ore:3:7,emerald_ore:3:7,deepslate_emerald_ore:3:7,lapis_ore:2:5,deepslate_lapis_ore:2:5,redstone_ore:1:5,deepslate_redstone_ore:1:5,nether_quartz_ore:2:5
+    vm-minerales: coal:coal_ore,coal:deepslate_coal_ore,iron:iron_ore,iron:deepslate_iron_ore,gold:gold_ore,gold:deepslate_gold_ore,gold:nether_gold_ore,diamond:diamond_ore,diamond:deepslate_diamond_ore,emerald:emerald_ore,emerald:deepslate_emerald_ore,lapis:lapis_ore,lapis:deepslate_lapis_ore,redstone:redstone_ore,redstone:deepslate_redstone_ore,quartz:nether_quartz_ore
+
+    # -------------- TREECAPITATOR --------------
+    tc-permiso: harvest.treecapitator
+    tc-agachado: false
+    # Maximo de troncos talados por activacion (incluye el primero).
+    # Los arboles mas grandes tambien se talan: se cortan los primeros 50
+    # troncos conectados (de abajo hacia arriba).
+    tc-max-tala: 50
+    # Maximo de hojas naturales que caen con la tala (las colocadas por
+    # jugadores, persistent=true, nunca se tocan)
+    tc-max-hojas: 100
+    # Altura maxima que se sube por el tronco para buscar hojas
+    tc-altura-hojas: 32
+    tc-troncos: oak_log,spruce_log,birch_log,jungle_log,acacia_log,dark_oak_log,mangrove_log,cherry_log,pale_oak_log
+    tc-hojas: oak_leaves,spruce_leaves,birch_leaves,jungle_leaves,acacia_leaves,dark_oak_leaves,mangrove_leaves,cherry_leaves,pale_oak_leaves,azalea_leaves,flowering_azalea_leaves
+
+# ------------------------------------------------------------
+#  Preparacion (una sola vez al cargar): tablas O(1) y vecinos
+# ------------------------------------------------------------
+on script load:
+    delete {-hv::*}
+    loop split "{@vm-minerales}" at ",":
+        set {_p::*} to split loop-value at ":"
+        set {-hv::ore::%{_p::2}%} to {_p::1}
+    loop split "{@vm-xp}" at ",":
+        set {_p::*} to split loop-value at ":"
+        set {-hv::xpmin::%{_p::1}%} to {_p::2} parsed as integer
+        set {-hv::xpmax::%{_p::1}%} to {_p::3} parsed as integer
+    loop split "{@tc-troncos}" at ",":
+        set {-hv::log::%loop-value%} to true
+    loop split "{@tc-hojas}" at ",":
+        set {-hv::leaf::%loop-value%} to true
+    # 26 vecinos para vetas (las vetas se unen tambien en diagonal)
+    loop 3 times:
+        loop 3 times:
+            loop 3 times:
+                set {_x} to (loop-number-1) - 2
+                set {_y} to (loop-number-2) - 2
+                set {_z} to (loop-number-3) - 2
+                if {_x} is not 0:
+                    add vector({_x}, {_y}, {_z}) to {-hv::n26::*}
+                else if {_y} is not 0:
+                    add vector({_x}, {_y}, {_z}) to {-hv::n26::*}
+                else if {_z} is not 0:
+                    add vector({_x}, {_y}, {_z}) to {-hv::n26::*}
+                # Arboles: solo mismo nivel y nivel superior (17 vecinos)
+                if {_y} >= 0:
+                    if {_x} is not 0:
+                        add vector({_x}, {_y}, {_z}) to {-hv::n17::*}
+                    else if {_y} is not 0:
+                        add vector({_x}, {_y}, {_z}) to {-hv::n17::*}
+                    else if {_z} is not 0:
+                        add vector({_x}, {_y}, {_z}) to {-hv::n17::*}
+    # Lados + arriba para buscar hojas junto a la copa
+    add vector(1, 0, 0), vector(-1, 0, 0), vector(0, 0, 1), vector(0, 0, -1) and vector(0, 1, 0) to {-hv::lados::*}
+
+# ID de Minecraft de un bloque sin "minecraft:" ni estados, usando el
+# blockdata nativo de Skript ("minecraft:redstone_ore[lit=false]")
+function hvId(b: block) :: text:
+    set {_s::*} to split "%block data of {_b}%" at "["
+    set {_id} to {_s::1}
+    replace all "minecraft:" in {_id} with ""
+    return {_id}
+
+# ------------------------------------------------------------
+#  Unico punto de entrada, llamado por autopickup.sk desde SU
+#  "on break with priority highest" (despues de protecciones).
+#  Recibe los drops del bloque inicial ({_ini::*}) para que el
+#  bloque roto y la veta/arbol se entreguen JUNTOS por apGive:
+#  un solo actionbar con el total (+8 coal) y sin entidades Item.
+#  Si no aplica veinminer/tala, entrega solo los drops iniciales.
+# ------------------------------------------------------------
+function hvBreak(p: player, o: block, ini: items):
+    if {_p}'s gamemode is survival:
+        set {_id} to hvId({_o})
+        if {-hv::ore::%{_id}%} is set:
+            hvVeinminer({_p}, {_o}, {-hv::ore::%{_id}%}, {_ini::*})
+            stop
+        if {-hv::log::%{_id}%} is set:
+            hvTreecapitator({_p}, {_o}, {_ini::*})
+            stop
+    apGive({_p}, {_ini::*}, location of {_o})
+
+# Comprobaciones comunes (permiso, agachado, MCPets, herramienta)
+function hvPuede(p: player, permiso: text, agachado: text, sufijo: text) :: boolean:
+    if {_p} doesn't have permission {_permiso}:
+        return false
+    if {_agachado} is "true":
+        if {_p} is not sneaking:
+            return false
+    # MCPets: montado en una mascota -> no se activa
+    if metadata value "AlmPet" of vehicle of {_p} is set:
+        return false
+    if {_p}'s tool is not tagged with minecraft item tag {_sufijo}:
+        return false
+    return true
+
+# ------------------------------------------------------------
+#  VEINMINER
+# ------------------------------------------------------------
+function hvVeinminer(p: player, o: block, g: text, ini: items):
+    if hvPuede({_p}, "{@vm-permiso}", "{@vm-agachado}", "pickaxes") is false:
+        apGive({_p}, {_ini::*}, location of {_o})
+        stop
+    # BFS acotado: la cola nunca supera vm-max + 1 bloques
+    set {_cola::1} to {_o}
+    set {_visto::%location of {_o}%} to true
+    set {_n} to 1
+    loop ({@vm-max} + 1) times:
+        set {_actual} to {_cola::%loop-number%}
+        if {_actual} is not set:
+            exit loop
+        loop {-hv::n26::*}:
+            if {_n} > {@vm-max}:
+                exit 2 loops
+            set {_b} to block at ((location of {_actual}) offset by (loop-value-2))
+            # Descarte rapido de lo mas comun alrededor de una veta
+            if {_b} is air:
+                continue
+            if {_b} is tagged with minecraft block tag "base_stone_overworld":
+                continue
+            if {_b} is tagged with minecraft block tag "base_stone_nether":
+                continue
+            if {-hv::ore::%hvId({_b})%} is {_g}:
+                set {_key} to "%location of {_b}%"
+                if {_visto::%{_key}%} is not set:
+                    set {_visto::%{_key}%} to true
+                    add 1 to {_n}
+                    set {_cola::%{_n}%} to {_b}
+    if {_n} <= 1:
+        apGive({_p}, {_ini::*}, location of {_o})
+        stop
+    hvRomper({_p}, {_cola::*}, "pickaxes", "ore", {_g}, {_ini::*})
+
+# ------------------------------------------------------------
+#  TREECAPITATOR
+# ------------------------------------------------------------
+function hvTreecapitator(p: player, o: block, ini: items):
+    if hvPuede({_p}, "{@tc-permiso}", "{@tc-agachado}", "axes") is false:
+        apGive({_p}, {_ini::*}, location of {_o})
+        stop
+    # 1) Validacion ligera de arbol natural: subir por el tronco (acotado)
+    #    y mirar los lados de la copa. Las hojas de arboles generados o
+    #    crecidos tienen persistent=false; las colocadas por jugadores, true.
+    set {_top} to {_o}
+    loop {@tc-altura-hojas} times:
+        set {_arriba} to block above {_top}
+        if {_arriba} is not tagged with minecraft block tag "logs":
+            exit loop
+        if {-hv::log::%hvId({_arriba})%} is not set:
+            exit loop
+        set {_top} to {_arriba}
+    set {_natural} to false
+    loop {-hv::lados::*}:
+        set {_h} to block at ((location of {_top}) offset by loop-value)
+        if {_h} is tagged with minecraft block tag "leaves":
+            if "%block data of {_h}%" contains "persistent=false":
+                set {_natural} to true
+                exit loop
+    if {_natural} is false:
+        apGive({_p}, {_ini::*}, location of {_o})
+        stop
+    # 2) Recoger troncos conectados con un BFS acotado a tc-max-tala.
+    #    Si el arbol es mas grande, se talan solo los primeros tc-max-tala.
+    set {_cola::1} to {_o}
+    set {_visto::%location of {_o}%} to true
+    set {_n} to 1
+    loop {@tc-max-tala} times:
+        set {_actual} to {_cola::%loop-number%}
+        if {_actual} is not set:
+            exit loop
+        loop {-hv::n17::*}:
+            set {_b} to block at ((location of {_actual}) offset by (loop-value-2))
+            # Filtro nativo O(1) primero: aire/hojas/tierra se descartan
+            # sin formatear texto. Solo los troncos llegan a "visto".
+            if {_b} is tagged with minecraft block tag "logs":
+                set {_key} to "%location of {_b}%"
+                if {_visto::%{_key}%} is not set:
+                    set {_visto::%{_key}%} to true
+                    if {_n} < {@tc-max-tala}:
+                        if {-hv::log::%hvId({_b})%} is set:
+                            add 1 to {_n}
+                            set {_cola::%{_n}%} to {_b}
+    if {_n} <= 1:
+        apGive({_p}, {_ini::*}, location of {_o})
+        stop
+    # 3) Talar los troncos recogidos (el primero ya cuenta)
+    loop {_n} times:
+        add {_cola::%loop-number%} to {_talar::*}
+    # 4) Hojas naturales junto a los troncos (antes de quitarlos)
+    set {_hojas::*} to hvBuscarHojas({_talar::*})
+    hvRomper({_p}, {_talar::*}, "axes", "log", "", {_ini::*})
+    if {_hojas::*} is set:
+        hvRomperHojas({_p}, {_hojas::*})
+
+# Hojas naturales conectadas a los troncos talados (BFS acotado a tc-max-hojas)
+function hvBuscarHojas(troncos: blocks) :: blocks:
+    set {_n} to 0
+    loop {_troncos::*}:
+        add 1 to {_n}
+        set {_cola::%{_n}%} to loop-value
+    set {_hn} to 0
+    set {_i} to 0
+    loop ({_n} + {@tc-max-hojas}) times:
+        add 1 to {_i}
+        set {_actual} to {_cola::%{_i}%}
+        if {_actual} is not set:
+            exit loop
+        loop {-hv::n26::*}:
+            set {_b} to block at ((location of {_actual}) offset by (loop-value-2))
+            if {_b} is tagged with minecraft block tag "leaves":
+                set {_key} to "%location of {_b}%"
+                if {_visto::%{_key}%} is not set:
+                    set {_visto::%{_key}%} to true
+                    if "%block data of {_b}%" contains "persistent=false":
+                        if {_hn} < {@tc-max-hojas}:
+                            add 1 to {_hn}
+                            add 1 to {_n}
+                            set {_cola::%{_n}%} to {_b}
+                            add {_b} to {_hojas::*}
+    return {_hojas::*}
+
+# Rompe las hojas por lotes; sus drops (brotes, palos, manzanas) van al inventario
+function hvRomperHojas(p: player, hojas: blocks):
+    set {_i} to 0
+    loop {_hojas::*}:
+        if {_p} is not online:
+            exit loop
+        set {_b} to loop-value
+        if {_b} is tagged with minecraft block tag "leaves":
+            add drops of {_b} to {_d::*}
+            set {_ultimo} to location of {_b}
+            set block at {_ultimo} to air
+            add 1 to {_i}
+            if mod({_i}, 20) is 0:
+                apGive({_p}, {_d::*}, {_ultimo})
+                delete {_d::*}
+                wait 1 tick
+    if {_d::*} is set:
+        apGive({_p}, {_d::*}, {_ultimo})
+
+# ------------------------------------------------------------
+#  Rotura comun: salta el bloque 1 (lo rompe el propio evento),
+#  revalida cada bloque y respeta la durabilidad. Los drops se
+#  calculan con la herramienta (Fortuna/Seda) y van directo al
+#  inventario via apGive() de autopickup.sk, un envio por lote
+#  (sin entidades Item y un solo actionbar por lote). Las protecciones
+#  (WorldGuard, NClaim) ya cancelan el evento del bloque inicial, y
+#  Skript no ejecuta "on break" si el evento fue cancelado.
+# ------------------------------------------------------------
+function hvRomper(p: player, bloques: blocks, sufijo: text, tipo: text, grupo: text, ini: items):
+    # El primer lote incluye los drops del bloque inicial
+    set {_d::*} to {_ini::*}
+    set {_ultimo} to location of {_bloques::1}
+    set {_i} to 0
+    # XP de las menas extra (la del bloque inicial la suelta vanilla).
+    # Se decide UNA vez: con Toque de Seda no hay XP.
+    set {_xp} to 0
+    if {_tipo} is "ore":
+        if {_p}'s tool is not enchanted with silk touch:
+            set {_conxp} to true
+    loop {_bloques::*}:
+        if loop-index is "1":
+            continue
+        # "exit loop" (no "stop") para entregar lo ya roto en este lote
+        if {_p} is not online:
+            exit loop
+        if {_p}'s tool is not tagged with minecraft item tag {_sufijo}:
+            exit loop
+        # Dejar 1 de durabilidad: la herramienta nunca se rompe por esto
+        if durability of {_p}'s tool <= 1:
+            exit loop
+        set {_b} to loop-value
+        set {_id} to hvId({_b})
+        if {_tipo} is "ore":
+            if {-hv::ore::%{_id}%} is not {_grupo}:
+                continue
+        else if {-hv::log::%{_id}%} is not set:
+            continue
+        add drops of {_b} using {_p}'s tool to {_d::*}
+        set {_ultimo} to location of {_b}
+        set block at {_ultimo} to air
+        add 1 to damage of {_p}'s tool
+        add 1 to {_i}
+        if {_conxp} is set:
+            if {-hv::xpmax::%{_id}%} is set:
+                add (random integer between {-hv::xpmin::%{_id}%} and {-hv::xpmax::%{_id}%}) to {_xp}
+        if mod({_i}, {@vm-lote}) is 0:
+            apGive({_p}, {_d::*}, {_ultimo}, {_xp})
+            apXp({_p}, {_xp}, {_ultimo})
+            delete {_d::*}
+            set {_xp} to 0
+            wait 1 tick
+    if {_d::*} is set:
+        apGive({_p}, {_d::*}, {_ultimo}, {_xp})
+    apXp({_p}, {_xp}, {_ultimo})

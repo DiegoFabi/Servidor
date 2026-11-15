@@ -1,0 +1,90 @@
+interact_miner_sleep:
+  Cooldown: 7
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=sleep;mid=scene_miner_1;r=true} @self
+  - state{s=wakeup;mid=scene_miner_1} @self
+  - state{s=wakeup;mid=scene_miner_1;r=true;delay=140} @self
+  - state{s=sleep;mid=scene_miner_1;delay=140} @self
+  - lockhead{lp=true} @self
+  - throw{velocity=8;fromorigin=true;delay=6} @PIR{radius=3}
+
+# Replace your_sound_name with the name of a sound of your choice, and remove # 
+interact_miner:
+  Cooldown: 7
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=idle;mid=scene_miner_3;r=true} @self
+  - state{s=interact;mid=scene_miner_3} @self
+  - state{s=interact;mid=scene_miner_3;r=true;delay=140} @self
+  - state{s=idle;mid=scene_miner_3;delay=129} @self
+  - lockhead{lp=true} @self
+
+# Replace your_sound_name with the name of a sound of your choice, and remove # 
+undeadskinminer1:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead1} @self ~onSpawn
+undeadskinminer2:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead2} @self ~onSpawn
+undeadskinminer3:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead3} @self ~onSpawn
+undeadskinminer4:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead4} @self ~onSpawn
+undeadskinminer5:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead5} @self ~onSpawn
+undeadskinminer6:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead6} @self ~onSpawn
+undeadskinminer7:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead7} @self ~onSpawn
+undeadskinminer8:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead8} @self ~onSpawn
+undeadskinminer9:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead9} @self ~onSpawn
+undeadskinminer10:
+  Skills:
+  - remapmodel{m=scene_miner_4;n=skinundead10} @self ~onSpawn
+
+minerundeadattack1:
+  Skills:
+  - state{m=scene_miner_4;s=hit;r=true} @self 
+  - state{m=scene_miner_4;s=attack;li=3;lo=3;delay=1} @self
+  - throw{velocity=8;fromorigin=true;delay=15} @PIR{radius=2}
+  - damage{amount=2;delay=15} @PIR{radius=2}
+  - lockmodel{l=true} @self
+  - lockmodel{l=false;delay=30} @self 
+
+minerundeadattack2:
+  Skills:
+  - state{m=scene_miner_4;s=hit;r=true} @self 
+  - state{m=scene_miner_4;s=attack2;li=3;lo=3;delay=1} @self
+  - throw{velocity=12;fromorigin=true;delay=15} @PIR{radius=2}
+  - damage{amount=2;delay=15} @PIR{radius=2}
+  - lockmodel{l=true} @self
+  - lockmodel{l=false;delay=30} @self 
+
+
+blockfx:
+  Skills:
+  - sound{sound=block.ancient_debris.break} @self
+
+drinkfx:
+  Skills:
+  - sound{sound=entity.generic.drink;volume=1;radius=40;audience=nearby} @self 
+  - sound{sound=entity.wandering_trader.drink_milk;volume=1;delay=20;radius=40;audience=nearby} @self 
+
+swingfx:
+  Skills:
+  - sound{sound=entity.player.attack.sweep;radius=50;audience=nearby;volume=3} @self
+
+blockparticles:
+  Skills:
+  - effect:particle{particle=block} @modelpart{m=scene_miner_1;p=blockfx}
+#a20c154afac9fe503f9d00720d870422

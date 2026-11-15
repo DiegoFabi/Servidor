@@ -1,0 +1,57 @@
+# Advanced BattlePass - Immersive UI (items de interfaz del menú de BattlePass)
+# GOLD_NUGGET con custom_model_data 500-508, usados por BattlePass/menus y passes.
+
+bp_air:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/air
+    custom_model_data: 500
+bp_lock:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/lock
+    custom_model_data: 501
+bp_unlock:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/unlock
+    custom_model_data: 502
+bp_reward_unclaimed:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/reward_unclaimed
+    custom_model_data: 503
+bp_reward_claimed:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/reward_claimed
+    custom_model_data: 504
+bp_questbook:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/questbook
+    custom_model_data: 505
+bp_questbook_gray:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/questbook_gray
+    custom_model_data: 506
+bp_reward_locked_gray:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/reward_locked_gray
+    custom_model_data: 507
+bp_reward_locked_green:
+  itemname: <white>
+  material: GOLD_NUGGET
+  Pack:
+    model: battlepass/reward_locked_green
+    custom_model_data: 508

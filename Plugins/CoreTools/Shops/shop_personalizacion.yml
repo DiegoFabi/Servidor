@@ -1,0 +1,4632 @@
+# Tiendas del menu Personalizacion (menuPersonalizacion).
+# Precios: muebles en Shards (ExcellentEconomy, clave CoreTools coinsengine-shards).
+# Items de Nexo: source nexo + id.
+# Abrir: /core-shops shop_muebles <jugador>
+# Categorías: Sala de estar, Cottage Core, Mercado medieval y Taberna.
+shop_muebles:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Muebles &7• &6Catálogo'
+  size: 6
+  fill_material: AIR
+  default_category: sala
+  default_animation: ''
+  ignore_hotbar_slots: true
+  custom_item_order:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  - 44
+  messages:
+    insufficient-money: '&cNo tienes {total_cost}{currency_symbol} para pagar esto.'
+    not-allowed-to-sell: '&cEste objeto no se puede vender.'
+    not-allowed-to-buy: '&cEste objeto no se puede comprar.'
+    successful-sell: '&aHas comprado &e{amount}x {item_name} &apor &e{total_cost}{currency_symbol}&a.'
+    successful-buy: '&aHas vendido &e{amount}x {item_name} &apor &e{total_cost}{currency_symbol}&a.'
+    not-enough-item: '&cNo tienes {amount} de {item_name} &cpara vender.'
+    not-enough-item-buy-all: '&cNo tienes {item_name} &cpara vender.'
+    no-space-inventory: '&cNo tienes espacio suficiente en el inventario.'
+    no-space-playervault: '&cNo tienes espacio suficiente en tu baul.'
+    no-permission: '&cNo tienes permiso para abrir esta tienda.'
+  sound:
+    no_permission:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    insufficient_money:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    not_allowed_to_sell:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    not_allowed_to_buy:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    not_enough_item:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    not_enough_item_buy_all:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    no_space_inventory:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    no_space_playervault:
+    - minecraft:entity.villager.no
+    - master
+    - 1
+    - 1
+    successful_sell:
+    - minecraft:entity.experience_orb.pickup
+    - master
+    - 1
+    - 1
+    successful_buy:
+    - minecraft:entity.experience_orb.pickup
+    - master
+    - 1
+    - 1
+  sorting:
+    default:
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
+    money_descending:
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
+    money_ascending:
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
+  delivery:
+    mode: 1
+    playervault: myfirstvault
+  items_click:
+    left_click: advanced
+    right_click: ''
+    swap_hand: ''
+    shift_left_click: ''
+    shift_right_click: ''
+  amount:
+    quick_sell: 1
+    quick_buy: 1
+  bottom_display_lore:
+  - ''
+  - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ {money_sell_coinsengine-shards} Shards'
+  - <white><glyph:treasure> <#E6E8EE>Mueble colocable y rotable
+  - ''
+  - <white><glyph:raton_izq> <#7FB2FF>Clic para elegir cantidad y comprar
+  bottom_item_lore: []
+  advanced:
+    name: ㈮㈮&f㈂
+    size: 6
+    fill_material: AIR
+    animation: ''
+    bottom_inventory: false
+    view_bottom_inventory: default
+    buttons:
+      item_to_be_purchased:
+        location: top
+        slots:
+        - 13
+        source: vanilla
+        material: STONE
+        flags:
+        - HIDE_ATTRIBUTES
+      missing_purchase:
+        location: top
+        slots:
+        - 13
+        source: vanilla
+        material: AIR
+      set_1:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 10
+        name: <#C9CDD6>Poner <white>1
+      remove_10:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 11
+        name: <#FF8A8A>Quitar <white>10
+      remove_1:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 12
+        name: <#FF8A8A>Quitar <white>1
+      add_1:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 14
+        name: <#7FFF9E>Añadir <white>1
+      add_10:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 15
+        name: <#7FFF9E>Añadir <white>10
+      set_64:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 16
+        name: <#C9CDD6>Poner <white>64
+      sell_coinsengine-shards:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 29
+        name: <#7FFF9E>Comprar por <#D89BFF>✦ {money_sell_coinsengine-shards}
+      back_to_category:
+        location: top
+        source: vanilla
+        material: DIAMOND
+        custom_model_data_float: 1
+        flags:
+        - HIDE_ATTRIBUTES
+        slots:
+        - 33
+        name: <white>« <gradient:#FFE29A:#FFB347>Volver al catálogo</gradient>
+  buttons:
+    previous:
+      location: top
+      slots:
+      - 45
+      source: vanilla
+      material: ARROW
+      name: <white>« <gradient:#FFE29A:#FFB347>Página anterior</gradient>
+      flags:
+      - HIDE_ATTRIBUTES
+    next:
+      location: top
+      slots:
+      - 53
+      source: vanilla
+      material: ARROW
+      name: <gradient:#FFE29A:#FFB347>Página siguiente</gradient> <white>»
+      flags:
+      - HIDE_ATTRIBUTES
+    volver:
+      location: top
+      slots:
+      - 46
+      source: vanilla
+      material: DARK_OAK_DOOR
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      lore:
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar a Personalización
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - shop_personalizacion_volver
+      right_click:
+        Scripts:
+        - shop_personalizacion_volver
+      shift_left_click:
+        Scripts:
+        - shop_personalizacion_volver
+      shift_right_click:
+        Scripts:
+        - shop_personalizacion_volver
+    cerrar:
+      location: top
+      slots:
+      - 52
+      source: vanilla
+      material: BARRIER
+      name: <#FF6B6B>✖ Cerrar
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - shop_personalizacion_cerrar
+      right_click:
+        Scripts:
+        - shop_personalizacion_cerrar
+      shift_left_click:
+        Scripts:
+        - shop_personalizacion_cerrar
+      shift_right_click:
+        Scripts:
+        - shop_personalizacion_cerrar
+    sala:
+      location: top
+      slots:
+      - 47
+      source: nexo
+      id: comfortablechairblack
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Sala de Estar</gradient>
+      lore:
+      - <#C9CDD6>Sofás, sillas y mesas modernas.
+      - ''
+      - <white><glyph:checkmark> <#E6E8EE>141 muebles disponibles
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver la categoría
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    cottage:
+      location: top
+      slots:
+      - 48
+      source: nexo
+      id: bs_rocking_chair
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Cottage Core</gradient>
+      lore:
+      - <#C9CDD6>Rincones acogedores de campo.
+      - ''
+      - <white><glyph:checkmark> <#E6E8EE>70 muebles disponibles
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver la categoría
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    medieval_mercado:
+      location: top
+      slots:
+      - 49
+      source: nexo
+      id: w6_bulletin_board
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Mercado Medieval</gradient>
+      lore:
+      - <#C9CDD6>Puestos, carteles y cajas de mercado.
+      - ''
+      - <white><glyph:checkmark> <#E6E8EE>30 muebles disponibles
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver la categoría
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    taberna:
+      location: top
+      slots:
+      - 50
+      source: nexo
+      id: tavern_counter
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Taberna</gradient>
+      lore:
+      - <#C9CDD6>Barras, barriles y mesas de taberna.
+      - ''
+      - <white><glyph:checkmark> <#E6E8EE>41 muebles disponibles
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver la categoría
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    deco_51:
+      location: top
+      slots:
+      - 51
+      source: vanilla
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+  categories:
+    sala:
+      name: '&8Muebles &7• &6Sala de estar'
+      comfortablechairblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairblack
+        item:
+          source: nexo
+          id: comfortablechairblack
+      comfortablechairwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairwhite
+        item:
+          source: nexo
+          id: comfortablechairwhite
+      comfortablechairred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairred
+        item:
+          source: nexo
+          id: comfortablechairred
+      comfortablechairgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairgreen
+        item:
+          source: nexo
+          id: comfortablechairgreen
+      comfortablechairorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairorange
+        item:
+          source: nexo
+          id: comfortablechairorange
+      comfortablechairyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairyellow
+        item:
+          source: nexo
+          id: comfortablechairyellow
+      comfortablechairblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairblue
+        item:
+          source: nexo
+          id: comfortablechairblue
+      comfortablechairgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairgray
+        item:
+          source: nexo
+          id: comfortablechairgray
+      comfortablechairpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairpink
+        item:
+          source: nexo
+          id: comfortablechairpink
+      comfortablechairbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: comfortablechairbeige
+        item:
+          source: nexo
+          id: comfortablechairbeige
+      doublecouchblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchblack
+        item:
+          source: nexo
+          id: doublecouchblack
+      doublecouchwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchwhite
+        item:
+          source: nexo
+          id: doublecouchwhite
+      doublecouchred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchred
+        item:
+          source: nexo
+          id: doublecouchred
+      doublecouchgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchgreen
+        item:
+          source: nexo
+          id: doublecouchgreen
+      doublecouchyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchyellow
+        item:
+          source: nexo
+          id: doublecouchyellow
+      doublecouchorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchorange
+        item:
+          source: nexo
+          id: doublecouchorange
+      doublecouchblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchblue
+        item:
+          source: nexo
+          id: doublecouchblue
+      doublecouchpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchpink
+        item:
+          source: nexo
+          id: doublecouchpink
+      doublecouchbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchbeige
+        item:
+          source: nexo
+          id: doublecouchbeige
+      doublecouchgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: doublecouchgray
+        item:
+          source: nexo
+          id: doublecouchgray
+      lcouchblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchblack
+        item:
+          source: nexo
+          id: lcouchblack
+      lcouchwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchwhite
+        item:
+          source: nexo
+          id: lcouchwhite
+      lcouchblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchblue
+        item:
+          source: nexo
+          id: lcouchblue
+      lcouchred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchred
+        item:
+          source: nexo
+          id: lcouchred
+      lcouchyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchyellow
+        item:
+          source: nexo
+          id: lcouchyellow
+      lcouchorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchorange
+        item:
+          source: nexo
+          id: lcouchorange
+      lcouchgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchgreen
+        item:
+          source: nexo
+          id: lcouchgreen
+      lcouchgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchgray
+        item:
+          source: nexo
+          id: lcouchgray
+      lcouchpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchpink
+        item:
+          source: nexo
+          id: lcouchpink
+      lcouchbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: lcouchbeige
+        item:
+          source: nexo
+          id: lcouchbeige
+      rockingchair:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: rockingchair
+        item:
+          source: nexo
+          id: rockingchair
+      rockingchairdark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: rockingchairdark
+        item:
+          source: nexo
+          id: rockingchairdark
+      singlecouchblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchblack
+        item:
+          source: nexo
+          id: singlecouchblack
+      singlecouchwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchwhite
+        item:
+          source: nexo
+          id: singlecouchwhite
+      singlecouchred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchred
+        item:
+          source: nexo
+          id: singlecouchred
+      singlecouchgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchgreen
+        item:
+          source: nexo
+          id: singlecouchgreen
+      singlecouchyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchyellow
+        item:
+          source: nexo
+          id: singlecouchyellow
+      singlecouchorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchorange
+        item:
+          source: nexo
+          id: singlecouchorange
+      singlecouchblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchblue
+        item:
+          source: nexo
+          id: singlecouchblue
+      singlecouchpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchpink
+        item:
+          source: nexo
+          id: singlecouchpink
+      singlecouchgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchgray
+        item:
+          source: nexo
+          id: singlecouchgray
+      singlecouchbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: singlecouchbeige
+        item:
+          source: nexo
+          id: singlecouchbeige
+      smallchairblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairblack
+        item:
+          source: nexo
+          id: smallchairblack
+      smallchairwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairwhite
+        item:
+          source: nexo
+          id: smallchairwhite
+      smallchairyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairyellow
+        item:
+          source: nexo
+          id: smallchairyellow
+      smallchairred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairred
+        item:
+          source: nexo
+          id: smallchairred
+      smallchairgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairgreen
+        item:
+          source: nexo
+          id: smallchairgreen
+      smallchairorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairorange
+        item:
+          source: nexo
+          id: smallchairorange
+      smallchairblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairblue
+        item:
+          source: nexo
+          id: smallchairblue
+      smallchairpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairpink
+        item:
+          source: nexo
+          id: smallchairpink
+      smallchairgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairgray
+        item:
+          source: nexo
+          id: smallchairgray
+      smallchairbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallchairbeige
+        item:
+          source: nexo
+          id: smallchairbeige
+      woodenchair:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: woodenchair
+        item:
+          source: nexo
+          id: woodenchair
+      woodenchairdark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: woodenchairdark
+        item:
+          source: nexo
+          id: woodenchairdark
+      2shelftable:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: 2shelftable
+        item:
+          source: nexo
+          id: 2shelftable
+      2shelftabledark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: 2shelftabledark
+        item:
+          source: nexo
+          id: 2shelftabledark
+      airconditionerwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: airconditionerwhite
+        item:
+          source: nexo
+          id: airconditionerwhite
+      airconditionerblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: airconditionerblack
+        item:
+          source: nexo
+          id: airconditionerblack
+      aquariumblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: aquariumblack
+        item:
+          source: nexo
+          id: aquariumblack
+      aquariumwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: aquariumwhite
+        item:
+          source: nexo
+          id: aquariumwhite
+      bookshelfwooden:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bookshelfwooden
+        item:
+          source: nexo
+          id: bookshelfwooden
+      bookshelfdark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bookshelfdark
+        item:
+          source: nexo
+          id: bookshelfdark
+      bookshelfwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bookshelfwhite
+        item:
+          source: nexo
+          id: bookshelfwhite
+      bookshelfblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bookshelfblack
+        item:
+          source: nexo
+          id: bookshelfblack
+      ceilingfanwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: ceilingfanwhite
+        item:
+          source: nexo
+          id: ceilingfanwhite
+      ceilingfanblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: ceilingfanblack
+        item:
+          source: nexo
+          id: ceilingfanblack
+      coffeetable:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: coffeetable
+        item:
+          source: nexo
+          id: coffeetable
+      coffeetabledark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: coffeetabledark
+        item:
+          source: nexo
+          id: coffeetabledark
+      coffeetableblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: coffeetableblack
+        item:
+          source: nexo
+          id: coffeetableblack
+      coffeetablewhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: coffeetablewhite
+        item:
+          source: nexo
+          id: coffeetablewhite
+      curtainblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainblack
+        item:
+          source: nexo
+          id: curtainblack
+      curtainwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainwhite
+        item:
+          source: nexo
+          id: curtainwhite
+      curtainred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainred
+        item:
+          source: nexo
+          id: curtainred
+      curtaingreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtaingreen
+        item:
+          source: nexo
+          id: curtaingreen
+      curtainyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainyellow
+        item:
+          source: nexo
+          id: curtainyellow
+      curtainorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainorange
+        item:
+          source: nexo
+          id: curtainorange
+      curtainblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainblue
+        item:
+          source: nexo
+          id: curtainblue
+      curtainpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainpink
+        item:
+          source: nexo
+          id: curtainpink
+      curtaingray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtaingray
+        item:
+          source: nexo
+          id: curtaingray
+      curtainbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: curtainbeige
+        item:
+          source: nexo
+          id: curtainbeige
+      desk:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: desk
+        item:
+          source: nexo
+          id: desk
+      deskdark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: deskdark
+        item:
+          source: nexo
+          id: deskdark
+      floorlampwooden:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: floorlampwooden
+        item:
+          source: nexo
+          id: floorlampwooden
+      floorlampblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: floorlampblack
+        item:
+          source: nexo
+          id: floorlampblack
+      floorlampwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: floorlampwhite
+        item:
+          source: nexo
+          id: floorlampwhite
+      flowerpot:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: flowerpot
+        item:
+          source: nexo
+          id: flowerpot
+      flowerpotdark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: flowerpotdark
+        item:
+          source: nexo
+          id: flowerpotdark
+      flowerpotblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: flowerpotblack
+        item:
+          source: nexo
+          id: flowerpotblack
+      flowerpotwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: flowerpotwhite
+        item:
+          source: nexo
+          id: flowerpotwhite
+      glasstable:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: glasstable
+        item:
+          source: nexo
+          id: glasstable
+      glasstabledark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: glasstabledark
+        item:
+          source: nexo
+          id: glasstabledark
+      glasstableblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: glasstableblack
+        item:
+          source: nexo
+          id: glasstableblack
+      glasstablewhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: glasstablewhite
+        item:
+          source: nexo
+          id: glasstablewhite
+      grandfatherclock:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: grandfatherclock
+        item:
+          source: nexo
+          id: grandfatherclock
+      grandfatherclockdark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: grandfatherclockdark
+        item:
+          source: nexo
+          id: grandfatherclockdark
+      livingroomchandeliergold:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: livingroomchandeliergold
+        item:
+          source: nexo
+          id: livingroomchandeliergold
+      livingroomchandelierblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: livingroomchandelierblack
+        item:
+          source: nexo
+          id: livingroomchandelierblack
+      longcarpetblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetblack
+        item:
+          source: nexo
+          id: longcarpetblack
+      longcarpetwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetwhite
+        item:
+          source: nexo
+          id: longcarpetwhite
+      longcarpetred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetred
+        item:
+          source: nexo
+          id: longcarpetred
+      longcarpetgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetgreen
+        item:
+          source: nexo
+          id: longcarpetgreen
+      longcarpetyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetyellow
+        item:
+          source: nexo
+          id: longcarpetyellow
+      longcarpetorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetorange
+        item:
+          source: nexo
+          id: longcarpetorange
+      longcarpetblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetblue
+        item:
+          source: nexo
+          id: longcarpetblue
+      longcarpetpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetpink
+        item:
+          source: nexo
+          id: longcarpetpink
+      longcarpetgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetgray
+        item:
+          source: nexo
+          id: longcarpetgray
+      longcarpetbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longcarpetbeige
+        item:
+          source: nexo
+          id: longcarpetbeige
+      longtable:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longtable
+        item:
+          source: nexo
+          id: longtable
+      longtablewhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longtablewhite
+        item:
+          source: nexo
+          id: longtablewhite
+      longtabledark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longtabledark
+        item:
+          source: nexo
+          id: longtabledark
+      longtableblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: longtableblack
+        item:
+          source: nexo
+          id: longtableblack
+      mediumcarpetblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetblack
+        item:
+          source: nexo
+          id: mediumcarpetblack
+      mediumcarpetwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetwhite
+        item:
+          source: nexo
+          id: mediumcarpetwhite
+      mediumcarpetred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetred
+        item:
+          source: nexo
+          id: mediumcarpetred
+      mediumcarpetyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetyellow
+        item:
+          source: nexo
+          id: mediumcarpetyellow
+      mediumcarpetgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetgreen
+        item:
+          source: nexo
+          id: mediumcarpetgreen
+      mediumcarpetblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetblue
+        item:
+          source: nexo
+          id: mediumcarpetblue
+      mediumcarpetorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetorange
+        item:
+          source: nexo
+          id: mediumcarpetorange
+      mediumcarpetpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetpink
+        item:
+          source: nexo
+          id: mediumcarpetpink
+      mediumcarpetgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetgray
+        item:
+          source: nexo
+          id: mediumcarpetgray
+      mediumcarpetbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: mediumcarpetbeige
+        item:
+          source: nexo
+          id: mediumcarpetbeige
+      radiowooden:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: radiowooden
+        item:
+          source: nexo
+          id: radiowooden
+      radioblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: radioblack
+        item:
+          source: nexo
+          id: radioblack
+      smallcarpetblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetblack
+        item:
+          source: nexo
+          id: smallcarpetblack
+      smallcarpetwhite:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetwhite
+        item:
+          source: nexo
+          id: smallcarpetwhite
+      smallcarpetred:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetred
+        item:
+          source: nexo
+          id: smallcarpetred
+      smallcarpetyellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetyellow
+        item:
+          source: nexo
+          id: smallcarpetyellow
+      smallcarpetgreen:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetgreen
+        item:
+          source: nexo
+          id: smallcarpetgreen
+      smallcarpetorange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetorange
+        item:
+          source: nexo
+          id: smallcarpetorange
+      smallcarpetblue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetblue
+        item:
+          source: nexo
+          id: smallcarpetblue
+      smallcarpetpink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetpink
+        item:
+          source: nexo
+          id: smallcarpetpink
+      smallcarpetgray:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetgray
+        item:
+          source: nexo
+          id: smallcarpetgray
+      smallcarpetbeige:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smallcarpetbeige
+        item:
+          source: nexo
+          id: smallcarpetbeige
+      smalltable:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smalltable
+        item:
+          source: nexo
+          id: smalltable
+      smalltabledark:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: smalltabledark
+        item:
+          source: nexo
+          id: smalltabledark
+      tv:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: tv
+        item:
+          source: nexo
+          id: tv
+      tvspeaker:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: tvspeaker
+        item:
+          source: nexo
+          id: tvspeaker
+      tvstand:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: tvstand
+        item:
+          source: nexo
+          id: tvstand
+      tvstandblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: tvstandblack
+        item:
+          source: nexo
+          id: tvstandblack
+      wallclockblack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: wallclockblack
+        item:
+          source: nexo
+          id: wallclockblack
+      wallclockwooden:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: wallclockwooden
+        item:
+          source: nexo
+          id: wallclockwooden
+    cottage:
+      name: '&8Muebles &7• &6Cottage Core'
+      bs_cookie_jar:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_cookie_jar
+        item:
+          source: nexo
+          id: bs_cookie_jar
+      bs_crop_marker_beet:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_crop_marker_beet
+        item:
+          source: nexo
+          id: bs_crop_marker_beet
+      bs_crop_marker_carrot:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_crop_marker_carrot
+        item:
+          source: nexo
+          id: bs_crop_marker_carrot
+      bs_crop_marker_potato:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_crop_marker_potato
+        item:
+          source: nexo
+          id: bs_crop_marker_potato
+      bs_crop_marker_wheat:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_crop_marker_wheat
+        item:
+          source: nexo
+          id: bs_crop_marker_wheat
+      bs_cutting_board_bread:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_cutting_board_bread
+        item:
+          source: nexo
+          id: bs_cutting_board_bread
+      bs_cutting_board_carrot:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_cutting_board_carrot
+        item:
+          source: nexo
+          id: bs_cutting_board_carrot
+      bs_cutting_board_potato:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_cutting_board_potato
+        item:
+          source: nexo
+          id: bs_cutting_board_potato
+      bs_diagonal_hoe:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_diagonal_hoe
+        item:
+          source: nexo
+          id: bs_diagonal_hoe
+      bs_diagonal_ladder:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_diagonal_ladder
+        item:
+          source: nexo
+          id: bs_diagonal_ladder
+      bs_diagonal_rake:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_diagonal_rake
+        item:
+          source: nexo
+          id: bs_diagonal_rake
+      bs_diagonal_shovel:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_diagonal_shovel
+        item:
+          source: nexo
+          id: bs_diagonal_shovel
+      bs_flower_box_allium:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_allium
+        item:
+          source: nexo
+          id: bs_flower_box_allium
+      bs_flower_box_azure_bluet:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_azure_bluet
+        item:
+          source: nexo
+          id: bs_flower_box_azure_bluet
+      bs_flower_box_blue_orchid:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_blue_orchid
+        item:
+          source: nexo
+          id: bs_flower_box_blue_orchid
+      bs_flower_box_blue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_blue
+        item:
+          source: nexo
+          id: bs_flower_box_blue
+      bs_flower_box_cornflower:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_cornflower
+        item:
+          source: nexo
+          id: bs_flower_box_cornflower
+      bs_flower_box_dandelion:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_dandelion
+        item:
+          source: nexo
+          id: bs_flower_box_dandelion
+      bs_flower_box_empty:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_empty
+        item:
+          source: nexo
+          id: bs_flower_box_empty
+      bs_flower_box_lily_of_the_valley:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_lily_of_the_valley
+        item:
+          source: nexo
+          id: bs_flower_box_lily_of_the_valley
+      bs_flower_box_orange_tulip:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_orange_tulip
+        item:
+          source: nexo
+          id: bs_flower_box_orange_tulip
+      bs_flower_box_orange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_orange
+        item:
+          source: nexo
+          id: bs_flower_box_orange
+      bs_flower_box_oxeye_daisy:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_oxeye_daisy
+        item:
+          source: nexo
+          id: bs_flower_box_oxeye_daisy
+      bs_flower_box_pink_tulip:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_pink_tulip
+        item:
+          source: nexo
+          id: bs_flower_box_pink_tulip
+      bs_flower_box_pink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_pink
+        item:
+          source: nexo
+          id: bs_flower_box_pink
+      bs_flower_box_poppy:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_poppy
+        item:
+          source: nexo
+          id: bs_flower_box_poppy
+      bs_flower_box_red_tulip:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_red_tulip
+        item:
+          source: nexo
+          id: bs_flower_box_red_tulip
+      bs_flower_box_red:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_red
+        item:
+          source: nexo
+          id: bs_flower_box_red
+      bs_flower_box_white_tulip:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_white_tulip
+        item:
+          source: nexo
+          id: bs_flower_box_white_tulip
+      bs_flower_box_white:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_flower_box_white
+        item:
+          source: nexo
+          id: bs_flower_box_white
+      bs_grandfather_clock:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_grandfather_clock
+        item:
+          source: nexo
+          id: bs_grandfather_clock
+      bs_hanging_apron_brown:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_hanging_apron_brown
+        item:
+          source: nexo
+          id: bs_hanging_apron_brown
+      bs_hanging_apron_green:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_hanging_apron_green
+        item:
+          source: nexo
+          id: bs_hanging_apron_green
+      bs_hanging_apron_red:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_hanging_apron_red
+        item:
+          source: nexo
+          id: bs_hanging_apron_red
+      bs_hanging_apron_white:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_hanging_apron_white
+        item:
+          source: nexo
+          id: bs_hanging_apron_white
+      bs_hanging_farmer_hat:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_hanging_farmer_hat
+        item:
+          source: nexo
+          id: bs_hanging_farmer_hat
+      bs_hanging_ivy:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_hanging_ivy
+        item:
+          source: nexo
+          id: bs_hanging_ivy
+      bs_kitchen_jar_1_2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_1_2
+        item:
+          source: nexo
+          id: bs_kitchen_jar_1_2
+      bs_kitchen_jar_1_3:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_1_3
+        item:
+          source: nexo
+          id: bs_kitchen_jar_1_3
+      bs_kitchen_jar_1_4:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_1_4
+        item:
+          source: nexo
+          id: bs_kitchen_jar_1_4
+      bs_kitchen_jar_1:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_1
+        item:
+          source: nexo
+          id: bs_kitchen_jar_1
+      bs_kitchen_jar_2_1:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_2_1
+        item:
+          source: nexo
+          id: bs_kitchen_jar_2_1
+      bs_kitchen_jar_2_2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_2_2
+        item:
+          source: nexo
+          id: bs_kitchen_jar_2_2
+      bs_kitchen_jar_2_3:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_2_3
+        item:
+          source: nexo
+          id: bs_kitchen_jar_2_3
+      bs_kitchen_jar_2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_kitchen_jar_2
+        item:
+          source: nexo
+          id: bs_kitchen_jar_2
+      bs_lawn_chair_blue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_lawn_chair_blue
+        item:
+          source: nexo
+          id: bs_lawn_chair_blue
+      bs_lawn_chair_green:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_lawn_chair_green
+        item:
+          source: nexo
+          id: bs_lawn_chair_green
+      bs_lawn_chair_orange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_lawn_chair_orange
+        item:
+          source: nexo
+          id: bs_lawn_chair_orange
+      bs_lawn_chair_pink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_lawn_chair_pink
+        item:
+          source: nexo
+          id: bs_lawn_chair_pink
+      bs_lawn_chair_white:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_lawn_chair_white
+        item:
+          source: nexo
+          id: bs_lawn_chair_white
+      bs_lawn_chair_yellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_lawn_chair_yellow
+        item:
+          source: nexo
+          id: bs_lawn_chair_yellow
+      bs_loaf_of_bread:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_loaf_of_bread
+        item:
+          source: nexo
+          id: bs_loaf_of_bread
+      bs_mailbox_blue:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_mailbox_blue
+        item:
+          source: nexo
+          id: bs_mailbox_blue
+      bs_mailbox_green:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_mailbox_green
+        item:
+          source: nexo
+          id: bs_mailbox_green
+      bs_mailbox_orange:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_mailbox_orange
+        item:
+          source: nexo
+          id: bs_mailbox_orange
+      bs_mailbox_pink:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_mailbox_pink
+        item:
+          source: nexo
+          id: bs_mailbox_pink
+      bs_mailbox_white:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_mailbox_white
+        item:
+          source: nexo
+          id: bs_mailbox_white
+      bs_mailbox_yellow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_mailbox_yellow
+        item:
+          source: nexo
+          id: bs_mailbox_yellow
+      bs_plate_single:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_plate_single
+        item:
+          source: nexo
+          id: bs_plate_single
+      bs_plates_stacked_messy:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_plates_stacked_messy
+        item:
+          source: nexo
+          id: bs_plates_stacked_messy
+      bs_plates_stacked_neat:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_plates_stacked_neat
+        item:
+          source: nexo
+          id: bs_plates_stacked_neat
+      bs_pumpkin_pie:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_pumpkin_pie
+        item:
+          source: nexo
+          id: bs_pumpkin_pie
+      bs_rocking_chair:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 150
+        display:
+          source: nexo
+          id: bs_rocking_chair
+        item:
+          source: nexo
+          id: bs_rocking_chair
+      bs_tea_kettle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_tea_kettle
+        item:
+          source: nexo
+          id: bs_tea_kettle
+      bs_vintage_lamp_floor:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_vintage_lamp_floor
+        item:
+          source: nexo
+          id: bs_vintage_lamp_floor
+      bs_vintage_lamp_wall:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_vintage_lamp_wall
+        item:
+          source: nexo
+          id: bs_vintage_lamp_wall
+      bs_wall_clock:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_wall_clock
+        item:
+          source: nexo
+          id: bs_wall_clock
+      bs_wheelbarrow:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_wheelbarrow
+        item:
+          source: nexo
+          id: bs_wheelbarrow
+      bs_wind_chimes:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_wind_chimes
+        item:
+          source: nexo
+          id: bs_wind_chimes
+      bs_wind_direction_indicator:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: bs_wind_direction_indicator
+        item:
+          source: nexo
+          id: bs_wind_direction_indicator
+    medieval_mercado:
+      name: '&8Muebles &7• &6Mercado medieval'
+      w6_bulletin_board:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_bulletin_board
+        item:
+          source: nexo
+          id: w6_bulletin_board
+      w6_bulletin_board_small:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_bulletin_board_small
+        item:
+          source: nexo
+          id: w6_bulletin_board_small
+      w6_bulletin_board_wall:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_bulletin_board_wall
+        item:
+          source: nexo
+          id: w6_bulletin_board_wall
+      w6_chalk_sign:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_chalk_sign
+        item:
+          source: nexo
+          id: w6_chalk_sign
+      w6_chalk_sign_hanging:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_chalk_sign_hanging
+        item:
+          source: nexo
+          id: w6_chalk_sign_hanging
+      w6_chest:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_chest
+        item:
+          source: nexo
+          id: w6_chest
+      w6_chest_open:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_chest_open
+        item:
+          source: nexo
+          id: w6_chest_open
+      w6_coins_1:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_coins_1
+        item:
+          source: nexo
+          id: w6_coins_1
+      w6_coins_2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_coins_2
+        item:
+          source: nexo
+          id: w6_coins_2
+      w6_coins_3:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_coins_3
+        item:
+          source: nexo
+          id: w6_coins_3
+      w6_crate_bread:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_bread
+        item:
+          source: nexo
+          id: w6_crate_bread
+      w6_crate_carrots:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_carrots
+        item:
+          source: nexo
+          id: w6_crate_carrots
+      w6_crate_display_bread:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_display_bread
+        item:
+          source: nexo
+          id: w6_crate_display_bread
+      w6_crate_display_carrots:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_display_carrots
+        item:
+          source: nexo
+          id: w6_crate_display_carrots
+      w6_crate_display_empty:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_display_empty
+        item:
+          source: nexo
+          id: w6_crate_display_empty
+      w6_crate_empty:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_empty
+        item:
+          source: nexo
+          id: w6_crate_empty
+      w6_crate_stack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_crate_stack
+        item:
+          source: nexo
+          id: w6_crate_stack
+      w6_papers_hanging_1:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_papers_hanging_1
+        item:
+          source: nexo
+          id: w6_papers_hanging_1
+      w6_papers_hanging_2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_papers_hanging_2
+        item:
+          source: nexo
+          id: w6_papers_hanging_2
+      w6_papers_hanging_3:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_papers_hanging_3
+        item:
+          source: nexo
+          id: w6_papers_hanging_3
+      w6_sack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_sack
+        item:
+          source: nexo
+          id: w6_sack
+      w6_shipping_crate:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_shipping_crate
+        item:
+          source: nexo
+          id: w6_shipping_crate
+      w6_shipping_crate_triple_stack:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_shipping_crate_triple_stack
+        item:
+          source: nexo
+          id: w6_shipping_crate_triple_stack
+      w6_streamer_post:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_streamer_post
+        item:
+          source: nexo
+          id: w6_streamer_post
+      w6_streamers_hanging:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_streamers_hanging
+        item:
+          source: nexo
+          id: w6_streamers_hanging
+      w6_wagon:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_wagon
+        item:
+          source: nexo
+          id: w6_wagon
+      w6_wagon_full:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_wagon_full
+        item:
+          source: nexo
+          id: w6_wagon_full
+      w6_canopy_flat:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_canopy_flat
+        item:
+          source: nexo
+          id: w6_canopy_flat
+      w6_canopy_sloped:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_canopy_sloped
+        item:
+          source: nexo
+          id: w6_canopy_sloped
+      w6_shop_cart:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 120
+        display:
+          source: nexo
+          id: w6_shop_cart
+        item:
+          source: nexo
+          id: w6_shop_cart
+    taberna:
+      name: '&8Muebles &7• &6Taberna'
+      tavern_counter:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_counter
+        item:
+          source: nexo
+          id: tavern_counter
+      tavern_counter2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_counter2
+        item:
+          source: nexo
+          id: tavern_counter2
+      tavern_counter_angle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_counter_angle
+        item:
+          source: nexo
+          id: tavern_counter_angle
+      tavern_windows:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_windows
+        item:
+          source: nexo
+          id: tavern_windows
+      tavern_windows_double:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_windows_double
+        item:
+          source: nexo
+          id: tavern_windows_double
+      tavern_stool:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_stool
+        item:
+          source: nexo
+          id: tavern_stool
+      tavern_table:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_table
+        item:
+          source: nexo
+          id: tavern_table
+      tavern_big_table:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_big_table
+        item:
+          source: nexo
+          id: tavern_big_table
+      tavern_bench:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_bench
+        item:
+          source: nexo
+          id: tavern_bench
+      tavern_shelf:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_shelf
+        item:
+          source: nexo
+          id: tavern_shelf
+      tavern_shelf2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_shelf2
+        item:
+          source: nexo
+          id: tavern_shelf2
+      tavern_shelf3:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_shelf3
+        item:
+          source: nexo
+          id: tavern_shelf3
+      tavern_bottom_shelf:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_bottom_shelf
+        item:
+          source: nexo
+          id: tavern_bottom_shelf
+      tavern_hanging_shelf:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_hanging_shelf
+        item:
+          source: nexo
+          id: tavern_hanging_shelf
+      tavern_bread:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_bread
+        item:
+          source: nexo
+          id: tavern_bread
+      tavern_hanging_mugs:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_hanging_mugs
+        item:
+          source: nexo
+          id: tavern_hanging_mugs
+      tavern_keg_support:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_keg_support
+        item:
+          source: nexo
+          id: tavern_keg_support
+      tavern_keg_support_double:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_keg_support_double
+        item:
+          source: nexo
+          id: tavern_keg_support_double
+      tavern_keg:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_keg
+        item:
+          source: nexo
+          id: tavern_keg
+      tavern_keg2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_keg2
+        item:
+          source: nexo
+          id: tavern_keg2
+      tavern_green_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_green_bottle
+        item:
+          source: nexo
+          id: tavern_green_bottle
+      tavern_brown_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_brown_bottle
+        item:
+          source: nexo
+          id: tavern_brown_bottle
+      tavern_blue_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_blue_bottle
+        item:
+          source: nexo
+          id: tavern_blue_bottle
+      tavern_red_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_red_bottle
+        item:
+          source: nexo
+          id: tavern_red_bottle
+      tavern_small_green_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_small_green_bottle
+        item:
+          source: nexo
+          id: tavern_small_green_bottle
+      tavern_candle_red_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_candle_red_bottle
+        item:
+          source: nexo
+          id: tavern_candle_red_bottle
+      tavern_candle_green_bottle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_candle_green_bottle
+        item:
+          source: nexo
+          id: tavern_candle_green_bottle
+      tavern_candle:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_candle
+        item:
+          source: nexo
+          id: tavern_candle
+      tavern_basket_apple:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_basket_apple
+        item:
+          source: nexo
+          id: tavern_basket_apple
+      tavern_big_keg:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_big_keg
+        item:
+          source: nexo
+          id: tavern_big_keg
+      tavern_big_keg2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_big_keg2
+        item:
+          source: nexo
+          id: tavern_big_keg2
+      tavern_mug:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_mug
+        item:
+          source: nexo
+          id: tavern_mug
+      tavern_mug2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_mug2
+        item:
+          source: nexo
+          id: tavern_mug2
+      tavern_multiple_bottles:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_multiple_bottles
+        item:
+          source: nexo
+          id: tavern_multiple_bottles
+      tavern_pile_bottles:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_pile_bottles
+        item:
+          source: nexo
+          id: tavern_pile_bottles
+      tavern_mural_shelf:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_mural_shelf
+        item:
+          source: nexo
+          id: tavern_mural_shelf
+      tavern_egg_jar:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_egg_jar
+        item:
+          source: nexo
+          id: tavern_egg_jar
+      tavern_plate1:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_plate1
+        item:
+          source: nexo
+          id: tavern_plate1
+      tavern_plate2:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_plate2
+        item:
+          source: nexo
+          id: tavern_plate2
+      tavern_plate3:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_plate3
+        item:
+          source: nexo
+          id: tavern_plate3
+      tavern_mural_beam:
+        options:
+          sell: true
+          buy: false
+          after_sell_script: ''
+          after_buy_script: ''
+        prices:
+          sell:
+            coinsengine-shards: 140
+        display:
+          source: nexo
+          id: tavern_mural_beam
+        item:
+          source: nexo
+          id: tavern_mural_beam

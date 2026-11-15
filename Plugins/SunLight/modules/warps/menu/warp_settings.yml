@@ -1,0 +1,107 @@
+Settings:
+  MenuType: minecraft:generic_9x5
+  Title: Warp Settings
+  AutoRefresh:
+    Interval: 0
+  PlaceholderAPI:
+    Enabled: false
+Buttons:
+  black_stained_glass_pane_32038:
+    Slots: 0,1,2,3,4,5,6,7,8
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  black_stained_glass_pane_bb47d:
+    Slots: 36,37,38,39,40,41,42,43,44
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  back:
+    Slots: '40'
+    States:
+      default:
+        Icon:
+          Material: minecraft:compass
+          Display_Name: <green>Back to Warps</green>
+          Lore: []
+  name:
+    Slots: '20'
+    States:
+      default:
+        Icon:
+          Material: minecraft:name_tag
+          Display_Name: <gold><b>Name</b></gold>
+          Lore:
+          - '<dark_gray>» <gray>Current: </gray><white>%warp_name%</white></dark_gray>'
+          - ''
+          - <gold>→ <u>Click to edit</u></gold>
+          Hide_Components: true
+  description:
+    Slots: '21'
+    States:
+      default:
+        Icon:
+          Material: minecraft:writable_book
+          Display_Name: <gold><b>Description</b></gold>
+          Lore:
+          - '%warp_description%'
+          - ''
+          - <gold>→ <u>Click to edit</u></gold>
+          Hide_Components: true
+  icon:
+    Slots: '22'
+    States:
+      default:
+        Icon:
+          Material: minecraft:painting
+          Display_Name: <gold><b>Icon</b></gold>
+          Lore:
+          - <gray>Right click an item in your</gray>
+          - <gray>inventory to replace the icon.</gray>
+          Hide_Components: true
+  permission:
+    Slots: '23'
+    States:
+      default:
+        Icon:
+          Material: minecraft:redstone
+          Display_Name: <red><b>Permission Requirement</b></red>
+          Lore:
+          - '<dark_gray>» <gray>Enabled: </gray><white>%state%</white></dark_gray>'
+          - ''
+          - <red>→ <u>Click to toggle</u></red>
+          Hide_Components: true
+  slots:
+    Slots: '24'
+    States:
+      default:
+        Icon:
+          Material: minecraft:item_frame
+          Display_Name: <gold><b>Page & Slots</b></gold>
+          Lore:
+          - '<dark_gray>» <gray>Page: </gray><white>%page%</white></dark_gray>'
+          - '<dark_gray>» <gray>Slots: </gray><white>%slot%</white></dark_gray>'
+          - ''
+          - <gold>→ <u>Click to edit</u></gold>
+          Hide_Components: true
+  command:
+    Slots: '4'
+    States:
+      default:
+        Icon:
+          Material: minecraft:command_block
+          Display_Name: <orange><b>Command Alias</b></orange>
+          Lore:
+          - '<dark_gray>» <gray>Enabled: </gray><white>%state%</white></dark_gray>'
+          - '<dark_gray>» <gray>Current: </gray><white>%value%</white></dark_gray>'
+          - ''
+          - <orange>→ <u>Click to edit</u></orange>
+          Hide_Components: true

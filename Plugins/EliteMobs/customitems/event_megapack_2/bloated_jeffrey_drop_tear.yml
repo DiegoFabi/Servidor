@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+material: GHAST_TEAR
+name: '&bSweet Tear'
+lore:
+- '&bYou made Jeffrey cry...'
+scalability: fixed
+itemType: unique

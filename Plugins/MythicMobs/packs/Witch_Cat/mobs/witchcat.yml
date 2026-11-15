@@ -1,0 +1,33 @@
+WitchCat:
+  Type: cat
+  Display: "&dGato de Bruja"
+  Health: 100
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookatplayers
+  - randomstroll
+  AITargetSelectors:
+  - clear
+  Options:
+    Collidable: false
+    Invincible: true
+    AlwaysShowName: false
+    PreventOtherDrops: true
+    Silent: true
+    KnockbackResistance: 1
+    MovementSpeed: 0.28
+  Skills:
+  - model{mid=witch_cat_purple_pet} @self ~onSpawn
+  - modifytargetscore{o=WCatSit;a=SET;v=0} @self ~onSpawn
+  - partvis{m=witch_cat_purple_pet;p=summoning;child=true} @self ~onSpawn
+  - partvis{m=witch_cat_purple_pet;p=bubble_1;child=true} @self ~onSpawn
+  - randomskill{s=[ - sound{s=entity.cat.ambient} @self ],[ - sound{s=entity.cat.purr} @self  ]} @self ~onTimer:200 0.5
+  - skill{s=WitchCat_UnSit;sync=true} @self ~onSignal:UNSIT
+  - skill{s=WitchCat_Sit;sync=true} @self ~onSignal:SIT
+  - skill{s=CatDetectClose} @PetOwner ~onTimer:10
+  - skill{s=CatDetectFar} @PetOwner ~onTimer:10
+  - skill{s=WitchCat_Trick;sync=true} @self ~onSignal:TRICK
+  - particle{p=witch;color=#12f325;hs=0.3;vs=0.3;y=1} @self ~onSpawn
+  - particle{p=Glow;color=#12991e;hs=0.3;vs=0.3;y=0.5} @self ~onSpawn
+  - particle{p=cloud;hs=0.3;vs=0.3;y=0.5;a=20} @self ~onSpawn

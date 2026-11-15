@@ -1,0 +1,75 @@
+Settings:
+  MenuType: minecraft:generic_9x6
+  Title: Kit Preview
+  AutoRefresh:
+    Interval: 0
+  PlaceholderAPI:
+    Enabled: false
+Buttons:
+  gray_stained_glass_pane_48b95:
+    Slots: 5,6,7,8
+    States:
+      default:
+        Icon:
+          Material: minecraft:gray_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  black_stained_glass_pane_c6602:
+    Slots: 9,10,11,12,13,14,15,16,17
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  return:
+    Slots: '8'
+    States:
+      default:
+        Icon:
+          Material: minecraft:arrow
+          Display_Name: <white>Back to Kits</white>
+          Lore: []
+  Hotbar-Slots:
+    States:
+      default:
+        Icon:
+          Material: minecraft:barrier
+          Lore: []
+    Slots: ''
+  Inventory-Slots:
+    States:
+      default:
+        Icon:
+          Material: minecraft:barrier
+          Lore: []
+    Slots: ''
+  Armor-Slots:
+    States:
+      default:
+        Icon:
+          Material: minecraft:barrier
+          Lore: []
+    Slots: ''
+  Extra-Slots:
+    States:
+      default:
+        Icon:
+          Material: minecraft:barrier
+          Lore: []
+    Slots: ''
+  hotbar-slots:
+    Slots: ''
+  inventory-slots:
+    Slots: ''
+  armor-slots:
+    Slots: ''
+  extra-slots:
+    Slots: ''
+Content:
+  Hotbar-Slots: 45,46,47,48,49,50,51,52,53
+  Inventory-Slots: 18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44
+  Armor-Slots: 0,1,2,3
+  Extra-Slots: '4'

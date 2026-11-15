@@ -1,0 +1,52 @@
+menu-title: '&fϿϪ'
+menu-rows: 6
+
+quest-slots:
+  slots: '10...16, 37...43'
+
+menu:
+  '45':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {quest-overview}'
+      - '[menu](page ! 1) {previous-page}'
+  '46':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {quest-overview}'
+      - '[menu](page ! 1) {previous-page}'
+  '47':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {quest-overview}'
+      - '[menu](page ! 1) {previous-page}'
+  '53':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e¿Qué son estas misiones?'
+      lore:
+        - ''
+        - '&7Completa estas misiones para'
+        - '&7consigue &epuntos&7 para'
+        - '&7subir tu pase de batalla y recibir'
+        - '&7recompensas increíbles'
+    actions: []

@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: LEAD
+name: '&dRingmasters Whip'
+lore:
+- '&dThis was used for terrible punishment.'
+enchantments:
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,3
+- DAMAGE_UNDEAD,2
+

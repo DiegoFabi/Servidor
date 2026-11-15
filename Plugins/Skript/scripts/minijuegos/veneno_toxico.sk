@@ -1,0 +1,54 @@
+# ============================================================
+#  veneno_toxico.sk - Evento de la ruleta roja "Veneno Tóxico"
+#  Requiere: Skript 2.10+
+#  venenoIniciar() lo lanza la ruleta roja (ruleta.sk).
+#   - Aviso con lore en el chat y 30 s para buscar agua.
+#   - 2 minutos: cada 2 s, quien NO esté sumergido en agua recibe daño
+#     creciente y pierde experiencia, hasta morir si no se protege.
+#  Rendimiento: un único bucle global (cada 2 s, 60 veces) que solo
+#  recorre a los jugadores conectados; termina solo.
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:green:dark_green><bold>Veneno</bold></gradient> <dark_gray>»<reset>
+
+on load:
+    delete {-veneno::*}
+
+function venenoIniciar():
+    {-veneno::activo} is not set
+    set {-veneno::activo} to true
+    wait 8 seconds
+    loop all players:
+        notificar(loop-player)
+        send "<dark_gray><strikethrough>                                                  " to loop-player
+        send "  {@prefijo} <#B7F06B><bold>Un ente extraño ha liberado un veneno tóxico en el aire.</bold>" to loop-player
+        send "    <#C9CDD6>Todo el que no esté <#5FE3FF>sumergido en agua</#5FE3FF> durante los" to loop-player
+        send "    <#C9CDD6>próximos <#FFD36B>2 minutos</#FFD36B> sufrirá hasta la muerte y perderá su experiencia." to loop-player
+        send "    <#9EA3AE>Tienes <#FFD36B>30 segundos<#9EA3AE> para encontrar agua..." to loop-player
+        send "<dark_gray><strikethrough>                                                  " to loop-player
+    play sound "entity.elder_guardian.curse" with volume 0.6 and pitch 0.6 to all players
+    wait 20 seconds
+    send title "<#B7F06B>☣ 10" with subtitle "<#C9CDD6>¡Métete en el agua!" to all players for 2 seconds with fadein 0 ticks and fadeout 10 ticks
+    wait 10 seconds
+    send title "<#7FBF3F><bold>☣ VENENO</bold>" with subtitle "<#C9CDD6>Solo el agua te protege (2 min)" to all players for 2 seconds with fadein 0 ticks and fadeout 10 ticks
+    play sound "entity.warden.emerge" with volume 0.5 and pitch 1.4 to all players
+    set {_i} to 0
+    while {_i} < 60:
+        loop all players:
+            if gamemode of loop-player is survival or adventure:
+                if loop-player is in water:
+                    send action bar "<#5FE3FF>☂ A salvo en el agua <dark_gray>• <#9EA3AE>%120 - {_i} * 2% s" to loop-player
+                else:
+                    # Daño que crece con el tiempo (de 1 a 3 corazones)
+                    damage loop-player by (1 + {_i} / 30)
+                    if level of loop-player > 0:
+                        remove 1 from level of loop-player
+                    make 8 of item_slime at location of loop-player offset by vector(0, 1, 0) with offset vector(0.3, 0.5, 0.3) with extra 0
+                    send action bar "<#7FBF3F>☣ El veneno te consume... <#FF6B6B>¡busca agua!" to loop-player
+        add 1 to {_i}
+        wait 2 seconds
+    send title "<#7FFF9E>El aire se aclara" with subtitle "<#C9CDD6>El veneno se ha disipado" to all players for 3 seconds with fadein 10 ticks and fadeout 20 ticks
+    send "{@prefijo} <#C9CDD6>El veneno se ha disipado. Ya puedes salir del agua." to all players
+    delete {-veneno::activo}

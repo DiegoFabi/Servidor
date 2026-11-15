@@ -1,0 +1,32 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/arrow_back"
+    },
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/arrow_next"
+    },
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/colorful"
+    },
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/hat_icon"
+    },
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/backpack_icon"
+    },
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/hand_icon"
+    },
+    {
+      "type": "single",
+      "resource": "hmccosmetics:icons/balloon_icon"
+    }
+  ]
+}

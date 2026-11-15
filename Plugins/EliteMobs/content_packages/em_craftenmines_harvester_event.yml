@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&6Craftenmine''s Harvester Event'
+customInfo:
+- '&7A bio-mechanical scarecrow harvester stalks the world,'
+- '&7reaping grass, trees and mobs to grow ever stronger.'
+- '&6Credits: MagmaGuy, Dali, Frostcone, CraftenMine'
+dungeonSizeCategory: LAIR
+environment: NORMAL
+protect: true
+customEventFilenames:
+- em_craftenmines_harvester_event.yml
+setupMenuDescription:
+- '&6Face Craftenmine''s Harvester mkIII!'
+- '&cDestructive: it breaks the terrain it harvests.'
+dungeonLockoutMinutes: 4320

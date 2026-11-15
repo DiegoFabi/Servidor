@@ -1,0 +1,358 @@
+# Perfil del jugador. Abrir: /coremenu panelProfile
+# Equipamiento: botones fijos con descripción. NO se usan los placeholders de
+# objetos de la expansión Player de PlaceholderAPI (armadura y manos): lanzan un
+# NullPointerException con el slot vacío e impiden abrir el menú.
+# (placeholders de PlaceholderAPI, expansion Player). Los dynamic_button
+# anteriores construian el item con un placeholder como material y
+# hacian fallar la apertura del menu.
+# Habilidades: solo visuales, preparadas para AuraSkills (sin comandos).
+panelProfile:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Mi Perfil'
+  size: 5
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    eq_casco:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: iron_helmet
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Casco</gradient>
+      lore:
+      - '<#C9CDD6>Protege tu cabeza.'
+      - '<#C9CDD6>Mira tu inventario para ver tu cabeza.'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_pecho:
+      location: top
+      slots:
+      - 19
+      source: vanilla
+      material: iron_chestplate
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pechera</gradient>
+      lore:
+      - '<#C9CDD6>Protege tu torso.'
+      - '<#C9CDD6>Mira tu inventario para ver tu torso.'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_piernas:
+      location: top
+      slots:
+      - 28
+      source: vanilla
+      material: iron_leggings
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pantalones</gradient>
+      lore:
+      - '<#C9CDD6>Protege tus piernas.'
+      - '<#C9CDD6>Mira tu inventario para ver tu piernas.'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_botas:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: iron_boots
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Botas</gradient>
+      lore:
+      - '<#C9CDD6>Protege tus pies.'
+      - '<#C9CDD6>Mira tu inventario para ver tu pies.'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_mano:
+      location: top
+      slots:
+      - 20
+      source: vanilla
+      material: iron_sword
+      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Mano principal</gradient>
+      lore:
+      - '<#C9CDD6>El objeto que llevas en la mano'
+      - '<#C9CDD6>derecha (arma o herramienta).'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_offhand:
+      location: top
+      slots:
+      - 29
+      source: vanilla
+      material: shield
+      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Mano secundaria</gradient>
+      lore:
+      - '<#C9CDD6>El objeto de tu mano izquierda'
+      - '<#C9CDD6>(escudo, antorcha, tótem...).'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    jugador:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: player_head
+      texture: player
+      name: <white><glyph:person> <gradient:#FFE29A:#FFB347>{caster_name}</gradient>
+      lore:
+      - <#C9CDD6>Tu equipamiento a la izquierda
+      - <#C9CDD6>y tus habilidades a la derecha.
+      - ''
+      - '<white><glyph:gold_coin> <#E6E8EE>Moneda: <#FFD36B>%excellenteconomy_balance_short_money%'
+      - '<white><glyph:diamond> <#E6E8EE>Shards: <#FFD36B>%excellenteconomy_balance_short_shards%'
+      - '<white><glyph:heart> <#E6E8EE>Vida: <#FFD36B>%player_health_rounded%'
+      - '<white><glyph:pack1_up> <#E6E8EE>Nivel: <#FFD36B>%player_level%'
+      flags:
+      - HIDE_ATTRIBUTES
+    # Posible implementacion: AuraSkills -> nivel %auraskills_mining% (cambia "—" por el placeholder)
+    hab_mineria:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: iron_pickaxe
+      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Minería</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_foraging% (cambia "—" por el placeholder)
+    hab_tala:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: iron_axe
+      name: <white><glyph:tree> <gradient:#FFE29A:#FFB347>Tala</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_farming% (cambia "—" por el placeholder)
+    hab_agricultura:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: wheat
+      name: <white><glyph:clover> <gradient:#FFE29A:#FFB347>Agricultura</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_fishing% (cambia "—" por el placeholder)
+    hab_pesca:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: fishing_rod
+      name: <white><glyph:wave> <gradient:#FFE29A:#FFB347>Pesca</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_fighting% (cambia "—" por el placeholder)
+    hab_combate:
+      location: top
+      slots:
+      - 24
+      source: vanilla
+      material: iron_sword
+      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Combate</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_archery% (cambia "—" por el placeholder)
+    hab_arqueria:
+      location: top
+      slots:
+      - 25
+      source: vanilla
+      material: bow
+      name: <white><glyph:rocket> <gradient:#FFE29A:#FFB347>Arquería</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_defense% (cambia "—" por el placeholder)
+    hab_defensa:
+      location: top
+      slots:
+      - 32
+      source: vanilla
+      material: shield
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Defensa</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_agility% (cambia "—" por el placeholder)
+    hab_agilidad:
+      location: top
+      slots:
+      - 33
+      source: vanilla
+      material: feather
+      name: <white><glyph:feather> <gradient:#FFE29A:#FFB347>Agilidad</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    # Posible implementacion: AuraSkills -> nivel %auraskills_alchemy% (cambia "—" por el placeholder)
+    hab_alquimia:
+      location: top
+      slots:
+      - 34
+      source: vanilla
+      material: brewing_stand
+      name: <white><glyph:potion> <gradient:#FFE29A:#FFB347>Alquimia</gradient>
+      lore:
+      - <#C9CDD6>Sube de nivel realizando
+      - <#C9CDD6>acciones de esta habilidad.
+      - ''
+      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
+      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
+      - ''
+      - <#7A7F8A>Próximamente
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    mensajes:
+      location: top
+      slots:
+      - 39
+      source: vanilla
+      material: writable_book
+      name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Mensajes Privados</gradient>
+      lore:
+      - <#C9CDD6>Activa o desactiva los mensajes
+      - <#C9CDD6>privados de otros jugadores.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para alternar
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - panelprofile_b2_click
+      right_click:
+        Scripts:
+        - panelprofile_b2_click
+      shift_left_click:
+        Scripts:
+        - panelprofile_b2_click
+      shift_right_click:
+        Scripts:
+        - panelprofile_b2_click
+    volver:
+      location: top
+      slots:
+      - 40
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      lore:
+      - <white><glyph:raton_izq> <#7FB2FF>Click para regresar
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
+    estadisticas:
+      location: top
+      slots:
+      - 41
+      source: vanilla
+      material: gold_ingot
+      name: <white><glyph:pack1_stats> <gradient:#FFE29A:#FFB347>Habilidades y Poderes</gradient>
+      lore:
+      - <#C9CDD6>Consulta tus estadísticas
+      - <#C9CDD6>y poderes de clase.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para ver tus estadísticas
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - panelprofile_b6_click
+      right_click:
+        Scripts:
+        - panelprofile_b6_click
+      shift_left_click:
+        Scripts:
+        - panelprofile_b6_click
+      shift_right_click:
+        Scripts:
+        - panelprofile_b6_click

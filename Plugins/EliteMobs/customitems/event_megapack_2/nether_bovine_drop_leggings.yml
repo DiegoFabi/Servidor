@@ -1,0 +1,11 @@
+isEnabled: true
+material: LEATHER_LEGGINGS
+name: '&dBovine Leggings'
+lore:
+- "&dNow if only you had some hooves"
+- "&dto match."
+enchantments:
+- "PROTECTION_ENVIRONMENTAL,12"
+- "THORNS,5"
+potionEffects: []
+itemType: UNIQUE

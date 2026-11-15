@@ -1,0 +1,28 @@
+trackingSinceVersion: 10.9.14
+lastObservedVersion: 10.9.14
+cache:
+  plugin:
+    targetVersion: 10.9.14
+    releases:
+    - version: 10.9.14
+      changelog: |-
+        EliteMobs 10.9.14:
+        - [Fix] Smite and Bane of Arthropods now work like Sharpness against elites: 2.5% more damage per level, counting every level from all equipped slots. Before, only levels above V on the main hand counted, so they did nothing on almost all EliteMobs loot.
+        - [Fix] Thorns now works like Sharpness against elites: each level returns 2.5% of a base hit, counting every level on all four armor pieces. It goes off at most once per elite hit and then rests 10 ticks, where vanilla could pay out up to four times per hit. Before, only levels above III counted.
+        - [Fix] A FreeMinecraftModels reload while the server starts, such as a ResurrectionChest model import, no longer makes EliteMobs fail to start. EliteMobs waits for FreeMinecraftModels and rebuilds its custom items if a reload overtakes them.
+        - [Fix] Regional bosses in worlds that aren't loaded no longer take memory at startup. Their spawn points wait until the world loads, and saves and the patrol editor keep them (GitHub #237).
+        - [Fix] Elite wolves and other elites on EliteMobs' default melee AI climb one-block steps instead of jumping in place.
+        - [Fix] Events and surface spawns no longer start on treetops, water or lava. Ocean spawns still start on the water, and custom spawn files can allow water with the new canSpawnOnWater key.
+        - [Tweak] Quest rewards, loot and drop messages, repair messages and the $itemMaterial placeholder name vanilla items the way Minecraft does, like "Steak" and "Music Disc (C418 - cat)" instead of COOKED_BEEF, and use the language file's translation when there is one.
+        - [Fix] Lua powers now translate text they pass through helper functions, tables and loops, so most class trial instructor lines can be translated.
+        - [Fix] Lua text with characters outside Latin-1, like a long dash, keeps them in its translation key. Four goblin event lines get new keys and show in English on translated servers until the next translation update.
+        - [New] PlaceholderAPI placeholders for the player's Advanced Combat class: %elitemobs_class_selected%, %elitemobs_class_name%, %elitemobs_class_level%, %elitemobs_class_label% and %elitemobs_class_id%.
+        - [Tweak] Advanced Combat: Frost's class review changes many abilities. Giant Killer hits an 8-block line and hurts ordinary foes too, Spotter's Mark marks every foe within 6 blocks of where the shot lands, Repeater Burst fires its bolts 5 ticks apart and re-aims each one, Fault Line stuns launched foes when they land, Aether Blade strikes three times, and many descriptions now explain what the ability does.
+        - [Tweak] Advanced Combat death guards (Refuse Death, Phylactery Ward, Fateweaver) refuse a fatal hit from any source and count down on the action bar. Refuse Death lasts 10 seconds, and Phylactery Ward leaves a ward that pulls you back to it.
+        - [Fix] Guardian Eidolon stays beside its owner instead of picking fights, and Giant Killer and Anchor Chain say why when they find no target.
+        - [Fix] NPCs whose model has syncMovement off no longer turn toward nearby players, which spun seated NPCs around for Bedrock players.
+        - [Tweak] The skill bonus menu opens its next screen one tick after the click, as Bukkit recommends. This may fix the menu closing for Bedrock players.
+        - [Tweak] Custom boss models play attack.melee or attack.ranged first, then attack_melee or attack_ranged, then attack, so models made for either naming work.
+        - [Fix] Admins can use /emchangelog and its [VIEW CHANGELOG] button in game. The command registered after startup, so players' clients didn't know it.
+      releasedAt: '2026-11-07T18:00:56.673Z'
+    complete: true

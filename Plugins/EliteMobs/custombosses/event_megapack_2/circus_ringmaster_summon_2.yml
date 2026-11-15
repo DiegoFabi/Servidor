@@ -1,0 +1,18 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: GHAST
+name: $eventBossLevel &5Mistreated Balloon
+healthMultiplier: 0.5
+damageMultiplier: 0.15
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+powers:
+- invulnerability_fire.yml
+- attack_fireball.yml
+movementSpeedAttribute: 0.2
+followDistance: 80

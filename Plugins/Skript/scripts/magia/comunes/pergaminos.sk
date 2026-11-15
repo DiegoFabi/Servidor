@@ -1,0 +1,144 @@
+# ============================================================
+#  Pergaminos  [COMÚN / RARO]  - Pergaminos de un solo uso
+#  Comando: /pergamino <tipo>        Permiso: admin.particles
+#  Todos usan el mismo modelo de Nexo (pack1_scroll1) en ItemJoin, con
+#  tooltip y función distintos.
+#
+#    luz          Orbes de luz flotantes 20 s, visión nocturna y quita
+#                 ceguera/oscuridad
+#    purificacion Limpia efectos negativos, apaga el fuego y cura
+#    revelacion   Hace brillar a jugadores y monstruos en 40 bloques y
+#                 te dice cuántos hay y en qué dirección está el más cercano
+#    viento       Impulso hacia donde miras y caída lenta
+#    proteccion   Círculo de 8 s que repele a los monstruos
+#    saber        Otorga 5 niveles de experiencia con un estallido de runas
+#
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxRing(), fxAnuncio() y fxResultado() de magia/nucleo_magia.sk
+#  y bdLimpiar() de magia/comunes/bendiciones.sk
+#  Rendimiento: efecto inmediato; los que duran usan "wait" puntuales
+#  solo mientras están activos (sin temporizadores globales).
+# ============================================================
+
+options:
+    force: with force
+    perm: admin.particles
+
+# Desenrollar: animación común de todos los pergaminos
+function pgAbrir(p: player):
+    play sound "item.book.page_turn" with volume 1 and pitch 0.8 at {_p}
+    play sound "block.enchantment_table.use" with volume 0.7 and pitch 1.4 at {_p}
+    make 25 of enchant at location of {_p} offset by vector(0, 1.6, 0) with offset vector(0.6, 0.4, 0.6) with extra 0.8 {@force}
+
+function pgLuz(p: player):
+    set {_f} to 0
+    while {_f} < 50:
+        if {_p} is not online:
+            stop
+        make 1 of glow at fxRing(location of {_p}, 1.2, 4, 2.2, {_f} * 14) with extra 0 {@force}
+        make 1 of end_rod at fxRing(location of {_p}, 1.2, 4, 2.2, {_f} * 14) with extra 0 {@force}
+        add 1 to {_f}
+        wait 8 ticks
+
+function pgProteccion(p: player):
+    set {_f} to 0
+    while {_f} < 16:
+        if {_p} is not online:
+            stop
+        set {_c} to location of {_p}
+        make 1 of soul_fire_flame at fxRing({_c}, 4, 28, 0.15, {_f} * 11) with extra 0 {@force}
+        make 1 of end_rod at fxRing({_c}, 4, 8, 1.2, {_f} * -15) with extra 0 {@force}
+        loop all monsters in radius 4 around {_c}:
+            push loop-entity away from {_c} with force 0.8
+            make 4 of soul at location of loop-entity offset by vector(0, 1, 0) with offset vector(0.2, 0.4, 0.2) with extra 0.02 {@force}
+        if mod({_f}, 4) = 0:
+            play sound "block.beacon.ambient" with volume 0.8 and pitch 1.5 at {_c}
+        add 1 to {_f}
+        wait 10 ticks
+    {_p} is online
+    send action bar "<#9EA3AE>El círculo de protección se desvanece" to {_p}
+
+# Dirección cardinal aproximada de b vista desde a
+function pgRumbo(a: location, b: location) :: text:
+    set {_dx} to (x-coordinate of {_b}) - (x-coordinate of {_a})
+    set {_dz} to (z-coordinate of {_b}) - (z-coordinate of {_a})
+    if abs({_dx}) > abs({_dz}):
+        if {_dx} > 0:
+            return "Este"
+        return "Oeste"
+    if {_dz} > 0:
+        return "Sur"
+    return "Norte"
+
+function pergamino(p: player, tipo: text) :: boolean:
+    set {_l} to location of {_p}
+    if {_tipo} is "luz":
+        pgAbrir({_p})
+        fxAnuncio({_p}, "☀", "Pergamino de Luz", "La oscuridad retrocede", "#FFF6C2", "#FFD84D", "Común")
+        remove blindness and darkness from the potion effects of {_p}
+        apply night vision 1 to {_p} for 180 seconds
+        play sound "block.beacon.activate" with volume 0.8 and pitch 1.8 at {_p}
+        pgLuz({_p})
+    else if {_tipo} is "purificacion":
+        pgAbrir({_p})
+        fxAnuncio({_p}, "✧", "Pergamino de Purificación", "Tu cuerpo queda limpio", "#E6FFF6", "#7FE3C4", "Común")
+        bdLimpiar({_p})
+        heal {_p} by 2
+        make 1 of end_rod at fxRing({_l}, 1, 12, 0.1) with extra 0.08 {@force}
+        make 30 of happy_villager at {_l} offset by vector(0, 1, 0) with offset vector(0.5, 0.8, 0.5) with extra 0 {@force}
+        play sound "block.amethyst_block.resonate" with volume 1 and pitch 1.6 at {_p}
+        fxResultado({_p}, "#7FE3C4", "Purificación", "Efectos negativos eliminados y 2 corazones recuperados.")
+    else if {_tipo} is "revelacion":
+        pgAbrir({_p})
+        fxAnuncio({_p}, "◉", "Pergamino de Revelación", "Nada escapa a tu vista", "#E3D6FF", "#9A85F0", "Raro")
+        set {_m} to 0
+        set {_j} to 0
+        set {_dmin} to 999
+        loop all monsters in radius 40 around {_p}:
+            apply glowing 1 to loop-entity for 15 seconds
+            add 1 to {_m}
+        loop all players in radius 40 around {_p}:
+            if loop-player is not {_p}:
+                apply glowing 1 to loop-player for 15 seconds
+                add 1 to {_j}
+                set {_d} to distance between loop-player and {_p}
+                if {_d} < {_dmin}:
+                    set {_dmin} to {_d}
+                    set {_cerca} to loop-player
+        play sound "entity.elder_guardian.curse" with volume 0.4 and pitch 1.8 at {_p}
+        fxResultado({_p}, "#9A85F0", "Revelación", "%{_m}% monstruo(s) y %{_j}% jugador(es) revelados en 40 bloques.")
+        if {_cerca} is set:
+            fxResultado({_p}, "#9A85F0", "Revelación", "El jugador más cercano está a %round({_dmin})% bloques hacia el %pgRumbo({_l}, location of {_cerca})%.")
+    else if {_tipo} is "viento":
+        pgAbrir({_p})
+        fxAnuncio({_p}, "➶", "Pergamino del Viento", "El viento te lleva", "#E6F7FF", "#8FD8FF", "Común")
+        push {_p} forwards with force 1.8
+        push {_p} upwards with force 0.6
+        apply slow falling 1 to {_p} for 6 seconds
+        make 30 of cloud at {_l} with offset vector(0.5, 0.2, 0.5) with extra 0.1 {@force}
+        play sound "entity.breeze.wind_burst" with volume 1.2 and pitch 0.9 at {_p}
+        play sound "item.elytra.flying" with volume 0.4 and pitch 1.6 at {_p}
+    else if {_tipo} is "proteccion":
+        pgAbrir({_p})
+        fxAnuncio({_p}, "⛨", "Pergamino de Protección", "Un círculo sagrado te rodea (8 s)", "#D6E6FF", "#8FB3FF", "Raro")
+        play sound "block.beacon.activate" with volume 1 and pitch 1.2 at {_p}
+        pgProteccion({_p})
+    else if {_tipo} is "saber":
+        pgAbrir({_p})
+        fxAnuncio({_p}, "✎", "Pergamino del Saber", "El conocimiento fluye hacia ti", "#C6FFE0", "#4FD99A", "Raro")
+        add 5 to level of {_p}
+        loop 3 times:
+            make 2 of enchant at fxRing({_l}, loop-number * 0.8, 12, loop-number * 0.6) with extra 0.5 {@force}
+        make 25 of totem_of_undying at {_l} offset by vector(0, 1.5, 0) with offset vector(0.4, 0.5, 0.4) with extra 0.3 {@force}
+        play sound "entity.player.levelup" with volume 1 and pitch 1.2 at {_p}
+        fxResultado({_p}, "#4FD99A", "Saber", "Obtienes 5 niveles de experiencia.")
+    else:
+        return false
+    return true
+
+command /pergamino <text>:
+    permission: {@perm}
+    usage: /pergamino <tipo>
+    trigger:
+        if pergamino(player, lowercase arg-1) is not true:
+            send "<#FF6B6B>Tipo desconocido. <#9EA3AE>luz, purificacion, revelacion, viento, proteccion, saber"

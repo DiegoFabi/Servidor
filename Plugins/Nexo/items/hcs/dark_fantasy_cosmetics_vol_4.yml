@@ -1,0 +1,96 @@
+archmage_hat:
+  displayname: <gradient:#7FD8FF:#2F6FB3>Sombrero del Archimago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/archmage_hat
+    custom_model_data: 1142
+archmage_shoulderpads:
+  displayname: <gradient:#7FD8FF:#2F6FB3>Hombreras del Archimago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/archmage_shoulderpads
+    custom_model_data: 1143
+archmage_shoulderpads_fp:
+  displayname: <gradient:#7FD8FF:#2F6FB3>Hombreras del Archimago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/archmage_shoulderpads_fp
+    custom_model_data: 1144
+archmage_staff:
+  displayname: <gradient:#7FD8FF:#2F6FB3>Bastón del Archimago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/archmage_staff
+    custom_model_data: 1145
+ritualistic_hoodie:
+  displayname: <gradient:#FF7A45:#8B2500>Capucha Ritual</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/ritualistic_hoodie
+    custom_model_data: 1146
+ritualistic_back:
+  displayname: <gradient:#FF7A45:#8B2500>Ornamento Ritual</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/ritualistic_back
+    custom_model_data: 1147
+ritualistic_back_fp:
+  displayname: <gradient:#FF7A45:#8B2500>Ornamento Ritual</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/ritualistic_back_fp
+    custom_model_data: 1148
+ritualistic_staff:
+  displayname: <gradient:#FF7A45:#8B2500>Bastón Ritual</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/ritualistic_staff
+    custom_model_data: 1149
+skeleton_control_hat:
+  displayname: <gradient:#E6E8EE:#8A8F99>Sombrero del Amo de los Esqueletos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/skeleton_control_hat
+    custom_model_data: 1150
+skeleton_control_wings:
+  displayname: <gradient:#E6E8EE:#8A8F99>Alas del Amo de los Esqueletos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/skeleton_control_wings
+    custom_model_data: 1151
+skeleton_control_wings_fp:
+  displayname: <gradient:#E6E8EE:#8A8F99>Alas del Amo de los Esqueletos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/skeleton_control_wings_fp
+    custom_model_data: 1152
+skeleton_control_mace:
+  displayname: <gradient:#E6E8EE:#8A8F99>Maza del Amo de los Esqueletos</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/skeleton_control_mace
+    custom_model_data: 1153
+spike_lord_helmet:
+  displayname: <gradient:#FFB347:#8B4A00>Yelmo del Señor de las Púas</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/spike_lord_helmet
+    custom_model_data: 1154
+spike_lord_wings:
+  displayname: <gradient:#FFB347:#8B4A00>Alas del Señor de las Púas</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/spike_lord_wings
+    custom_model_data: 1155
+spike_lord_wings_fp:
+  displayname: <gradient:#FFB347:#8B4A00>Alas del Señor de las Púas</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/spike_lord_wings_fp
+    custom_model_data: 1156
+spike_lord_sword:
+  displayname: <gradient:#FFB347:#8B4A00>Espada del Señor de las Púas</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/dark_fantasy_cosmetics/spike_lord_sword
+    custom_model_data: 1157

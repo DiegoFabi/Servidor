@@ -1,0 +1,21 @@
+eventStartCommands: []
+eventEndCommands: []
+breakableMaterials: []
+isEnabled: true
+eventType: TIMED
+bossFilenames:
+- gremlin_1.yml
+- gremlin_2.yml
+- gremlin_3.yml
+- gremlin_4.yml
+- gremlin_5.yml
+- gremlin_6.yml
+- gremlin_7.yml
+- gremlin_8.yml
+- gremlin_9.yml
+- gremlin_10.yml
+localCooldown: 360.0
+globalCooldown: 25.0
+weight: 50.0
+eventDuration: 30.0
+spawnType: normal_surface_spawn.yml

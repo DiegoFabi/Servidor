@@ -1,0 +1,1019 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║  justTeams · config.yml                                                  ║
+# ║                                                                          ║
+# ║  Main plugin settings: teams, creation, bank, homes, warps, cross-server ║
+# ║  sync and performance. Every option is documented below.                 ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# Configuration version - DO NOT MODIFY
+config-version: 51
+
+# ────────────────────────────────────────────────────────────────────────────
+#                         Proxy Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure cross-server functionality for network setups.
+# Supports BungeeCord, Velocity, and Waterfall proxies.
+#
+proxy_settings:
+  # Proxy type selection
+  # Options: "NONE", "BUNGEE", "VELOCITY"
+  type: "NONE"
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Database Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Choose your preferred storage method for team data.
+# H2 is recommended for single servers, MySQL for networks.
+#
+storage:
+  # Database type: "h2", "mysql", "mariadb"
+  type: "h2"
+
+  # MySQL/MariaDB Settings
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "username"
+    username: "root"
+    password: ""
+    
+    # Connection security
+    use_ssl: false
+    allow_public_key_retrieval: true
+    use_unicode: true
+    character_encoding: "utf8mb4"
+    collation: "utf8mb4_unicode_ci"
+    
+    # Connection timeouts (milliseconds)
+    connection_timeout: 30000
+    socket_timeout: 60000
+    auto_reconnect: true
+    fail_over_read_only: false
+    max_reconnects: 3
+
+    # Connection Pool Settings (Optimized for both H2 and MySQL)
+  connection_pool:
+    # H2 defaults: max_size=4, min_idle=1
+    # MySQL defaults: max_size=10, min_idle=3  
+    max_size: 10
+    min_idle: 3
+    
+    # Timeouts in milliseconds
+    idle_timeout: 300000          # 5 minutes
+    max_lifetime: 1800000         # 30 minutes
+    connection_timeout: 30000     # 30 seconds (match MySQL timeout)
+    validation_timeout: 5000      # 5 seconds
+    
+    # Connection testing
+    connection_test_query: "SELECT 1"
+    
+    # Leak detection (0 = disabled, >0 = milliseconds before leak warning)
+    leak_detection_threshold: 0
+
+# ────────────────────────────────────────────────────────────────────────────
+#                         Redis Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Redis provides instant cross-server messaging (< 100ms latency).
+# When enabled, Redis handles real-time updates while MySQL stores data.
+# If Redis fails, the plugin automatically falls back to MySQL polling.
+#
+redis:
+  # Enable Redis for instant cross-server communication
+  # Set to 'false' to use only MySQL (1-second polling)
+  enabled: false
+  
+  # Redis server connection details
+  host: "localhost"
+  port: 6379
+  
+  # Authentication (leave empty if not required)
+  password: ""
+  
+  # SSL/TLS encryption for Redis connection
+  use_ssl: false
+  
+  # Connection timeout in milliseconds
+  # Lower values fail faster, higher values tolerate network delays
+  timeout: 5000
+  
+  # Connection pool settings
+  pool:
+    # Maximum total connections in pool
+    max_total: 20
+    
+    # Maximum idle connections to keep open
+    max_idle: 10
+    
+    # Minimum idle connections to maintain
+    min_idle: 2
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Feature Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Enable or disable specific features to customize functionality.
+# Each feature can be toggled independently.
+#
+features:
+  # Core Team Management
+  team_creation: true
+  team_disband: true
+  team_invites: true
+  team_join_requests: true
+  team_blacklist: true
+  team_transfer: true
+  team_public_toggle: true
+  team_rename: true
+  
+  # Member Management
+  member_kick: true
+  member_promote: true
+  member_demote: true
+  member_leave: true
+  
+  # Information Features
+  team_info: true
+  team_tag: true
+  team_description: true
+  team_leaderboard: true
+  
+  # Home System
+  team_home: true
+  team_home_set: true
+  team_home_teleport: true
+  
+  # Warp System
+  team_warps: true
+  team_warp_set: true
+  team_warp_delete: true
+  team_warp_teleport: true
+  
+  # PvP Features
+  team_pvp: true
+  team_pvp_toggle: true
+  
+  # Economy Features (Requires Vault)
+  team_bank: true
+  team_bank_deposit: true
+  team_bank_withdraw: true
+  
+  # Storage Features
+  team_enderchest: true
+  
+  # Communication Features
+  team_chat: true
+  team_message_command: true
+  ally_chat: true        # /team allychat <msg> (alias /team ac): chat shared with allied teams
+  
+  # Visual Features
+  team_glow: true
+
+  # Larger feature modules. Toggle these on/off here or from the in-game admin
+  # Modules menu (/team admin -> Modules). Turning one off hides its GUI buttons
+  # and blocks its commands. Each also has its own detailed section further down
+  # (team_upgrades, team_buffs, feature_costs) which still applies when enabled.
+  team_prices: true      # the /team prices menu and per-team action pricing (feature_costs)
+  team_upgrades: true    # the tier upgrade system (also needs team_upgrades.enabled)
+  team_buffs: true       # the proximity team buffs (also needs team_buffs.enabled)
+  team_quests: true      # team quests (also needs quests.yml settings.enabled)
+  team_allies: true      # team alliances (also needs team_allies.enabled)
+
+  # Cross-Server Display
+  show_cross_server_status: true
+
+# ────────────────────────────────────────────────────────────────────────────
+#                          General Settings
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Core plugin settings affecting overall behavior.
+#
+settings:
+  # Colours for the <primary> and <secondary> tags. Use them in any message, menu name or lore,
+  # for example "<primary>Team</primary> <secondary>Alpha</secondary>". Hex (#RRGGBB) or a colour
+  # name such as gold or aqua.
+  colors:
+    primary: "#4C9DDE"
+    secondary: "#FFD700"
+
+  # Extra restrictions while team PvP is enabled. With team PvP off, all
+  # player-attributed melee, projectile and TNT damage is already blocked.
+  # TNT without an identifiable player source cannot be assigned to a team.
+  friendly_fire:
+    block_projectiles: false
+    block_tnt: false
+  # Debug Options
+  debug: false
+
+  # Which name to show for players in menus, member lists and team heads.
+  # Leave empty to use the real Minecraft username (default).
+  # Set a PlaceholderAPI placeholder to use that instead, for example: '%cmi_user_nickname%'
+  # If PlaceholderAPI is missing or the placeholder has no value, the real username is used.
+  player_name_placeholder: ''
+
+  # The word a player types in chat to cancel a prompt (team name, tag, colour, bank amount, warp
+  # password, price, etc.). "cancel" always works too. Each language file can set its own word with
+  # input_cancel_keyword; the prompt messages use <cancel>, so they show the right word.
+  input_cancel_keyword: "cancel"
+
+  # Chat prompts (team name, tag, bank amount, warp password, ...).
+  #   timeout_seconds: how long a prompt waits for an answer. When it runs out the player is told,
+  #     and their next chat message is normal chat again.
+  #   show_command_hint: after each prompt, also show "/team input <answer>". That command answers
+  #     the prompt without chat, for servers where a chat or proxy plugin keeps chat messages from
+  #     reaching plugins on this server.
+  chat_input:
+    timeout_seconds: 120
+    show_command_hint: true
+
+  # Resource-pack GUI mode. Turn this ON only when the matching "Clan Forge" resource pack is applied on
+  # the server. It replaces each menu's title with a hidden glyph so the pack draws the full skinned
+  # background (chest + player inventory) and the plugin drops its own title text (the pack bakes it in).
+  # Without the pack the titles would show a missing-character box, so leave it off otherwise. Applies
+  # live on /team reload; no restart needed.
+  resource_pack:
+    enabled: false
+
+  # Per-player language / localization.
+  #   default: the language served to players who have not picked their own. If a matching
+  #     lang/<code>.yml exists (e.g. "ru" with the shipped lang/ru.yml) that translation is
+  #     served to everyone; "en" uses the English base in messages.yml. You can also switch
+  #     this live from /team admin > Language (no restart needed).
+  # Additional languages live in the lang/ folder as lang/<code>.yml (ships es, fr, de, ru).
+  # Any message a translation file is missing falls back to messages.yml, so partial
+  # translations never break. Players pick their language with /team usersettings.
+  #
+  # autocomplete_files: when true, on load every lang/<code>.yml is filled with any keys
+  #   it is missing (from the shipped translation of that language, else from messages.yml)
+  #   so each file always holds the complete key
+  #   set, ready to translate. The server log reports how many keys each language still
+  #   has in the base language. Set false to leave your language files untouched.
+  language:
+    default: en
+    autocomplete_files: true
+
+  # Server Configuration
+  # single_server_mode: Set to true if you have only ONE server
+  #   - Disables cross-server features for better performance
+  #   - Use with H2 database for standalone servers
+  # Set to false for multi-server networks with MySQL
+  single_server_mode: true
+  
+  # server-identifier: Unique name for this server in your network
+  #   - Must be different for each server (e.g., "survival", "creative", "lobby")
+  #   - Only used when single_server_mode is false
+  #   - Used to track which server players are on
+  server-identifier: "survival"
+  
+  # Theme Colors
+  main_color: "#4C9DDE"
+  accent_color: "#FFD700"
+  currency_format: ""
+
+  # PlaceholderAPI output for an empty leaderboard position. Set to "" to display nothing.
+  top_empty_value: "---"
+  
+  # Team Glow Settings (needs PacketEvents). Members glow through walls for the players allowed to see it.
+  # Which colour a glowing player gets is chosen by color_mode:
+  #   TEAM     - the team's colour from /team setcolor or the settings menu. Teams without a colour
+  #              use the role colours below. (default, same as older versions)
+  #   ROLE     - always the role colours below, whatever colour the team picked.
+  #   RELATION - depends on who is looking: your own team glows in relation_colors.own, every other
+  #              team in relation_colors.other, allies in allies.color when allies.enabled is true.
+  #              Set only_show_own_team to false, otherwise other teams do not glow at all.
+  # Colours are Minecraft colour names: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED,
+  # DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE.
+  glow:
+    color_mode: TEAM
+    relation_colors:
+      own: GREEN
+      other: RED
+    # Show mutually allied teams even when only_show_own_team is enabled.
+    allies:
+      enabled: false
+      color: YELLOW
+    # Turn JustTeams' own team glow on or off. This is the same as features.team_glow (either one being
+    # false disables it). Set this to false if you use another glow plugin (CMI, etc.), otherwise both
+    # send scoreboard-team packets for the same players and their nametags flicker between the colours.
+    enabled: true
+    # Role colours, used by color_mode ROLE and by TEAM for teams without a colour.
+    colors:
+      owner: "DARK_RED"
+      co_owner: "RED"
+      mod: "DARK_GREEN"
+      member: "WHITE"
+    # If true, you can only see the glow of your OWN team members.
+    # If false, you see everyone's glow (if they are in a team).
+    only_show_own_team: true
+    # Maximum distance (in blocks) to see the glow. Default: 30
+    range: 30
+    # Interval (in ticks) to check for glow updates. Default: 20 (1 second)
+    check_interval: 20
+    # The glow colour comes from a scoreboard team, and a scoreboard team also colours the vanilla
+    # nametag. If you run a nametag plugin (TAB, UnlimitedNameTags) that draws its own nametags, set
+    # this to true so the glow no longer recolours or shows the vanilla nametag; only your nametag
+    # plugin's nametag is shown and the glow outline still works. Leave false on a normal server,
+    # otherwise glowing players' nametags are hidden.
+    hide_vanilla_nametag: false
+    # Glow colours work by putting glowing players into JustTeams' own scoreboard teams (JT_<COLOUR>)
+    # on each viewer's client. That replaces the team TAB or CMI put them in, which changes the tab list
+    # order and the nametag colour. Set this to false to only switch the outline on: players stay in
+    # their normal scoreboard team, TAB sorting and nametags are left alone, and the outline takes the
+    # colour of that team (the colour your nametag plugin gives the name).
+    use_color_teams: true
+
+  # Show in-game notification to admins when PacketEvents is missing
+  # Set to false to disable the in-game reminder
+  notify-missing-packetevents: true
+
+  # Show the "update available" notice to admins when they join. The console still logs it.
+  notify-updates: true
+
+  # How many backups of each config and language file JustTeams keeps in plugins/justTeams/backups.
+  # -1 keeps all of them (default). A number such as 5 keeps the newest 5 copies of every file
+  # and removes older ones on startup and with /team admin testmigration cleanup-backups.
+  backups:
+    keep_per_file: -1
+
+  # --- bStats Metrics ---
+  # bStats collects some anonymous data for plugin authors like server version, number of players, etc.
+  # To see what data is collected, go to https://bstats.org/what-is-collected/
+  # You can disable this here if you wish.
+  bstats:
+    enabled: true
+
+  # --- FastStats Metrics ---
+  # FastStats provides detailed plugin analytics and error tracking.
+  # See https://faststats.dev/ for more information.
+  # You can disable this here if you wish.
+  faststats:
+    enabled: true
+
+  # Team Limits
+  max_team_size: 10
+  # Co-owner limit per team: -1 = unlimited, 0 = no further promotions.
+  # Existing co-owners keep their rank when this limit is lowered.
+  max_co_owners: -1
+
+  # Permission-based team sizes
+  # Permission format: justteams.team.size.<number>
+  # The highest permission value will be used
+  # If disabled or no permission found, uses max_team_size above
+  permission_based_team_size: true
+
+  # Length limits count visible characters only (colour codes are not counted). Every way of setting a
+  # name or tag (command, menu, admin menu) uses these limits, and a rejected value gets a message that
+  # names the field, the reason and the limit.
+  min_name_length: 3
+  max_name_length: 16
+  min_tag_length: 2
+  max_tag_length: 6
+  max_description_length: 64
+
+  allow_formatting_codes: true
+  blocked_formatting_codes:
+    - "&k"
+    - "&l"
+    - "&m"
+    - "&n"
+    - "&o"
+
+  rename_cooldown: 604800
+
+  default_pvp_status: true
+  default_public_status: false
+
+  # Team Creation Settings
+  creation:
+    require_color: false
+    default_color: "<white>"
+    use_gui_color_selection: false
+    tag_optional: false
+    # Description shown for a team until the owner sets one with /team setdesc.
+    # Supports MiniMessage formatting. Applies to existing teams that never set a description too.
+    default_description: "A new Team!"
+    # Allow Unicode letters and digits (accents, Cyrillic, CJK, and so on) in team tags and names.
+    # When false (default) tags and names stay ASCII letters/digits only. Symbols, spaces and
+    # formatting characters are never allowed either way. On MySQL/MariaDB you need a utf8mb4
+    # database/table charset for non-Latin characters to store correctly.
+    allow_unicode: false
+    # Allow Private Use Area characters (U+E000-U+F8FF) in team tags and names. These are the
+    # codepoints resource packs use for custom glyphs/icons, so turn this on if your pack adds
+    # icons you want players to use. Players without your resource pack see an empty box instead,
+    # and each glyph still counts toward max_tag_length / max_name_length.
+    # Set per context, so you can allow icons in tags while keeping names plain (or the reverse).
+    # Independent of allow_unicode. Formatting characters can never be used either way.
+    allow_custom_glyphs:
+      tag: false
+      name: false
+    # Allow two teams to share the same tag. Older versions permitted this; the default now keeps
+    # tags unique. Set to true to restore the old behaviour (useful on networks that already have
+    # many teams sharing a tag from older versions and don't want new creates/renames blocked).
+    # This only affects NEW creates and renames; existing teams are never changed either way. When
+    # duplicates exist, a tag lookup (e.g. /team join <tag>) resolves to the oldest matching team.
+    allow_duplicate_tags: false
+    # Allow spaces in team names. When true, /team create <tag> <name> lets the name contain spaces
+    # (e.g. "The Salty Crew"). When false, names must be a single word (letters, digits, underscore).
+    # The tag always comes first either way, and teams can be referenced by their tag.
+    allow_spaces_in_name: true
+    # Words a team name or tag may not contain (not case-sensitive, also inside longer words).
+    # Players get a message naming the blocked word. Set to [] to allow everything. Administrators
+    # renaming a team from the admin menu are not limited by this list.
+    blocked_words:
+      - "admin"
+      - "staff"
+      - "moderator"
+      - "console"
+      - "server"
+      - "minecraft"
+
+  # Cross-Server Synchronization (requires single_server_mode: false and MySQL)
+  enable_cross_server_sync: false
+
+  sync_optimization:
+    heartbeat_interval: 600
+    cross_server_sync_interval: 3
+    critical_sync_interval: 1
+    max_teams_per_batch: 100
+    enable_lazy_loading: true
+    team_cache_ttl: 1200
+    enable_optimistic_locking: true
+    max_sync_retries: 2
+    sync_retry_delay: 1000
+    max_batch_size: 500
+    cache_cleanup_interval: 900
+    async_database_operations: true
+    bulk_operation_batch_size: 200
+    connection_validation_interval: 60
+    heartbeat_batch_size: 1
+    enable_connection_pooling: true
+
+  performance:
+    enable_metrics: false
+    log_slow_queries: true
+    slow_query_threshold: 50
+    detailed_sync_logging: false
+    monitor_connection_pool: false
+    connection_pool_log_interval: 60
+    enable_debug_logging: false
+    gui_update_throttle_ms: 100
+    max_concurrent_db_operations: 5
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Team Tier Upgrade System
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Teams start at tier 1 and can spend bank money to progress through
+# tiers. Each tier unlocks larger teams, a bigger ender chest, and
+# small combat perks.
+#
+# Security guarantees (enforced in code, NOT just config):
+#   - damage_bonus_percent is hard capped at 15% regardless of config
+#   - max_members hard cap is 100
+#   - enderchest_rows hard cap is 6 (Minecraft limit)
+#   - home_cooldown_reduction_percent hard cap is 75%
+#   - max tier hard cap is 10
+#
+# Only the team OWNER can purchase upgrades. Upgrades deduct from the
+# team bank. Skipping tiers is not allowed - each upgrade steps +1.
+# ────────────────────────────────────────────────────────────────────────────
+team_upgrades:
+  # Set to false to disable tier upgrades entirely. When disabled:
+  #   - All teams stay at tier 1 with base stats
+  #   - The Upgrades button is hidden in the team GUI
+  #   - Ender chest falls back to settings.team_ender_chest.rows
+  #   - Max team size falls back to settings.max_team_size / permissions
+  enabled: true
+
+  # What currency team tier upgrades are paid with:
+  #   money  - use the enabled team bank first, then the buyer's Vault wallet for the rest.
+  #            If features.team_bank or team_bank.enabled is false, use only the wallet.
+  #            Uses each tier's 'cost'; requires Vault + an economy provider for wallet payments.
+  #   points - charge the team's points. Uses each tier's 'points_cost'.
+  #   both   - require BOTH: the team must have enough money AND enough points,
+  #            and both are charged. If one deduction fails the other is refunded.
+  cost_type: money
+
+  # max_allies (optional, per tier): how many allies a team at this tier may have. Higher tiers can
+  # ally with more teams. If a tier omits max_allies, the global team_allies.max_allies is used.
+  # Lowering a tier's cap never removes existing allies (they are grandfathered); it only stops the
+  # team adding new ones until they are under the cap.
+  tiers:
+    1:
+      # Tier 1 is the starting tier. Cost is ignored (you start here for free).
+      max_members: 10
+      enderchest_rows: 3
+      damage_bonus_percent: 0
+      home_cooldown_reduction_percent: 0
+      max_allies: 2
+      cost: 0
+      points_cost: 0
+    2:
+      max_members: 12
+      enderchest_rows: 4
+      damage_bonus_percent: 1
+      home_cooldown_reduction_percent: 10
+      max_allies: 3
+      cost: 10000
+      points_cost: 100
+    3:
+      max_members: 15
+      enderchest_rows: 5
+      damage_bonus_percent: 2
+      home_cooldown_reduction_percent: 20
+      max_allies: 5
+      cost: 50000
+      points_cost: 500
+    4:
+      max_members: 20
+      enderchest_rows: 6
+      damage_bonus_percent: 3
+      home_cooldown_reduction_percent: 30
+      max_allies: 7
+      cost: 150000
+      points_cost: 1500
+    5:
+      max_members: 25
+      enderchest_rows: 6
+      damage_bonus_percent: 5
+      home_cooldown_reduction_percent: 50
+      max_allies: 10
+      cost: 500000
+      points_cost: 5000
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Team PvP Settings
+# ────────────────────────────────────────────────────────────────────────────
+team_pvp:
+  # Cooldown in seconds between PvP status toggles (per team)
+  # Set to 0 to disable the cooldown
+  # Bypass with justteams.bypass.pvp.cooldown permission
+  toggle_cooldown: 300
+
+  # Disable flight when a player takes damage from another player
+  # Applies to all players, not just team members
+  # Works with both elytra and creative/gamemode fly
+  disable_fly_on_combat: false
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Team Disband Settings
+# ────────────────────────────────────────────────────────────────────────────
+team_disband:
+  # Cooldown in seconds on the disband button in the team menu before it can be clicked again.
+  # This is just an anti double-click guard on opening the confirmation menu; it does not limit
+  # disbanding itself (a confirmation is always required). Set to 0 to open the menu instantly.
+  confirm_cooldown_seconds: 3
+
+  # Automatically disband teams that have gone inactive. A team is inactive when EVERY member has
+  # not been seen for inactive_days. Teams with no recorded activity are never touched. OFF by default.
+  # On a network run this on ONE server only (or accept that the first server to sweep wins; a second
+  # sweep on an already-removed team is harmless).
+  auto_disband:
+    enabled: false
+    # Days with no activity from ANY member before the team is removed.
+    inactive_days: 30
+    # How often the sweep runs, in minutes (minimum 5). 360 = every 6 hours.
+    check_interval_minutes: 360
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Team Buffs (proximity)
+# ────────────────────────────────────────────────────────────────────────────
+# When enough team members are close together, they gain the buffs the owner picked.
+# The owner chooses which buffs are active with /team buffs, up to max_active. Enabling a
+# buff charges the team's points once (points_cost per buff). Works on Paper and Folia.
+team_buffs:
+  enabled: true
+  # How many team members (counting the player) must be within 'radius' for buffs to apply.
+  required_nearby_members: 3
+  # Radius in blocks to look for nearby team members.
+  radius: 20
+  # How often (in ticks) to recheck proximity and refresh the effects. 20 ticks = 1 second.
+  # Effects are re-applied with a short duration each pass, so they fade a moment after a team
+  # spreads out. Keep this well below effect lifetime; the plugin handles that automatically.
+  check_interval_ticks: 60
+  # How many buffs a team may have active at once.
+  max_active: 2
+  # The pool of buffs an owner can pick from. 'type' is POTION or STAT:
+  #   POTION - a vanilla potion effect. 'potion' is a PotionEffectType name, 'amplifier' 0 = level I.
+  #   STAT   - a plugin bonus. Supported 'stat': MINING_XP (percent extra XP from mining ores).
+  # 'points_cost' is charged from the team's points once, when the owner enables that buff.
+  # 'display' (MiniMessage) and 'icon' (a Material) are shown in the /team buffs menu.
+  # Keep amplifiers low for balance; every value here is also hard-capped in code.
+  available:
+    regeneration:
+      type: POTION
+      potion: REGENERATION
+      amplifier: 0
+      display: "<red>Regeneration I"
+      icon: GHAST_TEAR
+      points_cost: 0
+    speed:
+      type: POTION
+      potion: SPEED
+      amplifier: 0
+      display: "<aqua>Speed I"
+      icon: SUGAR
+      points_cost: 0
+    haste:
+      type: POTION
+      potion: HASTE
+      amplifier: 0
+      display: "<gold>Haste I"
+      icon: GOLDEN_PICKAXE
+      points_cost: 100
+    resistance:
+      type: POTION
+      potion: RESISTANCE
+      amplifier: 0
+      display: "<gray>Resistance I"
+      icon: IRON_CHESTPLATE
+      points_cost: 150
+    strength:
+      type: POTION
+      potion: STRENGTH
+      amplifier: 0
+      display: "<dark_red>Strength I"
+      icon: BLAZE_POWDER
+      points_cost: 200
+    mining_xp:
+      type: STAT
+      stat: MINING_XP
+      percent: 10
+      display: "<green>+10% Mining EXP"
+      icon: EXPERIENCE_BOTTLE
+      points_cost: 150
+    fire_resistance:
+      type: POTION
+      potion: FIRE_RESISTANCE
+      amplifier: 0
+      display: "<gold>Fire Resistance"
+      icon: MAGMA_CREAM
+      points_cost: 150
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Broadcast Settings
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Control server-wide announcements for team events.
+#
+broadcasts:
+  team-created: true
+  team-disbanded: true
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Team Chat Settings
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure the team chat system.
+# When character_enabled is true, players can prefix messages with the character to send team chat
+# Set character to a symbol like "#" or "!" 
+# IMPORTANT: Never leave character empty ("") as it will capture ALL messages!
+#
+team_chat:
+  character_enabled: true
+  character: "#"  # Use # prefix for team chat (e.g., "#hello team")
+  require_space: false  # If true, requires space after character (e.g., "# hello team")
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Home Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure team home teleportation system.
+#
+team_home:
+  warmup_seconds: 5
+  cooldown_seconds: 300
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Warp Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure the team warp system.
+#
+team_warps:
+  max_warps: 5
+  warmup_seconds: 5
+  cooldown_seconds: 300
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Bank Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure the team banking system (requires Vault).
+#
+team_bank:
+  enabled: true
+  max_balance: 1000000.0
+
+# ────────────────────────────────────────────────────────────────────────────
+#                     Ender Chest Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure the shared team ender chest.
+#
+team_enderchest:
+  enabled: true
+  rows: 3
+
+# ────────────────────────────────────────────────────────────────────────────
+#                      Team Allies Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure the team alliance system.
+# Allows teams to form alliances with other teams.
+#
+team_allies:
+  enabled: true
+  max_allies: 10
+  # Allow teams to toggle accepting join requests
+  allow_request_toggle: true
+
+# ────────────────────────────────────────────────────────────────────────────
+#                    World Restrictions Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure per-world feature restrictions.
+# Features can be disabled in specific worlds to prevent abuse.
+#
+# Available features to restrict:
+#   - sethome: Prevents setting team home in specified worlds
+#   - setwarp: Prevents creating team warps in specified worlds
+#   - home: Prevents teleporting to team home from specified worlds
+#   - warp: Prevents teleporting to team warps from specified worlds
+#   - enderchest: Prevents accessing team ender chest in specified worlds
+#   - bank: Prevents using team bank in specified worlds
+#
+world_restrictions:
+  enabled: true
+  
+  # List of worlds where specific features are disabled
+  # Add world names exactly as they appear in your server
+  disabled_worlds:
+    # Prevent ender chest access in dangerous worlds
+    enderchest:
+      - "world_nether"
+      - "world_the_end"
+    # Prevent setting home in PvP/event worlds
+    sethome:
+      - "pvp_world"
+      - "event_world"
+    # Prevent creating warps in PvP/event worlds
+    setwarp:
+      - "pvp_world"
+      - "event_world"
+    # Prevent teleporting home from PvP/event worlds
+    home:
+      - "pvp_world"
+      - "event_world"
+    # Prevent teleporting to warps from PvP worlds
+    warp:
+      - "pvp_world"
+    # Prevent bank access in creative worlds
+    bank:
+      - "creative_world"
+
+# ────────────────────────────────────────────────────────────────────────────
+#                      Feature Costs Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure costs for using team features.
+# Supports both Vault economy and item-based costs.
+#
+feature_costs:
+  enabled: true
+  
+  # Economy costs (requires Vault)
+  economy:
+    enabled: true
+
+    # Cost for these admin-only actions. The per-team actions (sethome, home,
+    # enderchest, setwarp, warp, bank_deposit, bank_withdraw) are configured under
+    # the 'clan-settings' section at the bottom of this file instead.
+    team_creation: 0.0
+    team_join: 0.0        # Cost for joining a team (invite accept, public join, join request accept)
+    rename: 500.0
+
+  # Permission-based join fees (OFF by default)
+  # When enabled, players can have different join fees based on permissions.
+  # Permission format: justteams.joinfee.<amount>  (e.g. justteams.joinfee.500 = pays $500 to join).
+  # The highest permission the player actually holds is used, capped at max_fee.
+  # Only permissions granted explicitly (rank/group nodes, LuckPerms, attachments) count; an op's
+  # blanket access does NOT, so enabling this will not silently charge your staff the max fee.
+  # If disabled or the player has no matching permission, the team_join cost above is used.
+  permission_based_join_fee:
+    enabled: false
+    max_fee: 10000.0      # Maximum join fee cap (prevents excessive permissions)
+  
+  # Item costs
+  items:
+    enabled: false
+    
+    # Item costs for each feature (format: "MATERIAL:AMOUNT")
+    team_creation:
+      - "DIAMOND:4"
+    sethome:
+      - "DIAMOND:2"
+      - "EMERALD:1"
+    home:
+      - "ENDER_PEARL:1"
+    enderchest:
+      - "ENDER_CHEST:1"
+    setwarp:
+      - "DIAMOND:5"
+      - "GOLD_INGOT:10"
+    warp:
+      - "GOLD_INGOT:2"
+    
+    # Whether to consume items on use (true) or just require them in inventory (false)
+    consume_on_use: true
+
+# ────────────────────────────────────────────────────────────────────────────
+#                        Effects Configuration
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure sound and particle effects.
+#
+effects:
+  sounds:
+    enabled: true
+    
+    # General Sounds
+    success: "BLOCK_NOTE_BLOCK_PLING"
+    error: "BLOCK_NOTE_BLOCK_BASS"
+    teleport: "BLOCK_BEACON_ACTIVATE"
+    gui_open: "BLOCK_WOODEN_BUTTON_CLICK_ON"
+    
+    # Event Sounds
+    team_created: "ENTITY_PLAYER_LEVELUP"
+    team_disbanded: "BLOCK_NOTE_BLOCK_CHIME"
+    member_join: "BLOCK_NOTE_BLOCK_HARP"
+    member_leave: "BLOCK_NOTE_BLOCK_BELL"
+    permission_change: "BLOCK_NOTE_BLOCK_FLUTE"
+    warp_created: "BLOCK_NOTE_BLOCK_XYLOPHONE"
+    warp_deleted: "BLOCK_NOTE_BLOCK_COW_BELL"
+    home_set: "BLOCK_NOTE_BLOCK_GUITAR"
+    bank_transaction: "BLOCK_NOTE_BLOCK_BIT"
+    
+  particles:
+    teleport_warmup: "PORTAL"
+    teleport_success: "END_ROD"
+
+# ────────────────────────────────────────────────────────────────────────────
+#                      Bedrock Edition Support
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure cross-platform support for Bedrock Edition players.
+# Requires Floodgate plugin.
+#
+bedrock_support:
+  enabled: true
+  show_platform_indicators: true
+  show_gamertags: true
+  full_feature_support: true
+  cross_platform_teams: true
+  uuid_mode: "auto"
+  # Name prefix Floodgate gives Bedrock players ("." by default). "auto" reads it from Floodgate
+  # on this server and uses "." when Floodgate only runs on the proxy. Set it by hand if your
+  # proxy uses another prefix, for example "*". Lets players type a Bedrock name with or without it.
+  username_prefix: "auto"
+
+# ────────────────────────────────────────────────────────────────────────────
+#                    Plugin Integrations
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Configure third-party plugin integrations for enhanced functionality.
+#
+integrations:
+  # EternalCombat Integration
+  # Prevents players from using team commands while in combat
+  # Requires EternalCombat plugin: https://modrinth.com/plugin/eternalcombat
+  eternalcombat:
+    enabled: true
+    # Block these actions while in combat
+    prevent_teleport: true          # Prevent /team home and warp teleports
+    prevent_leave: true              # Prevent leaving team
+    prevent_disband: true            # Prevent disbanding team
+    prevent_invite: true             # Prevent inviting players
+    prevent_kick: true               # Prevent kicking members
+    prevent_transfer: true           # Prevent transferring ownership
+    prevent_bank_withdraw: true      # Prevent withdrawing from bank
+    prevent_enderchest: true         # Prevent opening team enderchest
+    prevent_settings_change: true    # Prevent changing team settings
+
+  # ExcellentClaims Integration
+  # Makes clan teleports respect land protection, so a team can't drop a home or warp
+  # inside land they don't own or teleport onto someone else's claim.
+  # A claim counts as the team's if any team member owns it.
+  # Requires ExcellentClaims: https://github.com/nulli0n/ExcellentClaims-spigot
+  griefprevention:
+    # Uses existing claim owner/build trust; never grants team members new claim rights.
+    enabled: false
+    prevent_teleport_into_claim: true
+    prevent_set_in_claim: true
+
+  excellentclaims:
+    enabled: true
+    # Block /team home and /team warp when the destination is inside a claim no team member owns
+    prevent_teleport_into_claim: true
+    # Block /team sethome and /team setwarp when you're standing in a claim no team member owns
+    prevent_set_in_claim: true
+
+  # HuskClaims Integration
+  # Same behaviour as ExcellentClaims above, for HuskClaims. A claim counts as the team's if any
+  # team member owns it OR is trusted in it. Both integrations can be enabled at once.
+  # Requires HuskClaims: https://william278.net/project/huskclaims
+  huskclaims:
+    enabled: true
+    # Block /team home and /team warp when the destination is inside a claim the team can't build in
+    prevent_teleport_into_claim: true
+    # Block /team sethome and /team setwarp when you're standing in a claim the team can't build in
+    prevent_set_in_claim: true
+
+  # Lands Integration
+  # Same behaviour as HuskClaims above, for Lands. A land area counts as the team's if any team
+  # member owns it or is trusted in it. Requires Lands: https://www.spigotmc.org/resources/53313/
+  lands:
+    enabled: true
+    # Block /team home and /team warp when the destination is inside land the team is not trusted in
+    prevent_teleport_into_claim: true
+    # Block /team sethome and /team setwarp when you're standing in land the team is not trusted in
+    prevent_set_in_claim: true
+
+  # Phoenix Integration (Refine Development core)
+  # Hides a player's team tag and name while they are nicked/disguised by Phoenix, so their clan
+  # tag over their head and in the tab list does not give away who they are. When they un-disguise
+  # the tag comes back. Only affects how the tag is shown, never their actual team membership.
+  # Requires Phoenix: https://docs.refinedev.org/Phoenix/
+  phoenix:
+    enabled: true
+    # Hide the team tag/name in placeholders and TAB while a player is disguised.
+    # Set to false to keep the integration loaded but leave tags visible during a disguise.
+    hide_team_tag_when_disguised: true
+
+  # TAB Integration
+  # Only does something on old TAB builds that still have TabPlayer#setProperty: it stores the team id
+  # as a property. TAB 5 and newer have no such API, so the hook only logs that TAB was found. It never
+  # sorts the tab list itself; sorting by team is done in TAB's own config with %justteams_tab_sort%.
+  # Set to false to not load the hook at all.
+  tab:
+    enabled: true
+
+# Presence privacy
+# Prevents team commands, GUIs and PlaceholderAPI counts from revealing staff in vanish/nick mode.
+privacy:
+  hide_vanished_online_status: true
+  hide_disguised_online_status: true
+  # Another backend cannot inspect vanish state. Keep remote presence private unless your network
+  # synchronizes vanish separately and you intentionally want JustTeams to display it.
+  hide_unknown_remote_online_status: true
+  # Staff with this permission can still see the real online state.
+  hidden_presence_bypass_permission: "justteams.privacy.see_hidden"
+# ═══════════════════════════════════════════════════════════════════════════
+#  Delegated pricing (clan-settings)
+# ═══════════════════════════════════════════════════════════════════════════
+# You decide which team actions the TEAM OWNER may price for their own team, and
+# the base price for each. For every action:
+#   editable:      true lets the team owner set their own price from /team prices;
+#                  false keeps it fixed at the value below (owner cannot change it).
+#   default-value: the price charged when the team has not set its own.
+#
+# editable defaults to false, so nothing changes on update until you opt in. When
+# you update from an older version, default-value is seeded from your existing
+# feature_costs.economy price, so your prices are preserved.
+#
+# Team owners open a menu with /team prices; there they can set a price for any
+# action marked editable, up to max-editable-price. Non-owners see it read-only.
+# Actions not listed here (team creation, rename, join fee) stay admin-controlled.
+clan-settings:
+  # Highest price a team owner may set for any editable action.
+  max-editable-price: 1000000.0
+  # Show the join fee in the Team Prices menu so owners can enable/disable it and set the amount
+  # (the amount is still capped by the justteams.joinfee.<amount> permission). Set false to hide it.
+  join-fee-editable: true
+  # Charge the bank_deposit and bank_withdraw prices below on every /team bank deposit or withdraw.
+  # The fee is paid like other features: from the team bank first, the rest from the player's balance.
+  # false (default) keeps deposits and withdrawals free and hides both rows in /team prices.
+  charge-bank-fees: false
+  sethome:
+    editable: false
+    default-value: 100.0
+  home:
+    editable: false
+    default-value: 50.0
+  enderchest:
+    editable: false
+    default-value: 25.0
+  setwarp:
+    editable: false
+    default-value: 200.0
+  warp:
+    editable: false
+    default-value: 75.0
+  bank_deposit:
+    editable: false
+    default-value: 0.0
+  bank_withdraw:
+    editable: false
+    default-value: 10.0

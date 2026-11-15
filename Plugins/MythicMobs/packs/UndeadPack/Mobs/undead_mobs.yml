@@ -1,0 +1,184 @@
+
+
+Ghoul:
+  Type: ZOMBIE
+  Display: "&6ɢʜᴏᴜʟ ᴅᴇ ɴɪᴇᴠᴇ  &7(&a<caster.level> ⇪ &7| &c<caster.hp{round=0}> ❤&7)"
+  Health: 25
+  Damage: 3
+  Armor: 2
+  LevelModifiers:
+    Health: 0
+    Armor: 0
+    Damage: 0  #  Read more about it here https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/Mobs/Power
+    KnockbackResistance: 0.1
+    MovementSpeed: 0
+    Power: 0
+  Faction: Undead
+  Options:
+    MovementSpeed: 0.23
+    ShowHealth: true
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: true
+    Despawn: true
+    FollowRange: 25
+    Silent: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - model{mid=ghoul;step=1;tint=false;usm=true} @self ~onSpawn
+  - setstance{stance=Walking} @self
+  - effect:sound{s=entity.husk.ambient;volume=0.75;pitch=0.8} @self ~onTimer:140 0.35
+  - effect:sound{s=entity.husk.ambient;volume=0.75;pitch=1} @self ~onDeath
+  - skill{s=Changetarget} ~onTimer:160 <99%
+  - skill{s=Cancelattack;sync=true} ~onAttack
+  - skill{s=Ghoul_Attack} ~onTimer:20
+  - skill{s=Ghoul_Dash} ~onTimer:40 0.7
+  - skill{s=Ghoul_Hit} ~onDamaged
+  - effect:sound{s=entity.player.attack.crit;volume=0.55;pitch=0.33} @self ~onDamaged
+  
+
+Specter:
+  Type: SKELETON
+  Display: '&fSpecter'
+  Health: 45
+  Damage: 4
+  Faction: Undead
+  Options:
+    MovementSpeed: 0.2
+    ShowHealth: false
+    PreventRandomEquipment: true
+    AlwaysShowName: false
+    Persistent: false
+    Despawn: true
+    PreventOtherDrops: true
+    FollowRange: 25
+    Silent: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+  Equipment:
+  - bow:HAND
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - clear
+  - lookatplayers
+  - randomstroll
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - model{mid=specter;step=1;tint=false;usm=true} @self ~onSpawn
+  - look @target ~onTimer:1
+  - effect:sound{s=entity.phantom.ambient;volume=0.75;pitch=0.8} @self ~onTimer:140 0.35
+  - effect:sound{s=entity.phantom.ambient;volume=0.75;pitch=1} @self ~onDeath
+  - skill{s=Changetarget} ~onTimer:160 <99%
+  - skill{s=Cancelattack;sync=true} ~onShoot
+  - skill{s=Cancelattack;sync=true} ~onAttack
+  - skill{s=Specter_Attack} ~onTimer:60 0.7
+  - skill{s=Specter_Attack} ~onTimer:40 0.3
+  - skill{s=Specter_Hit} ~onDamaged
+  - effect:sound{s=entity.player.attack.crit;volume=0.55;pitch=0.33} @self ~onDamaged
+
+
+Zombie_Brute:
+  Type: ZOMBIE
+  Display: '&fZombie Brute'
+  Health: 80
+  Damage: 3
+  Faction: Undead
+  Options:
+    MovementSpeed: 0.21
+    ShowHealth: false
+    PreventRandomEquipment: true
+    AlwaysShowName: false
+    Persistent: false
+    Despawn: true
+    PreventOtherDrops: true
+    FollowRange: 30
+    Silent: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - model{mid=zombie_brute;step=1;tint=false;usm=true} @self ~onSpawn
+  - skill{s=Zombie_Brute_Undying_Resilience} @self ~onDamaged 0.25
+  - skill{s=Zombie_Brute_Undying_Resilience_HEAL} @self ~onDamaged
+  - setstance{stance=Walking} @self
+  - effect:sound{s=entity.zoglin.ambient;volume=0.75;pitch=0.65} @self ~onTimer:140 0.35
+  - effect:sound{s=entity.zoglin.ambient;volume=0.75;pitch=0.8} @self ~onDeath
+  - skill{s=Changetarget} ~onTimer:160 <99%
+  - skill{s=Cancelattack;sync=true} ~onAttack
+  - skill{s=Zombie_Brute_Attack} ~onTimer:40 0.3
+  - skill{s=Zombie_Brute_Attack} ~onTimer:70 0.7
+  - skill{s=Zombie_Brute_Dash} ~onTimer:60 0.7
+  - skill{s=Zombie_Brute_Hit} ~onDamaged
+  - effect:sound{s=entity.player.attack.crit;volume=0.55;pitch=0.33} @self ~onDamaged
+
+
+Nightharrow_Wendigo:
+  Type: ZOMBIE
+  Display: '&fNightharrow Wendigo'
+  Health: 300
+  Damage: 5
+  Faction: Undead
+  BossBar:
+    Enabled: true
+    Title: '&4Nightharrow Wendigo'
+    Range: 35
+    Color: RED
+    Style: SEGMENTED_12
+    DarkenSky: false
+  Options:
+    MovementSpeed: 0.24
+    ShowHealth: false
+    PreventRandomEquipment: true
+    AlwaysShowName: false
+    Persistent: false
+    Despawn: true
+    PreventOtherDrops: true
+    FollowRange: 45
+    Silent: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+  Modules:
+    ThreatTable: true
+  Drops:
+  - nightharrow_sword 1 1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  AITargetSelectors:
+  - clear
+  - players
+  Skills:
+  - model{mid=nightharrow_wendigo;step=1;tint=false;usm=true} @self ~onSpawn
+  - setstance{stance=Walking} @self ~onSpawn
+  - effect:sound{s=entity.polar_bear.ambient;volume=0.8;pitch=0.6} @self ~onTimer:140 0.35
+  - effect:sound{s=entity.polar_bear.ambient;volume=0.8;pitch=0.45} @self ~onDeath
+  - skill{s=Nightharrow_Wendigo_TouchGround} ~onTimer:1
+  - skill{s=Changetarget} ~onTimer:160 <99%
+  - skill{s=Cancelattack;sync=true} ~onAttack
+  - skill{s=Nightharrow_Wendigo_P1} ~onTimer:20 >50%
+  - skill{s=Nightharrow_Wendigo_P2} ~onTimer:20 <50%
+  - skill{s=Nightharrow_Wendigo_Dash} ~onTimer:60 0.7
+  - skill{s=Nightharrow_Wendigo_Hit} ~onDamaged
+  - effect:sound{s=entity.player.attack.crit;volume=0.55;pitch=0.33} @self ~onDamaged

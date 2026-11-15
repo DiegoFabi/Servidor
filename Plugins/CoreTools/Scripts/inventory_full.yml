@@ -1,0 +1,29 @@
+# ============================================================
+#  Aviso de inventario lleno (eventos en EventsManager/inventory_full.yml)
+#
+#  Lleno = no queda NINGUNA ranura vacia en inventario principal + hotbar.
+#  %player_has_empty_slot% (expansion "player" de PlaceholderAPI) usa
+#  PlayerInventory#firstEmpty(), que solo revisa esas 36 ranuras:
+#  la armadura y la mano secundaria quedan excluidas.
+#  Devuelve el texto de "boolean" de PlaceholderAPI/config.yml (yes / no).
+#
+#  Anti-spam SIN timers: "Cooldown" (segundos) guarda la marca de tiempo
+#  System.currentTimeMillis() del jugador cuando se envia el aviso y la
+#  compara en el siguiente evento; si no han pasado los segundos, se ignora.
+# ============================================================
+
+invfull_pickup:
+  Conditions:
+    - entitytype{t=PLAYER} true
+  Mechanics:
+    - script{script=invfull_check;delay=1} @Self
+
+invfull_check:
+  # Segundos minimos entre avisos al mismo jugador (editable)
+  Cooldown: 5
+  Conditions:
+    - comparator{v1="%player_has_empty_slot%";v2="no"} true
+  Mechanics:
+    # ---- Mensaje editable ----
+    - message{m="&c⚠ &f¡Tu inventario está lleno! &7Libera espacio para seguir recogiendo objetos."} @Self
+    - playsound{sound="minecraft:block.note_block.bass";volume=0.6;pitch=0.8} @Self

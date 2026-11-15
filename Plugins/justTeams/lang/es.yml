@@ -1,0 +1,911 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║  justTeams · lang/es.yml  (Español)                                       ║
+# ║                                                                          ║
+# ║  Traducción completa de messages.yml. Mantén intactos los                ║
+# ║  <marcadores>, las etiquetas MiniMessage y los tokens de PlaceholderAPI. ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+language:
+  name: Español
+  material: YELLOW_BANNER
+
+# Message configuration version - DO NOT MODIFY
+messages-version: 21
+
+# Team tier upgrade messages
+team_upgrades_disabled: <red>Las mejoras de nivel de equipo están desactivadas en este servidor.</red>
+team_tier_max_reached: <red>Tu equipo ya está en el nivel máximo.</red>
+team_upgrade_insufficient_funds: <red>¡No hay fondos suficientes en el banco del equipo! Necesitas <yellow><cost></yellow>, tienes <yellow><balance></yellow>.</red>
+team_upgrade_insufficient_points: <red>¡No hay puntos de equipo suficientes! Necesitas <yellow><cost></yellow>, tienes <yellow><points></yellow>.</red>
+team_upgrade_failed: <red>No se pudo mejorar el nivel. Contacta con un administrador.</red>
+team_tier_upgraded: <green>¡Tu equipo ha sido mejorado al nivel <yellow><tier></yellow>!</green>
+
+# User settings / language selection (/team usersettings)
+usersettings_title: <dark_gray>ᴜsᴇʀ sᴇᴛᴛɪɴɢs
+usersettings_language_changed: <green>Idioma establecido en <white><language></white>.</green>
+usersettings_language_selected: <green>✔ Seleccionado actualmente
+usersettings_language_click: <yellow>Haz clic para usar este idioma
+
+# ────────────────────────────────────────────────────────────────────────────
+#                         Core Branding
+# ────────────────────────────────────────────────────────────────────────────
+
+# Main plugin prefix used in most messages
+prefix: '<#4C9DDE>[ᴛᴇᴀᴍꜱ]</#4C9DDE> '
+reload: <green>Las configuraciones del plugin se han recargado correctamente.</green>
+reload_commands_notice: '<yellow>Nota: Se han vuelto a aplicar los cambios de alias de comandos de ''commands.yml''. Si un jugador sigue viendo un alias antiguo, pídele que vuelva a entrar.</yellow>'
+reload_failed: <red>No se pudo recargar la configuración. Revisa la consola para más detalles.</red>
+no_permission: <red>No tienes permiso para usar este comando.</red>
+player_only: <red>Este comando solo puede ejecutarlo un jugador.</red>
+team_not_found: <red>No existe ningún equipo con ese nombre.</red>
+player_not_found: <red>No se pudo encontrar al jugador <white><target></white>.</red>
+player_not_in_team: <red>No estás en un equipo.</red>
+not_in_team: <red>No estás en un equipo.</red>
+target_not_in_your_team: <red><white><target></white> no está en tu equipo.</red>
+not_owner: <red>Solo el dueño del equipo puede hacer eso.</red>
+owner_must_disband: <red>Como dueño, debes disolver el equipo en lugar de abandonarlo.</red>
+must_be_owner_or_co_owner: <red>Solo el dueño del equipo o un co-dueño puede hacer eso.</red>
+permissions_updated: <green>Los permisos del equipo se han actualizado correctamente.</green>
+public_toggle_rate_limited: <red>El cambio de estado público está temporalmente limitado. Espera un momento.</red>
+setting_change_rate_limited: <red>El cambio de ajuste está temporalmente limitado. Espera un momento.</red>
+permission_change_rate_limited: <red>El cambio de permiso está temporalmente limitado. Espera un momento.</red>
+action_rate_limited: <red>Esta acción está temporalmente limitada. Espera un momento.</red>
+bank_action_rate_limited: <red>La acción del banco está temporalmente limitada. Espera un momento.</red>
+gui_error: <red>Ocurrió un error al procesar tu solicitud. Inténtalo de nuevo.</red>
+must_be_owner: <red>Solo el dueño del equipo puede hacer eso.</red>
+no_team_placeholder: Sin Equipo
+feature_disabled: <red>Esta función está desactivada actualmente.</red>
+gui_action_locked: <red>No tienes permiso para hacer eso.</red>
+unknown_command: <red>Comando desconocido. Usa /team help para ver la lista de comandos.</red>
+admin_disband_confirm: <yellow>¿Seguro que quieres disolver el equipo <white><team></white>? Esto no se puede deshacer.</yellow>
+admin_team_disbanded: <green>Has disuelto el equipo <white><team></white>.</green>
+admin_team_disbanded_broadcast: <red>Tu equipo ha sido disuelto por un administrador.</red>
+admin_enderchest_input_prompt: <yellow>Escribe el nombre o la etiqueta del equipo en el chat para abrir su cofre de ender.</yellow>
+admin_reload_success: <green>¡La configuración del plugin se recargó correctamente!</green>
+admin_reload_failed: <red>No se pudo recargar la configuración del plugin. Revisa la consola en busca de errores.</red>
+invalid_input: <red>Entrada no válida. Inténtalo de nuevo.</red>
+team_created: <green>Has creado correctamente el equipo <white><team></white>.</green>
+team_created_broadcast: <gray>El equipo <white><team></white> ha sido creado por <white><player></white>.</gray>
+already_in_team: <red>Ya estás en un equipo. Abandona el actual primero.</red>
+name_too_short: <red>El nombre del equipo debe tener al menos <white><min_length></white> caracteres.</red>
+name_too_long: <red>El nombre del equipo no puede superar los <white><max_length></white> caracteres.</red>
+status_enabled: <green>ACTIVADO
+status_disabled: <red>DESACTIVADO
+quests_gui_title: <dark_gray>Misiones de <gold><team>
+quest_completed: '<gold>Misión completada: <yellow><quest_name><gold>! Abre <yellow>/team quests<gold> para reclamar.'
+quest_claimed: '<green>Recompensa reclamada por <yellow><quest_name><green>: <gold>+<points> puntos<green>.'
+quest_not_ready: <red>Esta misión no está lista para reclamar o ya fue reclamada.
+team_guide_name: <gradient:#4C9DDE:#4C96D2><bold>Cómo funciona</bold></gradient>
+team_guide_lore:
+- '<gray>Tu equipo: <white><points> puntos</white>, nivel <white><tier></white>'
+- ''
+- <gold>Puntos</gold>
+- <gray>Se ganan con las misiones del equipo y
+- <gray>se gastan en buffs y algunas mejoras.
+- ''
+- <gold>Misiones</gold>
+- <gray>Objetivos comunes para todo el equipo.
+- <gray>Reclama la recompensa en el menú de misiones.
+- ''
+- <gold>Mejoras</gold>
+- <gray>Sube de nivel para tener más miembros,
+- <gray>un cofre de ender más grande y bonus.
+- ''
+- <gold>Buffs</gold>
+- <gray>Efectos para tu equipo mientras haya
+- <gray>suficientes miembros cerca unos de otros.
+points_set: '<green>Puntos actualizados para <yellow><team><green>: <gold><points>'
+points_status: <gold>El equipo <yellow><team><gold> tiene <yellow><points><gold> puntos.
+admin_console_only:
+- <red>Esa acción de admin solo se puede usar dentro del juego. Desde la consola puedes usar:</red>
+- <gray>  /team admin bank <add|remove|set> <team|player> <amount></gray>
+- <gray>  /team admin points <team|player> <add|remove|set> <amount></gray>
+admin_usage: '<red>Uso: /team admin <gui|disband|home|warps|enderchest|bank|points|quest|testmigration|performance> [args]</red>'
+admin_bank_usage: '<red>Uso: /team admin bank <add|remove|set> <team|player> <amount></red>'
+admin_bank_updated: '<green>Banco actualizado para <white><team></white>: <yellow><before></yellow> -> <yellow><after></yellow></green>'
+admin_bank_not_enough: '<red>No se pudo cambiar el banco: el equipo no tiene tanto.</red>'
+admin_bank_over_max: '<red>No se pudo cambiar el banco: superaría el saldo máximo.</red>'
+admin_points_usage: '<red>Uso: /team admin points <team|player> <add|remove|set> <amount></red>'
+admin_points_failed: <red>No se pudieron cambiar los puntos. Revisa la consola para más detalles.</red>
+admin_unknown_operation: <red>Operación desconocida. Usa add, remove o set.</red>
+admin_amount_not_number: <red>La cantidad debe ser un número.</red>
+admin_amount_not_positive: <red>La cantidad debe ser un número positivo.</red>
+admin_amount_zero: <red>La cantidad debe ser mayor que 0.</red>
+admin_amount_not_whole: <red>La cantidad debe ser un número entero.</red>
+admin_amount_not_positive_whole: <red>La cantidad debe ser un número entero positivo.</red>
+admin_quest_usage: '<red>Uso: /team admin quest <team> <give|reset|complete> [quest_id]</red>'
+admin_quest_disabled: <red>El sistema de misiones está desactivado.</red>
+admin_quest_missing_id: <red>Añade el id de la misión al final del comando.</red>
+admin_quest_assigned: <green>Misión <yellow><quest></yellow> asignada al equipo <yellow><team></yellow>.</green>
+admin_quest_assign_failed: <red>La misión <yellow><quest></yellow> no existe o ya está asignada.</red>
+admin_quest_reset: <green>Se reinició todo el progreso de misiones de <yellow><team></yellow>.</green>
+admin_quest_completed: <green>Misión <yellow><quest></yellow> marcada como completada para <yellow><team></yellow>.</green>
+admin_quest_not_active: <red>La misión <yellow><quest></yellow> no está activa para este equipo.</red>
+admin_quest_unknown_operation: <red>Operación desconocida. Usa give, reset o complete.</red>
+feature_names:
+  team_creation: Creación de Equipo
+  sethome: Establecer Hogar
+  home: Teletransporte al Hogar
+  setwarp: Establecer Warp
+  warp: Teletransporte de Warp
+  rename: Renombrar Equipo
+  settag: Cambio de Etiqueta
+  setdescription: Cambio de Descripción
+  setcolor: Cambio de Color
+  invite: Invitación
+  bank_deposit: Depósito en el Banco
+  bank_withdraw: Retiro del Banco
+  enderchest: Cofre de Ender
+  ally: Solicitud de Alianza
+name_invalid: <red>El nombre del equipo solo puede contener letras, números y guiones bajos.</red>
+name_contains_blocked_codes: <red>El nombre del equipo contiene códigos de formato bloqueados.</red>
+tag_too_long: <red>La etiqueta del equipo no puede superar los <white><max_length></white> caracteres.</red>
+tag_invalid: <red>La nueva etiqueta no es válida (demasiado larga o con caracteres no válidos).</red>
+team_tag_taken: <red>Esa etiqueta ya está en uso por otro equipo. Las etiquetas deben ser únicas.</red>
+tag_contains_blocked_codes: <red>La etiqueta del equipo contiene códigos de formato bloqueados.</red>
+team_name_exists: <red>Ya existe un equipo con el nombre <white><team></white>.</red>
+disband_confirm: <yellow>¿Seguro que quieres disolver tu equipo? Esto no se puede deshacer.</yellow>
+kick_confirm: <yellow>¿Seguro que quieres expulsar a <white><target></white>?</yellow>
+team_disbanded: <green>Has disuelto tu equipo correctamente.</green>
+team_disbanded_broadcast: <gray>El equipo <white><team></white> ha sido disuelto.</gray>
+you_left_team: <green>Has abandonado el equipo <white><team></white>.</green>
+player_left_broadcast: <gray><white><player></white> ha abandonado el equipo.</gray>
+invite_sent: <green>Has invitado a <white><target></white> a tu equipo.</green>
+invite_failed: <red>No se pudo enviar la invitación. Inténtalo de nuevo.</red>
+invite_received: Has sido invitado a unirte a <white><team></white>. <click:run_command:/team accept <team>><hover:show_text:'<green>¡Haz clic para aceptar!'><green>[Aceptar]</hover></click> o <click:run_command:/team deny <team>><hover:show_text:'<red>¡Haz clic para rechazar!'><red>[Rechazar]</hover></click>
+invite_self: <red>No puedes invitarte a ti mismo.</red>
+invite_spam: <red>Ya invitaste a este jugador. Espera un momento.</red>
+target_already_in_team: <red><white><target></white> ya está en un equipo.</red>
+team_is_full: <red>Este equipo está lleno.</red>
+no_pending_invite: <red>No tienes ninguna invitación pendiente de este equipo.</red>
+no_pending_invites: <red>No tienes invitaciones de equipo pendientes.</red>
+invite_choose_team: <yellow>Tienes invitaciones de <white><teams></white>. Usa /team accept <team> o /team deny <team>.</yellow>
+invite_accepted: <green>Te has unido al equipo <white><team></white>.</green>
+invite_accepted_broadcast: <gray><white><player></white> se ha unido al equipo.</gray>
+invite_denied: <red>Has rechazado la invitación de <white><team></white>.</red>
+invite_denied_broadcast: <gray><white><player></white> rechazó la invitación del equipo.</gray>
+pending_invites_singular: <yellow>Tienes 1 invitación de equipo pendiente. Usa /team invites para verla.</yellow>
+pending_invites_plural: <yellow>Tienes <count> invitaciones de equipo pendientes. Usa /team invites para verlas.</yellow>
+team_is_private: <red>Este equipo es privado. Tu solicitud para unirte ha sido enviada.</red>
+join_request_sent: <green>Tu solicitud para unirte a <white><team></white> ha sido enviada.</green>
+already_requested_to_join: <red>Ya has enviado una solicitud para unirte a <white><team></white>.</red>
+join_request_received: <gray><white><player></white> quiere unirse a tu equipo. Usa <white>/team requests</white> para verlo.</gray>
+no_join_requests: <gray>No hay solicitudes de unión pendientes para tu equipo.</gray>
+player_joined_public_team: <green>Te has unido al equipo público <white><team></white>.</green>
+team_join_error: <red>Ocurrió un error al intentar unirte al equipo. Inténtalo de nuevo más tarde.</red>
+team_creation_error: <red>Ocurrió un error al crear el equipo. Inténtalo de nuevo más tarde.</red>
+invite_accept_error: <red>Ocurrió un error al aceptar la invitación. Inténtalo de nuevo más tarde.</red>
+joined_team: <green>Te has unido al equipo <white><team></white>.</green>
+player_joined_team: <gray><white><player></white> se ha unido al equipo.</gray>
+join_request_withdrawn: <green>Has retirado tu solicitud para unirte a <white><team></white>.</green>
+join_request_not_found: <red>No tienes ninguna solicitud pendiente para unirte a <white><team></white>.</red>
+request_accepted_player: <green>¡Tu solicitud para unirte a <white><team></white> ha sido aceptada!</green>
+request_denied_player: <red>Tu solicitud para unirte a <white><team></white> ha sido rechazada.</red>
+request_accepted_team: <gray>La solicitud de <white><player></white> para unirse ha sido aceptada.</gray>
+request_denied_team: <gray>La solicitud de <white><player></white> para unirse ha sido rechazada.</gray>
+player_kicked: <red>Has expulsado a <white><target></white> del equipo.</red>
+you_were_kicked: <red>Has sido expulsado del equipo <white><team></white>.</red>
+cannot_kick_owner: <red>No puedes expulsar al dueño del equipo.</red>
+cannot_kick_co_owner: <red>Solo el dueño puede expulsar a un co-dueño.</red>
+transfer_success: <green>Has transferido la propiedad del equipo a <white><player></white>.</green>
+transfer_broadcast: <green><owner> ha transferido la propiedad del equipo a <white><player></white>.</green>
+cannot_transfer_to_self: <red>No puedes transferir el equipo a ti mismo.</red>
+tag_set: <green>La etiqueta del equipo ha sido cambiada a <white><tag></white>.</green>
+rename_success: <green>El nombre del equipo ha sido cambiado de <white><old_name></white> a <white><new_name></white>.</green>
+rename_broadcast: <gray>El equipo <white><old_name></white> ha sido renombrado a <white><new_name></white>.</gray>
+rename_cooldown: <red>Tu equipo podrá renombrarse de nuevo en <white><time></white>.</red>
+rename_too_expensive: <red>Necesitas <white><cost></white> para renombrar tu equipo. Tienes <white><balance></white>.</red>
+rename_same_name: <red>El nuevo nombre es igual al actual.</red>
+rename_usage: '<red>Uso: /team rename <new_name></red>'
+description_set: <green>Descripción del equipo actualizada.</green>
+description_too_long: <red>La descripción no puede superar los <white><max_length></white> caracteres.</red>
+serveralias_set: '<green>Alias de servidor establecido: <white><server></white> → <white><alias></white></green>'
+serveralias_removed: <green>Alias de servidor eliminado para <white><server></white>.</green>
+serveralias_list_header: <yellow>Alias de Servidor:</yellow>
+serveralias_list_entry: <white><server></white> → <yellow><alias></yellow>
+serveralias_not_found: <red>No hay ningún alias establecido para el servidor <white><server></white>.</red>
+usage_serveralias: '<red>Uso: /team serveralias <set|remove|list> [server] [alias]</red>'
+target_not_found: <red>Jugador <white><target></white> no encontrado o no está en línea.</red>
+player_promoted: <green><target> ha sido ascendido a Co-Dueño.</green>
+player_demoted: <gray><target> ha sido degradado a Miembro.</gray>
+demotion_failed: <red>No se pudo guardar la degradación. Inténtalo de nuevo.</red>
+already_that_role: <red><target> ya tiene ese rol.</red>
+cannot_promote_owner: <red>El dueño no puede ser ascendido.</red>
+co_owner_limit_reached: <red>Este equipo ya tiene el número máximo de Co-Dueños (<white><limit></white>).</red>
+cannot_demote_owner: <red>El dueño no puede ser degradado.</red>
+team_made_public: <green>Tu equipo ahora es público. Cualquiera puede unirse con /team join.</green>
+team_made_private: <red>Tu equipo ahora es privado. Los jugadores deben ser invitados o solicitar unirse.</red>
+join_request_notification: <yellow>🔔 ¡<white><player></white> quiere unirse a tu equipo! Usa <white>/team requests</white> para verlo.</yellow>
+join_request_pending: <gray>Tienes una solicitud de unión pendiente de <white><player></white>.</gray>
+join_request_count: <gray>Tienes <white><count></white> solicitud(es) de unión pendiente(s).</gray>
+command_spam_protection: <red>Estás enviando comandos demasiado rápido. Ve más despacio.</red>
+message_spam_protection: <red>Estás enviando mensajes demasiado rápido. Ve más despacio.</red>
+message_too_long: <red>Tu mensaje es demasiado largo. La longitud máxima es de <white>200</white> caracteres.</red>
+inappropriate_message: <red>Tu mensaje contiene contenido inapropiado.</red>
+invalid_team_name_or_tag: <red>Nombre o etiqueta de equipo no válidos. Usa solo letras, números y guiones bajos.</red>
+invalid_team_name: <red>Nombre de equipo no válido. Usa solo letras, números y guiones bajos.</red>
+invalid_team_tag: <red>Etiqueta de equipo no válida. Usa solo letras, números y guiones bajos.</red>
+invalid_player_name: <red>Nombre de jugador no válido. Usa solo letras, números y guiones bajos.</red>
+invalid_warp_name: <red>Nombre de warp no válido. Usa solo letras, números y guiones bajos.</red>
+invalid_warp_password: <red>Contraseña de warp no válida. Debe tener entre 3 y 20 caracteres.</red>
+cannot_invite_yourself: <red>No puedes invitarte a ti mismo a tu equipo.</red>
+cannot_kick_yourself: <red>No puedes expulsarte a ti mismo de tu equipo.</red>
+cannot_promote_yourself: <red>No puedes ascenderte a ti mismo.</red>
+cannot_demote_yourself: <red>No puedes degradarte a ti mismo.</red>
+cannot_transfer_to_yourself: <red>No puedes transferir la propiedad a ti mismo.</red>
+player_already_in_team: <red><white><target></white> ya está en un equipo.</red>
+player_not_in_same_team: <red><white><target></white> no está en tu equipo.</red>
+owner_cannot_leave: <red>Como dueño, no puedes abandonar el equipo. Transfiere la propiedad o disuélvelo en su lugar.</red>
+inappropriate_description: <red>La descripción contiene contenido inapropiado.</red>
+bank_invalid_amount: <red>Cantidad no válida. Debe estar entre <white>0.01</white> y <white>1,000,000</white>.</red>
+gui_click_spam_protection: <red>Estás haciendo clic demasiado rápido. Ve más despacio.</red>
+sort_rate_limited: <red>El ordenado está temporalmente limitado. Espera un momento.</red>
+pvp_toggle_rate_limited: <red>El cambio de PvP está temporalmente limitado. Espera un momento.</red>
+pvp_toggle_cooldown: <red>Debes esperar <white><seconds>s</white> antes de volver a cambiar el PvP.</red>
+pvp_fly_disabled: <red>Vuelo desactivado debido al combate PvP.</red>
+disband_rate_limited: <red>La acción de disolver está temporalmente limitada. Espera un momento.</red>
+leave_rate_limited: <red>La acción de abandonar está temporalmente limitada. Espera un momento.</red>
+cannot_edit_owner: <red>No puedes editar los permisos del dueño.</red>
+team_chat_enabled: <green>Chat de equipo activado. Todos tus mensajes se enviarán ahora a tu equipo.</green>
+team_chat_disabled: <red>Chat de equipo desactivado. Tus mensajes ahora serán públicos.</red>
+# Available placeholders: <player>, <prefix>, <player_prefix>, <suffix>, <player_suffix>, <team_name>, <team_tag>, <team_color>, <message>
+# <prefix> and <player_prefix> show the player's permission group prefix (requires Vault + LuckPerms/PermissionsEx)
+# <team_color> shows the opening gradient/color tag (e.g., "<gradient:#FF0000:#00FF00>" or "<red>")
+# <team_color_close> shows the closing gradient tag (e.g., "</gradient>" or empty for solid colors)
+# <team_tag> shows the team's tag
+# <team_name> shows the team's name
+# PlaceholderAPI placeholders work too:
+#   %justteams_colored_tag% - tag with gradient/color applied automatically
+#   %justteams_display% - full team display with icons and colors
+#
+# GRADIENT EXAMPLE (works with /team setcolor #hex #hex):
+# team_chat_format: "<gray>[<team_color><team_tag><team_color_close>] <player>: <message>"
+#
+# PAPI EXAMPLE (auto-colors):
+# team_chat_format: "<gray>[%justteams_colored_tag%] <player>: <message>"
+#
+# STATIC GRADIENT EXAMPLE:
+# team_chat_format: "<dark_gray>[<gradient:#4C9DDE:#FFD700><team_name></gradient>]</dark_gray> <white><player></white>: <message>"
+team_chat_format: '<gray>[<team_color><team_tag><team_color_close>] <player>: <message>'
+team_chat_password_warning: '<red>Advertencia: Por seguridad, no compartas contraseñas en el chat de equipo.</red>'
+home_not_set: <red>Tu equipo no tiene un hogar establecido. Un Dueño o Co-Dueño puede establecer uno con /team sethome.</red>
+home_set: <green>El hogar del equipo se ha establecido en tu ubicación actual.</green>
+home_deleted: <green>El hogar del equipo se ha eliminado correctamente.</green>
+teleport_warmup: <gray>Teletransportando en <white><seconds></white> segundos... ¡No te muevas!</gray>
+teleport_success: <green>Has sido teletransportado correctamente al hogar de tu equipo.</green>
+teleport_moved: <red>Teletransporte cancelado porque te moviste.</red>
+teleport_cooldown: <red>Debes esperar <white><time></white> antes de volver a usar esto.</red>
+team_status_cooldown: <red>Debes esperar <white><time></white> antes de volver a cambiar el estado del equipo.</red>
+proxy_not_enabled: <red>El teletransporte entre servidores no está habilitado en este servidor.</red>
+excellentclaims_teleport_blocked: <red>No puedes teletransportarte ahí. Ese lugar está dentro de un terreno que tu equipo no posee.</red>
+excellentclaims_set_blocked: <red>No puedes establecer eso aquí. Estás dentro de un terreno que tu equipo no posee.</red>
+warp_set: <green>El warp del equipo <white><warp></white> ha sido establecido.</green>
+warp_deleted: <red>El warp del equipo <white><warp></white> ha sido eliminado.</red>
+warp_not_found: <red>No existe ningún warp de equipo con ese nombre.</red>
+warp_limit_reached: <red>Tu equipo ha alcanzado el máximo de <white><limit></white> warps.</red>
+warp_teleport: <green>Teletransportando al warp <white><warp></white>...</green>
+warp_password_protected: <gray>Este warp está protegido con contraseña. Usa /team warp <warp> <password></gray>
+warp_incorrect_password: <red>Contraseña incorrecta para el warp <white><warp></white>.</red>
+warp_cooldown: <red>Debes esperar <white><seconds></white> segundos antes de usar otro warp.</red>
+warp_list_header: <white><bold>ᴡᴀʀᴘs ᴅᴇʟ ᴇǫᴜɪᴘᴏ</bold></white>
+warp_list_entry: <gray>- <white><warp_name> <status_icon></white>
+warp_list_footer: <gray>Fin de la lista de warps</gray>
+no_warps_set: <gray>Tu equipo no tiene warps establecidos.</gray>
+team_pvp_enabled: <green>El PvP de equipo ha sido activado.</green>
+team_pvp_disabled: <red>El PvP de equipo ha sido desactivado.</red>
+team_glow_enabled: <green>El brillo de equipo ha sido activado.</green>
+team_glow_disabled: <red>El brillo de equipo ha sido desactivado.</red>
+economy_not_found: <red>Plugin de economía (Vault) no encontrado. El banco está desactivado.</red>
+bank_deposit_success: <green>Has depositado <white><amount></white> en el banco del equipo.</green>
+bank_withdraw_success: <green>Has retirado <white><amount></white> del banco del equipo.</green>
+bank_insufficient_funds: <red>El banco del equipo no tiene fondos suficientes.</red>
+player_insufficient_funds: <red>No tienes dinero suficiente para depositar.</red>
+bank_max_balance_reached: <red>El banco del equipo ha alcanzado su saldo máximo.</red>
+enderchest_locked_by_proxy: <red>El Cofre de Ender de este equipo se está usando actualmente en otro servidor. Inténtalo de nuevo en un momento.</red>
+enderchest_in_use: <red>El Cofre de Ender de este equipo está actualmente en uso. Inténtalo de nuevo en un momento.</red>
+team_info_header: '<white><bold>ɪɴғᴏ ᴅᴇʟ ᴇǫᴜɪᴘᴏ: <team></bold></white>'
+team_info_tag: '<gray>Etiqueta: <white><tag></white>'
+team_info_description: '<gray>Descripción: <white><description></white>'
+team_info_owner: '<gray>Dueño: <white><owner></white>'
+team_info_co_owners: '<gray>Co-Dueños: <white><co_owners></white>'
+team_info_members: <gray>Miembros (<member_count>/<max_members>):</gray>
+team_info_member_list: <gray>- <white><player></white>
+team_info_stats: '<gray>Asesinatos: <white><kills></white> | Muertes: <white><deaths></white> | KDR: <white><kdr></white>'
+team_info_bank: '<gray>Saldo del Banco: <white><balance></white>'
+team_info_footer: <gray>Fin de la info del equipo</gray>
+input_cancel_keyword: cancelar
+prompt_team_name: <gray>Escribe en el chat el nombre que deseas para el equipo, o escribe '<cancel>' para cancelar.</gray>
+prompt_team_tag: <gray>Escribe en el chat la etiqueta que deseas para el equipo, o escribe '<cancel>' para cancelar.</gray>
+prompt_team_color: <gray>Escribe en el chat el color que deseas para el equipo, o escribe '<cancel>' para cancelar.</gray>
+prompt_bank_amount: <gray>Escribe en el chat la cantidad a <action>, o escribe '<cancel>' para cancelar.</gray>
+prompt_setting_change: <gray>Escribe en el chat el nuevo <setting> del equipo, o escribe '<cancel>' para cancelar.</gray>
+prompt_warp_password: <gray>Escribe en el chat la contraseña para el warp <white><warp></white>, o escribe '<cancel>' para cancelar.</gray>
+creation_cancelled: <red>Creación de equipo cancelada.</red>
+action_cancelled: <red>Acción cancelada.</red>
+confirm_disband_title: <red>¿Disolver <team>?</red>
+help_header: <gradient:#4C9DDE:#FFD700>Comandos de JustTeams</gradient>
+help_format: <gray>/team <command> <white>- <description>
+help_page: <gray>Página <white><page></white> de <white><pages></white>.</gray>
+help_page_next: <gray>Página <white><page></white> de <white><pages></white>. <click:run_command:/team help <next>><hover:show_text:'<gray>Ver la página siguiente'><yellow>Escribe /team help <next> para ver más.</yellow></hover></click></gray>
+help_menu:
+- <gradient:#4C9DDE:#FFD700>Comandos de JustTeams</gradient>
+- <gray>/team gui <white>- Abre la interfaz del equipo.
+- <gray>/team create <tag> <name> <white>- Crea un equipo (el nombre puede tener espacios).
+- <gray>/team disband <white>- Disuelve tu equipo.
+- <gray>/team invite <player> <white>- Invita a un jugador.
+- <gray>/team join <teamName> <white>- Únete a un equipo público.
+- <gray>/team leave <white>- Abandona tu equipo actual.
+- <gray>/team info [team] <white>- Muestra la info del equipo.
+- <gray>/team sethome <white>- Establece el hogar del equipo.
+- <gray>/team home <white>- Teletranspórtate al hogar del equipo.
+- <gray>/team bank <white>- Gestiona el banco del equipo.
+- <gray>/team enderchest <white>- Abre el cofre de ender del equipo.
+- <gray>/team top <white>- Muestra las clasificaciones de equipos.
+- <gray>/team chat <white>- Alterna el modo de chat de equipo.
+- <gray>/team admin home <team> <white>- Teletransporte de admin al hogar.
+- <gray>/team admin enderchest <team> <white>- Ver cofre de ender como admin.
+- <click:suggest_command:/team help ><hover:show_text:'<gray>¡Haz clic para más comandos!'><yellow>Escribe /team help para ver la lista completa.</yellow></hover></click>
+help_entries:
+  gui: Abre la interfaz del equipo.
+  create: <tag> <name> - Crea un equipo (el nombre puede tener espacios).
+  create_no_tag: <name> - Crea un equipo.
+  disband: Disuelve tu equipo.
+  invite: <player> - Invita a un jugador.
+  kick: <player> - Expulsa a un jugador.
+  leave: Abandona tu equipo actual.
+  promote: <player> - Asciende a un miembro a Co-Dueño.
+  demote: <player> - Degrada a un Co-Dueño a Miembro.
+  info: '[team] - Muestra la info del equipo.'
+  sethome: Establece el hogar del equipo.
+  delhome: Elimina el hogar del equipo.
+  home: Teletranspórtate al hogar del equipo.
+  settag: <tag> - Cambia la etiqueta del equipo.
+  setdesc: <description> - Cambia la descripción del equipo.
+  rename: <newName> - Renombra el equipo (se aplica enfriamiento).
+  transfer: <player> - Transfiere la propiedad.
+  pvp: Alterna el PvP del equipo.
+  bank: '[deposit|withdraw] [amount] - Gestiona el banco del equipo.'
+  enderchest: Abre el cofre de ender del equipo.
+  quests: Abre el menú de misiones del equipo.
+  top: Muestra las clasificaciones.
+  join: <team> - Únete o solicita unirte a un equipo.
+  unjoin: <team> - Retira una solicitud de unión.
+  public: Alterna si tu equipo es público.
+  requests: Ver las solicitudes de unión de tu equipo.
+  setwarp: <name> [password] - Establece un warp de equipo.
+  delwarp: <name> - Elimina un warp de equipo.
+  warp: <name> [password] - Teletranspórtate a un warp de equipo.
+  warps: Lista todos los warps del equipo.
+  blacklist: <player> [reason] - Añade a un jugador a la lista negra de tu equipo.
+  unblacklist: <player> - Quita a un jugador de la lista negra de tu equipo.
+  invites: Muestra tus invitaciones pendientes.
+  accept: '[team] - Acepta una invitación. Sin nombre de equipo acepta tu única invitación.'
+  deny: '[team] - Rechaza una invitación.'
+  chat: '[message] - Activa o desactiva el chat de equipo, o envía un mensaje a tu equipo.'
+  allychat: <message> - Envía un mensaje a tu equipo y a los equipos aliados.
+  glow: Activa o desactiva el brillo del equipo para ti.
+  settings: Abre los ajustes del equipo.
+  usersettings: Abre tus ajustes personales, como el idioma.
+  setcolor: <color> - Cambia el color del equipo.
+  ally: <add|accept|deny|remove|list> [team] - Gestiona las alianzas.
+  buffs: Abre el menú de mejoras del equipo.
+  prices: Muestra los precios de acciones que puedes fijar.
+  setprice: <action> <amount|reset> - Fija el precio de tu equipo para una acción.
+  admin: admin - Abre el menú de administración.
+  admin_warps: admin warps <teamName> - Muestra los warps de un equipo.
+  admin_warp: admin warp <teamName> <warp> - Teletransporta a un warp del equipo.
+  chatspy: Muestra todos los chats de equipo.
+  reload: Recarga la configuración.
+  admin_home: admin home <teamName> - Teletranspórtate al hogar del equipo.
+  admin_enderchest: admin enderchest <teamName> - Ver el cofre de ender del equipo.
+  admin_disband: admin disband <teamName> - Comando de admin para disolver un equipo.
+  platform: Muestra la información de tu plataforma (Java/Bedrock).
+  debug_permissions: debug-permissions - Depura los permisos actuales de tu equipo.
+  debug_placeholders: debug-placeholders - Prueba todos los placeholders de PlaceholderAPI de tu equipo.
+  visibility: '[hide|show] - Toggles teammate visibility for yourself.'
+  browse: Browse every team on the server.
+  input: <answer> - Answers an open team prompt when chat does not work.
+usage_create: '<gray>Uso: /team create <tag> <name> <gray>(el nombre puede contener espacios)</gray></gray>'
+usage_create_no_tag: '<gray>Uso: /team create <name> <gray>(puede contener espacios)</gray></gray>'
+usage_invite: '<gray>Uso: /team invite <player></gray>'
+usage_accept: '<gray>Uso: /team accept <teamName></gray>'
+usage_deny: '<gray>Uso: /team deny <teamName></gray>'
+usage_kick: '<gray>Uso: /team kick <player></gray>'
+usage_settag: '<gray>Uso: /team settag <newTag></gray>'
+usage_transfer: '<gray>Uso: /team transfer <player></gray>'
+usage_bank: '<gray>Uso: /team bank <deposit|withdraw> <amount></gray>'
+usage_setdescription: '<gray>Uso: /team setdescription <description...></gray>'
+usage_setjoinfee: '<gray>Uso: /team setjoinfee <enable|disable|amount></gray>'
+usage_promote: '<gray>Uso: /team promote <player></gray>'
+usage_demote: '<gray>Uso: /team demote <player></gray>'
+usage_join: '<gray>Uso: /team join <teamName></gray>'
+usage_unjoin: '<gray>Uso: /team unjoin <teamName></gray>'
+usage_setwarp: '<gray>Uso: /team setwarp <name> [password]</gray>'
+usage_delwarp: '<gray>Uso: /team delwarp <name></gray>'
+usage_warp: '<gray>Uso: /team warp <name> [password]</gray>'
+usage_warps: '<gray>Uso: /team warps</gray>'
+usage_admin_disband: '<gray>Uso: /team admin disband <teamName></gray>'
+usage_admin_enderchest: '<gray>Uso: /team admin enderchest <teamName></gray>'
+usage_admin_warps: '<gray>Uso: /team admin warps <teamName></gray>'
+usage_admin_warp: '<gray>Uso: /team admin warp <teamName> <warpName></gray>'
+usage_setprice: '<gray>Uso: /team setprice <action> <amount|reset></gray>'
+# Delegated pricing (team owners setting their own action prices)
+price_not_editable: <red>El precio de esa acción lo fija el servidor y no se puede cambiar.</red>
+cannot_edit_prices: <red>No tienes permiso para cambiar los precios de tu equipo.</red>
+coowner_prices_enabled: <green>Los co-dueños ahora pueden editar los precios y la tarifa de unión de tu equipo.</green>
+coowner_prices_disabled: <green>Ahora solo tú (el dueño) puedes editar los precios de tu equipo.</green>
+price_out_of_range: <red>El precio debe estar entre 0 y <white><cap></white>.</red>
+price_set: <green>Precio de <white><action></white> establecido en <yellow><amount></yellow>.</green>
+price_reset: <green>Precio de <white><action></white> restablecido al valor predeterminado del servidor.</green>
+prices_header: <gold>Precios de equipo que puedes establecer:</gold>
+prices_line: '<gray>- <white><action></white>: <yellow><amount></yellow> <dark_gray>(<white>/team setprice <action> <price></white>)</dark_gray>'
+prices_line_default: '<gray>- <white><action></white>: <yellow><amount></yellow> <dark_gray>(predeterminado del servidor)</dark_gray>'
+prices_none_editable: <gray>El servidor no permite que los equipos cambien ningún precio de acción.</gray>
+admin_teleported_warp: <green>Teletransportado al warp <white><warp></white> del equipo <white><team></white>.</green>
+admin_warp_other_server: <yellow>El warp <white><warp></white> está en el servidor <white><server></white>. Conéctate a ese servidor para teletransportarte.</yellow>
+usage_debug_conflict: <red>Las opciones de depuración entran en conflicto. Usa enable o disable, no ambas.</red>
+usage_team_pvp: <gray>No puedes atacar a miembros del equipo mientras el PvP de equipo esté desactivado.</gray>
+team_not_exists: <red>No existe ningún equipo con ese nombre.</red>
+player_not_in_team_placeholder: <red>No estás en un equipo.</red>
+team_full: <red>Este equipo está lleno.</red>
+team_private: <red>Este equipo es privado. Debes ser invitado para unirte.</red>
+team_public: <green>Este equipo es público. Puedes unirte con /team join <team>.</green>
+no_invite: <red>No tienes ninguna invitación pendiente de este equipo.</red>
+invite_expired: <red>Tu invitación ha caducado.</red>
+invite_already_accepted: <red>Ya has aceptado esta invitación.</red>
+invite_already_denied: <red>Ya has rechazado esta invitación.</red>
+cannot_invite_full_team: <red>No se puede invitar al jugador - el equipo está lleno.</red>
+cannot_invite_private_team: <red>No se puede invitar al jugador - el equipo es privado.</red>
+player_offline: <red>Ese jugador no está en línea.</red>
+player_not_found_offline: <red>Jugador no encontrado en la base de datos.</red>
+team_name_taken: <red>Ya existe un equipo con ese nombre.</red>
+invalid_team_name_format: <red>El nombre del equipo debe tener entre 3 y 16 caracteres y contener solo letras, números y guiones bajos.</red>
+invalid_team_tag_format: <red>La etiqueta del equipo debe tener entre 2 y 4 caracteres y contener solo letras, números y guiones bajos.</red>
+team_created_success: <green>¡El equipo <white><team></white> se ha creado correctamente!</green>
+team_disbanded_success: <green>Tu equipo ha sido disuelto.</green>
+team_left_success: <green>Has abandonado el equipo.</green>
+player_kicked_success: <green>Has expulsado a <white><player></white> del equipo.</green>
+player_kicked_broadcast: <red>Has sido expulsado del equipo por <white><player></white>.</red>
+ownership_transferred: <green>La propiedad del equipo ha sido transferida a <white><player></white>.</green>
+ownership_transferred_broadcast: <green><old_owner> ha transferido la propiedad del equipo a <white><new_owner></white>.</green>
+player_promoted_success: <green><player> ha sido ascendido a Co-Dueño.</green>
+player_demoted_success: <gray><player> ha sido degradado a Miembro.</gray>
+team_tag_changed: <green>La etiqueta del equipo ha sido cambiada a <white><tag></white>.</green>
+team_description_changed: <green>La descripción del equipo ha sido actualizada.</green>
+team_home_set: <green>El hogar del equipo se ha establecido en tu ubicación actual.</green>
+team_home_teleported: <green>Has sido teletransportado al hogar de tu equipo.</green>
+team_pvp_toggled_on: <green>El PvP de equipo ha sido activado.</green>
+team_pvp_toggled_off: <red>El PvP de equipo ha sido desactivado.</red>
+team_made_public_success: <green>¡Tu equipo ahora es público. Cualquiera puede unirse!</green>
+team_made_private_success: <red>Tu equipo ahora es privado. Los jugadores deben ser invitados.</red>
+bank_deposited: <green>Has depositado <white><amount></white> en el banco del equipo.</green>
+bank_withdrawn: <green>Has retirado <white><amount></white> del banco del equipo.</green>
+bank_balance: '<gray>Saldo del banco del equipo: <white><amount></white></gray>'
+warp_created: <green>El warp del equipo <white><warp></white> ha sido creado.</green>
+warp_deleted_success: <red>El warp del equipo <white><warp></white> ha sido eliminado.</red>
+warp_teleported: <green>Has sido teletransportado a <white><warp></white>.</green>
+warp_password_required: <gray>Este warp requiere una contraseña.</gray>
+warp_password_incorrect: <red>Contraseña incorrecta para este warp.</red>
+warp_not_exists: <red>Ese warp no existe.</red>
+warp_limit_exceeded: <red>Tu equipo ha alcanzado el número máximo de warps.</red>
+join_request_sent_success: <green>Tu solicitud de unión ha sido enviada a <white><team></white>.</green>
+join_request_received_notification: <yellow>¡<player> quiere unirse a tu equipo!</yellow>
+join_request_accepted_success: <green>Has aceptado la solicitud de unión de <white><player></white>.</green>
+join_request_denied_success: <red>Has rechazado la solicitud de unión de <white><player></white>.</red>
+join_request_withdrawn_success: <green>Has retirado tu solicitud de unión.</green>
+no_join_requests_pending: <gray>No hay solicitudes de unión pendientes.</gray>
+team_chat_toggled_on: <green>Chat de equipo activado. Todos los mensajes se enviarán a tu equipo.</green>
+team_chat_toggled_off: <red>Chat de equipo desactivado. Los mensajes serán públicos.</red>
+enderchest_opened: <green>Cofre de Ender del equipo abierto.</green>
+enderchest_locked: <red>El Cofre de Ender del equipo está siendo usado por otro jugador.</red>
+enderchest_title: <gradient:#4C9DDE:#4C96D2>ᴄᴏғʀᴇ ᴅᴇ ᴇɴᴅᴇʀ ᴅᴇʟ ᴇǫᴜɪᴘᴏ</gradient>
+leaderboard_header: <white><bold>ᴄʟᴀsɪғɪᴄᴀᴄɪóɴ ᴅᴇ ᴇǫᴜɪᴘᴏs</bold></white>
+leaderboard_title_kills: ᴛᴏᴘ 10 ᴇǫᴜɪᴘᴏs ᴘᴏʀ ᴀsᴇsɪɴᴀᴛᴏs
+leaderboard_title_balance: ᴛᴏᴘ 10 ᴇǫᴜɪᴘᴏs ᴘᴏʀ sᴀʟᴅᴏ
+leaderboard_title_members: ᴛᴏᴘ 10 ᴇǫᴜɪᴘᴏs ᴘᴏʀ ᴍɪᴇᴍʙʀᴏs
+leaderboard_entry: <gray><rank>. <white><team></white> - <score></gray>
+leaderboard_footer: <gray>Fin de la clasificación</gray>
+
+# The leaderboard category menu (title, item names and lore) is edited in gui.yml under
+# 'leaderboard-category-gui', like every other menu. The old leaderboard_category_* message
+# keys are no longer used.
+error_loading_leaderboard: <red>Error al cargar la clasificación. Inténtalo de nuevo más tarde.</red>
+economy_not_available: <red>El sistema de economía no está disponible. Contacta con un administrador.</red>
+bank_insufficient_player_funds: <red>No tienes dinero suficiente para depositar esa cantidad.</red>
+bank_amount_too_large: <red>La cantidad es demasiado grande. El máximo permitido es 1 mil millones.</red>
+bedrock_player_joined: <green>¡<player> (Bedrock) se unió al equipo!</green>
+bedrock_player_left: <red><player> (Bedrock) abandonó el equipo.</red>
+bedrock_feature_limited: <yellow>Esta función tiene soporte limitado en Bedrock Edition.</yellow>
+cross_platform_team_created: <green>¡Equipo multiplataforma creado! Los jugadores de Java y Bedrock ahora pueden unirse juntos.</green>
+platform_info: '<white>Tu plataforma: <platform></white>'
+platform_name_java: <#00FF00>Java Edition
+platform_name_bedrock: <#00D4FF>Bedrock Edition
+platform_gamertag: '<gray>Gamertag de Xbox: <white><gamertag></white>'
+platform_java_uuid: '<gray>UUID de Java Edition: <white><uuid></white>'
+platform_current_uuid: '<gray>UUID actual: <white><uuid></white>'
+no_teams_found: <gray>No se encontraron equipos.</gray>
+team_info_not_found: <red>Información del equipo no encontrada.</red>
+player_info_not_found: <red>Información del jugador no encontrada.</red>
+permission_denied: <red>No tienes permiso para realizar esta acción.</red>
+action_failed: <red>La acción falló. Inténtalo de nuevo.</red>
+invalid_argument: <red>Argumento no válido.</red>
+missing_argument: <red>Falta un argumento obligatorio.</red>
+too_many_arguments: <red>Se proporcionaron demasiados argumentos.</red>
+command_disabled: <red>Este comando está desactivado actualmente.</red>
+feature_unavailable: <red>Esta función no está disponible.</red>
+maintenance_mode: <red>Esta función está actualmente en mantenimiento.</red>
+server_error: <red>Ocurrió un error interno del servidor.</red>
+database_error: <red>Ocurrió un error de base de datos.</red>
+connection_error: <red>Ocurrió un error de conexión.</red>
+timeout_error: <red>La operación agotó el tiempo de espera. Inténtalo de nuevo.</red>
+validation_error: '<red>Error de validación: <message></red>'
+success_message: <green>Operación completada correctamente.</green>
+info_message: '<blue>Información: <message></blue>'
+warning_message: '<yellow>Advertencia: <message></yellow>'
+error_message: '<red>Error: <message></red>'
+debug_message: '<gray>Depuración: <message></gray>'
+cannot_edit_own_permissions: <red>No puedes editar tus propios permisos como dueño del equipo.</red>
+view_only_mode: <yellow>Este es el modo solo lectura. No puedes editar tus propios permisos.</yellow>
+join_requests_permission_denied: <red>Solo el dueño o los co-dueños pueden ver las solicitudes de unión.</red>
+bank_permission_denied: <red>No tienes permiso para acceder al banco del equipo.</red>
+enderchest_permission_denied: <red>No tienes permiso para usar el cofre de ender del equipo.</red>
+settings_permission_denied: <red>Solo el dueño o los co-dueños pueden acceder a los ajustes del equipo.</red>
+home_cooldown: <red>Espera antes de volver a usar /team home.</red>
+enderchest_cooldown: <red>Espera antes de volver a abrir el cofre de ender.</red>
+permission_update_failed: <red>No se pudieron actualizar los permisos. Inténtalo de nuevo.</red>
+editing_permissions_updated: <green>Los permisos de edición del equipo se han actualizado correctamente.</green>
+promotion_failed: <red>No se pudo ascender al jugador. Inténtalo de nuevo.</red>
+usage_blacklist: '<red>Uso: /team blacklist <player> [reason]</red>'
+cannot_blacklist_self: <red>No puedes añadirte a la lista negra a ti mismo.</red>
+cannot_blacklist_team_member: <red>No puedes añadir a un miembro del equipo a la lista negra. Expúlsalo primero si es necesario.</red>
+player_blacklisted: <green>Has añadido a <white><target></white> a la lista negra para que no pueda unirse a tu equipo.</green>
+blacklist_failed: <red>No se pudo añadir al jugador a la lista negra. Inténtalo de nuevo.</red>
+player_removed_from_blacklist: <green>Has quitado a <white><target></white> de la lista negra.</green>
+remove_blacklist_failed: <red>No se pudo quitar al jugador de la lista negra. Inténtalo de nuevo.</red>
+player_is_blacklisted: <red><white><target></white> está en la lista negra de <white><blacklister></white> y no puede unirse a tu equipo.</red>
+player_blacklisted_broadcast: <red><white><target></white> ha sido añadido a la lista negra del equipo.</red>
+player_already_blacklisted: <red><white><target></white> ya está en la lista negra de <white><blacklister></white>.</red>
+usage_unblacklist: '<red>Uso: /team unblacklist <player></red>'
+cannot_unblacklist_self: <red>No puedes quitarte de la lista negra a ti mismo.</red>
+player_unblacklisted: <green>Has quitado a <white><target></white> de la lista negra.</green>
+unblacklist_failed: <red>No se pudo quitar al jugador de la lista negra. Inténtalo de nuevo.</red>
+player_not_blacklisted: <red><white><target></white> no está en la lista negra.</red>
+
+# ────────────────────────────────────────────────────────────────────────────
+#                    Feature Restrictions & Costs
+# ────────────────────────────────────────────────────────────────────────────
+
+# World restriction messages
+feature_disabled_in_world: <red>La función <white><feature></white> está desactivada en este mundo (<white><world></white>).</red>
+
+# Economy cost messages
+insufficient_funds: <red>Necesitas <white><cost></white> para usar esta función pero solo tienes <white><balance></white>.</red>
+insufficient_funds_join: <red>Necesitas <white><cost></white> para unirte a este equipo pero solo tienes <white><balance></white>.</red>
+join_fee_paid: <green>Se te ha cobrado <white><cost></white> por unirte a <white><team></white>.</green>
+economy_charged: <green>Se te ha cobrado <white><cost></white> por usar <white><feature></white>.</green>
+economy_charged_bank: <green>Al banco de tu equipo se le cobró <white><cost></white> por usar <white><feature></white>.</green>
+economy_charged_split: <green>Al banco de tu equipo se le cobró <white><bank></white> y a tu saldo se le cobró <white><player></white> (total <white><cost></white>) por usar <white><feature></white>.</green>
+economy_disabled: <red>La economía no está disponible en este servidor.</red>
+economy_error: <red>Ocurrió un error al procesar tu pago. Inténtalo de nuevo.</red>
+
+# Item cost messages
+insufficient_items: <red>Necesitas <white><required></white> pero solo tienes <white><current></white>.</red>
+items_taken: <green>Se usó <white><items></white> para acceder a <white><feature></white>.</green>
+invalid_item_format: <red>Configuración de objeto no válida para <white><feature></white>.</red>
+
+# Admin enderchest messages
+admin_opened_enderchest: <green>Se abrió correctamente el cofre de ender del equipo <white><team_name></white>.</green>
+invalid_color: <red>Color no válido. Usa un nombre de color válido (p. ej., RED, BLUE, GREEN). Escribe 'reset' para restablecer el color.</red>
+team_color_updated: <green>El color del equipo ha sido actualizado a <white><color></white>.</green>
+team_color_reset: <green>El color del equipo ha sido restablecido al valor predeterminado.</green>
+
+
+admin_teleported_home: <green>Has sido teletransportado al hogar del equipo <white><team></white>.</green>
+usage_admin_home: '<red>Uso: /team admin home <teamName></red>'
+admin_home_not_set: <red>El equipo <white><team></white> no tiene un hogar establecido.</red>
+
+# Ally System Messages
+ally_request_sent: <green>¡Solicitud de alianza enviada a <white><team></white>!</green>
+ally_request_received: <yellow>¡El equipo <white><team></white> quiere aliarse contigo! <gray>(Enviada por <white><player></white>)</gray></yellow>
+ally_request_accepted: <green>¡Aceptaste la solicitud de alianza de <white><team></white>!</green>
+ally_request_denied: <red>Rechazaste la solicitud de alianza de <white><team></white>.</red>
+ally_request_was_denied: <red>Tu solicitud de alianza a <white><team></white> fue rechazada.</red>
+ally_formed: <green>¡Tu equipo ahora está aliado con <white><team></white>!</green>
+ally_broken: <red>La alianza con <white><team></white> se ha roto.</red>
+ally_removed: <yellow>Se eliminó a <white><team></white> como aliado.</yellow>
+ally_already_allies: <red>¡Ya eres aliado de <white><team></white>!</red>
+ally_request_already_sent: <red>¡Ya enviaste una solicitud de alianza a <white><team></white>!</red>
+ally_cannot_ally_self: <red>¡No puedes aliarte con tu propio equipo!</red>
+ally_no_request_found: <red>No se encontró ninguna solicitud de alianza de <white><team></white>.</red>
+ally_not_allies: <red>¡No eres aliado de <white><team></white>!</red>
+accept_requests_enabled: <green>¡Tu equipo ahora acepta solicitudes de unión!</green>
+accept_requests_disabled: <red>¡Tu equipo ya no acepta solicitudes de unión!</red>
+accept_requests_enabled_broadcast: <yellow>Las solicitudes de unión al equipo han sido activadas.</yellow>
+accept_requests_disabled_broadcast: <yellow>Las solicitudes de unión al equipo han sido desactivadas.</yellow>
+
+# Ally Command Usage Messages
+usage_ally: '<red>Uso: /team ally [add|remove|accept|deny|toggle|list] [team]</red>'
+usage_ally_add: '<red>Uso: /team ally add <team></red>'
+usage_ally_remove: '<red>Uso: /team ally remove <team></red>'
+usage_ally_accept: '<red>Uso: /team ally accept <teamId></red>'
+usage_ally_deny: '<red>Uso: /team ally deny <teamId></red>'
+
+# EternalCombat Integration Messages
+combat_tag_blocked: <red>¡No puedes hacer esto mientras estás en combate! (<time>s restantes)</red>
+combat_tag_teleport: <red>¡No puedes teletransportarte mientras estás en combate! (<time>s restantes)</red>
+combat_tag_leave: <red>¡No puedes abandonar tu equipo mientras estás en combate! (<time>s restantes)</red>
+combat_tag_disband: <red>¡No puedes disolver tu equipo mientras estás en combate! (<time>s restantes)</red>
+combat_tag_invite: <red>¡No puedes invitar jugadores mientras estás en combate! (<time>s restantes)</red>
+combat_tag_kick: <red>¡No puedes expulsar miembros mientras estás en combate! (<time>s restantes)</red>
+combat_tag_transfer: <red>¡No puedes transferir la propiedad mientras estás en combate! (<time>s restantes)</red>
+combat_tag_bank: <red>¡No puedes acceder al banco mientras estás en combate! (<time>s restantes)</red>
+combat_tag_enderchest: <red>¡No puedes acceder al cofre de ender mientras estás en combate! (<time>s restantes)</red>
+combat_tag_settings: <red>¡No puedes cambiar los ajustes mientras estás en combate! (<time>s restantes)</red>
+
+# Join Fee Messages
+join_fee_enabled: <green>¡Tarifa de unión activada! Los jugadores ahora pagarán <white><amount></white> para unirse a tu equipo.</green>
+join_fee_disabled: <yellow>Tarifa de unión desactivada. Los jugadores pueden unirse gratis.</yellow>
+join_fee_amount_set: <green>¡Tarifa de unión establecida en <white><amount></white>!</green>
+join_fee_must_be_positive: <red>¡La tarifa de unión debe ser 0 o mayor!</red>
+join_fee_exceeds_permission: <red>¡Solo puedes establecer tarifas de unión de hasta <white><max></white> según tu permiso!</red>
+only_owner_can_do_this: <red>¡Solo el dueño del equipo puede hacer esto!</red>
+max_allies_reached: <red>Has alcanzado el número máximo de aliados (<white><max></white>).</red>
+ally_toggle_disabled: <red>El interruptor de solicitudes de alianza está desactivado en este servidor.</red>
+teleport_cancelled_damage: <red>Teletransporte cancelado — ¡recibiste daño!</red>
+teleport_cancelled: <red>Tu teletransporte pendiente fue cancelado.</red>
+
+# Team Prices / Quests (2.6.5)
+prices_button_name: <gradient:#FFD700:#FFA500><bold>Precios del Equipo</bold></gradient>
+prices_button_lore_1: <gray>Define los precios de tu equipo para las
+prices_button_lore_2: <gray>acciones que el servidor te permite cambiar.
+prices_button_lore_3: <yellow>Clic para abrir Precios del Equipo.</yellow>
+prices_gui_title: '<dark_gray>Precios del Equipo: <gray><team>'
+prices_gui_members_pay: '<gray>Los miembros pagan: <yellow><price>'
+prices_gui_source_team: '<gray>Origen: <green>Precio de tu equipo'
+prices_gui_source_default: '<gray>Origen: <white>Predeterminado del servidor'
+prices_gui_staff_free: <green>El personal de tu equipo no paga.
+prices_gui_left_set_price: <yellow>Clic izquierdo <gray>para fijar un precio
+prices_gui_right_reset: <yellow>Clic derecho <gray>para restablecer al predeterminado
+prices_gui_staff_only: <dark_gray>Solo el personal de tu equipo puede cambiarlo.
+prices_gui_join_fee_name: <gradient:#4C9DDE:#4C96D2><bold>Cuota de Ingreso</bold></gradient>
+prices_gui_join_fee_status: '<gray>Estado: <status>'
+prices_gui_enabled: <green>Activada
+prices_gui_disabled: <red>Desactivada
+prices_gui_join_fee_amount: '<gray>Cantidad: <yellow><amount>'
+prices_gui_join_fee_desc: <gray>Se cobra a los jugadores que se unen a tu equipo.
+prices_gui_left_set_amount: <yellow>Clic izquierdo <gray>para fijar la cantidad
+prices_gui_right_enable: <yellow>Clic derecho <gray>para activar
+prices_gui_right_disable: <yellow>Clic derecho <gray>para desactivar
+prices_gui_coowner_name: <gradient:#4C9D9D:#4C96D2><bold>Acceso de Copropietario</bold></gradient>
+prices_gui_coowner_yes: '<gray>Los copropietarios pueden editar precios: <green>Sí'
+prices_gui_coowner_no: '<gray>Los copropietarios pueden editar precios: <red>No'
+prices_gui_coowner_desc_1: <gray>Permite que tus copropietarios gestionen
+prices_gui_coowner_desc_2: <gray>estos precios y la cuota de ingreso.
+prices_gui_coowner_grant: <yellow>Clic para concederlo.</yellow>
+prices_gui_coowner_revoke: <yellow>Clic para revocarlo.</yellow>
+prices_gui_back: <gray><bold>Volver</bold></gray>
+quests_gui_progress: '<gray>Progreso: <yellow><progress><gray>/<yellow><required>'
+quests_gui_reward_points: '<gray>Recompensa: <gold>+<points> puntos'
+quests_gui_reward_money: '<gray>Recompensa: <green>+<money> monedas'
+quests_gui_claimed: <dark_gray>Ya reclamado
+quests_gui_click_claim: <green>¡Clic para reclamar!
+quests_gui_in_progress: <dark_gray>En progreso...
+
+# Team Buffs (2.6.5)
+buffs_gui_title: '<dark_gray>Mejoras de equipo: <gray><team>'
+buffs_gui_info_name: <gradient:#FFD700:#FFA500><bold>Mejoras de equipo</bold></gradient>
+buffs_gui_active_count: '<gray>Activas: <yellow><active><gray>/<yellow><max>'
+buffs_gui_how: <gray>Reúne <yellow><count><gray> miembros en <yellow><radius><gray> bloques
+buffs_gui_how_2: <gray>entre sí para activar estas mejoras.
+buffs_gui_status_active: '<gray>Estado: <green>Activa'
+buffs_gui_status_inactive: '<gray>Estado: <red>Inactiva'
+buffs_gui_cost: '<gray>Coste para activar: <light_purple><cost> puntos'
+buffs_gui_click_enable: <yellow>Haz clic para activar
+buffs_gui_click_disable: <yellow>Haz clic para desactivar
+buffs_gui_staff_only: <dark_gray>Solo el staff de tu equipo puede cambiar esto.
+buffs_gui_back: <gray><bold>Atrás</bold></gray>
+buffs_enabled: <green>Activaste la mejora de equipo <white><buff><green>.
+buffs_disabled: <gray>Desactivaste la mejora de equipo <white><buff><gray>.
+buffs_max_active: <red>Tu equipo ya tiene el máximo de mejoras activas (<max>).
+buffs_not_enough_points: <red>Tu equipo necesita <yellow><cost><red> puntos para activar esa mejora.
+buffs_charge_failed: <red>No se pudieron cobrar los puntos del equipo, inténtalo de nuevo.
+buffs_disabled_server: <red>Las mejoras de equipo están desactivadas en este servidor.
+team_upgrade_insufficient_money: <red>Not enough money for this upgrade! Need <yellow><cost></yellow>, have <yellow><balance></yellow> available from the enabled team bank and your wallet.</red>
+
+# Admin: server default language (/team admin → Language)
+admin_language_title: <dark_gray>sᴇʀᴠᴇʀ ʟᴀɴɢᴜᴀɢᴇ
+admin_language_changed: <green>Server language set to <white><language></white>. Players on the default now see it.</green>
+admin_language_failed: <red>Could not change the server language. Check the console for details.</red>
+admin_language_current: <green>✔ Current server default
+admin_language_click: <yellow>Click to set as the server default
+
+# Admin: resource-pack GUI mode toggle
+admin_resourcepack_on: <green>Resource-pack GUI mode enabled. Make sure the JustTeams Official pack is applied on the client.</green>
+admin_resourcepack_off: <yellow>Resource-pack GUI mode disabled. Back to the default menus.</yellow>
+name_invalid_characters: '<red>Team name <white><input></white> contains characters that are not allowed: <white><invalid></white>. Use letters, numbers or underscores (spaces only if the server allows them).</red>'
+tag_invalid_characters: '<red>Team tag <white><input></white> contains characters that are not allowed: <white><invalid></white>. Use letters and numbers; spaces are not allowed in tags.</red>'
+name_formatting_too_long: <red>Team name is too long including colour and formatting codes (at most <white><max_raw_length></white> characters). Remove some formatting.</red>
+tag_formatting_too_long: <red>Team tag is too long including colour and formatting codes (at most <white><max_raw_length></white> characters). Remove some formatting.</red>
+name_missing_letter: <red>Team name <white><input></white> needs at least one letter; it cannot be only numbers, underscores or spaces.</red>
+tag_missing_letter: <red>Team tag <white><input></white> needs at least one letter; it cannot be only numbers.</red>
+name_reserved_text: <red>Team name <white><input></white> contains the blocked word <white><text></white>. Choose a different name.</red>
+tag_reserved_text: <red>Team tag <white><input></white> contains the blocked word <white><text></white>. Choose a different tag.</red>
+tag_too_short: '<red>Team tag <white><input></white> is too short: <white><length></white> characters, at least <white><min_length></white> needed.</red>'
+leave_confirm: <yellow>Are you sure you want to leave the team?</yellow>
+transfer_confirm: <yellow>Transfer ownership?</yellow>
+ally_accept_confirm: <yellow>Accept ally request?</yellow>
+# Default back button shown in every menu. A menu's own gui.yml back-button item (name/lore/material)
+# overrides these; set them here to translate the back button everywhere at once. Leave back_button_lore
+# empty ("") for no lore line.
+back_button_name: <gray>« Back
+back_button_lore: <dark_gray>Return to the previous menu
+# Member edit: co-owner-only permission notice
+perm_coowner_only: <red>This permission can only be granted to Co-owners.
+# Team menu / home button
+home_loading: <gray>Loading Home Status...
+# Warp list injected values (into warp lore in gui.yml)
+warp_status_protected: <red>Password Protected
+warp_status_public: <green>Public
+warp_delete_prompt: <red>Right-Click to delete.
+# Leaderboard statistic labels
+leaderboard_stat_kills: Kills
+leaderboard_stat_balance: Balance
+leaderboard_stat_members: Members
+# Quest menu claim feedback
+quest_reward_claimed: <green>Reward claimed!
+# Team Prices chat prompts
+prices_prompt_set: <gray>Type the new price for <white><action><gray> in chat, or '<cancel>' / 'reset'.
+prices_prompt_join_fee: <gray>Type the new join fee amount in chat, or '<cancel>'.
+# Team color (/team setcolor) hex + gradient paths. The colour itself is applied around this text.
+color_invalid_hex: '<red>Invalid hex color format! Use #RRGGBB format.</red>'
+team_color_hex_updated: Team color updated!
+team_gradient_updated: Team gradient color updated!
+# Team creation colour picker menu
+color_menu_title: <gold><bold>Choose Team Color
+color_menu_name: '<gray>Team Name: <white><name>'
+color_menu_tag: '<gray>Team Tag: <white><tag>'
+color_menu_preview: '<gray>Preview: <preview>'
+color_menu_select: <yellow>Click to select this color!
+color_menu_cancel_name: <red><bold>Cancel
+color_menu_cancel_lore: <gray>Click to cancel team creation
+# Admin: team has no warps
+admin_team_no_warps: <gold>Team <yellow><team><gold> has no warps.
+# Shown to any online member when their team is auto-disbanded for inactivity
+auto_disband_broadcast: <red>Your team has been disbanded for inactivity.</red>
+# Ally chat (/team allychat <msg> | /team ac). <team_tag>/<team_name>/<player>/<message> available.
+ally_chat_format: '<dark_gray>[<aqua>Ally<dark_gray>] <gray><team_tag> <white><player><dark_gray>: <white><message>'
+ally_chat_usage: '<red>Usage: /team allychat <message></red>'
+ally_chat_no_allies: <red>Your team has no allies to talk to.</red>
+# Reusable enabled/disabled words (used in several "<status> <thing>" messages)
+word_enabled: <green>Enabled
+word_disabled: <red>Disabled
+perm_promote_coowner_result: <status> <white>promote-to-co-owner permission
+# Admin Modules menu (/team admin -> Modules)
+modules_state_enabled: <green>● Enabled
+modules_state_disabled: <red>● Disabled
+modules_click_enable: <yellow>Click to enable
+modules_click_disable: <yellow>Click to disable
+modules_toggle_result: '<status> <white>module: <gray><module>'
+# Module display names shown in the Modules menu (leave a key out to keep the English default)
+module_team_creation_name: Team Creation
+module_team_disband_name: Team Disband
+module_team_invites_name: Team Invites
+module_team_join_requests_name: Join Requests
+module_team_blacklist_name: Blacklist
+module_team_transfer_name: Ownership Transfer
+module_team_public_toggle_name: Public Toggle
+module_team_rename_name: Team Rename
+module_team_home_name: Team Home
+module_team_warps_name: Team Warps
+module_team_pvp_toggle_name: PvP Toggle
+module_team_bank_name: Team Bank
+module_team_enderchest_name: Team Ender Chest
+module_team_allies_name: Team Allies
+module_team_chat_name: Team Chat
+module_ally_chat_name: Ally Chat
+module_team_glow_name: Team Glow
+module_team_leaderboard_name: Leaderboards
+module_team_prices_name: Team Prices
+module_team_upgrades_name: Tier Upgrades
+module_team_buffs_name: Team Buffs
+module_team_quests_name: Team Quests
+# Module descriptions (the second lore line in the Modules menu)
+module_team_creation_desc: Players can create teams.
+module_team_disband_desc: Owners can disband their team.
+module_team_invites_desc: Invite players to a team.
+module_team_join_requests_desc: Players can request to join teams.
+module_team_blacklist_desc: Block players from joining.
+module_team_transfer_desc: Transfer team ownership.
+module_team_public_toggle_desc: Teams can be public or private.
+module_team_rename_desc: Rename an existing team.
+module_team_home_desc: Set and teleport to a team home.
+module_team_warps_desc: Team warp points.
+module_team_pvp_toggle_desc: Teams can toggle internal PvP.
+module_team_bank_desc: Shared team money bank.
+module_team_enderchest_desc: Shared team ender chest.
+module_team_allies_desc: Team alliances.
+module_team_chat_desc: Private team chat channel.
+module_ally_chat_desc: Chat shared with allied teams (/team ac).
+module_team_glow_desc: Members glow in team colour.
+module_team_leaderboard_desc: Team leaderboards.
+module_team_prices_desc: Per-team action pricing (/team prices).
+module_team_upgrades_desc: The team tier upgrade system.
+module_team_buffs_desc: Proximity team buffs.
+module_team_quests_desc: Team quests and rewards.
+# Admin member editor
+admin_perm_result: <status> <white><permission> permission
+perm_label_withdraw: withdraw
+perm_label_enderchest: enderchest
+perm_label_sethome: set home
+perm_label_usehome: use home
+admin_member_already_owner: <red>Member is already the owner!
+admin_member_already_coowner: <red>Member is already a co-owner!
+admin_member_promoted: <green>Promoted member to Co-Owner
+admin_member_already_lowest: <red>Member is already at the lowest rank!
+admin_member_cannot_demote_owner: <red>Cannot demote the owner!
+admin_member_demoted: <green>Demoted member to regular Member
+admin_member_kicked: <green>Kicked <white><player> <green>from the team
+# Admin team manage editor
+admin_manage_member_not_found: <red>Member not found!
+admin_manage_cannot_edit_owner: <red>Cannot edit the team owner!
+admin_manage_now_public: <green>Team is now public
+admin_manage_now_private: <red>Team is now private
+admin_manage_pvp_on: <green>PvP enabled
+admin_manage_pvp_off: <red>PvP disabled
+admin_manage_prompt_name: '<yellow>Enter the new team name in chat:'
+admin_manage_prompt_desc: '<yellow>Enter the new description in chat:'
+admin_manage_prompt_tag: '<yellow>Enter the new tag in chat:'
+admin_manage_balance_invalid: <red>Balance must be a normal, non-negative number
+admin_manage_balance_set: <green>Balance set to <white><balance>
+admin_manage_prompt_balance: '<yellow>Enter the new balance:'
+admin_manage_stats_usage: '<red>Usage: <kills> <deaths>'
+admin_manage_stats_negative: <red>Stats cannot be negative
+admin_manage_stats_set: '<green>Stats updated: <white><kills> kills, <deaths> deaths'
+admin_manage_prompt_stats: '<yellow>Enter kills and deaths (e.g., 100 50):'
+admin_manage_invalid_number: <red>Invalid number format
+# Team chat spy (/team chatspy)
+chatspy_no_permission: <red>You don't have permission to use chat spy!
+chatspy_disabled: <red>Team chat spy disabled
+chatspy_enabled: <green>Team chat spy enabled - You can now see all team chats
+# /team msg usage (<label> is the command alias used)
+team_message_usage: '<gray>Usage: /<label> <message>'
+# /team setcolor usage
+setcolor_usage:
+- '<gray>Usage: /team setcolor <color|reset|#hex #hex></gray>'
+- <gray>Examples:</gray>
+- <gray>  /team setcolor RED</gray>
+- <gray>  /team setcolor &c <dark_gray>(legacy format)</dark_gray></gray>
+- '<gray>  /team setcolor #FF0000 #00FF00 <dark_gray>(gradient)</dark_gray></gray>'
+# Admin warps menu
+admin_warps_title: '<dark_gray>Warps: <gray><team>'
+admin_warps_none_name: <red><bold>No Warps Set</bold></red>
+admin_warps_none_lore: <gray>This team has not set any warps.
+admin_warps_location: '<gray>Location: <white><location>'
+admin_warps_server: '<gray>Server: <yellow><server>'
+admin_warps_access: '<gray>Access: <status>'
+admin_warps_teleport: <yellow>Click to teleport
+teammate_visibility_usage: '<gray>Usage: /team visibility [hide|show]'
+teammate_visibility_hidden: <green>Teammates are now hidden from your view. Use /team visibility show to restore them.
+teammate_visibility_shown: <green>Teammates are now visible to you.
+enderchest_unavailable: <red>This team's Ender Chest is in use or awaiting recovery. If it stays unavailable, contact an administrator.</red>
+enderchest_save_failed: <red>The Ender Chest could not be loaded or saved safely. Please contact an administrator if this continues.</red>
+prices_gui_action_name: <gradient:#FFD700:#FFA500><bold><action></bold></gradient>
+
+# ─── Ender chest, chat prompts, leaderboards, settings and quest menu ───
+enderchest_disabled: <red>The team ender chest is disabled on this server.</red>
+enderchest_disabled_admin: '<gray>Admin info: switched off by <white><key></white> in config.yml. Set it to true and run /team reload.</gray>'
+enderchest_no_member_permission: <red>Your team has not given you access to the team ender chest. Ask the owner or a co-owner.</red>
+prompt_input_hint: <dark_gray>Chat not working? <click:suggest_command:'/team input '><hover:show_text:'<gray>Click to type your answer as a command'><white><u>/team input</u></white></hover></click> followed by your answer works too.</dark_gray>
+prompt_expired: <gray>Your team prompt timed out. Your next chat message is sent as normal chat again.</gray>
+usage_input: '<red>Usage: /team input <answer> (answers an open team prompt).</red>'
+input_no_prompt: <red>There is no open team prompt to answer.</red>
+usage_top: '<red>Usage: /team top [kills|points|balance|members]</red>'
+leaderboard_title_points: ᴛᴏᴘ 10 ᴛᴇᴀᴍs ʙʏ ᴘᴏɪɴᴛs
+leaderboard_stat_points: Points
+settings_color_none: <white>Default</white>
+quests_gui_name: <gold><quest_name>
+quests_gui_description_line: <gray><line>
+quests_gui_bar_filled: <green>|
+quests_gui_bar_empty: <dark_gray>|
+
+quests_disabled: <red>Team quests are disabled on this server.</red>

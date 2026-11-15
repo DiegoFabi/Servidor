@@ -1,0 +1,13 @@
+isEnabled: true
+material: IRON_LEGGINGS
+name: '&8Enchanted Leggings'
+lore:
+- "&8You literally fought this"
+- "&8piece of armor."
+enchantments:
+- "PROTECTION_ENVIRONMENTAL,3"
+- "PROTECTION_PROJECTILE,2"
+- "PROTECTION_FIRE,1"
+- "PROTECTION_EXPLOSIONS,1"
+potionEffects: []
+itemType: UNIQUE

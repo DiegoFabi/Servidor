@@ -1,0 +1,133 @@
+# Convertido desde CommandPanels (panels/panelSkillsAltern.yml). Abrir: /coremenu <menu>
+panelskillsaltern:
+  permission: ''
+  bottom_inventory: false
+  name: '            &dʜᴀʙɪʟɪᴅᴀᴅᴇꜱ'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  start_script:
+  - panelskillsaltern_open
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 9
+      - 18
+      - 19
+      - 20
+      source: vanilla
+      material: BLUE_STAINED_GLASS_PANE
+      name: '§7'
+      flags:
+      - HIDE_ATTRIBUTES
+    b2:
+      location: top
+      slots:
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 12
+      - 17
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 26
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '§7'
+      flags:
+      - HIDE_ATTRIBUTES
+    b3:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: LAPIS_LAZULI
+      name: '&b✾ Aumentar Habilidades!'
+      lore:
+      - '&8Puedes desbloquear ciertas habilidades'
+      - '&8especiales y usarlas según nivel de Maná!'
+      - '&7'
+      - '&7¿Que puedo mejorar y comó?'
+      - '&7'
+      - '&7| &fPuedes aumentar experiencia más rapido'
+      - '&7| &fen ciertas habilidades por &aDinero ⛀&f!'
+      - '&7| &eLista de Habilidades Activas:'
+      - '&7'
+      - '&a✔ &fAgricultura'
+      - '&a✔ &fExcavación'
+      - '&a✔ &fArqueria'
+      - '&a✔ &fResistencia'
+      - '&a✔ &fEncantamientos'
+      - '&a✔ &fAgilidad'
+      - '&a✔ &fCuración'
+      - '&a✔ &fy 8 más...'
+      - '&7'
+      - '&a➶ ¡Toca para abrir menú!'
+      flags:
+      - HIDE_ATTRIBUTES
+    b4:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: AIR
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    b5:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjVjMTUwZmYzODMxOTdlYjk4MzU3YTFhZGQ0NWU1OTQwODY3ODQ1ODY5OTM2MWM2MDllODAzODNiNWJlMjhkNiJ9fX0=
+      name: '&7🗡 &eAgregar Habilidades a Objetos!'
+      lore:
+      - '&8Para usar esto debes tener la herramienta'
+      - '&8o parte de armadura en tu mano.'
+      - '&7'
+      - '&7| &fPuedes agregar habilidades a tus'
+      - '&7| &cHerramientas &fo &cArmaduras&f!'
+      - '&7'
+      - '&a➶ ¡Toca para abrir menú!'
+      flags:
+      - HIDE_ATTRIBUTES
+    b6:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjUzYWI4MzYxZTllMDJjZTk1OGNhODM3ZWU3MGRhNmJjOGZmYzIyZTdkNTc2MDcyN2NjMTNkODVhMjYwYmJjZCJ9fX0=
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b7:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: WITHER_SKELETON_SKULL
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES
+    b8:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGIzYmNjMWE2NjhmYjMzOTc1MDczNTk2NzQxMjhhNDJjMjZmMzQ0OTc0MTg5ZWMzMjJhMzNkMTMxNjg0MjhlYSJ9fX0=
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES

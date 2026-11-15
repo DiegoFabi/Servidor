@@ -1,0 +1,73 @@
+guard_see_player_1:
+  Cooldown: 5
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=idle;li=0;lo=0;r=true} @self
+  - state{s=wave;li=1;lo=1} @self
+  - state{s=idle;li=4;lo=4;delay=31.6} @self
+
+guard_salute:
+  Cooldown: 10
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  # - sound{s=your_sound_name} @self
+  #- state{s=idle;li=0;lo=0;r=true} @self
+  - state{s=salute;li=1;lo=1} @self
+  #- state{s=idle;li=4;lo=4;delay=31.6} @self
+
+guard_salute2:
+  Cooldown: 10
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  # - sound{s=your_sound_name} @self
+  #- state{s=idle;li=0;lo=0;r=true} @self
+  - state{s=salute2;li=1;lo=1} @self
+  #- state{s=idle;li=4;lo=4;delay=31.6} @self
+
+guard_lock_head_1: 
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - lockhead{lp=true} @self
+
+guard_interact_1:
+  Cooldown: 3
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=interact;mid=scene_guards;lo=4;li=4} @self
+  - lockhead{lp=true} @self
+
+interact_guard_sleep_stand:
+  Cooldown: 60
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=sleep_stand;mid=scene_guards;r=true} @self
+  - state{s=wake;mid=scene_guards;delay=1} @self
+  - state{s=idle2;mid=scene_guards;delay=65} @self
+  - state{s=idle2;mid=scene_guards;r=true;delay=1200} @self
+  - state{s=sleep_stand;mid=scene_guards;delay=1200} @self
+
+guards_closed:
+  Cooldown: 4
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=close;li=1;lo=1} @self
+  - state{s=idle;li=1;lo=1;delay=114} @self
+# Replace your_sound_name with the name of a sound of your choice, and remove # 
+# 4545PSI
+
+
+

@@ -1,0 +1,12 @@
+enabled: true
+hostname: 100.114.156.47
+websocket:
+  port: 33632
+  auth: session
+panel:
+  enabled: true
+  port: 33633
+entity:
+  show-range: 50.0
+typingDurationType: TOTAL
+confirmationKey: SNEAK

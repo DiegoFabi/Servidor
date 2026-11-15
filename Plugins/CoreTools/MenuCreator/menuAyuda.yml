@@ -1,0 +1,285 @@
+# Guía de funciones que no son evidentes a simple vista.
+# Abrir: /coremenu menuAyuda (botón Ayuda del menú principal). Solo informativo.
+menuAyuda:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Guía del Servidor'
+  size: 5
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 18
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 41
+      - 42
+      - 43
+      - 44
+      source: vanilla
+      material: purple_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    ayuda_10:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: iron_axe
+      name: <white><glyph:tree> <gradient:#FFE29A:#FFB347>Tala de Árboles</gradient>
+      lore:
+      - <#C9CDD6>Rompe un tronco con un hacha y
+      - <#C9CDD6>caerá el árbol entero, hojas incluidas.
+      - <#C9CDD6>(Hasta 64 troncos por árbol)
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Hacha + romper la base del tronco
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_11:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: iron_pickaxe
+      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Minería en Veta</gradient>
+      lore:
+      - <#C9CDD6>Rompe un mineral con un pico, de pie
+      - '<#C9CDD6>o agachado: se extrae toda la veta.'
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Pico + romper un mineral
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_12:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: hopper
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Recolección Automática</gradient>
+      lore:
+      - <#C9CDD6>Lo que rompes o sueltan los mobs
+      - <#C9CDD6>va directo a tu inventario.
+      - <#C9CDD6>La barra de acción muestra lo recogido.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Automático; si no cabe, cae al suelo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_13:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: dropper
+      name: <white><glyph:warning> <gradient:#FFE29A:#FFB347>Cómo Soltar Objetos</gradient>
+      lore:
+      - <#C9CDD6>La tecla Q sola está bloqueada
+      - <#C9CDD6>para que no pierdas objetos por error.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Shift + Q para soltar el objeto
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_14:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: book
+      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Menú de Opciones</gradient>
+      lore:
+      - <#C9CDD6>El libro del último slot de tu
+      - <#C9CDD6>barra abre el menú principal.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Clic derecho con el libro
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_15:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: chest
+      name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Buzón</gradient>
+      lore:
+      - <#C9CDD6>Objetos de subastas, NPCs o premios
+      - <#C9CDD6>que no cupieron en tu inventario.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>/buzon para recogerlos
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_16:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: gold_ingot
+      name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Subastas</gradient>
+      lore:
+      - <#C9CDD6>Subasta el objeto de tu mano y
+      - <#C9CDD6>los demás pujan con su dinero.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>/subasta (precio inicial)
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_19:
+      location: top
+      slots:
+      - 19
+      source: vanilla
+      material: sunflower
+      name: <white><glyph:dollar> <gradient:#FFE29A:#FFB347>Duelos y Minijuegos</gradient>
+      lore:
+      - '<#C9CDD6>Apuesta contra otros jugadores:'
+      - '<#C9CDD6>• Coinflip: cara o cruz <#FFD36B>/cf'
+      - <#C9CDD6>• Reto de Clicks 1v1 <#FFD36B>/retoclicks (jugador)
+      - '<#C9CDD6>• Busca Objetos: cada hora en el chat'
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Pulsa los botones del chat para unirte
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_20:
+      location: top
+      slots:
+      - 20
+      source: vanilla
+      material: villager_spawn_egg
+      name: <white><glyph:chat_bubble> <gradient:#FFE29A:#FFB347>NPCs del Mundo</gradient>
+      lore:
+      - <#C9CDD6>Los NPCs hablan contigo y algunos
+      - <#C9CDD6>tienen minijuegos, como el Frutero.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Clic derecho a un NPC
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_21:
+      location: top
+      slots:
+      - 21
+      source: vanilla
+      material: amethyst_shard
+      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Personalización</gradient>
+      lore:
+      - <#C9CDD6>Muebles, partículas y cosméticos
+      - <#C9CDD6>que se compran con Shards.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Menú de Opciones > Personalización
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_22:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: shield
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Protecciones</gradient>
+      lore:
+      - <#C9CDD6>Protege tu terreno para que nadie
+      - <#C9CDD6>rompa ni robe tus cosas.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>/nclaim
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_23:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: paper
+      name: <white><glyph:person> <gradient:#FFE29A:#FFB347>Tu Perfil</gradient>
+      lore:
+      - <#C9CDD6>Consulta tu equipamiento, saldo,
+      - <#C9CDD6>vida y nivel en cualquier momento.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Menú de Opciones > Mi Perfil
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_24:
+      location: top
+      slots:
+      - 24
+      source: vanilla
+      material: blaze_rod
+      name: <white><glyph:high_voltage> <gradient:#FFE29A:#FFB347>Objetos Mágicos</gradient>
+      lore:
+      - <#C9CDD6>Las runas, bastones y reliquias tienen
+      - <#C9CDD6>poderes y usos limitados (durabilidad).
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>Clic derecho con el objeto en la mano
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_25:
+      location: top
+      slots:
+      - 25
+      source: vanilla
+      material: nether_star
+      name: <white><glyph:trophy> <gradient:#FFE29A:#FFB347>Pase de Batalla</gradient>
+      lore:
+      - <#C9CDD6>Completa misiones para subir de
+      - <#C9CDD6>nivel y reclamar recompensas.
+      - ''
+      - <white><glyph:light_bulb> <#7FB2FF>/bp o Menú de Opciones
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    volver:
+      location: top
+      slots:
+      - 40
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      lore:
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar al menú
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click

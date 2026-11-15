@@ -1,0 +1,285 @@
+# Acciones de los menus convertidos desde CommandPanels
+menujobs_b5_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join farmer";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b5_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave farmer";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b5_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join farmer";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b5_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave farmer";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b6_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join fisherman";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b6_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave fisherman";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b6_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join fisherman";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b6_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave fisherman";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b7_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join enchanter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b7_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave enchanter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b7_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join enchanter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b7_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave enchanter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b8_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join brewer";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b8_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave brewer";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b8_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join brewer";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b8_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave brewer";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b9_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join hunter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b9_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave hunter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b9_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join hunter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b9_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave hunter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b10_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join weaponsmith";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b10_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave weaponsmith";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+menujobs_b10_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join weaponsmith";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b10_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave weaponsmith";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+menujobs_b11_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join builder";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b11_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave builder";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+menujobs_b11_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join builder";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b11_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave builder";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+menujobs_b12_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join woodcutter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b12_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave woodcutter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b12_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join woodcutter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b12_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave woodcutter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b13_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join miner";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b13_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave miner";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b13_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join miner";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b13_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave miner";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b14_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join explorer";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b14_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave explorer";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b14_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join explorer";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b14_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave explorer";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b15_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join crafter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b15_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave crafter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b15_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join crafter";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b15_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave crafter";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b16_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join digger";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b16_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave digger";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b16_shift_left_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs join digger";runas=player} @Self'
+  - 'variable{a=set;v=inJob;va="%jobsr_user_jobs%"} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'
+menujobs_b16_shift_right_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="jobs leave digger";runas=player} @Self'
+  - 'variable{a=remove;v=inJob} @Self'
+  - 'command{c="core-menu menuJobs {caster_name}";runas=console} @Self'

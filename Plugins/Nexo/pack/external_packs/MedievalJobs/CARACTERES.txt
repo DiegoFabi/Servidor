@@ -1,0 +1,15 @@
+Fuente minecraft:default (titulos de EcoJobs). Titulo = &f + 6 x split + fondo
+split        U+EE00
+general      U+EE01
+farmer       U+EE02
+miner        U+EE03
+wood_cutter  U+EE04
+digger       U+EE05
+fisherman    U+EE06
+hunter       U+EE07
+alchemist    U+EE08
+blacksmith   U+EE09
+builder      U+EE0A
+enchanter    U+EE0B
+left_click   U+EE0C
+right_click  U+EE0D

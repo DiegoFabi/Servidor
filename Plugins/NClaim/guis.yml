@@ -1,0 +1,815 @@
+guis:
+  yes_text: '&aSí'
+  no_text: '&cNo'
+  background_buttons: true
+  background_1:
+    display_name: '&8x'
+    material: BLACK_STAINED_GLASS_PANE
+  background_2:
+    display_name: '&8x'
+    material: GRAY_STAINED_GLASS_PANE
+  free: '&eGratis'
+  back:
+    display_name: '&eVolver'
+    material: OAK_DOOR
+  previous_page:
+    display_name: '&ePágina Anterior'
+    material: FEATHER
+  next_page:
+    display_name: '&ePágina Siguiente'
+    material: COMPASS
+  enabled:
+    display_name: '&aActivado'
+  disabled:
+    display_name: '&cDesactivado'
+  
+  scroll_button:
+    directions:
+      LEFT: Left
+      RIGHT: Right
+      DOWN: Down
+      UP: Up
+  
+  # Claim Menu - When /nclaim is typed, it is the menu with operations such as buy claim
+  claim_menu:
+    enter_a_name_title: Escribe un nombre
+    title: Menú de Protección
+    admin:
+      display_name: '&6Menú de Administración'
+      material: COMMAND_BLOCK
+    buy_claim:
+      display_name: '&6Comprar una Protección'
+      material: EMERALD
+      lore:
+      - ''
+      - '&fCompra una nueva protección'
+      - '&7Coste: &e${price}'
+      - ''
+      - '&eClic para comprar'
+    manage_claims:
+      display_name: '&6Gestionar Protecciones'
+      material: CHEST
+      lore:
+      - ''
+      - '&fGestiona tus protecciones:'
+      - '&7• &fVer todas las protecciones'
+      - '&7• &fModificar ajustes'
+      - '&7• &fGestionar miembros'
+      - ''
+      - '&eClic para gestionar'
+  
+  # Claim List Menu - The menu that opens after typing /nclaim and clicking the 'Gestionar Protecciones' button.
+  claim_list_menu:
+    on_sale_lore:
+    - ''
+    - '&6&l[ EN VENTA ]'
+    - '&fPrecio: &e${price}'
+    title: Mis Protecciones
+    list_type:
+      display_name: '&6Tipo de Lista'
+      material: PAPER
+      all: Todas
+      player: Propias
+      coop: Compartidas
+    own_claims:
+      display_name: '&6Protección: &e{claim_id}'
+      material: GRASS_BLOCK
+      lore:
+      - ''
+      - '&fMundo: &e{world}'
+      - '&fUbicación: &e{coordinates}'
+      - '&fDueño: &e{owner}'
+      - ''
+      - '&7Clic para gestionar'
+    coop_claims:
+      display_name: '&6Protección Compartida: &e{claim_id}'
+      material: OAK_SIGN
+      lore:
+      - ''
+      - '&fMundo: &e{world}'
+      - '&fUbicación: &e{coordinates}'
+      - '&fDueño: &e{owner}'
+      - ''
+      - '&7Solo puedes ver'
+  
+  # Claim Management Menu - The menu that opens when interacting with the claim block.
+  claim_management_menu:
+    enter_a_price_title: Escribe un precio
+    claim_block:
+      display_name: '&6Bloque de Protección'
+      material: SHULKER_BOX
+      lore:
+      - ''
+      - '&fGestiona tu bloque de protección:'
+      - '&7• &fCambiar la apariencia del bloque'
+      - '&7• &fIr a la protección'
+      - '&7• &fMover el bloque'
+      - ''
+      - '&eClic para gestionar'
+    sell:
+      display_name: '&6Vender la Protección'
+      material: GOLD_INGOT
+      lore:
+      - ''
+      - '&fVende esta protección:'
+      - '&7• &fElige un precio de venta'
+      - '&7• &fTransferir la propiedad al instante'
+      - '&7• &fGana dinero con la venta'
+      - ''
+      - '&eClic para poner en venta'
+    title: Gestionar Protección
+    expand:
+      display_name: '&6Ampliar Protección'
+      material: GRASS_BLOCK
+      lore:
+      - ''
+      - '&fAmplía el territorio de tu protección'
+      - '&7• &fAñadir chunks nuevos'
+      - '&7• &fVer los chunks actuales'
+      - ''
+      - '&eClic para gestionar'
+    time:
+      display_name: '&6Gestionar Duración'
+      material: CLOCK
+      lore:
+      - ''
+      - '&fGestiona la duración:'
+      - '&7• &fVer la fecha de expiración'
+      - '&7• &fAmpliar la duración'
+      - ''
+      - '&eClic para gestionar'
+    coop:
+      display_name: '&6Gestionar Miembros'
+      material: TURTLE_HELMET
+      lore:
+      - ''
+      - '&fGestiona los miembros:'
+      - '&7• &fAñadir o quitar miembros'
+      - '&7• &fModificar permisos'
+      - ''
+      - '&eClic para gestionar'
+    setting:
+      display_name: '&6Ajustes de la Protección'
+      material: END_CRYSTAL
+      lore:
+      - ''
+      - '&fConfigura tu protección:'
+      - '&7• &fPermisos'
+      - '&7• &fProtecciones'
+      - '&7• &fReglas de acceso'
+      - ''
+      - '&eClic para configurar'
+    type:
+      display_name: '&6Tipo de Bloque de Protección'
+      material: SHULKER_BOX
+      lore:
+      - ''
+      - '&fCambia el tipo de tu bloque de protección'
+      - '&7• &fSolo cambia la apariencia'
+      - '&7• &fNo afecta a las protecciones'
+      - ''
+      - '&eClic para cambiar'
+    delete:
+      display_name: '&cEliminar Protección'
+      material: TNT
+      lore:
+      - ''
+      - '&cAviso: &fEsto eliminará para siempre'
+      - '&ftu protección sin reembolso'
+      - ''
+      - '&eClic para continuar'
+  
+  # Claim Expand Menu - The menu that opens after interacting with the claim block and clicking the 'Ampliar Protección' button.
+  claim_expand_menu:
+    title: Ampliar Protección
+    scroll_button:
+      display_name: '&fDesplazar {direction}'
+    center:
+      display_name: '&6Chunk Central'
+      lore:
+      - ''
+      - '&fEste es el chunk central de tu protección'
+    expand:
+      display_name: '&6Ampliar Protección'
+      material: BROWN_WOOL
+      lore:
+      - ''
+      - '&fAmplía tu protección'
+      - '&7Coste: &e${price}'
+      - ''
+      - '&eClic para comprar'
+    claimed:
+      display_name: '&aChunk Protegido'
+      material: GREEN_WOOL
+      lore:
+      - ''
+      - '&fEste chunk está protegido'
+    not_adjacent:
+      display_name: '&cChunk No Válido'
+      material: BLACK_WOOL
+      lore:
+      - ''
+      - '&fSolo puedes proteger chunks contiguos'
+    claimed_another_player:
+      display_name: '&cProtegido por Otro Jugador'
+      material: RED_WOOL
+      lore:
+      - ''
+      - '&fEste chunk pertenece a otro jugador'
+  
+  # Claim Time Management Menu - The menu that opens after interacting with the claim block and clicking the 'Gestionar Duración' button.
+  claim_time_management_menu:
+    title: Gestionar Duración
+    claim_info:
+      display_name: '&6Información de Duración'
+      material: ITEM_FRAME
+      lore:
+      - ''
+      - '&fTiempo Restante: &e{time_left}'
+      - '&fExpira: &e{expires_at}'
+    confirm:
+      display_name: '&aConfirmar Cambios'
+      material: BLUE_ICE
+      lore:
+      - ''
+      - '&fNueva duración:'
+      - '&7• &e{d} &fdías'
+      - '&7• &e{h} &fhoras'
+      - '&7• &e{m} &fminutos'
+      - '&7Coste: &e${price}'
+    select_time_unit:
+      display_name: '&6Elegir Unidad de Tiempo'
+      material: CHAIN
+      lore:
+      - ''
+      - '&f• {days_status}'
+      - '&f• {hours_status}'
+      - '&f• {minutes_status}'
+    days_status: Días # You cannot use color codes.
+    hours_status: Horas
+    minutes_status: Minutos
+    add_one:
+      display_name: '&a+1 {unit}'
+      material: LIME_CONCRETE
+    add_six:
+      display_name: '&a+6 {unit}'
+      material: GREEN_CONCRETE
+    subtract_one:
+      display_name: '&c-1 {unit}'
+      material: PINK_CONCRETE
+    subtract_six:
+      display_name: '&c-6 {unit}'
+      material: RED_CONCRETE
+  
+  claim_manage_coop_menu:
+    title: Miembros
+    offline: '&7(Desconectado)'
+    add_coop:
+      display_name: '&aAñadir Miembro'
+      material: NETHER_STAR
+    search_title: Escribe un jugador
+    empty_slot:
+      display_name: '&fHueco Libre'
+      material: WHITE_STAINED_GLASS_PANE
+      lore:
+      - ''
+      - '&eClic para añadir miembro'
+    locked_slot:
+      display_name: '&cHueco Bloqueado'
+      material: RED_STAINED_GLASS_PANE
+      lore:
+      - ''
+      - '&eRequiere permiso'
+    coop_info:
+      display_name: '&e{player}'
+      lore:
+      - ''
+      - '&fSe unió: &7{date}'
+      - ''
+      - '&eClic para editar'
+      admin_lore:
+      - '&fPermisos: &a{yes}&7/&c{no}'
+      - ''
+      - '&eClic para modificar'
+  
+  manage_coop_player_permission_menu:
+    title: Gestionar a {player}
+    click_to_view: '&eClic para ver'
+    right_click_toggle: '&eClic derecho para alternar todo'
+    offline: '&7(Desconectado)'
+    player_info:
+      display_name: '&e{player}'
+      lore:
+      - ''
+      - '&fSe unió: &7{date}'
+      - ''
+      - '&7Gestiona los permisos abajo'
+    transfer:
+      display_name: '&6Transferir Protección'
+      material: GOLDEN_HELMET
+      lore:
+      - ''
+      - '&7Transfiere la propiedad de esta protección'
+      - '&7a &e{player}'
+      - ''
+      - '&7¡Esta acción no se puede deshacer!'
+      - ''
+      - '&eClic para transferir'
+    kick:
+      display_name: '&cExpulsar Miembro'
+      material: BARRIER
+      lore:
+      - ''
+      - '&fExpulsar a este miembro'
+      - '&fde tu protección'
+      - ''
+      - '&7Clic para expulsar'
+    categories:
+      blocks:
+        display_name: '&6Permisos de Bloques'
+        material: GRASS_BLOCK
+      containers:
+        display_name: '&6Acceso a Contenedores'
+        material: CHEST
+      redstone:
+        display_name: '&6Uso de Redstone'
+        material: REDSTONE
+      doors:
+        display_name: '&6Acceso a Puertas'
+        material: OAK_DOOR
+      workstations:
+        display_name: '&6Uso de Estaciones de Trabajo'
+        material: CRAFTING_TABLE
+      interactions:
+        display_name: '&6Permisos de Interacción'
+        material: LEVER
+      liquids:
+        display_name: '&6Gestión de Líquidos'
+        material: WATER_BUCKET
+      entities:
+        display_name: '&6Interacción con Entidades'
+        material: VILLAGER_SPAWN_EGG
+      coop_permissions:
+        display_name: '&6Permisos de Miembros'
+        material: SHIELD
+    permissions:
+      move_claim_block:
+        display_name: '&fMover Bloque de Protección'
+        material: SHULKER_BOX
+      break_blocks:
+        display_name: '&fRomper Bloques'
+        material: DIAMOND_PICKAXE
+      break_spawner:
+        display_name: '&fRomper Generadores'
+        material: SPAWNER
+      place_blocks:
+        display_name: '&fColocar Bloques'
+        material: GRASS_BLOCK
+      place_spawner:
+        display_name: '&fColocar Generadores'
+        material: SPAWNER
+      use_chest:
+        display_name: '&fUsar Cofres'
+        material: CHEST
+      use_trapped_chest:
+        display_name: '&fUsar Cofres Trampa'
+        material: TRAPPED_CHEST
+      use_furnace:
+        display_name: '&fUsar Hornos'
+        material: FURNACE
+      use_barrel:
+        display_name: '&fUsar Barriles'
+        material: BARREL
+      use_shulker:
+        display_name: '&fUsar Cajas de Shulker'
+        material: SHULKER_BOX
+      use_hopper:
+        display_name: '&fUsar Tolvas'
+        material: HOPPER
+      use_dispenser:
+        display_name: '&fUsar Dispensadores'
+        material: DISPENSER
+      use_dropper:
+        display_name: '&fUsar Soltadores'
+        material: DROPPER
+      use_repeater:
+        display_name: '&fUsar Repetidores'
+        material: REPEATER
+      use_comparator:
+        display_name: '&fUsar Comparadores'
+        material: COMPARATOR
+      use_buttons:
+        display_name: '&fUsar Botones'
+        material: STONE_BUTTON
+      use_pressure_plates:
+        display_name: '&fUsar Placas de Presión'
+        material: STONE_PRESSURE_PLATE
+      use_levers:
+        display_name: '&fUsar Palancas'
+        material: LEVER
+      use_doors:
+        display_name: '&fUsar Puertas'
+        material: OAK_DOOR
+      use_trapdoors:
+        display_name: '&fUsar Trampillas'
+        material: OAK_TRAPDOOR
+      use_gates:
+        display_name: '&fUsar Vallas'
+        material: OAK_FENCE_GATE
+      use_crafting:
+        display_name: '&fUsar Mesas de Trabajo'
+        material: CRAFTING_TABLE
+      use_enchanting:
+        display_name: '&fUsar Mesas de Encantamientos'
+        material: ENCHANTING_TABLE
+      use_anvil:
+        display_name: '&fUsar Yunques'
+        material: ANVIL
+      use_grindstone:
+        display_name: '&fUsar Afiladoras'
+        material: GRINDSTONE
+      use_stonecutter:
+        display_name: '&fUsar Cortapiedras'
+        material: STONECUTTER
+      use_loom:
+        display_name: '&fUsar Telares'
+        material: LOOM
+      use_smithing:
+        display_name: '&fUsar Mesas de Herrería'
+        material: SMITHING_TABLE
+      use_cartography:
+        display_name: '&fUsar Mesas de Cartografía'
+        material: CARTOGRAPHY_TABLE
+      use_brewing:
+        display_name: '&fUsar Soportes para Pociones'
+        material: BREWING_STAND
+      use_bell:
+        display_name: '&fUsar Campanas'
+        material: BELL
+      use_beacon:
+        display_name: '&fUsar Faros'
+        material: BEACON
+      use_jukebox:
+        display_name: '&fUsar Tocadiscos'
+        material: JUKEBOX
+      use_noteblock:
+        display_name: '&fUsar Bloques Musicales'
+        material: NOTE_BLOCK
+      use_ender_pearl:
+        display_name: '&fUsar Perlas de Ender'
+        material: ENDER_PEARL
+      use_campfire:
+        display_name: '&fUsar Fogatas'
+        material: CAMPFIRE
+      use_soul_campfire:
+        display_name: '&fUsar Fogatas de Almas'
+        material: SOUL_CAMPFIRE
+      use_bed:
+        display_name: '&fUsar Camas'
+        material: RED_BED
+      interact_armor_stand:
+        display_name: '&fUsar Soportes de Armadura'
+        material: ARMOR_STAND
+      interact_item_frame:
+        display_name: '&fUsar Marcos'
+        material: ITEM_FRAME
+      place_water:
+        display_name: '&fColocar Agua'
+        material: WATER_BUCKET
+      place_lava:
+        display_name: '&fColocar Lava'
+        material: LAVA_BUCKET
+      take_water:
+        display_name: '&fRecoger Agua'
+        material: WATER_BUCKET
+      take_lava:
+        display_name: '&fRecoger Lava'
+        material: LAVA_BUCKET
+      interact_villager:
+        display_name: '&fComerciar con Aldeanos'
+        material: EMERALD
+      leash_mobs:
+        display_name: '&fAtar Mobs'
+        material: LEAD
+      ride_entities:
+        display_name: '&fMontar Entidades'
+        material: SADDLE
+      open_claim_menu:
+        display_name: '&fUsar el Bloque de Protección'
+        material: BEDROCK
+      extend_expiration:
+        display_name: '&fAmpliar Duración'
+        material: CLOCK
+      expand_claim:
+        display_name: '&fAmpliar Protección'
+        material: MAP
+      add_coop:
+        display_name: '&fAñadir Miembro'
+        material: NAME_TAG
+      manage_claim_block_types:
+        display_name: '&fGestionar Tipos de Bloque'
+        material: STONE_AXE
+      manage_settings:
+        display_name: '&fGestionar Ajustes'
+        material: BOOK
+  
+  
+  claim_settings_menu:
+    title: Ajustes de Protección
+    settings:
+      pvp:
+        default_value: false
+        changeable: true
+        # permission: "nclaim.change_claim_pvp_setting"
+        display_name: '&6PvP'
+        material: DIAMOND_SWORD
+        lore:
+        - ''
+        - '&fPermitir combate entre jugadores'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+      tnt_explosions:
+        default_value: true
+        changeable: true
+        # permission: "nclaim.change_tnt_explosion_setting"
+        display_name: '&6Daño de TNT'
+        material: TNT
+        lore:
+        - ''
+        - '&fPermitir que la TNT rompa bloques'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+      creeper_explosions:
+        default_value: true
+        changeable: true
+        # permission: "nclaim.change_claim_creeper_explosion_setting"
+        display_name: '&6Daño de Creepers'
+        material: CREEPER_SPAWN_EGG
+        lore:
+        - ''
+        - '&fPermitir daño de explosiones de creeper'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+      mob_attacks:
+        default_value: false
+        changeable: true
+        # permission: "nclaim.change_claim_mob_attack_setting"
+        display_name: '&6Combate con Mobs'
+        material: GOLDEN_APPLE
+        lore:
+        - ''
+        - '&fPermitir luchar contra mobs'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+      monster_spawning:
+        default_value: true
+        changeable: true
+        # permission: "nclaim.change_claim_monster_spawning_setting"
+        display_name: '&6Aparición de Monstruos'
+        material: ZOMBIE_SPAWN_EGG
+        lore:
+        - ''
+        - '&fPermitir que aparezcan monstruos'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+      animal_spawning:
+        default_value: true
+        changeable: true
+        # permission: "nclaim.change_claim_animal_spawning_setting"
+        display_name: '&6Aparición de Animales'
+        material: PIG_SPAWN_EGG
+        lore:
+        - ''
+        - '&fPermitir que aparezcan animales'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+      villager_interactions:
+        default_value: false
+        changeable: true
+        # permission: "nclaim.change_claim_villager_interaction_setting"
+        display_name: '&6Comercio con Aldeanos'
+        material: VILLAGER_SPAWN_EGG
+        lore:
+        - ''
+        - '&fPermitir interactuar con aldeanos'
+        - ''
+        - '&7Estado: {status}'
+        - ''
+        - '&eClic para alternar'
+  
+  claim_block_management_menu:
+    teleport:
+      display_name: '&6Ir a la Protección'
+      material: ENDER_PEARL
+      lore:
+      - ''
+      - '&fTe lleva a tu protección'
+      - ''
+      - '&eClic para ir'
+    move_claim_block:
+      display_name: '&6Mover el Bloque de Protección'
+      material: SHULKER_BOX
+      lore:
+      - ''
+      - '&fMueve el bloque de protección a tu posición'
+      - ''
+      - '&eClic para continuar'
+    title: Tipos de Bloque
+  
+  admin_menu:
+    all_claims_menu:
+      not_selected_color: '&7'
+      selected_color: '&e'
+      newest: Más Recientes
+      oldest: Más Antiguas
+      all: Todas las Protecciones
+      for_sale: En Venta
+      not_for_sale: No en Venta
+      filter_by_sale:
+        display_name: '&aFiltrar por Venta'
+        material: GOLD_INGOT
+        lore:
+        - ''
+        - '&f• {all_status}'
+        - '&f• {for_sale_status}'
+        - '&f• {not_for_sale_status}'
+      title: Todas las Protecciones
+      reset_settings:
+        display_name: '&cRestablecer Ajustes'
+        material: BOOK
+      search_player:
+        display_name: '&aBuscar Jugador'
+        material: NETHER_STAR
+      sort_by_date:
+        display_name: '&aOrdenar por Fecha'
+        material: GOLD_BLOCK
+        lore:
+        - ''
+        - '&f• {newest_status}'
+        - '&f• {oldest_status}'
+      delete_selected:
+        display_name: '&cEliminar Seleccionadas'
+        material: BARRIER
+      claim_items:
+        selected:
+          display_name: '&aProtección de {owner} &7(Seleccionada)'
+          material: YELLOW_STAINED_GLASS_PANE
+          lore:
+          - ''
+          - '&fCreada: &7{created_at}'
+          - '&fUbicación: &7{world}, {coordinates}'
+          - '&fTamaño: &7{land_size} chunks'
+          - '&fMiembros: &7{coop_count}'
+          - '&fAjustes: &a{yes}&7/&c{no}'
+          - ''
+          - '&eClic &7- &fGestionar'
+          - '&eShift + Clic &7- &fIr'
+          - '&eClic Derecho &7- &fDeseleccionar'
+        unselected:
+          display_name: '&6Protección de {owner}'
+          material: WHITE_STAINED_GLASS_PANE
+          lore:
+          - ''
+          - '&fCreada: &7{created_at}'
+          - '&fUbicación: &7{world}, {coordinates}'
+          - '&fTamaño: &7{land_size} chunks'
+          - '&fMiembros: &7{coop_count}'
+          - '&fAjustes: &a{yes}&7/&c{no}'
+          - ''
+          - '&eClic &7- &fGestionar'
+          - '&eShift + Clic &7- &fIr'
+          - '&eClic Derecho &7- &fSeleccionar'
+  
+  # Confirmation Menu - It is the menu that opens when there is a confirmation process.
+  confirm_menu:
+    title: Confirmar Acción
+    confirm:
+      display_name: '&aConfirmar'
+      material: GREEN_DYE
+    decline:
+      display_name: '&cRechazar'
+      material: RED_DYE
+    center:
+      material: BOOK
+    children:
+      land_unclaim:
+        display_name: '&8¿Liberar el terreno?'
+        lore:
+        - ''
+        - '&7Este chunk de terreno se'
+        - '&7quitará de tu protección.'
+        - ''
+        - '&cAviso: &7Las construcciones de esta zona'
+        - '&7quedarán sin protección.'
+        - ''
+        - '&aClic para confirmar'
+      move_claim_block:
+        display_name: '&6Mover Bloque de Protección'
+        lore:
+        - ''
+        - '&fEsta acción:'
+        - '&7• &fMover el bloque de protección a tu posición'
+        - '&7• &fEl punto de teletransporte también se moverá'
+        - ''
+        - '&aClic en el tinte verde para confirmar el movimiento'
+        - '&cClic en el tinte rojo para cancelar el movimiento'
+      buy_player_claim:
+        display_name: '&6Comprar Protección'
+        lore:
+        - ''
+        - '&fCompra directa a &e{owner}&f:'
+        - '&7• &fPrecio de venta: &e${price}'
+        - ''
+        - '&cAviso: &fEsta acción:'
+        - '&7• &fTransferirte la propiedad'
+        - '&7• &fRestablecer todos los ajustes'
+        - '&7• &fQuitar a todos los miembros'
+        - ''
+        - '&aClic en el tinte verde para confirmar la compra'
+        - '&cClic en el tinte rojo para cancelar la compra'
+      buy_new_claim:
+        display_name: '&6Comprar una Nueva Protección'
+        lore:
+        - ''
+        - '&fSi apruebas esta acción:'
+        - '&7• &fSe descontarán &e${price} &fde tu saldo'
+        - '&7• &fRecibirás una &enueva Protección'
+        - ''
+        - '&aClic en el tinte verde para confirmar la compra'
+        - '&cClic en el tinte rojo para cancelar la compra'
+      claim_expand:
+        display_name: '&6Ampliar Protección'
+        lore:
+        - ''
+        - '&fSi apruebas esta acción:'
+        - '&7• &fCoste: &e${price}'
+        - '&7• &fEl chunk elegido se añadirá a tu protección'
+        - ''
+        - '&aClic en el tinte verde para confirmar la ampliación'
+        - '&cClic en el tinte rojo para cancelar la ampliación'
+      delete_claim:
+        display_name: '&6Eliminar Protección'
+        lore:
+        - ''
+        - '&cAviso: &fEsta acción:'
+        - '&7• &fEliminar para siempre tu protección'
+        - '&7• &fNo se puede deshacer'
+        - ''
+        - '&aClic en el tinte verde para confirmar la eliminación'
+        - '&cClic en el tinte rojo para cancelar la eliminación'
+      kick_coop:
+        display_name: '&6Quitar Miembro'
+        lore:
+        - ''
+        - '&fEsta acción:'
+        - '&7• &fQuitar a &e{player} &fde tu protección'
+        - '&7• &fRetirarle todos los permisos'
+        - ''
+        - '&aClic en el tinte verde para confirmar'
+        - '&cClic en el tinte rojo para cancelar'
+      add_coop:
+        display_name: '&6Añadir Miembro'
+        lore:
+        - ''
+        - '&fEsta acción:'
+        - '&7• &fAñadir a &e{player} &fa tu protección'
+        - '&7• &fDarle permisos de miembro'
+        - ''
+        - '&aClic en el tinte verde para confirmar'
+        - '&cClic en el tinte rojo para cancelar'
+      transfer_claim:
+        display_name: '&6Transferir Protección'
+        lore:
+        - ''
+        - '&cAviso: &fEsta acción:'
+        - '&7• &fTransferir la propiedad a &e{player}'
+        - '&7• &fQuitar tu acceso a esta protección'
+        - '&7• &fNo se puede deshacer'
+        - ''
+        - '&aClic en el tinte verde para confirmar la transferencia'
+        - '&cClic en el tinte rojo para cancelar la transferencia'
+      admin_delete_claim:
+        display_name: '&6Eliminar Protecciones Seleccionadas'
+        lore:
+        - ''
+        - '&cAviso: &fEsta acción:'
+        - '&7• &fEliminar para siempre las protecciones seleccionadas'
+        - '&7• &fNo se puede deshacer'
+        - ''
+        - '&aClic en el tinte verde para confirmar la eliminación'
+        - '&cClic en el tinte rojo para cancelar la eliminación'
+
+# DO NOT CHANGE!
+gui_version: 3.4.1

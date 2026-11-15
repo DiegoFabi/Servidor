@@ -1,0 +1,1 @@
+{"textures":{"0":"modelengine:entity/models/naga","particle":"#0"},"elements":[{"from":[6.598076,3.5,8.232051],"to":[16.598076,12.5,8.232051],"faces":{"south":{"uv":[2.75,0.0,4.0,1.125],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[2.5,1.875,3.75,3.0],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

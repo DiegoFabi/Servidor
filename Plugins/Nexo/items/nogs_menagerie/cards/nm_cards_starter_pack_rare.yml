@@ -1,0 +1,162 @@
+nm_card_rare_alex:
+  itemname: <aqua>Alex Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_rare_alex
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/rare/nm_card_rare_alex
+    custom_model_data: 635101
+
+nm_card_rare_moobloom:
+  itemname: <aqua>Moobloom Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_rare_moobloom
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/rare/nm_card_rare_moobloom
+    custom_model_data: 635102
+
+nm_card_rare_steve:
+  itemname: <aqua>Steve Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_rare_steve
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/rare/nm_card_rare_steve
+    custom_model_data: 635103
+
+nm_card_rare_zombie_horse:
+  itemname: <aqua>Zombie Horse Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_rare_zombie_horse
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/rare/nm_card_rare_zombie_horse
+    custom_model_data: 635104
+
+nm_card_rare_snow_golem:
+  itemname: <aqua>Snow Golem Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_rare_snow_golem
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/rare/nm_card_rare_snow_golem
+    custom_model_data: 635105
+
+nm_card_rare_tadpole:
+  itemname: <aqua>Tadpole Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_rare_tadpole
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/rare/nm_card_rare_tadpole
+    custom_model_data: 635106
+# 32fae060855d8e88f8ac20b498acfc44

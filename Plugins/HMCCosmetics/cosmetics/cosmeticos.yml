@@ -1,0 +1,284 @@
+# Cosméticos del servidor (HMCCosmetics). Modelos e items en Nexo:
+#  Nexo/items/hcs/*.yml (Dark Fantasy Vol. 1 y 4) y Nexo/items/skulpt/witch_flair.yml
+# Permiso de cada uno: hmccosmetics.<id>  (lo da la compra con Shards en CoreTools: /coremenu menuCosmeticos)
+cemetery_witch_hat:
+  slot: HELMET
+  permission: hmccosmetics.cemetery_witch_hat
+  item:
+    material: nexo:cemetery_witch_hat
+    name: <gradient:#B57BFF:#6B2FB3>Sombrero de la Bruja del Cementerio</gradient>
+    amount: 1
+cemetery_witch_cloak:
+  slot: BACKPACK
+  permission: hmccosmetics.cemetery_witch_cloak
+  item:
+    material: nexo:cemetery_witch_cloak
+    name: <gradient:#B57BFF:#6B2FB3>Capa de la Bruja del Cementerio</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:cemetery_witch_cloak_fp
+    name: <gradient:#B57BFF:#6B2FB3>Capa de la Bruja del Cementerio</gradient>
+    amount: 1
+cemetery_witch_broom:
+  slot: OFFHAND
+  permission: hmccosmetics.cemetery_witch_broom
+  item:
+    material: nexo:cemetery_witch_broom
+    name: <gradient:#B57BFF:#6B2FB3>Escoba de la Bruja del Cementerio</gradient>
+    amount: 1
+chained_monstruosity_collar:
+  slot: HELMET
+  permission: hmccosmetics.chained_monstruosity_collar
+  item:
+    material: nexo:chained_monstruosity_collar
+    name: <gradient:#C9CDD6:#6E7380>Collar de la Monstruosidad Encadenada</gradient>
+    amount: 1
+chained_monstruosity_back:
+  slot: BACKPACK
+  permission: hmccosmetics.chained_monstruosity_back
+  item:
+    material: nexo:chained_monstruosity_back
+    name: <gradient:#C9CDD6:#6E7380>Cadenas de la Monstruosidad Encadenada</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:chained_monstruosity_back_fp
+    name: <gradient:#C9CDD6:#6E7380>Cadenas de la Monstruosidad Encadenada</gradient>
+    amount: 1
+chained_monstruosity_sword:
+  slot: OFFHAND
+  permission: hmccosmetics.chained_monstruosity_sword
+  item:
+    material: nexo:chained_monstruosity_sword
+    name: <gradient:#C9CDD6:#6E7380>Espada de la Monstruosidad Encadenada</gradient>
+    amount: 1
+crow_lord_hat:
+  slot: HELMET
+  permission: hmccosmetics.crow_lord_hat
+  item:
+    material: nexo:crow_lord_hat
+    name: <gradient:#8FA3C7:#2E3A55>Sombrero del Señor de los Cuervos</gradient>
+    amount: 1
+crow_lord_wings:
+  slot: BACKPACK
+  permission: hmccosmetics.crow_lord_wings
+  item:
+    material: nexo:crow_lord_wings
+    name: <gradient:#8FA3C7:#2E3A55>Alas del Señor de los Cuervos</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:crow_lord_wings_fp
+    name: <gradient:#8FA3C7:#2E3A55>Alas del Señor de los Cuervos</gradient>
+    amount: 1
+crow_lord_staff:
+  slot: OFFHAND
+  permission: hmccosmetics.crow_lord_staff
+  item:
+    material: nexo:crow_lord_staff
+    name: <gradient:#8FA3C7:#2E3A55>Bastón del Señor de los Cuervos</gradient>
+    amount: 1
+noir_elegance_tophat:
+  slot: HELMET
+  permission: hmccosmetics.noir_elegance_tophat
+  item:
+    material: nexo:noir_elegance_tophat
+    name: <gradient:#FF8A8A:#7A1F2B>Chistera de la Elegancia Noir</gradient>
+    amount: 1
+noir_elegance_shoulderpads:
+  slot: BACKPACK
+  permission: hmccosmetics.noir_elegance_shoulderpads
+  item:
+    material: nexo:noir_elegance_shoulderpads
+    name: <gradient:#FF8A8A:#7A1F2B>Hombreras de la Elegancia Noir</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:noir_elegance_shoulderpads_fp
+    name: <gradient:#FF8A8A:#7A1F2B>Hombreras de la Elegancia Noir</gradient>
+    amount: 1
+noir_elegance_staff:
+  slot: OFFHAND
+  permission: hmccosmetics.noir_elegance_staff
+  item:
+    material: nexo:noir_elegance_staff
+    name: <gradient:#FF8A8A:#7A1F2B>Bastón de la Elegancia Noir</gradient>
+    amount: 1
+archmage_hat:
+  slot: HELMET
+  permission: hmccosmetics.archmage_hat
+  item:
+    material: nexo:archmage_hat
+    name: <gradient:#7FD8FF:#2F6FB3>Sombrero del Archimago</gradient>
+    amount: 1
+archmage_shoulderpads:
+  slot: BACKPACK
+  permission: hmccosmetics.archmage_shoulderpads
+  item:
+    material: nexo:archmage_shoulderpads
+    name: <gradient:#7FD8FF:#2F6FB3>Hombreras del Archimago</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:archmage_shoulderpads_fp
+    name: <gradient:#7FD8FF:#2F6FB3>Hombreras del Archimago</gradient>
+    amount: 1
+archmage_staff:
+  slot: OFFHAND
+  permission: hmccosmetics.archmage_staff
+  item:
+    material: nexo:archmage_staff
+    name: <gradient:#7FD8FF:#2F6FB3>Bastón del Archimago</gradient>
+    amount: 1
+ritualistic_hoodie:
+  slot: HELMET
+  permission: hmccosmetics.ritualistic_hoodie
+  item:
+    material: nexo:ritualistic_hoodie
+    name: <gradient:#FF7A45:#8B2500>Capucha Ritual</gradient>
+    amount: 1
+ritualistic_back:
+  slot: BACKPACK
+  permission: hmccosmetics.ritualistic_back
+  item:
+    material: nexo:ritualistic_back
+    name: <gradient:#FF7A45:#8B2500>Ornamento Ritual</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:ritualistic_back_fp
+    name: <gradient:#FF7A45:#8B2500>Ornamento Ritual</gradient>
+    amount: 1
+ritualistic_staff:
+  slot: OFFHAND
+  permission: hmccosmetics.ritualistic_staff
+  item:
+    material: nexo:ritualistic_staff
+    name: <gradient:#FF7A45:#8B2500>Bastón Ritual</gradient>
+    amount: 1
+skeleton_control_hat:
+  slot: HELMET
+  permission: hmccosmetics.skeleton_control_hat
+  item:
+    material: nexo:skeleton_control_hat
+    name: <gradient:#E6E8EE:#8A8F99>Sombrero del Amo de los Esqueletos</gradient>
+    amount: 1
+skeleton_control_wings:
+  slot: BACKPACK
+  permission: hmccosmetics.skeleton_control_wings
+  item:
+    material: nexo:skeleton_control_wings
+    name: <gradient:#E6E8EE:#8A8F99>Alas del Amo de los Esqueletos</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:skeleton_control_wings_fp
+    name: <gradient:#E6E8EE:#8A8F99>Alas del Amo de los Esqueletos</gradient>
+    amount: 1
+skeleton_control_mace:
+  slot: OFFHAND
+  permission: hmccosmetics.skeleton_control_mace
+  item:
+    material: nexo:skeleton_control_mace
+    name: <gradient:#E6E8EE:#8A8F99>Maza del Amo de los Esqueletos</gradient>
+    amount: 1
+spike_lord_helmet:
+  slot: HELMET
+  permission: hmccosmetics.spike_lord_helmet
+  item:
+    material: nexo:spike_lord_helmet
+    name: <gradient:#FFB347:#8B4A00>Yelmo del Señor de las Púas</gradient>
+    amount: 1
+spike_lord_wings:
+  slot: BACKPACK
+  permission: hmccosmetics.spike_lord_wings
+  item:
+    material: nexo:spike_lord_wings
+    name: <gradient:#FFB347:#8B4A00>Alas del Señor de las Púas</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:spike_lord_wings_fp
+    name: <gradient:#FFB347:#8B4A00>Alas del Señor de las Púas</gradient>
+    amount: 1
+spike_lord_sword:
+  slot: OFFHAND
+  permission: hmccosmetics.spike_lord_sword
+  item:
+    material: nexo:spike_lord_sword
+    name: <gradient:#FFB347:#8B4A00>Espada del Señor de las Púas</gradient>
+    amount: 1
+witch_hat:
+  slot: HELMET
+  permission: hmccosmetics.witch_hat
+  item:
+    material: nexo:witch_hat
+    name: <gradient:#C38BFF:#5B2A86>Sombrero de Bruja</gradient>
+    amount: 1
+witch_broom:
+  slot: OFFHAND
+  permission: hmccosmetics.witch_broom
+  item:
+    material: nexo:witch_broom
+    name: <gradient:#C38BFF:#5B2A86>Escoba de Bruja</gradient>
+    amount: 1
+bat_balloon:
+  slot: BALLOON
+  permission: hmccosmetics.bat_balloon
+  model: bat_balloon
+  item:
+    material: nexo:bat_balloon
+    name: <gradient:#C38BFF:#5B2A86>Globo de Murciélago</gradient>
+    amount: 1
+witch_robe:
+  slot: BACKPACK
+  permission: hmccosmetics.witch_robe
+  item:
+    material: nexo:witch_robe
+    name: <gradient:#C38BFF:#5B2A86>Túnica de Bruja</gradient>
+    amount: 1
+  firstperson-item:
+    material: nexo:witch_robe_thirdperson
+    amount: 1
+    name: <gradient:#C38BFF:#5B2A86>Túnica de Bruja</gradient>
+sun_wizard_hat:
+  slot: HELMET
+  permission: hmccosmetics.sun_wizard_hat
+  dyeable: true
+  item:
+    material: nexo:sun_wizard_hat
+    name: <gradient:#FFE45C:#FF8A00>Sombrero del Mago Solar</gradient>
+    amount: 1
+sun_wizard_cloak:
+  slot: BACKPACK
+  permission: hmccosmetics.sun_wizard_cloak
+  dyeable: true
+  item:
+    material: nexo:sun_wizard_cloak
+    name: <gradient:#FFE45C:#FF8A00>Capa del Mago Solar</gradient>
+    amount: 1
+sun_wizard_staff:
+  slot: OFFHAND
+  permission: hmccosmetics.sun_wizard_staff
+  dyeable: true
+  item:
+    material: nexo:sun_wizard_staff
+    name: <gradient:#FFE45C:#FF8A00>Bastón del Mago Solar</gradient>
+    amount: 1
+moon_wizard_hat:
+  slot: HELMET
+  permission: hmccosmetics.moon_wizard_hat
+  dyeable: true
+  item:
+    material: nexo:moon_wizard_hat
+    name: <gradient:#B8C6FF:#4A5BB3>Sombrero del Mago Lunar</gradient>
+    amount: 1
+moon_wizard_cloak:
+  slot: BACKPACK
+  permission: hmccosmetics.moon_wizard_cloak
+  dyeable: true
+  item:
+    material: nexo:moon_wizard_cloak
+    name: <gradient:#B8C6FF:#4A5BB3>Capa del Mago Lunar</gradient>
+    amount: 1
+moon_wizard_staff:
+  slot: OFFHAND
+  permission: hmccosmetics.moon_wizard_staff
+  dyeable: true
+  item:
+    material: nexo:moon_wizard_staff
+    name: <gradient:#B8C6FF:#4A5BB3>Bastón del Mago Lunar</gradient>
+    amount: 1

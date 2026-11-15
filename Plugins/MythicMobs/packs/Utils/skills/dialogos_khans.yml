@@ -1,0 +1,192 @@
+# ============================================================
+#  dialogos_khans.yml - Diálogos aleatorios de los NPCs del pack Utils
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_khans.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ✵ Mago | paleta #C2AEFF -> #6A4BD6 ----------
+# NPCs: khansnpcs_quindle_the_mage
+dialogo_mago:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.enchantment_table.use;v=0.5;p=1} @self
+  - particles{p=enchant;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_mago_frase1,dialogo_mago_frase2,dialogo_mago_frase3,dialogo_mago_frase4,dialogo_mago_frase5,dialogo_mago_frase6} @trigger
+
+dialogo_mago_frase1:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.9} @self
+  - summon{m=holo_mago_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mago_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mago_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6A4BD6>✵ <gradient:#C2AEFF:#6A4BD6><bold>Mago</bold></gradient> <dark_gray>» <#EDE8FF>No toques esa esfera, por favor. La última vez fue un desastre."} @trigger
+
+dialogo_mago_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_mago_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mago_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mago_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6A4BD6>✵ <gradient:#C2AEFF:#6A4BD6><bold>Mago</bold></gradient> <dark_gray>» <#EDE8FF>La magia es como la cocina, un ingrediente de más y boom."} @trigger
+
+dialogo_mago_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_mago_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mago_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mago_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6A4BD6>✵ <gradient:#C2AEFF:#6A4BD6><bold>Mago</bold></gradient> <dark_gray>» <#EDE8FF>Llevo semanas con este hechizo. Casi lo tengo."} @trigger
+
+dialogo_mago_frase4:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.9} @self
+  - summon{m=holo_mago_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mago_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mago_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6A4BD6>✵ <gradient:#C2AEFF:#6A4BD6><bold>Mago</bold></gradient> <dark_gray>» <#EDE8FF>Las estrellas dicen que hoy es buen día. Para mí, al menos."} @trigger
+
+dialogo_mago_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_mago_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mago_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mago_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6A4BD6>✵ <gradient:#C2AEFF:#6A4BD6><bold>Mago</bold></gradient> <dark_gray>» <#EDE8FF>Si ves chispas moradas, aléjate un poquito."} @trigger
+
+dialogo_mago_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_mago_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mago_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mago_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6A4BD6>✵ <gradient:#C2AEFF:#6A4BD6><bold>Mago</bold></gradient> <dark_gray>» <#EDE8FF>Leer es la mitad de la magia. La otra mitad es practicar."} @trigger
+
+# ---------- ⚗ Alquimista | paleta #A8FFBB -> #2EBD59 ----------
+# NPCs: khansnpcs_mizzlewick_the_alchemist
+dialogo_alquimista:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.brewing_stand.brew;v=0.5;p=1} @self
+  - particles{p=witch;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_alquimista_frase1,dialogo_alquimista_frase2,dialogo_alquimista_frase3,dialogo_alquimista_frase4,dialogo_alquimista_frase5,dialogo_alquimista_frase6} @trigger
+
+dialogo_alquimista_frase1:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.1} @self
+  - summon{m=holo_alquimista_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_alquimista_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_alquimista_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2EBD59>⚗ <gradient:#A8FFBB:#2EBD59><bold>Alquimista</bold></gradient> <dark_gray>» <#E6FFEB>Esta poción está casi lista. Casi. No la huelas todavía."} @trigger
+
+dialogo_alquimista_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.1} @self
+  - summon{m=holo_alquimista_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_alquimista_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_alquimista_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2EBD59>⚗ <gradient:#A8FFBB:#2EBD59><bold>Alquimista</bold></gradient> <dark_gray>» <#E6FFEB>Una pizca de polvo de blaze y cambia todo."} @trigger
+
+dialogo_alquimista_frase3:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.1} @self
+  - summon{m=holo_alquimista_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_alquimista_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_alquimista_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2EBD59>⚗ <gradient:#A8FFBB:#2EBD59><bold>Alquimista</bold></gradient> <dark_gray>» <#E6FFEB>Si brilla verde, es buena. Si burbujea negro, corre."} @trigger
+
+dialogo_alquimista_frase4:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.1} @self
+  - summon{m=holo_alquimista_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_alquimista_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_alquimista_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2EBD59>⚗ <gradient:#A8FFBB:#2EBD59><bold>Alquimista</bold></gradient> <dark_gray>» <#E6FFEB>Mis frascos parecen iguales, pero no los mezcles."} @trigger
+
+dialogo_alquimista_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.1} @self
+  - summon{m=holo_alquimista_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_alquimista_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_alquimista_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2EBD59>⚗ <gradient:#A8FFBB:#2EBD59><bold>Alquimista</bold></gradient> <dark_gray>» <#E6FFEB>Llevo años buscando la receta perfecta."} @trigger
+
+dialogo_alquimista_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.1} @self
+  - summon{m=holo_alquimista_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_alquimista_f6_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#2EBD59>⚗ <gradient:#A8FFBB:#2EBD59><bold>Alquimista</bold></gradient> <dark_gray>» <#E6FFEB>El humo morado es normal. Creo."} @trigger
+
+# ---------- ⛃ Banquero | paleta #FFE59A -> #D4A017 ----------
+# NPCs: khansnpcs_cedric_coincloak_the_banker
+dialogo_banquero:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.experience_orb.pickup;v=0.5;p=1} @self
+  - particles{p=happy_villager;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_banquero_frase1,dialogo_banquero_frase2,dialogo_banquero_frase3,dialogo_banquero_frase4,dialogo_banquero_frase5,dialogo_banquero_frase6} @trigger
+
+dialogo_banquero_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
+  - summon{m=holo_banquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_banquero_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_banquero_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D4A017>⛃ <gradient:#FFE59A:#D4A017><bold>Banquero</bold></gradient> <dark_gray>» <#FFF7E2>Tu dinero está más seguro aquí que bajo el colchón."} @trigger
+
+dialogo_banquero_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
+  - summon{m=holo_banquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_banquero_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_banquero_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D4A017>⛃ <gradient:#FFE59A:#D4A017><bold>Banquero</bold></gradient> <dark_gray>» <#FFF7E2>Cada moneda cuenta, créeme, las cuento todas."} @trigger
+
+dialogo_banquero_frase3:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
+  - summon{m=holo_banquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_banquero_f3_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#D4A017>⛃ <gradient:#FFE59A:#D4A017><bold>Banquero</bold></gradient> <dark_gray>» <#FFF7E2>Ahorrar hoy es comer mejor mañana."} @trigger
+
+dialogo_banquero_frase4:
+  Skills:
+  - sound{s=entity.villager.trade;v=0.8;p=0.95} @self
+  - summon{m=holo_banquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_banquero_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_banquero_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D4A017>⛃ <gradient:#FFE59A:#D4A017><bold>Banquero</bold></gradient> <dark_gray>» <#FFF7E2>Los intereses son pequeños, pero constantes. Como yo."} @trigger
+
+dialogo_banquero_frase5:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.95} @self
+  - summon{m=holo_banquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_banquero_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_banquero_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D4A017>⛃ <gradient:#FFE59A:#D4A017><bold>Banquero</bold></gradient> <dark_gray>» <#FFF7E2>No presto a quien no conozco. Pero podemos conocernos."} @trigger
+
+dialogo_banquero_frase6:
+  Skills:
+  - sound{s=entity.villager.trade;v=0.8;p=0.95} @self
+  - summon{m=holo_banquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_banquero_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_banquero_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D4A017>⛃ <gradient:#FFE59A:#D4A017><bold>Banquero</bold></gradient> <dark_gray>» <#FFF7E2>El oro brilla, pero un buen trato brilla más."} @trigger

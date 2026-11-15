@@ -1,0 +1,109 @@
+# ============================================================
+#  Salto Explosivo  [COMÚN]
+#  Comando: /blastpower
+#  Impulso hacia arriba y explosión al caer. Usa la protección de caída del núcleo.
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+
+# ------------------------------------------------------------
+#  BLAST POWER
+# ------------------------------------------------------------
+command /blastpower:
+    permission: blastpower.use
+    trigger:
+        set {_p} to player
+        set {_id} to uuid of {_p}
+        if {-blast::activo::%{_id}%} is set:
+            send action bar "<#FF6B6B>✖ <#9EA3AE>Ya estás usando el Salto Explosivo" to {_p}
+            stop
+        set {-blast::activo::%{_id}%} to true
+        set {-nofall::%{_id}%::blast} to true
+
+        fxAnuncio({_p}, "✸", "Salto Explosivo", "Prepárate para el despegue", "#FFB38A", "#FF7A45", "Común")
+        play sound "entity.wither.spawn" with volume 1 and pitch 1.5 at {_p}
+        play sound "block.beacon.activate" with volume 1 and pitch 2 at {_p}
+        play sound "entity.firework_rocket.launch" with volume 2 and pitch 0.8 at {_p}
+        wait 10 ticks
+        send action bar "<#FFB38A>🚀 <#E6E8EE>¡Hacia las alturas!" to {_p}
+
+        # Ascenso: 30 ticks con estela de cohete
+        loop 30 times:
+            if {_p} is not online:
+                delete {-blast::activo::%{_id}%}
+                delete {-nofall::%{_id}%::blast}
+                stop
+            set {_l} to (location of {_p}) offset by vector(0, -0.4, 0)
+            make 4 of flame at {_l} with offset vector(0.2, 0.1, 0.2) with extra 0.02 {@force}
+            make 2 of large_smoke at {_l} with offset vector(0.25, 0.1, 0.25) with extra 0.01 {@force}
+            if mod(loop-number, 2) is 0:
+                make 2 of firework at {_l} with offset vector(0.2, 0.1, 0.2) with extra 0.05 {@force}
+            if mod(loop-number, 10) is 1:
+                play sound "entity.firework_rocket.twinkle" with volume 0.5 and pitch 1.2 at {_p}
+            push {_p} upwards with force 0.1
+            wait 1 tick
+
+        # Esperar el aterrizaje (maximo 10 segundos)
+        set {_t} to 0
+        while {_p} is online:
+            if {_p} is on ground:
+                exit loop
+            add 1 to {_t}
+            if {_t} > 200:
+                exit loop
+            wait 1 tick
+        if {_p} is not online:
+            delete {-blast::activo::%{_id}%}
+            delete {-nofall::%{_id}%::blast}
+            stop
+
+        # Impacto
+        set {_c} to location of {_p}
+        send title "<#FF7A45>💥" with subtitle "<#FFB38A>¡Impacto!" to {_p} for 1 second with fadein 0 ticks and fadeout 10 ticks
+        play sound "entity.generic.explode" with volume 2 and pitch 0.8 at {_c}
+        play sound "entity.wither.break_block" with volume 1.5 and pitch 0.5 at {_c}
+        play sound "block.anvil.land" with volume 1 and pitch 0.3 at {_c}
+
+        # Explosion visual (no rompe bloques)
+        make 1 of explosion_emitter at {_c} {@force}
+        make 10 of explosion at {_c} with offset vector(1.5, 0.5, 1.5) with extra 0 {@force}
+        make 30 of large_smoke at {_c} with offset vector(1.5, 0.6, 1.5) with extra 0.05 {@force}
+        make 30 of flame at {_c} with offset vector(1.2, 0.5, 1.2) with extra 0.1 {@force}
+        make 20 of crit at {_c} with offset vector(1, 0.5, 1) with extra 0.5 {@force}
+
+        # Dano por distancia (una vez por entidad)
+        loop all monsters in radius 10 around {_c}:
+            if loop-entity is not {_p}:
+                if loop-entity is not an armor stand:
+                    set {_dist} to distance between loop-entity and {_c}
+                    if {_dist} <= 3:
+                        damage loop-entity by 15
+                    else if {_dist} <= 6:
+                        damage loop-entity by 10
+                    else:
+                        damage loop-entity by 5
+                    push loop-entity away from {_c} with force 1.5
+                    push loop-entity upwards with force 0.4
+                    set {_el} to location of loop-entity
+                    make 3 of damage_indicator at {_el} with offset vector(0.3, 0.5, 0.3) with extra 0 {@force}
+
+        # Humo que persiste
+        wait 4 ticks
+        make 20 of large_smoke at {_c} with offset vector(2, 0.8, 2) with extra 0.02 {@force}
+        wait 10 ticks
+        make 20 of large_smoke at {_c} with offset vector(2.5, 0.5, 2.5) with extra 0.01 {@force}
+        wait 1 second
+        make 15 of smoke at {_c} with offset vector(2.5, 0.3, 2.5) with extra 0.01 {@force}
+
+        # Mantener la proteccion de caida un poco mas por seguridad
+        wait 5 seconds
+        delete {-nofall::%{_id}%::blast}
+        delete {-blast::activo::%{_id}%}
+
+on quit:
+    delete {-blast::activo::%uuid of player%}

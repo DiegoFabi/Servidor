@@ -1,0 +1,132 @@
+# ============================================================
+#  dialogos_mineros.yml - Diálogos aleatorios de los NPCs del pack ScenesMiners
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_mineros.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ⛏ Minero | paleta #D9CCBE -> #8D7B68 ----------
+# NPCs: scene_miner_slab, scene_miner_block, scene_miner_wall, scene_miner_walk, scene_miner_walk2, scene_miner_walk3, scene_miner_interactive
+dialogo_minero:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.stone.break;v=0.5;p=1} @self
+  - particles{p=smoke;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_minero_frase1,dialogo_minero_frase2,dialogo_minero_frase3,dialogo_minero_frase4,dialogo_minero_frase5,dialogo_minero_frase6} @trigger
+
+dialogo_minero_frase1:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_minero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <dark_gray>» <#F4F0EC>Dicen que más abajo hay diamantes. Siempre dicen eso."} @trigger
+
+dialogo_minero_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_minero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <dark_gray>» <#F4F0EC>Lleva siempre antorchas de sobra, nunca sabes."} @trigger
+
+dialogo_minero_frase3:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.85} @self
+  - summon{m=holo_minero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <dark_gray>» <#F4F0EC>El ruido de la piedra ya ni lo escucho. Bueno, casi."} @trigger
+
+dialogo_minero_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_minero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <dark_gray>» <#F4F0EC>Hoy encontré hierro. No es oro, pero paga el pan."} @trigger
+
+dialogo_minero_frase5:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_minero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <dark_gray>» <#F4F0EC>Si escuchas siseos, corre. No preguntes, corre."} @trigger
+
+dialogo_minero_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_minero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <dark_gray>» <#F4F0EC>Abajo no se sabe si es de día o de noche."} @trigger
+
+# ---------- ☁ Minero | paleta #C9C0B7 -> #7A6F66 ----------
+# NPCs: scene_miner_sleep
+dialogo_minero_cansado:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.player.breath;v=0.5;p=1} @self
+  - particles{p=cloud;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_minero_cansado_frase1,dialogo_minero_cansado_frase2,dialogo_minero_cansado_frase3,dialogo_minero_cansado_frase4,dialogo_minero_cansado_frase5,dialogo_minero_cansado_frase6} @trigger
+
+dialogo_minero_cansado_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_minero_cansado_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_cansado_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_cansado_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <dark_gray>» <#EFEDEA>Un rato de descanso y vuelvo al túnel... un rato largo."} @trigger
+
+dialogo_minero_cansado_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_minero_cansado_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_cansado_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_cansado_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <dark_gray>» <#EFEDEA>Me duelen hasta las ideas de tanto picar."} @trigger
+
+dialogo_minero_cansado_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_minero_cansado_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_cansado_f3_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <dark_gray>» <#EFEDEA>Zzz... más hondo... más hondo..."} @trigger
+
+dialogo_minero_cansado_frase4:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_minero_cansado_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_cansado_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_cansado_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <dark_gray>» <#EFEDEA>Despiértame si alguien grita diamante."} @trigger
+
+dialogo_minero_cansado_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_minero_cansado_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_cansado_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_cansado_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <dark_gray>» <#EFEDEA>Esta piedra es más cómoda de lo que parece."} @trigger
+
+dialogo_minero_cansado_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_minero_cansado_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_minero_cansado_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_minero_cansado_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <dark_gray>» <#EFEDEA>Doce horas en la mina. Me lo he ganado."} @trigger

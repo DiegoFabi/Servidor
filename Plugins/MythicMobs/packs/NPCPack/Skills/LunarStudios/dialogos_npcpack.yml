@@ -1,0 +1,255 @@
+# ============================================================
+#  dialogos_npcpack.yml - Diálogos aleatorios de los NPCs del pack NPCPack
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_npcpack.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ⚒ Herrero | paleta #FFBE7A -> #E8590C ----------
+# NPCs: npc_dwarf, khansnpcs_bromnar_the_blacksmith
+dialogo_herrero:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.anvil.use;v=0.5;p=1} @self
+  - particles{p=flame;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_herrero_frase1,dialogo_herrero_frase2,dialogo_herrero_frase3,dialogo_herrero_frase4,dialogo_herrero_frase5,dialogo_herrero_frase6} @trigger
+
+dialogo_herrero_frase1:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.8} @self
+  - summon{m=holo_herrero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herrero_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herrero_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <dark_gray>» <#FFECD9>El metal hay que trabajarlo caliente. Si se enfría, se resiste."} @trigger
+
+dialogo_herrero_frase2:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.8} @self
+  - summon{m=holo_herrero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herrero_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herrero_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <dark_gray>» <#FFECD9>Tráeme buen hierro y te haré algo que dure años."} @trigger
+
+dialogo_herrero_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.8} @self
+  - summon{m=holo_herrero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herrero_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herrero_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <dark_gray>» <#FFECD9>Este martillo era de mi padre. Y antes, de su padre."} @trigger
+
+dialogo_herrero_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.8} @self
+  - summon{m=holo_herrero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herrero_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herrero_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <dark_gray>» <#FFECD9>El fuego no perdona descuidos, ni a los maestros."} @trigger
+
+dialogo_herrero_frase5:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.8} @self
+  - summon{m=holo_herrero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herrero_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herrero_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <dark_gray>» <#FFECD9>Una herradura bien hecha y el caballo te lo agradece."} @trigger
+
+dialogo_herrero_frase6:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.8} @self
+  - summon{m=holo_herrero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herrero_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herrero_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <dark_gray>» <#FFECD9>Si suena a campana, está bien templado."} @trigger
+
+# ---------- ✾ Granjero | paleta #F5E69A -> #C9A227 ----------
+# NPCs: npc_farmer
+dialogo_granjero:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.crop.break;v=0.5;p=1} @self
+  - particles{p=composter;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_granjero_frase1,dialogo_granjero_frase2,dialogo_granjero_frase3,dialogo_granjero_frase4,dialogo_granjero_frase5,dialogo_granjero_frase6} @trigger
+
+dialogo_granjero_frase1:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=1.0} @self
+  - summon{m=holo_granjero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_granjero_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_granjero_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <dark_gray>» <#FCF8E2>Este año la cosecha viene buena, si no llueve de más."} @trigger
+
+dialogo_granjero_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_granjero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_granjero_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_granjero_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <dark_gray>» <#FCF8E2>Las gallinas se escaparon otra vez. Ya ni me sorprende."} @trigger
+
+dialogo_granjero_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_granjero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_granjero_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_granjero_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <dark_gray>» <#FCF8E2>Trigo, zanahorias y paciencia. Así se vive en el campo."} @trigger
+
+dialogo_granjero_frase4:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_granjero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_granjero_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_granjero_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <dark_gray>» <#FCF8E2>Madrugar no es un sacrificio cuando amas lo que haces."} @trigger
+
+dialogo_granjero_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_granjero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_granjero_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_granjero_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <dark_gray>» <#FCF8E2>Si tienes huesos, tráemelos. El abono hace milagros."} @trigger
+
+dialogo_granjero_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_granjero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_granjero_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_granjero_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <dark_gray>» <#FCF8E2>La tierra devuelve lo que le das, ni más ni menos."} @trigger
+
+# ---------- ☯ Chamán | paleta #DDA8FF -> #8E44AD ----------
+# NPCs: npc_mageshaman
+dialogo_chaman:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.amethyst_block.chime;v=0.5;p=1} @self
+  - particles{p=witch;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_chaman_frase1,dialogo_chaman_frase2,dialogo_chaman_frase3,dialogo_chaman_frase4,dialogo_chaman_frase5,dialogo_chaman_frase6} @trigger
+
+dialogo_chaman_frase1:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.85} @self
+  - summon{m=holo_chaman_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_chaman_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_chaman_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <dark_gray>» <#F5E6FF>Los espíritus están tranquilos hoy. Eso es buena señal."} @trigger
+
+dialogo_chaman_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_chaman_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_chaman_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_chaman_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <dark_gray>» <#F5E6FF>Una herida del cuerpo sana rápido. Las del alma tardan más."} @trigger
+
+dialogo_chaman_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_chaman_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_chaman_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_chaman_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <dark_gray>» <#F5E6FF>Siento que llevas mucho camino encima, viajero."} @trigger
+
+dialogo_chaman_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_chaman_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_chaman_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_chaman_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <dark_gray>» <#F5E6FF>Las hierbas hablan, solo hay que saber escucharlas."} @trigger
+
+dialogo_chaman_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_chaman_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_chaman_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_chaman_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <dark_gray>» <#F5E6FF>Descansa un momento. La prisa no cura nada."} @trigger
+
+dialogo_chaman_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_chaman_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_chaman_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_chaman_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <dark_gray>» <#F5E6FF>La luna llena trae energía. Y también insomnio."} @trigger
+
+# ---------- ✪ Guardián | paleta #A9DCFF -> #1F6FB2 ----------
+# NPCs: npc_kingdom_guardian
+dialogo_guardian:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=item.armor.equip_netherite;v=0.5;p=1} @self
+  - particles{p=end_rod;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_guardian_frase1,dialogo_guardian_frase2,dialogo_guardian_frase3,dialogo_guardian_frase4,dialogo_guardian_frase5,dialogo_guardian_frase6} @trigger
+
+dialogo_guardian_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.8} @self
+  - summon{m=holo_guardian_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardian_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardian_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <dark_gray>» <#E6F5FF>Estas tierras están bajo la protección del reino."} @trigger
+
+dialogo_guardian_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.8} @self
+  - summon{m=holo_guardian_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardian_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardian_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <dark_gray>» <#E6F5FF>He visto muchas batallas. Prefiero los días tranquilos."} @trigger
+
+dialogo_guardian_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.8} @self
+  - summon{m=holo_guardian_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardian_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardian_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <dark_gray>» <#E6F5FF>Mientras yo esté aquí, nadie cruzará sin permiso."} @trigger
+
+dialogo_guardian_frase4:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.8} @self
+  - summon{m=holo_guardian_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardian_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardian_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <dark_gray>» <#E6F5FF>El honor no se hereda, se gana cada día."} @trigger
+
+dialogo_guardian_frase5:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.8} @self
+  - summon{m=holo_guardian_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardian_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardian_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <dark_gray>» <#E6F5FF>Respeta las leyes del reino y serás bienvenido."} @trigger
+
+dialogo_guardian_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.8} @self
+  - summon{m=holo_guardian_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardian_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardian_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <dark_gray>» <#E6F5FF>Mi escudo tiene más marcas que años tengo."} @trigger

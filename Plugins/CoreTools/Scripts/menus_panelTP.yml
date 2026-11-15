@@ -1,0 +1,94 @@
+# Acciones de los menus convertidos desde CommandPanels
+paneltp_open:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.experience_orb.pickup";volume=1;pitch=1} @Self'
+paneltp_b1_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="rtp world survivalMain";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
+  - 'message{m="&6Transporte &8» &aTe has movido al mundo &2Survival, &aatento a los mobs!"} @Self'
+paneltp_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu menuWarps {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+paneltp_b3_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu NetherMenu {caster_name}";runas=console} @Self'
+paneltp_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="rtp world survivalMain";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
+  - 'message{m="&6Transporte &8» &aTe has movido al mundo &2Survival, &aatento a los mobs!"} @Self'
+paneltp_b5_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu EndMenu {caster_name}";runas=console} @Self'
+paneltp_b6_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="tw cinematic start cinema_kingdom";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.portal.travel";volume=1;pitch=1} @Self'
+  - 'command{c="mv tp Orian";runas=op} @Self'
+nethermenu_b1_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="rtp world netherMain";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
+  - 'message{m="&6Transporte &8» &aTe has movido al mundo &cInfierno, &aatento a los mobs!"} @Self'
+nethermenu_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu menuWarps {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+nethermenu_b3_click:
+  Conditions:
+  - 'currency{m=check;c=vault;a=1000} falseElse menus_no_money'
+  Mechanics:
+  - 'currency{m=remove;c=vault;a=1000} @Self'
+  - 'command{c="rtp world netherMain";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
+  - 'message{m="&6Transporte &8» &aTe has movido al mundo &cInfierno, &aatento a los mobs!"} @Self'
+nethermenu_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu panelTP {caster_name}";runas=console} @Self'
+nethermenu_b5_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu EndMenu {caster_name}";runas=console} @Self'
+nethermenu_b6_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="tw cinematic start cinema_kingdom";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.portal.travel";volume=1;pitch=1} @Self'
+  - 'command{c="mv tp Orian";runas=op} @Self'
+endmenu_b1_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="rtp world endMain";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
+  - 'message{m="&6Transporte &8» &aTe has movido al mundo &eFinal, &aatento a los mobs!"} @Self'
+endmenu_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu menuWarps {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+endmenu_b3_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu NetherMenu {caster_name}";runas=console} @Self'
+endmenu_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu panelTP {caster_name}";runas=console} @Self'
+endmenu_b6_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="tw cinematic start cinema_kingdom";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.portal.travel";volume=1;pitch=1} @Self'
+  - 'command{c="mv tp Orian";runas=op} @Self'

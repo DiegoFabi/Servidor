@@ -1,0 +1,11 @@
+isEnabled: true
+eventType: BREAK_BLOCK
+bossFilenames:
+- bone_skeleton.yml
+eventStartCommands: []
+eventEndCommands: []
+chance: 0.01
+breakableMaterials:
+- BONE_BLOCK
+weight: 0.0
+eventDuration: 20.0

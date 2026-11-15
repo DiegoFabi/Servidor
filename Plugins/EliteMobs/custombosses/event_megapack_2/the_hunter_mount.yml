@@ -1,0 +1,19 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: RAVAGER
+isBaby: false
+name: $eventBossLevel &fTamed Beast
+level: dynamic
+powers:
+- invulnerability_fire.yml
+- attack_push.yml
+- movement_speed.yml
+- flamethrower.yml
+healthMultiplier: 1.0
+damageMultiplier: 0.5
+isPersistent: true
+movementSpeedAttribute: 1.0
+followDistance: 80

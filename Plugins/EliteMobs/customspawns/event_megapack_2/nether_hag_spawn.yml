@@ -1,0 +1,10 @@
+validBiomesV2: []
+isEnabled: true
+validWorlds: []
+validWorldEnvironments:
+- NETHER
+validBiomes:
+- CRIMSON_FOREST
+- WARPED_FOREST
+canSpawnInLight: true
+isUndergroundSpawn: true

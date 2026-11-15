@@ -1,0 +1,5 @@
+# Acciones de los menus convertidos desde CommandPanels
+panelskillsaltern_open:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.evoker.cast_spell";volume=1;pitch=1} @Self'

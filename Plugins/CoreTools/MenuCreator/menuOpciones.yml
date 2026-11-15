@@ -1,0 +1,310 @@
+# Más Opciones (desde el menú principal, botón de la esquina superior derecha). Abrir: /coremenu menuOpciones
+# Acciones en Scripts/menus_menuOpciones.yml
+menuOpciones:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Más Opciones'
+  size: 1
+  fill_material: AIR
+  enable_animation: true
+  buttons:
+    baules:
+      location: top
+      slots:
+      - 0
+      source: vanilla
+      material: ender_chest
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Baúles</gradient>
+      lore:
+      - <#C9CDD6>Guarda tus objetos en baúles
+      - <#C9CDD6>personales desde cualquier lugar.
+      - ''
+      - '<white><glyph:treasure> <#E6E8EE>Comando: <#FFD36B>/pv'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_vaults_click
+      right_click:
+        Scripts:
+        - menumain_vaults_click
+      shift_left_click:
+        Scripts:
+        - menumain_vaults_click
+      shift_right_click:
+        Scripts:
+        - menumain_vaults_click
+    bounty:
+      location: top
+      slots:
+      - 1
+      source: vanilla
+      material: skeleton_skull
+      name: <white><glyph:skull> <gradient:#FFE29A:#FFB347>Más Buscados</gradient>
+      lore:
+      - <#C9CDD6>Caza a los jugadores con recompensa
+      - <#C9CDD6>o regístrate para ser un objetivo.
+      - ''
+      - <white><glyph:gold_coin> <#E6E8EE>Recompensas por mobs, dinero y votos
+      - <white><glyph:crossed_swords> <#E6E8EE>Rachas de 10 muertes con premio
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menumain_bounty_click
+      right_click:
+        Scripts:
+        - menumain_bounty_click
+      shift_left_click:
+        Scripts:
+        - menumain_bounty_click
+      shift_right_click:
+        Scripts:
+        - menumain_bounty_click
+    buzon:
+      location: top
+      slots:
+      - 2
+      source: vanilla
+      material: chest
+      name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Buzón</gradient>
+      lore:
+      - <#C9CDD6>Recoge los objetos que te
+      - <#C9CDD6>llegaron con el inventario lleno.
+      - ''
+      - '<white><glyph:envelope> <#E6E8EE>Comando: <#FFD36B>/buzon'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - opciones_buzon_click
+      right_click:
+        Scripts:
+        - opciones_buzon_click
+      shift_left_click:
+        Scripts:
+        - opciones_buzon_click
+      shift_right_click:
+        Scripts:
+        - opciones_buzon_click
+    historia:
+      location: top
+      slots:
+      - 3
+      source: vanilla
+      material: writable_book
+      name: <white><glyph:stacked_books> <gradient:#FFE29A:#FFB347>Historia</gradient>
+      lore:
+      - <#C9CDD6>Revisa los capítulos de la
+      - <#C9CDD6>historia principal que desbloqueaste.
+      - ''
+      - '<white><glyph:stacked_books> <#E6E8EE>Comando: <#FFD36B>/historia'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - opciones_historia_click
+      right_click:
+        Scripts:
+        - opciones_historia_click
+      shift_left_click:
+        Scripts:
+        - opciones_historia_click
+      shift_right_click:
+        Scripts:
+        - opciones_historia_click
+    subastas:
+      location: top
+      slots:
+      - 4
+      source: vanilla
+      material: gold_ingot
+      name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Subastas</gradient>
+      lore:
+      - <#C9CDD6>Mira la subasta activa o subasta
+      - <#C9CDD6>el objeto de tu mano.
+      - ''
+      - '<white><glyph:gold_coin> <#E6E8EE>Comando: <#FFD36B>/subasta <puja>'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - opciones_subasta_click
+      right_click:
+        Scripts:
+        - opciones_subasta_click
+      shift_left_click:
+        Scripts:
+        - opciones_subasta_click
+      shift_right_click:
+        Scripts:
+        - opciones_subasta_click
+    duelos:
+      location: top
+      slots:
+      - 5
+      source: vanilla
+      material: sunflower
+      name: <white><glyph:crossed_swords> <gradient:#FFE29A:#FFB347>Duelos</gradient>
+      lore:
+      - '<#C9CDD6>Apuesta contra otros jugadores:'
+      - <#C9CDD6>Coinflip y Reto de Clicks.
+      - ''
+      - '<white><glyph:crossed_swords> <#E6E8EE>Comandos: <#FFD36B>/cf <#9EA3AE>y <#FFD36B>/retoclicks'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - opciones_duelos_click
+      right_click:
+        Scripts:
+        - opciones_duelos_click
+      shift_left_click:
+        Scripts:
+        - opciones_duelos_click
+      shift_right_click:
+        Scripts:
+        - opciones_duelos_click
+    vacio_7:
+      location: top
+      slots:
+      - 7
+      source: vanilla
+      material: gray_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    volver:
+      location: top
+      slots:
+      - 8
+      source: vanilla
+      material: arrow
+      name: <white>« <#FFD36B>Volver al Menú Principal
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - opciones_volver_click
+      right_click:
+        Scripts:
+        - opciones_volver_click
+      shift_left_click:
+        Scripts:
+        - opciones_volver_click
+      shift_right_click:
+        Scripts:
+        - opciones_volver_click
+    homes:
+      location: top
+      slots:
+      - 6
+      source: vanilla
+      material: bundle
+      name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+      lore: &id001
+      - '<#C9CDD6>Tus puntos de regreso guardados:'
+      - <#C9CDD6>casa, granja, mina…
+      - ''
+      - '<white><glyph:castle_entrance> <#E6E8EE>Comando: <#FFD36B>/homes list'
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para ver tus homes
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - opciones_homes_click
+      right_click:
+        Scripts:
+        - opciones_homes_click
+      shift_left_click:
+        Scripts:
+        - opciones_homes_click
+      shift_right_click:
+        Scripts:
+        - opciones_homes_click
+  animation:
+    '01':
+      duration: 40
+      1:
+        location: top
+        slots:
+        - 6
+        source: vanilla
+        material: bundle
+        name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+        lore: *id001
+        flags:
+        - HIDE_ATTRIBUTES
+        - HIDE_ADDITIONAL_TOOLTIP
+    '02':
+      duration: 40
+      1:
+        location: top
+        slots:
+        - 6
+        source: vanilla
+        material: red_bundle
+        name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+        lore: *id001
+        flags:
+        - HIDE_ATTRIBUTES
+        - HIDE_ADDITIONAL_TOOLTIP
+    '03':
+      duration: 40
+      1:
+        location: top
+        slots:
+        - 6
+        source: vanilla
+        material: blue_bundle
+        name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+        lore: *id001
+        flags:
+        - HIDE_ATTRIBUTES
+        - HIDE_ADDITIONAL_TOOLTIP
+    '04':
+      duration: 40
+      1:
+        location: top
+        slots:
+        - 6
+        source: vanilla
+        material: lime_bundle
+        name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+        lore: *id001
+        flags:
+        - HIDE_ATTRIBUTES
+        - HIDE_ADDITIONAL_TOOLTIP
+    '05':
+      duration: 40
+      1:
+        location: top
+        slots:
+        - 6
+        source: vanilla
+        material: purple_bundle
+        name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+        lore: *id001
+        flags:
+        - HIDE_ATTRIBUTES
+        - HIDE_ADDITIONAL_TOOLTIP

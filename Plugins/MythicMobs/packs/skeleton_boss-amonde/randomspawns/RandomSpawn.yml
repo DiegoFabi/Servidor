@@ -1,0 +1,35 @@
+# ============================================================
+#  Esqueletos del desierto (skeleton_boss-amonde)
+#  Mundo: survivalMain (moderado: probabilidades bajas y límite de
+#  mobs iguales alrededor para no saturar ni afectar el rendimiento).
+#  REPLACE solo sustituye mobs hostiles vanilla (nunca animales).
+# ============================================================
+
+RandomSkeletonMinion:
+  Type: skeleton_minion
+  Worlds: survivalMain
+  Chance: 0.25
+  Priority: 5
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DESERT
+  Conditions:
+  - entitytype{t=HUSK,ZOMBIE,SKELETON} true
+  - outside true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=skeleton_minion;a=<4;r=40} true
+
+RandomSkeletonBoss:
+  Type: skeleton_boss
+  Worlds: survivalMain
+  Chance: 0.006
+  Priority: 8
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DESERT
+  Conditions:
+  - entitytype{t=HUSK,ZOMBIE} true
+  - night true
+  - outside true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=skeleton_boss;a=<1;r=200} true

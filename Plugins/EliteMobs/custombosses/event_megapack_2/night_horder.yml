@@ -1,0 +1,38 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: HUSK
+helmet: DIAMOND_HELMET
+chestplate: DIAMOND_CHESTPLATE
+leggings: DIAMOND_LEGGINGS
+boots: DIAMOND_BOOTS
+name: $eventBossLevel &aNight Horder
+level: dynamic
+healthMultiplier: 5.0
+damageMultiplier: 2.0
+isPersistent: true
+powers:
+- gold_explosion.yml
+- gold_shotgun.yml
+- spirit_walk.yml
+- bonus_coins.yml:10
+- bonus_loot.yml
+trails:
+- GOLD_NUGGET
+movementSpeedAttribute: 0.38
+followDistance: 80
+locationMessage: '&cNight Horder: $distance blocks away!'
+spawnMessage: '&cA Night Horder has appeared! Slay him to loot his booty!'
+deathMessage: '&aThe Night Horder has been plundered by $players!'
+escapeMessage: '&4The Night Horder has escaped!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Night Horder has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

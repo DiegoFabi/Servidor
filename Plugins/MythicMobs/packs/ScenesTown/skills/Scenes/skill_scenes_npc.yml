@@ -1,0 +1,1577 @@
+deletenpc:
+  Skills:
+  - remove @target
+
+rotatescene:
+  Skills:
+  #- matchrotation @target
+
+scene_openmenu:
+  TargetConditions:
+  - crouching true
+  Skills:
+  - command{command="dm open scene_edit <trigger.name>"}
+
+scene_openmenu_2npcs:
+  TargetConditions:
+  - crouching true
+  Skills:
+  - message{message=Please change the the skin of the first npc before the 2nd npc.} @trigger
+
+skin1:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_1} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_1;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin2:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_2;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin3:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_3} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_3;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin4:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_4} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_4;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin5:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_5} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_5;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin6:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_6} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_6;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin7:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_7} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_7;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin8:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_8} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_8;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin9:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_9} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_9;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin10:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_10} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_10;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin11:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_11} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_11;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin12:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_12} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_12;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin13:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_13} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_13;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin14:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_14} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_14;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin15:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_15} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_15;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin16:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_16} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_16;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin17:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_17} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_17;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin18:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_18} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_18;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin19:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_19} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_19;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin20:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_20} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_20;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin21:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_21} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_21;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin22:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_22} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_22;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin23:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_23} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_23;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin24:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_24} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_24;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin25:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_25} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_25;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin26:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_26} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_26;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin27:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_27} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_27;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin28:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_28} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_28;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin29:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_29} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_29;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin30:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_30} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_30;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin31:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_31} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_31;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin32:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_32} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_32;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin33:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_33} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_33;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin34:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_34} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_34;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin35:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_35} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_35;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin36:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_36} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_36;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin37:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_37} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_37;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin38:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_38} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_38;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin39:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_39} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_39;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin40:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_40} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_40;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin41:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_41} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_41;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin42:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_42} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_42;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin43:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_43} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_43;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin44:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_44} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_44;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin45:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_45} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_45;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin46:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_46} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_46;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin47:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_47} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_47;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin48:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_48} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_48;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin49:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_49} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_49;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin50:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_50} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_50;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin51:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_51} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_51;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin52:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_52} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_52;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin53:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_53} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_53;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin54:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_54} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_54;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin55:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_55} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_55;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin56:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_56} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_56;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin57:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_57} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_57;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin58:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_58} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_58;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin59:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_59} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_59;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin60:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_60} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_60;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin61:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_61} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_61;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin62:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_62} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_62;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin63:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_63} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_63;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin64:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_64} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_64;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin65:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_65} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_65;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin66:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_66} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_66;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin67:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_67} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_67;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin68:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_68} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_68;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin69:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_69} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_69;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin70:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_70} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_70;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin71:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_71} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_71;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin72:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_72} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_72;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin73:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_73} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_73;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin74:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_74} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_74;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin74:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_74} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_74;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin75:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_75} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_75;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin76:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_76} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_76;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin77:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_77} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_77;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin78:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_78} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_78;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin79:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_79} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_79;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin80:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_80} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_80;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin81:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_81} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_81;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin82:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_82} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_82;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin83:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_83} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_83;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin84:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_84} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_84;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin85:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_85} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_85;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin86:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_86} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_86;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  
+skin87:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_87} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_87;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin88:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_88} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_88;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin89:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_89} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_89;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin90:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_90} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_90;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin91:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_91} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_91;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin92:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_92} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_92;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin93:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_93} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_93;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin94:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_94} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_94;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin95:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_95} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_95;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin96:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_96} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_96;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin97:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_97} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_97;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin98:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_98} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_98;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin99:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_99} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_99;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin100:
+  Skills:
+  - remapmodel{m=<global.var.skinchange>;n=skin_100} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=skin_100;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+#-------------------
+
+skin1_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_1;npid=head2;delay=2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_1;npid=body2;delay=2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_1;npid=right_arm2;delay=2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_1;npid=left_arm2;delay=2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_1;npid=right_leg2;delay=2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_1;npid=left_leg2;delay=2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_1;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin2_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_2;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_2;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_2;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_2;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_2;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_2;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_2;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin3_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_3;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_3;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_3;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_3;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_3;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_3;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_3;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin4_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_4;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_4;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_4;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_4;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_4;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_4;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_4;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin5_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_5;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_5;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_5;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_5;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_5;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_5;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_5;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin6_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_6;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_6;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_6;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_6;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_6;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_6;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_6;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin7_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_7;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_7;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_7;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_7;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_7;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_7;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_7;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin8_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_8;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_8;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_8;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_8;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_8;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_8;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_8;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin9_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_9;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_9;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_9;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_9;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_9;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_9;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_9;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin10_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_10;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_10;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_10;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_10;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_10;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_10;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_10;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin11_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_11;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_11;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_11;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_11;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_11;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_11;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_11;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin12_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_12;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_12;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_12;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_12;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_12;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_12;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_12;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin13_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_13;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_13;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_13;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_13;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_13;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_13;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_13;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin14_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_14;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_14;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_14;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_14;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_14;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_14;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_14;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin15_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_15;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_15;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_15;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_15;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_15;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_15;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_15;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin16_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_16;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_16;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_16;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_16;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_16;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_16;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_16;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin17_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_17;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_17;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_17;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_17;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_17;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_17;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_17;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin18_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_18;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_18;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_18;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_18;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_18;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_18;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_18;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin19_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_19;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_19;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_19;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_19;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_19;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_19;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_19;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin20_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_20;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_20;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_20;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_20;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_20;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_20;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_20;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin21_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_21;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_21;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_21;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_21;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_21;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_21;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_21;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin22_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_22;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_22;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_22;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_22;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_22;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_22;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_22;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin23_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_23;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_23;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_23;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_23;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_23;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_23;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_23;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin24_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_24;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_24;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_24;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_24;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_24;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_24;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_24;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin25_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_25;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_25;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_25;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_25;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_25;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_25;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_25;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin26_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_26;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_26;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_26;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_26;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_26;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_26;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_26;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin27_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_27;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_27;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_27;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_27;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_27;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_27;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_27;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin28_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_28;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_28;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_28;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_28;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_28;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_28;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_28;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin29_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_29;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_29;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_29;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_29;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_29;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_29;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_29;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin30_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_30;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_30;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_30;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_30;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_30;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_30;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_30;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin31_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_31;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_31;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_31;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_31;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_31;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_31;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_31;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin32_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_32;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_32;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_32;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_32;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_32;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_32;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_32;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin33_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_33;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_33;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_33;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_33;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_33;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_33;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_33;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin34_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_34;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_34;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_34;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_34;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_34;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_34;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_34;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin35_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_35;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_35;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_35;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_35;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_35;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_35;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_35;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin36_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_36;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_36;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_36;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_36;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_36;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_36;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_36;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin37_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_37;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_37;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_37;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_37;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_37;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_37;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_37;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin38_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_38;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_38;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_38;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_38;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_38;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_38;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_38;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin39_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_39;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_39;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_39;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_39;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_39;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_39;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_39;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin40_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_40;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_40;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_40;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_40;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_40;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_40;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_40;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin41_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_41;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_41;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_41;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_41;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_41;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_41;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_41;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin42_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_42;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_42;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_42;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_42;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_42;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_42;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_42;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin43_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_43;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_43;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_43;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_43;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_43;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_43;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_43;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin44_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_44;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_44;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_44;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_44;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_44;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_44;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_44;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin45_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_45;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_45;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_45;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_45;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_45;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_45;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_45;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin46_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_46;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_46;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_46;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_46;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_46;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_46;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_46;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin47_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_47;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_47;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_47;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_47;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_47;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_47;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_47;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin48_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_48;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_48;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_48;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_48;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_48;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_48;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_48;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin49_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_49;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_49;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_49;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_49;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_49;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_49;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_49;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin50_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_50;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_50;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_50;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_50;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_50;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_50;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_50;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin51_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_51;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_51;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_51;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_51;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_51;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_51;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_51;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin52_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_52;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_52;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_52;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_52;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_52;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_52;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_52;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin53_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_53;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_53;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_53;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_53;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_53;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_53;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_53;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin54_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_54;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_54;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_54;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_54;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_54;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_54;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_54;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin55_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_55;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_55;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_55;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_55;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_55;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_55;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_55;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin56_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_56;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_56;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_56;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_56;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_56;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_56;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_56;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin57_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_57;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_57;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_57;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_57;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_57;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_57;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_57;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin58_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_58;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_58;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_58;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_58;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_58;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_58;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_58;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin59_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_59;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_59;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_59;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_59;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_59;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_59;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_59;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin60_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_60;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_60;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_60;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_60;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_60;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_60;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_60;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin61_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_61;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_61;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_61;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_61;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_61;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_61;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_61;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin62_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_62;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_62;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_62;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_62;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_62;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_62;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_62;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin63_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_63;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_63;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_63;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_63;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_63;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_63;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_63;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin64_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_64;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_64;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_64;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_64;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_64;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_64;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_64;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin65_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_65;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_65;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_65;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_65;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_65;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_65;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_65;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin66_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_66;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_66;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_66;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_66;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_66;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_66;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_66;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin67_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_67;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_67;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_67;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_67;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_67;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_67;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_67;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin68_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_68;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_68;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_68;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_68;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_68;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_68;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_68;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin69_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_69;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_69;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_69;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_69;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_69;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_69;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_69;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin70_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_70;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_70;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_70;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_70;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_70;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_70;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_70;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin71_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_71;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_71;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_71;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_71;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_71;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_71;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_71;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin72_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_72;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_72;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_72;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_72;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_72;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_72;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_72;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin73_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_73;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_73;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_73;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_73;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_73;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_73;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_73;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin74_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_74;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_74;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_74;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_74;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_74;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_74;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_74;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin75_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_75;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_75;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_75;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_75;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_75;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_75;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_75;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin76_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_76;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_76;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_76;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_76;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_76;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_76;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_76;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin77_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_77;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_77;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_77;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_77;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_77;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_77;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_77;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin78_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_78;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_78;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_78;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_78;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_78;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_78;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_78;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin79_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_79;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_79;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_79;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_79;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_79;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_79;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_79;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin80_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_80;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_80;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_80;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_80;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_80;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_80;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_80;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin81_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_81;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_81;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_81;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_81;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_81;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_81;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_81;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin82_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_82;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_82;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_82;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_82;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_82;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_82;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_82;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin83_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_83;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_83;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_83;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_83;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_83;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_83;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_83;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin84_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_84;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_84;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_84;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_84;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_84;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_84;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_84;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin85_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_85;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_85;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_85;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_85;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_85;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_85;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_85;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin86_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_86;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_86;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_86;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_86;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_86;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_86;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_86;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin87_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_87;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_87;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_87;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_87;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_87;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_87;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_87;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin88_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_88;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_88;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_88;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_88;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_88;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_88;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_88;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin89_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_89;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_89;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_89;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_89;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_89;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_89;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_89;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin90_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_90;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_90;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_90;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_90;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_90;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_90;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_90;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin91_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_91;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_91;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_91;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_91;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_91;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_91;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_91;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin92_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_92;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_92;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_92;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_92;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_92;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_92;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_92;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin93_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_93;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_93;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_93;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_93;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_93;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_93;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_93;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin94_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_94;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_94;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_94;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_94;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_94;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_94;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_94;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin95_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_95;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_95;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_95;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_95;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_95;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_95;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_95;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin96_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_96;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_96;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_96;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_96;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_96;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_96;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_96;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin97_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_97;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_97;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_97;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_97;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_97;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_97;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_97;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin98_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_98;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_98;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_98;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_98;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_98;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_98;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_98;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin99_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_99;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_99;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_99;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_99;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_99;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_99;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_99;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+skin100_2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=skin_100;npid=head2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=skin_100;npid=body2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=skin_100;npid=right_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=skin_100;npid=left_arm2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=skin_100;npid=right_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=skin_100;npid=left_leg2} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin2<target.uuid>;value=skin_100;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+
+#_----------------
+hat1:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=hat;nm=santa_hat;npid=hat} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.hat<target.uuid>;value=santa_hat;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+hat2:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=hat;nm=ear_muffs;npid=hat} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.hat<target.uuid>;value=ear_muffs;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+left_arm_1:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=left_item;nm=left_gloves;npid=left_item} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.leftitem<target.uuid>;value=left_gloves;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+right_arm_1:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=right_item;nm=right_gloves;npid=right_item} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightitem<target.uuid>;value=right_gloves;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+backpack_1:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=backpack;nm=scarf;npid=backpack} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.backpack<target.uuid>;value=scarf;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+apron:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=backpack;nm=apron;npid=backpack} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.backpack<target.uuid>;value=apron;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_pant;nm=apron;npid=left_pant} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_pant;nm=apron;npid=right_pant} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.leftpant<target.uuid>;value=apron;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightpant<target.uuid>;value=apron;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+reset_cosmetics:
+  Skills:
+  - changepart{m=<global.var.skinchange>;pid=backpack;nm=<global.var.skinchange>;npid=backpack} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=hat;nm=<global.var.skinchange>;npid=hat} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_item;nm=<global.var.skinchange>;npid=left_item} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_item;nm=<global.var.skinchange>;npid=right_item} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.backpack<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.hat<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.leftitem<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightitem<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightitem<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=left_pant;nm=<global.var.skinchange>;npid=left_pant} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=<global.var.skinchange>;pid=right_pant;nm=<global.var.skinchange>;npid=right_pant} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.leftpant<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightpant<target.uuid>;value=<global.var.skinchange>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+
+#06d54b3fffc32b7e2281000f77268b91

@@ -1,0 +1,34 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: PILLAGER
+mainHand: CROSSBOW
+name: $eventBossLevel &4The Hunter
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 0.8
+isPersistent: true
+mountedEntity: the_hunter_mount.yml
+uniqueLootList:
+- filename=the_hunter_drop_crossbow.yml:amount=1:chance=0.65
+powers:
+- attack_blinding.yml
+- invulnerability_fire.yml
+- meteor_shower.yml
+movementSpeedAttribute: 0.28
+followDistance: 80
+locationMessage: '&cThe Hunter: $distance blocks away!'
+spawnMessage: '&cA Hunter is on the prowl!'
+deathMessage: '&aThe Hunter was hunted to extinction by $players!'
+escapeMessage: '&4The Hunter declares the hunt now over!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Hunter has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

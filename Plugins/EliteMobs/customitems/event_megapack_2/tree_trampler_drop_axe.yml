@@ -1,0 +1,9 @@
+potionEffects: []
+isEnabled: true
+material: WOODEN_AXE
+name: '&aTree Trampler'
+lore:
+- '&aWood against wood!'
+enchantments:
+- DIG_SPEED,6
+itemType: UNIQUE

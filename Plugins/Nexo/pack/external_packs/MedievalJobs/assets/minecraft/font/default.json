@@ -1,0 +1,130 @@
+{
+ "providers": [
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:split.png",
+   "ascent": -32768,
+   "height": -10,
+   "chars": [
+    "\uee00"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/general.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee01"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/farmer.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee02"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/miner.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee03"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/wood_cutter.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee04"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/digger.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee05"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/fisherman.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee06"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/hunter.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee07"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/alchemist.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee08"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/blacksmith.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee09"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/builder.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee0a"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:fondos/enchanter.png",
+   "ascent": 46,
+   "height": 256,
+   "chars": [
+    "\uee0b"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:left_click.png",
+   "ascent": 8,
+   "height": 9,
+   "chars": [
+    "\uee0c"
+   ]
+  },
+  {
+   "type": "bitmap",
+   "file": "medieval_jobs:right_click.png",
+   "ascent": 8,
+   "height": 9,
+   "chars": [
+    "\uee0d"
+   ]
+  }
+ ]
+}

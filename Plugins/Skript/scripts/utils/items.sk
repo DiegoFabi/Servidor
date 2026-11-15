@@ -1,0 +1,114 @@
+# ============================================================
+#  items.sk - Librería GLOBAL de items y buzón
+#  Requiere: Skript 2.10+
+#
+#  Úsala desde cualquier script, NPC (MythicMobs), menú (CoreTools)
+#  o consola. Nada aquí es específico de un sistema.
+#
+#  Funciones (para otros scripts):
+#    itemContar(p, tipo)           :: number   cantidad en el inventario
+#    itemQuitar(p, tipo, n)        :: boolean  quita n si los tiene (si no, nada)
+#    itemDar(jugador, item)                    lo da; si está offline o lleno -> buzón
+#    buzonReclamar(p)                          entrega lo que quepa del buzón
+#
+#  Comandos de consola (MythicMobs/CoreTools: runas=console):
+#    /itemquitar <jugador> <cantidad> <item> [comando si se cobró]
+#        En el comando opcional, {player} se cambia por el jugador.
+#        Ej: itemquitar Steve 10 diamond give {player} golden_apple 1
+#    /itemdar <jugador> <cantidad> <item>
+#        Ej: itemdar Steve 1 golden apple   (si no cabe, va al buzón)
+#
+#  Comando de jugador:
+#    /buzon   -> recoge los objetos guardados (subastas, NPCs, premios...)
+#
+#  Rendimiento:
+#  - Sin temporizadores; solo se ejecuta al llamarse.
+#  - Inventarios y economía solo pueden tocarse en el hilo principal
+#    (API de Bukkit); por eso no hay async aquí: son operaciones de
+#    microsegundos y sin bucles sobre el mundo.
+#  - El buzón se guarda en variables persistentes (no se pierde nada
+#    al reiniciar). Se avisa al entrar solo si hay algo pendiente.
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:aqua:dark_aqua><bold>Buzón</bold></gradient> <dark_gray>»<reset>
+
+# ------------------------------------------------------------
+#  Funciones globales
+# ------------------------------------------------------------
+function itemContar(p: player, t: itemtype) :: number:
+    return amount of {_t} in inventory of {_p}
+
+function itemQuitar(p: player, t: itemtype, n: number) :: boolean:
+    {_n} > 0
+    if amount of {_t} in inventory of {_p} < {_n}:
+        return false
+    remove {_n} of {_t} from inventory of {_p}
+    return true
+
+function itemDar(op: offline player, i: item):
+    if {_op} is online:
+        set {_p} to "%{_op}%" parsed as player
+        if {_p} can hold {_i}:
+            give {_i} to {_p}
+            stop
+        notificar({_p})
+        send formatted "{@prefijo} <#FFB347>Inventario lleno. <#C9CDD6>Guardamos <white>%{_i}% <#C9CDD6>en tu buzón: <click:run_command:'/buzon'><hover:show_text:'<#7FB2FF>Recoger objetos'><#7FB2FF><underlined>/buzon</underlined></hover></click>" to {_p}
+    add {_i} to {buzon::%uuid of {_op}%::*}
+
+function buzonReclamar(p: player):
+    if size of {buzon::%uuid of {_p}%::*} = 0:
+        send "{@prefijo} <#9EA3AE>Tu buzón está vacío." to {_p}
+        stop
+    set {_n} to 0
+    loop {buzon::%uuid of {_p}%::*}:
+        if {_p} can hold loop-value:
+            give loop-value to {_p}
+            delete {buzon::%uuid of {_p}%::%loop-index%}
+            add 1 to {_n}
+        else:
+            set {_lleno} to true
+    send "{@prefijo} <#7FFF9E>Recogiste %{_n}% objeto(s)." to {_p}
+    if {_lleno} is set:
+        send "{@prefijo} <#FFB347>Libera espacio para recoger el resto <dark_gray>(/buzon)." to {_p}
+    play sound "entity.item.pickup" with volume 0.8 to {_p}
+
+# ------------------------------------------------------------
+#  Comandos de consola (para NPCs, menús, otros plugins)
+# ------------------------------------------------------------
+command /itemquitar <player> <integer> <itemtype> [<text>]:
+    executable by: console
+    usage: /itemquitar <jugador> <cantidad> <item> [comando si se cobró]
+    trigger:
+        if itemQuitar(arg-1, arg-3, arg-2) is not true:
+            send action bar "<#FF6B6B>✖ Te faltan items <dark_gray>(%arg-2% %arg-3%)" to arg-1
+            play sound "entity.villager.no" with volume 0.8 to arg-1
+            stop
+        play sound "entity.item.pickup" with volume 0.8 and pitch 0.7 to arg-1
+        send action bar "<#5FE3FF>- %arg-2% %arg-3%" to arg-1
+        arg-4 is set
+        set {_c} to arg-4
+        replace all "{player}" with name of arg-1 in {_c}
+        execute console command {_c}
+
+command /itemdar <player> <integer> <itemtype>:
+    executable by: console
+    usage: /itemdar <jugador> <cantidad> <item>
+    trigger:
+        arg-2 > 0
+        itemDar(arg-1, arg-2 of arg-3)
+
+# ------------------------------------------------------------
+#  Buzón
+# ------------------------------------------------------------
+command /buzon:
+    trigger:
+        buzonReclamar(player)
+
+on join:
+    size of {buzon::%uuid of player%::*} > 0
+    wait 3 seconds
+    player is online
+    notificar(player)
+    send formatted "{@prefijo} <#FFD36B>Tienes objetos en tu buzón. <click:run_command:'/buzon'><hover:show_text:'<#7FB2FF>Recoger'><#7FB2FF><underlined>[Recoger]</underlined></hover></click>" to player

@@ -1,0 +1,279 @@
+# ============================================================
+#  tutorial.sk - Puente del tutorial inicial (TypeWriter) + /historia
+#  Requiere: Skript 2.10+ y TypeWriter (páginas tutorial_*)
+#
+#  Flujo (lo dirige TypeWriter con el fact "tutorial_paso"):
+#   1 King Draemir (escena del libro) -> 2 Eco de los Recuerdos
+#   (desbloquea /historia) -> 4 Guardia Real (kit inicial) ->
+#   6 saltar al Portal del Spawn -> 5 terminado (o /saltar).
+#   TypeWriter lo inicia al entrar si tutorial_paso = 0 (on_player_join).
+#
+#  Obligatorio mientras el fact tutorial_paso de TypeWriter sea 0 (se
+#  puede resetear con los comandos de TypeWriter) y con /saltar siempre
+#  visible en la barra de acción.
+#
+#  Bloqueo PROGRESIVO ({tutorial::uuid} = paso actual):
+#   pasos 1-2  solo caminar y hablar con el NPC indicado
+#   paso 3+    inventario, soltar/recoger objetos, comer y hambre
+#   paso 4+    clic derecho (libro y objetos)
+#   paso 6     el comando del portal (rtp)
+#   siempre    sin romper/poner bloques, sin daño y solo /saltar e /historia
+#
+#  Comandos de consola (TypeWriter, CoreTools, MythicMobs...):
+#    /tutorial iniciar <jugador>
+#    /tutorial paso <jugador> <n>
+#    /tutorial terminar <jugador>
+#    /tutorial historia <jugador> <capítulo>   (nunca baja el progreso)
+#  Comando de jugador:
+#    /historia   -> menú de la historia principal (capítulos)
+#
+#  Añadir capítulos: copia un bloque en "on load" con el número
+#  siguiente y sube {-hist::total}. Desbloquéalo desde TypeWriter con
+#  un console_run_command "tutorial historia %player_name% N".
+#
+#  Rendimiento: sin temporizadores. Cada evento comprueba una sola
+#  variable del propio jugador (si no está en el tutorial, sale al instante).
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:gold:yellow><bold>Tutorial</bold></gradient> <dark_gray>»<reset>
+    prefijo-historia: <gradient:gold:yellow><bold>Historia</bold></gradient> <dark_gray>»<reset>
+
+on load:
+    # Historia por capítulos. Capítulo actual: 1 "Ecos de la Maleza".
+    # Cada entrada es una parte del capítulo; se desbloquea con
+    # "tutorial historia <jugador> <parte>" desde TypeWriter.
+    delete {-hist::*}
+    set {-hist::capitulo} to "Capítulo 1: Ecos de la Maleza"
+    set {-hist::total} to 10
+    set {-hist::nombre::1} to "El Rey sin Memoria"
+    set {-hist::desc::1::*} to "Despiertas otra vez sin recuerdos.", "King Draemir te devuelve el libro que", "escribiste vida tras vida y recuperas" and "el primer eco de tu pasado."
+    set {-hist::nombre::2} to "Más Allá de los Muros"
+    set {-hist::desc::2::*} to "El Guardia Real te equipó y te mostró", "el portal, la única salida del reino." and "Cruzaste y el mundo se abrió ante ti."
+    set {-hist::nombre::3} to "Los Supervivientes"
+    set {-hist::desc::3::*} to "Brom el Herrero, Malvor el Chamán y", "Tobías el Granjero siguen en pie. Una", "visión te mostró una raíz bajo el trono" and "y la Maleza ya sabe que has vuelto."
+    set {-hist::nombre::4} to "La Raíz bajo el Trono"
+    set {-hist::desc::4::*} to "Derrotaste a los Olvidados y con hongos", "y amatistas Malvor abrió el ritual. La", "Raíz te habló: su corazón está sellado" and "con un juramento enano."
+    set {-hist::nombre::5} to "El Juramento del Acero"
+    set {-hist::desc::5::*} to "Pronunciaste la palabra de la corona:", "«Recuerda». Con hierro, carbón y", "pizarra profunda, Brom forjó la" and "Llave de Raíz."
+    set {-hist::nombre::6} to "Las Puertas de la Cripta"
+    set {-hist::desc::6::*} to "El Rey reconoció la llave. Con el", "Guardia despejaste la entrada y las", "puertas de la cripta se abrieron…" and "pero lo de abajo aún duerme."
+    set {-hist::nombre::7} to "La Cosecha Torcida"
+    set {-hist::desc::7::*} to "La Maleza pudrió los campos. Salvaste", "la cosecha de Tobías y Malvor purificó" and "la tierra con polvo de hueso."
+    set {-hist::nombre::8} to "Las Crónicas Perdidas"
+    set {-hist::desc::8::*} to "Aldric reescribió las crónicas borradas", "y apareció un nombre olvidado: el" and "Alquimista de la corte."
+    set {-hist::nombre::9} to "La Noche de la Maleza"
+    set {-hist::desc::9::*} to "Defendiste el reino junto al Guardia", "Real durante la noche en que el" and "Alquimista envió a sus criaturas."
+    set {-hist::nombre::10} to "El Rey Recuerda"
+    set {-hist::desc::10::*} to "El Rey leyó la crónica y recordó tu", "nombre… y la copa que le dio el" and "Alquimista. El capítulo ha terminado."
+    # Huecos del menú (2 filas): partes 1-7 arriba y 8-10 abajo
+    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 21, 22 and 23
+
+# ------------------------------------------------------------
+#  Inicio y comandos de consola
+# ------------------------------------------------------------
+# El inicio lo decide TypeWriter con el fact "tutorial_paso" (0 = debe hacer
+# el tutorial). Al entrar, TypeWriter lanza el tutorial o le dice a este
+# script en qué paso está; los facts se pueden resetear o dar con los
+# comandos de TypeWriter sin tocar nada aquí.
+
+# Barra de acción fija con el comando para saltar (un bucle por jugador en tutorial)
+function tutBarra(p: player):
+    set {_u} to uuid of {_p}
+    {-tut::barra::%{_u}%} is not set
+    set {-tut::barra::%{_u}%} to true
+    while {tutorial::%{_u}%} is set:
+        if {_p} is not online:
+            delete {-tut::barra::%{_u}%}
+            stop
+        send action bar "<#FFD36B>✦ Tutorial <dark_gray>• <#C9CDD6>Escribe <#FFD36B>/saltar <#C9CDD6>para omitirlo" to {_p}
+        wait 2 seconds
+    delete {-tut::barra::%{_u}%}
+
+on join:
+    {tutorial::%uuid of player%} is set
+    # Versión anterior guardaba una fecha: se pasa al paso 1
+    if {tutorial::%uuid of player%} is not a number:
+        set {tutorial::%uuid of player%} to 1
+    # El tutorial se hace en el Lobby
+    if "%world of player%" is not "Lobby":
+        teleport player to spawn of world "Lobby"
+    wait 2 seconds
+    player is online
+    tutBarra(player)
+
+on quit:
+    delete {-tut::barra::%uuid of player%}
+
+# Respaldo: si cruza el portal (paso 6) y sale del Lobby, se cierra el tutorial
+on world change:
+    {tutorial::%uuid of player%} = 6
+    "%world of player%" is not "Lobby"
+    make player execute command "tutorialfin"
+    wait 1 second
+    player is online
+    {tutorial::%uuid of player%} is set
+    delete {tutorial::%uuid of player%}
+    send "{@prefijo} <#7FFF9E>Tutorial completado. <#C9CDD6>Ya puedes usar todo: abre tu libro para empezar." to player
+
+command /tutorial <text> <offline player> [<integer>]:
+    executable by: console
+    usage: /tutorial <iniciar|paso|terminar|historia> <jugador> [número]
+    trigger:
+        set {_u} to uuid of arg-2
+        if arg-1 is "iniciar":
+            set {tutorial::%{_u}%} to 1
+            arg-2 is online
+            set {_p} to "%arg-2%" parsed as player
+            tutBarra({_p})
+        else if arg-1 is "paso":
+            arg-3 is set
+            {tutorial::%{_u}%} is set
+            set {tutorial::%{_u}%} to arg-3
+        else if arg-1 is "terminar":
+            {tutorial::%{_u}%} is set
+            delete {tutorial::%{_u}%}
+            arg-2 is online
+            send "{@prefijo} <#7FFF9E>Tutorial completado. <#C9CDD6>Ya puedes usar todo: abre tu libro para empezar." to arg-2
+        else if arg-1 is "historia":
+            arg-3 is set
+            set {_antes} to {historia::%{_u}%} ? 0
+            arg-3 > {_antes}
+            set {historia::%{_u}%} to arg-3
+            arg-2 is online
+            set {_p} to "%arg-2%" parsed as player
+            notificar({_p})
+            send formatted "{@prefijo-historia} <#C9CDD6>Nueva parte de la historia: <#FFD36B>%{-hist::nombre::%arg-3%}% <click:run_command:'/historia'><hover:show_text:'<#7FB2FF>Abrir la historia'><#7FB2FF><underlined>[Ver]</underlined></hover></click>" to {_p}
+
+# ------------------------------------------------------------
+#  Restricciones progresivas
+#  Los NPCs de TypeWriter son paquetes: no pasan por estos eventos,
+#  así que hablar con ellos siempre funciona; TypeWriter decide con
+#  criterios qué NPC responde en cada paso.
+#  "{x} < N" es falso si la variable no existe: los jugadores fuera
+#  del tutorial salen en la primera línea sin coste.
+# ------------------------------------------------------------
+on command:
+    {tutorial::%uuid of player%} is set
+    set {_c} to lowercase command
+    # Comandos del tutorial y de AuthMe (sin /login el jugador quedaría atrapado)
+    if {_c} is "saltar", "skip", "historia", "tutorialinicio" or "tutorialfin":
+        stop
+    if {_c} is "login", "l", "register", "reg", "changepassword", "logout" or "email":
+        stop
+    if {_c} is "rtp":
+        {tutorial::%uuid of player%} = 6
+        stop
+    cancel event
+    send action bar "<#FFB347>✦ <#C9CDD6>Durante el tutorial solo puedes usar <#FFD36B>/saltar" to player
+
+on right click:
+    {tutorial::%uuid of player%} < 4
+    cancel event
+
+on break:
+    {tutorial::%uuid of player%} is set
+    cancel event
+
+on place:
+    {tutorial::%uuid of player%} is set
+    cancel event
+
+on drop:
+    {tutorial::%uuid of player%} < 3
+    cancel event
+
+on pick up:
+    {tutorial::%uuid of player%} < 3
+    cancel event
+
+on swap hand items:
+    {tutorial::%uuid of player%} < 3
+    cancel event
+
+on inventory click:
+    {tutorial::%uuid of player%} < 3
+    {-hist::inv::%uuid of player%} is not set
+    cancel event
+
+on consume:
+    {tutorial::%uuid of player%} < 3
+    cancel event
+
+on portal:
+    {tutorial::%uuid of player%} is set
+    cancel event
+
+on hunger meter change:
+    {tutorial::%uuid of player%} < 3
+    cancel event
+
+on damage:
+    if victim is a player:
+        if {tutorial::%uuid of victim%} is set:
+            cancel event
+            stop
+    attacker is a player
+    {tutorial::%uuid of attacker%} is set
+    cancel event
+
+# ------------------------------------------------------------
+#  Menú de historia
+# ------------------------------------------------------------
+function historiaMenu(p: player):
+    set {_prog} to {historia::%uuid of {_p}%} ? 0
+    set {_total} to {-hist::total}
+    set {_gui} to chest inventory with 4 rows named "<#FFD36B>✦ <dark_gray>%{-hist::capitulo}% <gray>(%{_prog}%/%{_total}%)"
+    set {_barra} to ""
+    loop {_total} times:
+        if loop-number <= {_prog}:
+            set {_barra} to "%{_barra}%<#FFD36B>■"
+        else:
+            set {_barra} to "%{_barra}%<dark_gray>■"
+    set slot 4 of {_gui} to skull of {_p} named "<#FFD36B>Tu Historia" with lore "<#C9CDD6>Partes: <white>%{_prog}%<#9EA3AE>/%{_total}%", "%{_barra}%", "" and "<#9EA3AE>Haz clic en una parte para recordarla."
+    loop {_total} times:
+        set {_n} to loop-number
+        set {_s} to {-hist::slots::%{_n}%}
+        if {_s} is set:
+            if {_n} <= {_prog}:
+                set {_lore::*} to "<#7FFF9E>✔ Desbloqueado" and ""
+                loop {-hist::desc::%{_n}%::*}:
+                    add "<#C9CDD6>%loop-value-2%" to {_lore::*}
+                add "" and "<#7FB2FF>Clic para recordar" to {_lore::*}
+                set slot {_s} of {_gui} to enchanted book named "<#FFD36B>Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
+            else if {_n} = {_prog} + 1:
+                set slot {_s} of {_gui} to book named "<#9EA3AE>Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FFB347>● Siguiente capítulo", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearlo."
+            else:
+                set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Parte %{_n}%: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
+            delete {_lore::*}
+    set {-hist::inv::%uuid of {_p}%} to {_gui}
+    open {_gui} to {_p}
+
+on inventory click:
+    {-hist::inv::%uuid of player%} is set
+    event-inventory is {-hist::inv::%uuid of player%}
+    cancel event
+    set {_i} to index of event-slot
+    loop {-hist::slots::*}:
+        if loop-value = {_i}:
+            set {_n} to loop-index parsed as integer
+    {_n} is set
+    {_n} <= ({historia::%uuid of player%} ? 0)
+    close player's inventory
+    send "{@prefijo-historia} <#FFD36B><bold>%{-hist::capitulo}% • Parte %{_n}%: %{-hist::nombre::%{_n}%}%</bold>" to player
+    loop {-hist::desc::%{_n}%::*}:
+        send "<dark_gray>│ <#C9CDD6>%loop-value%" to player
+    play sound "item.book.page_turn" with volume 0.8 to player
+
+on inventory close:
+    {-hist::inv::%uuid of player%} is set
+    event-inventory is {-hist::inv::%uuid of player%}
+    delete {-hist::inv::%uuid of player%}
+
+command /historia:
+    trigger:
+        if ({historia::%uuid of player%} ? 0) < 1:
+            send "{@prefijo-historia} <#9EA3AE>Aún no hay nada escrito. Habla con <#FFD36B>King Draemir<#9EA3AE>."
+            stop
+        historiaMenu(player)

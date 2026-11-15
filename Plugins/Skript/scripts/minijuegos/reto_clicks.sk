@@ -1,0 +1,156 @@
+# ============================================================
+#  reto_clicks.sk - Reto de Clicks 1v1
+#  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
+#
+#  /retoclicks <jugador>   -> reta a un jugador (apuesta al azar 1000-5000)
+#  /retoclicks aceptar | rechazar
+#   - Al aceptar se cobra la apuesta a los dos.
+#   - 10 s de cuenta atrás con title (solo para los 2 jugadores).
+#   - 15 s haciendo clic izquierdo: gana quien haga más clics y se lleva
+#     el bote. Empate: se devuelve el dinero. El resultado se anuncia a todos.
+#   - Antitrampas: como máximo cuentan 15 clics por segundo (15 CPS);
+#     lo que supere ese límite no suma.
+#  Rendimiento: el evento de clic solo trabaja si hay un reto en curso
+#  (comprobación O(1) en memoria); sin temporizadores fuera del reto.
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:yellow:gold><bold>Reto de Clicks</bold></gradient> <dark_gray>»<reset>
+    max-cps: 15
+    expira: 60
+
+on load:
+    delete {-rc::*}
+
+function rcAhora() :: number:
+    return unix timestamp of now
+
+function rcDevolver(a: player, b: player, apuesta: number):
+    add {_apuesta} to {_a}'s balance
+    add {_apuesta} to {_b}'s balance
+
+function rcJugar(a: player, b: player, apuesta: number):
+    set {-rc::juego} to true
+    set {_ua} to uuid of {_a}
+    set {_ub} to uuid of {_b}
+    loop 10 times:
+        if any:
+            {_a} is not online
+            {_b} is not online
+        then:
+            rcDevolver({_a}, {_b}, {_apuesta})
+            send "{@prefijo} <#9EA3AE>Un jugador se desconectó; se devolvió la apuesta." to all players
+            delete {-rc::*}
+            stop
+        set {_s} to 11 - loop-number
+        send title "<#FFD84D><bold>%{_s}%" with subtitle "<#C9CDD6>Prepárate para hacer clic" to {_a} and {_b} for 25 ticks with fadein 0 ticks and fadeout 5 ticks
+        play sound "block.note_block.hat" with volume 0.6 and pitch (0.8 + loop-number * 0.08) to {_a} and {_b}
+        wait 1 second
+    set {-rc::clics::%{_ua}%} to 0
+    set {-rc::clics::%{_ub}%} to 0
+    set {-rc::activo::%{_ua}%} to true
+    set {-rc::activo::%{_ub}%} to true
+    send title "<#7FFF9E><bold>¡CLIC!" with subtitle "<#C9CDD6>15 segundos" to {_a} and {_b} for 1 second with fadein 0 ticks and fadeout 5 ticks
+    play sound "block.note_block.pling" with volume 0.8 and pitch 2 to {_a} and {_b}
+    loop 15 times:
+        send action bar "<#FFD84D>Clics: <white><bold>%{-rc::clics::%{_ua}%}%</bold> <dark_gray>• <#9EA3AE>%16 - loop-number% s" to {_a}
+        send action bar "<#FFD84D>Clics: <white><bold>%{-rc::clics::%{_ub}%}%</bold> <dark_gray>• <#9EA3AE>%16 - loop-number% s" to {_b}
+        wait 1 second
+    delete {-rc::activo::%{_ua}%}
+    delete {-rc::activo::%{_ub}%}
+    set {_ca} to {-rc::clics::%{_ua}%}
+    set {_cb} to {-rc::clics::%{_ub}%}
+    set {_bote} to {_apuesta} * 2
+    if {_ca} = {_cb}:
+        rcDevolver({_a}, {_b}, {_apuesta})
+        send "{@prefijo} <white>%{_a}% <#C9CDD6>y <white>%{_b}% <#C9CDD6>empatan a <#FFD84D>%{_ca}% clics<#C9CDD6>. Se devuelve la apuesta." to all players
+    else:
+        if {_ca} > {_cb}:
+            set {_g} to {_a}
+            set {_p} to {_b}
+            set {_cg} to {_ca}
+            set {_cp} to {_cb}
+        else:
+            set {_g} to {_b}
+            set {_p} to {_a}
+            set {_cg} to {_cb}
+            set {_cp} to {_ca}
+        add {_bote} to {_g}'s balance
+        send title "<#FFD84D><bold>%{_g}% gana" with subtitle "<#C9CDD6>%{_cg}% contra %{_cp}% clics <dark_gray>• <#7FFF9E>$%{_bote}%" to all players for 3 seconds with fadein 5 ticks and fadeout 15 ticks
+        send "{@prefijo} <white>%{_g}% <#C9CDD6>gana el reto a <white>%{_p}% <dark_gray>(<#FFD84D>%{_cg}% <dark_gray>- <#9EA3AE>%{_cp}%<dark_gray>) <#C9CDD6>y se lleva <#7FFF9E><bold>$%{_bote}%</bold>" to all players
+        play sound "ui.toast.challenge_complete" with volume 0.6 to {_g}
+    delete {-rc::*}
+
+# Conteo de clics (solo durante un reto)
+on left click:
+    {-rc::juego} is set
+    set {_u} to uuid of player
+    {-rc::activo::%{_u}%} is set
+    set {_s} to floor(rcAhora())
+    if {-rc::seg::%{_u}%} is not {_s}:
+        set {-rc::seg::%{_u}%} to {_s}
+        set {-rc::cps::%{_u}%} to 0
+    {-rc::cps::%{_u}%} < {@max-cps}
+    add 1 to {-rc::cps::%{_u}%}
+    add 1 to {-rc::clics::%{_u}%}
+
+command /retoclicks [<text>]:
+    aliases: /retoclick
+    trigger:
+        set {_u} to uuid of player
+        if arg-1 is "aceptar":
+            set {_r} to {-rc::invita::%{_u}%}
+            if {_r} is not set:
+                send "{@prefijo} <#FF6B6B>No tienes ningún reto pendiente."
+                stop
+            set {_apuesta} to {-rc::apuesta::%{_u}%}
+            if rcAhora() - {-rc::hora::%{_u}%} > {@expira}:
+                delete {-rc::invita::%{_u}%}
+                send "{@prefijo} <#FF6B6B>El reto ha caducado."
+                stop
+            if {_r} is not online:
+                send "{@prefijo} <#FF6B6B>El retador ya no está conectado."
+                stop
+            if {-rc::juego} is set:
+                send "{@prefijo} <#FF6B6B>Ya hay un reto en curso; espera a que termine."
+                stop
+            if player's balance < {_apuesta}:
+                send "{@prefijo} <#FF6B6B>Necesitas <#7FFF9E>$%{_apuesta}%<#FF6B6B>."
+                stop
+            if {_r}'s balance < {_apuesta}:
+                send "{@prefijo} <#FF6B6B>Tu retador ya no tiene <#7FFF9E>$%{_apuesta}%<#FF6B6B>."
+                stop
+            delete {-rc::invita::%{_u}%}
+            remove {_apuesta} from player's balance
+            remove {_apuesta} from {_r}'s balance
+            send "{@prefijo} <white>%{_r}% <#C9CDD6>vs <white>%player% <dark_gray>• <#C9CDD6>bote <#7FFF9E>$%{_apuesta} * 2%" to all players
+            rcJugar({_r}, player, {_apuesta})
+        else if arg-1 is "rechazar":
+            set {_r} to {-rc::invita::%{_u}%}
+            delete {-rc::invita::%{_u}%}
+            send "{@prefijo} <#9EA3AE>Has rechazado el reto."
+            if {_r} is online:
+                send "{@prefijo} <white>%player% <#9EA3AE>rechazó tu reto." to {_r}
+        else if arg-1 is set:
+            set {_t} to arg-1 parsed as player
+            if {_t} is not set:
+                send "{@prefijo} <#FF6B6B>Ese jugador no está conectado."
+                stop
+            if {_t} is player:
+                send "{@prefijo} <#FF6B6B>No puedes retarte a ti mismo."
+                stop
+            set {_apuesta} to random integer between 1000 and 5000
+            set {_apuesta} to round({_apuesta} / 100) * 100
+            if player's balance < {_apuesta}:
+                send "{@prefijo} <#FF6B6B>La apuesta salió <#7FFF9E>$%{_apuesta}% <#FF6B6B>y no te alcanza."
+                stop
+            set {_ut} to uuid of {_t}
+            set {-rc::invita::%{_ut}%} to player
+            set {-rc::apuesta::%{_ut}%} to {_apuesta}
+            set {-rc::hora::%{_ut}%} to rcAhora()
+            send "{@prefijo} <#C9CDD6>Retaste a <white>%{_t}% <#C9CDD6>por <#7FFF9E>$%{_apuesta}%<#C9CDD6>. Tiene {@expira} s para aceptar."
+            notificar({_t})
+            send formatted "{@prefijo} <white>%player% <#C9CDD6>te reta a un duelo de clics por <#7FFF9E>$%{_apuesta}%  <click:run_command:'/retoclicks aceptar'><hover:show_text:'<#7FFF9E>Aceptar el reto'><#7FFF9E><bold>[Aceptar]</bold></hover></click>  <click:run_command:'/retoclicks rechazar'><hover:show_text:'<#FF6B6B>Rechazar'><#FF6B6B>[Rechazar]</hover></click>" to {_t}
+        else:
+            send "{@prefijo} <#C9CDD6>Uso: <#FFD36B>/retoclicks (jugador)"

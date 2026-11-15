@@ -1,0 +1,10 @@
+potionEffects: []
+isEnabled: true
+material: COAL
+name: '&8Manifested Sorrow'
+lore:
+- '&8May this hardened sorrow protect'
+- '&8you from grief.'
+enchantments:
+- PROTECTION_FIRE,4
+- PROTECTION_PROJECTILE,4

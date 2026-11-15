@@ -1,0 +1,117 @@
+# Convertido desde CommandPanels (panels/panelRewards.yml). Abrir: /coremenu <menu>
+panelRewards:
+  permission: ''
+  bottom_inventory: false
+  name: '&5      ❗ ʀᴇᴄᴏᴍᴘᴇɴꜱᴀꜱ ᴅɪᴀʀɪᴀꜱ'
+  size: 4
+  fill_material: AIR
+  enable_animation: false
+  start_script:
+  - panelrewards_open
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: CHEST_MINECART
+      name: '&eRecompensa Diaria'
+      lore:
+      - '&8Siempre Disponible'
+      - '&7'
+      - '&7| ¡Puedes Reclamar Tu'
+      - '&7| Recompensa Cada &c24'
+      - '&7| &cHoras &7Por Jugar!'
+      - '&7'
+      - '<#E79C46>Recompensas:'
+      - '  <#F7F3C0>▪ &f200 &7ᴍᴏɴᴇᴅᴀꜱ'
+      - '  <#F7F3C0>▪ &f100 &bᴇxᴘᴇʀɪᴇɴᴄɪᴀ'
+      - '  <#F7F3C0>▪ &f110 &aɴɪᴠᴇʟᴇꜱ'
+      - '&7'
+      - '&a➶ ¡Toca para reclamar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - panelrewards_b1_click
+      right_click:
+        Scripts:
+        - panelrewards_b1_click
+      shift_left_click:
+        Scripts:
+        - panelrewards_b1_click
+      shift_right_click:
+        Scripts:
+        - panelrewards_b1_click
+    b2:
+      location: top
+      slots:
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      source: vanilla
+      material: LIME_STAINED_GLASS_PANE
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    b3:
+      location: top
+      slots:
+      - 19
+      source: vanilla
+      material: player_head
+      name: '&fClaim Daily Reward'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - panelrewards_b3_click
+      right_click:
+        Scripts:
+        - panelrewards_b3_click
+      shift_left_click:
+        Scripts:
+        - panelrewards_b3_click
+      shift_right_click:
+        Scripts:
+        - panelrewards_b3_click
+    b4:
+      location: top
+      slots:
+      - 21
+      source: vanilla
+      material: ENDER_CHEST
+      name: '&bRecompensa Premium'
+      lore:
+      - '&7Recompensa especial para jugadores Premium.'
+      - '&8(No disponible aún)'
+      flags:
+      - HIDE_ATTRIBUTES
+    b5:
+      location: top
+      slots:
+      - 22
+      - 23
+      source: vanilla
+      material: ENDER_CHEST
+      name: '&bRecompensa Sorpresa'
+      lore:
+      - '&7Una recompensa aleatoria diferente cada día.'
+      - '&8(No disponible aún)'
+      flags:
+      - HIDE_ATTRIBUTES
+    b6:
+      location: top
+      slots:
+      - 24
+      - 25
+      source: vanilla
+      material: CHEST_MINECART
+      name: '&bRecompensa Sorpresa'
+      lore:
+      - '&7Una recompensa aleatoria diferente cada día.'
+      - '&8(No disponible aún)'
+      flags:
+      - HIDE_ATTRIBUTES

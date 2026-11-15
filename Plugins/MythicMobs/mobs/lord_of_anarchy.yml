@@ -1,0 +1,146 @@
+
+Lord_of_anarchy_gama05:
+  Type: IRON_GOLEM
+  Display: 'Lord_of_anarchy' 
+  Health: 1000
+  Damage: 0
+  AIGoal:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  DamageModifiers:
+  - LAVA 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - SUFFOCATION 0
+  - CONTACT 0
+  - PROJECTILE 0.5
+  BossBar:
+    Enabled: true
+    Title: '&c&l|#| Lord_of_anarchy |#|'
+    Range: 40
+    Color: RED
+    Style: SEGMENTED_10
+  KillMessages:
+  - '§4<target.name> got shattered by Lord_of_anarchy'
+  Equipment:
+  - torch HAND
+  - torch OFFHAND
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    Despawn: false
+    KnockbackResistance: 1
+    Collidable: true
+    FollowRange: 32
+    MovementSpeed: .25
+  Skills:
+  - effect:particles{p=block_crack;m=red_stained_glass;amount=25;speed=0.25;hs=0.5;vs=1} @origin{y=1} ~onDamaged
+  - model{mid=lord_of_anarchy;d=false;i=true;step=1;ride=true} @self ~onSpawn
+  - model{mid=lord_of_anarchy;d=false;i=true;step=1;ride=true} @self ~onLoad 
+  - skill{s=CancelEventSkill;sync=true} @self ~onAttack
+  - skill{s=death_Lord_of_anarchy;sync=true} @self ~onDeath
+  - skill{s=spawn_of_anarchy;sync=true} @self ~onSpawn
+  - randomskill{s=Lord_of_anarchy_agarre2,Lord_of_anarchy_agarre,Lord_of_anarchy_summon_one,Lord_of_anarchy_guadana1,Lord_of_anarchy_sword1,Lord_of_anarchy_attackmagic3,Lord_of_anarchy_attackmagic1,Lord_of_anarchy_attackmagic2,Lord_of_anarchy_powerskill1} @Target ~onTimer:2 
+
+
+skeleton_lord_of_anarchy:
+  Type: IRON_GOLEM
+  Display: 'skeleton_lord_of_anarchy' 
+  Health: 62
+  Damage: 0
+  AIGoal:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  DamageModifiers:
+  - POISON 0
+  - WITHER 0
+  - MAGIC 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - BLOCK_EXPLOSION 0
+  - ENTITY_EXPLOSION 0
+  - SUFFOCATION 0
+  - CONTACT 0
+  - PROJECTILE 0.5
+  KillMessages:
+  - '<target.name> got shattered by skeleton_lord_of_anarchy'
+  Equipment:
+  - torch HAND
+  - torch OFFHAND
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    Despawn: false
+    KnockbackResistance: 1
+    Collidable: true
+    FollowRange: 32
+    MovementSpeed: .25
+  Skills:
+  - effect:particles{p=block_crack;m=black_stained_glass;amount=125;speed=0.5;hs=2;vs=4} @origin{y=1} ~onDamaged
+  - effect:particles{p=flame;amount=17;hs=2;vs=0.2;Size=1} @self ~onTimer:10
+  - model{mid=summon_lord_of_anarchy_one;n=false;tint=false} @self ~onSpawn
+  - skill{s=CancelEventSkill;sync=true} @self ~onAttack
+  - randomskill{s=skeleton_lord_of_anarchy_magic1,skeleton_lord_of_anarchy_attack1,skeleton_lord_of_anarchy_attack2,skeleton_lord_of_anarchy_arrastre,skeleton_lord_of_anarchy_golpeton} @Targetlocation ~onTimer:2 
+  - skill{s=skeleton_lord_of_anarchy_spawn} @self ~onSpawn
+  - potion{type=SLOW;l=99;d=160;p=false} @self ~onTimer:5
+
+
+
+
+Little_anarchy:
+  Type: bee
+  Display: 'Little_anarchy' 
+  Health: 170
+  Damage: 0
+  AIGoal:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 monsters
+  - 2 attacker
+  - 3 ownertarget 
+  - 4 ownerattacker
+  DamageModifiers:
+  - POISON 0
+  - WITHER 0
+  - MAGIC 0
+  - HOT_FLOOR 0
+  - FIRE_TICK 0
+  - BLOCK_EXPLOSION 0
+  - ENTITY_EXPLOSION 0
+  - SUFFOCATION 0
+  - CONTACT 0
+  - PROJECTILE 0.5
+  KillMessages:
+  - '<target.name> got shattered by Little_anarchy'
+  Options:
+    Invincible: true
+    AlwaysShowName: true
+    Silent: true
+    Collidable: true
+    MovementSpeed: 0.26
+    MaxCombatDistance: 15
+    PreventOtherDrops: true
+    FollowRange: 8 
+  Skills:
+  - model{mid=pet_mini_lord_of_anarchy;n=name} @self ~onSpawn
+  - skill{s=CancelEventSkill;sync=true} @self ~onAttack
+  - skill{s=Little_anarchy_interactt1;sync=true} @self ~onInteract
+  - randomskill{s=Little_anarchy_magic,Little_anarchy_attack2,Little_anarchy_attack1} @target ~onTimer:5 
+
+

@@ -1,0 +1,345 @@
+potion_shop_furniture_big_cupboard:
+  material: PAPER
+  itemname: <white>Big Cupboard
+  Pack:
+    model: elitecreatures/potion_shop_furniture/big_cupboard
+    custom_model_data: 1018
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        translation: 0,1,0
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 1,0,0
+        - 0,0,0
+        - -1,0,0
+        - 1,1,0
+        - 1,2,0
+        - 0,1,0
+        - 0,2,0
+        - -1,1,0
+        - -1,2,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_big_cupboard
+          probability: 1.0
+potion_shop_furniture_extraction_machine_green:
+  material: PAPER
+  itemname: <white>Extraction Machine Green
+  Pack:
+    model: elitecreatures/potion_shop_furniture/extraction_machine_green
+    custom_model_data: 1019
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_extraction_machine_green
+          probability: 1.0
+potion_shop_furniture_extraction_machine_purple:
+  material: PAPER
+  itemname: <white>Extraction Machine Purple
+  Pack:
+    model: elitecreatures/potion_shop_furniture/extraction_machine_purple
+    custom_model_data: 1020
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_extraction_machine_purple
+          probability: 1.0
+potion_shop_furniture_extraction_machine_red:
+  material: PAPER
+  itemname: <white>Extraction Machine Red
+  Pack:
+    model: elitecreatures/potion_shop_furniture/extraction_machine_red
+    custom_model_data: 1021
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_extraction_machine_red
+          probability: 1.0
+potion_shop_furniture_extraction_machine_red_2:
+  material: PAPER
+  itemname: <white>Extraction Machine Red 2
+  Pack:
+    model: elitecreatures/potion_shop_furniture/extraction_machine_red_2
+    custom_model_data: 1022
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_extraction_machine_red_2
+          probability: 1.0
+potion_shop_furniture_extraction_machine_yellow:
+  material: PAPER
+  itemname: <white>Extraction Machine Yellow
+  Pack:
+    model: elitecreatures/potion_shop_furniture/extraction_machine_yellow
+    custom_model_data: 1023
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_extraction_machine_yellow
+          probability: 1.0
+potion_shop_furniture_glass_shelf_potion:
+  material: PAPER
+  itemname: <white>Glass Shelf Potion
+  Pack:
+    model: elitecreatures/potion_shop_furniture/glass_shelf_potion
+    custom_model_data: 1024
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_glass_shelf_potion
+          probability: 1.0
+potion_shop_furniture_potion_cupboard:
+  material: PAPER
+  itemname: <white>Potion Cupboard
+  Pack:
+    model: elitecreatures/potion_shop_furniture/potion_cupboard
+    custom_model_data: 1025
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        translation: 0,-0.3,0
+        scale: 1.2,1.2,1.2
+      hitbox:
+        barriers:
+        - -1,0,0
+        - -1,1,0
+        - 0,0,0
+        - 0,1,0
+        - 1,0,0
+        - 1,1,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_potion_cupboard
+          probability: 1.0
+potion_shop_furniture_potion_hanging:
+  material: PAPER
+  itemname: <white>Potion Hanging
+  Pack:
+    model: elitecreatures/potion_shop_furniture/potion_hanging
+    custom_model_data: 1026
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: true
+        floor: false
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        translation: 0,-0.5,0
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_potion_hanging
+          probability: 1.0
+potion_shop_furniture_potion_hanging_shelf:
+  material: PAPER
+  itemname: <white>Potion Hanging Shelf
+  Pack:
+    model: elitecreatures/potion_shop_furniture/potion_hanging_shelf
+    custom_model_data: 1027
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_potion_hanging_shelf
+          probability: 1.0
+potion_shop_furniture_sofa:
+  material: PAPER
+  itemname: <white>Sofa
+  Pack:
+    model: elitecreatures/potion_shop_furniture/sofa
+    custom_model_data: 1028
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0,-0.05,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_sofa
+          probability: 1.0
+potion_shop_furniture_tube_holder:
+  material: PAPER
+  itemname: <white>Tube Holder
+  Pack:
+    model: elitecreatures/potion_shop_furniture/tube_holder
+    custom_model_data: 1029
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: NONE
+        tracking_rotation: FIXED
+        scale: 1,1,1
+      hitbox:
+        barriers:
+        - 0,0,0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: potion_shop_furniture_tube_holder
+          probability: 1.0

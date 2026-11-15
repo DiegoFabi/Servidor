@@ -1,0 +1,15 @@
+Id: Nocsy_Drakonin_Baby-Night
+MythicMob: Nocsy_Drakonin-Night-Baby
+Permission: mcpets.nocsy_drakonin_baby.night
+DespawnSkill: Nocsy_Drakonin_Despawn
+Mountable: false
+Distance: 5
+SpawnRange: 2
+ComingBackRange: 2
+Icon:
+  Material: BLAZE_ROD
+  Name: §9Drakonin Bebé Nocturno
+  CustomModelData: 96408
+  Description:
+  - §7A cute little drakonin
+  - §7that'll follow you everywhere !

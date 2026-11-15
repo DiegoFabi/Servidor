@@ -1,0 +1,14 @@
+isEnabled: true
+material: DIAMOND_BOOTS
+name: '&cDark Star Boots'
+lore:
+- "&cGives you the courage"
+- "&cof running when in danger."
+enchantments:
+- "PROTECTION_FALL,5"
+- "PROTECTION_ENVIRONMENTAL,5"
+- "DURABILITY,5"
+- "VANISHING_CURSE,1"
+potionEffects: 
+- "SPEED,3,self,onHit"
+itemType: UNIQUE

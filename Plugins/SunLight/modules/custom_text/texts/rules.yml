@@ -1,0 +1,22 @@
+Description: Server rules.
+Text:
+- ' '
+- <red><b>ꜱᴜʀᴠɪᴠᴀʟ ʀᴜʟᴇꜱ</b></red>
+- <dark_gray>▸</dark_gray> <gray>ᴏꜰꜰᴇɴꜱɪᴠᴇ ʟᴀɴɢᴜᴀɢᴇ</gray> <green>[ᴡᴀʀɴ]</green> <yellow>[ᴍᴜᴛᴇ]</yellow>
+- <dark_gray>▸</dark_gray> <gray>ꜱᴘᴀᴍᴍɪɴɢ/ꜰʟᴏᴏᴅɪɴɢ</gray> <green>[ᴡᴀʀɴ]</green> <yellow>[ᴍᴜᴛᴇ]</yellow>
+- <dark_gray>▸</dark_gray> <gray>ᴛᴏxɪᴄɪᴛʏ</gray> <green>[ᴡᴀʀɴ]</green> <yellow>[ᴍᴜᴛᴇ]</yellow>
+- <dark_gray>▸</dark_gray> <gray>ʜᴀʀᴀꜱꜱᴍᴇɴᴛ</gray> <green>[ᴡᴀʀɴ]</green> <yellow>[ᴍᴜᴛᴇ]</yellow> <red>[ʙᴀɴ]</red>
+- <dark_gray>▸</dark_gray> <gray>ᴀᴅᴠᴇʀᴛɪꜱɪɴɢ</gray> <green>[ᴍᴜᴛᴇ]</green> <yellow>[ʙᴀɴ]</yellow> <red>[ɪᴘ ʙᴀɴ]</red>
+- <dark_gray>▸</dark_gray> <gray>ꜱᴛᴇᴀʟɪɴɢ/ɢʀɪᴇꜰɪɴɢ</gray> <green>[ʙᴀɴ]</green>
+- <dark_gray>▸</dark_gray> <gray>ꜱᴄᴀᴍᴍɪɴɢ</gray> <green>[ʙᴀɴ]</green> <yellow>[ᴘᴇʀᴍ ʙᴀɴ]</yellow> <red>[ɪᴘ ʙᴀɴ]</red>
+- ''
+- <purple><b>ɪʟʟᴇɢᴀʟ ᴍᴏᴅɪꜰɪᴄᴀᴛɪᴏɴꜱ</b></purple>
+- <dark_gray>▸</dark_gray> <gray>xʀᴀʏ/ᴄʜᴇꜱᴛ ᴇꜱᴘ</gray> <green>[ʙᴀɴ]</green>
+- <dark_gray>▸</dark_gray> <gray>ʜᴀᴄᴋᴇᴅ ᴄʟɪᴇɴᴛ</gray> <green>[ʙᴀɴ]</green>
+- <dark_gray>▸</dark_gray> <gray>ɪʟʟᴇɢᴀʟ ᴍᴏᴅɪꜰɪᴄᴀᴛɪᴏɴꜱ</gray> <green>[ʙᴀɴ]</green> <yellow>[ᴘᴇʀᴍ ʙᴀɴ]</yellow>
+- <dark_gray>▸</dark_gray> <gray>ᴄᴀᴠᴇ/ꜱᴇᴇᴅ ꜰɪɴᴅᴇʀꜱ</gray> <green>[ᴘᴇʀᴍ ʙᴀɴ]</green>
+- <dark_gray>▸</dark_gray> <gray>ᴀᴜᴛᴏ ᴄʟɪᴄᴋᴇʀ</gray> <green>[ʙᴀɴ]</green>
+- <dark_gray>▸</dark_gray> <gray>ᴅᴜᴘɪɴɢ</gray> <green>[ᴘᴇʀᴍ ʙᴀɴ]</green> <yellow>[ɪᴘ ʙᴀɴ]</yellow>
+- <dark_gray>▸</dark_gray> <gray>ʙᴜɢ ᴀʙᴜꜱᴇ</gray> <green>[ᴘᴇʀᴍ ʙᴀɴ]</green> <yellow>[ɪᴘ ʙᴀɴ]</yellow>
+- <dark_gray>▸</dark_gray> <gray>ᴡᴏʀʟᴅ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ</gray> <green>[ᴘᴇʀᴍ ʙᴀɴ]</green> <yellow>[ɪᴘ ʙᴀɴ]</yellow>
+- ' '

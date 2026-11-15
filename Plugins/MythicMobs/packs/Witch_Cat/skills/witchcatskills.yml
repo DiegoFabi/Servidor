@@ -1,0 +1,76 @@
+WitchCat_Despawn:
+  Skills:
+  - particle{p=witch;color=#12f325;hs=0.3;vs=0.3;y=1} @self
+  - particle{p=Glow;color=#12991e;hs=0.3;vs=0.3;y=0.5} @self
+  - particle{p=cloud;hs=0.3;vs=0.3;y=0.5;a=20} @self
+  - delay 1
+  - remove @self
+WitchCat_Sit:
+  Cooldown: 1
+  TriggerConditions:
+  - crouching false
+  Conditions:
+  - offgcd
+  - score{o=WCatSit;v=0}
+  Skills:
+  - sit{state=true} @Self
+  - petFollow{follow=false} @self
+  - setspeed{speed=0;type=walking}
+  - defaultstate{m=witch_cat_purple_pet;t=idle;s=sit_idle} @self
+  - modifytargetscore{o=WCatSit;a=SET;v=1} @self
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=lookatplayers}
+  - runaigoalselector{goal=randomlookaround}
+WitchCat_UnSit:
+  Cooldown: 1
+  TriggerConditions:
+  - crouching false
+  Conditions:
+  - offgcd
+  - score{o=WCatSit;v=1}
+  Skills:
+  - sit{state=false} @Self
+  - setspeed{speed=1;type=walking}
+  - defaultstate{m=witch_cat_purple_pet;t=idle;s=idle}
+  - petFollow{follow=true} @self
+  - modifytargetscore{o=WCatSit;a=SET;v=0} @self
+  - runaigoalselector{goal=clear}
+  - runaigoalselector{goal=lookatplayers}
+  - runaigoalselector{goal=randomstroll}
+CatDetectClose:
+  Conditions:
+  - score{obj=running;v=1} true
+  - score{o=WCatSit;v=0}
+  - offgcd
+  TargetConditions:
+  - distance{d=<5}
+  Skills:
+  - setspeed{speed=1} @self
+  - defaultstate{t=walk;s=walk} @self
+  - modifytargetscore{obj=running;a=SET;v=0} @self
+CatDetectFar:
+  Conditions:
+  - score{obj=running;v=0} true
+  - score{o=WCatSit;v=0}
+  - offgcd
+  TargetConditions:
+  - distance{d=>5}
+  Skills:
+  - setspeed{speed=1.5} @self
+  - defaultstate{t=walk;s=leap} @self
+  - modifytargetscore{obj=running;a=SET;v=1} @self
+WitchCat_Trick:
+  Cooldown: 5
+  Conditions:
+  - score{obj=running;v=0} true
+  - score{o=WCatSit;v=0}
+  Skills:
+  - gcd{t=130}
+  - setspeed{speed=0;type=walking}
+  - state{m=witch_cat_purple_pet;s=cauldron_pounce;loop=ONCE} @self
+  - partvis{m=witch_cat_purple_pet;p=summoning;child=true;v=true} @self
+  - partvis{m=witch_cat_purple_pet;p=bubble_1;child=true;v=true} @self
+  - delay 125
+  - setspeed{speed=1;type=walking}
+  - partvis{m=witch_cat_purple_pet;p=summoning;child=true;v=false} @self
+  - partvis{m=witch_cat_purple_pet;p=bubble_1;child=true;v=false} @self

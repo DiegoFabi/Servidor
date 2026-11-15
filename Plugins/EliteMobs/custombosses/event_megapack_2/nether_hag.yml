@@ -1,0 +1,40 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: WITCH
+isBaby: true
+name: $eventBossLevel &4Nether Hag
+level: dynamic
+healthMultiplier: 5.5
+damageMultiplier: 1.24
+isPersistent: true
+uniqueLootList:
+- filename=nether_hag_drop_sword.yml:amount=1:chance=0.5
+powers:
+- bonus_coins.yml
+- attack_web.yml
+- skeleton_tracking_arrow.yml
+- attack_lightning.yml
+- lightning_bolts.yml
+- movement_speed.yml
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- invulnerability_knockback.yml
+- invulnerability_fall_damage.yml
+movementSpeedAttribute: 0.28
+followDistance: 50
+locationMessage: '&cNether Hag: $distance blocks away!'
+spawnMessage: '&cAn evil hag walks the nether!'
+deathMessage: '&aThe Nether Hag was slain by $players!'
+escapeMessage: '&4The Nether Hag has vanished!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Nether Hag has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

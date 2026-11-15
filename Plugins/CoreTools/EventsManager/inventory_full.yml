@@ -1,0 +1,26 @@
+# ============================================================
+#  Aviso de inventario lleno - solo eventos nativos (sin timers)
+#  Logica en Scripts/inventory_full.yml
+#
+#  - EntityPickupItemEvent: se dispara ANTES de que el objeto entre al
+#    inventario, asi que la comprobacion se hace 1 tick despues
+#    (delay=1 de la mecanica = runTaskLater de un solo disparo, no repite).
+#  - InventoryOpenEvent / InventoryCloseEvent: comprobacion inmediata.
+#  No se usan InventoryClick/Drag: el inventario del jugador solo puede
+#  llenarse por clicks con un contenedor abierto, y eso ya lo cubre el
+#  evento de cierre, con muchisimas menos ejecuciones.
+# ============================================================
+InvFullPickup:
+  Event: EntityPickupItemEvent
+  Script: invfull_pickup
+  run_script_if_event_cancelled: false
+
+InvFullOpen:
+  Event: InventoryOpenEvent
+  Script: invfull_check
+  run_script_if_event_cancelled: false
+
+InvFullClose:
+  Event: InventoryCloseEvent
+  Script: invfull_check
+  run_script_if_event_cancelled: false

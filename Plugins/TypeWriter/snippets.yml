@@ -1,0 +1,105 @@
+entity:
+  nameplate: |-
+    <other>
+    <reset><display_name>
+  name:
+    offset: 0.2
+    color: '#40000000'
+  activity:
+    look_close:
+      range: 10.0
+      # This determines how quickly the npc will look at the player.
+      smoothing: 0.2
+objective:
+  entity:
+    indicator:
+      tracked: <gold><b>❗
+      normal: <blue><b>❓
+      dialogue: <white><b>💬
+road_network:
+  distance:
+    # The maximum distance that can be between two nodes. 
+    # Therefore it is also the maximum radius the player can be from a node to be inside the road network
+    max: 30.0
+  path_stream:
+    # When path streams are forcefully canceled after this amount of time in milliseconds
+    timeout: 15000
+chat:
+  # The amount of messages displayed in the chat history during a dialogue
+  darken-limit: 12
+  # The amount of padding between the dialogue and the chat history
+  spacing: 3
+dialogue:
+  spoken:
+    format: |-
+      <gray><st>                                                            </st>
+
+      <gray><padding>[ <bold><speaker></bold><reset><gray> ]
+
+      <message>
+
+      <next_color>                     Press<white> <confirmation_key> </white>to <finish_text>
+      <gray><st>                                                            </st>
+    instruction:
+      next: continue
+      finish: finish
+      color:
+        base: <gray>
+        highlight: <red>
+      ticks:
+        highlighted: 10
+        base: 30
+    padding: '    '
+    minLines: 3
+    maxLineLength: 40
+  option:
+    format: |-
+      <gray><st>                                                            </st>
+      <white> <speaker><reset>: <text>
+
+      <options>
+      <#5d6c78>[ <grey><white>Scroll</white> to change option and press<white> <confirmation_key> </white>to select <#5d6c78>]</#5d6c78>
+      <gray><st>                                                            </st>
+    prefix:
+      selected: <#78ff85>>>
+      up: <white> ↑
+      down: <white> ↓
+      unselected: '  '
+    selected: |2
+       <prefix> <#5d6c78>[ <white><option_text> <#5d6c78>]
+    unselected: |2
+       <prefix> <#5d6c78>[ <grey><option_text> <#5d6c78>]
+    maxLineLength: 40
+    # The delay in milliseconds between each option being shown.
+    delay: 100
+  actionbar:
+    format: '<bold><speaker></bold><reset><gray>: <white><message> <gray>[<confirmation_key>]</gray><padding>'
+quest:
+  objective:
+    inactive: <gray><display></gray>
+    showing: <white><display></white>
+look_at_entity_interaction_bound:
+  # The duration in Milliseconds the player can move their head before the bound forces them to look at teh entity.
+  look_back_delay: 500
+cinematic:
+  dialogue:
+    actionbar:
+      format: '<bold><speaker></bold><reset><gray>: <white><message><padding>'
+      percentage: 0.4
+    subtitle:
+      format: <white><message>
+      speaker:
+        format: <gray>[ <reset><bold><speaker></bold><reset><gray> ]
+      percentage: 0.4
+action:
+  message:
+    format: |2
+
+      <gray> [ <bold><speaker></bold><reset><gray> ]
+      <reset><white> <message>
+content:
+  road_network:
+    # The distance at which the edge particles will still be shown
+    show_edge_distance: 30.0
+    # Automatically recalculate the edges of a road node right after it has been placed.
+    auto_recalculate_edges_on_place: true

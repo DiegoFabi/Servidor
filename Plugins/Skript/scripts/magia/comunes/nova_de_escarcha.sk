@@ -1,0 +1,50 @@
+# ============================================================
+#  Nova de Escarcha  [COMÚN]
+#  Comando: /escarcha
+#  Onda de hielo que se expande desde el jugador: daña y ralentiza
+#  a los monstruos que alcanza (una vez a cada uno).
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+#  Rendimiento: 10 fotogramas (1 s), un "make" por anillo, sin bucles
+#  sobre el mundo salvo la búsqueda de monstruos en el radio de la onda.
+# ============================================================
+
+options:
+    force: with force
+    perm: admin.particles
+    nopermiso: &cNo tienes permiso para usar este comando.
+    cd: 8 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+    radio: 7
+    dano: 3
+
+command /escarcha:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        fxAnuncio({_p}, "❄", "Nova de Escarcha", "El frío te rodea", "#BFF4FF", "#5FC8FF", "Común")
+        play sound "block.amethyst_block.chime" with volume 1.5 and pitch 1.8 at {_p}
+        play sound "entity.player.hurt_freeze" with volume 1 and pitch 0.8 at {_p}
+        set {_c} to location of {_p}
+        make 30 of snowflake at {_c} offset by vector(0, 1, 0) with offset vector(0.4, 0.6, 0.4) with extra 0.05 {@force}
+        wait 3 ticks
+        set {_f} to 1
+        while {_f} <= 10:
+            if {_p} is not online:
+                stop
+            set {_r} to {_f} * ({@radio} / 10)
+            make 1 of snowflake at fxRing({_c}, {_r}, 10 + {_f} * 4, 0.2, {_f} * 7) with offset vector(0.05, 0.15, 0.05) with extra 0.01 {@force}
+            make 1 of white_ash at fxRing({_c}, {_r}, 8 + {_f} * 2, 0.6, {_f} * -9) with offset vector(0.1, 0.3, 0.1) with extra 0 {@force}
+            if mod({_f}, 3) = 1:
+                play sound "block.glass.break" with volume 0.8 and pitch (0.8 + {_f} / 15) at {_c}
+            loop all monsters in radius {_r} around {_c}:
+                if {_hit::%uuid of loop-entity%} is not set:
+                    set {_hit::%uuid of loop-entity%} to true
+                    damage loop-entity by {@dano}
+                    apply slowness 3 to loop-entity for 4 seconds
+                    make 12 of snowflake at location of loop-entity with offset vector(0.3, 0.7, 0.3) with extra 0.02 {@force}
+            add 1 to {_f}
+            wait 2 ticks
+        play sound "block.powder_snow.place" with volume 1.5 and pitch 0.7 at {_c}

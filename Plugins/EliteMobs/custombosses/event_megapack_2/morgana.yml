@@ -1,0 +1,39 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: WITCH
+mountedEntity: morgana_mount.yml
+name: $eventBossLevel &dMorgana
+level: dynamic
+healthMultiplier: 4.9
+damageMultiplier: 1.0
+isPersistent: true
+powers:
+- thunderstorm.yml
+- attack_fire.yml
+- attack_blinding.yml
+- invulnerability_fire.yml
+uniqueLootList:
+- filename=morgana_drop_chestplate.yml:amount=1:chance=0.05
+trails:
+- SMOKE_LARGE
+- SMOKE_LARGE
+- SMOKE_LARGE
+- SPELL_MOB
+movementSpeedAttribute: 0.37
+followDistance: 80
+locationMessage: '&cMorgana: $distance blocks away!'
+spawnMessage: '&cA powerful witch has appeared!'
+deathMessage: '&aMorgana was sent back to her realm by $players!'
+escapeMessage: '&4Morgana the witch has left this place!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eMorgana has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

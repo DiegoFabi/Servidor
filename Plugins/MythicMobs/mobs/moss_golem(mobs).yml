@@ -1,0 +1,39 @@
+MossGolem:
+  Type: Zombie
+  Display: '&aɢᴏʟᴇᴍ ᴅᴇ ᴍᴜꜱɢᴏ'
+  Health: 45
+  Armor: 2
+  Damage: 2
+  LevelModifiers:
+    Health: 0.1
+    Armor: 0.1
+    Damage: 0  #  Read more about it here https://git.mythiccraft.io/mythiccraft/MythicMobs/-/wikis/Mobs/Power
+    KnockbackResistance: 0.1
+    MovementSpeed: 0
+    Power: 0.1
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+    AlwaysShowName: true
+    MovementSpeed: 0.24
+    KnockbackResistance: 1
+  Skills:
+  - model{m=moss_golem} @self ~onSpawn
+  - setvariable{var=caster.damage;val=6} @self ~onSpawn                  #Set mob's damage here
+  - randomskill{s=[  - state{m=moss_golem;s=hurt;li=3;lo=4} ],[  - state{m=moss_golem;s=hurt1;li=3;lo=4} ]} @self ~onDamaged
+  - defaultstate{m=moss_golem;t=WALK;s=walk_powerful} @self ~onSpawn
+  - aura{auraName=EmpoweredAttackReady;d=999999} @self ~onSpawn
+  - sound{s=block.basalt.break;v=0.6;p=0.7} @self ~onDamaged
+  
+  - skill{s=[
+            - cancelEvent
+            - skill{s=MossGolemAttack}
+            ];sync=true} @target ~onAttack
+  - heal{a=1} @self ~onTimer:20 <70%
+  - effect:particles{p=reddust;color=#41793f;a=3;y=0.8;hs=0.3;vs=0.2} @self ~onTimer:3 <70%
+  - skill{s=MossGolemDeath} @self ~onDeath
+  Drops:
+  - MOSSY_COBBLESTONE 16
+
+# 61207S808

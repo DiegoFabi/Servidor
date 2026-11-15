@@ -1,0 +1,136 @@
+
+scene_townsfolk_cook_openmenu:
+  TargetConditions:
+  - crouching true
+  Skills:
+  - command{command="dm open scene_townsfolk_cook_edit <trigger.name>"}
+
+broomeffects2:
+  Skills:
+  - effect:particles{particle=campfire_cosy_smoke;amount=2;spread=0.2} @ModelPart{m=scene_townsfolk_sweeper;p=dust;y=0.1}
+broomeffects:
+  Skills:
+  - effect:particles{particle=campfire_cosy_smoke;amount=2;spread=0.2} @ModelPart{m=scene_townsfolk_sweeper;p=dust;y=0.1}
+  - effect:particles{particle=dust_plume;amount=2;speed=0.1} @ModelPart{m=scene_townsfolk_sweeper;p=dust;x=0.5}
+playerhand:
+  Skills:
+  - sound{s=entity.player.attack.nodamage;volume=0.5} @self
+sweepsound:
+  Skills:
+  - sound{s=item.brush.brushing.sand;volume=0.5} @self
+tiredsound:
+  Skills:
+  - sound{s=entity.player.attack.nodamage;volume=0.5} @self
+
+broomeffectlarge:
+  Skills:
+  - effect:particles{particle=campfire_cosy_smoke;amount=5;spread=0.4} @ModelPart{m=scene_townsfolk_sweeper;p=dust;y=0.1}
+  - effect:particles{particle=campfire_cosy_smoke;amount=5;spread=0.4;delay=40} @ModelPart{m=scene_townsfolk_sweeper;p=dust;y=0.1}
+  - effect:particles{particle=campfire_cosy_smoke;amount=5;spread=0.4;delay=80} @ModelPart{m=scene_townsfolk_sweeper;p=dust;y=0.1}
+
+
+scene_townsfolk_cook_fail:
+  Skills:
+  - defaultstate{mid=scene_townsfolk_cook;type=idle;state=fail}
+scene_townsfolk_cook_cooking:
+  Skills:
+  - defaultstate{mid=scene_townsfolk_cook;type=idle;state=idle}
+
+smoke_1:
+  Skills:
+  - effect:particles{particle=campfire_cosy_smoke;amount=1;spread=0.1} @ModelPart{m=scene_townsfolk_cook;p=fx4}
+smoke_1_2:
+  Skills:
+  - effect:particles{particle=campfire_cosy_smoke;amount=1;spread=0.1} @ModelPart{m=scene_townsfolk_cook;p=fx3}
+bubbles_1:
+  Skills:
+  - effect:particles{particle=Bubble_Pop;amount=2;spread=0.1} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+  - effect:particles{particle=Bubble_Pop;amount=2;spread=0.1;delay=10} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+  - effect:particles{particle=Bubble_Pop;amount=2;spread=0.1;delay=20} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+  - effect:particles{particle=Bubble_Pop;amount=2;spread=0.1;delay=30} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+  - effect:particles{particle=Bubble_Pop;amount=2;spread=0.1;delay=40} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+  - effect:particles{particle=Fishing;amount=2;spread=0.1} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+  - effect:particles{particle=Fishing;amount=2;spread=0.1;delay=30} @ModelPart{m=scene_townsfolk_cook;p=fx1}
+handvfx:
+  Skills:
+  - sound{s=entity.player.attack.nodamage;volume=0.5} @self
+
+fire_1:
+  Skills:
+  - effect:particles{particle=Large_Smoke;amount=3;spread=0.1} @ModelPart{m=scene_townsfolk_cook;p=fx4}
+fire_1_2:
+  Skills:
+  - effect:particles{particle=Large_Smoke;amount=3;spread=0.1} @ModelPart{m=scene_townsfolk_cook;p=fx3}
+fire_2:
+  Skills:
+  - effect:particles{particle=Effect;amount=2;spread=0.4} @ModelPart{m=scene_townsfolk_cook;p=fx2}
+
+scene_townsfolk_handler_provider_fail:
+  Skills:
+  - defaultstate{mid=scene_townsfolk_handler_provider;type=idle;state=fail}
+scene_townsfolk_handler_provider_cooking:
+  Skills:
+  - defaultstate{mid=scene_townsfolk_handler_provider;type=idle;state=idle}
+
+stanceskin:
+  Conditions:
+  - (mobsInRadius{types=scene_townsfolk_handler_provider;amount=1;radius=5} true || mobsInRadius{types=scene_townsfolk_handler_stock;amount=1;radius=5} true)
+  Skills:
+  - setStance{stance=skin_<global.var.stanceskin<caster.uuid>>} @MobsNearOrigin{r=5;types=scene_townsfolk_handler_stock}
+  - setStance{stance=skin_<global.var.stanceskin<caster.uuid>>} @MobsNearOrigin{r=5;types=scene_townsfolk_handler_provider}
+
+gotoprovider:
+  cooldown: 10
+  Conditions:
+  - stance empty
+  - mobsInRadius{types=scene_townsfolk_handler_provider;amount=1;radius=1} true
+  Skills:
+  - state{m=scene_townsfolk_handler_provider;s=provide;li=0;lo=0;delay=1} @MobsNearOrigin{r=20;types=scene_townsfolk_handler_provider}
+  - setAI{ai=false;delay=1} @self
+  - lockmodel{l=true;delay=1} @self
+  - state{m=scene_townsfolk_handler;s=grab;li=0;lo=0;sp=0.8}
+  - delay 90
+  - state{m=scene_townsfolk_handler;s=grab;li=3;lo=0;sp=0.8;r=true;delay=10}
+  - setAI{ai=true} @self
+  - matchrotation{target=@MobsNearOrigin{r=4;types=scene_townsfolk_handler_provider};delay=2} @self
+  - lockmodel{l=false} @self
+  - setStance{stance=full} @self
+  - defaultstate{m=scene_townsfolk_handler;t=walk;s=walk;li=0;lo=0} @self
+  - defaultstate{m=scene_townsfolk_handler;t=idle;s=idle;li=0;lo=0} @self
+
+gotodrop:
+  cooldown: 10
+  Conditions:
+  - stance full
+  - mobsInRadius{types=scene_townsfolk_handler_stock;amount=1;radius=1} true
+  Skills:
+  - state{m=scene_townsfolk_handler_stock;s=grab;li=0;lo=0} @MobsNearOrigin{r=20;types=scene_townsfolk_handler_stock}
+  - setAI{ai=false;delay=10} @self
+  - lockmodel{l=true;delay=10} @self
+  - state{m=scene_townsfolk_handler;s=putdown;li=0;lo=0;sp=0.8}
+  - delay 84
+  - state{m=scene_townsfolk_handler;s=putdown;li=3;lo=0;sp=0.8;r=true;delay=7}
+  - setAI{ai=true} @self
+  - matchrotation{target=@MobsNearOrigin{r=4;types=scene_townsfolk_handler_provider};delay=2} @self
+  - lockmodel{l=false} @self
+  - setStance{stance=empty} @self
+  - defaultstate{m=scene_townsfolk_handler;t=walk;s=walk_empty;li=0;lo=0} @self
+  - defaultstate{m=scene_townsfolk_handler;t=idle;s=idle_empty;li=0;lo=0} @self
+
+leapdrop:
+  cooldown: 4
+  Conditions:
+  - stance full
+  - mobsInRadius{types=scene_townsfolk_handler_stock;amount=1;radius=5} true
+  Skills:
+  - leap{velocity=90} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_stock}  
+leapprovider:
+  cooldown: 4
+  Conditions:
+  - stance empty
+  - mobsInRadius{types=scene_townsfolk_handler_provider;amount=1;radius=5} true
+  Skills:
+  - leap{velocity=90} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_provider}  
+
+#06d54b3fffc32b7e2281000f77268b91
+

@@ -1,0 +1,34 @@
+# Mascotas de votación (Bisect Studios). Modelos: ModelEngine/blueprints/VoteMobs. Mascotas: MCPets/Pets/VoteMobs
+BS_Vote_Armadillo:
+  Type: PIG
+  Display: '<gradient:#C9A27A:#8B6B4A>Armadillo</gradient>'
+  Options:
+    Silent: true
+    Collidable: true
+    MovementSpeed: 0.24
+    PreventOtherDrops: true
+    FollowRange: 8 
+  Skills:
+  - model{mid=bs_vm_armadillo} @self ~onSpawn
+BS_Vote_Crab:
+  Type: PIG
+  Display: '<gradient:#FF7A45:#FFB38A>Cangrejo</gradient>'
+  Options:
+    Silent: true
+    Collidable: true
+    MovementSpeed: 0.24
+    PreventOtherDrops: true
+    FollowRange: 8 
+  Skills:
+  - model{mid=bs_vm_crab} @self ~onSpawn
+BS_Vote_Penguin:
+  Type: PIG
+  Display: '<gradient:#7FD8FF:#E6F7FF>Pingüino</gradient>'
+  Options:
+    Silent: true
+    Collidable: true
+    MovementSpeed: 0.15
+    PreventOtherDrops: true
+    FollowRange: 8 
+  Skills:
+  - model{mid=bs_vm_penguin} @self ~onSpawn

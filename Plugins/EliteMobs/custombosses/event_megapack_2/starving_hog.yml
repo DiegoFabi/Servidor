@@ -1,0 +1,33 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ZOGLIN
+isBaby: true
+disguise: HOGLIN:baby
+name: $eventBossLevel &aStarving Hog
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 0.9
+isPersistent: true
+powers:
+- attack_push.yml
+- attack_freeze.yml
+uniqueLootList:
+- filename=annoyed_drowned_drop_shield.yml:amount=1:chance=0.25
+movementSpeedAttribute: 0.36
+followDistance: 80
+deathMessage: '&a$players did not let the Starving Hog eat from their garden.'
+locationMessage: '&cStarving Hog: $distance blocks away!'
+spawnMessage: '&cA Starving Hog has appeared!'
+escapeMessage: '&4The Starving Hog has left!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Starving Hog has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

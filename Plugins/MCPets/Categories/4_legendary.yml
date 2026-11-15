@@ -1,0 +1,31 @@
+# Categoria de MCPets con fondo de la GUI Lemon (glyph de Nexo)
+DisplayName: §f㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮
+IconName: §7Categoría - §x§f§f§a§a§0§0Mascotas Legendarias
+InventorySize: 54
+DefaultCategory: false
+Icon:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:yellow_dye
+  count: 1
+  components:
+    minecraft:custom_model_data: '{floats:[124.0f]}'
+    minecraft:custom_data: '{PublicBukkitValues:{"nexo:id":"pet_category_legendary"}}'
+  schema_version: 1
+Pets:
+- Capybara_Mount
+- Horse_Pegasus
+- Horse_Spartan
+- Kitsune_Normal
+- Nocsy_Drakonin-Cloud
+- Nocsy_Drakonin-Dark
+- Nocsy_Drakonin-Fire
+- Nocsy_Drakonin-Forest
+- Nocsy_Drakonin-Night
+- Nocsy_Drakonin-Poison
+- Nocsy_Drakonin-Volcanic
+- Nocsy_Drakonin-Water
+- Phantom_Ghost
+- Phoenix_Flame
+Id: legendary
+ExcludedCategories: []

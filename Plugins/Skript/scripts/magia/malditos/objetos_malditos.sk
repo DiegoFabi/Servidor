@@ -1,0 +1,202 @@
+# ============================================================
+#  Objetos Malditos  [MALDITO]  - Categoría especial (muy rara)
+#  Comando: /maldicion <tipo>        Permiso: admin.particles
+#  Los poderes más fuertes del servidor. Su precio es simbólico
+#  comparado con lo que dan. Los usan las Runas Rojas de ItemJoin
+#  (Nexo rune1_red, 20 usos).
+#
+#    pacto   Pacto de Sangre (45 s): Fuerza III, Velocidad II,
+#            Regeneración II y robo de vida del 30% en cada golpe
+#            Precio: 3 corazones al sellar el pacto
+#    abismo  Ojo del Abismo: 12 de daño, lentitud IV y marca a todos los
+#            monstruos en 14 bloques; tú ganas visión nocturna 60 s
+#            Precio: 4 s de oscuridad
+#    almas   Grito de Almas: drena 6 de vida a cada monstruo en 10 bloques;
+#            lo drenado te cura y el sobrante se vuelve absorción
+#            Precio: 10 s de hambre
+#    muerte  Marca de la Muerte: marca a los 3 monstruos más cercanos;
+#            a los 3 s reciben 40 de daño y un rayo
+#            Precio: 4 s de marchitamiento
+#    corona  Corona del Caído (15 s): Resistencia IV, Fuerza II,
+#            inmunidad al fuego y devuelve el 50% del daño recibido
+#            Precio: 2 corazones al terminar
+#
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxRing(), fxLinea(), fxAnuncio(), fxResultado() del núcleo y
+#  bdActivar()/bdActivo() de magia/comunes/bendiciones.sk.
+#  Rendimiento: efectos inmediatos; las esperas solo duran mientras el
+#  efecto está activo; los efectos sobre golpes se resuelven en un
+#  único evento de daño con una marca de tiempo en memoria.
+# ============================================================
+
+options:
+    force: with force
+    perm: admin.particles
+
+# Aura maldita común (sube y gira, 6 fotogramas)
+function mlAura(p: player):
+    play sound "entity.warden.heartbeat" with volume 1 and pitch 0.6 at {_p}
+    play sound "entity.wither.ambient" with volume 0.5 and pitch 0.5 at {_p}
+    set {_f} to 0
+    while {_f} < 6:
+        if {_p} is not online:
+            stop
+        make 1 of soul at fxRing(location of {_p}, 1, 10, {_f} * 0.35, {_f} * -30) with extra 0.01 {@force}
+        make 1 of crimson_spore at fxRing(location of {_p}, 0.7, 8, {_f} * 0.35, {_f} * 30) with extra 0 {@force}
+        add 1 to {_f}
+        wait 2 ticks
+
+# Precio de la Corona al terminar
+function mlCaida(p: player):
+    wait 15 seconds
+    if {_p} is not online:
+        stop
+    if {_p} is dead:
+        stop
+    if health of {_p} > 2.5:
+        damage {_p} by 2
+    play sound "entity.wither.hurt" with volume 0.8 and pitch 0.6 at {_p}
+    make 25 of large_smoke at location of {_p} offset by vector(0, 1, 0) with offset vector(0.4, 0.6, 0.4) with extra 0.01 {@force}
+    send title "<#8B0000>♛" with subtitle "<#C9A8A8>La corona se apaga y reclama su precio" to {_p} for 2 seconds with fadein 5 ticks and fadeout 10 ticks
+
+# Marca de la muerte: cuenta atrás y golpe final sobre un objetivo
+function mlSentencia(e: entity):
+    set {_i} to 0
+    while {_i} < 6:
+        if {_e} is not alive:
+            stop
+        make 6 of damage_indicator at location of {_e} offset by vector(0, 2.2, 0) with offset vector(0.2, 0.2, 0.2) with extra 0 {@force}
+        make 1 of soul_fire_flame at fxRing(location of {_e}, 0.8, 8, 0.1, {_i} * 45) with extra 0 {@force}
+        play sound "block.note_block.basedrum" with volume 1 and pitch (0.5 + {_i} * 0.1) at {_e}
+        add 1 to {_i}
+        wait 10 ticks
+    if {_e} is not alive:
+        stop
+    strike lightning effect at location of {_e}
+    damage {_e} by 40
+    make 40 of soul at location of {_e} offset by vector(0, 1, 0) with offset vector(0.5, 0.8, 0.5) with extra 0.05 {@force}
+    play sound "entity.warden.sonic_boom" with volume 1 and pitch 0.8 at {_e}
+
+function maldicion(p: player, tipo: text) :: boolean:
+    set {_l} to location of {_p}
+    if {_tipo} is "pacto":
+        fxAnuncio({_p}, "☠", "Pacto de Sangre", "Tu sangre sella un poder sin igual (45 s)", "#FF8A8A", "#8B0000", "Maldito")
+        if health of {_p} > 3.5:
+            damage {_p} by 3
+        apply strength 3 to {_p} for 45 seconds
+        apply speed 2 to {_p} for 45 seconds
+        apply regeneration 2 to {_p} for 45 seconds
+        bdActivar({_p}, "pacto", 45)
+        make 40 of damage_indicator at {_l} offset by vector(0, 1, 0) with offset vector(0.5, 0.7, 0.5) with extra 0 {@force}
+        make 1 of crimson_spore at fxRing({_l}, 2, 24, 0.2) with extra 0.05 {@force}
+        mlAura({_p})
+        fxResultado({_p}, "#FF5C5C", "Pacto", "45 s de Fuerza III, Velocidad II, Regeneración II y robo de vida del 30%%.")
+    else if {_tipo} is "abismo":
+        fxAnuncio({_p}, "◉", "Ojo del Abismo", "El abismo devora a tus enemigos", "#B07BFF", "#3A0066", "Maldito")
+        set {_n} to 0
+        loop all monsters in radius 14 around {_p}:
+            damage loop-entity by 12
+            apply slowness 4 to loop-entity for 8 seconds
+            apply glowing 1 to loop-entity for 15 seconds
+            make 10 of sculk_soul at location of loop-entity offset by vector(0, 1, 0) with offset vector(0.3, 0.5, 0.3) with extra 0.02 {@force}
+            add 1 to {_n}
+        loop 3 times:
+            make 1 of sculk_soul at fxRing({_l}, loop-number * 4, 16 + loop-number * 10, 0.3) with extra 0.05 {@force}
+        apply night vision 1 to {_p} for 60 seconds
+        apply darkness 1 to {_p} for 4 seconds
+        play sound "entity.warden.sonic_charge" with volume 1 and pitch 0.8 at {_p}
+        play sound "entity.warden.sonic_boom" with volume 0.7 and pitch 0.6 at {_p}
+        mlAura({_p})
+        fxResultado({_p}, "#B07BFF", "Abismo", "%{_n}% monstruo(s) devastados y marcados. Ves en la oscuridad 60 s.")
+    else if {_tipo} is "almas":
+        fxAnuncio({_p}, "☁", "Grito de Almas", "Las almas de tus enemigos te pertenecen", "#9FE8FF", "#2B5F75", "Maldito")
+        set {_n} to 0
+        loop all monsters in radius 10 around {_p}:
+            damage loop-entity by 6
+            make 1 of soul at fxLinea(location of loop-entity offset by vector(0, 1, 0), {_l} offset by vector(0, 1, 0), 10) with extra 0 {@force}
+            add 1 to {_n}
+        set {_cura} to {_n} * 3
+        set {_falta} to (max health of {_p}) - (health of {_p})
+        heal {_p} by {_cura}
+        if {_cura} > {_falta}:
+            set {_nivel} to min(ceil(({_cura} - {_falta}) / 2), 4)
+            apply potion effect of absorption of tier {_nivel} to {_p} for 60 seconds
+        apply hunger 2 to {_p} for 10 seconds
+        play sound "entity.allay.death" with volume 1 and pitch 0.5 at {_p}
+        play sound "particle.soul_escape" with volume 1 and pitch 0.8 at {_p}
+        mlAura({_p})
+        fxResultado({_p}, "#9FE8FF", "Almas", "Drenas a %{_n}% monstruo(s); la vida sobrante te protege como absorción.")
+    else if {_tipo} is "muerte":
+        # Los 3 monstruos más cercanos (3 pasadas, sin repetir)
+        set {_k} to 0
+        while {_k} < 3:
+            delete {_e}
+            set {_mejor} to 99
+            loop all monsters in radius 18 around {_p}:
+                if {_marcado::%uuid of loop-entity%} is not set:
+                    set {_d} to distance between loop-entity and {_p}
+                    if {_d} < {_mejor}:
+                        set {_mejor} to {_d}
+                        set {_e} to loop-entity
+            if {_e} is not set:
+                exit loop
+            set {_marcado::%uuid of {_e}%} to true
+            mlSentencia({_e})
+            add 1 to {_k}
+        if {_k} = 0:
+            send action bar "<#8B0000>☠ <#9EA3AE>No hay nadie a quien marcar" to {_p}
+            return false
+        fxAnuncio({_p}, "☠", "Marca de la Muerte", "Su destino está sellado", "#C9A8A8", "#5A0000", "Maldito")
+        apply wither 1 to {_p} for 4 seconds
+        play sound "entity.wither.spawn" with volume 0.5 and pitch 1.6 at {_p}
+        mlAura({_p})
+        fxResultado({_p}, "#C9A8A8", "Muerte", "%{_k}% enemigo(s) marcados. En 3 segundos, la muerte llama.")
+    else if {_tipo} is "corona":
+        fxAnuncio({_p}, "♛", "Corona del Caído", "Nada puede tocarte... (15 s)", "#FFE7A3", "#7A5C00", "Maldito")
+        apply resistance 4 to {_p} for 15 seconds
+        apply strength 2 to {_p} for 15 seconds
+        apply fire resistance 1 to {_p} for 15 seconds
+        bdActivar({_p}, "corona", 15)
+        make 1 of totem_of_undying at fxRing({_l} offset by vector(0, 2.3, 0), 0.5, 10, 0) with extra 0 {@force}
+        make 40 of totem_of_undying at {_l} offset by vector(0, 1, 0) with offset vector(0.6, 0.8, 0.6) with extra 0.3 {@force}
+        play sound "item.totem.use" with volume 0.6 and pitch 0.7 at {_p}
+        mlAura({_p})
+        mlCaida({_p})
+        fxResultado({_p}, "#FFE7A3", "Corona", "15 s casi invulnerable: devuelves la mitad del daño que recibes.")
+    else:
+        return false
+    return true
+
+# ------------------------------------------------------------
+#  Efectos sobre golpes (un solo evento por tipo)
+# ------------------------------------------------------------
+on damage:
+    # Pacto: robo de vida del 30% de lo que el jugador inflige
+    attacker is a player
+    {-bd::pacto::%uuid of attacker%} is set
+    victim is not attacker
+    bdActivo(attacker, "pacto") is true
+    heal attacker by (damage * 0.15)
+    make 5 of damage_indicator at location of victim offset by vector(0, 1, 0) with offset vector(0.3, 0.4, 0.3) with extra 0 {@force}
+
+on damage of a player:
+    # Corona: devuelve el 50% del daño al atacante
+    {-bd::corona::%uuid of victim%} is set
+    attacker is a living entity
+    attacker is not victim
+    bdActivo(victim, "corona") is true
+    damage attacker by (damage * 0.25)
+    make 6 of totem_of_undying at location of attacker offset by vector(0, 1, 0) with offset vector(0.3, 0.5, 0.3) with extra 0.1 {@force}
+
+on quit:
+    delete {-bd::pacto::%uuid of player%}
+    delete {-bd::corona::%uuid of player%}
+
+command /maldicion <text>:
+    aliases: /maldición
+    permission: {@perm}
+    usage: /maldicion <tipo>
+    trigger:
+        if maldicion(player, lowercase arg-1) is not true:
+            if lowercase arg-1 is not "muerte":
+                send "<#FF6B6B>Tipo desconocido. <#9EA3AE>pacto, abismo, almas, muerte, corona"

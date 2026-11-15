@@ -1,0 +1,94 @@
+# ====================================
+# MOTD Skript - Versión centrada con ícono
+# Compatible con Skript 2.8+ y Minecraft 1.21.8
+# ====================================
+
+options:
+    motd.line1: "&r               &a&lCLOUDSBLUES &7[1.21 - 1.21.8]"
+    motd.line2: "&r   &7&k! &eNo Mods 🏹 &8- &cSupervivencia ☄ &8- &bMiniJuegos 🔥 &7&k!"
+    motd.hover1: "&fBienvenido a &eCloudsBlues Server&f!"
+    # Icono del servidor (PNG de 64x64) en la raiz del servidor, junto a la carpeta plugins
+    icono.activo: true
+    icono.archivo: server-icon.png
+
+# Carga el icono una sola vez en memoria (no en cada ping)
+on load:
+    delete {-motd::icono}
+    set {_activo} to {@icono.activo}
+    {_activo} is true
+    motdCargarIcono()
+
+function motdCargarIcono():
+    delete {-motd::icono}
+    load server icon from file "{@icono.archivo}"
+    set {-motd::icono} to last loaded server icon
+
+# Evento principal del MOTD
+on server list ping:
+    set {_line1} to {@motd.line1}
+    set {_line2} to {@motd.line2}
+    set motd to "%{_line1}%%newline%%{_line2}%"
+    if {-motd::icono} is set:
+        set the server icon to {-motd::icono}
+    
+    # Obtener max players desde server.properties (valor por defecto)
+    set {_maxplayers} to max players count
+    set the max players count to {_maxplayers}
+    
+    set {_hover1} to {@motd.hover1}
+    set {_online} to size of all players
+    set {_hover2} to "&7| &aOnline ▶ &f%{_online}%/%{_maxplayers}%"
+    
+    # Limpiar y configurar la lista hover
+    clear the hover list
+    add {_hover1} to the hover list
+    add {_hover2} to the hover list
+
+# Comando para recargar el Skript
+command /reloadmotd:
+    permission: server.admin
+    trigger:
+        send "&b[MOTD] &7Recargando configuración..."
+        wait 1 tick
+        execute console command "/sk reload %script%"
+        send "&b[MOTD] &a✓ Configuración recargada correctamente!"
+
+# Comando /motd reload (alternativo)
+command /motd <text>:
+    permission: server.admin
+    trigger:
+        if arg-1 is "icono":
+            motdCargarIcono()
+            if {-motd::icono} is set:
+                send "&b[MOTD] &a✓ Icono recargado desde &e{@icono.archivo}"
+            else:
+                send "&c[MOTD] &7No se pudo cargar &e{@icono.archivo}&7. Debe ser PNG de 64x64 en la raíz del servidor."
+        else if arg-1 is "reload":
+            send "&b[MOTD] &7Recargando configuración..."
+            wait 1 tick
+            execute console command "/sk reload %script%"
+            send "&b[MOTD] &a✓ Configuración recargada correctamente!"
+        else:
+            send "&c[MOTD] &7Uso: /motd reload | /motd icono"
+
+# Comando para ver información del MOTD
+command /infomotd:
+    permission: server.admin
+    trigger:
+        send "&b&l[INFO MOTD]"
+        send "&7Línea 1: &r%{@motd.line1}%"
+        send "&7Línea 2: &r%{@motd.line2}%"
+        send "&7Jugadores máximos: &f%max players count% &7(desde server.properties)"
+        send "&7Jugadores online: &f%size of all players%"
+        if {-motd::icono} is set:
+            send "&7Ícono: &a✓ cargado &7(&e{@icono.archivo}&7)"
+        else:
+            send "&7Ícono: &c✗ no cargado &7(&e{@icono.archivo}&7, PNG 64x64)"
+
+# Mensajes de carga y descarga del Skript
+on skript load:
+    broadcast "&b[MOTD Skript] &a✓ Cargado correctamente para Minecraft 1.21.4!"
+    broadcast "&b[MOTD Skript] &7Recuerda: El ícono debe llamarse &eserver-icon.png &7(64x64px)"
+
+on skript unload:
+    broadcast "&b[MOTD Skript] &c✗ Desactivado correctamente."

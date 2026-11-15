@@ -1,0 +1,34 @@
+
+isEnabled: true
+entityType: ZOMBIE
+name: '&2&lGuardian Ancestral'
+level: 40
+healthMultiplier: 5.0
+damageMultiplier: 1.2
+onDeathCommands: []
+deathMessages:
+- '&2¡El Guardian Ancestral ha sido derrotado por $players!'
+uniqueLootList: []
+powers:
+- attack_fire.yml
+- attack_poison.yml
+- ground_pound.yml
+- invulnerability_knockback.yml
+trails:
+- BLOCK_MARKER
+locationMessage: '&2Guardian Ancestral: $distance'
+spawnMessage: '&2¡Un Guardian Ancestral ha aparecido!'
+deathMessage: '&2El Guardian Ancestral ha sido derrotado por $players!'
+escapeMessage: '&cEl Guardian Ancestral ha escapado.'
+announcementPriority: 3
+timeout: 10
+helmet: IRON_HELMET
+chestplate: IRON_CHESTPLATE
+leggings: IRON_LEGGINGS
+boots: IRON_BOOTS
+mainHand: IRON_AXE
+offHand: SHIELD
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true

@@ -1,0 +1,7 @@
+
+nightharrow_sword:
+  Id: stone_sword
+  Display: "&7Nightharrow Sword"
+  Model: 58500
+  Hide:
+  - ATTRIBUTES

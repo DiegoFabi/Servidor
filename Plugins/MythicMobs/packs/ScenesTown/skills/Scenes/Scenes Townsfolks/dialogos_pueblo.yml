@@ -1,0 +1,133 @@
+# ============================================================
+#  dialogos_pueblo.yml - Diálogos aleatorios de los NPCs del pack ScenesTown
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_pueblo.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ▣ Mozo | paleta #EDCFA6 -> #B5835A ----------
+# NPCs: scene_townsfolk_handler, scene_townsfolk_handler_stock, scene_townsfolk_handler_provider
+dialogo_mozo:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.barrel.close;v=0.5;p=1} @self
+  - particles{p=poof;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_mozo_frase1,dialogo_mozo_frase2,dialogo_mozo_frase3,dialogo_mozo_frase4,dialogo_mozo_frase5,dialogo_mozo_frase6} @trigger
+
+dialogo_mozo_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_mozo_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mozo_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mozo_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#B5835A>▣ <gradient:#EDCFA6:#B5835A><bold>Mozo</bold></gradient> <dark_gray>» <#F9F1E6>Esta caja va al almacén y aquella al puerto. O al revés."} @trigger
+
+dialogo_mozo_frase2:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.0} @self
+  - summon{m=holo_mozo_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mozo_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mozo_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#B5835A>▣ <gradient:#EDCFA6:#B5835A><bold>Mozo</bold></gradient> <dark_gray>» <#F9F1E6>Cuidado con la espalda, me lo dice todo el mundo."} @trigger
+
+dialogo_mozo_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_mozo_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mozo_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mozo_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#B5835A>▣ <gradient:#EDCFA6:#B5835A><bold>Mozo</bold></gradient> <dark_gray>» <#F9F1E6>Hoy llegaron más pedidos de lo normal."} @trigger
+
+dialogo_mozo_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.0} @self
+  - summon{m=holo_mozo_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mozo_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mozo_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#B5835A>▣ <gradient:#EDCFA6:#B5835A><bold>Mozo</bold></gradient> <dark_gray>» <#F9F1E6>Si me ayudas con esto te invito a algo. Es broma, no tengo un duro."} @trigger
+
+dialogo_mozo_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_mozo_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mozo_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mozo_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#B5835A>▣ <gradient:#EDCFA6:#B5835A><bold>Mozo</bold></gradient> <dark_gray>» <#F9F1E6>Cuento las cajas tres veces. Siempre falta una."} @trigger
+
+dialogo_mozo_frase6:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=1.0} @self
+  - summon{m=holo_mozo_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_mozo_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_mozo_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#B5835A>▣ <gradient:#EDCFA6:#B5835A><bold>Mozo</bold></gradient> <dark_gray>» <#F9F1E6>Lo bueno de cargar todo el día es que duermo como un tronco."} @trigger
+
+# ---------- ❦ Barrendero | paleta #DCE8C6 -> #93AD6C ----------
+# NPCs: scene_townsfolk_sweeper
+dialogo_barrendero:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.grass.step;v=0.5;p=1} @self
+  - particles{p=poof;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_barrendero_frase1,dialogo_barrendero_frase2,dialogo_barrendero_frase3,dialogo_barrendero_frase4,dialogo_barrendero_frase5,dialogo_barrendero_frase6} @trigger
+
+dialogo_barrendero_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
+  - summon{m=holo_barrendero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_barrendero_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_barrendero_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#93AD6C>❦ <gradient:#DCE8C6:#93AD6C><bold>Barrendero</bold></gradient> <dark_gray>» <#F5F8EF>Barro esta calle cada mañana y cada tarde vuelve a estar igual."} @trigger
+
+dialogo_barrendero_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
+  - summon{m=holo_barrendero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_barrendero_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_barrendero_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#93AD6C>❦ <gradient:#DCE8C6:#93AD6C><bold>Barrendero</bold></gradient> <dark_gray>» <#F5F8EF>Mira por dónde pisas, que acabo de pasar por ahí."} @trigger
+
+dialogo_barrendero_frase3:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
+  - summon{m=holo_barrendero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_barrendero_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_barrendero_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#93AD6C>❦ <gradient:#DCE8C6:#93AD6C><bold>Barrendero</bold></gradient> <dark_gray>» <#F5F8EF>Un pueblo limpio es un pueblo feliz. Eso creo yo."} @trigger
+
+dialogo_barrendero_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.05} @self
+  - summon{m=holo_barrendero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_barrendero_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_barrendero_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#93AD6C>❦ <gradient:#DCE8C6:#93AD6C><bold>Barrendero</bold></gradient> <dark_gray>» <#F5F8EF>Las hojas de otoño son mi peor enemigo."} @trigger
+
+dialogo_barrendero_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
+  - summon{m=holo_barrendero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_barrendero_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_barrendero_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#93AD6C>❦ <gradient:#DCE8C6:#93AD6C><bold>Barrendero</bold></gradient> <dark_gray>» <#F5F8EF>Me sé todos los rincones del pueblo de memoria."} @trigger
+
+dialogo_barrendero_frase6:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.05} @self
+  - summon{m=holo_barrendero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_barrendero_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_barrendero_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#93AD6C>❦ <gradient:#DCE8C6:#93AD6C><bold>Barrendero</bold></gradient> <dark_gray>» <#F5F8EF>No es un trabajo de héroes, pero alguien tiene que hacerlo."} @trigger

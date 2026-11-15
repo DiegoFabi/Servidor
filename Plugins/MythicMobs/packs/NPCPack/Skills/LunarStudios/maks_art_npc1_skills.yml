@@ -1,0 +1,177 @@
+maxnpcidledworf:
+  Conditions:
+  - playerwithin{d=5} castinstead maxnpcidledworf2
+  Skills:
+  - setstance{stance=alone;li=3;lo=3} @self
+  - state{s=alone;li=3;lo=3} @self
+  - delay 26
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - delay 30
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - delay 30
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - delay 60
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - auraremove{aura=hicheckdworf;stacks=100} @self
+  
+maxnpcidledworf2:
+  Skills:
+  - setstance{stance=alone2;li=3;lo=3} @self
+  - state{s=alone2;li=3;lo=3} @self
+  - delay 26
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - delay 30
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - delay 30
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  - delay 60
+  - skill{s=maxnpcidledworfsound} @PIR{r=3}
+  
+maxnpcidlefarmer:
+  Conditions:
+  - playerwithin{d=5} castinstead maxnpcidlefarmer2
+  Skills:
+  - setstance{stance=alone;li=3;lo=3} @self
+  - state{s=alone;li=3;lo=3} @self
+  
+maxnpcidlefarmer2:
+  Skills:
+  - setstance{stance=alone2;li=3;lo=3} @self
+  - state{s=alone2;li=3;lo=3} @self
+  
+maxnpcidlemageshaman:
+  Conditions:
+  - playerwithin{d=5} castinstead maxnpcidlemageshaman2
+  Skills:
+  - setstance{stance=alone;li=3;lo=3} @self
+  - state{s=alone;li=3;lo=3} @self
+  
+maxnpcidlemageshaman2:
+  Conditions:
+  - stance{s=hi} false
+  Skills:
+  - setstance{stance=alone2;li=3;lo=3} @self
+  - state{s=alone2;li=3;lo=3} @self
+  
+maxnpcidlekingdom:
+  Conditions:
+  - playerwithin{d=5} castinstead maxnpcidlekingdom2
+  - stance{s=alone} false
+  - stance{s=alone2} false
+  - stance{s=Interaction} false
+  Skills:
+  - setstance{stance=alone;li=3;lo=3} @self
+  - state{s=alone;li=3;lo=3} @self
+  - sound{s=lunar_studios:npcpack1.golem-idle;v=2;p=1} @self
+  
+maxnpcidlekingdom2:
+  Conditions:
+  - stance{s=alone2} false
+  - stance{s=Interaction} false
+  Skills:
+  - setstance{stance=alone3;li=3;lo=3} @self
+  - state{s=alone3;li=3;lo=3} @self
+  - sound{s=lunar_studios:npcpack1.golem-idle;v=2;p=1} @self
+  
+maxnpcidlekingdomsound:
+  Conditions:
+  - stance{s=alone} true
+  Skills:
+  - sound{s=lunar_studios:npcpack1.golem-idle;v=0.5;p=1} @PIR{r=3}
+  
+maxnpcidlemageshamansound:
+  Skills:
+  - sound{s=lunar_studios:npcpack1.cerkiv;v=0.5;p=1} @PIR{r=3}
+  
+maxnpcidledworfsound:
+  Conditions:
+  - stance{s=alone} true
+  Skills:
+  - sound{s=lunar_studios:npcpack1.dworfidle;v=0.5;p=1} @PIR{r=3}
+
+  
+maxnpcidlekingdom2:
+  Conditions:
+  - playerwithin{d=5} false
+  - stance{s=alone} true
+  Skills:
+  - sound{s=lunar_studios:npcpack1.golem_awakens;v=0.5;p=1} @PIR{r=3}
+  - state{s=alone;r=true} @self
+  - setstance{stance=alone2;li=3;lo=3} @self
+  - state{s=alone2;li=3;lo=3} @self
+  - delay 30
+  - sound{s=lunar_studios:npcpack1.golem_awakens;v=0.5;p=1} @PIR{r=3}
+  - delay 50
+  - setstance{stance=alone;li=3;lo=3} @self
+  - state{s=alone;li=3;lo=3} @self
+
+
+hicheckdworf:
+  Cooldown: 10
+  Conditions:
+  - playerwithin{d=5} true
+  - stance{s=alone} true
+  - stance{s=alone2} false
+  Skills:
+  - state{s=alone;r=true} @self
+  - setstance{stance=player} @self
+  - state{s=hi;li=3;lo=3} @self
+  - sound{s=lunar_studios:npcpack1.dworfhi;v=0.5;p=1} @PIR{r=3}
+  
+hicheckfarmer:
+  Cooldown: 10
+  Conditions:
+  - playerwithin{d=5} true
+  - stance{s=alone} true
+  - stance{s=alone2} false
+  Skills:
+  - state{s=alone;r=true} @self
+  - setstance{stance=player} @self
+  - state{s=hi;li=3;lo=3} @self
+  - sound{s=lunar_studios:npcpack1.farmehi;v=0.5;p=1} @PIR{r=3}
+  
+hicheckmageshaman:
+  Cooldown: 10
+  Conditions:
+  - playerwithin{d=5} true
+  - stance{s=alone} true
+  - stance{s=alone2} false
+  Skills:
+  - state{s=alone;r=true} @self
+  - setstance{stance=player} @self
+  - state{s=hi;li=3;lo=3} @self
+  - sound{s=lunar_studios:npcpack1.mageshamanhi;v=0.5;p=1} @PIR{r=3}
+  
+dworfInteract:
+  Skills:
+  - command{c="shop <target.name> blacksmith";} @trigger
+
+farmerInteract:
+  Skills:
+  - command{c="shop <target.name> farming";} @trigger
+  
+mageshamanInteract:
+  Cooldown: 1
+  Skills:
+  - sound{s=lunar_studios:npcpack1.mageshamanheal;v=0.5;p=1} @trigger
+  - effect:particlering{particle=heart;radius=2;points=32;amount=5;hS=0;vS=0;size=0.65} @trigger
+  - delay 1
+  - effect:particlering{particle=heart;radius=0.2;points=38;amount=1;hS=0;vS=0;size=0.65} @trigger
+  - heal{amount=100} @trigger
+  
+
+kingdomInteract:
+  Cooldown: 4
+  Skills:
+  - state{s=alone;r=true} @self
+  - state{s=alone3;r=true} @self
+  - state{s=alone2;r=true} @self
+  - setstance{stance=player} @self
+  - state{s=interaction;li=3;lo=3} @self
+  - sound{s=lunar_studios:npcpack1.golem_interect;v=0.5;p=1} @PIR{r=3}
+  - delay 50
+  - setstance{stance=alone;li=3;lo=3} @self
+  - state{s=alone;li=3;lo=3} @self
+  
+
+# 9777R3

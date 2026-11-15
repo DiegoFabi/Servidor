@@ -1,0 +1,81 @@
+menu-title: '&fϿϫ'
+menu-rows: 2
+week-slots:
+  slots: '1...7'
+menu:
+  '9':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior &7(Clic)'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {portal}' 
+      - '[menu](page ! 1) {previous-page}' 
+  '10':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior &7(Clic)'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {portal}' 
+      - '[menu](page ! 1) {previous-page}'
+  '11':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior &7(Clic)'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {portal}' 
+      - '[menu](page ! 1) {previous-page}'
+  '15':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&eMisiones Diarias &7(%daily_time_left%)'
+    actions:
+      - '[menu] {daily-quests}'
+  '16':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&eMisiones Diarias &7(%daily_time_left%)'
+    actions:
+      - '[menu] {daily-quests}'
+  '17':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&eMisiones Diarias &7(%daily_time_left%)'
+    actions:
+      - '[menu] {daily-quests}'
+static-items:
+  week-item:
+    material: 'gold_nugget'
+    customModelData: 505
+    name: '&eSemana %week% &7(%status%&7)'
+    lore:
+      - ''
+      - '&7&o(( Clic para ver las misiones ))'
+  locked-week-item:
+    material: 'gold_nugget'
+    customModelData: 506
+    name: '&eSemana %week% &7(%status%&7)'
+    lore:
+      - ''
+      - '&7&o(( Clic para ver las misiones ))'
+  requires-previous-completion-item:
+    material: 'gold_nugget'
+    customModelData: 506
+    name: '&eSemana %week% &7(%status%&7)'
+    lore:
+      - ''
+      - '&7&o(( Clic para ver las misiones ))'

@@ -1,0 +1,127 @@
+# Convertido desde CommandPanels (panels/menuHerrero.yml). Abrir: /coremenu <menu>
+menuHerrero:
+  permission: ''
+  bottom_inventory: false
+  name: '            &a✠ Herreria ✠'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 9
+      - 11
+      - 13
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      source: vanilla
+      material: LIGHT_GRAY_STAINED_GLASS_PANE
+      name: '§7'
+      flags:
+      - HIDE_ATTRIBUTES
+    b2:
+      location: top
+      slots:
+      - 5
+      - 6
+      - 7
+      - 8
+      - 14
+      - 15
+      - 16
+      - 17
+      - 23
+      - 24
+      - 25
+      - 26
+      source: vanilla
+      material: RED_STAINED_GLASS_PANE
+      name: '§c✘ Cerrar Menú'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuherrero_b2_click
+      right_click:
+        Scripts:
+        - menuherrero_b2_click
+      shift_left_click:
+        Scripts:
+        - menuherrero_b2_click
+      shift_right_click:
+        Scripts:
+        - menuherrero_b2_click
+    b3:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: NETHER_STAR
+      name: '&b✧ Intercambiar Libros'
+      lore:
+      - '§7'
+      - '§6?? §7▪ §f¡Al entrar deberas poner solo'
+      - '§7    ▪ §eLibros Encantados §fde la §eMaestra'
+      - '§7    ▪ §ede Runas §fno objetos §eVanilla§f!'
+      - '§7'
+      - '§a➶ ¡Toca para Abrir!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuherrero_b3_click
+      right_click:
+        Scripts:
+        - menuherrero_b3_click
+      shift_left_click:
+        Scripts:
+        - menuherrero_b3_click
+      shift_right_click:
+        Scripts:
+        - menuherrero_b3_click
+    b4:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: ANVIL
+      name: '§7⛨ Herreria Oscura'
+      lore:
+      - '§7'
+      - '§6?? §7▪ §f¡Al entrar deberas poner dos'
+      - '§7    ▪ §cLibros §fdel mismo §cEncantamiento'
+      - '§7    ▪ §fy nivel o poner dos §cObjetos'
+      - '§7    ▪ §fpara §cCombinarlos§f!'
+      - '§7'
+      - '§a➶ ¡Toca para Abrir!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuherrero_b4_click
+      right_click:
+        Scripts:
+        - menuherrero_b4_click
+      shift_left_click:
+        Scripts:
+        - menuherrero_b4_click
+      shift_right_click:
+        Scripts:
+        - menuherrero_b4_click
+    empty:
+      location: top
+      slots: []
+      source: vanilla
+      material: BLACK_STAINED_GLASS_PANE
+      name: ' '
+      flags:
+      - HIDE_ATTRIBUTES

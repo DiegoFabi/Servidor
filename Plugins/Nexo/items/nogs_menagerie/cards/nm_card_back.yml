@@ -1,0 +1,8 @@
+nm_card_back:
+  itemname: <dark_red>Double-Backed Card
+  material: PAPER
+  Pack:
+    model: nogs_menagerie/cards/admin/nm_card_back
+    custom_model_data: 630000
+
+# 32fae060855d8e88f8ac20b498acfc44

@@ -1,0 +1,13 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+classLoot: true
+isEnabled: true
+entityType: SKELETON
+name: '&7&lGuerrero Invocado'
+level: dynamic
+healthMultiplier: 0.8
+damageMultiplier: 0.8
+powers: []
+uniqueLootList: []
+onDeathCommands: []
+bossType: NORMAL

@@ -1,0 +1,8 @@
+Name: Boss Illusionist
+Description:
+- Jefe Illusionist (Bojarsky). Modelos en ModelEngine/blueprints/Bosses/Illusionist,
+- sonidos en Nexo (sounds.yml) y barra de jefe en Nexo/pack/external_packs/BossBars.
+Author: Bojarsky
+URL: Unknown
+Version: 1.0.0
+Icon: TOTEM_OF_UNDYING

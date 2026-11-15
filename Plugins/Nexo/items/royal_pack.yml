@@ -1,0 +1,327 @@
+# Material list for latest spigot version: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# EntityType list for latest spigot version: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+# Attribute list for latest spigot version: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/attribute/Attribute.html
+# Potion effects list for latest spigot version: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html
+# Random UUID generator: https://www.uuidgenerator.net/
+# Color codes: https://docs.adventure.kyori.net/minimessage.html#format
+
+royal_helmet:
+  material: CHAINMAIL_HELMET
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 1002
+    texture: royal_pack/armors/royal_helmet
+  trim_pattern: nexo:royal
+  itemname: Royal Helmet
+  ItemFlags:
+  - HIDE_ARMOR_TRIM
+  Components:
+    equippable:
+      slot: HEAD
+      asset_id: nexo:royal
+royal_chestplate:
+  material: CHAINMAIL_CHESTPLATE
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 1002
+    texture: royal_pack/armors/royal_chestplate
+  trim_pattern: nexo:royal
+  itemname: Royal Chestplate
+  ItemFlags:
+  - HIDE_ARMOR_TRIM
+  Components:
+    equippable:
+      slot: CHEST
+      asset_id: nexo:royal
+royal_leggings:
+  material: CHAINMAIL_LEGGINGS
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 1002
+    texture: royal_pack/armors/royal_leggings
+  itemname: Royal Leggings
+  trim_pattern: nexo:royal
+  ItemFlags:
+  - HIDE_ARMOR_TRIM
+  Components:
+    equippable:
+      slot: LEGS
+      asset_id: nexo:royal
+royal_boots:
+  material: CHAINMAIL_BOOTS
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 1002
+    texture: royal_pack/armors/royal_boots
+  itemname: Royal Boots
+  trim_pattern: nexo:royal
+  ItemFlags:
+  - HIDE_ARMOR_TRIM
+  Components:
+    equippable:
+      slot: FEET
+      asset_id: nexo:royal
+royal_hat:
+  material: PAPER
+  Pack:
+    model: royal_pack/royal_hat
+    custom_model_data: 1110
+  Components:
+    equippable:
+      slot: HEAD
+  itemname: Royal Hat
+royal_chest:
+  material: PAPER
+  Mechanics:
+    furniture:
+      hitbox:
+        barriers:
+        - 0,0,0
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: royal_chest
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+  Pack:
+    model: royal_pack/royal_chest
+    custom_model_data: 1111
+  itemname: Royal Chest
+royal_key:
+  material: PAPER
+  Pack:
+    model: royal_pack/royal_key
+    custom_model_data: 1112
+  itemname: Royal Key
+royal_sword:
+  material: DIAMOND_SWORD
+  AttributeModifiers:
+  - attribute: GENERIC_ATTACK_DAMAGE
+    amount: 7
+    operation: 1
+    slot: HAND
+  - attribute: GENERIC_ATTACK_SPEED
+    amount: 1.6
+    operation: 1
+    slot: HAND
+  Pack:
+    model: royal_pack/royal_sword
+    custom_model_data: 1113
+  itemname: Royal Sword
+  Components:
+    max_damage: 1561
+royal_pickaxe:
+  material: DIAMOND_PICKAXE
+  AttributeModifiers:
+  - attribute: GENERIC_ATTACK_DAMAGE
+    amount: 5
+    operation: 1
+    slot: HAND
+  - attribute: GENERIC_ATTACK_SPEED
+    amount: 1.2
+    operation: 1
+    slot: HAND
+  Pack:
+    model: royal_pack/royal_pickaxe
+    custom_model_data: 1114
+  itemname: Royal Pickaxe
+  Components:
+    max_damage: 1562
+royal_axe:
+  material: DIAMOND_AXE
+  AttributeModifiers:
+  - attribute: GENERIC_ATTACK_DAMAGE
+    amount: 9
+    operation: 1
+    slot: HAND
+  - attribute: GENERIC_ATTACK_SPEED
+    amount: 1
+    operation: 1
+    slot: HAND
+  Pack:
+    model: royal_pack/royal_axe
+    custom_model_data: 1115
+  itemname: Royal Axe
+  Components:
+    max_damage: 1562
+royal_hoe:
+  material: DIAMOND_HOE
+  AttributeModifiers:
+  - attribute: GENERIC_ATTACK_DAMAGE
+    amount: 1
+    operation: 1
+    slot: HAND
+  - attribute: GENERIC_ATTACK_SPEED
+    amount: 4
+    operation: 1
+    slot: HAND
+  Pack:
+    model: royal_pack/royal_hoe
+    custom_model_data: 1116
+  itemname: Royal Hoe
+  Components:
+    max_damage: 1561
+royal_shovel:
+  material: DIAMOND_SHOVEL
+  AttributeModifiers:
+  - attribute: GENERIC_ATTACK_DAMAGE
+    amount: 5.5
+    operation: 1
+    slot: HAND
+  - attribute: GENERIC_ATTACK_SPEED
+    amount: 1
+    operation: 1
+    slot: HAND
+  Pack:
+    model: royal_pack/royal_shovel
+    custom_model_data: 1117
+  itemname: Royal Shovel
+  Components:
+    max_damage: 1561
+royal_fishing_rod:
+  material: FISHING_ROD
+  Pack:
+    model: royal_pack/royal_fishing_rod
+    cast_model: royal_pack/royal_fishing_rod_cast
+    custom_model_data: 1118
+  itemname: Royal Fishing Rod
+royal_shield:
+  material: SHIELD
+  Pack:
+    model: royal_pack/royal_shield
+    blocking_model: royal_pack/royal_shield_blocking
+    custom_model_data: 1119
+  itemname: Royal Shield
+royal_bow:
+  material: BOW
+  Pack:
+    model: royal_pack/royal_bow
+    pulling_models:
+    - royal_pack/royal_bow_0
+    - royal_pack/royal_bow_1
+    - royal_pack/royal_bow_2
+    custom_model_data: 1120
+  itemname: Royal Bow
+royal_staff:
+  material: PAPER
+  Pack:
+    model: royal_pack/royal_staff
+    custom_model_data: 1121
+  itemname: Royal Staff
+royal_wings:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_wings
+    custom_model_data: 1122
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Wings
+  itemname: Royal Wings
+royal_wings_normal:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_wings_normal
+    custom_model_data: 1123
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Wings Normal
+  itemname: Royal Wings Normal
+royal_wings_normal_2:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_wings_normal_2
+    custom_model_data: 1124
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Wings Normal 2
+  itemname: Royal Wings Normal 2
+royal_wings_self:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_wings_self
+    custom_model_data: 1125
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Wings Self
+  itemname: Royal Wings Self
+royal_wings_self_2:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_wings_self_2
+    custom_model_data: 1126
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Wings Self 2
+  itemname: Royal Wings Self 2
+royal_cape:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_cape
+    custom_model_data: 1127
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Cape
+  itemname: Royal Cape
+royal_cape_normal:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_cape_normal
+    custom_model_data: 1128
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Cape Normal
+  itemname: Royal Cape Normal
+royal_cape_normal_2:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_cape_normal_2
+    custom_model_data: 1129
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Cape Normal 2
+  itemname: Royal Cape Normal 2
+royal_cape_self:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_cape_self
+    custom_model_data: 1130
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Cape Self
+  itemname: Royal Cape Self
+royal_cape_self_2:
+  material: PAPER
+  unstackable: true
+  Pack:
+    model: royal_pack/royal_cape_self_2
+    custom_model_data: 1131
+  Mechanics:
+    backpack:
+      rows: 4
+      title: Royal Cape Self 2
+  itemname: Royal Cape Self 2
+# 397d09e0135d4ad502f934e3c4a5fd0b

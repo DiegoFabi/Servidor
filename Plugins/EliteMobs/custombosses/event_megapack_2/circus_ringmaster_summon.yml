@@ -1,0 +1,18 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: POLAR_BEAR
+name: $eventBossLevel &5Tortured Animal
+healthMultiplier: 1.25
+damageMultiplier: 0.25
+dropsEliteMobsLoot: true
+dropsVanillaLoot: false
+dropsRandomLoot: false
+powers:
+- invulnerability_fire.yml
+- attack_freeze.yml
+movementSpeedAttribute: 0.28
+followDistance: 80

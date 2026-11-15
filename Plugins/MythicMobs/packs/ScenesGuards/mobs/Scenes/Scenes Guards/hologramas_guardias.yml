@@ -1,0 +1,465 @@
+# ============================================================
+#  hologramas_guardias.yml - Hologramas de los NPCs del pack ScenesGuards
+#  Armor stands invisibles tipo marcador (sin hitbox) que solo
+#  muestran su nombre; se borran solos y no se guardan al reiniciar.
+#  Cada rol tiene su paleta e icono propios.
+#  Nombres:  holo_<rol>_nombre  |  holo_<rol>_f<frase>_l<linea>
+#  Los usa: dialogos_guardias.yml
+# ============================================================
+
+# ---------- ⛨ Guardia (scene_guard_stand, scene_guard_interactive, scene_guard_salute, scene_guard_salute_2, scene_guard_walk_1, scene_guard_walk_2, scene_guard_walk_3, scene_guard_march_1, scene_guard_march_2, scene_guard_march_3, scene_guards_duo) | paleta #C3D3EA -> #5B7DB1 ----------
+holo_guardia_nombre:
+  Type: ARMOR_STAND
+  Display: '<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <#5B7DB1>⛨'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>Todo tranquilo por aquí. Como debe'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>ser.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>Circula, viajero. Y nada de'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>problemas, ¿eh?'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>Mi turno termina al anochecer. Falta'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>muchísimo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>Si ves algo sospechoso, avísame.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>Esta armadura pesa más de lo que'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>parece.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>El capitán dice que estemos atentos.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#EEF2F9>Siempre lo dice.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ☾ Guardia (scene_guard_sleep_stand) | paleta #CFC9FF -> #7B6FD6 ----------
+holo_guardia_dormido_nombre:
+  Type: ARMOR_STAND
+  Display: '<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <#7B6FD6>☾'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>Zzz... no estoy durmiendo, estoy'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>vigilando con los ojos cerrados.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>¿Eh? ¡Sí, capitán! Ah... eres tú.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>Uf.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>Cinco minutos más y vuelvo a la'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>ronda...'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>No le digas a nadie que me viste'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>así, ¿vale?'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>Zzz... murallas... seguras... zzz...'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>Anoche hubo doble turno. Tengo los'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardia_dormido_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#F1EFFF>ojos pegados.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn

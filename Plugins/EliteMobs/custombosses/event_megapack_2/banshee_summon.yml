@@ -1,0 +1,21 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: SKELETON
+name: $eventBossLevel &cGrief
+level: dynamic
+healthMultiplier: 0.55
+damageMultiplier: 0.001
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+powers:
+- invisibility.yml
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- attack_arrow.yml
+- skeleton_tracking_arrow.yml
+movementSpeedAttribute: 0.12
+followDistance: 80

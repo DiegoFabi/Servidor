@@ -1,0 +1,32 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║  justTeams · commands.yml                                                ║
+# ║                                                                          ║
+# ║  Command names and per-alias toggles. Set enabled: false on an alias     ║
+# ║  to free that command name for another plugin.                           ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# commands-version: DO NOT MODIFY
+commands-version: 7
+
+# Main command (/team create, /team invite, etc.)
+primary-command: "team"
+
+# Team chat command (/teammsg <message>)
+primary-message-command: "teammsg"
+
+# Aliases — set enabled: false to free the command name for other plugins
+# /team and /teammsg are always active regardless of these settings
+command-aliases:
+  guild:
+    enabled: true
+  clan:
+    enabled: true
+  # disabled by default — commonly used by other network plugins
+  party:
+    enabled: false
+  guildmsg:
+    enabled: true
+  clanmsg:
+    enabled: true
+  partymsg:
+    enabled: false

@@ -1,0 +1,156 @@
+# ========================================
+# Script de Mensajes Personalizados Join/Leave
+# Para Skript versión 2.7+ - VERSIÓN CORREGIDA
+# ========================================
+
+# Variables de configuración
+variables:
+    {join.sound} = true
+    {leave.sound} = false
+    {welcome.message} = true
+    {broadcast.join} = true
+    {broadcast.leave} = true
+
+# ========================================
+# EVENTO DE ENTRADA (JOIN)
+# ========================================
+on join:
+    # Cancelar el mensaje por defecto de Minecraft
+    set join message to ""
+    
+    # Esperar un tick para que el jugador cargue completamente
+    wait 1 tick
+    
+    # Mensaje de bienvenida personal al jugador
+    if {welcome.message} is true:
+        send ""
+        send "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        send ""
+        send "    &6&l✦ &e&lBienvenido al Servidor &6&l✦"
+        send ""
+        send "    &7Disfruta tu gameplay con nosotros y tus amigos"
+        send "    &7Sistema de recompensas por tiempo está activo"
+        send "    &7Juega de forma continua para recibir recompensas"
+        send "    &7en dinero cada hora que te quedes en el servidor"
+        send ""
+        send "    &f▸ &aJugadores Online&8: &e%number of all players%&7/&e%max players%"
+        send "    &f▸ &aVersiones&8: &e%minecraft version% - 1.21.8"
+        send "    &f▸ &aTu Ping&8: &e%player's ping% ms"
+        send ""
+        send "    &6● Redes Sociales"
+        send "    &5● Discord&8: &fhttps://discord.gg/CDnyqZPh"
+        send "    &c● YouTube&8: &7Próximamente..."
+        send ""  
+        send "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        send ""
+
+
+
+
+    
+    # Mensaje broadcast a todos los jugadores
+    if {broadcast.join} is true:
+        # Diferentes mensajes según si ha jugado antes
+        if player has played before:
+            broadcast "&a&l+ &7%player% &aSe Ha Unido al Servidor, Bienvenido!"
+            execute console command "sr applyskin %player%"
+        else:
+            broadcast "&a&l+ &7%player% &aSe Ha Unido al Servidor, Bienvenido!"
+            # Efecto especial para nuevos jugadores
+            wait 1 second
+            execute console command "effect give %player% minecraft:glowing 10 0 true"
+    
+    # Sonido de entrada
+    if {join.sound} is true:
+        play sound "entity.player.levelup" with volume 0.5 and pitch 1.2 to player
+        # Sonido para otros jugadores
+        loop all players:
+            if loop-player is not player:
+                play sound "block.note_block.chime" with volume 0.3 and pitch 1.5 to loop-player
+
+
+
+# ========================================
+# COMANDOS DE ADMINISTRACIÓN
+# ========================================
+
+# Comando para configurar los mensajes
+command /joinconfig [<text>] [<text>]:
+    permission: server.admin
+    trigger:
+        if arg-1 is not set:
+            send "&6=== Configuración de Mensajes ==="
+            send "&7/joinconfig sound <on/off> - Activar/desactivar sonidos"
+            send "&7/joinconfig welcome <on/off> - Mensaje de bienvenida personal"
+            send "&7/joinconfig broadcast <on/off> - Broadcast de entrada/salida"
+            send "&7/joinconfig reload - Recargar configuración"
+            stop
+        
+        if arg-1 is "sound":
+            if arg-2 is "on":
+                set {join.sound} to true
+                set {leave.sound} to true
+                send "&aLos sonidos han sido activados"
+            else if arg-2 is "off":
+                set {join.sound} to false
+                set {leave.sound} to false
+                send "&cLos sonidos han sido desactivados"
+            else:
+                send "&cUso: /joinconfig sound <on/off>"
+        
+        else if arg-1 is "welcome":
+            if arg-2 is "on":
+                set {welcome.message} to true
+                send "&aMensaje de bienvenida activado"
+            else if arg-2 is "off":
+                set {welcome.message} to false
+                send "&cMensaje de bienvenida desactivado"
+            else:
+                send "&cUso: /joinconfig welcome <on/off>"
+        
+        else if arg-1 is "broadcast":
+            if arg-2 is "on":
+                set {broadcast.join} to true
+                set {broadcast.leave} to true
+                send "&aBroadcast de mensajes activado"
+            else if arg-2 is "off":
+                set {broadcast.join} to false
+                set {broadcast.leave} to false
+                send "&cBroadcast de mensajes desactivado"
+            else:
+                send "&cUso: /joinconfig broadcast <on/off>"
+        
+        else if arg-1 is "reload":
+            send "&aConfiguración recargada"
+        
+        else:
+            send "&cComando no reconocido. Usa /joinconfig para ver ayuda"
+
+
+
+
+# ========================================
+# ESTADÍSTICAS DE CONEXIÓN
+# ========================================
+
+# Comando para ver estadísticas
+command /mystats:
+    trigger:
+        send "&6=== Tus Estadísticas ==="
+        send "&7Conexiones totales: &b%{stats.joins.%player%} ? 1%"
+        send "&7Tiempo total jugado: &b%player's time played%"
+        if player has played before:
+            send "&7Estado: &aVeterano"
+        else:
+            send "&7Estado: &aNuevo Jugador"
+
+# ========================================
+# COMANDO DE INFORMACIÓN DEL SERVIDOR
+# ========================================
+command /serverinfo:
+    trigger:
+        send "&8&l▬▬▬▬▬▬▬▬▬▬ &6&lINFO DEL SERVIDOR &8&l▬▬▬▬▬▬▬▬▬▬"
+        send "&7Jugadores Online » &a%number of all players%&7/&a%max players%"
+        send "&7Versiónes Compatibles » &b%minecraft version%"
+        send "&7TPS: &a%tps%"
+        send "&8&l▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬"

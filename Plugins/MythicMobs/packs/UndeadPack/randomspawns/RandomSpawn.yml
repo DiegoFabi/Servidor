@@ -1,0 +1,67 @@
+# ============================================================
+#  UndeadPack - aparición por biomas
+#  Mundo: survivalMain (moderado: probabilidades bajas y límite de
+#  mobs iguales alrededor para no saturar ni afectar el rendimiento).
+#  REPLACE solo sustituye mobs hostiles vanilla (nunca animales).
+# ============================================================
+
+RandomGhoul:
+  Type: Ghoul
+  Worlds: survivalMain
+  Chance: 0.18
+  Priority: 5
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SNOWY_PLAINS,SNOWY_TAIGA,SNOWY_SLOPES,GROVE,FROZEN_PEAKS,ICE_SPIKES
+  Conditions:
+  - entitytype{t=ZOMBIE,STRAY,SKELETON} true
+  - night true
+  - outside true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=Ghoul;a=<3;r=40} true
+
+RandomSpecter:
+  Type: Specter
+  Worlds: survivalMain
+  Chance: 0.15
+  Priority: 5
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DRIPSTONE_CAVES,LUSH_CAVES,DEEP_DARK,PLAINS,FOREST,BIRCH_FOREST,TAIGA,DARK_FOREST,MEADOW,WINDSWEPT_HILLS,SAVANNA,JUNGLE,DESERT,BADLANDS,SNOWY_PLAINS,SNOWY_TAIGA
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON} true
+  - night true
+  - outside false
+  - heightbelow{h=50} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=Specter;a=<2;r=40} true
+
+RandomZombieBrute:
+  Type: Zombie_Brute
+  Worlds: survivalMain
+  Chance: 0.03
+  Priority: 5
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,FOREST,BIRCH_FOREST,SAVANNA,MEADOW
+  Conditions:
+  - entitytype{t=ZOMBIE} true
+  - night true
+  - outside true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=Zombie_Brute;a=<1;r=80} true
+
+RandomWendigo:
+  Type: Nightharrow_Wendigo
+  Worlds: survivalMain
+  Chance: 0.004
+  Priority: 8
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: TAIGA,OLD_GROWTH_PINE_TAIGA,OLD_GROWTH_SPRUCE_TAIGA,SNOWY_TAIGA,DARK_FOREST,PALE_GARDEN
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON} true
+  - night true
+  - outside true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=Nightharrow_Wendigo;a=<1;r=250} true

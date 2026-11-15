@@ -1,0 +1,302 @@
+# Armario de cosméticos - Cabeza (abre: /cosmetic menu defaultmenu_hats)
+title: <white>
+rows: 6
+items:
+  pestana_defaultmenu_hats:
+    slots:
+    - 0
+    item:
+      material: nexo:hmcc_icon_cabeza
+      name: <#FFD36B>▶ Cabeza
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_hats'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_backpacks:
+    slots:
+    - 18
+    item:
+      material: nexo:hmcc_icon_espalda
+      name: <white>Espalda
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_backpacks'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_hands:
+    slots:
+    - 27
+    item:
+      material: nexo:hmcc_icon_mano
+      name: <white>Mano
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_hands'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_balloons:
+    slots:
+    - 36
+    item:
+      material: nexo:hmcc_icon_globo
+      name: <white>Globos
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_balloons'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  cemetery_witch_hat:
+    slots:
+    - 1
+    item:
+      material: hmccosmetics:cemetery_witch_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Bruja del Cementerio'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_cemetery_witch_hat%%HMCCosmetics_equipped_cemetery_witch_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: cemetery_witch_hat
+  chained_monstruosity_collar:
+    slots:
+    - 2
+    item:
+      material: hmccosmetics:chained_monstruosity_collar
+      lore:
+      - '<#9EA3AE>Colección: <white>Monstruosidad Encadenada'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_chained_monstruosity_collar%%HMCCosmetics_equipped_chained_monstruosity_collar%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: chained_monstruosity_collar
+  crow_lord_hat:
+    slots:
+    - 3
+    item:
+      material: hmccosmetics:crow_lord_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Señor de los Cuervos'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_crow_lord_hat%%HMCCosmetics_equipped_crow_lord_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: crow_lord_hat
+  noir_elegance_tophat:
+    slots:
+    - 4
+    item:
+      material: hmccosmetics:noir_elegance_tophat
+      lore:
+      - '<#9EA3AE>Colección: <white>Elegancia Noir'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_noir_elegance_tophat%%HMCCosmetics_equipped_noir_elegance_tophat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: noir_elegance_tophat
+  archmage_hat:
+    slots:
+    - 5
+    item:
+      material: hmccosmetics:archmage_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Archimago'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_archmage_hat%%HMCCosmetics_equipped_archmage_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: archmage_hat
+  ritualistic_hoodie:
+    slots:
+    - 6
+    item:
+      material: hmccosmetics:ritualistic_hoodie
+      lore:
+      - '<#9EA3AE>Colección: <white>Ritualista'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ritualistic_hoodie%%HMCCosmetics_equipped_ritualistic_hoodie%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ritualistic_hoodie
+  skeleton_control_hat:
+    slots:
+    - 7
+    item:
+      material: hmccosmetics:skeleton_control_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Amo de los Esqueletos'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_skeleton_control_hat%%HMCCosmetics_equipped_skeleton_control_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: skeleton_control_hat
+  spike_lord_helmet:
+    slots:
+    - 8
+    item:
+      material: hmccosmetics:spike_lord_helmet
+      lore:
+      - '<#9EA3AE>Colección: <white>Señor de las Púas'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_spike_lord_helmet%%HMCCosmetics_equipped_spike_lord_helmet%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: spike_lord_helmet
+  witch_hat:
+    slots:
+    - 10
+    item:
+      material: hmccosmetics:witch_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_witch_hat%%HMCCosmetics_equipped_witch_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: witch_hat
+  sun_wizard_hat:
+    slots:
+    - 11
+    item:
+      material: hmccosmetics:sun_wizard_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago Solar'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_sun_wizard_hat%%HMCCosmetics_equipped_sun_wizard_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: sun_wizard_hat
+  moon_wizard_hat:
+    slots:
+    - 12
+    item:
+      material: hmccosmetics:moon_wizard_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago Lunar'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_moon_wizard_hat%%HMCCosmetics_equipped_moon_wizard_hat%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 2500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: moon_wizard_hat

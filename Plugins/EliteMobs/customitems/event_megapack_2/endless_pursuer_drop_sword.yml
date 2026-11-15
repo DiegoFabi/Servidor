@@ -1,0 +1,13 @@
+isEnabled: true
+material: NETHERITE_SWORD
+name: '&7Dark Blood Sword'
+lore:
+- "&7The sword seems to"
+- "&7be weeping blood..."
+enchantments:
+- "DAMAGE_ALL,6"
+- "DURABILITY,5"
+- "BINDING_CURSE,1"
+potionEffects: 
+- "NIGHT_VISION,0,self,continuous"
+itemType: UNIQUE

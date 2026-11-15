@@ -1,0 +1,20 @@
+nm_pack_starter_pack:
+  itemname: <blue>Starter <white>Booster Pack
+  lore:
+  - <gray>
+  - <gray>Contains <white><bold>2 <gray>Trading Cards!
+  - <gray>
+  - <dark_gray>1x <white>Common
+  - <dark_gray>1x <aqua>Rare <gray>(4.7% Chance of <dark_gray>1x <light_purple>Ultra-Rare<gray>)
+  material: PAPER
+  Pack:
+    model: nogs_menagerie/cards/packs/nm_pack_starter_pack
+    custom_model_data: 635000
+  Mechanics:
+    commands:
+      cooldown: 0.012s
+      one_usage: true
+      console:
+      - mm m spawn -p %p% nm_pack_sudo_starter_pack
+
+# 32fae060855d8e88f8ac20b498acfc44

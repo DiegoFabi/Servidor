@@ -1,0 +1,1 @@
+{"textures":{"0":"modelengine:entity/models/fishkin","particle":"#0"},"elements":[{"from":[8.0,-1.9673805,2.6578522],"to":[8.0,16.032621,18.657852],"faces":{"east":{"uv":[0.0,2.0,2.0,4.25],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[2.0,2.0,4.0,4.25],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

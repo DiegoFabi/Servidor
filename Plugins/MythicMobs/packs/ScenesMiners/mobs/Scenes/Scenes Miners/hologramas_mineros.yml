@@ -1,0 +1,484 @@
+# ============================================================
+#  hologramas_mineros.yml - Hologramas de los NPCs del pack ScenesMiners
+#  Armor stands invisibles tipo marcador (sin hitbox) que solo
+#  muestran su nombre; se borran solos y no se guardan al reiniciar.
+#  Cada rol tiene su paleta e icono propios.
+#  Nombres:  holo_<rol>_nombre  |  holo_<rol>_f<frase>_l<linea>
+#  Los usa: dialogos_mineros.yml
+# ============================================================
+
+# ---------- ⛏ Minero (scene_miner_slab, scene_miner_block, scene_miner_wall, scene_miner_walk, scene_miner_walk2, scene_miner_walk3, scene_miner_interactive) | paleta #D9CCBE -> #8D7B68 ----------
+holo_minero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68><bold>Minero</bold></gradient> <#8D7B68>⛏'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>Dicen que más abajo hay diamantes.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>Siempre dicen eso.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>Lleva siempre antorchas de sobra,'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>nunca sabes.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>El ruido de la piedra ya ni lo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>escucho. Bueno, casi.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>Hoy encontré hierro. No es oro, pero'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>paga el pan.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>Si escuchas siseos, corre. No'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>preguntes, corre.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>Abajo no se sabe si es de día o de'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#F4F0EC>noche.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ☁ Minero (scene_miner_sleep) | paleta #C9C0B7 -> #7A6F66 ----------
+holo_minero_cansado_nombre:
+  Type: ARMOR_STAND
+  Display: '<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66><bold>Minero</bold></gradient> <#7A6F66>☁'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>Un rato de descanso y vuelvo al'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>túnel... un rato largo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>Me duelen hasta las ideas de tanto'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>picar.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>Zzz... más hondo... más hondo...'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>Despiértame si alguien grita'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>diamante.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>Esta piedra es más cómoda de lo que'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>parece.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>Doce horas en la mina. Me lo he'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_minero_cansado_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#EFEDEA>ganado.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn

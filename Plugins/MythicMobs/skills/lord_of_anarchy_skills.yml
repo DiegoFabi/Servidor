@@ -1,0 +1,557 @@
+
+CancelEventSkill:
+  Skills:
+  - CancelEvent
+
+
+Lord_of_anarchy_attackmagic1:
+  Conditions:
+  - offgcd true
+  - incombat true
+  TargetConditions:
+  - distance{d=7to20} true
+  Skills:
+  - potion{type=SLOW;l=99;d=120;p=false} @self 
+  - gcd{ticks=62}
+  - state{state=attackmagic1} @Self
+  - delay 25
+  - sound{s=lordofanarchy:gama05.lordofanarchy.laser} @PlayersInRadius{r=22}
+  - projectile{ot=ot_magicattack1_Lord_of_anarchy_gama05;oh=hit_magicattack1_Lord_of_anarchy_gama05;v=16;i=1;hR=1;vR=1;in=1;syo=2;hR=1} @PlayersInRadius{r=24}
+  - delay 35
+  - effect:sound{s=entity.generic.explode;v=0.6;p=0}
+
+
+Lord_of_anarchy_attackmagic2:
+  Cooldown: 10
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to9} true
+  Skills:
+    - potion{type=SLOW;l=99;d=125;p=false} @self
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+    - gcd{ticks=68}
+    - state{state=attackmagic2} @Self
+    - delay 11
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword} @PlayersInRadius{r=22}
+    - delay 5
+    - damage{amount=6.5} @PlayersInRadius{r=12}
+    - effect:particles{particle=reddust;color=#ee243d;amount=10000;hS=12;vS=0.1;y=0.1;audience=World} @Self
+    - throw{v=6;vy=3} @PlayersInRadius{r=12}
+    - delay 50
+
+Lord_of_anarchy_attackmagic3:
+  Cooldown: 10
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=5to16} true
+  Skills:
+    - potion{type=SLOW;l=99;d=195;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+    - gcd{ticks=98}
+    - state{state=attackmagic3} @Self
+    - delay 20
+    - effect:particles{particle=flame;amount=100;hS=1.5;vS=1.5;y=2;audience=World} @ModelPart{mid=summon_lord_of_anarchy_one;part=swordd}    
+    - delay 52
+    - projectile{StopAtEntity=false;ot=ot_Lord_of_anarchy_attackmagic3_gama05;oh=hit_Lord_of_anarchy_attackmagic3_gama05;v=16;i=3;hR=1;vR=1;in=1;syo=2;hR=1} @Forward{f=15;y=0.0;sideOffset=0.0}
+    - delay 2
+    - damage{amount=9.5} @PlayersInRadius{r=3}
+    - throw{v=8;vy=3} @PlayersInRadius{r=3}
+    - delay 16
+
+
+ot_magicattack1_Lord_of_anarchy_gama05:
+  Skills:
+  - effect:particles{p=reddust;color=#ff3131;a=7;hS=0.15;vS=0.15} @origin
+  - effect:particlesphere{p=reddust;color=#ff3131;a=5;hS=0.25;vS=0.25;speed=4;size=1} @origin
+
+hit_magicattack1_Lord_of_anarchy_gama05:
+  Skills:
+  - effect:particles{p=reddust;color=#ff3131;a=12;hS=1;vS=1;repeat=25;repeatinterval=8}
+  - effect:sound{s=entity.generic.explode;v=0.6;p=0}
+  - damage{a=3;repeat=5;repeatinterval=40;i=false}
+
+ot_Lord_of_anarchy_attackmagic3_gama05:
+  Skills:
+  - effect:particles{p=flame;a=300;hS=0.1;vS=2} @origin
+  - effect:particlesphere{p=flame;a=200;hS=0.1;vS=0.1;speed=1} @origin
+  - sound{s=lordofanarchy:gama05.lordofanarchy.fire} @PlayersInRadius{r=22}
+
+hit_Lord_of_anarchy_attackmagic3_gama05:
+  Skills:
+  - effect:particles{p=lava;a=10;hS=1;vS=1}
+  - effect:sound{s=entity.generic.explode;v=0.6;p=0}
+  - damage{a=9;i=false}
+  
+Lord_of_anarchy_powerskill1:
+  Conditions:
+  - offgcd true
+  - incombat true
+  TargetConditions:
+  - distance{d=8to19} true
+  Skills:
+  - potion{type=SLOW;l=99;d=160;p=false} @self 
+  - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+  - gcd{ticks=80}
+  - state{state=powerskill1} @Self
+  - delay 45
+  - sound{s=lordofanarchy:gama05.lordofanarchy.sword;p=1.2} @PlayersInRadius{r=22}
+  - delay 3
+  - teleport{spreadh=1;spreadv=1} @target
+  - delay 5
+  - damage{amount=6.5} @PlayersInRadius{r=4}
+  - throw{v=8;vy=3} @PlayersInRadius{r=4}
+
+
+Lord_of_anarchy_sword1:
+  Cooldown: 10
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to5} true
+  Skills:
+    - potion{type=SLOW;l=99;d=48;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+    - gcd{ticks=26}
+    - state{state=swords1} @Self
+    - delay 5
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword} @PlayersInRadius{r=22}
+    - potionclear{} @self
+    - lunge{v=0.5} @target
+    - delay 5
+    - effect:particles{particle=reddust;color=#ee243d;amount=50;hS=0.1;vS=0.1;y=1} @ModelPart{mid=lord_of_anarchy;part=swordd}
+    - damage{amount=6.5} @PlayersInRadius{r=4}
+    - throw{v=1;vy=1} @PlayersInRadius{r=4}
+    - delay 14
+    - randomskill{s=Lord_of_anarchy_sword2,Lord_of_anarchy_sword3,Lord_of_anarchy_agarresssss,Lord_of_anarchy_agarressss2}
+
+
+
+Lord_of_anarchy_sword2:
+  Cooldown: 10
+  Conditions:
+    - incombat true
+  TargetConditions:
+    - distance{d=0to5} true
+  Skills:
+    - potion{type=SLOW;l=99;d=46;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+    - gcd{ticks=24}
+    - state{state=swords2} @Self
+    - delay 6
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword} @PlayersInRadius{r=22}
+    - potionclear{} @self
+    - lunge{v=0.5} @target
+    - delay 5
+    - damage{amount=6.5} @PlayersInRadius{r=4}
+    - throw{v=1;vy=1} @PlayersInRadius{r=4}
+    - delay 12
+    - randomskill{s=Lord_of_anarchy_guadana2,Lord_of_anarchy_guadana3,Lord_of_anarchy_sword3,Lord_of_anarchy_agarresssss,Lord_of_anarchy_agarressss2}
+
+Lord_of_anarchy_sword3:
+  Cooldown: 10
+  Conditions:
+    - incombat true
+  TargetConditions:
+    - distance{d=0to5} true
+  Skills:
+    - potion{type=SLOW;l=99;d=53;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+    - gcd{ticks=27}
+    - state{state=swords3} @Self
+    - delay 6
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword} @PlayersInRadius{r=22}
+    - potionclear{} @self
+    - lunge{v=0.5} @target
+    - delay 5
+    - damage{amount=9.5} @PlayersInRadius{r=4}
+    - throw{v=7;vy=3} @PlayersInRadius{r=4}
+    - delay 12
+
+Lord_of_anarchy_summon_one:
+  Cooldown: 70
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to5} true
+  Skills:
+    - gcd{ticks=72}
+    - state{state=summonone} @Self
+    - delay 48
+    - sound{s=lordofanarchy:gama05.lordofanarchy.demske} @PlayersInRadius{r=22}
+    - summon{type=skeleton_lord_of_anarchy;a=1;r=0} @self
+    - delay 2
+    - disengage{repeat=5,repeatinterval=2} @self
+
+
+
+Lord_of_anarchy_guadana1:
+  Cooldown: 10
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to4} true
+  Skills:
+    - potion{type=SLOW;l=99;d=63;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=guadaa} @self
+    - gcd{ticks=32}
+    - state{state=guadana1} @Self
+    - delay 10
+    - sound{s=lordofanarchy:gama05.lordofanarchy.guadana} @PlayersInRadius{r=22}
+    - potionclear{} @self
+    - lunge{v=0.5} @target
+    - delay 5
+    - setspeed{speed=1;type=walking}
+    - damage{amount=9.5} @PlayersInRadius{r=4}
+    - throw{v=5;vy=1} @PlayersInRadius{r=4}
+    - delay 16
+    - randomskill{s=Lord_of_anarchy_guadana2,Lord_of_anarchy_guadana3,Lord_of_anarchy_sword2,Lord_of_anarchy_sword3,Lord_of_anarchy_agarresssss,Lord_of_anarchy_agarressss2}
+
+Lord_of_anarchy_guadana2:
+  Cooldown: 10
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to4} true
+  Skills:
+    - potion{type=SLOW;l=99;d=71;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=guadaa} @self
+    - gcd{ticks=36}
+    - state{state=guadana2} @Self
+    - delay 10
+    - sound{s=lordofanarchy:gama05.lordofanarchy.guadana} @PlayersInRadius{r=22}
+    - potionclear{} @self
+    - lunge{v=0.5} @target
+    - delay 5
+    - setspeed{speed=1;type=walking}
+    - damage{amount=9.5} @PlayersInRadius{r=4}
+    - throw{v=9;vy=1} @PlayersInRadius{r=4}
+    - delay 20
+    - randomskill{s=Lord_of_anarchy_guadana3,Lord_of_anarchy_sword2,Lord_of_anarchy_sword3,Lord_of_anarchy_agarresssss,Lord_of_anarchy_agarressss2}
+
+Lord_of_anarchy_guadana3:
+  Cooldown: 10
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to4} true
+  Skills:
+    - potion{type=SLOW;l=99;d=71;p=false} @self 
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=guadaa} @self
+    - gcd{ticks=36}
+    - state{state=guadana3} @Self
+    - delay 10
+    - sound{s=lordofanarchy:gama05.lordofanarchy.guadana} @PlayersInRadius{r=22}
+    - potionclear{} @self
+    - lunge{v=0.5} @target
+    - delay 5
+    - setspeed{speed=1;type=walking}
+    - damage{amount=5.5} @PlayersInRadius{r=4}
+    - throw{v=4;vy=1} @PlayersInRadius{r=4}
+    - delay 20
+
+
+Lord_of_anarchy_agarresssss:
+  Cooldown: 15
+  Conditions:
+  TargetConditions:
+    - distance{d=0to4} true
+  Skills:
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=lord_of_anarchy;npid=dps} @self
+    - setAI{ai=false}
+    - LockModel{l=false} @self
+    - potion{type=SLOW;l=99;d=99;p=false} @self 
+    - gcd{ticks=50}
+    - state{state=agarre} @Self
+    - mountmodel{driver=false;mode=force;pbone=agarre;dmg=true;mid=lord_of_anarchy} @PIR{r=5}
+    - delay 28
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sunt1} @PlayersInRadius{r=22}
+    - dismountall{mid=lord_of_anarchy;p=agarre} @self
+    - totem{ch=1;md=2;oH=totem_hand_agarre_lordofanarchy;repeat=5;repeatInterval=1;hnp=true} @modelpart{m=lord_of_anarchy;p=agarre;off=LOCAL;y=0}	
+    - delay 21
+    - LockModel{l=false} @self
+    - setAI{ai=true}
+
+
+Lord_of_anarchy_agarressss2:
+  Cooldown: 15
+  Conditions:
+  TargetConditions:
+    - distance{d=0to5} true
+  Skills:
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=lord_of_anarchy;npid=dps} @self
+    - setAI{ai=false}
+    - potionclear{} @self
+    - gcd{ticks=73}
+    - state{state=agarre2} @Self
+    - setspeed{speed=2;type=walking}
+    - delay 12
+    - mountmodel{driver=false;mode=force;pbone=agarre;dmg=true;mid=lord_of_anarchy} @NearestPlayer{r=5}
+    - delay 36
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sunt1} @PlayersInRadius{r=22}
+    - dismountall{mid=lord_of_anarchy;p=agarre} @self
+    - effect:particlesphere{particle=reddust;color=#ee243d;amount=60;size=3;hS=4;vS=0.1;y=0.1;audience=World;speed=3} @Self
+    - damage{amount=12.5} @PlayersInRadius{r=4}
+    - throw{v=3;vy=1} @PlayersInRadius{r=4}
+    - setspeed{speed=1;type=walking}
+    - delay 24
+    - potion{type=SLOW;l=99;d=22;p=false} @self 
+    - setAI{ai=true}
+
+Lord_of_anarchy_agarre:
+  Cooldown: 15
+  Conditions:
+    - offgcd true
+  TargetConditions:
+    - distance{d=0to4} true
+  Skills:
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=lord_of_anarchy;npid=dps} @self
+    - setAI{ai=false}
+    - LockModel{l=false} @self
+    - potion{type=SLOW;l=99;d=99;p=false} @self 
+    - gcd{ticks=50}
+    - state{state=agarre} @Self
+    - mountmodel{driver=false;mode=force;pbone=agarre;dmg=true;mid=lord_of_anarchy} @PIR{r=5}
+    - delay 28
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sunt1} @PlayersInRadius{r=22}
+    - dismountall{mid=lord_of_anarchy;p=agarre} @self
+    - totem{ch=1;md=2;oH=totem_hand_agarre_lordofanarchy;repeat=5;repeatInterval=1;hnp=true} @modelpart{m=lord_of_anarchy;p=agarre;off=LOCAL;y=0}	
+    - delay 21
+    - LockModel{l=false} @self
+    - setAI{ai=true}
+
+
+Lord_of_anarchy_agarre2:
+  Cooldown: 15
+  Conditions:
+    - offgcd true
+  TargetConditions:
+    - distance{d=0to5} true
+  Skills:
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=lord_of_anarchy;npid=dps} @self
+    - setAI{ai=false}
+    - potionclear{} @self
+    - gcd{ticks=73}
+    - state{state=agarre2} @Self
+    - setspeed{speed=2;type=walking}
+    - delay 12
+    - mountmodel{driver=false;mode=force;pbone=agarre;dmg=true;mid=lord_of_anarchy} @NearestPlayer{r=5}
+    - delay 36
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sunt1} @PlayersInRadius{r=22}
+    - dismountall{mid=lord_of_anarchy;p=agarre} @self
+    - damage{amount=12.5} @PlayersInRadius{r=4}
+    - throw{v=3;vy=1} @PlayersInRadius{r=4}
+    - effect:particlesphere{particle=reddust;color=#ee243d;amount=60;size=3;hS=4;vS=0.1;y=0.1;audience=World;speed=3} @Self
+    - setspeed{speed=1;type=walking}
+    - delay 25
+    - potion{type=SLOW;l=99;d=22;p=false} @self 
+    - setAI{ai=true}
+
+
+totem_hand_agarre_lordofanarchy:
+  Skills:
+    - damage{amount=5.5} @PlayersInRadius{r=4}
+    - throw{v=5;vy=5} @PlayersInRadius{r=4}
+
+
+death_Lord_of_anarchy:
+  Skills:
+    - sendtitle{title="";subtitle="&a&lThe Lord of Anarchy is dead";d=10;fi=5;fo=15;repeat=5;repeatinterval=15} @PIR{r=50}
+    - changepart{m=lord_of_anarchy;pid=swordd;nm=armas_lord_of_anarchy;npid=swordd} @self
+    - dismountall{mid=lord_of_anarchy;p=agarre} @self
+
+
+spawn_of_anarchy:
+  Skills:
+    - sendtitle{title="";subtitle="&4&lLord of Anarchy";d=10;fi=5;fo=15;repeat=5;repeatinterval=15} @PIR{r=50}
+    - setAI{ai=false}
+    - potion{type=SLOW;l=99;d=180;p=false} @self 
+    - gcd{ticks=108}
+    - delay 17
+    - effect:sound{s=entity.generic.explode;v=1}
+    - effect:particlesphere{speed=3;particle=reddust;color=#ee243d;amount=1000;hS=2;vS=0.1;y=0.1;audience=World} @Self
+    - effect:particles{particle=reddust;color=#ee243d;amount=20;hS=2;vS=0.1;y=0.1;audience=World} @Self
+    - delay 90
+    - setAI{ai=true}
+
+
+skeleton_lord_of_anarchy_magic1:
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=8to30} true
+  Skills:
+    - gcd{ticks=54}
+    - state{state=magic1} @Self
+    - sound{s=lordofanarchy:gama05.lordofanarchy.fire;v=0.8} @PlayersInRadius{r=22}
+    - effect:particles{p=flame;a=15;hS=0.4;;yOffset=1;vS=0.4;repeat=26;repeatinterval=1} @ModelPart{mid=summon_lord_of_anarchy_one;part=manoderecha}
+    - delay 22
+    - projectile{ot=ot_skeleton_lord_of_anarchy_magic1;oh=hit_skeleton_lord_of_anarchy_magic1;v=16;i=1;hR=1;vR=1;in=1;syo=5.6;hR=1;sso=2.6} @NearestPlayer{r=30}
+
+ot_skeleton_lord_of_anarchy_magic1:
+  Skills:
+  - effect:particles{p=flame;a=20;hS=0.2;vS=0.2} @origin
+
+hit_skeleton_lord_of_anarchy_magic1:
+  Skills:
+  - effect:particles{p=lava;a=10;hS=1;vS=1}
+  - effect:sound{s=entity.generic.explode;v=0.6;p=0}
+  - damage{a=9;i=false}
+
+skeleton_lord_of_anarchy_attack1:
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to8} true
+  Skills:
+    - gcd{ticks=44}
+    - state{state=attack1} @Self
+    - delay 9    
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword;p=-1} @PlayersInRadius{r=22}
+    - delay 7
+    - damage{amount=6.5} @PlayersInRadius{r=7}
+    - throw{v=4;vy=2} @PlayersInRadius{r=7}
+
+skeleton_lord_of_anarchy_attack2:
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to8} true
+  Skills:
+    - gcd{ticks=44}
+    - state{state=attack2} @Self
+    - delay 9
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword;p=-1} @PlayersInRadius{r=22}
+    - delay 7
+    - damage{amount=6.5} @PlayersInRadius{r=7}
+    - throw{v=4;vy=2} @PlayersInRadius{r=7}
+
+skeleton_lord_of_anarchy_arrastre:
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to8} true
+  Skills:
+    - gcd{ticks=56}
+    - state{state=arrastre} @Self
+    - delay 8
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sword;p=-1} @PlayersInRadius{r=22}
+    - delay 7
+    - damage{amount=6.5} @PlayersInRadius{r=8}
+    - throw{v=12;vy=2} @PlayersInRadius{r=8}
+
+
+skeleton_lord_of_anarchy_golpeton:
+  Cooldown: 12
+  Conditions:
+    - offgcd true
+    - incombat true
+  TargetConditions:
+    - distance{d=0to10} true
+  Skills:
+    - gcd{ticks=81}
+    - state{state=golpeton} @Self
+    - delay 30
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sunt1;v=1.2;p=0.5} @PlayersInRadius{r=22}
+    - damage{amount=6.5} @PlayersInRadius{r=10}
+    - throw{v=4;vy=7} @PlayersInRadius{r=10}
+    - effect:particles{particle=block;m=rock;a=3000;hs=7;vs=0.3;yOffset=0.25} @self
+
+skeleton_lord_of_anarchy_spawn:
+  Conditions:
+    - offgcd true
+  Skills:
+    - gcd{ticks=85}
+    - state{state=spawn} @Self
+    - delay 35
+    - sound{s=lordofanarchy:gama05.lordofanarchy.sunt1;v=1.2;p=0.5} @PlayersInRadius{r=22}
+    - damage{amount=6.5} @PlayersInRadius{r=10}
+    - throw{v=4;vy=7} @PlayersInRadius{r=10}
+    - effect:particles{particle=block;m=rock;a=3000;hs=7;vs=0.3;yOffset=0.25} @self 
+
+
+
+Little_anarchy_attack1:
+  Cooldown: 1
+  Conditions:
+  - incombat true
+  - offgcd true
+  TargetConditions:
+  - distance{d=0to2} true
+  Skills:
+  - gcd{ticks=24}
+  - state{state=attack} @Self
+  - potion{type=SLOW;l=99;d=24;p=false} @self 
+  - delay 13
+  - damage{amount=6.5} @LivingInCone{a=180.0;r=3.0;rot=180}
+
+Little_anarchy_attack2:
+  Cooldown: 5
+  Conditions:
+  - incombat true
+  - offgcd true
+  TargetConditions:
+  - distance{d=0to2} true
+  Skills:
+  - gcd{ticks=41}
+  - state{state=attack2} @Self
+  - delay 24
+  - missile{mr=10;StopAtEntity=true;ot=ot_Little_anarchy_attack2;oh=hit_Little_anarchy_attack2;v=5;i=1;hR=1;vR=1;in=1;syo=0.3;hR=1} @target
+
+ot_Little_anarchy_attack2:
+  Skills:
+  - effect:particles{p=flame;a=6;hS=0.7;vS=0.05} @origin
+
+hit_Little_anarchy_attack2:
+  Skills:
+  - effect:sound{s=entity.generic.explode;v=0.6;p=0}
+  - damage{a=6;i=false}
+  - ignite{ticks=100}
+
+Little_anarchy_magic:
+  Cooldown: 5
+  Conditions:
+  - incombat true
+  - offgcd true
+  TargetConditions:
+  - distance{d=0to10} true
+  Skills:
+  - gcd{ticks=43}
+  - state{state=magic} @Self
+  - delay 20
+  - missile{mr=10;StopAtEntity=true;ot=ot_Little_anarchy_magic;oh=hit_Little_anarchy_magic;v=16;i=1;hR=1;vR=1;in=1;syo=0.3;hR=1} @target
+
+ot_Little_anarchy_magic:
+  Skills:
+  - effect:particles{p=reddust;color=#ff3131;a=13;hS=0.05;vS=0.05} @origin
+
+hit_Little_anarchy_magic:
+  Skills:
+  - effect:particles{p=reddust;color=#ff3131;a=2;hS=1;vS=1;repeat=12;repeatinterval=10}
+  - effect:sound{s=entity.generic.explode;v=0.6;p=0}
+  - damage{a=3;repeat=3;repeatinterval=40;i=false}
+
+Little_anarchy_interactt1:
+  Cooldown: 5
+  Conditions:
+  - incombat false
+  - offgcd true
+  Skills:
+  - gcd{ticks=140}
+  - state{state=interactt1} @Self 
+  - potion{type=SLOW;l=99;d=280;p=false} @self
+
+
+# 77101EJYR7B8KUZFORSC9QDI

@@ -1,0 +1,472 @@
+airplane:
+  texture: default/chat/airplane
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⎞
+  permission: oraxen.emoji.airplane
+  char: ꐘ
+anchor:
+  texture: default/chat/anchor
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⎤
+  permission: oraxen.emoji.anchor
+  char: ꐟ
+apple:
+  texture: default/chat/apple
+  ascent: 9
+  height: 10
+  placeholders:
+  - ☏
+  permission: oraxen.emoji.apple
+  char: ꑀ
+art_palette:
+  texture: default/chat/art-palette
+  ascent: 9
+  height: 10
+  placeholders:
+  - ☦
+  permission: oraxen.emoji.art_palette
+  char: ꑁ
+camera:
+  texture: default/chat/camera
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⊥
+  permission: oraxen.emoji.camera
+  char: ꑂ
+castle_entrance:
+  texture: default/chat/castle-entrance
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⊦
+  permission: oraxen.emoji.castle_entrance
+  char: ꑃ
+chat_bubble:
+  texture: default/chat/chat-bubble
+  ascent: 9
+  height: 10
+  placeholders:
+  - ☤
+  permission: oraxen.emoji.chat_bubble
+  char: ꑄ
+checkmark:
+  texture: default/chat/checkmark
+  ascent: 9
+  height: 10
+  placeholders:
+  - ☣
+  permission: oraxen.emoji.checkmark
+  char: ꑅ
+clock:
+  texture: default/chat/clock
+  ascent: 9
+  height: 10
+  placeholders:
+  - ☾
+  permission: oraxen.emoji.clock
+  char: ꑆ
+cloud:
+  texture: default/chat/cloud
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏒
+  permission: oraxen.emoji.cloud
+  char: ꑇ
+clover:
+  texture: default/chat/clover
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏝
+  permission: oraxen.emoji.clover
+  char: ꑈ
+coffee:
+  texture: default/chat/coffee
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏞
+  permission: oraxen.emoji.coffee
+  char: ꑉ
+crossed_swords:
+  texture: default/chat/crossed-swords
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏟
+  permission: oraxen.emoji.crossed_swords
+  char: ꑊ
+crown:
+  texture: default/chat/crown
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏠
+  permission: oraxen.emoji.crown
+  char: ꑋ
+diamond:
+  texture: default/chat/diamond
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏡
+  permission: oraxen.emoji.diamond
+  char: ꑌ
+dollar:
+  texture: default/chat/dollar
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏢
+  permission: oraxen.emoji.dollar
+  char: ꑍ
+earth:
+  texture: default/chat/earth
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏣
+  permission: oraxen.emoji.earth
+  char: ꑎ
+envelope:
+  texture: default/chat/envelope
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏤
+  permission: oraxen.emoji.envelope
+  char: ꑏ
+exclamation:
+  texture: default/chat/exclamation
+  ascent: 9
+  height: 10
+  placeholders:
+  - æ
+  permission: oraxen.emoji.exclamation
+  char: ꑐ
+feather:
+  texture: default/chat/feather
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏦
+  permission: oraxen.emoji.feather
+  char: ꑑ
+fire:
+  texture: default/chat/fire
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏧
+  permission: oraxen.emoji.fire
+  char: ꑒ
+flower:
+  texture: default/chat/flower
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏨
+  permission: oraxen.emoji.flower
+  char: ꑓ
+game_controller:
+  texture: default/chat/game-controller
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏩
+  permission: oraxen.emoji.game_controller
+  char: ꑔ
+gold_coin:
+  texture: default/chat/gold-coin
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏪
+  permission: oraxen.emoji.gold_coin
+  char: ꑕ
+heart:
+  texture: default/chat/heart
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏫
+  permission: oraxen.emoji.heart
+  char: ꑖ
+high_voltage:
+  texture: default/chat/high-voltage
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏬
+  permission: oraxen.emoji.high_voltage
+  char: ꑗ
+light_bulb:
+  texture: default/chat/light-bulb
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏭
+  permission: oraxen.emoji.light_bulb
+  char: ꑘ
+llama_pinhata:
+  texture: default/chat/llama-pinhata
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏮
+  permission: oraxen.emoji.llama_pinhata
+  char: ꑙ
+mag_glass:
+  texture: default/chat/mag-glass
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏯
+  permission: oraxen.emoji.mag_glass
+  char: ꑚ
+megaphone:
+  texture: default/chat/megaphone
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏰
+  permission: oraxen.emoji.megaphone
+  char: ꑛ
+moon:
+  texture: default/chat/moon
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏱
+  permission: oraxen.emoji.moon
+  char: ꑜ
+muhsroom:
+  texture: default/chat/muhsroom
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏲
+  permission: oraxen.emoji.muhsroom
+  char: ꑝ
+music_notes:
+  texture: default/chat/music-notes
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏳
+  permission: oraxen.emoji.music_notes
+  char: ꑞ
+peace:
+  texture: default/chat/peace
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏴
+  permission: oraxen.emoji.peace
+  char: ꑟ
+pencil:
+  texture: default/chat/pencil
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏵
+  permission: oraxen.emoji.pencil
+  char: ꑠ
+person:
+  texture: default/chat/person
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏶
+  permission: oraxen.emoji.person
+  char: ꑡ
+pickaxe:
+  texture: default/chat/pickaxe
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏷
+  permission: oraxen.emoji.pickaxe
+  char: ꑢ
+potion:
+  texture: default/chat/potion
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏸
+  permission: oraxen.emoji.potion
+  char: ꑣ
+present_box:
+  texture: default/chat/present-box
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏹
+  permission: oraxen.emoji.present_box
+  char: ꑤ
+radioactivity:
+  texture: default/chat/radioactivity
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏺
+  permission: oraxen.emoji.radioactivity
+  char: ꑥ
+rainbow:
+  texture: default/chat/rainbow
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏻
+  permission: oraxen.emoji.rainbow
+  char: ꑦ
+red_sword:
+  texture: default/chat/red-sword
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏼
+  permission: oraxen.emoji.red_sword
+  char: ꑧ
+rocket:
+  texture: default/chat/rocket
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏽
+  permission: oraxen.emoji.rocket
+  char: ꑨ
+sand_clock:
+  texture: default/chat/sand-clock
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏾
+  permission: oraxen.emoji.sand_clock
+  char: ꑩ
+settings:
+  texture: default/chat/settings
+  ascent: 9
+  height: 10
+  placeholders:
+  - ⏿
+  permission: oraxen.emoji.settings
+  char: ꑪ
+shield:
+  texture: default/chat/shield
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␀
+  permission: oraxen.emoji.shield
+  char: ꑫ
+shopping_cart:
+  texture: default/chat/shopping-cart
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␁
+  permission: oraxen.emoji.shopping_cart
+  char: ꑬ
+skull:
+  texture: default/chat/skull
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␂
+  permission: oraxen.emoji.skull
+  char: ꑭ
+stacked_books:
+  texture: default/chat/stacked-books
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␃
+  permission: oraxen.emoji.stacked_books
+  char: ꑮ
+star:
+  texture: default/chat/star
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␄
+  permission: oraxen.emoji.star
+  char: ꑯ
+sun:
+  texture: default/chat/sun
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␅
+  permission: oraxen.emoji.sun
+  char: ꑰ
+treasure:
+  texture: default/chat/treasure
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␆
+  permission: oraxen.emoji.treasure
+  char: ꑱ
+tree:
+  texture: default/chat/tree
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␇
+  permission: oraxen.emoji.tree
+  char: ꑲ
+trophy:
+  texture: default/chat/trophy
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␈
+  permission: oraxen.emoji.trophy
+  char: ꑳ
+umbrella:
+  texture: default/chat/umbrella
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␉
+  permission: oraxen.emoji.umbrella
+  char: ꑴ
+volcano:
+  texture: default/chat/volcano
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␊
+  permission: oraxen.emoji.volcano
+  char: ꑵ
+warning:
+  texture: default/chat/warning
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␋
+  permission: oraxen.emoji.warning
+  char: ꑶ
+water_drop:
+  texture: default/chat/water-drop
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␌
+  permission: oraxen.emoji.water_drop
+  char: ꑷ
+wave:
+  texture: default/chat/wave
+  ascent: 9
+  height: 10
+  placeholders:
+  - ␍
+  permission: oraxen.emoji.wave
+  char: ꑸ

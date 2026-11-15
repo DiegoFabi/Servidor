@@ -1,0 +1,90 @@
+# Etiquetas de rango (TAG)
+# Texturas: pack/assets/minecraft/textures/default/tags/
+# Uso en TAB/chat: <glyph:owner_tag>
+# placeholders: símbolo único (①-⑫) que Nexo reemplaza por el glyph en chat
+# y textos de otros plugins (p. ej. como prefijo en LuckPerms). Ni los
+# placeholders ni los char se repiten con ningún otro glyph.
+baron_tag:
+  texture: default/tags/baron_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ①
+  char: ꒀ
+bui_tag:
+  texture: default/tags/bui_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ②
+  char: ꒁ
+emperator_tag:
+  texture: default/tags/emperator_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ③
+  char: ꒂ
+helper_tag:
+  texture: default/tags/helper_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ④
+  char: ꒃ
+merchant_tag:
+  texture: default/tags/merchant_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑤
+  char: ꒄ
+mod_tag:
+  texture: default/tags/mod_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑥
+  char: ꒅ
+obispo_tag:
+  texture: default/tags/obispo_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑦
+  char: ꒆ
+owner_tag:
+  texture: default/tags/owner_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑧
+  char: ꒇ
+peasant_tag:
+  texture: default/tags/peasant_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑨
+  char: ꒈ
+slave_tag:
+  texture: default/tags/slave_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑩
+  char: ꒉ
+soldier_tag:
+  texture: default/tags/soldier_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑪
+  char: ꒊ
+streamer_tag:
+  texture: default/tags/streamer_tag
+  ascent: 8
+  height: 9
+  placeholders:
+  - ⑫
+  char: ꒋ

@@ -1,0 +1,18 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ZOMBIE
+isBaby: true
+name: $eventBossLevel &bSmallstack Bottom
+level: dynamic
+isPersistent: true
+powers:
+- invulnerability_fire.yml
+- attack_lightning.yml
+mountedEntity: smallstack_5.yml
+healthMultiplier: 1.0
+damageMultiplier: 0.1
+movementSpeedAttribute: 0.28
+followDistance: 50

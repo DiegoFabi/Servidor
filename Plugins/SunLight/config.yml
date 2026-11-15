@@ -1,0 +1,18 @@
+General:
+  # Sets the global date format used in various plugin modules.
+  Date_Format: dd/MM/yyyy HH:mm:ss
+  # Sets the global time format used in various plugin modules.
+  Time_Format: HH:mm:ss
+  # Sets name for the console command sender.
+  # Used in some messages when you send private messages, execute bans, and other actions from console.
+  ConsoleName: Consola
+Commands:
+  Cooldowns:
+    # When enabled, allows to set cooldown on any of SunLight's commands.
+    Enabled: true
+  Conflict-Unregister:
+    Enabled: false
+    Blacklist:
+    - FastAsyncWorldEdit
+    - WorldEdit
+    - WorldGuard

@@ -1,0 +1,109 @@
+Settings:
+  MenuType: minecraft:generic_9x5
+  Title: Home Settings
+  AutoRefresh:
+    Interval: 0
+  PlaceholderAPI:
+    Enabled: false
+Buttons:
+  black_stained_glass_pane_a88cc:
+    Slots: 0,1,2,3,4,5,6,7,8
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  black_stained_glass_pane_1f304:
+    Slots: 36,37,38,39,40,41,42,43,44
+    States:
+      default:
+        Icon:
+          Material: minecraft:black_stained_glass_pane
+          Lore: []
+          Hide_Components: true
+          Hide_Tooltip: true
+  return:
+    Slots: '36'
+    States:
+      default:
+        Icon:
+          Material: minecraft:spectral_arrow
+          Display_Name: <white>Back to Homes</white>
+          Lore: []
+  name:
+    Slots: '19'
+    States:
+      default:
+        Icon:
+          Material: minecraft:name_tag
+          Display_Name: <yellow><b>Display Name</b></yellow>
+          Lore:
+          - '<white>» </white><gray>Current: </gray><yellow>%home_name%</yellow>'
+          - ''
+          - <yellow>→ <u>Click to change</u></yellow>
+  type:
+    Slots: '21'
+    States:
+      default:
+        Icon:
+          Material: minecraft:ender_eye
+          Display_Name: <green><b>Type</b></green>
+          Lore:
+          - '<white>» </white><gray>Current: </gray><green>%home_type%</green>'
+          - ''
+          - <gray>Public homes are open for everyone.</gray>
+          - <gray>Private homes requires an invite.</gray>
+          - ''
+          - <green>→ <u>Click to toggle</u></green>
+  favorite:
+    Slots: '4'
+    States:
+      default:
+        Icon:
+          Material: minecraft:nether_star
+          Display_Name: <gold><b>Favorite</b></gold>
+          Lore:
+          - '<white>» </white><gray>Favorite: </gray><gold>%home_favorite%</gold>'
+          - ''
+          - <gray>Favorite home is used by default</gray>
+          - <gray>in all home commands and as</gray>
+          - <gray>respawn point.</gray>
+          - ''
+          - <gold>→ <u>Click to toggle</u></gold>
+  icon:
+    Slots: '23'
+    States:
+      default:
+        Icon:
+          Material: minecraft:item_frame
+          Display_Name: <yellow><b>Icon</b></yellow>
+          Lore:
+          - <gray>Select an icon for your home!</gray>
+          - ''
+          - <yellow>→ <u>Click to change</u></yellow>
+  invited_players:
+    Slots: '25'
+    States:
+      default:
+        Icon:
+          Material: minecraft:writable_book
+          Display_Name: <orange><b>Invited Players</b></orange>
+          Lore:
+          - '<white>» </white><gray>Players Invited: </gray><orange>%home_invited_players%</orange>'
+          - ''
+          - <gray>Share your home with friends!</gray>
+          - ''
+          - <orange>→ <u>Click to edit</u></orange>
+  delete:
+    Slots: '44'
+    States:
+      default:
+        Icon:
+          Material: minecraft:barrier
+          Display_Name: <red><b>Delete Home</b></red>
+          Lore:
+          - <gray>Permanently delete this home.</gray>
+          - ''
+          - <red>→ <u>Click to delete</u></red>

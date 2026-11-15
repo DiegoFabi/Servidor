@@ -1,0 +1,10 @@
+isEnabled: true
+material: SHIELD
+name: '&eFlame Touched Shield'
+lore:
+- "&eProtects against fire and flame."
+enchantments:
+- "DURABILITY,4"
+potionEffects: 
+- "FIRE_RESISTANCE,0,self,onHit"
+itemType: UNIQUE

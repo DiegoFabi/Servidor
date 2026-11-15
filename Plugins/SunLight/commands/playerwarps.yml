@@ -1,0 +1,32 @@
+LiteralNodes:
+  teleport:
+    Enabled: false
+    Aliases: playerwarp
+    Cooldown: 0
+  create:
+    Enabled: false
+    Aliases: setplayerwarp
+    Cooldown: 0
+  update:
+    Enabled: false
+    Aliases: updateplayerwarp
+    Cooldown: 0
+  menu:
+    Enabled: true
+    Aliases: pwarps
+    Cooldown: 0
+  delete:
+    Enabled: false
+    Aliases: delplayerwarp
+    Cooldown: 0
+RootNodes:
+  playerwarps:
+    Enabled: true
+    Aliases: pwarp,playerwarps
+    Name: Playerwarps
+    Childrens:
+      teleport: jump
+      create: create
+      update: update
+      menu: menu
+      delete: delete

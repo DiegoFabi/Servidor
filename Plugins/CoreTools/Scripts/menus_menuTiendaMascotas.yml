@@ -1,0 +1,632 @@
+# Tienda de Mascotas (MCPets) con Shards. Si ya tienes el permiso de la mascota se abre /mcpets;
+# si no, se compra con Shards y LuckPerms da el permiso de MCPets.
+tmasc_a_pet_griffon_griffon:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Griffon_Griffon} falseElse tmasc_a_pet_griffon_griffon_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_a_pet_griffon_griffon_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Griffon_Griffon true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Grifo</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_a_pet_griffon_khonsu:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Griffon_Khonsu} falseElse tmasc_a_pet_griffon_khonsu_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_a_pet_griffon_khonsu_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Griffon_Khonsu true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Grifo Khonsu</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_a_pet_griffon_phoenix:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Griffon_Phoenix} falseElse tmasc_a_pet_griffon_phoenix_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_a_pet_griffon_phoenix_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Griffon_Phoenix true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Grifo Fénix</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_a_pet_griffon_ra:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Griffon_Ra} falseElse tmasc_a_pet_griffon_ra_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_a_pet_griffon_ra_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Griffon_Ra true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Grifo Ra</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_a_pet_griffon_rockstar:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Griffon_Rockstar} falseElse tmasc_a_pet_griffon_rockstar_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_a_pet_griffon_rockstar_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Griffon_Rockstar true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Grifo Rockero</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_b_pet_necromancer_cat_fire_mage:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Necromancer_Cat_Fire_Mage} falseElse tmasc_b_pet_necromancer_cat_fire_mage_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_b_pet_necromancer_cat_fire_mage_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Necromancer_Cat_Fire_Mage true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Gato Nigromante de Fuego</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_b_pet_necromancer_cat_ice_mage:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Necromancer_Cat_Ice_Mage} falseElse tmasc_b_pet_necromancer_cat_ice_mage_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_b_pet_necromancer_cat_ice_mage_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Necromancer_Cat_Ice_Mage true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Gato Nigromante de Hielo</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_b_pet_necromancer_cat_necromancer:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Necromancer_Cat_Necromancer} falseElse tmasc_b_pet_necromancer_cat_necromancer_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_b_pet_necromancer_cat_necromancer_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Necromancer_Cat_Necromancer true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Gato Nigromante</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_b_pet_necromancer_cat_santa:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Necromancer_Cat_Santa} falseElse tmasc_b_pet_necromancer_cat_santa_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_b_pet_necromancer_cat_santa_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Necromancer_Cat_Santa true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Gato Nigromante Navideño</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_c_pet_outlaw_cyborg:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Outlaw_Cyborg} falseElse tmasc_c_pet_outlaw_cyborg_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_c_pet_outlaw_cyborg_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Outlaw_Cyborg true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Forajido Cíborg</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_c_pet_outlaw_officer:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Outlaw_Officer} falseElse tmasc_c_pet_outlaw_officer_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_c_pet_outlaw_officer_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Outlaw_Officer true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Forajido Oficial</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_c_pet_outlaw_steampunk:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Outlaw_Steampunk} falseElse tmasc_c_pet_outlaw_steampunk_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_c_pet_outlaw_steampunk_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Outlaw_Steampunk true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Forajido Steampunk</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_c_pet_outlaw_wild_west:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Outlaw_Wild_West} falseElse tmasc_c_pet_outlaw_wild_west_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_c_pet_outlaw_wild_west_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Outlaw_Wild_West true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Forajido del Oeste</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_d_pet_samurai_shiba_samurai_bamboo:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Samurai_Shiba_Samurai_Bamboo} falseElse tmasc_d_pet_samurai_shiba_samurai_bamboo_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_d_pet_samurai_shiba_samurai_bamboo_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Samurai_Shiba_Samurai_Bamboo true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Shiba Samurái de Bambú</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_d_pet_samurai_shiba_samurai_new_year:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Samurai_Shiba_Samurai_New_Year} falseElse tmasc_d_pet_samurai_shiba_samurai_new_year_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_d_pet_samurai_shiba_samurai_new_year_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Samurai_Shiba_Samurai_New_Year true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Shiba Samurái de Año Nuevo</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_d_pet_samurai_shiba_samurai_pirate:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Samurai_Shiba_Samurai_Pirate} falseElse tmasc_d_pet_samurai_shiba_samurai_pirate_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_d_pet_samurai_shiba_samurai_pirate_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Samurai_Shiba_Samurai_Pirate true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Shiba Samurái Pirata</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_d_pet_samurai_shiba_samurai:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Samurai_Shiba_Samurai} falseElse tmasc_d_pet_samurai_shiba_samurai_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_d_pet_samurai_shiba_samurai_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Samurai_Shiba_Samurai true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Shiba Samurái</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_e_pet_shark_baby_shark:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Shark_Baby_Shark} falseElse tmasc_e_pet_shark_baby_shark_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_e_pet_shark_baby_shark_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Shark_Baby_Shark true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Tiburón Bebé</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_e_pet_shark_chef:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Shark_Chef} falseElse tmasc_e_pet_shark_chef_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_e_pet_shark_chef_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Shark_Chef true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Tiburón Chef</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_e_pet_shark_dragonborn:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Shark_Dragonborn} falseElse tmasc_e_pet_shark_dragonborn_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_e_pet_shark_dragonborn_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Shark_Dragonborn true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Tiburón Dracónido</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_e_pet_shark_oceanic:
+  Conditions:
+  - 'Permission{p=mcpet.Pet_Shark_Oceanic} falseElse tmasc_e_pet_shark_oceanic_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_e_pet_shark_oceanic_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.Pet_Shark_Oceanic true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FFE29A:#FFB347>Tiburón Oceánico</gradient> <#C9CDD6>por <#D89BFF>✦ 3000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_fire:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.fire} falseElse tmasc_nocsy_drakonin_fire_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_fire_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.fire true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin de Fuego</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_dark:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.dark} falseElse tmasc_nocsy_drakonin_dark_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_dark_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.dark true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin Oscuro</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_water:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.water} falseElse tmasc_nocsy_drakonin_water_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_water_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.water true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin de Agua</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_cloud:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.cloud} falseElse tmasc_nocsy_drakonin_cloud_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_cloud_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.cloud true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin de las Nubes</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_volcanic:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.volcanic} falseElse tmasc_nocsy_drakonin_volcanic_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_volcanic_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.volcanic true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin Volcánico</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_poison:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.poison} falseElse tmasc_nocsy_drakonin_poison_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_poison_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.poison true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin Venenoso</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_forest:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.forest} falseElse tmasc_nocsy_drakonin_forest_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_forest_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.forest true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin del Bosque</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_night:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin.night} falseElse tmasc_nocsy_drakonin_night_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_night_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=6000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=6000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin.night true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#FF8A8A:#C0392B>Drakonin Nocturno</gradient> <#C9CDD6>por <#D89BFF>✦ 6000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_fire:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.fire} falseElse tmasc_nocsy_drakonin_baby_fire_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_fire_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.fire true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé de Fuego</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_dark:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.dark} falseElse tmasc_nocsy_drakonin_baby_dark_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_dark_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.dark true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Oscuro</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_water:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.water} falseElse tmasc_nocsy_drakonin_baby_water_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_water_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.water true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé de Agua</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_cloud:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.cloud} falseElse tmasc_nocsy_drakonin_baby_cloud_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_cloud_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.cloud true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé de las Nubes</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_volcanic:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.volcanic} falseElse tmasc_nocsy_drakonin_baby_volcanic_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_volcanic_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.volcanic true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Volcánico</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_poison:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.poison} falseElse tmasc_nocsy_drakonin_baby_poison_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_poison_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.poison true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Venenoso</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_forest:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.forest} falseElse tmasc_nocsy_drakonin_baby_forest_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_forest_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.forest true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé del Bosque</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_nocsy_drakonin_baby_night:
+  Conditions:
+  - 'Permission{p=mcpets.nocsy_drakonin_baby.night} falseElse tmasc_nocsy_drakonin_baby_night_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_nocsy_drakonin_baby_night_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.nocsy_drakonin_baby.night true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Nocturno</gradient> <#C9CDD6>por <#D89BFF>✦ 3500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_horse_pegasus:
+  Conditions:
+  - 'Permission{p=skin.horse_pegasus} falseElse tmasc_horse_pegasus_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_horse_pegasus_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=8000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=8000} @Self'
+  - 'command{c="lp user {caster_name} permission set skin.horse_pegasus true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#D9B3FF:#8E44AD>Pegaso</gradient> <#C9CDD6>por <#D89BFF>✦ 8000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_horse_spartan:
+  Conditions:
+  - 'Permission{p=mcpet.horse_spartan} falseElse tmasc_horse_spartan_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_horse_spartan_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=8000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=8000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.horse_spartan true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#D9B3FF:#8E44AD>Caballo Espartano</gradient> <#C9CDD6>por <#D89BFF>✦ 8000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_kitsune_normal:
+  Conditions:
+  - 'Permission{p=mcpet.kitsune_normal} falseElse tmasc_kitsune_normal_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_kitsune_normal_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=8000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=8000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.kitsune_normal true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#D9B3FF:#8E44AD>Kitsune</gradient> <#C9CDD6>por <#D89BFF>✦ 8000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_phantom_ghost:
+  Conditions:
+  - 'Permission{p=mcpet.phantom_ghost} falseElse tmasc_phantom_ghost_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_phantom_ghost_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=8000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=8000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.phantom_ghost true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#D9B3FF:#8E44AD>Fantasma Espectral</gradient> <#C9CDD6>por <#D89BFF>✦ 8000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_phoenix_flame:
+  Conditions:
+  - 'Permission{p=mcpet.phoenix_flame} falseElse tmasc_phoenix_flame_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_phoenix_flame_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=8000} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=8000} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpet.phoenix_flame true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#D9B3FF:#8E44AD>Fénix</gradient> <#C9CDD6>por <#D89BFF>✦ 8000<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_witchcat:
+  Conditions:
+  - 'Permission{p=mcpets.witchcat} falseElse tmasc_witchcat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+tmasc_witchcat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4500} falseElse tmasc_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4500} @Self'
+  - 'command{c="lp user {caster_name} permission set mcpets.witchcat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#C9CDD6>Has adoptado a <gradient:#D9B3FF:#8E44AD>Gato de Bruja</gradient> <#C9CDD6>por <#D89BFF>✦ 4500<#C9CDD6>. Invócala en <#FFD36B>/mcpets"} @Self'
+tmasc_ir_0:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuTiendaMascotas {caster_name}";runas=console} @Self'
+tmasc_ir_1:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuTiendaMascotas2 {caster_name}";runas=console} @Self'
+tmasc_ir_2:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuTiendaMascotas3 {caster_name}";runas=console} @Self'
+tmasc_volver:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu menuMascotas {caster_name}";runas=console} @Self'
+tmasc_sin_shards:
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Mascotas</bold> <dark_gray>» <#FF6B6B>No tienes suficientes <#D89BFF>Shards <#FF6B6B>para esta mascota."} @Self'
+tmasc_abrir:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.cat.ambient";volume=1;pitch=1.2} @Self'
+  - 'command{c="core-menu menuTiendaMascotas {caster_name}";runas=console} @Self'

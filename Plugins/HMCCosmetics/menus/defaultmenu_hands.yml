@@ -1,0 +1,302 @@
+# Armario de cosméticos - Mano (abre: /cosmetic menu defaultmenu_hands)
+title: <white>
+rows: 6
+items:
+  pestana_defaultmenu_hats:
+    slots:
+    - 0
+    item:
+      material: nexo:hmcc_icon_cabeza
+      name: <white>Cabeza
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_hats'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_backpacks:
+    slots:
+    - 18
+    item:
+      material: nexo:hmcc_icon_espalda
+      name: <white>Espalda
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_backpacks'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_hands:
+    slots:
+    - 27
+    item:
+      material: nexo:hmcc_icon_mano
+      name: <#FFD36B>▶ Mano
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_hands'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_balloons:
+    slots:
+    - 36
+    item:
+      material: nexo:hmcc_icon_globo
+      name: <white>Globos
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_balloons'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  cemetery_witch_broom:
+    slots:
+    - 1
+    item:
+      material: hmccosmetics:cemetery_witch_broom
+      lore:
+      - '<#9EA3AE>Colección: <white>Bruja del Cementerio'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_cemetery_witch_broom%%HMCCosmetics_equipped_cemetery_witch_broom%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: cemetery_witch_broom
+  chained_monstruosity_sword:
+    slots:
+    - 2
+    item:
+      material: hmccosmetics:chained_monstruosity_sword
+      lore:
+      - '<#9EA3AE>Colección: <white>Monstruosidad Encadenada'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_chained_monstruosity_sword%%HMCCosmetics_equipped_chained_monstruosity_sword%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: chained_monstruosity_sword
+  crow_lord_staff:
+    slots:
+    - 3
+    item:
+      material: hmccosmetics:crow_lord_staff
+      lore:
+      - '<#9EA3AE>Colección: <white>Señor de los Cuervos'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_crow_lord_staff%%HMCCosmetics_equipped_crow_lord_staff%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: crow_lord_staff
+  noir_elegance_staff:
+    slots:
+    - 4
+    item:
+      material: hmccosmetics:noir_elegance_staff
+      lore:
+      - '<#9EA3AE>Colección: <white>Elegancia Noir'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_noir_elegance_staff%%HMCCosmetics_equipped_noir_elegance_staff%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: noir_elegance_staff
+  archmage_staff:
+    slots:
+    - 5
+    item:
+      material: hmccosmetics:archmage_staff
+      lore:
+      - '<#9EA3AE>Colección: <white>Archimago'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_archmage_staff%%HMCCosmetics_equipped_archmage_staff%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: archmage_staff
+  ritualistic_staff:
+    slots:
+    - 6
+    item:
+      material: hmccosmetics:ritualistic_staff
+      lore:
+      - '<#9EA3AE>Colección: <white>Ritualista'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_ritualistic_staff%%HMCCosmetics_equipped_ritualistic_staff%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: ritualistic_staff
+  skeleton_control_mace:
+    slots:
+    - 7
+    item:
+      material: hmccosmetics:skeleton_control_mace
+      lore:
+      - '<#9EA3AE>Colección: <white>Amo de los Esqueletos'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_skeleton_control_mace%%HMCCosmetics_equipped_skeleton_control_mace%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: skeleton_control_mace
+  spike_lord_sword:
+    slots:
+    - 8
+    item:
+      material: hmccosmetics:spike_lord_sword
+      lore:
+      - '<#9EA3AE>Colección: <white>Señor de las Púas'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_spike_lord_sword%%HMCCosmetics_equipped_spike_lord_sword%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: spike_lord_sword
+  witch_broom:
+    slots:
+    - 10
+    item:
+      material: hmccosmetics:witch_broom
+      lore:
+      - '<#9EA3AE>Colección: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_witch_broom%%HMCCosmetics_equipped_witch_broom%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: witch_broom
+  sun_wizard_staff:
+    slots:
+    - 11
+    item:
+      material: hmccosmetics:sun_wizard_staff
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago Solar'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_sun_wizard_staff%%HMCCosmetics_equipped_sun_wizard_staff%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: sun_wizard_staff
+  moon_wizard_staff:
+    slots:
+    - 12
+    item:
+      material: hmccosmetics:moon_wizard_staff
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago Lunar'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_moon_wizard_staff%%HMCCosmetics_equipped_moon_wizard_staff%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3000 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: moon_wizard_staff

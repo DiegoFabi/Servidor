@@ -1,0 +1,48 @@
+menu-title: '&fϿϩ'
+menu-rows: 2
+
+quest-slots:
+  slots: '1...7'
+
+menu:
+  '9':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {portal}'
+      - '[menu](page ! 1) {previous-page}'
+  '10':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {portal}'
+      - '[menu](page ! 1) {previous-page}'
+  '11':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e« Página anterior'
+      lore:
+        - ''
+        - '&7&o(( Clic para ir a la página anterior ))'
+    actions:
+      - '[menu](page = 1) {portal}'
+      - '[menu](page ! 1) {previous-page}'
+  '17':
+    item:
+      material: 'gold_nugget'
+      customModelData: 500
+      name: '&e¿Cuándo hay misiones nuevas?'
+      lore:
+        - '&7Nuevas misiones diarias en &e%daily_time_left%...'
+    actions: []

@@ -1,0 +1,78 @@
+# Medieval Jobs: iconos de oficio usados en el menu de EcoJobs (nexo:<id>)
+medival_jobs_alchemist:
+  itemname: <white>Alchemist Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/alchemist.png
+    custom_model_data: 964120
+medival_jobs_blacksmith:
+  itemname: <white>Blacksmith Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/blacksmith.png
+    custom_model_data: 964121
+medival_jobs_builder:
+  itemname: <white>Builder Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/builder.png
+    custom_model_data: 964122
+medival_jobs_digger:
+  itemname: <white>Digger Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/digger.png
+    custom_model_data: 964123
+medival_jobs_enchanter:
+  itemname: <white>Enchanter Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/enchanter.png
+    custom_model_data: 964124
+medival_jobs_farmer:
+  itemname: <white>Farmer Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/farmer.png
+    custom_model_data: 964125
+medival_jobs_fisherman:
+  itemname: <white>Fisherman Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/fisherman.png
+    custom_model_data: 964126
+medival_jobs_hunter:
+  itemname: <white>Hunter Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/hunter.png
+    custom_model_data: 964127
+medival_jobs_miner:
+  itemname: <white>Miner Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/miner.png
+    custom_model_data: 964128
+medival_jobs_wood_cutter:
+  itemname: <white>Wood Cutter Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/wood_cutter.png
+    custom_model_data: 964129
+medival_jobs_empty:
+  itemname: <white>Empty Icon
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: medival_jobs:icons/empty.png
+    custom_model_data: 964130

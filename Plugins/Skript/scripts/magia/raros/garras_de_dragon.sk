@@ -1,0 +1,83 @@
+# ============================================================
+#  Garras de Dragón  [RARO]
+#  Comando: /clawstrike
+#  Cinco zarpazos frente al jugador y onda final.
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+    perm: admin.particles
+    nopermiso: &cNo tienes permiso para usar este comando.
+    cd: 2 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+    radio-garra: 3.5
+    dano-garra: 4
+
+# ------------------------------------------------------------
+#  Claw Strike (garras del dragon)
+# ------------------------------------------------------------
+command /clawstrike:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        fxAnuncio({_p}, "⚔", "Garras de Dragón", "El dragón despierta", "#B07BFF", "#6A4BD6", "Raro")
+        play sound "entity.player.attack.sweep" at {_p}
+        wait 3 ticks
+        play sound "entity.ravager.roar" at {_p}
+        wait 5 ticks
+        play sound "entity.wither.shoot" at {_p}
+
+        # 5 garras; cada una sigue al jugador y mira hacia donde mira
+        loop 5 times:
+            if {_p} is not online:
+                stop
+            set {_n} to loop-number
+            set {_loc} to location of {_p}
+            set {_yaw} to yaw of {_p}
+            set {_attack} to {_loc} offset by vector(-1.5 * sin({_yaw}), 1.2, 1.5 * cos({_yaw}))
+
+            make 4 of sweep_attack at {_attack} with offset vector(0.3, 0.2, 0.3) with extra 0 {@force}
+
+            # Patron en cruz (2 lineas de 3 puntos)
+            set {_angle} to {_n} * 72
+            loop 3 times:
+                set {_d} to (loop-number-2) * 0.4
+                set {_c1} to {_attack} offset by vector({_d} * cos({_angle}), 0, {_d} * sin({_angle}))
+                set {_c2} to {_attack} offset by vector({_d} * cos({_angle} + 90), 0, {_d} * sin({_angle} + 90))
+                make 1 of sweep_attack at {_c1} with extra 0 {@force}
+                make 1 of sweep_attack at {_c2} with extra 0 {@force}
+                make 1 of damage_indicator at {_c1} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+                make 1 of large_smoke at {_c2} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+
+            # Dano: una vez por garra a cada entidad viva cercana
+            loop all monsters in radius {@radio-garra} around {_attack}:
+                if loop-entity is not {_p}:
+                    damage loop-entity by {@dano-garra}
+                    push loop-entity away from {_p} with force 0.8
+                    push loop-entity upwards with force 0.3
+
+            play sound "entity.player.attack.crit" at {_attack}
+            wait 8 ticks
+
+        wait 5 ticks
+        if {_p} is not online:
+            stop
+        play sound "entity.ender_dragon.growl" at {_p}
+
+        # Onda expansiva final alrededor del jugador
+        set {_loc} to location of {_p}
+        set {_ring::*} to fxRing({_loc}, 2, 8, 1)
+        make 2 of sweep_attack at {_ring::*} with offset vector(0.2, 0.2, 0.2) with extra 0 {@force}
+        make 1 of damage_indicator at {_ring::*} with offset vector(0.2, 0.2, 0.2) with extra 0 {@force}
+        make 1 of large_smoke at {_ring::*} with offset vector(0.2, 0.2, 0.2) with extra 0 {@force}
+        loop all monsters in radius 4 around {_loc}:
+            if loop-entity is not {_p}:
+                damage loop-entity by {@dano-garra}
+                push loop-entity away from {_loc} with force 1.2
+                push loop-entity upwards with force 0.3

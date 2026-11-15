@@ -1,0 +1,52 @@
+# ============================================================
+#  Curación en Espiral  [COMÚN]
+#  Comando: /spiralheart
+#  Espiral de corazones alrededor del jugador.
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+    perm: admin.particles
+    nopermiso: &cNo tienes permiso para usar este comando.
+    cd: 2 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+
+# ------------------------------------------------------------
+#  Spiral Heart
+# ------------------------------------------------------------
+command /spiralheart:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        fxAnuncio({_p}, "❤", "Curación en Espiral", "La vida vuelve a ti", "#FF8FA8", "#F0607C", "Común")
+        heal {_p} by 3
+        loop all players in radius 5 around {_p}:
+            if loop-player is not {_p}:
+                heal loop-player by 1
+                make 3 of heart at location of loop-player offset by vector(0, 2, 0) with offset vector(0.3, 0.2, 0.3) with extra 0 {@force}
+        fxResultado({_p}, "#FF8FA8", "Curación", "Recuperas 3 corazones y curas a los aliados cercanos.")
+        play sound "block.beacon.activate" at {_p}
+        wait 2 ticks
+        play sound "entity.evoker.cast_spell" at {_p}
+        wait 2 ticks
+        play sound "block.enchantment_table.use" at {_p}
+
+        # 2 vueltas de espiral, 65 pasos por vuelta, 1 paso por tick
+        loop 2 times:
+            set {_angle} to 0
+            loop 65 times:
+                if {_p} is not online:
+                    stop
+                set {_base} to location of {_p}
+                set {_pos} to {_base} offset by vector(1.2 * cos({_angle}), 0.045 * (loop-number-2), 1.2 * sin({_angle}))
+                make 1 of heart at {_pos} with offset vector(0.05, 0.05, 0.05) with extra 0 {@force}
+                make 2 of happy_villager at {_pos} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+                add 20 to {_angle}
+                wait 1 tick
+            wait 2 ticks

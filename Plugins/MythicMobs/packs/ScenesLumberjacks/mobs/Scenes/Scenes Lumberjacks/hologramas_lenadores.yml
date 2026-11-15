@@ -1,0 +1,255 @@
+# ============================================================
+#  hologramas_lenadores.yml - Hologramas de los NPCs del pack ScenesLumberjacks
+#  Armor stands invisibles tipo marcador (sin hitbox) que solo
+#  muestran su nombre; se borran solos y no se guardan al reiniciar.
+#  Cada rol tiene su paleta e icono propios.
+#  Nombres:  holo_<rol>_nombre  |  holo_<rol>_f<frase>_l<linea>
+#  Los usa: dialogos_lenadores.yml
+# ============================================================
+
+# ---------- ♣ Leñador (scene_lumberjack_log, scene_lumberjack_walk, scene_lumberjack_walk2, scene_lumberjack_walk3, scene_lumberjack_saw, scene_lumberjack_cut, scene_lumberjack_interactive) | paleta #B5E08A -> #5E8C31 ----------
+holo_lenador_nombre:
+  Type: ARMOR_STAND
+  Display: '<#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <#5E8C31>♣'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>Un buen hachazo vale más que diez'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>flojos.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>Siempre planto un árbol por cada uno'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>que corto.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>El roble cuesta, pero da la mejor'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>leña.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>Cuidado, que este se cae para tu'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>lado.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>El bosque huele distinto después de'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>la lluvia.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>Al final del día lo único que quiero'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_lenador_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#EAF6DE>es una sopa caliente.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn

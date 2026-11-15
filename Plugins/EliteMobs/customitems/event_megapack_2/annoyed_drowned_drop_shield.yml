@@ -1,0 +1,10 @@
+enchantments: []
+isEnabled: true
+material: SHIELD
+name: '&dCowards Shield'
+lore:
+- '&aSurely you aren''t afraid...'
+potionEffects:
+- SLOW_FALLING,0,self,onHit
+- INVISIBILITY,1,self,onHit
+itemType: UNIQUE

@@ -1,0 +1,16 @@
+furnace_silver_ingot:
+  result:
+    nexo_item: pack1_silver_ingot
+  input:
+    nexo_item: pack1_raw_silver
+  cookingTime: 200
+  experience: 1
+furnace_lithium_ingot:
+  result:
+    nexo_item: pack1_lithium_ingot
+  input:
+    nexo_item: pack1_raw_lithium
+  cookingTime: 200
+  experience: 1
+
+#97d14ee02b2f1a087d9fc5032082c677

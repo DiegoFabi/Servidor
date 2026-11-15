@@ -1,0 +1,552 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "along:font/midas_menu.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u32f0"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/chat/coin.png",
+            "ascent": 10,
+            "height": 13,
+            "chars": [
+                "\u3200"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/chat/prefix.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u3201"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/buy.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3202"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/buy_stacks.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3203"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/main.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3204"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/space_split.png",
+            "ascent": -32768,
+            "height": -6,
+            "chars": [
+                "\u322e"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/sell.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3205"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/sell_stacks.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3206"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/blocks.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3207"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/dyes.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3208"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/foods.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u3209"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/minerals_ores.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u320a"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/miscellaneous.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u320b"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/mob_drops.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u320c"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/redstone.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u320d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/spawner.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u320e"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/categories/farming.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u321e"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/balance.png",
+            "ascent": 7,
+            "height": 8,
+            "chars": [
+                "\u320f"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/buy.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u3210"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/cancel.png",
+            "ascent": 7,
+            "height": 8,
+            "chars": [
+                "\u3211"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/coin.png",
+            "ascent": 11,
+            "height": 16,
+            "chars": [
+                "\u3212"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/confirm.png",
+            "ascent": 7,
+            "height": 8,
+            "chars": [
+                "\u3213"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/equal.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u3214"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/minus.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u3215"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/mouse.png",
+            "ascent": 9,
+            "height": 12,
+            "chars": [
+                "\u3216"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/negative_equal.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u3217"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/plus.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u3218"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/price.png",
+            "ascent": 7,
+            "height": 8,
+            "chars": [
+                "\u3219"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/icon/sell.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u321a"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/misc/empty.png",
+            "ascent": -32768,
+            "height": -10,
+            "chars": [
+                "\u321b"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/misc/air.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u321c"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/blocks.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u321d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/dyes.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u321e"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/farming.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u321f"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/minerals.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3220"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/miscellaneous.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3221"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/mob_drops.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3222"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/redstone.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3223"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/spawner.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3224"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/blocks.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3225"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/dyes.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3226"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/farming.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3227"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/foods.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3228"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/minerals.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u3229"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/miscellaneous.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u322a"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/mob_drops.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u322b"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/redstone.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u322c"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/title/category/spawner.png",
+            "ascent": 8,
+            "height": 10,
+            "chars": [
+                "\u322d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/mundo.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u323d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/fin.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u324d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/inframundo.png",
+            "ascent": 21,
+            "height": 256,
+            "chars": [
+                "\u325d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/wallet_1.png",
+            "ascent": 99,
+            "height": 256,
+            "chars": [
+                "\u326d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_portal.png",
+            "ascent": 47,
+            "height": 170,
+            "chars": [
+                "\u03e8"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_daily_quests.png",
+            "ascent": 47,
+            "height": 170,
+            "chars": [
+                "\u03e9"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_week.png",
+            "ascent": 47,
+            "height": 170,
+            "chars": [
+                "\u03ea"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_quest_overview.png",
+            "ascent": 47,
+            "height": 170,
+            "chars": [
+                "\u03eb"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_rewards.png",
+            "ascent": 47,
+            "height": 170,
+            "chars": [
+                "\u03ec"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_progress_bar.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u03ed"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "along:font/gui/battlepass_bp.png",
+            "ascent": 8,
+            "height": 9,
+            "chars": [
+                "\u03ee"
+            ]
+        },
+        {
+            "type": "space",
+            "advances": {
+                "\u03ff": -32,
+                "\u03fc": -3,
+                "\u03fa": -1
+            }
+        }
+    ]
+}

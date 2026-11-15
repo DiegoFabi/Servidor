@@ -1,0 +1,176 @@
+command:
+  must_be_player: '{prefix} &cYou must be a player to use this command!'
+  permission_denied: '{prefix} &cYou don''t have permission to do that!'
+  in_cooldown: '{prefix} &cPlease wait a moment before trying again.'
+  wrong_usage: '{prefix} &fNeed help? Use &e/nclaim <help/?> &fto see all available
+    commands.'
+  enter_a_valid_number: '{prefix} &cPlease enter a valid number.'
+  enter_a_player: '{prefix} &cPlease enter a player name.'
+  player_data_not_found: '{prefix} &cPlayer data not found. &7Please rejoin and try
+    again.'
+  invalid_material: '{prefix} &c{material} &fis not a valid material.'
+  invalid_block_type: '{prefix} &c{block} &fis not a valid block type.'
+  not_in_claim: '{prefix} &cYou are not in any claim.'
+  expiration_extended: '{prefix} &fClaim expiration extended by &e{d} days&f, &e{h}
+    hours&f, &e{m} minutes for &e{price}&f.'
+  level:
+    info: '{prefix} &fThis claim''s total value is &e{value} &7(across &e{chunks}
+      &7chunks)'
+  balance:
+    current: '{prefix} &fYou have &e${balance} &fin your balance.'
+    not_enough: '{prefix} &cYou don''t have enough balance to do that.'
+  player:
+    not_found: '{prefix} &c{target} not found.'
+    cant_add_self: '{prefix} &cYou cannot add yourself.'
+  reload:
+    success: '{prefix} &aConfiguration successfully reloaded.'
+    failed: '{prefix} &cReload failed. Please check the console.'
+  set:
+    block_value_set: '{prefix} &fThe value of &e{block} &fhas been set to &e{value}&f.'
+    target_balance_set: '{prefix} &fYour balance has been set to &e${balance} &fby
+      an admin.'
+    player_balance_set: '{prefix} &e{target}''s &fbalance has been set to &e${amount}&f.'
+  add:
+    target_added: '{prefix} &e${amount} &fhas been added to your balance. &7(Total:
+      &e${balance}&7)'
+    player_added: '{prefix} &e${amount} &fhas been added to &e{target}''s &fbalance.'
+    world_already_in_blacklist: '{prefix} &cWorld &e{world} &cis already in the blacklist.'
+    world_added_to_blacklist: '{prefix} &fWorld &e{world} &fhas been added to the
+      blacklist.'
+    region_already_in_blacklist: '{prefix} &cRegion &e{region} &cis already in the
+      blacklist.'
+    region_added_to_blacklist: '{prefix} &fRegion &e{region} &fhas been added to the
+      blacklist.'
+    expiration_extended: '{prefix} &fClaim expiration extended by &e{d} days&f, &e{h}
+      hours&f, &e{m} minutes&f.'
+    block_value_added: '{prefix} &e{block} &fvalue has been set to &e{value}&f.'
+    block_already_exists: '{prefix} &c{block} &calready exists in the value list.'
+  remove:
+    target_removed: '{prefix} &e${amount} &fhas been removed from your balance. &7(Total:
+      &e${balance}&7)'
+    player_removed: '{prefix} &e${amount} &fhas been removed from &e{target}''s &fbalance.'
+    not_in_blacklist: '{prefix} &c{world} &fis not in the blacklist.'
+    world_removed_from_blacklist: '{prefix} &fWorld &e{world} &fhas been removed from
+      the blacklist.'
+    region_removed_from_blacklist: '{prefix} &fRegion &e{region} &fhas been removed
+      from the blacklist.'
+    expiration_subtracted: '{prefix} &fClaim expiration reduced by &e{d} days&f, &e{h}
+      hours&f, &e{m} minutes&f.'
+    block_not_found: '{prefix} &c{block} &cwas not found in block values.'
+    block_value_removed: '{prefix} &e{block} &fhas been removed from block values.'
+  change:
+    invalid_lang: '{prefix} &cPlease choose a valid language &7(e.g., ''en-US'' or
+      ''tr-TR'')'
+    lang_changed: '{prefix} &fLanguage has been changed to &e{lang}&f.'
+    invalid_material: '{prefix} &cInvalid material: {material}'
+    invalid_value: '{prefix} &cInvalid value! Please enter a positive number.'
+    blockvalue_updated: '{prefix} &aBlock value updated: &e{material} &a{old_value}
+      -> {new_value}'
+    blockvalue_added: '{prefix} &aNew block value added: &e{material} &a= {value}'
+    blockvalue_not_changed: '{prefix} &aThe block value has not changed because the
+      old value and the new value are equal.'
+    setting_cannot_be_changed: '{prefix} &cThis setting cannot be changed.'
+  migrate:
+    database_disabled: '{prefix} &cDatabase connection is disabled in config.'
+    completed: '{prefix} &aMigration successfully completed.'
+    database_not_connected: '{prefix} &cDatabase not connected, please make sure your
+      database connection is correct.'
+    backup_created: '{prefix} &aFiles backup created successfully.'
+    failed: '{prefix} &cMigration failed. Please check the console.'
+
+claim:
+  cooldown: '{prefix} &cYou must wait &e{time} &cbefore claiming again.'
+  too_close_to_other_claim: '{prefix} &cYou cannot claim this chunk! You are too close
+    to another player''s claim.'
+  no_owner: Owner not found. # Aka: Unclaimed
+  owner: '&e{owner}'
+  max_reached: '{prefix} &cYou have reached the maximum claim limit.'
+  not_found: '{prefix} &cYou don''t own any claims and aren''t added to any claims.'
+  in_blacklisted_region_or_world: '{prefix} &cYou can''t do that in a blacklisted
+    world or region.'
+  not_yours: '{prefix} &cThis claim doesn''t belong to you.'
+  buy_cancelled: '{prefix} &cClaim purchase cancelled.'
+  already_claimed: '{prefix} &cThis chunk is already claimed!'
+  received: '{prefix} &aYou have successfully received the claim.'
+  removed: '{prefix} &fThe claim in this chunk has been removed.'
+  expired: '{prefix} &fClaim has expired and was removed &7(&e{x}&7, &e{z}&7).'
+  setting_change_cancelled: '&cSetting change was cancelled!'
+  pvp_not_allowed: '{prefix} &cPvP is not allowed in this claim.'
+  transferred: '&aClaim successfully transferred to &e{player}'
+  name_cleared: '{prefix} &aClaim name cleared. Slug reverted to: &e{slug}'
+  name_too_long: '{prefix} &cName is too long! Maximum {max} characters allowed. (Current:
+    {current})'
+  name_changed_same_slug: '{prefix} &aClaim name updated. Slug remains: &e{slug}'
+  name_changed_new_slug: '{prefix} &aClaim name updated. Slug changed from &7{old_slug}
+    &ato &e{new_slug}'
+  sell:
+    started: '{prefix} &aYour claim &e{display_slug} &ahas been listed for sale for
+      &e${price}&a.'
+    bought_buyer: '{prefix} &aYou''ve purchased &e{display_slug} &afrom &e{player}
+      &afor &e${price}&a.'
+    bought_seller: '{prefix} &e{player} &ahas purchased your claim &e{display_slug}
+      &afor &e${price}&a.'
+  block:
+    purchased: '{prefix} &aClaim block successfully purchased: &e{block} &7(&e{price}$&7)'
+    changed: '{prefix} &aClaim block changed: &c{old_block} &7-> &2{new_block}'
+  level:
+    calculating_started: '{prefix} &aYour claim level is being calculated, please
+      wait.'
+    calculating_in_progress: '{prefix} &cAnother player is calculating the claim level,
+      please wait a moment'
+    calculating_in_queue: '{prefix} &fThere are a total of &7{count} &fpeople in the
+      claim level calculation.'
+    calculating_in_queue_position: '{prefix} &fYour turn is &7{position}&f.'
+    queue_is_empty: '{prefix} &fQueue is empty.'
+    your_already_in_queue: '{prefix} &fYou have already in queue.'
+  time:
+    no_time_selected: '{prefix} &cThere is no time to increase.'
+  land:
+    already_own_chunk: '{prefix} &cYou already own this chunk!'
+    already_own_land: '{prefix} &cYou already own this land!'
+    not_adjacent: '{prefix} &cYou can only expand your claim to adjacent chunks!'
+    expanded: '{prefix} &aNew land successfully added to your claim.'
+    buy_cancelled: '{prefix} &cLand purchase cancelled.'
+    unclaimed: '{prefix} &aLand successfully deleted.'
+  coop:
+    limit_reached: '{prefix} &cYou can only have up to &e{0} &cco-op players!'
+    already_added: '{prefix} &c{coop} is already in the co-op list.'
+    added: '{prefix} &e{coop} &fhas been added to your claim.'
+    removed: '{prefix} &e{coop} &fhas been removed from the co-op list.'
+    kicked: '{prefix} &fYou were removed from &e{owner}''s &fclaim.'
+    joined: '{prefix} &fYou have been added to &e{owner}''s &fclaim.'
+    not_in_list: '{prefix} &c{0} &fis not in the co-op list.'
+    add_cancelled: '&cAdding co-op player was cancelled!'
+    remove_cancelled: '&cRemoving co-op player was cancelled!'
+    permission_toggle_cancelled: '&cChanging co-op permission was cancelled!'
+  teleport:
+    failed: '{prefix} &cBlocks above the claim block prevents you from teleporting.'
+    success: '{prefix} &aTeleported to claim.'
+  move:
+    outside_of_chunk: '{prefix} &cYou can''t move the claim block outside of its chunk.'
+    success: '{prefix} &aClaim block was moved successfully.'
+
+move:
+  unclaimed_chunk: ACTION_BAR=&7Unclaimed
+  claimed_chunk: ACTION_BAR=&e{display_name} &7- &e{owner} &7- {pvp_status}
+  pvp_enabled: '&cPvP'
+  pvp_disabled: '&aPvP'
+
+hologram:
+  title: '&6{display_name}'
+  title_sale_suffix: '&7[&a$&r{price}&7]' # Example: MyHome [$500]
+  price_format: '&e{price}'
+  owner: '&fOwner: &e{owner}'
+  time_left:
+    text: '&fTime Left: &e{time_left}'
+    d: d
+    h: h
+    m: m
+    s: s
+  # d,h,m,s are known as time symbols in the hologram. e.g. "23d, 12h, 50m, 43s"
+  coop_count: '&fCo-op Players: &e{coop_count}'
+  total_size: '&fTotal Size: &e{total_size} &7chunks'
+  edit: '&eRight click to edit'
+
+# DO NOT CHANGE!
+lang_version: 3.4.1

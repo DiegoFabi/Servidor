@@ -1,0 +1,102 @@
+pack1_pin:
+  texture: pack1:font/pin.png
+  height: 11
+  ascent: 9
+  char: ꐥ
+pack1_bell:
+  texture: pack1:font/bell.png
+  height: 11
+  ascent: 9
+  char: ꐦ
+pack1_stats:
+  texture: pack1:font/stats.png
+  height: 11
+  ascent: 9
+  char: ꐓ
+pack1_gift:
+  texture: pack1:font/gift.png
+  height: 11
+  ascent: 9
+  char: ꐔ
+pack1_coin:
+  texture: pack1:font/coin.png
+  height: 11
+  ascent: 9
+  char: ꐕ
+pack1_lock:
+  texture: pack1:font/lock.png
+  height: 11
+  ascent: 9
+  char: ꐖ
+pack1_danger:
+  texture: pack1:font/danger.png
+  height: 11
+  ascent: 9
+  char: ꐗ
+pack1_warning:
+  texture: pack1:font/warning.png
+  height: 11
+  ascent: 9
+  char: ꐧ
+pack1_up:
+  texture: pack1:font/up.png
+  height: 11
+  ascent: 9
+  char: ꐙ
+pack1_down:
+  texture: pack1:font/down.png
+  height: 11
+  ascent: 9
+  char: ꐚ
+pack1_attack:
+  texture: pack1:font/attack.png
+  height: 11
+  ascent: 9
+  char: ꐛ
+pack1_magic:
+  texture: pack1:font/magic.png
+  height: 11
+  ascent: 9
+  char: ꐜ
+pack1_heart:
+  texture: pack1:font/heart.png
+  height: 11
+  ascent: 9
+  char: ꐝ
+pack1_mana:
+  texture: pack1:font/mana.png
+  height: 11
+  ascent: 9
+  char: ꐞ
+pack1_armor:
+  texture: pack1:font/armor.png
+  height: 11
+  ascent: 9
+  char: ꐨ
+pack1_critical:
+  texture: pack1:font/critical.png
+  height: 11
+  ascent: 9
+  char: ꐠ
+pack1_accuracy:
+  texture: pack1:font/accuracy.png
+  height: 11
+  ascent: 9
+  char: ꐡ
+pack1_thunder:
+  texture: pack1:font/thunder.png
+  height: 11
+  ascent: 9
+  char: ꐢ
+pack1_fire:
+  texture: pack1:font/fire.png
+  height: 11
+  ascent: 9
+  char: ꐣ
+pack1_water:
+  texture: pack1:font/water.png
+  height: 11
+  ascent: 9
+  char: ꐤ
+
+# 97d14ee02b2f1a087d9fc5032082c677

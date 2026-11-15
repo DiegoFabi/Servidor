@@ -1,0 +1,47 @@
+woodfx:
+  Skills:
+  - sound{sound=block.ancient_debris.break;volume=2;audience=nearby;soundcategory=BLOCKS} @self
+  - effect:particle{particle=Block;m=spruce_log} @modelpart{m=scene_lumberjack;p=blockfx}
+woodfx1:
+  Skills:
+  - sound{sound=entity.zombie.break_wooden_door;volume=0.1;audience=nearby;soundcategory=BLOCKS} @self
+  - sound{sound=block.ancient_debris.break;volume=2;audience=nearby;soundcategory=BLOCKS} @self
+  - effect:particle{particle=Block;m=spruce_log} @modelpart{m=scene_lumberjack;p=blockfx}
+  - sound{sound=entity.sniffer.drop_seed;volume=1;audience=nearby;delay=65;soundcategory=BLOCKS} @self
+  - sound{sound=entity.sniffer.drop_seed;volume=1;audience=nearby;delay=73;soundcategory=BLOCKS} @self
+woodblockfx:
+  Skills:
+  - sound{sound=block.ancient_debris.break;volume=1;audience=nearby;soundcategory=BLOCKS} @self
+
+wooddrinkfx:
+  Skills:
+  - sound{sound=entity.generic.drink;volume=1;audience=nearby;soundcategory=BLOCKS} @self 
+  - sound{sound=entity.wandering_trader.drink_potion;volume=1;audience=nearby;soundcategory=BLOCKS;delay=30} @self 
+
+woodswingfx:
+  Skills:
+  - sound{sound=entity.player.attack.sweep;radius=50;audience=nearby;volume=0.2;soundcategory=BLOCKS} @self
+
+woodblockparticles:
+  Skills:
+  - effect:particle{particle=Block;m=spruce_log} @modelpart{m=scene_lumberjack;p=blockfx}
+
+woodplace:
+  Skills: 
+  - sound{sound=block.bamboo_wood.place;radius=50;audience=nearby;volume=5;soundcategory=BLOCKS} @self
+
+scenessaw:
+  Skills: 
+  - sound{sound=modelengine:scenes_saw;radius=20;audience=nearby;volume=1;soundcategory=BLOCKS} @self
+  - effect:particle{particle=Block;m=spruce_log;repeat=10;repeatinterval=5} @modelpart{m=scene_lumberjack_saw;p=saw}
+
+interact_lumberjack:
+  cooldown: 9
+  Skills:
+  - state{s=idle;r=true} @self
+  - state{s=interact} @self
+  - state{s=interact;r=true;delay=97} @self
+  - state{s=idle;delay=97} @self
+  - sound{sound=modelengine:lumberjack_interact;radius=20;audience=nearby;volume=2;soundcategory=BLOCKS} @self
+  
+#90017fbb57e5d4eae99a5fa4d63cbefa

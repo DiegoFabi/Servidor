@@ -1,0 +1,999 @@
+# ============================================================
+#  hologramas_npcpack.yml - Hologramas de los NPCs del pack NPCPack
+#  Armor stands invisibles tipo marcador (sin hitbox) que solo
+#  muestran su nombre; se borran solos y no se guardan al reiniciar.
+#  Cada rol tiene su paleta e icono propios.
+#  Nombres:  holo_<rol>_nombre  |  holo_<rol>_f<frase>_l<linea>
+#  Los usa: dialogos_npcpack.yml
+# ============================================================
+
+# ---------- ⚒ Herrero (npc_dwarf, khansnpcs_bromnar_the_blacksmith) | paleta #FFBE7A -> #E8590C ----------
+holo_herrero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#E8590C>⚒ <gradient:#FFBE7A:#E8590C><bold>Herrero</bold></gradient> <#E8590C>⚒'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>El metal hay que trabajarlo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>caliente. Si se enfría, se resiste.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>Tráeme buen hierro y te haré algo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>que dure años.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>Este martillo era de mi padre. Y'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>antes, de su padre.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>El fuego no perdona descuidos, ni a'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>los maestros.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>Una herradura bien hecha y el'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>caballo te lo agradece.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>Si suena a campana, está bien'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_herrero_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFECD9>templado.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ✾ Granjero (npc_farmer) | paleta #F5E69A -> #C9A227 ----------
+holo_granjero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#C9A227>✾ <gradient:#F5E69A:#C9A227><bold>Granjero</bold></gradient> <#C9A227>✾'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>Este año la cosecha viene buena, si'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>no llueve de más.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>Las gallinas se escaparon otra vez.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>Ya ni me sorprende.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>Trigo, zanahorias y paciencia. Así'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>se vive en el campo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>Madrugar no es un sacrificio cuando'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>amas lo que haces.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>Si tienes huesos, tráemelos. El'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>abono hace milagros.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>La tierra devuelve lo que le das, ni'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_granjero_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#FCF8E2>más ni menos.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ☯ Chamán (npc_mageshaman) | paleta #DDA8FF -> #8E44AD ----------
+holo_chaman_nombre:
+  Type: ARMOR_STAND
+  Display: '<#8E44AD>☯ <gradient:#DDA8FF:#8E44AD><bold>Chamán</bold></gradient> <#8E44AD>☯'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Los espíritus están tranquilos hoy.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Eso es buena señal.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Una herida del cuerpo sana rápido.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Las del alma tardan más.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Siento que llevas mucho camino'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>encima, viajero.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Las hierbas hablan, solo hay que'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>saber escucharlas.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>Descansa un momento. La prisa no'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>cura nada.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>La luna llena trae energía. Y'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_chaman_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5E6FF>también insomnio.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ✪ Guardián (npc_kingdom_guardian) | paleta #A9DCFF -> #1F6FB2 ----------
+holo_guardian_nombre:
+  Type: ARMOR_STAND
+  Display: '<#1F6FB2>✪ <gradient:#A9DCFF:#1F6FB2><bold>Guardián</bold></gradient> <#1F6FB2>✪'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>Estas tierras están bajo la'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>protección del reino.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>He visto muchas batallas. Prefiero'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>los días tranquilos.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>Mientras yo esté aquí, nadie cruzará'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>sin permiso.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>El honor no se hereda, se gana cada'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>día.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>Respeta las leyes del reino y serás'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>bienvenido.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>Mi escudo tiene más marcas que años'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_guardian_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#E6F5FF>tengo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn

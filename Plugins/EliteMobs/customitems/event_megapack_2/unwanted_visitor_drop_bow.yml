@@ -1,0 +1,12 @@
+isEnabled: true
+material: BOW
+name: '&1Frost Bow'
+lore:
+- "&9Makes you wanna chill"
+- "&9and snipe from afar."
+enchantments:
+- "ARROW_DAMAGE,4"
+- "ARROW_INFINITE,1"
+- "DURABILITY,1"
+potionEffects: []
+itemType: UNIQUE

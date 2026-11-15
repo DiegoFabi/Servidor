@@ -1,0 +1,171 @@
+silver_sword:
+  result:
+    nexo_item: pack1_silver_sword
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _A_
+    - _A_
+    - _B_
+silver_pickaxe:
+  result:
+    nexo_item: pack1_silver_pickaxe
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - AAA
+    - _B_
+    - _B_
+silver_axe1:
+  result:
+    nexo_item: pack1_silver_axe
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - AA_
+    - AB_
+    - _B_
+silver_axe2:
+  result:
+    nexo_item: pack1_silver_axe
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _AA
+    - _BA
+    - _B_
+silver_shovel:
+  result:
+    nexo_item: pack1_silver_shovel
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _A_
+    - _B_
+    - _B_
+silver_hoe1:
+  result:
+    nexo_item: pack1_silver_hoe
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - AA_
+    - _B_
+    - _B_
+silver_hoe2:
+  result:
+    nexo_item: pack1_silver_hoe
+  ingredients:
+    A:
+      nexo_item: pack1_silver_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _AA
+    - _B_
+    - _B_
+
+lithium_sword:
+  result:
+    nexo_item: pack1_lithium_sword
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _A_
+    - _A_
+    - _B_
+lithium_pickaxe:
+  result:
+    nexo_item: pack1_lithium_pickaxe
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - AAA
+    - _B_
+    - _B_
+lithium_axe1:
+  result:
+    nexo_item: pack1_lithium_axe
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - AA_
+    - AB_
+    - _B_
+lithium_axe2:
+  result:
+    nexo_item: pack1_lithium_axe
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _AA
+    - _BA
+    - _B_
+lithium_shovel:
+  result:
+    nexo_item: pack1_lithium_shovel
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _A_
+    - _B_
+    - _B_
+lithium_hoe1:
+  result:
+    nexo_item: pack1_lithium_hoe
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - AA_
+    - _B_
+    - _B_
+lithium_hoe2:
+  result:
+    nexo_item: pack1_lithium_hoe
+  ingredients:
+    A:
+      nexo_item: pack1_lithium_ingot
+    B:
+      minecraft_type: STICK
+  shape:
+    - _AA
+    - _B_
+    - _B_
+
+#97d14ee02b2f1a087d9fc5032082c677

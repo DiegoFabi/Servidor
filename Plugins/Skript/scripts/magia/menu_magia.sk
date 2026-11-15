@@ -1,0 +1,33 @@
+# ============================================================
+#  menu_magia.sk - Lista de poderes de magia por categoría
+#  Comando: /magia  (alias /particles)   Permiso: admin.particles
+#  Estructura:
+#    magia/nucleo_magia.sk  -> utilidades compartidas (fxRing, fxLinea,
+#                              protección de caída)
+#    magia/comunes/   magia/raros/   magia/avanzados/
+# ============================================================
+
+command /magia:
+    aliases: /particles
+    permission: admin.particles
+    trigger:
+        send formatted "<dark_gray><strikethrough>                                        </strikethrough>"
+        send formatted " <gradient:#B45CFF:#7FE7FF><bold>✦ Poderes de Magia</bold></gradient>"
+        send formatted ""
+        send formatted " <#7FFF9E>◆ Comunes"
+        send formatted "  <click:run_command:'/spiralheart'><#C9CDD6>❤ Curación en Espiral <dark_gray>» <#FFD36B>/spiralheart</click>"
+        send formatted "  <click:run_command:'/watermisil'><#C9CDD6>☂ Misil de Agua <dark_gray>» <#FFD36B>/watermisil</click>"
+        send formatted "  <click:run_command:'/blastpower'><#C9CDD6>✸ Salto Explosivo <dark_gray>» <#FFD36B>/blastpower</click>"
+        send formatted "  <click:run_command:'/escarcha'><#C9CDD6>❄ Nova de Escarcha <dark_gray>» <#FFD36B>/escarcha</click>"
+        send formatted "  <click:suggest_command:'/bendicion '><#C9CDD6>✚ Bendiciones <dark_gray>» <#FFD36B>/bendicion (tipo)</click>"
+        send formatted "  <click:suggest_command:'/pergamino '><#C9CDD6>✎ Pergaminos <dark_gray>» <#FFD36B>/pergamino (tipo)</click>"
+        send formatted " <#5CA8FF>◆ Raros"
+        send formatted "  <click:run_command:'/explosionmagic'><#C9CDD6>☄ Bola de Fuego <dark_gray>» <#FFD36B>/explosionmagic</click>"
+        send formatted "  <click:run_command:'/clawstrike'><#C9CDD6>⚔ Garras de Dragón <dark_gray>» <#FFD36B>/clawstrike</click>"
+        send formatted "  <click:run_command:'/gravity'><#C9CDD6>⚫ Campo de Gravedad <dark_gray>» <#FFD36B>/gravity</click>"
+        send formatted "  <click:run_command:'/cadenarayos'><#C9CDD6>⚡ Cadena de Rayos <dark_gray>» <#FFD36B>/cadenarayos</click>"
+        send formatted " <#B45CFF>◆ Avanzados"
+        send formatted "  <click:run_command:'/humano'><#C9CDD6>✠ Clase Humano <dark_gray>» <#FFD36B>/humano</click>"
+        send formatted "  <click:run_command:'/iradelcielo'><#C9CDD6>⚡ Ira del Cielo <dark_gray>» <#FFD36B>/iradelcielo</click>"
+        send formatted "  <click:run_command:'/meteoro'><#C9CDD6>☄ Meteoro Arcano <dark_gray>» <#FFD36B>/meteoro</click>"
+        send formatted "<dark_gray><strikethrough>                                        </strikethrough>"

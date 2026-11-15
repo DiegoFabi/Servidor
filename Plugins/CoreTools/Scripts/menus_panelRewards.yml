@@ -1,0 +1,33 @@
+# Acciones de los menus convertidos desde CommandPanels
+panelrewards_open:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.pling";volume=10;pitch=1} @Self'
+panelrewards_b1_blocked:
+  Conditions: []
+  Mechanics:
+  - 'message{m="&cYa has reclamado esto. ¡Vuelve más tarde!"} @Self'
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+panelrewards_b1_click:
+  Conditions:
+  - 'comparator{v1="%coretools_var_player_last_reward_claimed%";v2="%localtime_time_dd/MM/yyyy%"} trueElse panelrewards_b1_blocked'
+  Mechanics:
+  - 'command{c="eco give {caster_name} 500 -sf";runas=op} @Self'
+  - 'command{c="xp add 100 points {caster_name} -s";runas=op} @Self'
+  - 'command{c="xp add 100 points {caster_name} -s";runas=op} @Self'
+  - 'message{m="&dRecompensas &7» &aHas obtenido 100 Monedas y 100 Puntos de Experiencia."} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1} @Self'
+  - 'variable{a=set;v=last_reward_claimed;va="%localtime_time_dd/MM/yyyy%"} @Self'
+  - 'command{c="core-menu panelRewards {caster_name}";runas=console} @Self'
+panelrewards_b3_blocked:
+  Conditions: []
+  Mechanics:
+  - 'message{m="&cYa has reclamado esto. ¡Vuelve más tarde!"} @Self'
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+panelrewards_b3_click:
+  Conditions:
+  - 'comparator{v1="%coretools_var_player_last_reward_claimed%";v2="%localtime_time_dd/MM/yyyy%"} trueElse panelrewards_b3_blocked'
+  Mechanics:
+  - 'message{m="&eReward has been claimed! Add commands here with rewards."} @Self'
+  - 'variable{a=set;v=last_reward_claimed;va="%localtime_time_dd/MM/yyyy%"} @Self'
+  - 'command{c="core-menu panelRewards {caster_name}";runas=console} @Self'

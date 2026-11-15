@@ -1,0 +1,12 @@
+multiple-in-craft: '&l&c! &fThis recipe requires &a%amount%&f of this item.'
+
+# Specify default display names for prices made through ConfiguredPrice#create
+# These will override any custom configured price display names.
+# You can use %value% and %value_commas% as placeholders.
+price-display:
+  - type: example_type
+    display: "&e%value% Price"
+
+# Shown by a plugin's leaderboard command in place of the entries when the leaderboard has no
+# records to display. A plugin that sets this key in its own lang.yml overrides it.
+no-leaderboard-records: "&cNo leaderboard records"

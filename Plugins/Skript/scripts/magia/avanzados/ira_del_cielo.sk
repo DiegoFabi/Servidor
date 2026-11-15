@@ -1,0 +1,283 @@
+# ============================================================
+#  Ira del Cielo  [AVANZADO] - 20 segundos, 5 fases
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxRing() y la protección de caída {-nofall::*} de magia/nucleo_magia.sk
+#
+#  Uso:  /iradelcielo      Permiso: admin.poderes      Cooldown: 90 s
+#        iraDelCielo(jugador)  -> desde otros scripts
+#
+#  Todo el efecto SIGUE al jugador (se recalcula su posición en cada
+#  fotograma). Durante los 20 s:
+#   - El cielo del mundo pasa a tormenta eléctrica y se restaura al final.
+#   - Nubarrón, lluvia y rayos continuos sobre el lanzador, cada vez más
+#     frecuentes. Pulsos de oscuridad para los jugadores cercanos.
+#   - Fase 1 Despertar : el lanzador levita; doble hélice y onda de choque.
+#   - Fase 2 Tormenta  : rayos alrededor que dañan a los monstruos.
+#   - Fase 3 Vórtice   : tornado que ATRAE a los monstruos y los hiere.
+#   - Fase 4 Sello     : pentagrama y hexágono; un rayo cae en cada punta
+#                        y ondas sónicas expansivas.
+#   - Fase 5 Juicio    : anillo de rayos, fuegos artificiales y explosión
+#                        final que lanza y daña a los monstruos.
+#  Solo afecta a MONSTRUOS (no a jugadores, NPCs, mascotas ni animales).
+#
+#  Rendimiento:
+#  - 1 fotograma cada 2 ticks; cada figura se envía con UN solo "make"
+#    (lista de ubicaciones). Los fotogramas son funciones sin esperas.
+#  - Un solo poder activo a la vez en el servidor (cambia el clima).
+#  - Rayos con "lightning effect" (sin fuego ni daño propio); el daño
+#    se aplica a mano solo a monstruos cercanos.
+#  - Se cancela si el lanzador sale o muere, y restaura clima y caída.
+# ============================================================
+
+options:
+    perm: admin.poderes
+    cooldown: 90
+    # "with force": se ve aunque el cliente tenga partículas reducidas
+    force: with force
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:dark_purple:aqua><bold>Ira del Cielo</bold></gradient> <dark_gray>»<reset>
+
+on load:
+    delete {-ira::*}
+    delete {-iracd::*}
+
+# ------------------------------------------------------------
+#  Utilidades (sin esperas)
+# ------------------------------------------------------------
+function iraLinea(a: location, b: location, n: number) :: locations:
+    set {_dx} to (x-coordinate of {_b}) - (x-coordinate of {_a})
+    set {_dy} to (y-coordinate of {_b}) - (y-coordinate of {_a})
+    set {_dz} to (z-coordinate of {_b}) - (z-coordinate of {_a})
+    set {_i} to 0
+    while {_i} <= {_n}:
+        set {_t} to {_i} / {_n}
+        add {_a} offset by vector({_dx} * {_t}, {_dy} * {_t}, {_dz} * {_t}) to {_out::*}
+        add 1 to {_i}
+    return {_out::*}
+
+function iraAzar(c: location, rmin: number, rmax: number, y: number) :: location:
+    set {_a} to random number between 0 and 360
+    set {_d} to random number between {_rmin} and {_rmax}
+    return {_c} offset by vector({_d} * cos({_a}), {_y}, {_d} * sin({_a}))
+
+# Rayo visual + chispas + daño a monstruos en un radio
+function iraRayo(l: location, dano: number, radio: number):
+    strike lightning effect at {_l}
+    make 15 of electric_spark at {_l} with offset vector(0.5, 1.2, 0.5) with extra 0.25 {@force}
+    make 6 of large_smoke at {_l} with offset vector(0.4, 0.2, 0.4) with extra 0.02 {@force}
+    {_dano} > 0
+    loop all monsters in radius {_radio} around {_l}:
+        damage loop-entity by {_dano}
+        make 4 of damage_indicator at location of loop-entity with offset vector(0.3, 0.6, 0.3) with extra 0 {@force}
+
+# Tormenta continua sobre el lanzador (fases 2-5). i = intensidad 1..4
+function iraCielo(c: location, f: number, i: number):
+    set {_g} to {_f} * 9
+    add fxRing({_c}, 2, 10, 10, {_g}) to {_nube::*}
+    add fxRing({_c}, 4, 18, 10.3, {_g} * -1) to {_nube::*}
+    add fxRing({_c}, 6.5, 26, 10, {_g}) to {_nube::*}
+    make 1 of cloud at {_nube::*} with offset vector(0.4, 0.2, 0.4) with extra 0 {@force}
+    make 1 of squid_ink at fxRing({_c}, 3.5, 10, 10.6, {_g}) with offset vector(0.8, 0.2, 0.8) with extra 0 {@force}
+    set {_k} to 0
+    while {_k} < 12 + {_i} * 6:
+        add iraAzar({_c}, 0, 7, 9.5) to {_lluvia::*}
+        add 1 to {_k}
+    make 1 of falling_water at {_lluvia::*} with offset vector(0, 0, 0) with extra 0 {@force}
+    # Rayos de fondo, cada vez más seguidos
+    if mod({_f}, 6 - {_i}) = 0:
+        iraRayo(iraAzar({_c}, 5, 9, 0), 0, 0)
+    if mod({_f}, 15) = 0:
+        play sound "entity.lightning_bolt.thunder" with volume 2 and pitch (random number between 0.5 and 0.9) at {_c}
+
+# Pulso de oscuridad para los jugadores cercanos (no al lanzador)
+function iraOscuridad(p: player, c: location):
+    loop all players in radius 24 around {_c}:
+        if loop-player is not {_p}:
+            apply darkness to loop-player for 3 seconds
+
+# ------------------------------------------------------------
+#  Fases (f = 1..40 en cada una)
+# ------------------------------------------------------------
+function iraDespertar(p: player, c: location, f: number):
+    set {_k} to 0
+    while {_k} < 7:
+        set {_h} to ({_f} - {_k}) * 0.18
+        if {_h} >= 0:
+            set {_a} to ({_f} - {_k}) * 26
+            add {_c} offset by vector(1.3 * cos({_a}), {_h}, 1.3 * sin({_a})) to {_hA::*}
+            add {_c} offset by vector(1.3 * cos({_a} + 180), {_h}, 1.3 * sin({_a} + 180)) to {_hB::*}
+        add 1 to {_k}
+    make 1 of end_rod at {_hA::*} with offset vector(0, 0, 0) with extra 0 {@force}
+    make 1 of soul_fire_flame at {_hB::*} with offset vector(0, 0, 0) with extra 0 {@force}
+    make 1 of enchant at fxRing({_c}, mod({_f}, 20) * 0.35 + 0.5, 28, 0.1, {_f} * 6) with offset vector(0, 0.3, 0) with extra 0.4 {@force}
+    make 2 of sculk_soul at {_c} with offset vector(1.5, 0.2, 1.5) with extra 0.03 {@force}
+    if {_f} = 1:
+        apply levitation 1 to {_p} for 1.5 seconds
+        apply slow falling to {_p} for 21 seconds
+        play sound "entity.wither.spawn" with volume 1 and pitch 1.6 at {_c}
+    if mod({_f}, 10) = 0:
+        make 1 of sonic_boom at fxRing({_c}, 2.5, 8, 0.3, {_f} * 9) {@force}
+        play sound "block.amethyst_block.resonate" with volume 2 and pitch (0.5 + {_f} / 40) at {_c}
+
+function iraTormenta(p: player, c: location, f: number):
+    iraCielo({_c}, {_f}, 2)
+    if mod({_f}, 4) = 0:
+        iraRayo(iraAzar({_c}, 2, 6, 0), 5, 2.5)
+    make 2 of witch at fxRing({_c}, 1.2, 8, 1, {_f} * 20) with offset vector(0, 0.2, 0) with extra 0 {@force}
+
+function iraVortice(p: player, c: location, f: number):
+    iraCielo({_c}, {_f}, 3)
+    set {_y} to 0
+    while {_y} <= 9:
+        add fxRing({_c}, 0.6 + {_y} * 0.5, 8 + ({_y} * 2), {_y}, ({_f} * 32) + ({_y} * 22)) to {_aire::*}
+        add 1 to {_y}
+    make 1 of cloud at {_aire::*} with offset vector(0.05, 0.05, 0.05) with extra 0 {@force}
+    make 1 of dragon_breath at fxRing({_c}, 2.5, 12, mod({_f}, 9), {_f} * -40) with offset vector(0, 0, 0) with extra 0.01 {@force}
+    # Atrae a los monstruos hacia el lanzador y los hiere poco a poco
+    if mod({_f}, 2) = 0:
+        loop all monsters in radius 9 around {_c}:
+            push loop-entity towards {_c} with force 0.45
+            if mod({_f}, 8) = 0:
+                damage loop-entity by 2
+    if mod({_f}, 10) = 1:
+        play sound "entity.breeze.wind_burst" with volume 2 and pitch 0.6 at {_c}
+
+function iraSello(p: player, c: location, f: number):
+    iraCielo({_c}, {_f}, 3)
+    mod({_f}, 2) = 0
+    set {_g} to {_f} * 4
+    set {_i} to 0
+    while {_i} < 5:
+        set {_a} to {_g} + {_i} * 72
+        set {_v::%{_i}%} to {_c} offset by vector(4.5 * cos({_a}), 0.15, 4.5 * sin({_a}))
+        add 1 to {_i}
+    set {_i} to 0
+    while {_i} < 5:
+        add iraLinea({_v::%{_i}%}, {_v::%mod({_i} + 2, 5)%}, 11) to {_estrella::*}
+        add 1 to {_i}
+    make 1 of flame at {_estrella::*} with offset vector(0, 0, 0) with extra 0 {@force}
+    make 1 of soul_fire_flame at fxRing({_c}, 4.9, 36, 0.15, {_g} * -1) with offset vector(0, 0, 0) with extra 0 {@force}
+    set {_i} to 0
+    while {_i} < 6:
+        set {_a} to ({_g} * -2) + {_i} * 60
+        set {_h::%{_i}%} to {_c} offset by vector(2.8 * cos({_a}), 5, 2.8 * sin({_a}))
+        add 1 to {_i}
+    set {_i} to 0
+    while {_i} < 6:
+        add iraLinea({_h::%{_i}%}, {_h::%mod({_i} + 1, 6)%}, 6) to {_hex::*}
+        add 1 to {_i}
+    make 1 of end_rod at {_hex::*} with offset vector(0, 0, 0) with extra 0 {@force}
+    make 8 of reverse_portal at {_c} offset by vector(0, 2.5, 0) with offset vector(0.15, 2.2, 0.15) with extra 0.03 {@force}
+    # Un rayo en cada punta de la estrella, una tras otra
+    if mod({_f}, 6) = 0:
+        set {_n} to mod({_f} / 6, 5)
+        iraRayo({_v::%{_n}%}, 6, 3)
+        make 1 of sonic_boom at fxRing({_c}, 3, 10, 0.5, {_g}) {@force}
+        play sound "block.respawn_anchor.charge" with volume 2 and pitch (0.5 + {_f} / 40) at {_c}
+
+function iraFuego(l: location):
+    set {_n} to random integer between 1 and 4
+    if {_n} = 1:
+        launch flickering trailing large ball firework colored purple, magenta and white fading to light blue at {_l} timed 1
+    else if {_n} = 2:
+        launch trailing star firework colored light blue, cyan and white fading to blue at {_l} timed 1
+    else if {_n} = 3:
+        launch flickering burst firework colored red, orange and yellow at {_l} timed 1
+    else:
+        launch flickering trailing large ball firework colored white, light blue and purple fading to white at {_l} timed 2
+
+function iraJuicio(p: player, c: location, f: number):
+    iraCielo({_c}, {_f}, 4)
+    # Anillo de rayos que gira alrededor del lanzador
+    if mod({_f}, 2) = 0:
+        set {_a} to {_f} * 36
+        iraRayo({_c} offset by vector(6 * cos({_a}), 0, 6 * sin({_a})), 4, 2.5)
+    if mod({_f}, 5) = 1:
+        iraFuego(iraAzar({_c}, 2, 6, 1))
+        iraFuego(iraAzar({_c}, 2, 6, 1))
+    make 2 of totem_of_undying at fxRing({_c}, 3, 12, 6, {_f} * 18) with offset vector(0.3, 0.3, 0.3) with extra 0.3 {@force}
+    make 1 of firework at fxRing({_c}, 1 + mod({_f}, 10) * 0.6, 24, 0.3, 0) with offset vector(0, 0, 0) with extra 0.02 {@force}
+    # Explosión final
+    if {_f} = 38:
+        make 1 of explosion_emitter at {_c} offset by vector(0, 1, 0) {@force}
+        make 150 of totem_of_undying at {_c} offset by vector(0, 2, 0) with offset vector(1.5, 1.5, 1.5) with extra 0.9 {@force}
+        make 80 of end_rod at {_c} offset by vector(0, 2, 0) with offset vector(0.6, 0.6, 0.6) with extra 0.5 {@force}
+        make 1 of sonic_boom at fxRing({_c}, 4, 14, 0.5, 0) {@force}
+        loop all monsters in radius 10 around {_c}:
+            damage loop-entity by 10
+            push loop-entity away from {_c} with force 2
+            push loop-entity upwards with force 0.8
+        play sound "entity.generic.explode" with volume 3 and pitch 0.5 at {_c}
+        play sound "entity.wither.death" with volume 1 and pitch 1.5 at {_c}
+
+# ------------------------------------------------------------
+#  Secuencia principal (200 fotogramas x 2 ticks = 20 s)
+# ------------------------------------------------------------
+function iraFin(p: player, clima: weathertype, w: world):
+    delete {-ira::activo}
+    delete {-ira::jugador}
+    delete {-nofall::%uuid of {_p}%::ira}
+    set weather in {_w} to {_clima}
+
+function iraDelCielo(p: player):
+    {-ira::activo} is not set
+    set {-ira::activo} to true
+    set {-nofall::%uuid of {_p}%::ira} to true
+    set {_w} to world of {_p}
+    set {_clima} to weather in {_w}
+    set {-ira::jugador} to {_p}
+    set weather in {_w} to thunder
+    loop all players in radius 48 around {_p}:
+        send title "<gradient:#B45CFF:#7FE7FF><bold>⚡ Ira del Cielo ⚡</bold></gradient>" with subtitle "<#C9CDD6>%{_p}% desata la tormenta" to loop-player for 2 seconds with fadein 5 ticks and fadeout 10 ticks
+    play sound "entity.lightning_bolt.thunder" with volume 3 and pitch 0.5 at {_p}
+    set {_f} to 1
+    while {_f} <= 200:
+        if any:
+            {_p} is not online
+            {_p} is dead
+        then:
+            iraFin({_p}, {_clima}, {_w})
+            stop
+        set {_c} to location of {_p}
+        if {_f} <= 40:
+            iraDespertar({_p}, {_c}, {_f})
+        else if {_f} <= 80:
+            iraTormenta({_p}, {_c}, {_f} - 40)
+        else if {_f} <= 120:
+            iraVortice({_p}, {_c}, {_f} - 80)
+        else if {_f} <= 160:
+            iraSello({_p}, {_c}, {_f} - 120)
+        else:
+            iraJuicio({_p}, {_c}, {_f} - 160)
+        if mod({_f}, 50) = 41:
+            iraOscuridad({_p}, {_c})
+        add 1 to {_f}
+        wait 2 ticks
+    iraFin({_p}, {_clima}, {_w})
+
+# Los fuegos artificiales del poder no dañan a nadie
+on damage:
+    {-ira::activo} is set
+    damage cause is entity explosion
+    {-ira::jugador} is online
+    distance between victim and {-ira::jugador} < 40
+    cancel event
+
+# ------------------------------------------------------------
+#  Comando
+# ------------------------------------------------------------
+command /iradelcielo:
+    aliases: /iracielo
+    permission: {@perm}
+    trigger:
+        if {-ira::activo} is set:
+            send "{@prefijo} <#FF6B6B>Ya hay una Ira del Cielo en curso."
+            stop
+        if {-iracd::%uuid of player%} is set:
+            set {_r} to {-iracd::%uuid of player%} - (unix timestamp of now)
+            if {_r} > 0:
+                send action bar "<#FF6B6B>⏳ Espera %ceil({_r})% s para volver a usar este poder"
+                stop
+        set {-iracd::%uuid of player%} to (unix timestamp of now) + {@cooldown}
+        send "{@prefijo} <#C9CDD6>Desatas la tormenta... <#9EA3AE>(20 s)"
+        iraDelCielo(player)

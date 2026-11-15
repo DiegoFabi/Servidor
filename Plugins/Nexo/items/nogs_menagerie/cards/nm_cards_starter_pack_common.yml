@@ -1,0 +1,162 @@
+nm_card_alex:
+  itemname: <white>Alex Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_alex
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/common/nm_card_alex
+    custom_model_data: 635001
+
+nm_card_moobloom:
+  itemname: <white>Moobloom Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_moobloom
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/common/nm_card_moobloom
+    custom_model_data: 635002
+
+nm_card_steve:
+  itemname: <white>Steve Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_steve
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/common/nm_card_steve
+    custom_model_data: 635003
+
+nm_card_zombie_horse:
+  itemname: <white>Zombie Horse Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_zombie_horse
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/common/nm_card_zombie_horse
+    custom_model_data: 635004
+
+nm_card_snow_golem:
+  itemname: <white>Snow Golem Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_snow_golem
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/common/nm_card_snow_golem
+    custom_model_data: 635005
+
+nm_card_tadpole:
+  itemname: <white>Tadpole Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_tadpole
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/common/nm_card_tadpole
+    custom_model_data: 635006
+# 32fae060855d8e88f8ac20b498acfc44

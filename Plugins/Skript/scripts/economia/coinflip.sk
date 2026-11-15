@@ -1,0 +1,307 @@
+# ============================================================
+#  coinflip.sk - Apuestas Coinflip 1 vs 1
+#  Requiere: Skript 2.10+ (tags MiniMessage) y Vault
+#
+#  Economia: ExcellentEconomy "money" (es la moneda de Vault en
+#  ExcellentEconomy/config.yml), asi que "player's balance" lee y
+#  modifica ExcellentEconomy money directamente.
+#
+#  Uso:
+#    /cf                       -> menu con montos (500/1000/2000/3000/5000/aleatorio)
+#    /cf <monto|aleatorio>     -> apuesta publica (cualquiera puede aceptar)
+#    /cf <monto> <jugador>     -> reto directo a un jugador
+#    /cf aceptar <jugador>     -> acepta el coinflip de ese jugador
+#    /cf rechazar <jugador>    -> rechaza el coinflip
+#    /cf panel <jugador>       -> panel decorativo (lana verde / oro / lana roja)
+#    /cf cancelar              -> cancela tu coinflip
+#    /cf lista                 -> coinflips abiertos
+#
+#  Rendimiento:
+#  - Sin temporizadores: la expiracion se comprueba de forma "perezosa"
+#    (al aceptar o listar se compara la hora de creacion con "now").
+#  - Sin dinero retenido: el monto se cobra a ambos jugadores en el
+#    momento de aceptar (hilo principal, operacion atomica), por eso
+#    nunca hace falta devolver nada si el reto expira o el jugador sale.
+#  - Solo variables en memoria ({-cf::*}).
+# ============================================================
+
+options:
+    min-apuesta: 100
+    max-apuesta: 100000
+    # Segundos que un coinflip permanece abierto
+    expira: 60
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:gold:yellow><bold>CoinFlip</bold></gradient> <dark_gray>»<reset>
+
+on load:
+    delete {-cf::*}
+
+# ------------------------------------------------------------
+#  Utilidades
+# ------------------------------------------------------------
+
+# Devuelve true si el coinflip del jugador con ese uuid existe y no expiro.
+# Si expiro, lo borra en el momento (sin tareas programadas).
+function cfValido(id: text) :: boolean:
+    if {-cf::%{_id}%::monto} is not set:
+        return false
+    if difference between {-cf::%{_id}%::hora} and now > {@expira} seconds:
+        cfBorrar({_id})
+        return false
+    return true
+
+function cfBorrar(id: text):
+    delete {-cf::%{_id}%::monto}
+    delete {-cf::%{_id}%::hora}
+    delete {-cf::%{_id}%::target}
+    delete {-cf::%{_id}%::nombre}
+    remove {_id} from {-cf::abiertos::*}
+
+function cfBotones(p: player, creador: text, monto: number):
+    send formatted "    <click:run_command:'/cf aceptar %{_creador}%'><hover:show_text:'<green>Apostar <bold>$%{_monto}%</bold> contra %{_creador}%'><green><bold>[✔ ACEPTAR]</bold></hover></click>  <click:run_command:'/cf rechazar %{_creador}%'><hover:show_text:'<red>Rechazar el coinflip'><red><bold>[✖ DECLINAR]</bold></hover></click>  <click:run_command:'/cf panel %{_creador}%'><hover:show_text:'<gold>Abrir el panel del coinflip'><gold><bold>[⛃ PANEL]</bold></hover></click>" to {_p}
+
+# ------------------------------------------------------------
+#  Crear
+# ------------------------------------------------------------
+function cfCrear(p: player, monto: number, objetivoNombre: text = ""):
+    set {_id} to "%uuid of {_p}%"
+    if {_objetivoNombre} is not "":
+        set {_objetivo} to {_objetivoNombre} parsed as player
+    if cfValido({_id}) is true:
+        send formatted "{@prefijo} <red>Ya tienes un coinflip activo. <click:run_command:'/cf cancelar'><hover:show_text:'<red>Cancelar mi coinflip'><yellow><underlined>[Cancelar]</underlined></hover></click>" to {_p}
+        stop
+    if {_monto} < {@min-apuesta}:
+        send "{@prefijo} <red>La apuesta mínima es <yellow>${@min-apuesta}<red>." to {_p}
+        stop
+    if {_monto} > {@max-apuesta}:
+        send "{@prefijo} <red>La apuesta máxima es <yellow>${@max-apuesta}<red>." to {_p}
+        stop
+    if {_p}'s balance < {_monto}:
+        send "{@prefijo} <red>No tienes suficiente money. <gray>Saldo: <yellow>$%{_p}'s balance%" to {_p}
+        stop
+    if {_objetivo} is set:
+        if {_objetivo} = {_p}:
+            send "{@prefijo} <red>No puedes retarte a ti mismo." to {_p}
+            stop
+        set {-cf::%{_id}%::target} to "%uuid of {_objetivo}%"
+
+    set {-cf::%{_id}%::monto} to {_monto}
+    set {-cf::%{_id}%::hora} to now
+    set {-cf::%{_id}%::nombre} to name of {_p}
+    add {_id} to {-cf::abiertos::*}
+    set {_n} to name of {_p}
+
+    if {_objetivo} is set:
+        send "{@prefijo} <gray>Retaste a <yellow>%name of {_objetivo}% <gray>por <green><bold>$%{_monto}%</bold><gray>. Expira en <yellow>{@expira}s<gray>." to {_p}
+        send "" to {_objetivo}
+        send "<dark_gray><strikethrough>                                                  " to {_objetivo}
+        send "  {@prefijo} <yellow><bold>%{_n}%</bold> <gray>te reta a un coinflip" to {_objetivo}
+        send "    <gray>Apuesta: <gradient:#55FF55:#00AA00><bold>$%{_monto}%</bold></gradient> <dark_gray>• <gray>Premio: <gold><bold>$%{_monto} * 2%</bold>" to {_objetivo}
+        cfBotones({_objetivo}, {_n}, {_monto})
+        send "<dark_gray><strikethrough>                                                  " to {_objetivo}
+        play sound "block.note_block.bell" with volume 0.6 and pitch 1.2 to {_objetivo}
+    else:
+        send "" to all players
+        send "<dark_gray><strikethrough>                                                  " to all players
+        send "  {@prefijo} <yellow><bold>%{_n}%</bold> <gray>abrió un coinflip" to all players
+        send "    <gray>Apuesta: <gradient:#55FF55:#00AA00><bold>$%{_monto}%</bold></gradient> <dark_gray>• <gray>Premio: <gold><bold>$%{_monto} * 2%</bold> <dark_gray>• <gray>Expira: <yellow>{@expira}s" to all players
+        loop all players:
+            if loop-player is not {_p}:
+                cfBotones(loop-player, {_n}, {_monto})
+        send "<dark_gray><strikethrough>                                                  " to all players
+
+# ------------------------------------------------------------
+#  Aceptar / jugar
+# ------------------------------------------------------------
+function cfAceptar(p: player, retador: player):
+    set {_id} to "%uuid of {_retador}%"
+    if cfValido({_id}) is false:
+        send "{@prefijo} <red>Ese coinflip ya no está disponible." to {_p}
+        stop
+    if {_retador} = {_p}:
+        send "{@prefijo} <red>No puedes aceptar tu propio coinflip." to {_p}
+        stop
+    if {-cf::%{_id}%::target} is set:
+        if {-cf::%{_id}%::target} is not "%uuid of {_p}%":
+            send "{@prefijo} <red>Ese coinflip es un reto privado para otro jugador." to {_p}
+            stop
+    set {_monto} to {-cf::%{_id}%::monto}
+    if {_p}'s balance < {_monto}:
+        send "{@prefijo} <red>No tienes suficiente money. <gray>Necesitas <yellow>$%{_monto}%" to {_p}
+        stop
+    if {_retador}'s balance < {_monto}:
+        send "{@prefijo} <red>%name of {_retador}% ya no tiene fondos suficientes. Coinflip cancelado." to {_p}
+        cfBorrar({_id})
+        stop
+
+    # Reclamacion atomica (hilo principal): se borra antes de mover dinero
+    cfBorrar({_id})
+    remove {_monto} from {_p}'s balance
+    remove {_monto} from {_retador}'s balance
+    set {_premio} to {_monto} * 2
+    if chance of 50%:
+        set {_ganador} to {_p}
+        set {_perdedor} to {_retador}
+    else:
+        set {_ganador} to {_retador}
+        set {_perdedor} to {_p}
+    add {_premio} to {_ganador}'s balance
+
+    set {_g} to name of {_ganador}
+    set {_l} to name of {_perdedor}
+    send "  {@prefijo} <yellow>%name of {_retador}% <gray>vs <yellow>%name of {_p}% <dark_gray>» <gray>Lanzando la moneda... <gold>⛃" to all players
+    play sound "entity.experience_orb.pickup" with volume 0.5 and pitch 0.8 to {_p} and {_retador}
+    # Pausa unica solo para el suspense: el dinero ya fue entregado arriba
+    wait 1 second
+    send "" to all players
+    send "<dark_gray><strikethrough>                                                  " to all players
+    send "  {@prefijo} <gradient:#FFD700:#FF8C00><bold>¡%{_g}% GANÓ EL COINFLIP!</bold></gradient>" to all players
+    send "    <gray>Premio: <green><bold>+$%{_premio}%</bold> <dark_gray>• <gray>Apuesta: <yellow>$%{_monto}% <dark_gray>• <gray>Perdedor: <red>%{_l}%" to all players
+    send "<dark_gray><strikethrough>                                                  " to all players
+    send "" to all players
+    if {_ganador} is online:
+        play sound "ui.toast.challenge_complete" with volume 0.6 and pitch 1.0 to {_ganador}
+    if {_perdedor} is online:
+        play sound "entity.villager.no" with volume 0.6 and pitch 1.0 to {_perdedor}
+
+function cfRechazar(p: player, retador: player):
+    set {_id} to "%uuid of {_retador}%"
+    if cfValido({_id}) is false:
+        send "{@prefijo} <red>Ese coinflip ya no está disponible." to {_p}
+        stop
+    # Si el reto era privado para este jugador, se cancela y se avisa al retador
+    if {-cf::%{_id}%::target} is "%uuid of {_p}%":
+        cfBorrar({_id})
+        send "{@prefijo} <red>%name of {_p}% rechazó tu coinflip." to {_retador}
+    send "{@prefijo} <gray>Has rechazado el coinflip de <yellow>%name of {_retador}%<gray>." to {_p}
+
+# ------------------------------------------------------------
+#  Panel decorativo (lana verde | lingote de oro | lana roja)
+# ------------------------------------------------------------
+function cfPanel(p: player, retador: player):
+    set {_id} to "%uuid of {_retador}%"
+    if cfValido({_id}) is false:
+        send "{@prefijo} <red>Ese coinflip ya no está disponible." to {_p}
+        stop
+    set {_monto} to {-cf::%{_id}%::monto}
+    set {_inv} to chest inventory with 3 rows named "<dark_gray>Coinflip <gold>• <yellow>$%{_monto}%"
+    set slots (integers between 0 and 26) of {_inv} to gray stained glass pane named " "
+    set slot 11 of {_inv} to lime wool named "<green><bold>✔ ACEPTAR" with lore "<gray>Apostar <green>$%{_monto}%" and "<gray>contra <yellow>%name of {_retador}%"
+    set slot 13 of {_inv} to gold ingot named "<gold><bold>$%{_monto}%" with lore "<gray>Retador: <yellow>%name of {_retador}%", "<gray>Premio: <gold>$%{_monto} * 2%" and "<dark_gray>50%% de probabilidad"
+    set slot 15 of {_inv} to red wool named "<red><bold>✖ DECLINAR" with lore "<gray>Cerrar y rechazar"
+    set {-cf::gui::%uuid of {_p}%} to {_id}
+    set {-cf::inv::%uuid of {_p}%} to {_inv}
+    open {_inv} to {_p}
+    # Boton en el chat para aceptar
+    send formatted "{@prefijo} <click:run_command:'/cf aceptar %name of {_retador}%'><hover:show_text:'<green>Aceptar coinflip'><green><bold>[✔ ACEPTAR $%{_monto}%]</bold></hover></click>" to {_p}
+
+on inventory click:
+    {-cf::inv::%uuid of player%} is set
+    player's current inventory is {-cf::inv::%uuid of player%}
+    cancel event
+    event-inventory is {-cf::inv::%uuid of player%}
+    set {_slot} to index of event-slot
+    set {_id} to {-cf::gui::%uuid of player%}
+    {_slot} is 11 or 15
+    close player's inventory
+    if {-cf::%{_id}%::nombre} is not set:
+        send "{@prefijo} <red>Ese coinflip ya no está disponible." to player
+        stop
+    set {_r} to {-cf::%{_id}%::nombre} parsed as player
+    if {_r} is not set:
+        send "{@prefijo} <red>El retador ya no está conectado." to player
+        stop
+    if {_slot} = 11:
+        cfAceptar(player, {_r})
+    else:
+        cfRechazar(player, {_r})
+
+on inventory drag:
+    {-cf::inv::%uuid of player%} is set
+    player's current inventory is {-cf::inv::%uuid of player%}
+    cancel event
+
+on inventory close:
+    delete {-cf::inv::%uuid of player%}
+    delete {-cf::gui::%uuid of player%}
+
+on quit:
+    set {_id} to "%uuid of player%"
+    if {-cf::%{_id}%::monto} is set:
+        cfBorrar({_id})
+    delete {-cf::inv::%{_id}%}
+    delete {-cf::gui::%{_id}%}
+
+# ------------------------------------------------------------
+#  Comando
+# ------------------------------------------------------------
+command /coinflip [<text>] [<text>]:
+    aliases: /cf
+    cooldown: 2 seconds
+    cooldown message: <red>Espera un momento antes de usar /coinflip otra vez.
+    executable by: players
+    trigger:
+        if arg-1 is not set:
+            send "<dark_gray><strikethrough>                                                  "
+            send "  {@prefijo} <gray>Elige un monto para apostar"
+            send "    <gray>Tu saldo: <green><bold>$%player's balance%"
+            send formatted "    <click:run_command:'/cf 500'><hover:show_text:'<gray>Apostar <green>$500'><green>[$500]</hover></click> <click:run_command:'/cf 1000'><hover:show_text:'<gray>Apostar <green>$1000'><green>[$1000]</hover></click> <click:run_command:'/cf 2000'><hover:show_text:'<gray>Apostar <yellow>$2000'><yellow>[$2000]</hover></click> <click:run_command:'/cf 3000'><hover:show_text:'<gray>Apostar <gold>$3000'><gold>[$3000]</hover></click> <click:run_command:'/cf 5000'><hover:show_text:'<gray>Apostar <red>$5000'><red>[$5000]</hover></click>"
+            send formatted "    <click:run_command:'/cf aleatorio'><hover:show_text:'<gray>Monto aleatorio entre <green>$500 <gray>y <green>$5000'><light_purple><bold>[🎲 ALEATORIO]</bold></hover></click>  <click:suggest_command:'/cf '><hover:show_text:'<gray>Escribe tu propio monto<newline><dark_gray>/cf (monto) [jugador]'><aqua><bold>[✎ PERSONALIZADO]</bold></hover></click>  <click:run_command:'/cf lista'><hover:show_text:'<gray>Ver coinflips abiertos'><white><bold>[☰ LISTA]</bold></hover></click>"
+            send "<dark_gray><strikethrough>                                                  "
+            stop
+
+        if arg-1 is "aceptar" or "rechazar" or "panel":
+            if arg-2 is not set:
+                send "{@prefijo} <red>Uso: <yellow>/cf %arg-1% (jugador)"
+                stop
+            set {_r} to arg-2 parsed as player
+            if {_r} is not set:
+                send "{@prefijo} <red>Ese jugador no está conectado."
+                stop
+            if arg-1 is "aceptar":
+                cfAceptar(player, {_r})
+            else if arg-1 is "rechazar":
+                cfRechazar(player, {_r})
+            else:
+                cfPanel(player, {_r})
+            stop
+
+        if arg-1 is "cancelar":
+            set {_id} to "%uuid of player%"
+            if cfValido({_id}) is true:
+                cfBorrar({_id})
+                send "{@prefijo} <yellow>Cancelaste tu coinflip."
+            else:
+                send "{@prefijo} <red>No tienes ningún coinflip activo."
+            stop
+
+        if arg-1 is "lista":
+            send "<dark_gray><strikethrough>                                                  "
+            send "  {@prefijo} <gray>Coinflips abiertos"
+            loop {-cf::abiertos::*}:
+                if cfValido(loop-value) is true:
+                    if {-cf::%loop-value%::target} is not set:
+                        add 1 to {_c}
+                        set {_n} to {-cf::%loop-value%::nombre}
+                        send formatted "    <dark_gray>▪ <yellow>%{_n}% <dark_gray>» <green><bold>$%{-cf::%loop-value%::monto}%</bold> <click:run_command:'/cf aceptar %{_n}%'><hover:show_text:'<green>Aceptar'><green>[✔]</hover></click> <click:run_command:'/cf panel %{_n}%'><hover:show_text:'<gold>Panel'><gold>[⛃]</hover></click>"
+            if {_c} is not set:
+                send "    <gray>No hay coinflips abiertos. <dark_gray>Crea uno con <yellow>/cf"
+            send "<dark_gray><strikethrough>                                                  "
+            stop
+
+        if arg-1 is "aleatorio":
+            set {_monto} to (random integer between 5 and 50) * 100
+        else:
+            set {_monto} to arg-1 parsed as integer
+            if {_monto} is not set:
+                send "{@prefijo} <red>Monto inválido. <gray>Usa <yellow>/cf (monto) [jugador]"
+                stop
+
+        if arg-2 is set:
+            set {_o} to arg-2 parsed as player
+            if {_o} is not set:
+                send "{@prefijo} <red>Ese jugador no está conectado."
+                stop
+            cfCrear(player, {_monto}, name of {_o})
+        else:
+            cfCrear(player, {_monto})

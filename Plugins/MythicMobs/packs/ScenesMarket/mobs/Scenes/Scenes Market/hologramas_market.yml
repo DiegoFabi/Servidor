@@ -1,0 +1,1924 @@
+# ============================================================
+#  hologramas_market.yml - Hologramas de los NPCs del pack ScenesMarket
+#  Armor stands invisibles tipo marcador (sin hitbox) que solo
+#  muestran su nombre; se borran solos y no se guardan al reiniciar.
+#  Cada rol tiene su paleta e icono propios.
+#  Nombres:  holo_<rol>_nombre  |  holo_<rol>_f<frase>_l<linea>
+#  Los usa: dialogos_market.yml
+# ============================================================
+
+# ---------- ⚖ Comerciante (scene_market_merchant_interactive_1, scene_market_merchant_interactive_2, scene_market_merchant_sit_interactive_1, scene_market_merchant_sit_interactive_2, scene_market_merchant_counter_interactive_1, scene_market_merchant_counter_interactive_2) | paleta #7FE3C4 -> #2FAF8A ----------
+holo_comerciante_nombre:
+  Type: ARMOR_STAND
+  Display: '<#2FAF8A>⚖ <gradient:#7FE3C4:#2FAF8A><bold>Comerciante</bold></gradient> <#2FAF8A>⚖'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>Pasa, mira sin compromiso. Si algo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>te gusta, hablamos del precio.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>Hoy llegó mercancía nueva del'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>puerto, todavía huele a sal.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>El secreto de este oficio es simple,'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>nunca prometas lo que no tienes.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>Las monedas van y vienen, pero un'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>buen cliente vuelve siempre.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>Ayer vendí tres capas antes del'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>mediodía. Buen día, la verdad.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>Si buscas algo raro, pregúntame.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_comerciante_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#DBF7EE>Conozco a gente que conoce gente.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ≈ Pescadero (scene_market_fisherman) | paleta #8FD8FF -> #3A9BDC ----------
+holo_pescadero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <#3A9BDC>≈'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>Pescado fresco de esta mañana. Mira'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>esos ojos, brillan todavía.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>El salmón se acaba rápido, si lo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>quieres no lo pienses mucho.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>Mi primo lo saca del río y yo lo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>vendo. Negocio de familia.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>Con un poco de sal y fuego,'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>cualquier pez sabe a gloria.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>No te fíes del que vende pescado sin'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>olor, algo esconde.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>Hoy el mar estuvo generoso. Ojalá'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_pescadero_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#DFF4FF>mañana también.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ✎ Librero (scene_market_bookseller) | paleta #E3C29B -> #A8754A ----------
+holo_librero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <#A8754A>✎'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>Este de aquí lo leí dos veces. La'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>segunda me gustó más.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>Un buen libro no se termina, se'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>queda contigo un rato.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>Tengo mapas viejos, poemas y alguna'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>receta. Lo que haga falta.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>Los de tapa roja son de aventuras,'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>los azules de historia.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>Hay quien compra libros por la'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>portada. Yo no juzgo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>Si lees despacio, el libro te dura'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_librero_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#F7EDE3>más. Truco de librero.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ⚔ Armero (scene_market_weaponseller) | paleta #DDE3EC -> #8C96A8 ----------
+holo_armero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#8C96A8>⚔ <gradient:#DDE3EC:#8C96A8><bold>Armero</bold></gradient> <#8C96A8>⚔'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>Toca el filo con cuidado, que no'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>está de adorno.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>Una buena espada pesa lo justo, ni'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>más ni menos.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>Esta hoja la templé tres veces. Se'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>nota en el brillo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>Las hachas se venden más en'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>invierno. Será por la leña.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>Cuida tu arma y ella te cuidará a'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>ti.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>Si vas a las cuevas, llévate algo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_armero_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#F5F7F9>mejor que ese palo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ❀ Repostero (scene_market_cookieseller) | paleta #FFC7DA -> #FF7FA8 ----------
+holo_repostero_nombre:
+  Type: ARMOR_STAND
+  Display: '<#FF7FA8>❀ <gradient:#FFC7DA:#FF7FA8><bold>Repostero</bold></gradient> <#FF7FA8>❀'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>Las galletas salieron hace un rato,'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>todavía están tibias.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>El truco es no ahorrar en chocolate.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>Nunca.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>Los niños del pueblo vienen cada'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>tarde, ya me conocen el horario.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>Si te llevas una docena, te regalo'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>una sonrisa. Es lo que hay.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>Mi abuela hacía estas mismas. Bueno,'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>las suyas eran mejores.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_repostero_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFEFF4>Huele bien, ¿verdad? Es la canela.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ✿ Cliente (scene_market_customer_1, scene_market_customer_2, scene_market_customer_3, scene_market_customer_4, scene_market_customer_walk_1, scene_market_customer_walk_2) | paleta #D2C4FF -> #9A85F0 ----------
+holo_cliente_nombre:
+  Type: ARMOR_STAND
+  Display: '<#9A85F0>✿ <gradient:#D2C4FF:#9A85F0><bold>Cliente</bold></gradient> <#9A85F0>✿'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>Vine por pan y ya llevo media hora'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>mirando cosas.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>Todo está más caro que el mes'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>pasado, ¿no te parece?'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>Dicen que el librero tiene mapas de'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>tesoros. Habrá que ver.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>Me encanta venir al mercado'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>temprano, hay menos gente.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>Estoy buscando un regalo, pero no sé'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>ni por dónde empezar.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>Ese puesto de galletas es peligroso'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_cliente_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#F2EEFF>para mi bolsillo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+# ---------- ➹ Vendedor (scene_market_vendor_walk_1, scene_market_vendor_walk_2, scene_market_vendor_walk_3, scene_market_vendor_walk_4) | paleta #FFD59A -> #FF9142 ----------
+holo_vendedor_nombre:
+  Type: ARMOR_STAND
+  Display: '<#FF9142>➹ <gradient:#FFD59A:#FF9142><bold>Vendedor</bold></gradient> <#FF9142>➹'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f1_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>Llevo todo el día caminando con esto'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f1_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>encima. Uf.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f2_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>Voy de puesto en puesto, siempre hay'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f2_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>alguien que necesita algo.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f3_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>Si me ves pasar otra vez, no es que'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f3_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>me haya perdido, eh.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f4_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>El mercado está animado hoy. Eso es'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f4_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>buena señal.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f5_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>Las mejores ventas se hacen'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f5_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>caminando, no esperando.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f6_l1:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>¿Ya probaste las manzanas del'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+
+holo_vendedor_f6_l2:
+  Type: ARMOR_STAND
+  Display: '<#FFF3E2>frutero? Están buenísimas.'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=70} @self ~onSpawn
+
+# ---------- Frutero (scene_market_appleseller) - Saludo ----------
+appleseller_holo_saludo_1:
+  Type: ARMOR_STAND
+  Display: '<#FFD36B>✦ <gradient:#FFE29A:#FFB347><bold>¡Manzanas de la Suerte!</bold></gradient> <#FFD36B>✦'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=100} @self ~onSpawn
+
+appleseller_holo_saludo_2:
+  Type: ARMOR_STAND
+  Display: '<#C9CDD6>Canasta sorpresa por <#5FE3FF>10 ◆ diamantes'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=100} @self ~onSpawn
+
+appleseller_holo_saludo_3:
+  Type: ARMOR_STAND
+  Display: '<#7FB2FF>➜ Sostén diamantes y haz clic'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=100} @self ~onSpawn
+
+appleseller_holo_pocos:
+  Type: ARMOR_STAND
+  Display: '<#FF6B6B>✖ ¡Son 10 diamantes, viajero!'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=50} @self ~onSpawn
+
+# ---------- Frutero (scene_market_appleseller) - Minijuego ----------
+appleseller_holo_revisando:
+  Type: ARMOR_STAND
+  Display: '<#FFE29A>✧ Revisando las canastas <#9EA3AE>. . .'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=40} @self ~onSpawn
+
+appleseller_holo_dorada:
+  Type: ARMOR_STAND
+  Display: '<#FFD36B>✦ <gradient:#FFE29A:#FFB347><bold>¡Manzana Dorada!</bold></gradient> <#FFD36B>✦'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=60} @self ~onSpawn
+
+appleseller_holo_encantada:
+  Type: ARMOR_STAND
+  Display: '<#FF9BE6>★ <gradient:#FFD36B:#FF6BD5:#B45CFF><bold>¡Manzana Encantada!</bold></gradient> <#FF9BE6>★'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=80} @self ~onSpawn
+
+appleseller_holo_suerte_1:
+  Type: ARMOR_STAND
+  Display: '<#B7D98B>Vaya... <#C9CDD6>se me acabaron las buenas'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=60} @self ~onSpawn
+
+appleseller_holo_suerte_2:
+  Type: ARMOR_STAND
+  Display: '<#B7D98B>Esta venía del fondo del carro...'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=60} @self ~onSpawn
+
+appleseller_holo_suerte_3:
+  Type: ARMOR_STAND
+  Display: '<#B7D98B>Los cuervos se llevaron las mejores'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=60} @self ~onSpawn
+
+appleseller_holo_garantia:
+  Type: ARMOR_STAND
+  Display: '<#9EA3AE>Por tu mala suerte... <#FFD36B>¡va de regalo!'
+  Health: 1
+  Options:
+    Invisible: true
+    Marker: true
+    HasGravity: false
+    CanMove: false
+    Collidable: false
+    Invincible: true
+    Silent: true
+    AlwaysShowName: true
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=60} @self ~onSpawn

@@ -1,0 +1,498 @@
+enderman_warped_forest:
+  Type: ENDERMAN
+  Display: '&fWarped Forest Enderman'
+  Health: 50
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+    KnockbackResistance: 0.5
+  Skills:
+  - cancelevent{sync=false} @self ~onDamaged ?damagecause{cause=FIRE_TICK}
+  - cancelevent{sync=true} @self ~onDamaged ?damagecause{cause=FIRE}
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=warped_enderman} @Self ~onSpawn
+  - model{mid=warped_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=warped_enderman} @Self ~onSpawn
+  - randomskill{s=plant_enderman_sound_hurt_1,plant_enderman_sound_hurt_2,plant_enderman_sound_hurt_3,plant_enderman_sound_hurt_4} @self ~onDamaged
+  - randomskill{s=plant_enderman_sound_idle_1,plant_enderman_sound_idle_2} @self ~onTimer:100 0.09
+  - state{m=warped_enderman;s=hurt} @self ~onDamaged
+  - state{m=warped_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=warped_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=warped_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+
+enderman_crimson_forest:
+  Type: ENDERMAN
+  Display: '&fCrimson Forest Enderman'
+  Health: 50
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+    KnockbackResistance: 0.5
+  Skills:
+  - cancelevent{sync=false} @self ~onDamaged ?damagecause{cause=FIRE_TICK}
+  - cancelevent{sync=true} @self ~onDamaged ?damagecause{cause=FIRE}
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=crimson_forest_enderman} @Self ~onSpawn
+  - model{mid=crimson_forest_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=crimson_forest_enderman} @Self ~onSpawn
+  - randomskill{s=plant_enderman_sound_hurt_1,plant_enderman_sound_hurt_2,plant_enderman_sound_hurt_3,plant_enderman_sound_hurt_4} @self ~onDamaged
+  - randomskill{s=plant_enderman_sound_idle_1,plant_enderman_sound_idle_2} @self ~onTimer:100 0.09
+  - state{m=crimson_forest_enderman;s=hurt} @self ~onDamaged
+  - state{m=crimson_forest_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=crimson_forest_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=crimson_forest_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+
+enderman_soulsand_valley:
+  Type: ENDERMAN
+  Display: '&fSouldsand Valley Enderman'
+  Health: 30
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.23
+  Skills:
+  - cancelevent{sync=false} @self ~onDamaged ?damagecause{cause=FIRE_TICK}
+  - cancelevent{sync=true} @self ~onDamaged ?damagecause{cause=FIRE}
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=soulsand_valley_enderman} @Self ~onSpawn
+  - model{mid=soulsand_valley_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=soulsand_valley_enderman} @Self ~onSpawn
+  - randomskill{s=cave_enderman_sound_hurt_1,cave_enderman_sound_hurt_2,cave_enderman_sound_hurt_3} @self ~onDamaged
+  - randomskill{s=cave_enderman_sound_idle_1,cave_enderman_sound_idle_2,cave_enderman_sound_idle_3,cave_enderman_sound_idle_4} @self ~onTimer:100 0.09
+  - state{m=soulsand_valley_enderman;s=hurt} @self ~onDamaged
+  - state{m=soulsand_valley_enderman;s=attack} @self ~onAttack
+  - damage{a=10} @target ~onAttack
+  - skill{s=soulsand_valley_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=soulsand_valley_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+
+enderman_nether_wastes:
+  Type: ENDERMAN
+  Display: '&fNether Wastes Enderman'
+  Health: 40
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.21
+  Skills:
+  - cancelevent{sync=false} @self ~onDamaged ?damagecause{cause=FIRE_TICK}
+  - cancelevent{sync=true} @self ~onDamaged ?damagecause{cause=FIRE}
+  - model{mid=nether_wastes_enderman} @Self ~onSpawn
+  - model{mid=nether_wastes_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=nether_wastes_enderman} @Self ~onSpawn
+  - state{m=nether_wastes_enderman;s=hurt} @self ~onDamaged
+  - state{m=nether_wastes_enderman;s=attack} @self ~onAttack
+  - damage{a=8} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09to0.15
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.1to0.8} @self ~onTimer:100 0.09
+
+enderman_end:
+  Type: ENDERMAN
+  Display: '&fEnd Enderman'
+  Health: 40
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.21
+  Skills:
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=end_enderman} @Self ~onSpawn
+  - model{mid=end_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=end_enderman} @Self ~onSpawn
+  - randomskill{s=cave_enderman_sound_hurt_1,cave_enderman_sound_hurt_2,cave_enderman_sound_hurt_3} @self ~onDamaged
+  - randomskill{s=cave_enderman_sound_idle_1,cave_enderman_sound_idle_2,cave_enderman_sound_idle_3,cave_enderman_sound_idle_4} @self ~onTimer:100 0.09
+  - state{m=end_enderman;s=hurt} @self ~onDamaged
+  - state{m=end_enderman;s=attack} @self ~onAttack
+  - damage{a=9} @target ~onAttack
+  - skill{s=end_enderman_mechanic_rtp_PRE} @target ~onAttack
+  - skill{s=end_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+
+enderman_end_islands:
+  Type: ENDERMAN
+  Display: '&fEnd Islands Enderman'
+  Health: 80
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.21
+  Skills:
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=end_islands_enderman} @Self ~onSpawn
+  - model{mid=end_islands_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=end_islands_enderman} @Self ~onSpawn
+  - state{m=end_islands_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.43;p=0.32to0.59} @self ~onDamaged
+  - randomskill{s=tall_enderman_sound_death_1,tall_enderman_sound_death_2} @self ~onDeath
+  - randomskill{s=tall_enderman_sound_idle_1,tall_enderman_sound_idle_2,tall_enderman_sound_idle_3,tall_enderman_sound_idle_4} @self ~onTimer:100 0.09
+  - state{m=end_islands_enderman;s=attack} @self ~onAttack
+  - setstance{s=posses_off} @self ~onSpawn
+  - damage{a=10} @target ~onAttack
+  - skill{s=end_islands_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=end_islands_enderman_particles} @self ~onTimer:10 0.75
+  - skill{s=end_islands_enderman_possess_mechanic} @self ~onTimer:190 0.19
+  - skill{s=end_islands_enderman_projectile_mechanic} @self{so=-1.5to1.5} ~onTimer:180 ?incombat true
+  - skill{s=tall_enderman_sound_stare} @self ~onTimer:200 0.08
+
+
+
+enderman_ocean:
+  Type: DROWNED
+  Display: '&fOcean Enderman'
+  Health: 30
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventRandomEquipment: true
+    PreventVanillaDamage: true
+    #MovementSpeed: 0.34
+    MovementSpeed: 0.4
+  AIGoalSelectors:
+    - movetowater
+  Skills:
+  - model{mid=ocean_enderman} @Self ~onSpawn
+  - model{mid=ocean_enderman} @Self ~onLoad
+  - cancelevent{sync=false} @self ~onDamaged ?damagecause{c=DRYOUT}
+  - skill{s=enderman_ocean_swim_walk_toggle} @self ~onTimer:40
+  - skill{s=enderman_ocean_randomtp_PRE} @self ~onTimer:170 0.55
+  - state{m=ocean_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=ocean_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.2to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.1to0.8} @self ~onTimer:100 0.09
+
+enderman_desert:
+  Type: ENDERMAN
+  Display: '&fDesert Enderman'
+  Health: 40
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=desert_enderman} @Self ~onSpawn
+  - model{mid=desert_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=desert_enderman} @Self ~onSpawn
+  - state{m=desert_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=desert_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=desert_enderman_mechanic} @target ~onDeath
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=desert_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=desert_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+
+enderman_dark_oak:
+  Type: ENDERMAN
+  Display: '&fDark Oak Enderman'
+  Health: 50
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+    KnockbackResistance: 0.5
+  Skills:
+  - model{mid=dark_oak_enderman} @Self ~onSpawn
+  - model{mid=dark_oak_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=dark_oak_enderman} @Self ~onSpawn
+  - state{m=dark_oak_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.53;p=0.62to0.79} @self ~onDamaged
+  - state{m=dark_oak_enderman;s=attack} @self ~onAttack
+  - damage{a=8} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=dark_oak_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=dark_oak_enderman_particles} @self ~onTimer:10 0.75
+  - skill{s=dark_oak_enderman_angry_PRE_EFFECT_PLAYER} @target ~onTimer:30 0.85
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.8} @self ~onTeleport
+  - randomskill{s=dark_oak_enderman_sound_idle_1,dark_oak_enderman_sound_idle_2} @self ~onTimer:100 0.09
+  - skill{s=dark_oak_enderman_sound_stare} @self ~onTimer:200 0.08
+
+
+enderman_ice_spikes:
+  Type: ENDERMAN
+  Display: '&fIce Spikes Enderman'
+  Health: 60
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.22
+    KnockbackResistance: 0.5
+  Skills:
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=ice_spikes_enderman} @Self ~onSpawn
+  - model{mid=ice_spikes_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=enderman_ice_spikes} @Self ~onSpawn
+  - state{m=ice_spikes_enderman;s=hurt} @self ~onDamaged
+  - state{m=ice_spikes_enderman;s=attack} @self ~onAttack
+  - damage{a=8} @target ~onAttack
+  - skill{s=ice_spikes_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=ice_spikes_enderman_particles} @self ~onTimer:10 0.75
+
+enderman_swamp:
+  Type: ENDERMAN
+  Display: '&fSwamp Enderman'
+  Health: 50
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.22
+    KnockbackResistance: 0.5
+  Modules:
+    ThreatTable: true
+  Skills:
+  - cancelevent{sync=false} @self ~onDamaged ?damagecause{cause=DROWNING}
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=swamp_enderman} @Self ~onSpawn
+  - model{mid=swamp_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=enderman_swamp} @Self ~onSpawn
+  - randomskill{s=plant_enderman_sound_hurt_1,plant_enderman_sound_hurt_2,plant_enderman_sound_hurt_3,plant_enderman_sound_hurt_4} @self ~onDamaged
+  - randomskill{s=plant_enderman_sound_idle_1,plant_enderman_sound_idle_2} @self ~onTimer:100 0.09
+  - state{m=swamp_enderman;s=hurt} @self ~onDamaged
+  - state{m=swamp_enderman;s=attack} @self ~onAttack
+  - skill{s=swamp_enderman_mechanic_attack} @self ~onAttack
+  - damage{a=7} @target ~onAttack
+  - skill{s=swamp_enderman_angry_PRE_PRE} @self ~onEnterCombat
+  - skill{s=swamp_enderman_angry_PRE} @self ~onTimer:70 ?incombat true
+  - skill{s=swamp_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+
+enderman_windswept_hills:
+  Type: ENDERMAN
+  Display: '&fWindswept Hills Enderman'
+  Health: 50
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.22
+    KnockbackResistance: 0.5
+  Skills:
+  - cancelevent{sync=true} @self ~onTeleport
+  - model{mid=windswept_hills_enderman} @Self ~onSpawn
+  - model{mid=windswept_hills_enderman} @Self ~onLoad
+  - setVariable{var=caster.enderman_name;type=STRING;value=enderman_windswept_hills} @Self ~onSpawn
+  - randomskill{s=tall_enderman_sound_death_1,tall_enderman_sound_death_2} @self ~onDeath
+  - randomskill{s=tall_enderman_sound_idle_1,tall_enderman_sound_idle_2,tall_enderman_sound_idle_3,tall_enderman_sound_idle_4} @self ~onTimer:100 0.09
+  - state{m=windswept_hills_enderman;s=hurt} @self ~onDamaged
+  - state{m=windswept_hills_enderman;s=attack} @self ~onAttack
+  - damage{a=7} @target ~onAttack
+  - skill{s=windswept_hills_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=windswept_hills_enderman_particles} @self ~onTimer:10 0.75
+  - skill{s=windswept_hills_enderman_mechanic_potion} @self ~onTimer:175
+  - skill{s=tall_enderman_sound_stare} @self ~onTimer:200 0.08
+
+
+# 80621TNF9ZE73RASLNLLFE82OY1
+
+
+# ------------------------------------------------------------
+# Variantes añadidas (modelos del pack que no tenían mob).
+# Usan las habilidades genéricas del pack.
+# ------------------------------------------------------------
+
+enderman_savanna:
+  Type: ENDERMAN
+  Display: '&fSavanna Enderman'
+  Health: 45
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=savanna_enderman} @Self ~onSpawn
+  - model{mid=savanna_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=savanna_enderman} @Self ~onSpawn
+  - state{m=savanna_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=savanna_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+
+enderman_badlands:
+  Type: ENDERMAN
+  Display: '&fBadlands Enderman'
+  Health: 45
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=badlands_enderman} @Self ~onSpawn
+  - model{mid=badlands_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=badlands_enderman} @Self ~onSpawn
+  - state{m=badlands_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=badlands_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+
+enderman_snowy:
+  Type: ENDERMAN
+  Display: '&fSnowy Enderman'
+  Health: 50
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=snowy_enderman} @Self ~onSpawn
+  - model{mid=snowy_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=snowy_enderman} @Self ~onSpawn
+  - state{m=snowy_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=snowy_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+
+enderman_mushroom:
+  Type: ENDERMAN
+  Display: '&fMushroom Enderman'
+  Health: 40
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=mushroom_enderman} @Self ~onSpawn
+  - model{mid=mushroom_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=mushroom_enderman} @Self ~onSpawn
+  - state{m=mushroom_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=mushroom_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+
+enderman_flower_fields:
+  Type: ENDERMAN
+  Display: '&fFlower Fields Enderman'
+  Health: 40
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=flower_fields_enderman} @Self ~onSpawn
+  - model{mid=flower_fields_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=flower_fields_enderman} @Self ~onSpawn
+  - state{m=flower_fields_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=flower_fields_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+
+enderman_cave:
+  Type: ENDERMAN
+  Display: '&fCave Enderman'
+  Health: 55
+  Options:
+    Silent: true
+    PreventOtherDrops: true
+    PreventLeashing: false
+    PreventVanillaDamage: true
+    MovementSpeed: 0.19
+  Skills:
+  - model{mid=cave_enderman} @Self ~onSpawn
+  - model{mid=cave_enderman} @Self ~onLoad
+  - setstance{s=notholdingblock} @self ~onSpawn
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self ~onSpawn
+  - setVariable{var=caster.enderman_name;type=STRING;value=cave_enderman} @Self ~onSpawn
+  - state{m=cave_enderman;s=hurt} @self ~onDamaged
+  - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
+  - state{m=cave_enderman;s=attack} @self ~onAttack
+  - damage{a=6} @target ~onAttack
+  - skill{s=generic_enderman_pickup_block_PRE} @self ~onTimer:60 0.09
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK_2} @self ~onTimer:90 0.19
+  - skill{s=generic_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
+  - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
+  - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
+  - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09

@@ -1,0 +1,183 @@
+
+scene_fisherman_boat:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    NoGravity: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_fishermen;save=true} @self ~onSpawn
+  - model{mid=scene_fishermen;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_fishermen;t=idle;s=boat} @self ~onSpawn
+  - defaultstate{m=scene_fishermen;t=idle;s=boat;delay=10} @self ~onLoad
+  - state{s=boat;delay=20} @self ~onLoad
+  - remapmodel{m=scene_fishermen;n=<global.var.skin<caster.uuid>|scene_fishermen>;delay=10} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_pescador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_fishermen;type=STRING;save=true} @self ~onInteract
+
+scene_fisherman_stick:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_fishermen;save=true} @self ~onSpawn
+  - model{mid=scene_fishermen;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_fishermen;t=idle;s=stick} @self ~onSpawn
+  - defaultstate{m=scene_fishermen;t=idle;s=stick;delay=10} @self ~onLoad
+  - state{s=stick;delay=20} @self ~onLoad
+  - remapmodel{m=scene_fishermen;n=<global.var.skin<caster.uuid>|scene_fishermen>;delay=10} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_pescador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_fishermen;type=STRING;save=true} @self ~onInteract
+
+scene_fisherman_standing:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_fishermen;save=true} @self ~onSpawn
+  - model{mid=scene_fishermen;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_fishermen;t=idle;s=fishing} @self ~onSpawn
+  - defaultstate{m=scene_fishermen;t=idle;s=fishing;delay=10} @self ~onLoad
+  - state{s=fishing;delay=20} @self ~onLoad
+  - remapmodel{m=scene_fishermen;n=<global.var.skin<caster.uuid>|scene_fishermen>;delay=10} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_pescador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_fishermen;type=STRING;save=true} @self ~onInteract
+
+scene_fisherman_sitting:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_fishermen;save=true} @self ~onSpawn
+  - model{mid=scene_fishermen;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_fishermen;t=idle;s=sitting} @self ~onSpawn
+  - defaultstate{m=scene_fishermen;t=idle;s=sitting;delay=10} @self ~onLoad
+  - state{s=sitting;delay=20} @self ~onLoad
+  - remapmodel{m=scene_fishermen;n=<global.var.skin<caster.uuid>|scene_fishermen>;delay=10} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_pescador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_fishermen;type=STRING;save=true} @self ~onInteract
+
+scene_fisherman_interactive:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_fishermen;save=true} @self ~onSpawn
+  - model{mid=scene_fishermen;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_fishermen;t=idle;s=interactive_idle} @self ~onSpawn
+  - defaultstate{m=scene_fishermen;t=idle;s=interactive_idle;delay=10} @self ~onLoad
+  - state{s=interactive_idle;delay=20} @self ~onLoad
+  - remapmodel{m=scene_fishermen;n=<global.var.skin<caster.uuid>|scene_fishermen>;delay=10} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_fishermen;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_pescador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_fishermen;type=STRING;save=true} @self ~onInteract
+  - skill{s=interact_fisherman} @self ~onInteract 
+#ec2d7c710433712ffdc96c1103739167

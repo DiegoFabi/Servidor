@@ -1,0 +1,38 @@
+# Acciones del menú Más Opciones (menuOpciones.yml)
+menumain_opciones_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:item.bundle.insert";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuOpciones {caster_name}";runas=console} @Self'
+opciones_buzon_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="buzon";runas=player} @Self'
+opciones_historia_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:item.book.page_turn";volume=1;pitch=1} @Self'
+  - 'command{c="historia";runas=player} @Self'
+opciones_subasta_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="subasta info";runas=player} @Self'
+opciones_duelos_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="coinflip";runas=player} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Duelos</bold> <dark_gray>» <#C9CDD6>Reto de Clicks: <#FFD36B>/retoclicks <jugador>"} @Self'
+opciones_volver_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuMain {caster_name}";runas=console} @Self'
+opciones_homes_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:item.bundle.drop_contents";volume=1;pitch=1} @Self'
+  - 'command{c="homes list";runas=player} @Self'

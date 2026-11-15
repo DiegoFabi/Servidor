@@ -1,0 +1,86 @@
+rune1_normal1:
+  itemname: Rune 1
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200550
+    texture: rune1:items/normal1.png
+rune1_normal2:
+  itemname: Rune 2
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200551
+    texture: rune1:items/normal2.png
+rune1_normal3:
+  itemname: Rune 3
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200552
+    texture: rune1:items/normal3.png
+rune1_red:
+  itemname: Red Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200553
+    texture: rune1:items/red.png
+rune1_green:
+  itemname: Green Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200554
+    texture: rune1:items/green.png
+rune1_blue:
+  itemname: Blue Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200555
+    texture: rune1:items/blue.png
+rune1_orange:
+  itemname: Orange Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200556
+    texture: rune1:items/orange.png
+rune1_yellow:
+  itemname: Yellow Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200557
+    texture: rune1:items/yellow.png
+rune1_pink:
+  itemname: Pink Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200558
+    texture: rune1:items/pink.png
+rune1_purple:
+  itemname: Purple Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200559
+    texture: rune1:items/purple.png
+rune1_navy:
+  itemname: Navy Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200560
+    texture: rune1:items/navy.png
+rune1_lime:
+  itemname: Lime Rune
+  material: PAPER
+  Pack:
+    parent_model: item/generated
+    custom_model_data: 200561
+    texture: rune1:items/lime.png
+
+# a36e50c704a80b635bd36d60181f7850

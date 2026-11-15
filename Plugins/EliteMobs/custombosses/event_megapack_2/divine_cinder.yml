@@ -1,0 +1,32 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: BLAZE
+name: $eventBossLevel &cDivine Cinder
+level: dynamic
+healthMultiplier: 4.0
+damageMultiplier: 1.0
+isPersistent: true
+uniqueLootList:
+- filename=divine_cinder_drop_charm.yml:amount=1:chance=0.5
+powers:
+- tracking_fireball.yml
+- firestorm.yml
+- invulnerability_fire.yml
+movementSpeedAttribute: 0.28
+followDistance: 70
+locationMessage: '&cDivine Cinder: $distance blocks away!'
+spawnMessage: '&cA divine blaze has appeared!'
+deathMessage: '&aThe Divine Cinder was defeated by $players!'
+escapeMessage: '&4The Divine Cinder has smoked away!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Divine Cinder has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

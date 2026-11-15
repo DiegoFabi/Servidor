@@ -1,0 +1,59 @@
+# ============================================================
+#  Misil de Agua  [COMÚN]
+#  Comando: /watermisil
+#  Anillo de agua giratorio que daña a quien esté dentro (8 s).
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+    perm: admin.particles
+    nopermiso: &cNo tienes permiso para usar este comando.
+    cd: 2 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+    radio-agua: 3
+    dano-agua: 1
+
+# ------------------------------------------------------------
+#  Water Misil (circulo de agua)
+# ------------------------------------------------------------
+command /watermisil:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        fxAnuncio({_p}, "☂", "Misil de Agua", "La marea te protege", "#7FD8FF", "#3A9BDC", "Común")
+        play sound "entity.dolphin.play" at {_p}
+        wait 5 ticks
+        play sound "block.bubble_column.upwards_ambient" at {_p}
+        wait 5 ticks
+        play sound "entity.guardian.attack" at {_p}
+        wait 10 ticks
+        play sound "entity.player.splash.high_speed" at {_p}
+        if {_p} is not online:
+            stop
+
+        # Ubicacion fija donde se invoco
+        set {_center} to location of {_p}
+
+        # 80 pasos cada 2 ticks = 8 segundos. El anillo gira poco a poco.
+        loop 80 times:
+            set {_t} to loop-number
+            set {_ring::*} to fxRing({_center}, {@radio-agua}, 16, 0.5, {_t} * 4)
+            make 3 of splash at {_ring::*} with offset vector(0.15, 0.1, 0.15) with extra 0.1 {@force}
+            make 1 of falling_water at {_ring::*} with offset vector(0.15, 0.3, 0.15) with extra 0 {@force}
+            if mod({_t}, 2) is 0:
+                make 1 of bubble_pop at {_ring::*} with offset vector(0.15, 0.2, 0.15) with extra 0.02 {@force}
+
+            # Dano cada medio segundo (cada 5 pasos)
+            if mod({_t}, 5) is 0:
+                make 6 of dolphin at {_center} with offset vector(1.5, 0.5, 1.5) with extra 0 {@force}
+                loop all monsters in radius {@radio-agua} around {_center}:
+                    if loop-entity is not {_p}:
+                        damage loop-entity by {@dano-agua}
+
+            wait 2 ticks

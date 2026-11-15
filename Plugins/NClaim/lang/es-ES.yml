@@ -1,0 +1,147 @@
+# Idioma de NClaim: español (config.yml -> lang_file: es-ES)
+command:
+  must_be_player: "{prefix} &cDebes ser un jugador para usar este comando."
+  permission_denied: "{prefix} &cNo tienes permiso para hacer eso."
+  in_cooldown: "{prefix} &cEspera un momento antes de volver a intentarlo."
+  wrong_usage: "{prefix} &f¿Necesitas ayuda? Usa &e/nclaim <help/?> &fpara ver todos los comandos."
+  enter_a_valid_number: "{prefix} &cEscribe un número válido."
+  enter_a_player: "{prefix} &cEscribe el nombre de un jugador."
+  player_data_not_found: "{prefix} &cNo se encontraron tus datos. &7Vuelve a entrar e inténtalo de nuevo."
+  invalid_material: "{prefix} &c{material} &fno es un material válido."
+  invalid_block_type: "{prefix} &c{block} &fno es un tipo de bloque válido."
+  not_in_claim: "{prefix} &cNo estás dentro de ninguna protección."
+  expiration_extended: "{prefix} &fDuración ampliada &e{d} días&f, &e{h} horas&f y &e{m} minutos por &e{price}&f."
+  level:
+    info: "{prefix} &fEl valor total de esta protección es &e{value} &7(en &e{chunks} &7chunks)"
+  balance:
+    current: "{prefix} &fTienes &e${balance} &fde saldo."
+    not_enough: "{prefix} &cNo tienes saldo suficiente para hacer eso."
+  player:
+    not_found: "{prefix} &cNo se encontró a {target}."
+    cant_add_self: "{prefix} &cNo puedes añadirte a ti mismo."
+  reload:
+    success: "{prefix} &aConfiguración recargada correctamente."
+    failed: "{prefix} &cNo se pudo recargar. Revisa la consola."
+  set:
+    block_value_set: "{prefix} &fEl valor de &e{block} &fahora es &e{value}&f."
+    target_balance_set: "{prefix} &fUn administrador fijó tu saldo en &e${balance}&f."
+    player_balance_set: "{prefix} &fEl saldo de &e{target} &fahora es &e${amount}&f."
+  add:
+    target_added: "{prefix} &fSe añadieron &e${amount} &fa tu saldo. &7(Total: &e${balance}&7)"
+    player_added: "{prefix} &fSe añadieron &e${amount} &fal saldo de &e{target}&f."
+    world_already_in_blacklist: "{prefix} &cEl mundo &e{world} &cya está en la lista negra."
+    world_added_to_blacklist: "{prefix} &fEl mundo &e{world} &fse añadió a la lista negra."
+    region_already_in_blacklist: "{prefix} &cLa región &e{region} &cya está en la lista negra."
+    region_added_to_blacklist: "{prefix} &fLa región &e{region} &fse añadió a la lista negra."
+    expiration_extended: "{prefix} &fDuración ampliada &e{d} días&f, &e{h} horas&f y &e{m} minutos&f."
+    block_value_added: "{prefix} &fEl valor de &e{block} &fahora es &e{value}&f."
+    block_already_exists: "{prefix} &c{block} &cya está en la lista de valores."
+  remove:
+    target_removed: "{prefix} &fSe quitaron &e${amount} &fde tu saldo. &7(Total: &e${balance}&7)"
+    player_removed: "{prefix} &fSe quitaron &e${amount} &fdel saldo de &e{target}&f."
+    not_in_blacklist: "{prefix} &c{world} &fno está en la lista negra."
+    world_removed_from_blacklist: "{prefix} &fEl mundo &e{world} &fse quitó de la lista negra."
+    region_removed_from_blacklist: "{prefix} &fLa región &e{region} &fse quitó de la lista negra."
+    expiration_subtracted: "{prefix} &fDuración reducida &e{d} días&f, &e{h} horas&f y &e{m} minutos&f."
+    block_not_found: "{prefix} &c{block} &cno está en la lista de valores."
+    block_value_removed: "{prefix} &e{block} &fse quitó de la lista de valores."
+  change:
+    invalid_lang: "{prefix} &cElige un idioma válido &7(por ejemplo 'es-ES' o 'en-US')"
+    lang_changed: "{prefix} &fIdioma cambiado a &e{lang}&f."
+    invalid_material: "{prefix} &cMaterial no válido: {material}"
+    invalid_value: "{prefix} &c¡Valor no válido! Escribe un número positivo."
+    blockvalue_updated: "{prefix} &aValor de bloque actualizado: &e{material} &a{old_value} -> {new_value}"
+    blockvalue_added: "{prefix} &aNuevo valor de bloque: &e{material} &a= {value}"
+    blockvalue_not_changed: "{prefix} &aEl valor no cambió porque el antiguo y el nuevo son iguales."
+    setting_cannot_be_changed: "{prefix} &cEste ajuste no se puede cambiar."
+  migrate:
+    database_disabled: "{prefix} &cLa base de datos está desactivada en la configuración."
+    completed: "{prefix} &aMigración completada."
+    database_not_connected: "{prefix} &cNo hay conexión con la base de datos; revisa los datos de conexión."
+    backup_created: "{prefix} &aCopia de seguridad creada."
+    failed: "{prefix} &cLa migración falló. Revisa la consola."
+
+claim:
+  cooldown: "{prefix} &cDebes esperar &e{time} &cantes de volver a proteger."
+  too_close_to_other_claim: "{prefix} &c¡No puedes proteger este chunk! Estás demasiado cerca de la protección de otro jugador."
+  no_owner: "Sin dueño."
+  owner: "&e{owner}"
+  max_reached: "{prefix} &cHas llegado al máximo de protecciones."
+  not_found: "{prefix} &cNo tienes protecciones ni estás añadido en ninguna."
+  in_blacklisted_region_or_world: "{prefix} &cNo puedes hacer eso en este mundo o región."
+  not_yours: "{prefix} &cEsta protección no es tuya."
+  buy_cancelled: "{prefix} &cCompra de la protección cancelada."
+  already_claimed: "{prefix} &c¡Este chunk ya está protegido!"
+  received: "{prefix} &aHas recibido la protección."
+  removed: "{prefix} &fSe eliminó la protección de este chunk."
+  expired: "{prefix} &fUna protección expiró y se eliminó &7(&e{x}&7, &e{z}&7)."
+  setting_change_cancelled: "&c¡Cambio de ajuste cancelado!"
+  pvp_not_allowed: "{prefix} &cEl PvP no está permitido en esta protección."
+  transferred: "&aProtección transferida a &e{player}"
+  name_cleared: "{prefix} &aNombre borrado. Identificador restablecido a: &e{slug}"
+  name_too_long: "{prefix} &c¡Nombre demasiado largo! Máximo {max} caracteres. (Actual: {current})"
+  name_changed_same_slug: "{prefix} &aNombre actualizado. El identificador sigue siendo: &e{slug}"
+  name_changed_new_slug: "{prefix} &aNombre actualizado. Identificador cambiado de &7{old_slug} &aa &e{new_slug}"
+  sell:
+    started: "{prefix} &aTu protección &e{display_slug} &aestá en venta por &e${price}&a."
+    bought_buyer: "{prefix} &aHas comprado &e{display_slug} &aa &e{player} &apor &e${price}&a."
+    bought_seller: "{prefix} &e{player} &acompró tu protección &e{display_slug} &apor &e${price}&a."
+  block:
+    purchased: "{prefix} &aBloque de protección comprado: &e{block} &7(&e{price}$&7)"
+    changed: "{prefix} &aBloque de protección cambiado: &c{old_block} &7-> &2{new_block}"
+  level:
+    calculating_started: "{prefix} &aCalculando el nivel de tu protección, espera un momento."
+    calculating_in_progress: "{prefix} &cOtro jugador está calculando su nivel, espera un momento."
+    calculating_in_queue: "{prefix} &fHay &7{count} &fjugadores en la cola de cálculo."
+    calculating_in_queue_position: "{prefix} &fTu turno es el &7{position}&f."
+    queue_is_empty: "{prefix} &fLa cola está vacía."
+    your_already_in_queue: "{prefix} &fYa estás en la cola."
+  time:
+    no_time_selected: "{prefix} &cNo hay tiempo que añadir."
+  land:
+    already_own_chunk: "{prefix} &c¡Este chunk ya es tuyo!"
+    already_own_land: "{prefix} &c¡Este terreno ya es tuyo!"
+    not_adjacent: "{prefix} &c¡Solo puedes ampliar a chunks contiguos!"
+    expanded: "{prefix} &aTerreno añadido a tu protección."
+    buy_cancelled: "{prefix} &cCompra de terreno cancelada."
+    unclaimed: "{prefix} &aTerreno liberado."
+  coop:
+    limit_reached: "{prefix} &c¡Solo puedes tener hasta &e{0} &cmiembros!"
+    already_added: "{prefix} &c{coop} ya es miembro."
+    added: "{prefix} &e{coop} &fse añadió a tu protección."
+    removed: "{prefix} &e{coop} &fya no es miembro."
+    kicked: "{prefix} &fTe quitaron de la protección de &e{owner}&f."
+    joined: "{prefix} &fTe añadieron a la protección de &e{owner}&f."
+    not_in_list: "{prefix} &c{0} &fno es miembro."
+    add_cancelled: "&c¡Se canceló añadir al miembro!"
+    remove_cancelled: "&c¡Se canceló quitar al miembro!"
+    permission_toggle_cancelled: "&c¡Se canceló el cambio de permiso!"
+  teleport:
+    failed: "{prefix} &cHay bloques sobre el bloque de protección que impiden teletransportarte."
+    success: "{prefix} &aTeletransportado a la protección."
+  move:
+    outside_of_chunk: "{prefix} &cNo puedes mover el bloque de protección fuera de su chunk."
+    success: "{prefix} &aBloque de protección movido."
+
+move:
+  unclaimed_chunk: "ACTION_BAR=&7Zona libre"
+  claimed_chunk: "ACTION_BAR=&e{display_name} &7- &e{owner} &7- {pvp_status}"
+  pvp_enabled: "&cPvP"
+  pvp_disabled: "&aPvP"
+
+hologram:
+  title: "&6{display_name}"
+  title_sale_suffix: '&7[&a$&r{price}&7]'
+  price_format: "&e{price}"
+  owner: "&fDueño: &e{owner}"
+  time_left:
+    text: "&fTiempo restante: &e{time_left}"
+    d: "d"
+    h: "h"
+    m: "m"
+    s: "s"
+  coop_count: "&fMiembros: &e{coop_count}"
+  total_size: "&fTamaño total: &e{total_size} &7chunks"
+  edit: "&eClic derecho para editar"
+
+lang_version: "{version}"

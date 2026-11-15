@@ -1,0 +1,272 @@
+
+scene_lumberjack_log:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
+  - state{s=lumberjack_log;delay=10} @self ~onLoad
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_log} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_log;delay=10} @self ~onLoad
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack;type=STRING;save=true} @self ~onInteract
+
+scene_lumberjack_walk:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=10}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.13
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=lumberjack1} ~onTimer:10 ?stance{stance=golumberjack1}
+  - goto{speed=1} @pin{name=lumberjack2} ~onTimer:10 ?stance{stance=golumberjack2}
+  - setStance{stance=golumberjack1;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=lumberjack2;distance=<2}
+  - setStance{stance=golumberjack2;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=lumberjack1;distance=<2}
+  - setStance{stance=golumberjack1} @self ~onSpawn
+  - light{m=scene_lumberjack;p=lantern_light;block=15} @self ~onSpawn
+  - light{m=scene_lumberjack;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack;type=STRING;save=true} @self ~onInteract
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_idle} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_idle;delay=10} @self ~onLoad
+  - defaultstate{m=scene_lumberjack;t=walk;s=lumberjack_walk} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=walk;s=lumberjack_walk;delay=10} @self ~onLoad
+  - lockhead{lp=true} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn
+
+
+scene_lumberjack_walk2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=10}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.13
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=lumberjack3} ~onTimer:10 ?stance{stance=golumberjack3}
+  - goto{speed=1} @pin{name=lumberjack4} ~onTimer:10 ?stance{stance=golumberjack4}
+  - setStance{stance=golumberjack3;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=lumberjack4;distance=<2}
+  - setStance{stance=golumberjack4;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=lumberjack3;distance=<2}
+  - setStance{stance=golumberjack3} @self ~onSpawn
+  - light{m=scene_lumberjack;p=lantern_light;block=15} @self ~onSpawn
+  - light{m=scene_lumberjack;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack;type=STRING;save=true} @self ~onInteract
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_idle} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_idle;delay=10} @self ~onLoad
+  - defaultstate{m=scene_lumberjack;t=walk;s=lumberjack_walk} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=walk;s=lumberjack_walk;delay=10} @self ~onLoad
+  - lockhead{lp=true} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn
+
+
+scene_lumberjack_walk3:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=10}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.13
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=lumberjack5} ~onTimer:10 ?stance{stance=golumberjack5}
+  - goto{speed=1} @pin{name=lumberjack6} ~onTimer:10 ?stance{stance=golumberjack6}
+  - setStance{stance=golumberjack5;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=lumberjack6;distance=<2}
+  - setStance{stance=golumberjack6;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=lumberjack5;distance=<2}
+  - setStance{stance=golumberjack5} @self ~onSpawn
+  - light{m=scene_lumberjack;p=lantern_light;block=15} @self ~onSpawn
+  - light{m=scene_lumberjack;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack;type=STRING;save=true} @self ~onInteract
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_idle} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_idle;delay=10} @self ~onLoad
+  - defaultstate{m=scene_lumberjack;t=walk;s=lumberjack_walk} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=walk;s=lumberjack_walk;delay=10} @self ~onLoad
+  - lockhead{lp=true} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn
+
+
+scene_lumberjack_saw:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack_saw;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack_saw;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_lumberjack_saw;t=idle;s=sawing} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack_saw;t=idle;s=sawing;delay=10} @self ~onLoad
+  - state{s=sawing;delay=10} @self ~onLoad
+  - remapmodel{m=scene_lumberjack_saw;n=<global.var.skin<caster.uuid>|scene_lumberjack_saw>;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - skill{s=scene_openmenu_2npcs} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack_saw;type=STRING;save=true} @self ~onInteract
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_lumberjack_saw>;npid=head2;delay=40} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_lumberjack_saw>;npid=left_leg2;delay=40} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_lumberjack_saw>;npid=right_leg2;delay=40} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_lumberjack_saw>;npid=right_arm2;delay=40} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_lumberjack_saw>;npid=left_arm2;delay=40} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_lumberjack_saw>;npid=body2;delay=40} @self ~onLoad
+scene_lumberjack_cut:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
+  - state{s=lumberjack_tree;delay=10} @self ~onLoad
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_tree} @self ~onSpawn
+  - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_tree;delay=10} @self ~onLoad
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_lumberjack;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack;type=STRING;save=true} @self ~onInteract
+
+scene_lumberjack_interactive:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  - lookatplayers{r=5}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_lumberjack_interactive;save=true} @self ~onSpawn
+  - model{mid=scene_lumberjack_interactive;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_lumberjack_interactive;n=<global.var.skin<caster.uuid>|scene_lumberjack_interactive>;delay=10} @self ~onLoad
+  - changepart{m=scene_lumberjack_interactive;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_lumberjack_interactive;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_lumberjack_interactive;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_lumberjack_interactive;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_lumberjack_interactive;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_lumberjack_interactive;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - lockhead{lp=true} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn
+  - skill{s=interact_lumberjack} ~onInteract
+  - skill{s=dialogo_lenador} @trigger ~onInteract
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_lumberjack_interactive;type=STRING;save=true} @self ~onInteract
+#90017fbb57e5d4eae99a5fa4d63cbefa

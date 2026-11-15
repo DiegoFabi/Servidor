@@ -1,0 +1,231 @@
+
+
+bl_illusionist:
+  Type: HUSK
+  Display: 'Illusionist'
+  Faction: bl_illusionist
+  Health: 220
+  Damage: 0
+  DamageModifiers:
+  - SUFFOCATION 0
+  - FALL 0
+  - PROJECTILE 0.25
+  - FIRE -0.1
+  - FIRE_TICK -0.1
+  - FREEZE -0.1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  - lookatplayers
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  Modules:
+    ThreatTable: true
+  Options:
+    MovementSpeed: 1
+    FollowRange: 32
+    KnockbackResistance: 1
+    Silent: true
+    Despawn: true
+    Invincible: false
+    PreventSunburn: true
+    PreventBlockInfection: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventJockeyMounts: true
+    Collidable: true
+  BossBar:
+    Enabled: true
+    Title: ""
+    Range: 50
+    Color: RED
+    Style: SOLID
+  Skills:
+  - model{mid=bl_illusionist;n=false;step=1;usm=true;save=true;d=true} @self ~onSpawn
+  - model{mid=bl_illusionist;n=false;step=1;usm=true;save=true;d=true} @self ~onLoad
+  - CancelEvent{sync=true} @self ~onAttack
+  - skill{s=bl_illusionist_active} @target ~onTimer:20
+  - skill{s=bl_illusionist_spawn} ~onSpawn
+  - skill{s=bl_illusionist_death} @self ~onDeath
+  - skill{s=bl_illusionist_regeneration} @self ~onDamaged
+  - skill{s=bl_illusionist_skills} @target ~onTimer:20
+  - skill{s=bl_illusionist_phase_cards} @target ~onTimer:15
+  - skill{s=bl_illusionist_attack_cards} @target ~onTimer:20
+  - skill{s=bl_illusionist_cards} @target ~onTimer:20
+
+
+bl_illusionist_vfx_attack2:
+  Type: ARMOR_STAND
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_illusionist_vfx_attack2;n=false;usm=true} @self ~onSpawn
+  - aura{auraName=bl_illusionist_attack2_totem;onTick=bl_illusionist_attack2_totem_tick;interval=1;duration=14;delay=1} @self ~onSpawn
+  - state{mid=bl_illusionist_vfx_attack2;s=spawn} @self ~onSpawn
+  - remove{delay=15} @self ~onSpawn
+
+
+bl_illusionist_dagger:
+  Type: ARMOR_STAND
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_illusionist_dagger;n=false;usm=true} @self ~onSpawn
+  - state{mid=bl_illusionist_dagger;s=spawn} @self ~onSpawn
+  - state{mid=bl_illusionist_dagger;s=idle;delay=2} @self ~onSpawn
+
+
+bl_illusionist_box:
+  Type: ARMOR_STAND
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_illusionist_box;n=false;usm=true} @self ~onSpawn
+  - aura{auraName=bl_illusionist_attack_box_totem;onTick=bl_illusionist_attack_box_totem_tick;interval=1;duration=4;delay=10} @self ~onSpawn
+  - aura{auraName=bl_illusionist_attack_box_totem_2;onTick=bl_illusionist_attack_box_totem_tick;interval=1;duration=4;delay=38} @self ~onSpawn
+  - aura{auraName=bl_illusionist_attack_box_totem_3;onTick=bl_illusionist_attack_box_totem_tick;interval=1;duration=4;delay=66} @self ~onSpawn
+  - aura{auraName=bl_illusionist_attack_box_totem_4;onTick=bl_illusionist_attack_box_totem_tick;interval=1;duration=4;delay=94} @self ~onSpawn
+  - aura{auraName=bl_illusionist_attack_box_totem_5;onTick=bl_illusionist_attack_box_totem_tick_slow;interval=10;duration=111;delay=0} @self ~onSpawn
+  - state{s=spawn} @self ~onSpawn
+  - state{s=attack_swords;delay=8} @self ~onSpawn
+  - state{s=end;delay=119} @self ~onSpawn
+  - remove{delay=149} @self ~onSpawn
+
+
+bl_illusionist_rabbit:
+  Type: HUSK
+  Display: 'Illusionist Rabbit'
+  Faction: bl_illusionist_rabbit
+  Health: 10
+  Damage: 0
+  DamageModifiers:
+  - SUFFOCATION 0
+  - FALL 0
+  - FIRE -0.1
+  - FIRE_TICK -0.1
+  - FREEZE -0.1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  - lookatplayers
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  Modules:
+    ThreatTable: true
+  Options:
+    MovementSpeed: 1.3
+    FollowRange: 32
+    KnockbackResistance: 1
+    Silent: true
+    Despawn: true
+    Invincible: false
+    PreventSunburn: true
+    PreventBlockInfection: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventJockeyMounts: true
+    Collidable: true
+  Skills:
+  - model{mid=bl_illusionist_rabbit;n=false;step=1;usm=true;save=true} @self ~onSpawn
+  - model{mid=bl_illusionist_rabbit;n=false;step=1;usm=true;save=true} @self ~onLoad
+  - CancelEvent{sync=true} @self ~onAttack
+  - setspeed{s=1.3} @self ~onSpawn
+  - effect:particles{p=dust_color_transition;color1=#b41e3d;color2=#891a34;amount=200;hS=0.4;vS=0.6;speed=0;size=1} @self ~onSpawn
+  - skill{s=bl_illusionist_rabbit_death} @self ~onDeath
+  - skill{s=bl_illusionist_rabbit_jump} @self ~onTimer:20
+  - skill{s=bl_illusionist_rabbit_explosion} @target
+  - BodyClamp{mh=25;rde=0;rdu=0} @self ~onSpawn
+
+
+bl_illusionist_black_card:
+  Type: ARMOR_STAND
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_illusionist_black_card;n=false;usm=true} @self ~onSpawn
+  - state{mid=bl_illusionist_black_card;s=spawn} @self ~onSpawn
+  - state{mid=bl_illusionist_black_card;s=idle;delay=2} @self ~onSpawn
+
+
+bl_illusionist_red_card:
+  Type: ARMOR_STAND
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_illusionist_red_card;n=false;usm=true} @self ~onSpawn
+  - state{mid=bl_illusionist_red_card;s=spawn} @self ~onSpawn
+  - state{mid=bl_illusionist_red_card;s=idle;delay=2} @self ~onSpawn
+
+
+bl_illusionist_cards:
+  Type: ARMOR_STAND
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_illusionist_cards;n=false;usm=true} @self ~onSpawn
+  - aura{auraName=bl_illusionist_cards_totem;oT=bl_illusionist_cards_tick;interval=1;duration=4;delay=15} @self ~onSpawn
+  - aura{auraName=bl_illusionist_cards_totem2;oT=bl_illusionist_cards_tick;interval=1;duration=4;delay=26} @self ~onSpawn
+  - aura{auraName=bl_illusionist_cards_totem3;oT=bl_illusionist_cards_tick;interval=1;duration=4;delay=37} @self ~onSpawn
+  - aura{auraName=bl_illusionist_cards_totem4;oT=bl_illusionist_cards_tick;interval=1;duration=4;delay=49} @self ~onSpawn
+  - state{mid=bl_illusionist_cards;s=spawn} @self ~onSpawn
+  - state{mid=bl_illusionist_cards;s=drop_cards;delay=5} @self ~onSpawn
+  - state{mid=bl_illusionist_cards;s=end;delay=60} @self ~onSpawn
+  - sound{s=bl_illusionist.cards_fell;v=3;p=1;delay=15} @self ~onSpawn
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=15} @self ~onSpawn
+  - sound{s=bl_illusionist.cards_fell;v=3;p=1;delay=26} @self ~onSpawn
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=26} @self ~onSpawn
+  - sound{s=bl_illusionist.cards_fell;v=3;p=1;delay=37} @self ~onSpawn
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=37} @self ~onSpawn
+  - sound{s=bl_illusionist.cards_fell;v=3;p=1;delay=49} @self ~onSpawn
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=49} @self ~onSpawn
+  - remove{delay=65} @self ~onSpawn
+
+# 8424981AT54RY7HMO9

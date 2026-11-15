@@ -1,0 +1,32 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: BEE
+name: $eventBossLevel &6Nether Wasp
+level: dynamic
+healthMultiplier: 3.2
+damageMultiplier: 0.77
+isPersistent: true
+uniqueLootList:
+- filename=the_stinger.yml:amount=1:chance=1.0
+powers:
+- summonable:summonType=ON_COMBAT_ENTER:filename=nether_wasp_summon_1.yml:amount=1:chance=1.0
+- attack_poison.yml
+- invulnerability_fire.yml
+movementSpeedAttribute: 0.28
+followDistance: 70
+locationMessage: '&cNether Wasp: $distance blocks away!'
+spawnMessage: '&cTry not to get stung, a wasp roams the nether!'
+deathMessage: '&aThe Nether Wasp was slain by $players!'
+escapeMessage: '&4The Nether Wasp has decided to buzz off!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Nether Wasp has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

@@ -1,0 +1,32 @@
+LiteralNodes:
+  repair:
+    Enabled: false
+    Aliases: repairender,fixec
+    Cooldown: 0
+  clear:
+    Enabled: false
+    Aliases: enderclear,clearec
+    Cooldown: 0
+  copy:
+    Enabled: false
+    Aliases: endercopy,copyec
+    Cooldown: 0
+  fill:
+    Enabled: false
+    Aliases: enderfill,fillec
+    Cooldown: 0
+  open:
+    Enabled: true
+    Aliases: ec,endersee
+    Cooldown: 0
+RootNodes:
+  enderchest:
+    Enabled: true
+    Aliases: enderchest,echest
+    Name: Enderchest
+    Childrens:
+      copy: copy
+      fill: fill
+      open: open
+      repair: repair
+      clear: clear

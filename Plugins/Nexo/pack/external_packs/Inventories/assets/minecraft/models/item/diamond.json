@@ -1,0 +1,38 @@
+{
+  "parent":"item/handheld",
+  "textures": {
+    "layer0":"item/diamond"
+  },
+  "overrides":[
+     {"predicate":{"custom_model_data":1}, "model":"item/diamond/1"},
+     {"predicate":{"custom_model_data":2}, "model":"item/diamond/2"},
+     {"predicate":{"custom_model_data":3}, "model":"item/diamond/3"},
+     {"predicate":{"custom_model_data":4}, "model":"item/diamond/4"},
+     {"predicate":{"custom_model_data":5}, "model":"item/diamond/5"},
+     {"predicate":{"custom_model_data":6}, "model":"item/diamond/6"},
+     {"predicate":{"custom_model_data":7}, "model":"item/diamond/7"},
+     {"predicate":{"custom_model_data":8}, "model":"item/diamond/8"},
+     {"predicate":{"custom_model_data":9}, "model":"item/diamond/9"},
+     {"predicate":{"custom_model_data":10}, "model":"item/diamond/10"},
+     {"predicate":{"custom_model_data":11}, "model":"item/diamond/11"},
+     {"predicate":{"custom_model_data":12}, "model":"item/diamond/12"},
+     {"predicate":{"custom_model_data":13}, "model":"item/diamond/13"},
+     {"predicate":{"custom_model_data":14}, "model":"item/diamond/14"},
+     {"predicate":{"custom_model_data":15}, "model":"item/diamond/15"},
+     {"predicate":{"custom_model_data":16}, "model":"item/diamond/16"},
+     {"predicate":{"custom_model_data":17}, "model":"item/diamond/17"},
+     {"predicate":{"custom_model_data":18}, "model":"item/diamond/18"},
+     {"predicate":{"custom_model_data":19}, "model":"item/diamond/19"},
+     {"predicate":{"custom_model_data":20}, "model":"item/diamond/20"},
+     {"predicate":{"custom_model_data":21}, "model":"item/diamond/21"},
+     {"predicate":{"custom_model_data":22}, "model":"item/diamond/22"},
+     {"predicate":{"custom_model_data":23}, "model":"item/diamond/23"},
+     {"predicate":{"custom_model_data":24}, "model":"item/diamond/24"},
+     {"predicate":{"custom_model_data":25}, "model":"item/diamond/25"},
+     {"predicate":{"custom_model_data":26}, "model":"item/diamond/26"},
+     {"predicate":{"custom_model_data":27}, "model":"item/diamond/27"},
+     {"predicate":{"custom_model_data":28}, "model":"item/diamond/28"},
+     {"predicate":{"custom_model_data":29}, "model":"item/diamond/29"},
+     {"predicate":{"custom_model_data":30}, "model":"item/diamond/30"}
+  ]
+}

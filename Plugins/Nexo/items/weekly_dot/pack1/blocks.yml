@@ -1,0 +1,244 @@
+# Creator: Hungry(Hungry22)
+# Discord: https://discord.gg/uNcADBt3Kb
+silver_ore:
+  itemname: Silver Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200420
+    texture: pack1:blocks/silver_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 1
+      hardness: 3
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_raw_silver
+          probability: 1.0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+        hit_sound: block.stone.hit
+        step_sound: block.stone.step
+        fall_sound: block.stone.fall
+deepslate_silver_ore:
+  itemname: Deepslate Silver Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200421
+    texture: pack1:blocks/deepslate_silver_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 2
+      hardness: 4.5
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_raw_silver
+          probability: 1.0
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+        hit_sound: block.deepslate.hit
+        step_sound: block.deepslate.step
+        fall_sound: block.deepslate.fall
+lithium_ore:
+  itemname: Lithium Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200422
+    texture: pack1:blocks/lithium_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 3
+      hardness: 3
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_raw_lithium
+          probability: 1.0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+        hit_sound: block.stone.hit
+        step_sound: block.stone.step
+        fall_sound: block.stone.fall
+deepslate_lithium_ore:
+  itemname: Deepslate Lithium Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200423
+    texture: pack1:blocks/deepslate_lithium_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 4
+      hardness: 4.5
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_raw_lithium
+          probability: 1.0
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+        hit_sound: block.deepslate.hit
+        step_sound: block.deepslate.step
+        fall_sound: block.deepslate.fall
+ruby_ore:
+  itemname: Ruby Ore
+  material: DIAMOND
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200424
+    texture: pack1:blocks/ruby_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 5
+      hardness: 3
+      drop:
+        silktouch: false
+        minimal_type: DIAMOND
+        loots:
+        - nexo_item: pack1_ruby
+          probability: 1.0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+        hit_sound: block.stone.hit
+        step_sound: block.stone.step
+        fall_sound: block.stone.fall
+deepslate_ruby_ore:
+  itemname: Deepslate Ruby Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200425
+    texture: pack1:blocks/deepslate_ruby_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 6
+      hardness: 4.5
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_ruby
+          probability: 1.0
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+        hit_sound: block.deepslate.hit
+        step_sound: block.deepslate.step
+        fall_sound: block.deepslate.fall
+topaz_ore:
+  itemname: Topaz Ore
+  material: DIAMOND
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200426
+    texture: pack1:blocks/topaz_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 7
+      hardness: 3
+      drop:
+        silktouch: false
+        minimal_type: DIAMOND
+        loots:
+        - nexo_item: pack1_topaz
+          probability: 1.0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+        hit_sound: block.stone.hit
+        step_sound: block.stone.step
+        fall_sound: block.stone.fall
+deepslate_topaz_ore:
+  itemname: Deepslate Topaz Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200427
+    texture: pack1:blocks/deepslate_topaz_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 8
+      hardness: 4.5
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_topaz
+          probability: 1.0
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+        hit_sound: block.deepslate.hit
+        step_sound: block.deepslate.step
+        fall_sound: block.deepslate.fall
+aquamarine_ore:
+  itemname: Aquamarine Ore
+  material: DIAMOND
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200428
+    texture: pack1:blocks/aquamarine_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 9
+      hardness: 3
+      drop:
+        silktouch: false
+        minimal_type: DIAMOND
+        loots:
+        - nexo_item: pack1_aquamarine
+          probability: 1.0
+      block_sounds:
+        place_sound: block.stone.place
+        break_sound: block.stone.break
+        hit_sound: block.stone.hit
+        step_sound: block.stone.step
+        fall_sound: block.stone.fall
+deepslate_aquamarine_ore:
+  itemname: Deepslate Aquamarine Ore
+  material: STONE
+  Pack:
+    parent_model: block/cube_all
+    custom_model_data: 200429
+    texture: pack1:blocks/deepslate_aquamarine_ore.png
+  Mechanics:
+    custom_block:
+      type: NOTEBLOCK
+      custom_variation: 10
+      hardness: 4.5
+      drop:
+        silktouch: false
+        minimal_type: STONE
+        loots:
+        - nexo_item: pack1_aquamarine
+          probability: 1.0
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+        hit_sound: block.deepslate.hit
+        step_sound: block.deepslate.step
+        fall_sound: block.deepslate.fall
+
+# 97d14ee02b2f1a087d9fc5032082c677

@@ -1,0 +1,15 @@
+# Acciones de los menus convertidos desde CommandPanels
+menuherrero_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+menuherrero_b3_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="crazyenchantments:tinker";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+menuherrero_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="crazyenchantments:bs";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'

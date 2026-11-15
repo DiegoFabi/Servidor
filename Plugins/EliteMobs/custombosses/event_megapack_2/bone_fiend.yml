@@ -1,0 +1,35 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: SKELETON
+mainHand: BOW
+mountedEntity: bone_fiend_mount.yml
+name: $eventBossLevel &7Bone Fiend
+level: dynamic
+healthMultiplier: 2.5
+damageMultiplier: 0.6
+uniqueLootList:
+- filename=bone_fiend_drop_leggings.yml:amount=1:chance=0.33
+powers:
+- skeleton_tracking_arrow.yml
+- invulnerability_arrow.yml
+- attack_arrow.yml
+- arrow_rain.yml
+isPersistent: true
+movementSpeedAttribute: 0.38
+followDistance: 80
+locationMessage: '&cBone Fiend: $distance blocks away!'
+spawnMessage: '&cA creature of bone and bone has appeared!'
+deathMessage: '&aThe Bone Fiend was defeated by $players!'
+escapeMessage: '&4The Bone Fiend found no bone and left!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Bone Fiend has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

@@ -1,0 +1,109 @@
+# Migrado desde TAB (TAB/config.yml + groups.yml): cabecera/pie 'default',
+# prefijo de rango = %luckperms_prefix% (glyph de Nexo definido en LuckPerms).
+# Rank-Order es lo único con nombres de grupo: SunLight lo necesita para ordenar.
+PlayerList:
+  # Sets the frequently (in game ticks) of selecting and displaying the most suitable format (based on rank, priority, and other parameters) for the player list and player name to the client (the player).
+  # [Asynchronous]
+  # [1 second = 20 ticks]
+  # [Default is 20 ticks]
+  Update-Interval: 20
+  # Sets the frequency (in game ticks) of sorting the player list based on the values in 'Rank-Order'.
+  # [Asynchronous]
+  # [1 second = 20 ticks]
+  # [Default is 100 ticks]
+  Sort-Interval: 100
+  # Sets the display order of players in the player list based on their rank.
+  # Players with the highest values appear at the top of the list.
+  # For players belonging to multiple groups (ranks), the highest available value is used.
+  # For players who do not belong to any group (rank) listed here, the 'default' value is used if present; otherwise, it defaults to 0.
+  #
+  # [*] Requires LuckPerms OR Vault with a compatible Permissions plugin for the feature to work.
+  Rank-Order:
+    owner: 1300
+    moderador: 1200
+    ayudante: 1100
+    adminbuilder: 1000
+    builder: 900
+    streamer: 800
+    emperador: 700
+    obispo: 600
+    baron: 500
+    soldado: 400
+    campesino: 300
+    esclavo: 200
+    default: 100
+    mercader: 0
+  # Here you can create your own, custom player list formats.
+  #
+  # [ SETTINGS DESCRIPTION ]
+  # ├── Priority:
+  # │     -> Sets format priority. When multiple formats are available, the one with the highest priority is used.
+  # ├── Worlds:
+  # │     -> List of worlds, where this format is available. Add '*' to allow all worlds.
+  # ├── Groups:
+  # │     -> List of ranks (permission groups) to which this format is available. Add '*' to allow all ranks.
+  # └── Header + Footer:
+  #       -> Sets the text displayed at top (Header) and bottom (Footer) of the player list.
+  #       [>] Text Formations: https://nightexpressdev.com/nightcore/configuration/text-formation/
+  #       [>] Placeholders Available:
+  #           - %animation:[name]% - include dynamic text (animation) from the 'animations.yml'.
+  #           - %player_name% - Player name.
+  #           - %player_display_name% - Player display (custom) name.
+  #           - %player_prefix% - Player prefix.
+  #           - %player_suffix% - Player suffix.
+  #           - %player_world% - Player world.
+  #           - PlaceholderAPI - https://wiki.placeholderapi.com/
+  #
+  # [*] Requires LuckPerms OR Vault with a compatible Permissions plugin for the feature to work properly.
+  Layout-Format:
+    default:
+      Priority: 1
+      Worlds:
+      - '*'
+      Groups:
+      - '*'
+      Header:
+      - ' '
+      - ' '
+      - ' '
+      - ' '
+      - <glyph:top_logo_1>
+      - ' <gray>(1.21.4 - 1.21.8)'
+      - ' '
+      - ⏞ <white>¡Bienvenido, <#86d33a>%player_name%!
+      - '                                   <gray> '
+      - ' <gray>Te conectaste a <#86d33a>Survival Custom<gray>, '
+      - <gray>jugando con otros <yellow>%server_online% <gray>jugadores
+      - <gray>
+      - '<#fff76f>☁ <white>Coordenadas: <#fff76f>%player_x% 0 %player_z%'
+      - <gray>
+      Footer:
+      - <gray>
+  # Here you can create your own, custom player name formats for the player list.
+  #
+  # [ SETTINGS DESCRIPTION ]
+  # ├── Priority:
+  # │     -> Sets format priority. When multiple formats are available, the one with the highest priority is used.
+  # ├── Ranks:
+  # │     -> List of ranks (permission groups) to which this format is available. Add '*' to allow all ranks.
+  # └── Format:
+  #       -> Sets the text displayed in the player list for the player.
+  #       [>] Text Formations: https://nightexpressdev.com/nightcore/configuration/text-formation/
+  #       [>] Placeholders Available:
+  #           - %animation:[name]% - include dynamic text (animation) from the 'animations.yml'.
+  #           - %player_name% - Player name.
+  #           - %player_display_name% - Player display (custom) name.
+  #           - %player_prefix% - Player prefix.
+  #           - %player_suffix% - Player suffix.
+  #           - %player_world% - Player world.
+  #           - PlaceholderAPI - https://wiki.placeholderapi.com/
+  #
+  # [*] Requires LuckPerms OR Vault with a compatible Permissions plugin for the feature to work properly.
+  Name-Format:
+    # Global: el prefijo sale de LuckPerms (%luckperms_prefix%), así que
+    # cualquier cambio de rango o prefijo en LuckPerms se ve sin tocar esto.
+    todos:
+      Priority: 1
+      Ranks:
+      - '*'
+      Format: <white> %player_prefix%</white> %player_name%

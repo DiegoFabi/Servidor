@@ -1,0 +1,31 @@
+# Categoria de MCPets con fondo de la GUI Lemon (glyph de Nexo)
+DisplayName: §f㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮
+IconName: §7Categoría - §x§b§b§4§4§f§fMascotas Épicas
+InventorySize: 54
+DefaultCategory: false
+Icon:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:yellow_dye
+  count: 1
+  components:
+    minecraft:custom_model_data: '{floats:[123.0f]}'
+    minecraft:custom_data: '{PublicBukkitValues:{"nexo:id":"pet_category_epic"}}'
+  schema_version: 1
+Pets:
+- WitchCat
+- A_Pet_Griffon_Griffon
+- A_Pet_Griffon_Khonsu
+- A_Pet_Griffon_Phoenix
+- A_Pet_Griffon_Ra
+- A_Pet_Griffon_Rockstar
+- Nocsy_Drakonin_Baby-Cloud
+- Nocsy_Drakonin_Baby-Dark
+- Nocsy_Drakonin_Baby-Fire
+- Nocsy_Drakonin_Baby-Forest
+- Nocsy_Drakonin_Baby-Night
+- Nocsy_Drakonin_Baby-Poison
+- Nocsy_Drakonin_Baby-Volcanic
+- Nocsy_Drakonin_Baby-Water
+Id: epic
+ExcludedCategories: []

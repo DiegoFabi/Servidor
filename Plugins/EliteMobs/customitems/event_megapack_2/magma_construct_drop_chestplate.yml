@@ -1,0 +1,11 @@
+isEnabled: true
+material: NETHERITE_CHESTPLATE
+name: '&cMolten Armor'
+lore:
+- "&cYou feel like you might catch"
+- "&con fire at any moment."
+enchantments:
+- "PROTECTION_FIRE,6"
+potionEffects: 
+- "FIRE_RESISTANCE,1,self,onHit"
+itemType: UNIQUE

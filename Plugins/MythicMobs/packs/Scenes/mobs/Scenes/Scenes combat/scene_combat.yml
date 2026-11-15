@@ -1,0 +1,404 @@
+scene_combat_swords_dual:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_1;t=idle;s=swords;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_1;t=idle;s=swords;delay=10} @self ~onLoad 
+  - state{s=swords;delay=10} @self ~onSpawn
+  - state{s=swords;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_1;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_luchador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_1;type=STRING;save=true} @self ~onInteract
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=head2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=body2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+
+
+scene_combat_shields_dual:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_1;t=idle;s=shields;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_1;t=idle;s=shields;delay=10} @self ~onLoad 
+  - state{s=shields;delay=10} @self ~onSpawn
+  - state{s=shields;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_1;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_luchador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_1;type=STRING;save=true} @self ~onInteract
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=head2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=body2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+
+
+scene_combat_boxing_dual:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_1;t=idle;s=boxing;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_1;t=idle;s=boxing;delay=10} @self ~onLoad 
+  - state{s=boxing;delay=10} @self ~onSpawn
+  - state{s=boxing;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_1;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_luchador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_1;type=STRING;save=true} @self ~onInteract
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=head2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=body2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+
+scene_combat_bow_training:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_3;t=idle;s=bow;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_3;t=idle;s=bow;delay=10} @self ~onLoad 
+  - state{s=bow;delay=10} @self ~onSpawn
+  - state{s=bow;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_3;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_3;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_3;n=<global.var.skin<caster.uuid>|scenes_combat_3>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_3;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_3;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_3;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_3;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_3;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_3;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_arquero} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_3;type=STRING;save=true} @self ~onInteract
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=head2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=body2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+
+scene_combat_medic:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_1;t=idle;s=medic;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_1;t=idle;s=medic;delay=10} @self ~onLoad 
+  - state{s=medic;delay=10} @self ~onSpawn
+  - state{s=medic;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_1;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_sanador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_1;type=STRING;save=true} @self ~onInteract
+  - changepart{m=<global.var.skinchange>;pid=head2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=head2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_leg2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_leg2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=right_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=right_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=left_arm2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=left_arm2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+  - changepart{m=<global.var.skinchange>;pid=body2;nm=<global.var.skin2<caster.uuid>|scene_guards2>;npid=body2;delay=20} @self ~onTimer:100 #?playerInRadius{amount=>1;radius=20}
+
+scene_combat_injured_ground:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_2;t=idle;s=injured_ground;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_2;t=idle;s=injured_ground;delay=10} @self ~onLoad 
+  - state{s=injured_ground;delay=10} @self ~onSpawn
+  - state{s=injured_ground;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_2;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_herido} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_2;type=STRING;save=true} @self ~onInteract
+
+scene_combat_injured_sit:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_2;t=idle;s=injured_sit;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_2;t=idle;s=injured_sit;delay=10} @self ~onLoad 
+  - state{s=injured_sit;delay=10} @self ~onSpawn
+  - state{s=injured_sit;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_2;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_herido} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_2;type=STRING;save=true} @self ~onInteract
+
+scene_combat_audience_1:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_2;t=idle;s=audience_1;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_2;t=idle;s=audience_1;delay=10} @self ~onLoad 
+  - state{s=audience_1;delay=10} @self ~onSpawn
+  - state{s=audience_1;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_2;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_espectador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_2;type=STRING;save=true} @self ~onInteract
+
+scene_combat_audience_2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_2;t=idle;s=audience_2;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_2;t=idle;s=audience_2;delay=10} @self ~onLoad 
+  - state{s=audience_2;delay=10} @self ~onSpawn
+  - state{s=audience_2;delay=10} @self ~onLoad
+  - model{mid=scenes_combat_2;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_espectador} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_2;type=STRING;save=true} @self ~onInteract
+
+scene_combat_injured_interactive:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills: 
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=false;delay=15} @self ~onLoad
+  - defaultstate{m=scenes_combat_2;t=idle;s=injured_idle;delay=10} @self ~onSpawn 
+  - defaultstate{m=scenes_combat_2;t=idle;s=injured_idle;delay=10} @self ~onLoad 
+  - state{s=injured_idle;delay=10} @self ~onSpawn
+  - state{s=injured_idle;delay=10} @self ~onLoad
+  - skill{skill=injured_interact} @PIR{radius=7} ~onTimer:20
+  - model{mid=scenes_combat_2;save=true} @self ~onSpawn
+  - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scenes_combat_2;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_herido} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scenes_combat_2;type=STRING;save=true} @self ~onInteract
+ 
+#35dd8da810fde8cd410472122f289581

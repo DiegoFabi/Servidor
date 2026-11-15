@@ -1,0 +1,71 @@
+
+
+
+
+Spider_Queen:
+  Type: HUSK
+  Display: '&cThe Queen'
+  Health: 200
+  Damage: 0
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.26
+    Silent: true
+    ShowHealth: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    Collidable: true
+    Despawn: true
+    DigOutOfGround: true
+    NoAI: false
+  DamageModifiers:
+  - FALL -1
+  - FIRE -1 
+  - FIRE_TICK 0
+  BossBar:
+    Enabled: true
+    Title: '&cThe Queen &6<caster.hp> &c/ &6<caster.mhp>'
+    Range: 30
+    Color: RED
+    Style: SEGMENTED_10
+  Skills:
+  - model{mid=Spider_queen_boss;name=neme;drive=false;ride=false;s=2} @self ~onSpawn
+  - setstance{stance=free_state} @self ~onSpawn
+  - skill{s=CancelDamageEvent;sync=true} @Self ~onAttack
+  - skill{s=S_Queen_Attack} @Self ~onAttack
+  - skill{s=S_Queen_Run} @Self ~onTimer:48
+  - skill{s=S_Queen_Walk} @Self ~onTimer:46
+  
+  - skill{s=S_Queen_Jump} @Self ~onTimer:20
+  - skill{s=S_Queen_Cobweb_Prison} @Self ~onTimer:20
+  - skill{s=S_Queen_Attack_Cobweb_Prison} @Self ~onTimer:20
+  
+  - skill{s=S_Queen_Death} @Self ~onDeath
+  - skill{s=SQ_Hurt} @Self ~onDamaged
+  
+cobweb_mob:
+  Type: Villager
+  Display: ' '
+  Health: 40
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.01
+    Silent: true
+    ShowHealth: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    Collidable: true
+    Despawn: true
+    DigOutOfGround: true
+    NoAI: true
+  Skills:
+  - model{mid=cobweb} @self ~onSpawn
+  
+  
+  

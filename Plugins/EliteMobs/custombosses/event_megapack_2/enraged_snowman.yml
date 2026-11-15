@@ -1,0 +1,36 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: POLAR_BEAR
+name: $eventBossLevel &1Enraged Snowman
+level: dynamic
+healthMultiplier: 5.0
+damageMultiplier: 1.12
+isPersistent: true
+uniqueLootList:
+- filename=enraged_snowman_drop_sword.yml:amount=1:chance=0.25
+powers:
+- attack_push.yml
+- ground_pound.yml
+- invulnerability_knockback.yml
+- invulnerability_fall_damage.yml
+- attack_freeze.yml
+- frost_walker.yml
+- frost_cone.yml
+movementSpeedAttribute: 0.4
+followDistance: 77
+locationMessage: '&cEnraged Snowman: $distance blocks away!'
+spawnMessage: '&cAn angry Snowman was sighted!'
+deathMessage: '&aThe Enraged Snowman was put to rest by $players!'
+escapeMessage: '&4The Enraged Snowman has vanished!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Enraged Snowman has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

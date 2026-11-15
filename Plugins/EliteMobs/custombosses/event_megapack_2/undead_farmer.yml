@@ -1,0 +1,43 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ZOMBIFIED_PIGLIN
+name: $eventBossLevel &aUndead Farmer
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 0.5
+isPersistent: true
+uniqueLootList:
+- filename=undead_farmer_drop_shovel.yml:amount=1:chance=0.5
+powers:
+- summonType: ONCE
+  filename: undead_farmer_summon.yml
+  spawnNearby: true
+  inheritAggro: false
+  inheritLevel: true
+  amount: 1
+  chance: 1.0
+- summonType: ONCE
+  filename: undead_farmer_summon_1.yml
+  spawnNearby: true
+  inheritAggro: false
+  inheritLevel: true
+  amount: 2
+  chance: 1.0
+movementSpeedAttribute: 0.28
+followDistance: 80
+locationMessage: '&cUndead Farmer: $distance blocks away!'
+spawnMessage: '&cAn Undead Farmer walks the earth!'
+deathMessage: '&aThe Undead Farmer''s career was ended by $players!'
+escapeMessage: '&4The Undead Farmer has gone back to rest!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Undead Farmer has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

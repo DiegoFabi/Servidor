@@ -1,0 +1,29 @@
+nm_card_ultra-rare_creaking:
+  itemname: <light_purple>The Creaking Card
+  material: PAPER
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      barrier: false
+      block_sounds:
+        break_sound: block.bamboo.break
+        place_sound: block.bamboo.place
+        hit_sound: block.bamboo.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_card_ultra-rare_creaking
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/cards/ultra-rare/nm_card_ultra-rare_creaking
+    custom_model_data: 635201
+
+
+# 32fae060855d8e88f8ac20b498acfc44

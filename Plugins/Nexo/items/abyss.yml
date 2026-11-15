@@ -1,0 +1,163 @@
+abyss_crossbow:
+  itemname: Abyss Knight Crossbow
+  material: CROSSBOW
+  Pack:
+    model: abyss:abyss/abyss_knight_crossbow
+    pulling_models:
+    - abyss:abyss/abyss_knight_crossbow_0
+    - abyss:abyss/abyss_knight_crossbow_1
+    - abyss:abyss/abyss_knight_crossbow_2
+    charged_model: abyss:abyss/abyss_knight_crossbow_charged
+    firework_model: abyss:abyss/abyss_knight_crossbow_firework
+    custom_model_data: 1000
+
+axe_abyss:
+  itemname: Abyss Knight Axe
+  material: NETHERITE_AXE
+  Pack:
+    model: abyss:abyss/abyss_knight_axe
+    custom_model_data: 1001
+brutal_sword_abyss:
+  itemname: Abyss Knight Brutal Sword
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_brutal_sword
+    custom_model_data: 1001
+sword_abyss:
+  itemname: Abyss Knight Sword
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_sword
+    custom_model_data: 1002
+great_axe_abyss:
+  itemname: Abyss Knight Great Axe
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_great_axe
+    custom_model_data: 1003
+
+scythe_abyss:
+  itemname: Abyss Knight Scythe
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_scythe
+    custom_model_data: 1004
+claws_abyss:
+  itemname: Abyss Knight Claws
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_claws
+    custom_model_data: 1005
+great_hammer_abyss:
+  itemname: Abyss Knight Great Hammer
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_great_hammer
+    custom_model_data: 1006
+great_spear_abyss:
+  itemname: Abyss Knight Great Spear
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_great_spear
+    custom_model_data: 1007
+abyss_knight_head:
+  itemname: Abyss Knight Helmet
+  material: NETHERITE_HELMET
+  Pack:
+    model: abyss:abyss/abyss_knight_head
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: HEAD
+  AttributeModifiers:
+  - attribute: ARMOR
+    amount: 1
+    operation: 0
+    slot: HEAD
+  unbreakable: true
+hoe_abyss:
+  itemname: Abyss Knight Hoe
+  material: NETHERITE_HOE
+  Pack:
+    model: abyss:abyss/abyss_knight_hoe
+    custom_model_data: 1001
+pickaxe_abyss:
+  itemname: Abyss Knight Pickaxe
+  material: NETHERITE_PICKAXE
+  Pack:
+    model: abyss:abyss/abyss_knight_pickaxe
+    custom_model_data: 1001
+shovel_abyss:
+  itemname: Abyss Knight Shovel
+  material: NETHERITE_SHOVEL
+  Pack:
+    model: abyss:abyss/abyss_knight_shovel
+    custom_model_data: 1001
+sable_abyss:
+  itemname: Abyss Knight Sable
+  material: NETHERITE_SWORD
+  Pack:
+    model: abyss:abyss/abyss_knight_sable
+    custom_model_data: 1008
+abyss_chestplate:
+  itemname: Abyss Knight Chestplate
+  material: NETHERITE_CHESTPLATE
+  Pack:
+    texture: abyss:chest
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: CHEST
+      asset_id: nexo:abyss
+  AttributeModifiers:
+  - attribute: ARMOR
+    amount: 1
+    operation: 0
+    slot: CHEST
+  unbreakable: true
+abyss_hood:
+  material: PAPER
+  Pack:
+    model: abyss:abyss/abyss_knight_hood
+    custom_model_data: 1016
+  itemname: Abyss Knight Hood
+
+abyss_hood_thirdperson:
+  material: PAPER
+  Pack:
+    model: abyss:abyss/abyss_hood_thirdperson
+    custom_model_data: 1017
+  itemname: Abyss Knight Hood (thirdperson)
+
+abyss_leggings:
+  itemname: Abyss Knight Leggings
+  material: NETHERITE_LEGGINGS
+  Pack:
+    texture: abyss:legs
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: LEGS
+      asset_id: nexo:abyss
+  AttributeModifiers:
+  - attribute: ARMOR
+    amount: 1
+    operation: 0
+    slot: LEGS
+  unbreakable: true
+abyss_boots:
+  itemname: Abyss Knight Boots
+  material: NETHERITE_BOOTS
+  Pack:
+    texture: abyss:boots
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: FEET
+      asset_id: nexo:abyss
+  AttributeModifiers:
+  - attribute: ARMOR
+    amount: 1
+    operation: 0
+    slot: FEET
+  unbreakable: true

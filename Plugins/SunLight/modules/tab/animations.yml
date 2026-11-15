@@ -1,0 +1,18 @@
+foot_1:
+  Update_Interval_MS: 5000
+  Texts:
+  - <dark_gray>                <blue><u>[Discord]</u></blue> [Store] [Website]                </dark_gray>
+  - <dark_gray>                [Discord] <green><u>[Store]</u></green> [Website]                </dark_gray>
+  - <dark_gray>                [Discord] [Store] <orange><u>[Website]</u></orange>                </dark_gray>
+foot_2:
+  Update_Interval_MS: 5000
+  Texts:
+  - '<gray>                Join our friendly discord community:                </gray>'
+  - '<gray>                Purchase ranks & crate keys at our store:                </gray>'
+  - '<gray>                Learn first about new updates at our site:                </gray>'
+foot_3:
+  Update_Interval_MS: 5000
+  Texts:
+  - <gray>                <blue>mysupercraft.com/discord</blue>                </gray>
+  - <gray>                <green>store.mysupercraft.com</green>                </gray>
+  - <gray>                <orange>www.mysupercraft.com</orange>                </gray>

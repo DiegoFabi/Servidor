@@ -1,0 +1,386 @@
+field_windmill:
+  itemname: Field Windmill
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_windmill
+    custom_model_data: 241601
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_windmill
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+        - 0,2,0
+field_windmill_still:
+  itemname: Field Windmill
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_windmill_still
+    custom_model_data: 241602
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_windmill_still
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+        - 0,2,0
+field_scarecrow:
+  itemname: Field Scarecrow
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_scarecrow
+    custom_model_data: 241603
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_scarecrow
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+        - 0,2,0
+field_chair:
+  itemname: Field Chair
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_chair
+    custom_model_data: 241604
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_chair
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0.0,0.6,0.0
+field_table:
+  itemname: Field Table
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_table
+    custom_model_data: 241605
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_table
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+field_lantern_floor:
+  itemname: Field Lantern
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_lantern_floor
+    custom_model_data: 241606
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_lantern_floor
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+      lights:
+        toggleable: true
+        lights:
+        - 0,1,0 14
+field_lantern_ceiling:
+  itemname: Field Lantern
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_lantern_ceiling
+    custom_model_data: 241607
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: true
+        floor: false
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_lantern_ceiling
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+      lights:
+        toggleable: true
+        lights:
+        - 0,-1,0 14
+field_basket:
+  itemname: Field Basket
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_basket
+    custom_model_data: 241608
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_basket
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+field_birdhouse:
+  itemname: Field Birdhouse
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_birdhouse
+    custom_model_data: 241609
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_birdhouse
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+field_signpost:
+  itemname: Field Signpost
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_signpost
+    custom_model_data: 241610
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: true
+        floor: true
+        wall: true
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_signpost
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+field_haystack:
+  itemname: Field Haystack
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/field_haystack
+    custom_model_data: 241611
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: true
+        floor: true
+        wall: true
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: field_haystack
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0.0,1.0,0.0
+large_crop_streamer:
+  itemname: Large Crop Streamer
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/large_crop_streamer
+    custom_model_data: 241612
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: large_crop_streamer
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        interactions:
+        - 0,0,0 1.0,1.0
+small_crop_streamer:
+  itemname: Small Crop Streamer
+  material: LEATHER_HORSE_ARMOR
+  color: 255,255,255
+  Pack:
+    model: lanshan/essentials/autumn_field/small_crop_streamer
+    custom_model_data: 241613
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      block_sounds:
+        place_sound: block.metal.fall
+        break_sound: block.metal.break
+      drop:
+        silktouch: false
+        loots:
+        - probability: 1.0
+          nexo_item: small_crop_streamer
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      hitbox:
+        interactions:
+        - 0,0,0 1.0,1.0
+
+# 8758107Q

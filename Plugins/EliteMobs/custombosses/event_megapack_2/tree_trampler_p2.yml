@@ -1,0 +1,32 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: RAVAGER
+name: $eventBossLevel &2Enraged Form
+level: dynamic
+healthMultiplier: 4.0
+damageMultiplier: 1.0
+isPersistent: true
+phases:
+- tree_trampler.yml
+powers:
+- invulnerability_fire.yml
+- invulnerability_arrow.yml
+- attack_push.yml
+- ground_pound.yml
+- implosion.yml
+- movement_speed.yml
+trails:
+- SMOKE_LARGE
+- SMOKE_LARGE
+- EXPLOSION_NORMAL
+uniqueLootList:
+- filename=tree_trampler_drop_axe.yml:amount=1:chance=0.01
+movementSpeedAttribute: 0.4
+followDistance: 80
+locationMessage: '&cTree Trampler: $distance blocks away!'
+deathMessage: '&aThe Tree Trampler was slain by $players!'
+escapeMessage: '&4The Tree Trampled has left!'
+announcementPriority: 2

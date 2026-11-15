@@ -1,0 +1,34 @@
+# Acciones de los menus convertidos desde CommandPanels
+menuwarps_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="tw cinematic start cinema_magia";runas=op} @Self'
+  - 'command{c="warp Encantamientos";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.illusioner.cast_spell";volume=1;pitch=1} @Self'
+menuwarps_b8_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="tw cinematic start cinema_skills";runas=op} @Self'
+  - 'playsound{sound="minecraft:entity.endermite.ambient";volume=1;pitch=1} @Self'
+  - 'command{c="warp Habilidades";runas=op} @Self'
+menuwarps_b9_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="warp Herreria";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.anvil.use";volume=1;pitch=1} @Self'
+menuwarps_b10_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="tw cinematic start cinema_dungeon";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'playsound{sound="minecraft:entity.zombie.ambient";volume=1;pitch=1} @Self'
+  - 'command{c="warp Dungeon";runas=op} @Self'
+menuwarps_b13_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="warp Tops";runas=op} @Self'
+menuwarps_b15_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="warp Subastas";runas=op} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'

@@ -1,0 +1,20 @@
+# Acciones de los menus convertidos desde CommandPanels
+panelhelp_b1_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.fence_gate.close";volume=1;pitch=1} @Self'
+  - 'closeinventory{} @Self'
+panelhelp_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.chime";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu panelCmdHelp {caster_name}";runas=console} @Self'
+panelhelp_b3_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.chime";volume=1;pitch=1} @Self'
+panelhelp_b4_click:
+  Conditions: []
+  Mechanics:
+  - 'command{c="core-menu menuMain {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.note_block.chime";volume=1;pitch=1} @Self'

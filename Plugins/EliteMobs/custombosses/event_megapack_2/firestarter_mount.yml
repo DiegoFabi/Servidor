@@ -1,0 +1,18 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: BLAZE
+isBaby: false
+name: $eventBossLevel &6Spark
+isPersistent: true
+level: dynamic
+powers:
+- invisibility.yml
+- invulnerability_fire.yml
+- movement_speed.yml
+healthMultiplier: 2.0
+damageMultiplier: 0.5
+movementSpeedAttribute: 0.28
+followDistance: 50

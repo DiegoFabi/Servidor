@@ -1,0 +1,12 @@
+validBiomesV2: []
+isEnabled: true
+validWorlds: []
+validWorldEnvironments:
+- NORMAL
+- CUSTOM
+validBiomes:
+- BADLANDS
+- DESERT
+- BEACH
+isSurfaceSpawn: true
+canSpawnInLight: true

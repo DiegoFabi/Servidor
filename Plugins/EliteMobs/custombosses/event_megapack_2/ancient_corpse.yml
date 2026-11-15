@@ -1,0 +1,32 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: HUSK
+isBaby: true
+name: $eventBossLevel &eAncient Corpse
+level: dynamic
+healthMultiplier: 3.1
+damageMultiplier: 0.85
+isPersistent: true
+uniqueLootList:
+- filename=ancient_corpse_drop_axe.yml:amount=1:chance=0.66
+powers:
+- attack_push.yml
+- firestorm.yml
+movementSpeedAttribute: 0.26
+followDistance: 40
+locationMessage: '&cAncient Corpse: $distance blocks away!'
+spawnMessage: '&cAn Ancient Corpse has appeared!'
+deathMessage: '&aThe Ancient Corpse was slain by $players!'
+escapeMessage: '&4The Ancient Corpse has left!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Ancient Corpse has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

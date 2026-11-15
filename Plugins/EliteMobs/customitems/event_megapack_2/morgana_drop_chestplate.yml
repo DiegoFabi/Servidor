@@ -1,0 +1,15 @@
+isEnabled: true
+material: NETHERITE_CHESTPLATE
+name: '&dSafe Keeper'
+lore:
+- "&dThis armor has been inscribed with"
+- "&dall sorts of runes and signs."
+enchantments:
+- "PROTECTION_ENVIRONMENTAL,6"
+- "PROTECTION_EXPLOSIONS,5"
+- "PROTECTION_FIRE,4"
+- "PROTECTION_PROJECTILE,3"
+- "VANISHING_CURSE,1"
+potionEffects: 
+- "REGENERATION,0,self,onHit"
+itemType: UNIQUE

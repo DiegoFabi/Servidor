@@ -1,0 +1,20 @@
+Id: Capybara_Mount
+MythicMob: Capybara_Mount
+Permission: mcpet.capybara_mount
+Mountable: true
+Distance: 6
+DismountOnDamaged: false
+SpawnRange: 3
+ComingBackRange: 10
+Icon:
+  Name: §bCapybara
+  Material: BRICK
+  CustomModelData: 2520
+  Description:
+  - §fGet your pet Capybara!
+Signals:
+  Values:
+  - DASH
+  Item:
+    Name: §bSignal Feather
+    Material: FEATHER

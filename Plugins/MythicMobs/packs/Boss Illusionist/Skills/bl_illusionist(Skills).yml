@@ -1,0 +1,406 @@
+
+
+bl_illusionist_spawn:
+  Skills:
+  - defaultstate{t=idle;s=not_active} @self
+  - lockmodel{l=true;delay=2} @self
+  - setspeed{s=0} @self
+  - addtag{t=bl_illusionist_not_active} @self
+  - partvis{mid=bl_illusionist;p=root;v=false;child=true} @self
+  - partvis{mid=bl_illusionist;p=vfx_box;v=false;child=true} @self
+  - partvis{mid=bl_illusionist;p=hat2;v=false;child=true} @self
+  - partvis{mid=bl_illusionist;p=staff2;v=false;child=true} @self
+  - partvis{mid=bl_illusionist;p=cards;v=false;child=true} @self
+  - partvis{mid=bl_illusionist;p=box_regeneration_vfx;v=false;child=true} @self
+  - BodyClamp{mh=25;rde=0;rdu=0} @self
+
+bl_illusionist_death:
+  Skills:
+  - sound{s=bl_illusionist.magical_death;v=3;p=1;delay=25} @self
+
+bl_illusionist_rabbit_death:
+  Skills:
+    - sound{s=minecraft:entity.rabbit.death;v=3;p=0.8;delay=17} @self
+    - sound{s=minecraft:entity.generic.explode;v=3;p=1;delay=16} @self
+    - delay 16
+    - fakeexplosion @modelpart{pid=root;o=model;y=2}
+    - fakeexplosion @modelpart{pid=root;o=model;y=1}
+    - fakeexplosion @modelpart{pid=root;o=model;x=1;y=1}
+    - fakeexplosion @modelpart{pid=root;o=model;x=-1;y=1}
+    - fakeexplosion @modelpart{pid=root;o=model;z=1;y=1}
+    - fakeexplosion @modelpart{pid=root;o=model;z=-1;y=1}
+
+
+bl_illusionist_active:
+  Cooldown: 10
+  Conditions:
+  - targetwithin{d=20} true
+  - hastag{t=bl_illusionist_active} false
+  Skills:
+  - gcd{ticks=36} @self
+  - setspeed{s=0} @self
+  - partvis{mid=bl_illusionist;p=root;v=true;child=true} @self
+  - partvis{mid=bl_illusionist;p=vfx_box;v=true;child=true} @self
+  - partvis{mid=bl_illusionist;p=hat2;v=true;child=true} @self
+  - partvis{mid=bl_illusionist;p=staff2;v=true;child=true} @self
+  - state{mid=bl_illusionist;s=active} @self
+  - sound{s=bl_illusionist.box;v=3;p=1;delay=2} @self
+  - sound{s=bl_illusionist.circus_focus;v=3;p=0.7;delay=1} @self
+  - lockmodel{l=false;delay=30} @self
+  - defaultstate{t=idle;s=idle} @self
+  - addtag{t=bl_illusionist_active} @self
+  - delay 36
+  - removetag{t=bl_illusionist_not_active} @self
+  - setspeed{s=1} @self
+
+bl_illusionist_phase_cards:
+  Cooldown: 30
+  TargetConditions:
+  - distance{d=>3} true
+  Conditions:
+  - offgcd
+  - hastag{t=bl_illusionist_phase_cards} false
+  - health{h=<170} true
+  - targetwithin{d=32} true
+  Skills:
+  - gcd{ticks=30} @self
+  - state{s=phase_cards} @self
+  - sound{s=bl_illusionist.card;v=3;p=1;delay=3} @self
+  - sound{s=bl_illusionist.card;v=3;p=1;delay=8} @self
+  - sound{s=bl_illusionist.card;v=3;p=1;delay=13} @self
+  - sound{s=bl_illusionist.card;v=3;p=1;delay=18} @self
+  - setspeed{s=0} @self
+  - partvis{mid=bl_illusionist;p=cards;v=true;child=true;delay=2} @self
+  - addtag{t=bl_illusionist_phase_cards} @self
+  - delay 30
+  - setspeed{s=1} @self
+
+
+bl_illusionist_skills:
+  Conditions:
+  - hastag{t=bl_illusionist_phase_cards} false
+  - hastag{t=bl_illusionist_not_active} false
+  Skills:
+  - randomskill{s=bl_illusionist_attack,bl_illusionist_attack2,bl_illusionist_attack_dagger,bl_illusionist_attack_box,bl_illusionist_summon_rabbits} @target
+
+bl_illusionist_rabbit_jump:
+  Conditions:
+  - moving true
+  - inblock{b=WATER,LAVA} false
+  - offgcd
+  Skills:
+  - sound{s=minecraft:entity.rabbit.jump;v=3;p=1;delay=3} @self
+
+
+
+bl_illusionist_attack:
+  Cooldown: 10
+  Conditions:
+  - targetwithin{d=4} true
+  - offgcd
+  Skills:
+  - gcd{ticks=45} @self
+  - state{mid=bl_illusionist;s=attack;li=3;lo=3} @self
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=5} @self
+  - aura{auraName=bl_illusionist_attack_totem;oT=bl_illusionist_attack_totem_tick;interval=1;duration=8;delay=16} @self
+  - setspeed{s=0} @self
+  - delay 12
+  - lockmodel{l=true} @self
+  - setspeed{s=1.8} @self
+  - delay 8
+  - setspeed{s=0} @self
+  - delay 20
+  - lockmodel{l=false} @self
+  - delay 5
+  - setspeed{s=1} @self
+
+bl_illusionist_attack_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_attack_damage;hr=1.8;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=staff;o=model;y=-2.5;z=-1}
+
+bl_illusionist_attack_damage:
+  Skills:
+  - damage{a=10}
+  - throw{v=8;vy=4}
+  - shieldbreak{duration=80}
+
+
+bl_illusionist_attack2:
+  Cooldown: 12
+  TargetConditions:
+  - distance{d=>1} true
+  Conditions:
+  - targetwithin{d=5} true
+  - offgcd
+  Skills:
+  - gcd{ticks=45} @self
+  - state{mid=bl_illusionist;s=attack2;li=3;lo=3} @self
+  - sound{s=bl_illusionist.whoosh;v=3;p=0.8;delay=16} @self
+  - sound{s=bl_illusionist.magical_ray;v=3;p=1;delay=18} @self
+  - setspeed{s=0} @self
+  - delay 18
+  - summon{m=bl_illusionist_vfx_attack2;a=1;r=0;yr=0;os=true} @modelpart{pid=bone36;o=model;z=0;y=-3;x=-0.3}
+  - lockmodel{l=true} @self
+  - setspeed{s=2} @self
+  - delay 2
+  - setspeed{s=0} @self
+  - delay 20
+  - lockmodel{l=false} @self
+  - delay 5
+  - setspeed{s=1} @self
+
+bl_illusionist_attack2_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_attack2_damage;hr=1.4;vr=1.2;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=ray_first;o=model;z=0.8;y=0}
+
+bl_illusionist_attack2_damage:
+  Skills:
+  - damage{a=5}
+  - throw{v=8;vy=4}
+  - shieldbreak{duration=80}
+
+
+bl_illusionist_attack_dagger:
+  Cooldown: 14
+  TargetConditions:
+  - distance{d=>6} true
+  Conditions:
+  - targetwithin{d=10} true
+  - offgcd
+  Skills:
+  - gcd{ticks=65} @self
+  - state{mid=bl_illusionist;s=attack_dagger;li=3;lo=3} @self
+  - sound{s=bl_illusionist.swing_dagger;v=3;p=1;delay=28} @self
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=26} @self
+  - setspeed{s=0} @self
+  - delay 35
+  - projectile{oT=bl_illusionist_attack_dagger_tick;oH=bl_illusionist_attack_dagger_damage;oE=bl_illusionist_attack_dagger_end;b=MOB;mm=bl_illusionist_dagger;byo=1;hR=1;vR=0.7;mr=30;v=35;syo=1.65;tyo=1.65;hO=0;a=1;sE=true;sB=true;hp=true;hnp=true;g=0.4;drawhitbox=false} @forward{f=10}
+  - lockmodel{l=true} @self
+  - setspeed{s=2} @self
+  - delay 5
+  - setspeed{s=0} @self
+  - delay 15
+  - lockmodel{l=false} @self
+  - delay 10
+  - setspeed{s=1} @self
+
+bl_illusionist_attack_dagger_tick:
+  Skills:
+  - effect:particles{p=dust_color_transition;color1=#b41e3d;color2=#891a34;amount=5;hS=0;vS=0;speed=0;size=1}
+
+bl_illusionist_attack_dagger_damage:
+  Skills:
+  - damage{a=10}
+  - shieldbreak{duration=100}
+  - endprojectile
+
+bl_illusionist_attack_dagger_end:
+  Skills:
+  - state{mid=bl_illusionist_dagger;s=end} @self
+
+
+bl_illusionist_attack_box:
+  Cooldown: 40
+  TargetConditions:
+  - distance{d=>6} true
+  Conditions:
+  - targetwithin{d=10} true
+  - offgcd
+  Skills:
+  - gcd{ticks=173} @self
+  - state{mid=bl_illusionist;s=attack_box;li=3;lo=3} @self
+  - sound{s=bl_illusionist.box;v=3;p=1;delay=121} @self
+  - sound{s=bl_illusionist.circus_focus;v=3;p=0.7;delay=120} @self
+  - sound{s=bl_illusionist.swing_dagger;v=3;p=1;delay=21} @self
+  - sound{s=bl_illusionist.swing_dagger;v=3;p=1;delay=48} @self
+  - sound{s=bl_illusionist.swing_dagger;v=3;p=1;delay=76} @self
+  - sound{s=bl_illusionist.swing_dagger;v=3;p=1;delay=106} @self
+  - setspeed{s=0} @self
+  - delay 20
+  - summon{m=bl_illusionist_box;a=1;r=0;yr=0;os=true} @TargetLocation{y=0}
+  - lockmodel{l=true} @self
+  - delay 15
+  - lockmodel{l=false} @self
+  - delay 9
+  - setspeed{s=1} @self
+
+bl_illusionist_attack_box_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_attack_box_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=bone17;o=model;z=0;y=0}
+
+bl_illusionist_attack_box_totem_tick_slow:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_attack_box_slow;oT=bl_illusionist_attack_box_tick;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=bone17;o=model;z=0;y=0}
+
+bl_illusionist_attack_box_damage:
+  Skills:
+  - damage{a=5}
+  - throw{v=0;vy=0}
+  - shieldbreak{duration=80}
+
+bl_illusionist_attack_box_slow:
+  Skills:
+  - throw{v=0;vy=0}
+  - potion{type=SLOW;duration=20;level=7}
+
+bl_illusionist_attack_box_tick:
+  Skills:
+  - effect:particles{p=dust_color_transition;color1=#b41e3d;color2=#891a34;amount=5;hS=0.5;vS=0.8;speed=0;size=1}
+
+
+bl_illusionist_summon_rabbits:
+  Cooldown: 25
+  TargetConditions:
+  - distance{d=>3} true
+  Conditions:
+  - targetwithin{d=8} true
+  - offgcd
+  Skills:
+  - gcd{ticks=127} @self
+  - state{mid=bl_illusionist;s=summon_rabbits;li=3;lo=3} @self
+  - sound{s=bl_illusionist.whoosh;v=3;p=1;delay=8} @self
+  - sound{s=bl_illusionist.summon_rabbits;v=3;p=1;delay=35} @self
+  - setspeed{s=0} @self
+  - delay 20
+  - lockmodel{l=true} @self
+  - delay 20
+  - summon{m=bl_illusionist_rabbit;a=1;r=0;yr=0;os=true} @modelpart{pid=rabbit_point1;o=model;z=0;y=0}
+  - summon{m=bl_illusionist_rabbit;a=1;r=0;yr=0;os=true} @modelpart{pid=rabbit_point2;o=model;z=0;y=0}
+  - delay 20
+  - lockmodel{l=false} @self
+  - delay 57
+  - setspeed{s=1} @self
+
+bl_illusionist_rabbit_explosion:
+  Cooldown: 1
+  Conditions:
+  - targetwithin{d=3} true
+  - offgcd
+  Skills:
+  - gcd{ticks=70} @self
+  - aura{auraName=bl_illusionist_rabbit_explosion_totem;oT=bl_illusionist_rabbit_explosion_totem_tick;interval=1;duration=4;delay=16} @self
+  - state{mid=bl_illusionist_rabbit;s=explosion;li=3;lo=3} @self
+  - sound{s=minecraft:entity.rabbit.death;v=3;p=0.8;delay=17} @self
+  - sound{s=minecraft:entity.generic.explode;v=3;p=1;delay=16} @self
+  - setspeed{s=0} @self
+  - delay 16
+  - fakeexplosion @modelpart{pid=root;o=model;y=2}
+  - fakeexplosion @modelpart{pid=root;o=model;y=1}
+  - fakeexplosion @modelpart{pid=root;o=model;x=1;y=1}
+  - fakeexplosion @modelpart{pid=root;o=model;x=-1;y=1}
+  - fakeexplosion @modelpart{pid=root;o=model;z=1;y=1}
+  - fakeexplosion @modelpart{pid=root;o=model;z=-1;y=1}
+  - lockmodel{l=true} @self
+  - delay 54
+  - remove @self
+
+bl_illusionist_rabbit_explosion_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_rabbit_explosion_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=body;o=model;y=-2;z=-1}
+
+bl_illusionist_rabbit_explosion_damage:
+  Skills:
+  - damage{a=20}
+  - throw{v=4;vy=3}
+  - shieldbreak{duration=80}
+
+
+bl_illusionist_regeneration:
+  Cooldown: 80
+  Conditions:
+  - health{h=<110} true
+  - offgcd
+  Skills:
+  - gcd{ticks=118} @self
+  - state{mid=bl_illusionist;s=regeneration} @self
+  - partvis{mid=bl_illusionist;p=box_regeneration_vfx;v=true;child=true;delay=5} @self
+  - partvis{mid=bl_illusionist;p=box_regeneration_vfx;v=false;child=true;delay=100} @self
+  - sound{s=bl_illusionist.regeneration;v=3;p=0.5;delay=14} @self
+  - sound{s=bl_illusionist.box;v=3;p=1;delay=84} @self
+  - sound{s=bl_illusionist.circus_focus;v=3;p=0.7;delay=83} @self
+  - aura{auraName=bl_illusionist_regeneration_totem;oT=bl_illusionist_regeneration_totem_tick;interval=1;duration=68;delay=12} @self
+  - setspeed{s=0} @self
+  - delay 5
+  - lockmodel{l=true} @self
+  - delay 10
+  - healpercent{m=0.2} @self
+  - delay 25
+  - healpercent{m=0.2} @self
+  - delay 25
+  - healpercent{m=0.2} @self
+  - delay 53
+  - lockmodel{l=false} @self
+  - setspeed{s=1} @self
+
+bl_illusionist_regeneration_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_regeneration_damage;hr=3;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=bone93;o=model;z=0;y=0}
+
+bl_illusionist_regeneration_damage:
+  Skills:
+  - damage{a=5}
+  - throw{v=6;vy=10}
+
+
+bl_illusionist_attack_cards:
+  Cooldown: 14
+  TargetConditions:
+  - distance{d=>2} true
+  Conditions:
+  - hastag{t=bl_illusionist_phase_cards} true
+  - targetwithin{d=10} true
+  - offgcd
+  Skills:
+  - gcd{ticks=67} @self
+  - state{mid=bl_illusionist;s=attack_cards;li=3;lo=3} @self
+  - sound{s=bl_illusionist.cards_whoosh;v=3;p=1;delay=23} @self
+  - sound{s=bl_illusionist.cards_whoosh;v=3;p=1;delay=53} @self
+  - setspeed{s=0} @self
+  - delay 23
+  - projectile{oT=bl_illusionist_attack_cards_tick;oH=bl_illusionist_attack_cards_damage;oE=bl_illusionist_attack_cards_end;b=MOB;mm=bl_illusionist_red_card;byo=1;hR=1;vR=0.7;mr=30;v=35;syo=1.65;tyo=1.65;hO=0;a=1;sE=true;sB=true;hp=true;hnp=true;g=0.4;drawhitbox=false} @forward{f=10}
+  - projectile{oT=bl_illusionist_attack_cards_tick;oH=bl_illusionist_attack_cards_damage;oE=bl_illusionist_attack_cards_end;b=MOB;mm=bl_illusionist_black_card;byo=1;hR=1;vR=0.7;mr=30;v=35;syo=1.65;tyo=1.65;hO=0;a=1;sE=true;sB=true;hp=true;hnp=true;g=0.4;drawhitbox=false} @forward{f=10}
+  - delay 30
+  - projectile{oT=bl_illusionist_attack_cards_tick;oH=bl_illusionist_attack_cards_damage;oE=bl_illusionist_attack_cards_end;b=MOB;mm=bl_illusionist_red_card;byo=1;hR=1;vR=0.7;mr=30;v=35;syo=1.65;tyo=1.65;hO=0;a=1;sE=true;sB=true;hp=true;hnp=true;g=0.4;drawhitbox=false} @forward{f=10}
+  - projectile{oT=bl_illusionist_attack_cards_tick;oH=bl_illusionist_attack_cards_damage;oE=bl_illusionist_attack_cards_end;b=MOB;mm=bl_illusionist_black_card;byo=1;hR=1;vR=0.7;mr=30;v=35;syo=1.65;tyo=1.65;hO=0;a=1;sE=true;sB=true;hp=true;hnp=true;g=0.4;drawhitbox=false} @forward{f=10}
+  - delay 14
+  - setspeed{s=1} @self
+  - removetag{t=bl_illusionist_phase_cards} @self
+  - partvis{mid=bl_illusionist;p=cards;v=false;child=true} @self
+
+bl_illusionist_attack_cards_tick:
+  Skills:
+  - effect:particles{p=dust_color_transition;color1=#b41e3d;color2=#891a34;amount=5;hS=0.1;vS=0;speed=0;size=1}
+
+bl_illusionist_attack_cards_damage:
+  Skills:
+  - damage{a=15}
+  - shieldbreak{duration=100}
+  - endprojectile
+
+bl_illusionist_attack_cards_end:
+  Skills:
+  - state{mid=bl_illusionist_black_card;s=end} @self
+  - state{mid=bl_illusionist_red_card;s=end} @self
+
+
+bl_illusionist_cards:
+  Cooldown: 2
+  TargetConditions:
+  - distance{d=>4} true
+  Conditions:
+  - hastag{t=bl_illusionist_phase_cards} true
+  - targetwithin{d=10} true
+  Skills:
+  - summon{m=bl_illusionist_cards;a=1;r=0;yr=0;os=true} @TargetLocation{y=0}
+
+bl_illusionist_cards_tick:
+  Skills:
+  - totem{md=1;oH=bl_illusionist_cards_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=root;o=model;y=-2;z=0}
+  - effect:particles{p=dust_color_transition;color1=#b41e3d;color2=#891a34;amount=10;hS=0.4;vS=0;speed=0;size=1}
+
+bl_illusionist_cards_damage:
+  Skills:
+  - damage{a=5}
+  - throw{v=0;vy=0}
+  - potion{type=SLOW;duration=10;level=5}
+  - shieldbreak{duration=100}

@@ -1,0 +1,106 @@
+# ######################################################################################
+# ### For more cool furniture, check out Workshop Six: https://www.workshopsix.net/ ####
+# ######################################################################################
+six_plushie:
+  itemname: Six Plushie
+  material: PAPER
+  Pack:
+    model: workshop_six/starter_pack/six_plushie
+    custom_model_data: 1116
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+poster:
+  itemname: Poster
+  material: PAPER
+  Pack:
+    model: workshop_six/starter_pack/poster
+    custom_model_data: 1012
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+single_bed:
+  itemname: Single Bed
+  material: PAPER
+  Pack:
+    model: workshop_six/starter_pack/single_bed
+    custom_model_data: 1013
+  Mechanics:
+    furniture:
+      seats:
+      - 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0..1
+small_shelf:
+  itemname: Small Shelf
+  material: PAPER
+  Pack:
+    model: workshop_six/starter_pack/small_shelf
+    custom_model_data: 1014
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0..1,0
+string_light:
+  itemname: String Light
+  material: PAPER
+  Pack:
+    model: workshop_six/starter_pack/string_light
+    custom_model_data: 1015
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      lights:
+        lights:
+        - -1..1,0,0 15
+
+# 7a8ef6f1af866964639f2dad7dbb72dc

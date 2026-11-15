@@ -1,0 +1,63 @@
+# Interval (in seconds) between messages.
+Interval: 120
+# Whether messages should go in random order. Otherwise the same as defined in the config.
+RandomOrder: true
+# Player ranks (permission group names) that are allowed to see this announcer messages.
+Ranks:
+- '*'
+# Announcer messages.
+# Placeholders Available:
+# %player_name% - Player name.
+# %player_display_name% - Player display (custom) name.
+# %player_prefix% - Player prefix.
+# %player_suffix% - Player suffix.
+# PlaceholderAPI - https://wiki.placeholderapi.com/
+Texts:
+  discord:
+  - ' '
+  - <blue><b>¡Únete al Discord de CloudsBlues!</b></blue>
+  - <dark_gray><b>|</b></dark_gray> <gray>Entérate primero de las <blue>novedades</blue>, </gray>
+  - <dark_gray><b>|</b></dark_gray> <gray><blue>sorteos</blue>, <blue>eventos</blue> y mucho más.</gray>
+  - ' '
+  - <blue>➥ <click:open_url:"https://discord.gg/CDnyqZPh">Clic para unirte</click></blue>
+  - ' '
+  subasta:
+  - ' '
+  - <green><b>Subastas de CloudsBlues</b></green>
+  - <dark_gray><b>|</b></dark_gray> <gray>¿Tienes algo que no usas? <green>Subástalo</green> y deja</gray>
+  - <dark_gray><b>|</b></dark_gray> <gray>que los demás <green>pujen</green> por él con su dinero.</gray>
+  - ' '
+  - <green>➥ <click:suggest_command:"/subasta ">Sostén el objeto y usa /subasta (puja inicial)</click></green>
+  - ' '
+  tienda:
+  - ' '
+  - <orange><b>Tienda de CloudsBlues</b></orange>
+  - <dark_gray><b>|</b></dark_gray> <gray>Compra y vende <orange>bloques</orange>, <orange>minerales</orange>, comida</gray>
+  - <dark_gray><b>|</b></dark_gray> <gray>y <orange>objetos únicos</orange> con tu dinero del juego.</gray>
+  - ' '
+  - <orange>➥ <hover:show_text:"<gray>Libro del último slot de tu barra">Abre el Menú de Opciones y entra a Tienda</hover></orange>
+  - ' '
+  trabajos:
+  - ' '
+  - <green><b>Trabajos en CloudsBlues</b></green>
+  - <dark_gray><b>|</b></dark_gray> <gray>Mina, tala, pesca o cultiva y gana <green>dinero</green></gray>
+  - <dark_gray><b>|</b></dark_gray> <gray>mientras <green>subes de nivel</green> en tu oficio.</gray>
+  - ' '
+  - <green>➥ <click:run_command:"/jobs">Clic para elegir un trabajo</click></green>
+  - ' '
+  coinflip:
+  - ' '
+  - <orange><b>¿Te sientes con suerte?</b></orange>
+  - <dark_gray><b>|</b></dark_gray> <gray>Reta a otro jugador a un <orange>coinflip</orange> y</gray>
+  - <dark_gray><b>|</b></dark_gray> <gray>el ganador se lleva <orange>todo el dinero</orange>.</gray>
+  - ' '
+  - <orange>➥ <click:run_command:"/cf">Clic para apostar</click></orange>
+  - ' '
+  mascotas:
+  - ' '
+  - <blue><b>Mascotas y Personalización</b></blue>
+  - <dark_gray><b>|</b></dark_gray> <gray>Consigue <blue>mascotas</blue>, <blue>muebles</blue> y <blue>partículas</blue></gray>
+  - <dark_gray><b>|</b></dark_gray> <gray>para darle tu estilo a la aventura.</gray>
+  - ' '
+  - <blue>➥ <hover:show_text:"<gray>Libro del último slot de tu barra">Abre el Menú de Opciones</hover></blue>
+  - ' '

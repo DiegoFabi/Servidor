@@ -1,0 +1,51 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: WITHER_SKELETON
+mainHand: BOW
+name: $eventBossLevel &dRingmaster
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 0.5
+isPersistent: true
+uniqueLootList:
+- filename=circus_ringmaster_drop_charm.yml:amount=1:chance=0.4
+powers:
+- summonType: ON_COMBAT_ENTER
+  filename: circus_ringmaster_summon.yml
+  spawnNearby: true
+  inheritAggro: true
+  inheritLevel: true
+  amount: 1
+  chance: 1.0
+- summonType: ON_COMBAT_ENTER
+  filename: circus_ringmaster_summon_1.yml
+  spawnNearby: true
+  inheritAggro: false
+  inheritLevel: true
+  amount: 1
+  chance: 1.0
+- summonType: ON_HIT
+  filename: circus_ringmaster_summon_2.yml
+  spawnNearby: true
+  inheritAggro: true
+  inheritLevel: true
+  amount: 1
+  chance: 0.33
+movementSpeedAttribute: 0.28
+followDistance: 80
+locationMessage: '&cCircus Ringmaster: $distance blocks away!'
+spawnMessage: '&cA terrible circus is in town!'
+deathMessage: '&a$players has stopped the Ringmasters reign of abuse!'
+escapeMessage: '&4The circus has left the town!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Ringmaster has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

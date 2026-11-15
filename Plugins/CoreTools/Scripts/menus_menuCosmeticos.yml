@@ -1,0 +1,589 @@
+# ---------- Tienda de Cosméticos (HMCCosmetics) ----------
+# Si ya tiene hmccosmetics.<id> se equipa; si no, se compra con Shards (permiso por LuckPerms).
+hcosm_cemetery_witch_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.cemetery_witch_hat} falseElse hcosm_cemetery_witch_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply cemetery_witch_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_cemetery_witch_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.cemetery_witch_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#B57BFF:#6B2FB3>Sombrero de la Bruja del Cementerio</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply cemetery_witch_hat {caster_name}";runas=console} @Self'
+hcosm_chained_monstruosity_collar_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.chained_monstruosity_collar} falseElse hcosm_chained_monstruosity_collar_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply chained_monstruosity_collar {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_chained_monstruosity_collar_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.chained_monstruosity_collar true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C9CDD6:#6E7380>Collar de la Monstruosidad Encadenada</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply chained_monstruosity_collar {caster_name}";runas=console} @Self'
+hcosm_crow_lord_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.crow_lord_hat} falseElse hcosm_crow_lord_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply crow_lord_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_crow_lord_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.crow_lord_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#8FA3C7:#2E3A55>Sombrero del Señor de los Cuervos</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply crow_lord_hat {caster_name}";runas=console} @Self'
+hcosm_noir_elegance_tophat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.noir_elegance_tophat} falseElse hcosm_noir_elegance_tophat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply noir_elegance_tophat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_noir_elegance_tophat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.noir_elegance_tophat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FF8A8A:#7A1F2B>Chistera de la Elegancia Noir</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply noir_elegance_tophat {caster_name}";runas=console} @Self'
+hcosm_archmage_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.archmage_hat} falseElse hcosm_archmage_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply archmage_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_archmage_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.archmage_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#7FD8FF:#2F6FB3>Sombrero del Archimago</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply archmage_hat {caster_name}";runas=console} @Self'
+hcosm_ritualistic_hoodie_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.ritualistic_hoodie} falseElse hcosm_ritualistic_hoodie_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply ritualistic_hoodie {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_ritualistic_hoodie_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.ritualistic_hoodie true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FF7A45:#8B2500>Capucha Ritual</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply ritualistic_hoodie {caster_name}";runas=console} @Self'
+hcosm_skeleton_control_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.skeleton_control_hat} falseElse hcosm_skeleton_control_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply skeleton_control_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_skeleton_control_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.skeleton_control_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#E6E8EE:#8A8F99>Sombrero del Amo de los Esqueletos</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply skeleton_control_hat {caster_name}";runas=console} @Self'
+hcosm_spike_lord_helmet_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.spike_lord_helmet} falseElse hcosm_spike_lord_helmet_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply spike_lord_helmet {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_spike_lord_helmet_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.spike_lord_helmet true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FFB347:#8B4A00>Yelmo del Señor de las Púas</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply spike_lord_helmet {caster_name}";runas=console} @Self'
+hcosm_witch_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.witch_hat} falseElse hcosm_witch_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply witch_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_witch_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.witch_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C38BFF:#5B2A86>Sombrero de Bruja</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply witch_hat {caster_name}";runas=console} @Self'
+hcosm_sun_wizard_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.sun_wizard_hat} falseElse hcosm_sun_wizard_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply sun_wizard_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_sun_wizard_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.sun_wizard_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FFE45C:#FF8A00>Sombrero del Mago Solar</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply sun_wizard_hat {caster_name}";runas=console} @Self'
+hcosm_moon_wizard_hat_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.moon_wizard_hat} falseElse hcosm_moon_wizard_hat_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply moon_wizard_hat {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_moon_wizard_hat_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=2500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.moon_wizard_hat true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#B8C6FF:#4A5BB3>Sombrero del Mago Lunar</gradient> <#C9CDD6>por <#D89BFF>✦ 2500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply moon_wizard_hat {caster_name}";runas=console} @Self'
+hcosm_cemetery_witch_cloak_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.cemetery_witch_cloak} falseElse hcosm_cemetery_witch_cloak_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply cemetery_witch_cloak {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_cemetery_witch_cloak_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.cemetery_witch_cloak true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#B57BFF:#6B2FB3>Capa de la Bruja del Cementerio</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply cemetery_witch_cloak {caster_name}";runas=console} @Self'
+hcosm_chained_monstruosity_back_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.chained_monstruosity_back} falseElse hcosm_chained_monstruosity_back_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply chained_monstruosity_back {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_chained_monstruosity_back_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.chained_monstruosity_back true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C9CDD6:#6E7380>Cadenas de la Monstruosidad Encadenada</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply chained_monstruosity_back {caster_name}";runas=console} @Self'
+hcosm_crow_lord_wings_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.crow_lord_wings} falseElse hcosm_crow_lord_wings_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply crow_lord_wings {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_crow_lord_wings_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.crow_lord_wings true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#8FA3C7:#2E3A55>Alas del Señor de los Cuervos</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply crow_lord_wings {caster_name}";runas=console} @Self'
+hcosm_noir_elegance_shoulderpads_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.noir_elegance_shoulderpads} falseElse hcosm_noir_elegance_shoulderpads_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply noir_elegance_shoulderpads {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_noir_elegance_shoulderpads_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.noir_elegance_shoulderpads true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FF8A8A:#7A1F2B>Hombreras de la Elegancia Noir</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply noir_elegance_shoulderpads {caster_name}";runas=console} @Self'
+hcosm_archmage_shoulderpads_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.archmage_shoulderpads} falseElse hcosm_archmage_shoulderpads_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply archmage_shoulderpads {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_archmage_shoulderpads_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.archmage_shoulderpads true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#7FD8FF:#2F6FB3>Hombreras del Archimago</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply archmage_shoulderpads {caster_name}";runas=console} @Self'
+hcosm_ritualistic_back_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.ritualistic_back} falseElse hcosm_ritualistic_back_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply ritualistic_back {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_ritualistic_back_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.ritualistic_back true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FF7A45:#8B2500>Ornamento Ritual</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply ritualistic_back {caster_name}";runas=console} @Self'
+hcosm_skeleton_control_wings_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.skeleton_control_wings} falseElse hcosm_skeleton_control_wings_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply skeleton_control_wings {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_skeleton_control_wings_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.skeleton_control_wings true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#E6E8EE:#8A8F99>Alas del Amo de los Esqueletos</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply skeleton_control_wings {caster_name}";runas=console} @Self'
+hcosm_spike_lord_wings_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.spike_lord_wings} falseElse hcosm_spike_lord_wings_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply spike_lord_wings {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_spike_lord_wings_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.spike_lord_wings true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FFB347:#8B4A00>Alas del Señor de las Púas</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply spike_lord_wings {caster_name}";runas=console} @Self'
+hcosm_witch_robe_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.witch_robe} falseElse hcosm_witch_robe_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply witch_robe {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_witch_robe_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.witch_robe true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C38BFF:#5B2A86>Túnica de Bruja</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply witch_robe {caster_name}";runas=console} @Self'
+hcosm_sun_wizard_cloak_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.sun_wizard_cloak} falseElse hcosm_sun_wizard_cloak_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply sun_wizard_cloak {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_sun_wizard_cloak_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.sun_wizard_cloak true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FFE45C:#FF8A00>Capa del Mago Solar</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply sun_wizard_cloak {caster_name}";runas=console} @Self'
+hcosm_moon_wizard_cloak_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.moon_wizard_cloak} falseElse hcosm_moon_wizard_cloak_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply moon_wizard_cloak {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_moon_wizard_cloak_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=4000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=4000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.moon_wizard_cloak true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#B8C6FF:#4A5BB3>Capa del Mago Lunar</gradient> <#C9CDD6>por <#D89BFF>✦ 4000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply moon_wizard_cloak {caster_name}";runas=console} @Self'
+hcosm_cemetery_witch_broom_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.cemetery_witch_broom} falseElse hcosm_cemetery_witch_broom_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply cemetery_witch_broom {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_cemetery_witch_broom_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.cemetery_witch_broom true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#B57BFF:#6B2FB3>Escoba de la Bruja del Cementerio</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply cemetery_witch_broom {caster_name}";runas=console} @Self'
+hcosm_chained_monstruosity_sword_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.chained_monstruosity_sword} falseElse hcosm_chained_monstruosity_sword_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply chained_monstruosity_sword {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_chained_monstruosity_sword_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.chained_monstruosity_sword true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C9CDD6:#6E7380>Espada de la Monstruosidad Encadenada</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply chained_monstruosity_sword {caster_name}";runas=console} @Self'
+hcosm_crow_lord_staff_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.crow_lord_staff} falseElse hcosm_crow_lord_staff_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply crow_lord_staff {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_crow_lord_staff_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.crow_lord_staff true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#8FA3C7:#2E3A55>Bastón del Señor de los Cuervos</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply crow_lord_staff {caster_name}";runas=console} @Self'
+hcosm_noir_elegance_staff_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.noir_elegance_staff} falseElse hcosm_noir_elegance_staff_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply noir_elegance_staff {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_noir_elegance_staff_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.noir_elegance_staff true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FF8A8A:#7A1F2B>Bastón de la Elegancia Noir</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply noir_elegance_staff {caster_name}";runas=console} @Self'
+hcosm_archmage_staff_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.archmage_staff} falseElse hcosm_archmage_staff_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply archmage_staff {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_archmage_staff_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.archmage_staff true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#7FD8FF:#2F6FB3>Bastón del Archimago</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply archmage_staff {caster_name}";runas=console} @Self'
+hcosm_ritualistic_staff_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.ritualistic_staff} falseElse hcosm_ritualistic_staff_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply ritualistic_staff {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_ritualistic_staff_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.ritualistic_staff true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FF7A45:#8B2500>Bastón Ritual</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply ritualistic_staff {caster_name}";runas=console} @Self'
+hcosm_skeleton_control_mace_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.skeleton_control_mace} falseElse hcosm_skeleton_control_mace_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply skeleton_control_mace {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_skeleton_control_mace_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.skeleton_control_mace true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#E6E8EE:#8A8F99>Maza del Amo de los Esqueletos</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply skeleton_control_mace {caster_name}";runas=console} @Self'
+hcosm_spike_lord_sword_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.spike_lord_sword} falseElse hcosm_spike_lord_sword_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply spike_lord_sword {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_spike_lord_sword_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.spike_lord_sword true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FFB347:#8B4A00>Espada del Señor de las Púas</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply spike_lord_sword {caster_name}";runas=console} @Self'
+hcosm_witch_broom_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.witch_broom} falseElse hcosm_witch_broom_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply witch_broom {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_witch_broom_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.witch_broom true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C38BFF:#5B2A86>Escoba de Bruja</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply witch_broom {caster_name}";runas=console} @Self'
+hcosm_sun_wizard_staff_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.sun_wizard_staff} falseElse hcosm_sun_wizard_staff_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply sun_wizard_staff {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_sun_wizard_staff_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.sun_wizard_staff true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#FFE45C:#FF8A00>Bastón del Mago Solar</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply sun_wizard_staff {caster_name}";runas=console} @Self'
+hcosm_moon_wizard_staff_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.moon_wizard_staff} falseElse hcosm_moon_wizard_staff_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply moon_wizard_staff {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_moon_wizard_staff_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3000} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3000} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.moon_wizard_staff true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#B8C6FF:#4A5BB3>Bastón del Mago Lunar</gradient> <#C9CDD6>por <#D89BFF>✦ 3000"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply moon_wizard_staff {caster_name}";runas=console} @Self'
+hcosm_bat_balloon_click:
+  Conditions:
+  - 'Permission{p=hmccosmetics.bat_balloon} falseElse hcosm_bat_balloon_comprar'
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply bat_balloon {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:item.armor.equip_leather";volume=1;pitch=1.2} @Self'
+hcosm_bat_balloon_comprar:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=3500} falseElse hcosm_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=3500} @Self'
+  - 'command{c="lp user {caster_name} permission set hmccosmetics.bat_balloon true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#C9CDD6>Has comprado <gradient:#C38BFF:#5B2A86>Globo de Murciélago</gradient> <#C9CDD6>por <#D89BFF>✦ 3500"} @Self'
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic apply bat_balloon {caster_name}";runas=console} @Self'
+hcosm_armario_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'command{c="cosmetic menu defaultmenu_hats {caster_name}";runas=console} @Self'
+hcosm_sin_shards:
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Cosméticos</bold> <dark_gray>» <#FF6B6B>No tienes suficientes <#D89BFF>Shards <#FF6B6B>para este cosmético."} @Self'

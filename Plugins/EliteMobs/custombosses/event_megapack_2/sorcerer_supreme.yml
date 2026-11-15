@@ -1,0 +1,54 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ILLUSIONER
+name: $eventBossLevel &5Sorcerer Supreme
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 0.8
+scale: 0.77
+isPersistent: true
+trails:
+- SPELL_MOB
+- SMOKE_NORMAL
+uniqueLootList:
+- filename=the_hunter_drop_crossbow.yml:amount=1:chance=0.65
+powers:
+- arrow_rain.yml
+- thunderstorm.yml
+- meteor_shower.yml
+- attack_fireball.yml
+- invulnerability_fire.yml
+- invulnerability_arrow.yml
+- shield_wall.yml
+- bonus_coins.yml
+- bonus_loot.yml
+- summonType: ON_HIT
+  amount: 1
+  filename: sorcerer_supreme_summon.yml
+  chance: 0.44
+- summonType: ON_HIT
+  amount: 1
+  filename: sorcerer_supreme_summon.yml
+  chance: 0.22
+- summonType: ONCE
+  amount: 2
+  filename: sorcerer_supreme_summon.yml
+  chance: 0.85
+movementSpeedAttribute: 0.28
+followDistance: 80
+locationMessage: '&cSorcerer Supreme: $distance blocks away!'
+spawnMessage: '&cAn almighty Sorcerer has phased into this world!'
+deathMessage: '&aThe Sorcerer Supreme was defeated by $players!'
+escapeMessage: '&4The Sorcerer Supreme has left this world!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Sorcerer Supreme has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

@@ -1,0 +1,28 @@
+# Categoria de MCPets con fondo de la GUI Lemon (glyph de Nexo)
+DisplayName: §f㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮㈮
+IconName: §7Categoría - §x§3§3§9§9§f§fMascotas Raras
+InventorySize: 54
+DefaultCategory: false
+Icon:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:yellow_dye
+  count: 1
+  components:
+    minecraft:custom_model_data: '{floats:[122.0f]}'
+    minecraft:custom_data: '{PublicBukkitValues:{"nexo:id":"pet_category_rare"}}'
+  schema_version: 1
+Pets:
+- bs_vm_crab
+- bs_vm_armadillo
+- bs_vm_penguin
+- B_Pet_Necromancer_Cat_Fire_Mage
+- B_Pet_Necromancer_Cat_Ice_Mage
+- B_Pet_Necromancer_Cat_Necromancer
+- B_Pet_Necromancer_Cat_Santa
+- C_Pet_Outlaw_Cyborg
+- C_Pet_Outlaw_Officer
+- C_Pet_Outlaw_Steampunk
+- C_Pet_Outlaw_Wild_West
+Id: rare
+ExcludedCategories: []

@@ -1,0 +1,17 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: RAVAGER
+name: $eventBossLevel &6Large Beast
+healthMultiplier: 33.0
+damageMultiplier: 0.1
+dropsEliteMobsLoot: true
+dropsVanillaLoot: false
+dropsRandomLoot: false
+powers:
+- attack_push.yml
+movementSpeedAttribute: 0.28
+followDistance: 80

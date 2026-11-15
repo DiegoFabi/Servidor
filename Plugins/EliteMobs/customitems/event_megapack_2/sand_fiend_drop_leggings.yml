@@ -1,0 +1,11 @@
+isEnabled: true
+material: IRON_LEGGINGS
+name: '&eSun Baked Leggings'
+lore:
+- "&eWarm to the touch."
+enchantments:
+- "PROTECTION_PROJECTILE,3"
+- "PROTECTION_FIRE,4"
+- "PROTECTION_EXPLOSIONS,2"
+potionEffects: []
+itemType: UNIQUE

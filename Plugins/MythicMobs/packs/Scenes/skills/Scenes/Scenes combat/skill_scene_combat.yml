@@ -1,0 +1,104 @@
+injured_interact:
+  Cooldown: 20
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  # - sound{s=your_sound_name} @self 
+  - state{s=injured_idle;li=2;lo=2;r=true} @self
+  - state{s=injured_interact;li=2;lo=2} @self
+  - state{s=injured_interact;li=2;lo=2;r=true;delay=172.2} @self
+  - state{s=injured_idle;li=10;lo=10;delay=172.2} @self
+
+scenes_combat_swords_1:
+  Skills:
+  - sound{s=scenes:scenes_combat_swords_1;volume=0.3} @self
+
+scenes_combat_swords_2:
+  Skills:
+  - sound{s=scenes:scenes_combat_swords_2;volume=0.3} @self
+
+scenes_combat_swords_3:
+  Skills:
+  - sound{s=scenes:scenes_combat_swords_3;volume=0.3} @self
+
+scenes_combat_swords_4:
+  Skills:
+  - sound{s=scenes:scenes_combat_swords_4;volume=0.3} @self
+
+scenes_combat_swords_5:
+  Skills:
+  - sound{s=scenes:scenes_combat_swords_5;volume=0.3} @self
+
+scenes_combat_shields_1:
+  Skills:
+  - sound{s=scenes:scenes_combat_shields_1;volume=0.3} @self
+
+scenes_combat_shields_2:
+  Skills:
+  - sound{s=scenes:scenes_combat_shields_2;volume=0.3} @self
+
+scenes_combat_shields_3:
+  Skills:
+  - sound{s=scenes:scenes_combat_shields_3;volume=0.3} @self
+
+scenes_combat_shields_4:
+  Skills:
+  - sound{s=scenes:scenes_combat_shields_4;volume=0.3} @self
+
+scenes_combat_shields_5:
+  Skills:
+  - sound{s=scenes:scenes_combat_shields_5;volume=0.3} @self
+
+scenes_combat_boxing_1:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_1;volume=0.4} @self
+
+scenes_combat_boxing_2:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_2;volume=0.4} @self
+
+scenes_combat_boxing_3:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_3;volume=0.4} @self
+
+scenes_combat_boxing_4:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_4;volume=0.4} @self
+
+scenes_combat_boxing_5:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_5;volume=0.4} @self
+
+scenes_combat_boxing_6:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_6;volume=0.4} @self
+
+scenes_combat_boxing_7:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_7;volume=0.4} @self
+
+scenes_combat_boxing_8:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_8;volume=0.4} @self
+
+scenes_combat_boxing_9:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_9;volume=0.4} @self
+
+scenes_combat_boxing_10:
+  Skills:
+  - sound{s=scenes:scenes_combat_boxing_10;volume=0.4} @self
+
+bow_load:
+  Skills:
+  - sound{s=item.crossbow.loading_middle;volume=1} @modelpart{m=scenes_combat_3;p=bow} 
+
+bow_shoot:
+  Skills:
+  - sound{s=item.crossbow.hit;volume=1} @modelpart{m=scenes_combat_3;p=target} 
+# 92505VLYMYOMBIJPSGD50X0DL1WO
+
+
+

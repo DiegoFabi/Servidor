@@ -1,0 +1,64 @@
+# ============================================================
+#  nucleo_magia.sk - Núcleo compartido de todos los poderes de magia
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (sintaxis "make ... at ...")
+#
+#  Lo usan todos los scripts de magia/comunes, magia/raros y magia/avanzados
+#  - fxRing(): calcula los puntos de un anillo y los devuelve como
+#    lista, para lanzar las particulas de TODO el anillo con un solo
+#    "make" (SkBee acepta varias ubicaciones) en vez de un bucle.
+#  - Proteccion de caida unica para todos los poderes.
+# ============================================================
+
+# Puntos de un anillo horizontal.
+#   c = centro, r = radio, n = cantidad de puntos,
+#   y = altura sobre el centro, giro = rotacion inicial en grados
+function fxRing(c: location, r: number, n: number, y: number = 0, giro: number = 0) :: locations:
+    set {_paso} to 360 / {_n}
+    loop {_n} times:
+        set {_a} to {_giro} + (loop-number) * {_paso}
+        add {_c} offset by vector({_r} * cos({_a}), {_y}, {_r} * sin({_a})) to {_out::*}
+    return {_out::*}
+
+# Puntos de una recta entre a y b (n tramos) -> lista para un solo "make"
+function fxLinea(a: location, b: location, n: number) :: locations:
+    set {_dx} to (x-coordinate of {_b}) - (x-coordinate of {_a})
+    set {_dy} to (y-coordinate of {_b}) - (y-coordinate of {_a})
+    set {_dz} to (z-coordinate of {_b}) - (z-coordinate of {_a})
+    set {_i} to 0
+    while {_i} <= {_n}:
+        set {_t} to {_i} / {_n}
+        add {_a} offset by vector({_dx} * {_t}, {_dy} * {_t}, {_dz} * {_t}) to {_out::*}
+        add 1 to {_i}
+    return {_out::*}
+
+# ------------------------------------------------------------
+#  Anuncio común de los poderes (título + subtítulo + categoría)
+#  a / b: colores hex del degradado, cat: Común | Raro | Avanzado | Maldito
+# ------------------------------------------------------------
+function fxAnuncio(p: player, icono: text, nombre: text, sub: text, a: text, b: text, cat: text):
+    set {_c} to "#9EF0C6"
+    if {_cat} is "Raro":
+        set {_c} to "#5CA8FF"
+    else if {_cat} is "Avanzado":
+        set {_c} to "#B45CFF"
+    else if {_cat} is "Maldito":
+        set {_c} to "#B22222"
+    send title "<%{_a}%>%{_icono}% <gradient:%{_a}%:%{_b}%><bold>%{_nombre}%</bold></gradient> <%{_a}%>%{_icono}%" with subtitle "<#C9CDD6>%{_sub}%" to {_p} for 2 seconds with fadein 5 ticks and fadeout 10 ticks
+    send action bar "<%{_c}%>◆ %{_cat}% <dark_gray>» <%{_a}%>%{_nombre}%" to {_p}
+
+# Línea de chat de resultado de un poder (solo para el jugador)
+function fxResultado(p: player, a: text, nombre: text, texto: text):
+    send "<dark_gray>┃ <%{_a}%><bold>%{_nombre}%</bold> <dark_gray>» <#C9CDD6>%{_texto}%" to {_p}
+
+# ------------------------------------------------------------
+#  Proteccion de caida compartida
+#  Cada poder marca {-nofall::<uuid>::<poder>} y lo borra al terminar,
+#  asi dos poderes activos a la vez no se pisan entre si.
+# ------------------------------------------------------------
+on damage of a player:
+    damage cause is fall
+    {-nofall::%uuid of victim%::*} is set
+    cancel event
+
+on quit:
+    delete {-nofall::%uuid of player%::*}

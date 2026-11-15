@@ -1,0 +1,817 @@
+# JustTeams - lang/ru.yml - Russian translation. MiniMessage formatting supported.
+# Missing keys fall back to messages.yml automatically.
+
+language:
+  name: Русский
+  material: LIGHT_BLUE_BANNER
+team_upgrades_disabled: <red>Улучшения уровня команды отключены на этом сервере.</red>
+team_tier_max_reached: <red>Ваша команда уже достигла максимального уровня.</red>
+team_upgrade_insufficient_funds: <red>Недостаточно средств в банке команды! Нужно <yellow><cost></yellow>, есть <yellow><balance></yellow>.</red>
+team_upgrade_insufficient_points: <red>Недостаточно очков команды! Нужно <yellow><cost></yellow>, есть <yellow><points></yellow>.</red>
+team_upgrade_failed: <red>Не удалось улучшить уровень. Обратитесь к администратору.</red>
+team_tier_upgraded: <green>Ваша команда улучшена до уровня <yellow><tier></yellow>!</green>
+usersettings_title: <dark_gray>НАСТРОЙКИ
+usersettings_language_changed: <green>Язык изменён на <white><language></white>.</green>
+usersettings_language_selected: <green>✔ Сейчас выбран
+usersettings_language_click: <yellow>Нажмите, чтобы выбрать этот язык
+admin_language_title: <dark_gray>ЯЗЫК СЕРВЕРА
+admin_language_changed: <green>Язык сервера изменён на <white><language></white>. Игроки с языком по умолчанию теперь видят его.</green>
+admin_language_failed: <red>Не удалось изменить язык сервера. Проверьте консоль.</red>
+admin_language_current: <green>✔ Текущий язык сервера
+admin_language_click: <yellow>Нажмите, чтобы сделать языком сервера
+admin_resourcepack_on: <green>Режим GUI ресурспака включён. Убедитесь, что на клиенте применён пак JustTeams Official.</green>
+admin_resourcepack_off: <yellow>Режим GUI ресурспака выключен. Возврат к обычным меню.</yellow>
+prefix: '<#4C9DDE>[ᴛᴇᴀᴍꜱ]</#4C9DDE> '
+reload: <green>Настройки плагина успешно перезагружены.</green>
+reload_commands_notice: '<yellow>Примечание: изменения псевдонимов команд из ''commands.yml'' были применены заново. Если игрок всё ещё видит старый псевдоним, попросите его перезайти.</yellow>'
+reload_failed: <red>Не удалось перезагрузить конфигурацию. Подробности в консоли.</red>
+no_permission: <red>У вас нет прав на использование этой команды.</red>
+player_only: <red>Эту команду может выполнить только игрок.</red>
+team_not_found: <red>Команды с таким названием не существует.</red>
+player_not_found: <red>Игрок <white><target></white> не найден.</red>
+player_not_in_team: <red>Вы не состоите в команде.</red>
+not_in_team: <red>Вы не состоите в команде.</red>
+target_not_in_your_team: <red><white><target></white> не состоит в вашей команде.</red>
+not_owner: <red>Это может сделать только владелец команды.</red>
+owner_must_disband: <red>Как владелец, вы должны распустить команду, а не покинуть её.</red>
+must_be_owner_or_co_owner: <red>Это может сделать только владелец или совладелец команды.</red>
+permissions_updated: <green>Права команды успешно обновлены.</green>
+public_toggle_rate_limited: <red>Переключение открытости временно ограничено. Подождите немного.</red>
+setting_change_rate_limited: <red>Изменение настройки временно ограничено. Подождите немного.</red>
+permission_change_rate_limited: <red>Изменение прав временно ограничено. Подождите немного.</red>
+action_rate_limited: <red>Это действие временно ограничено. Подождите немного.</red>
+bank_action_rate_limited: <red>Действие с банком временно ограничено. Подождите немного.</red>
+gui_error: <red>При обработке вашего запроса произошла ошибка. Попробуйте ещё раз.</red>
+must_be_owner: <red>Это может сделать только владелец команды.</red>
+no_team_placeholder: Без команды
+feature_disabled: <red>Эта функция сейчас отключена.</red>
+gui_action_locked: <red>У вас нет прав на это действие.</red>
+unknown_command: <red>Неизвестная команда. Используйте /team help для списка команд.</red>
+admin_disband_confirm: <yellow>Вы уверены, что хотите распустить команду <white><team></white>? Это действие необратимо.</yellow>
+admin_team_disbanded: <green>Вы распустили команду <white><team></white>.</green>
+admin_team_disbanded_broadcast: <red>Ваша команда была распущена администратором.</red>
+admin_enderchest_input_prompt: <yellow>Введите в чат название или тег команды, чтобы открыть её эндер-сундук.</yellow>
+admin_reload_success: <green>Настройки плагина успешно перезагружены!</green>
+admin_reload_failed: <red>Не удалось перезагрузить настройки плагина. Проверьте консоль на наличие ошибок.</red>
+invalid_input: <red>Неверный ввод. Попробуйте ещё раз.</red>
+team_created: <green>Вы успешно создали команду <white><team></white>.</green>
+team_created_broadcast: <gray>Команда <white><team></white> была создана игроком <white><player></white>.</gray>
+already_in_team: <red>Вы уже состоите в команде. Сначала покиньте текущую.</red>
+name_too_short: <red>Название команды должно содержать не менее <white><min_length></white> символов.</red>
+name_too_long: <red>Название команды не может быть длиннее <white><max_length></white> символов.</red>
+status_enabled: <green>ВКЛЮЧЕНО
+status_disabled: <red>ОТКЛЮЧЕНО
+quests_gui_title: <dark_gray>Задания команды <gold><team>
+quest_completed: '<gold>Задание выполнено: <yellow><quest_name><gold>! Откройте <yellow>/team quests<gold>, чтобы забрать награду.'
+quest_claimed: '<green>Награда получена за <yellow><quest_name><green>: <gold>+<points> очков<green>.'
+quest_not_ready: <red>Это задание нельзя забрать или награда уже получена.
+team_guide_name: <gradient:#4C9DDE:#4C96D2><bold>Как это работает</bold></gradient>
+team_guide_lore:
+- '<gray>Ваша команда: <white><points> очков</white>, уровень <white><tier></white>'
+- ''
+- <gold>Очки</gold>
+- <gray>Начисляются за командные задания и
+- <gray>тратятся на баффы и некоторые улучшения.
+- ''
+- <gold>Задания</gold>
+- <gray>Общие цели для всей команды.
+- <gray>Награду можно забрать в меню заданий.
+- ''
+- <gold>Улучшения</gold>
+- <gray>Более высокий уровень даёт больше участников,
+- <gray>больший эндер-сундук и бонусы.
+- ''
+- <gold>Баффы</gold>
+- <gray>Эффекты для команды, пока рядом
+- <gray>находится достаточно участников.
+points_set: '<green>Очки обновлены для <yellow><team><green>: <gold><points>'
+points_status: <gold>У команды <yellow><team><gold> <yellow><points><gold> очков.
+admin_console_only:
+- <red>Это действие администратора доступно только в игре. Из консоли можно выполнить:</red>
+- <gray>  /team admin bank <add|remove|set> <team|player> <amount></gray>
+- <gray>  /team admin points <team|player> <add|remove|set> <amount></gray>
+admin_usage: '<red>Использование: /team admin <gui|disband|home|warps|enderchest|bank|points|quest|testmigration|performance> [args]</red>'
+admin_bank_usage: '<red>Использование: /team admin bank <add|remove|set> <team|player> <amount></red>'
+admin_bank_updated: '<green>Банк обновлён для <white><team></white>: <yellow><before></yellow> -> <yellow><after></yellow></green>'
+admin_bank_not_enough: '<red>Не удалось изменить банк: у команды нет такой суммы.</red>'
+admin_bank_over_max: '<red>Не удалось изменить банк: будет превышен максимальный баланс.</red>'
+admin_points_usage: '<red>Использование: /team admin points <team|player> <add|remove|set> <amount></red>'
+admin_points_failed: <red>Не удалось изменить очки. Подробности в консоли.</red>
+admin_unknown_operation: <red>Неизвестная операция. Используйте add, remove или set.</red>
+admin_amount_not_number: <red>Сумма должна быть числом.</red>
+admin_amount_not_positive: <red>Сумма должна быть положительным числом.</red>
+admin_amount_zero: <red>Сумма должна быть больше 0.</red>
+admin_amount_not_whole: <red>Значение должно быть целым числом.</red>
+admin_amount_not_positive_whole: <red>Значение должно быть положительным целым числом.</red>
+admin_quest_usage: '<red>Использование: /team admin quest <team> <give|reset|complete> [quest_id]</red>'
+admin_quest_disabled: <red>Система заданий отключена.</red>
+admin_quest_missing_id: <red>Укажите id задания в конце команды.</red>
+admin_quest_assigned: <green>Задание <yellow><quest></yellow> выдано команде <yellow><team></yellow>.</green>
+admin_quest_assign_failed: <red>Задание <yellow><quest></yellow> не найдено или уже выдано.</red>
+admin_quest_reset: <green>Весь прогресс заданий команды <yellow><team></yellow> сброшен.</green>
+admin_quest_completed: <green>Задание <yellow><quest></yellow> отмечено выполненным для <yellow><team></yellow>.</green>
+admin_quest_not_active: <red>Задание <yellow><quest></yellow> не активно для этой команды.</red>
+admin_quest_unknown_operation: <red>Неизвестная операция. Используйте give, reset или complete.</red>
+feature_names:
+  team_creation: Создание команды
+  sethome: Установка дома
+  home: Телепорт домой
+  setwarp: Установка варпа
+  warp: Телепорт на варп
+  rename: Переименование команды
+  settag: Смена тега
+  setdescription: Смена описания
+  setcolor: Смена цвета
+  invite: Приглашение
+  bank_deposit: Внесение в банк
+  bank_withdraw: Снятие из банка
+  enderchest: Эндер-сундук
+  ally: Запрос союза
+name_invalid: <red>Название команды может содержать только буквы, цифры и подчёркивания.</red>
+name_contains_blocked_codes: <red>Название команды содержит запрещённые коды форматирования.</red>
+tag_too_long: <red>Тег команды не может быть длиннее <white><max_length></white> символов.</red>
+tag_invalid: <red>Новый тег недействителен (слишком длинный или содержит недопустимые символы).</red>
+team_tag_taken: <red>Этот тег уже используется другой командой. Теги должны быть уникальными.</red>
+tag_contains_blocked_codes: <red>Тег команды содержит запрещённые коды форматирования.</red>
+team_name_exists: <red>Команда с названием <white><team></white> уже существует.</red>
+disband_confirm: <yellow>Вы уверены, что хотите распустить свою команду? Это действие необратимо.</yellow>
+kick_confirm: <yellow>Вы уверены, что хотите исключить <white><target></white>?</yellow>
+leave_confirm: <yellow>Вы уверены, что хотите покинуть команду?</yellow>
+transfer_confirm: <yellow>Передать владение?</yellow>
+ally_accept_confirm: <yellow>Принять запрос союза?</yellow>
+back_button_name: <gray>« Назад
+back_button_lore: <dark_gray>Вернуться в предыдущее меню
+perm_coowner_only: <red>Это право можно выдать только совладельцам.
+home_loading: <gray>Загрузка статуса дома...
+warp_status_protected: <red>Защищён паролем
+warp_status_public: <green>Открытый
+warp_delete_prompt: <red>ПКМ, чтобы удалить.
+leaderboard_stat_kills: Убийства
+leaderboard_stat_balance: Баланс
+leaderboard_stat_members: Участники
+quest_reward_claimed: <green>Награда получена!
+prices_prompt_set: <gray>Введите новую цену для <white><action><gray> в чат или '<cancel>' / 'reset'.
+prices_prompt_join_fee: <gray>Введите новую сумму платы за вступление в чат или '<cancel>'.
+color_invalid_hex: '<red>Неверный формат hex-цвета! Используйте формат #RRGGBB.</red>'
+team_color_hex_updated: Цвет команды обновлён!
+team_gradient_updated: Градиент команды обновлён!
+color_menu_title: <gold><bold>Выберите цвет команды
+color_menu_name: '<gray>Название команды: <white><name>'
+color_menu_tag: '<gray>Тег команды: <white><tag>'
+color_menu_preview: '<gray>Предпросмотр: <preview>'
+color_menu_select: <yellow>Нажмите, чтобы выбрать этот цвет!
+color_menu_cancel_name: <red><bold>Отмена
+color_menu_cancel_lore: <gray>Нажмите, чтобы отменить создание команды
+admin_team_no_warps: <gold>У команды <yellow><team><gold> нет варпов.
+auto_disband_broadcast: <red>Ваша команда была распущена за неактивность.</red>
+ally_chat_format: '<dark_gray>[<aqua>Союзники<dark_gray>] <gray><team_tag> <white><player><dark_gray>: <white><message>'
+ally_chat_usage: '<red>Использование: /team allychat <message></red>'
+ally_chat_no_allies: <red>У вашей команды нет союзников для общения.</red>
+word_enabled: <green>Включено
+word_disabled: <red>Выключено
+perm_promote_coowner_result: <status> <white>право повышать до совладельца
+modules_state_enabled: <green>● Включено
+modules_state_disabled: <red>● Выключено
+modules_click_enable: <yellow>Нажмите, чтобы включить
+modules_click_disable: <yellow>Нажмите, чтобы выключить
+modules_toggle_result: '<status> <white>модуль: <gray><module>'
+module_team_creation_name: Создание команды
+module_team_disband_name: Роспуск команды
+module_team_invites_name: Приглашения в команду
+module_team_join_requests_name: Заявки на вступление
+module_team_blacklist_name: Чёрный список
+module_team_transfer_name: Передача владения
+module_team_public_toggle_name: Переключение открытости
+module_team_rename_name: Переименование команды
+module_team_home_name: Дом команды
+module_team_warps_name: Варпы команды
+module_team_pvp_toggle_name: Переключение PvP
+module_team_bank_name: Банк команды
+module_team_enderchest_name: Эндер-сундук команды
+module_team_allies_name: Союзники команды
+module_team_chat_name: Чат команды
+module_ally_chat_name: Чат союзников
+module_team_glow_name: Свечение команды
+module_team_leaderboard_name: Таблицы лидеров
+module_team_prices_name: Цены команды
+module_team_upgrades_name: Улучшения уровней
+module_team_buffs_name: Усиления команды
+module_team_quests_name: Задания команды
+module_team_creation_desc: Игроки могут создавать команды.
+module_team_disband_desc: Владельцы могут распускать свою команду.
+module_team_invites_desc: Приглашение игроков в команду.
+module_team_join_requests_desc: Игроки могут подавать заявки на вступление в команды.
+module_team_blacklist_desc: Запрет игрокам на вступление.
+module_team_transfer_desc: Передача владения командой.
+module_team_public_toggle_desc: Команды могут быть открытыми или закрытыми.
+module_team_rename_desc: Переименование существующей команды.
+module_team_home_desc: Установка дома команды и телепортация к нему.
+module_team_warps_desc: Точки варпов команды.
+module_team_pvp_toggle_desc: Команды могут переключать внутренний PvP.
+module_team_bank_desc: Общий денежный банк команды.
+module_team_enderchest_desc: Общий эндер-сундук команды.
+module_team_allies_desc: Союзы команд.
+module_team_chat_desc: Приватный канал чата команды.
+module_ally_chat_desc: Чат с союзными командами (/team ac).
+module_team_glow_desc: Участники светятся в цвете команды.
+module_team_leaderboard_desc: Таблицы лидеров команд.
+module_team_prices_desc: Цены на действия для каждой команды (/team prices).
+module_team_upgrades_desc: Система улучшения уровней команды.
+module_team_buffs_desc: Усиления команды за нахождение поблизости.
+module_team_quests_desc: Задания команды и награды.
+admin_perm_result: <status> <white>право <permission>
+perm_label_withdraw: снять
+perm_label_enderchest: эндер-сундук
+perm_label_sethome: установить дом
+perm_label_usehome: использовать дом
+admin_member_already_owner: <red>Участник уже является владельцем!
+admin_member_already_coowner: <red>Участник уже является совладельцем!
+admin_member_promoted: <green>Участник повышен до совладельца
+admin_member_already_lowest: <red>Участник уже на самом низком ранге!
+admin_member_cannot_demote_owner: <red>Нельзя понизить владельца!
+admin_member_demoted: <green>Участник понижен до обычного участника
+admin_member_kicked: <green>Игрок <white><player> <green>исключён из команды
+admin_manage_member_not_found: <red>Участник не найден!
+admin_manage_cannot_edit_owner: <red>Нельзя редактировать владельца команды!
+admin_manage_now_public: <green>Команда теперь открытая
+admin_manage_now_private: <red>Команда теперь закрытая
+admin_manage_pvp_on: <green>PvP включён
+admin_manage_pvp_off: <red>PvP выключен
+admin_manage_prompt_name: '<yellow>Введите новое название команды в чат:'
+admin_manage_prompt_desc: '<yellow>Введите новое описание в чат:'
+admin_manage_prompt_tag: '<yellow>Введите новый тег в чат:'
+admin_manage_balance_invalid: <red>Баланс должен быть корректным неотрицательным числом
+admin_manage_balance_set: <green>Баланс установлен на <white><balance>
+admin_manage_prompt_balance: '<yellow>Введите новый баланс:'
+admin_manage_stats_usage: '<red>Использование: <kills> <deaths>'
+admin_manage_stats_negative: <red>Статистика не может быть отрицательной
+admin_manage_stats_set: '<green>Статистика обновлена: <white><kills> убийств, <deaths> смертей'
+admin_manage_prompt_stats: '<yellow>Введите убийства и смерти (например, 100 50):'
+admin_manage_invalid_number: <red>Неверный формат числа
+chatspy_no_permission: <red>У вас нет прав на использование слежки за чатом!
+chatspy_disabled: <red>Слежка за чатом команды выключена
+chatspy_enabled: <green>Слежка за командным чатом включена — теперь вы видите все командные чаты
+team_message_usage: '<gray>Использование: /<label> <message>'
+setcolor_usage:
+- '<gray>Использование: /team setcolor <color|reset|#hex #hex></gray>'
+- <gray>Примеры:</gray>
+- <gray>  /team setcolor RED</gray>
+- <gray>  /team setcolor &c <dark_gray>(старый формат)</dark_gray></gray>
+- '<gray>  /team setcolor #FF0000 #00FF00 <dark_gray>(градиент)</dark_gray></gray>'
+admin_warps_title: '<dark_gray>Варпы: <gray><team>'
+admin_warps_none_name: <red><bold>Варпы не установлены</bold></red>
+admin_warps_none_lore: <gray>Эта команда не установила ни одного варпа.
+admin_warps_location: '<gray>Местоположение: <white><location>'
+admin_warps_server: '<gray>Сервер: <yellow><server>'
+admin_warps_access: '<gray>Доступ: <status>'
+admin_warps_teleport: <yellow>Нажмите для телепортации
+team_disbanded: <green>Вы успешно распустили свою команду.</green>
+team_disbanded_broadcast: <gray>Команда <white><team></white> была распущена.</gray>
+you_left_team: <green>Вы покинули команду <white><team></white>.</green>
+player_left_broadcast: <gray><white><player></white> покинул команду.</gray>
+invite_sent: <green>Вы пригласили <white><target></white> в свою команду.</green>
+invite_failed: <red>Не удалось отправить приглашение. Попробуйте ещё раз.</red>
+invite_received: Вас пригласили вступить в <white><team></white>. <click:run_command:/team accept <team>><hover:show_text:'<green>Нажмите, чтобы принять!'><green>[Принять]</hover></click> или <click:run_command:/team deny <team>><hover:show_text:'<red>Нажмите, чтобы отклонить!'><red>[Отклонить]</hover></click>
+invite_self: <red>Вы не можете пригласить самого себя.</red>
+invite_spam: <red>Вы уже пригласили этого игрока. Пожалуйста, подождите.</red>
+target_already_in_team: <red><white><target></white> уже состоит в команде.</red>
+team_is_full: <red>Эта команда заполнена.</red>
+no_pending_invite: <red>У вас нет активного приглашения от этой команды.</red>
+no_pending_invites: <red>У вас нет активных приглашений в команды.</red>
+invite_choose_team: <yellow>У вас есть приглашения от <white><teams></white>. Используйте /team accept <team> или /team deny <team>.</yellow>
+invite_accepted: <green>Вы вступили в команду <white><team></white>.</green>
+invite_accepted_broadcast: <gray><white><player></white> вступил в команду.</gray>
+invite_denied: <red>Вы отклонили приглашение от команды <white><team></white>.</red>
+invite_denied_broadcast: <gray><white><player></white> отклонил приглашение в команду.</gray>
+pending_invites_singular: <yellow>У вас есть 1 активное приглашение в команду. Используйте /team invites, чтобы посмотреть.</yellow>
+pending_invites_plural: <yellow>У вас есть <count> активных приглашений в команды. Используйте /team invites, чтобы посмотреть.</yellow>
+team_is_private: <red>Эта команда закрытая. Ваша заявка на вступление отправлена.</red>
+join_request_sent: <green>Ваша заявка на вступление в <white><team></white> отправлена.</green>
+already_requested_to_join: <red>Вы уже отправили заявку на вступление в <white><team></white>.</red>
+join_request_received: <gray><white><player></white> хочет вступить в вашу команду. Используйте <white>/team requests</white>, чтобы посмотреть.</gray>
+no_join_requests: <gray>У вашей команды нет активных заявок на вступление.</gray>
+player_joined_public_team: <green>Вы вступили в открытую команду <white><team></white>.</green>
+team_join_error: <red>Произошла ошибка при попытке вступить в команду. Попробуйте позже.</red>
+team_creation_error: <red>Произошла ошибка при создании команды. Попробуйте позже.</red>
+invite_accept_error: <red>Произошла ошибка при принятии приглашения. Попробуйте позже.</red>
+joined_team: <green>Вы вступили в команду <white><team></white>.</green>
+player_joined_team: <gray><white><player></white> вступил в команду.</gray>
+join_request_withdrawn: <green>Вы отозвали свою заявку на вступление в <white><team></white>.</green>
+join_request_not_found: <red>У вас нет активной заявки на вступление в <white><team></white>.</red>
+request_accepted_player: <green>Ваша заявка на вступление в <white><team></white> принята!</green>
+request_denied_player: <red>Ваша заявка на вступление в <white><team></white> отклонена.</red>
+request_accepted_team: <gray>Заявка игрока <white><player></white> на вступление принята.</gray>
+request_denied_team: <gray>Заявка игрока <white><player></white> на вступление отклонена.</gray>
+player_kicked: <red>Вы исключили <white><target></white> из команды.</red>
+you_were_kicked: <red>Вас исключили из команды <white><team></white>.</red>
+cannot_kick_owner: <red>Вы не можете исключить владельца команды.</red>
+cannot_kick_co_owner: <red>Только владелец может исключить совладельца.</red>
+transfer_success: <green>Вы передали владение командой игроку <white><player></white>.</green>
+transfer_broadcast: <green><owner> передал владение командой игроку <white><player></white>.</green>
+cannot_transfer_to_self: <red>Вы не можете передать команду самому себе.</red>
+tag_set: <green>Тег команды изменён на <white><tag></white>.</green>
+rename_success: <green>Название команды изменено с <white><old_name></white> на <white><new_name></white>.</green>
+rename_broadcast: <gray>Команда <white><old_name></white> была переименована в <white><new_name></white>.</gray>
+rename_cooldown: <red>Вашу команду можно будет переименовать снова через <white><time></white>.</red>
+rename_too_expensive: <red>Вам нужно <white><cost></white>, чтобы переименовать команду. У вас есть <white><balance></white>.</red>
+rename_same_name: <red>Новое название совпадает с текущим.</red>
+rename_usage: '<red>Использование: /team rename <new_name></red>'
+description_set: <green>Описание команды обновлено.</green>
+description_too_long: <red>Описание не может быть длиннее <white><max_length></white> символов.</red>
+serveralias_set: '<green>Псевдоним сервера установлен: <white><server></white> → <white><alias></white></green>'
+serveralias_removed: <green>Псевдоним сервера <white><server></white> удалён.</green>
+serveralias_list_header: <yellow>Псевдонимы серверов:</yellow>
+serveralias_list_entry: <white><server></white> → <yellow><alias></yellow>
+serveralias_not_found: <red>Для сервера <white><server></white> псевдоним не установлен.</red>
+usage_serveralias: '<red>Использование: /team serveralias <set|remove|list> [server] [alias]</red>'
+target_not_found: <red>Игрок <white><target></white> не найден или не в сети.</red>
+player_promoted: <green><target> повышен до совладельца.</green>
+player_demoted: <gray><target> понижен до участника.</gray>
+demotion_failed: <red>Не удалось сохранить понижение. Попробуйте ещё раз.</red>
+already_that_role: <red><target> уже имеет эту роль.</red>
+cannot_promote_owner: <red>Владельца нельзя повысить.</red>
+co_owner_limit_reached: <red>В этой команде уже максимальное число совладельцев (<white><limit></white>).</red>
+cannot_demote_owner: <red>Владельца нельзя понизить.</red>
+team_made_public: <green>Ваша команда теперь открытая. Любой может вступить через /team join.</green>
+team_made_private: <red>Ваша команда теперь закрытая. Игроки должны получить приглашение или подать заявку на вступление.</red>
+join_request_notification: <yellow>🔔 <white><player></white> хочет вступить в вашу команду! Используйте <white>/team requests</white>, чтобы посмотреть.</yellow>
+join_request_pending: <gray>У вас есть активная заявка на вступление от <white><player></white>.</gray>
+join_request_count: <gray>У вас есть <white><count></white> активных заявок на вступление.</gray>
+command_spam_protection: <red>Вы отправляете команды слишком быстро. Пожалуйста, помедленнее.</red>
+message_spam_protection: <red>Вы отправляете сообщения слишком быстро. Пожалуйста, помедленнее.</red>
+message_too_long: <red>Ваше сообщение слишком длинное. Максимальная длина — <white>200</white> символов.</red>
+inappropriate_message: <red>Ваше сообщение содержит недопустимый контент.</red>
+invalid_team_name_or_tag: <red>Недопустимое название или тег команды. Используйте только буквы, цифры и подчёркивания.</red>
+invalid_team_name: <red>Недопустимое название команды. Используйте только буквы, цифры и подчёркивания.</red>
+invalid_team_tag: <red>Недопустимый тег команды. Используйте только буквы, цифры и подчёркивания.</red>
+invalid_player_name: <red>Недопустимое имя игрока. Используйте только буквы, цифры и подчёркивания.</red>
+invalid_warp_name: <red>Недопустимое название варпа. Используйте только буквы, цифры и подчёркивания.</red>
+invalid_warp_password: <red>Недопустимый пароль варпа. Длина должна быть от 3 до 20 символов.</red>
+cannot_invite_yourself: <red>Вы не можете пригласить самого себя в свою команду.</red>
+cannot_kick_yourself: <red>Вы не можете исключить самого себя из своей команды.</red>
+cannot_promote_yourself: <red>Вы не можете повысить самого себя.</red>
+cannot_demote_yourself: <red>Вы не можете понизить самого себя.</red>
+cannot_transfer_to_yourself: <red>Вы не можете передать владение самому себе.</red>
+player_already_in_team: <red><white><target></white> уже состоит в команде.</red>
+player_not_in_same_team: <red><white><target></white> не состоит в вашей команде.</red>
+owner_cannot_leave: <red>Как владелец, вы не можете покинуть команду. Вместо этого передайте владение или распустите её.</red>
+inappropriate_description: <red>Описание содержит недопустимый контент.</red>
+bank_invalid_amount: <red>Неверная сумма. Должна быть от <white>0.01</white> до <white>1,000,000</white>.</red>
+gui_click_spam_protection: <red>Вы кликаете слишком быстро. Пожалуйста, помедленнее.</red>
+sort_rate_limited: <red>Сортировка временно ограничена. Пожалуйста, подождите немного.</red>
+pvp_toggle_rate_limited: <red>Переключение PvP временно ограничено. Пожалуйста, подождите немного.</red>
+pvp_toggle_cooldown: <red>Подождите <white><seconds>с</white>, прежде чем снова переключать PvP.</red>
+pvp_fly_disabled: <red>Полёт отключён из-за боя PvP.</red>
+disband_rate_limited: <red>Роспуск временно ограничен. Пожалуйста, подождите немного.</red>
+leave_rate_limited: <red>Выход временно ограничен. Пожалуйста, подождите немного.</red>
+cannot_edit_owner: <red>Вы не можете изменять права владельца.</red>
+team_chat_enabled: <green>Командный чат включён. Теперь все сообщения будут отправляться вашей команде.</green>
+team_chat_disabled: <red>Командный чат выключен. Теперь сообщения будут публичными.</red>
+team_chat_format: '<gray>[<team_color><team_tag><team_color_close>] <player>: <message>'
+team_chat_password_warning: '<red>Внимание: в целях безопасности не передавайте пароли в командном чате.</red>'
+home_not_set: <red>У вашей команды не установлен дом. Владелец или совладелец может установить его командой /team sethome.</red>
+home_set: <green>Дом команды установлен на вашу текущую позицию.</green>
+home_deleted: <green>Дом команды успешно удалён.</green>
+teleport_warmup: <gray>Телепортация через <white><seconds></white> сек... Не двигайтесь!</gray>
+teleport_success: <green>Вы успешно телепортированы в дом команды.</green>
+teleport_moved: <red>Телепортация отменена, потому что вы сдвинулись.</red>
+teleport_cooldown: <red>Подождите <white><time></white>, прежде чем использовать это снова.</red>
+team_status_cooldown: <red>Подождите <white><time></white>, прежде чем снова менять статус команды.</red>
+proxy_not_enabled: <red>Межсерверная телепортация не включена на этом сервере.</red>
+excellentclaims_teleport_blocked: <red>Вы не можете туда телепортироваться. Это место находится на приватной территории, которая не принадлежит вашей команде.</red>
+excellentclaims_set_blocked: <red>Вы не можете установить это здесь. Вы стоите на приватной территории, которая не принадлежит вашей команде.</red>
+warp_set: <green>Варп команды <white><warp></white> установлен.</green>
+warp_deleted: <red>Варп команды <white><warp></white> удалён.</red>
+warp_not_found: <red>Варпа команды с таким названием не существует.</red>
+warp_limit_reached: <red>Ваша команда достигла максимума в <white><limit></white> варпов.</red>
+warp_teleport: <green>Телепортация к варпу <white><warp></white>...</green>
+warp_password_protected: <gray>Этот варп защищён паролем. Используйте /team warp <warp> <password></gray>
+warp_incorrect_password: <red>Неверный пароль для варпа <white><warp></white>.</red>
+warp_cooldown: <red>Подождите <white><seconds></white> сек, прежде чем использовать другой варп.</red>
+warp_list_header: <white><bold>ВАРПЫ КОМАНДЫ</bold></white>
+warp_list_entry: <gray>- <white><warp_name> <status_icon></white>
+warp_list_footer: <gray>Конец списка варпов</gray>
+no_warps_set: <gray>У вашей команды нет установленных варпов.</gray>
+team_pvp_enabled: <green>Командное PvP включено.</green>
+team_pvp_disabled: <red>Командное PvP выключено.</red>
+team_glow_enabled: <green>Свечение команды включено.</green>
+team_glow_disabled: <red>Свечение команды выключено.</red>
+economy_not_found: <red>Плагин экономики (Vault) не найден. Банк отключён.</red>
+economy_error: <red>Произошла ошибка при обработке платежа. Пожалуйста, попробуйте снова.</red>
+bank_deposit_success: <green>Вы внесли <white><amount></white> в банк команды.</green>
+bank_withdraw_success: <green>Вы сняли <white><amount></white> из банка команды.</green>
+bank_insufficient_funds: <red>В банке команды недостаточно средств.</red>
+player_insufficient_funds: <red>У вас недостаточно денег для внесения.</red>
+bank_max_balance_reached: <red>Банк команды достиг максимального баланса.</red>
+enderchest_locked_by_proxy: <red>Эндер-сундук этой команды сейчас используется на другом сервере. Пожалуйста, попробуйте через мгновение.</red>
+enderchest_in_use: <red>Эндер-сундук этой команды сейчас используется. Пожалуйста, попробуйте через мгновение.</red>
+team_info_header: '<white><bold>ИНФО О КОМАНДЕ: <team></bold></white>'
+team_info_tag: '<gray>Тег: <white><tag></white>'
+team_info_description: '<gray>Описание: <white><description></white>'
+team_info_owner: '<gray>Владелец: <white><owner></white>'
+team_info_co_owners: '<gray>Совладельцы: <white><co_owners></white>'
+team_info_members: <gray>Участники (<member_count>/<max_members>):</gray>
+team_info_member_list: <gray>- <white><player></white>
+team_info_stats: '<gray>Убийства: <white><kills></white> | Смерти: <white><deaths></white> | К/С: <white><kdr></white>'
+team_info_bank: '<gray>Баланс банка: <white><balance></white>'
+team_info_footer: <gray>Конец информации о команде</gray>
+input_cancel_keyword: отмена
+prompt_team_name: <gray>Введите желаемое название команды в чат или напишите '<cancel>' для отмены.</gray>
+prompt_team_tag: <gray>Введите желаемый тег команды в чат или напишите '<cancel>' для отмены.</gray>
+prompt_team_color: <gray>Введите желаемый цвет команды в чат или напишите '<cancel>' для отмены.</gray>
+prompt_bank_amount: <gray>Введите сумму для действия <action> в чат или напишите '<cancel>' для отмены.</gray>
+prompt_setting_change: <gray>Введите новое значение <setting> команды в чат или напишите '<cancel>' для отмены.</gray>
+prompt_warp_password: <gray>Введите пароль для варпа <white><warp></white> в чат или напишите '<cancel>' для отмены.</gray>
+creation_cancelled: <red>Создание команды отменено.</red>
+action_cancelled: <red>Действие отменено.</red>
+confirm_disband_title: <red>Распустить <team>?</red>
+help_header: <gradient:#4C9DDE:#FFD700>Команды JustTeams</gradient>
+help_format: <gray>/team <command> <white>- <description>
+help_page: <gray>Страница <white><page></white> из <white><pages></white>.</gray>
+help_page_next: <gray>Страница <white><page></white> из <white><pages></white>. <click:run_command:/team help <next>><hover:show_text:'<gray>Показать следующую страницу'><yellow>Введите /team help <next>, чтобы увидеть больше.</yellow></hover></click></gray>
+help_menu:
+- <gradient:#4C9DDE:#FFD700>Команды JustTeams</gradient>
+- <gray>/team gui <white>- Открывает GUI команды.
+- <gray>/team create <tag> <name> <white>- Создаёт команду (название может содержать пробелы).
+- <gray>/team disband <white>- Распускает вашу команду.
+- <gray>/team invite <player> <white>- Приглашает игрока.
+- <gray>/team join <teamName> <white>- Вступает в открытую команду.
+- <gray>/team leave <white>- Покидает вашу текущую команду.
+- <gray>/team info [team] <white>- Показывает информацию о команде.
+- <gray>/team sethome <white>- Устанавливает дом команды.
+- <gray>/team home <white>- Телепортирует в дом команды.
+- <gray>/team bank <white>- Управляет банком команды.
+- <gray>/team enderchest <white>- Открывает эндер-сундук команды.
+- <gray>/team top <white>- Показывает таблицы лидеров команд.
+- <gray>/team chat <white>- Переключает режим командного чата.
+- <gray>/team admin home <team> <white>- Админ-телепорт в дом.
+- <gray>/team admin enderchest <team> <white>- Админ-просмотр эндер-сундука.
+- <click:suggest_command:/team help ><hover:show_text:'<gray>Нажмите для просмотра других команд!'><yellow>Введите /team help для полного списка.</yellow></hover></click>
+help_entries:
+  gui: Открывает GUI команды.
+  create: <tag> <name> - Создаёт команду (название может содержать пробелы).
+  create_no_tag: <name> - Создаёт команду.
+  disband: Распускает вашу команду.
+  invite: <player> - Приглашает игрока.
+  kick: <player> - Исключает игрока.
+  leave: Покидает вашу текущую команду.
+  promote: <player> - Повышает участника до совладельца.
+  demote: <player> - Понижает совладельца до участника.
+  info: '[team] - Показывает информацию о команде.'
+  sethome: Устанавливает дом команды.
+  delhome: Удаляет дом команды.
+  home: Телепортирует в дом команды.
+  settag: <tag> - Изменяет тег команды.
+  setdesc: <description> - Изменяет описание команды.
+  rename: <newName> - Переименовывает команду (действует перезарядка).
+  transfer: <player> - Передаёт владение.
+  pvp: Переключает командное PvP.
+  bank: '[deposit|withdraw] [amount] - Управляет банком команды.'
+  enderchest: Открывает эндер-сундук команды.
+  quests: Открывает меню заданий команды.
+  top: Показывает таблицы лидеров.
+  join: <team> - Вступает или подаёт заявку на вступление в команду.
+  unjoin: <team> - Отменяет заявку на вступление.
+  public: Переключает, открыта ли ваша команда.
+  requests: Просмотр заявок на вступление в вашу команду.
+  setwarp: <name> [password] - Устанавливает варп команды.
+  delwarp: <name> - Удаляет варп команды.
+  warp: <name> [password] - Телепортирует к варпу команды.
+  warps: Показывает все варпы команды.
+  blacklist: <player> [reason] - Заносит игрока в чёрный список команды.
+  unblacklist: <player> - Убирает игрока из чёрного списка команды.
+  invites: Показывает ваши активные приглашения.
+  accept: '[team] - Принимает приглашение. Без названия команды принимает ваше единственное приглашение.'
+  deny: '[team] - Отклоняет приглашение.'
+  chat: '[message] - Переключает командный чат или отправляет одно сообщение команде.'
+  allychat: <message> - Отправляет сообщение вашей команде и союзным командам.
+  glow: Переключает свечение команды для вас.
+  settings: Открывает настройки команды.
+  usersettings: Открывает ваши личные настройки, например язык.
+  setcolor: <color> - Изменяет цвет команды.
+  ally: <add|accept|deny|remove|list> [team] - Управляет союзами.
+  buffs: Открывает меню баффов команды.
+  prices: Показывает цены действий, которые вы можете задать.
+  setprice: <action> <amount|reset> - Задаёт цену вашей команды для действия.
+  admin: admin - Открывает меню администратора.
+  admin_warps: admin warps <teamName> - Показывает варпы команды.
+  admin_warp: admin warp <teamName> <warp> - Телепортирует к варпу команды.
+  chatspy: Показывает все командные чаты.
+  reload: Перезагружает конфигурацию.
+  admin_home: admin home <teamName> - Телепорт к дому команды.
+  admin_enderchest: admin enderchest <teamName> - Просмотр эндер-сундука команды.
+  admin_disband: admin disband <teamName> - Админ-команда для роспуска команды.
+  platform: Показывает информацию о вашей платформе (Java/Bedrock).
+  debug_permissions: debug-permissions - Отладка текущих прав вашей команды.
+  debug_placeholders: debug-placeholders - Проверяет все плейсхолдеры PlaceholderAPI для вашей команды.
+  visibility: '[hide|show] - Toggles teammate visibility for yourself.'
+  browse: Browse every team on the server.
+  input: <answer> - Answers an open team prompt when chat does not work.
+usage_create: '<gray>Использование: /team create <tag> <name> <gray>(название может содержать пробелы)</gray></gray>'
+usage_create_no_tag: '<gray>Использование: /team create <name> <gray>(может содержать пробелы)</gray></gray>'
+usage_invite: '<gray>Использование: /team invite <player></gray>'
+usage_accept: '<gray>Использование: /team accept <teamName></gray>'
+usage_deny: '<gray>Использование: /team deny <teamName></gray>'
+usage_kick: '<gray>Использование: /team kick <player></gray>'
+usage_settag: '<gray>Использование: /team settag <newTag></gray>'
+usage_transfer: '<gray>Использование: /team transfer <player></gray>'
+usage_bank: '<gray>Использование: /team bank <deposit|withdraw> <amount></gray>'
+usage_setdescription: '<gray>Использование: /team setdescription <description...></gray>'
+usage_setjoinfee: '<gray>Использование: /team setjoinfee <enable|disable|amount></gray>'
+usage_promote: '<gray>Использование: /team promote <player></gray>'
+usage_demote: '<gray>Использование: /team demote <player></gray>'
+usage_join: '<gray>Использование: /team join <teamName></gray>'
+usage_unjoin: '<gray>Использование: /team unjoin <teamName></gray>'
+usage_setwarp: '<gray>Использование: /team setwarp <name> [password]</gray>'
+usage_delwarp: '<gray>Использование: /team delwarp <name></gray>'
+usage_warp: '<gray>Использование: /team warp <name> [password]</gray>'
+usage_warps: '<gray>Использование: /team warps</gray>'
+usage_admin_disband: '<gray>Использование: /team admin disband <teamName></gray>'
+usage_admin_enderchest: '<gray>Использование: /team admin enderchest <teamName></gray>'
+usage_admin_warps: '<gray>Использование: /team admin warps <teamName></gray>'
+usage_admin_warp: '<gray>Использование: /team admin warp <teamName> <warpName></gray>'
+usage_setprice: '<gray>Использование: /team setprice <action> <amount|reset></gray>'
+price_not_editable: <red>Цена этого действия задана сервером и не может быть изменена.</red>
+cannot_edit_prices: <red>У вас нет прав изменять цены вашей команды.</red>
+coowner_prices_enabled: <green>Теперь совладельцы могут изменять цены и плату за вступление вашей команды.</green>
+coowner_prices_disabled: <green>Теперь только вы (владелец) можете изменять цены вашей команды.</green>
+price_out_of_range: <red>Цена должна быть от 0 до <white><cap></white>.</red>
+price_set: <green>Цена за <white><action></white> установлена на <yellow><amount></yellow>.</green>
+price_reset: <green>Цена за <white><action></white> сброшена к стандартному значению сервера.</green>
+prices_header: <gold>Цены команды, которые вы можете задать:</gold>
+prices_line: '<gray>- <white><action></white>: <yellow><amount></yellow> <dark_gray>(<white>/team setprice <action> <price></white>)</dark_gray>'
+prices_line_default: '<gray>- <white><action></white>: <yellow><amount></yellow> <dark_gray>(стандарт сервера)</dark_gray>'
+prices_none_editable: <gray>Сервер не позволяет командам менять цены действий.</gray>
+admin_teleported_warp: <green>Вы телепортированы к варпу <white><warp></white> команды <white><team></white>.</green>
+admin_warp_other_server: <yellow>Варп <white><warp></white> находится на сервере <white><server></white>. Подключитесь к этому серверу для телепортации.</yellow>
+usage_debug_conflict: <red>Параметры отладки конфликтуют. Используйте либо enable, либо disable, но не оба сразу.</red>
+usage_team_pvp: <gray>Вы не можете атаковать участников команды, пока командный PvP отключён.</gray>
+team_not_exists: <red>Команды с таким названием не существует.</red>
+player_not_in_team_placeholder: <red>Вы не состоите в команде.</red>
+team_full: <red>Эта команда заполнена.</red>
+team_private: <red>Эта команда закрытая. Чтобы вступить, нужно приглашение.</red>
+team_public: <green>Эта команда открытая. Вы можете вступить командой /team join <team>.</green>
+no_invite: <red>У вас нет активного приглашения от этой команды.</red>
+invite_expired: <red>Ваше приглашение истекло.</red>
+invite_already_accepted: <red>Вы уже приняли это приглашение.</red>
+invite_already_denied: <red>Вы уже отклонили это приглашение.</red>
+cannot_invite_full_team: <red>Невозможно пригласить игрока - команда заполнена.</red>
+cannot_invite_private_team: <red>Невозможно пригласить игрока - команда закрытая.</red>
+player_offline: <red>Этот игрок не в сети.</red>
+player_not_found_offline: <red>Игрок не найден в базе данных.</red>
+team_name_taken: <red>Команда с таким названием уже существует.</red>
+invalid_team_name_format: <red>Название команды должно быть длиной 3-16 символов и содержать только буквы, цифры и подчёркивания.</red>
+invalid_team_tag_format: <red>Тег команды должен быть длиной 2-4 символа и содержать только буквы, цифры и подчёркивания.</red>
+team_created_success: <green>Команда <white><team></white> успешно создана!</green>
+team_disbanded_success: <green>Ваша команда была распущена.</green>
+team_left_success: <green>Вы покинули команду.</green>
+player_kicked_success: <green>Вы исключили <white><player></white> из команды.</green>
+player_kicked_broadcast: <red>Вас исключил из команды <white><player></white>.</red>
+ownership_transferred: <green>Владение командой передано игроку <white><player></white>.</green>
+ownership_transferred_broadcast: <green><old_owner> передал владение командой игроку <white><new_owner></white>.</green>
+player_promoted_success: <green><player> повышен до совладельца.</green>
+player_demoted_success: <gray><player> понижен до участника.</gray>
+team_tag_changed: <green>Тег команды изменён на <white><tag></white>.</green>
+team_description_changed: <green>Описание команды обновлено.</green>
+team_home_set: <green>Дом команды установлен на ваше текущее местоположение.</green>
+team_home_teleported: <green>Вы телепортированы к дому команды.</green>
+team_pvp_toggled_on: <green>Командный PvP включён.</green>
+team_pvp_toggled_off: <red>Командный PvP отключён.</red>
+team_made_public_success: <green>Ваша команда теперь открытая. Присоединиться может любой!</green>
+team_made_private_success: <red>Ваша команда теперь закрытая. Игрокам нужно приглашение.</red>
+bank_deposited: <green>Вы внесли <white><amount></white> в банк команды.</green>
+bank_withdrawn: <green>Вы сняли <white><amount></white> из банка команды.</green>
+bank_balance: '<gray>Баланс банка команды: <white><amount></white></gray>'
+warp_created: <green>Варп команды <white><warp></white> создан.</green>
+warp_deleted_success: <red>Варп команды <white><warp></white> удалён.</red>
+warp_teleported: <green>Вы телепортированы к <white><warp></white>.</green>
+warp_password_required: <gray>Для этого варпа требуется пароль.</gray>
+warp_password_incorrect: <red>Неверный пароль для этого варпа.</red>
+warp_not_exists: <red>Такого варпа не существует.</red>
+warp_limit_exceeded: <red>Ваша команда достигла максимального количества варпов.</red>
+join_request_sent_success: <green>Ваша заявка на вступление отправлена команде <white><team></white>.</green>
+join_request_received_notification: <yellow><player> хочет вступить в вашу команду!</yellow>
+join_request_accepted_success: <green>Вы приняли заявку на вступление от <white><player></white>.</green>
+join_request_denied_success: <red>Вы отклонили заявку на вступление от <white><player></white>.</red>
+join_request_withdrawn_success: <green>Вы отозвали свою заявку на вступление.</green>
+no_join_requests_pending: <gray>Нет активных заявок на вступление.</gray>
+team_chat_toggled_on: <green>Командный чат включён. Все сообщения будут отправляться вашей команде.</green>
+team_chat_toggled_off: <red>Командный чат выключен. Сообщения будут публичными.</red>
+enderchest_opened: <green>Командный эндер-сундук открыт.</green>
+enderchest_locked: <red>Командный эндер-сундук сейчас используется другим игроком.</red>
+enderchest_title: <gradient:#4C9DDE:#4C96D2>КОМАНДНЫЙ ЭНДЕР-СУНДУК</gradient>
+leaderboard_header: <white><bold>ТАБЛИЦА ЛИДЕРОВ КОМАНД</bold></white>
+leaderboard_title_kills: ТОП 10 КОМАНД ПО УБИЙСТВАМ
+leaderboard_title_balance: ТОП 10 КОМАНД ПО БАЛАНСУ
+leaderboard_title_members: ТОП 10 КОМАНД ПО УЧАСТНИКАМ
+leaderboard_entry: <gray><rank>. <white><team></white> - <score></gray>
+leaderboard_footer: <gray>Конец таблицы лидеров</gray>
+error_loading_leaderboard: <red>Ошибка загрузки таблицы лидеров. Повторите попытку позже.</red>
+economy_not_available: <red>Экономическая система недоступна. Обратитесь к администратору.</red>
+bank_insufficient_player_funds: <red>У вас недостаточно денег, чтобы внести эту сумму.</red>
+bank_amount_too_large: <red>Сумма слишком большая. Максимум — 1 миллиард.</red>
+bedrock_player_joined: <green><player> (Bedrock) вступил в команду!</green>
+bedrock_player_left: <red><player> (Bedrock) покинул команду.</red>
+bedrock_feature_limited: <yellow>Эта функция имеет ограниченную поддержку на Bedrock Edition.</yellow>
+cross_platform_team_created: <green>Кроссплатформенная команда создана! Теперь игроки Java и Bedrock могут вступать вместе.</green>
+platform_info: '<white>Ваша платформа: <platform></white>'
+platform_name_java: <#00FF00>Java Edition
+platform_name_bedrock: <#00D4FF>Bedrock Edition
+platform_gamertag: '<gray>Gamertag Xbox: <white><gamertag></white>'
+platform_java_uuid: '<gray>UUID Java Edition: <white><uuid></white>'
+platform_current_uuid: '<gray>Текущий UUID: <white><uuid></white>'
+no_teams_found: <gray>Команды не найдены.</gray>
+team_info_not_found: <red>Информация о команде не найдена.</red>
+player_info_not_found: <red>Информация об игроке не найдена.</red>
+permission_denied: <red>У вас нет прав на выполнение этого действия.</red>
+action_failed: <red>Не удалось выполнить действие. Повторите попытку.</red>
+invalid_argument: <red>Указан неверный аргумент.</red>
+missing_argument: <red>Отсутствует обязательный аргумент.</red>
+too_many_arguments: <red>Указано слишком много аргументов.</red>
+command_disabled: <red>Эта команда сейчас отключена.</red>
+feature_unavailable: <red>Эта функция недоступна.</red>
+maintenance_mode: <red>Эта функция сейчас на техническом обслуживании.</red>
+server_error: <red>Произошла внутренняя ошибка сервера.</red>
+database_error: <red>Произошла ошибка базы данных.</red>
+connection_error: <red>Произошла ошибка соединения.</red>
+timeout_error: <red>Время ожидания операции истекло. Повторите попытку.</red>
+validation_error: '<red>Ошибка проверки: <message></red>'
+success_message: <green>Операция успешно выполнена.</green>
+info_message: '<blue>Информация: <message></blue>'
+warning_message: '<yellow>Предупреждение: <message></yellow>'
+error_message: '<red>Ошибка: <message></red>'
+debug_message: '<gray>Отладка: <message></gray>'
+cannot_edit_own_permissions: <red>Вы не можете изменять свои права, будучи владельцем команды.</red>
+view_only_mode: <yellow>Это режим только для просмотра. Вы не можете изменять свои права.</yellow>
+join_requests_permission_denied: <red>Только владелец или совладельцы могут просматривать заявки на вступление.</red>
+bank_permission_denied: <red>У вас нет прав на доступ к банку команды.</red>
+enderchest_permission_denied: <red>У вас нет прав на использование командного эндер-сундука.</red>
+settings_permission_denied: <red>Только владелец или совладельцы могут открывать настройки команды.</red>
+home_cooldown: <red>Подождите, прежде чем снова использовать /team home.</red>
+enderchest_cooldown: <red>Подождите, прежде чем снова открывать эндер-сундук.</red>
+permission_update_failed: <red>Не удалось обновить права. Повторите попытку.</red>
+editing_permissions_updated: <green>Права на редактирование команды успешно обновлены.</green>
+promotion_failed: <red>Не удалось повысить игрока. Повторите попытку.</red>
+usage_blacklist: '<red>Использование: /team blacklist <player> [причина]</red>'
+cannot_blacklist_self: <red>Вы не можете добавить себя в чёрный список.</red>
+cannot_blacklist_team_member: <red>Вы не можете добавить участника команды в чёрный список. Сначала исключите его, если нужно.</red>
+player_blacklisted: <green>Вы запретили <white><target></white> вступать в вашу команду.</green>
+blacklist_failed: <red>Не удалось добавить игрока в чёрный список. Повторите попытку.</red>
+player_removed_from_blacklist: <green>Вы удалили <white><target></white> из чёрного списка.</green>
+remove_blacklist_failed: <red>Не удалось удалить игрока из чёрного списка. Повторите попытку.</red>
+player_is_blacklisted: <red><white><target></white> в чёрном списке у <white><blacklister></white> и не может вступить в вашу команду.</red>
+player_blacklisted_broadcast: <red><white><target></white> добавлен в чёрный список команды.</red>
+player_already_blacklisted: <red><white><target></white> уже в чёрном списке у <white><blacklister></white>.</red>
+usage_unblacklist: '<red>Использование: /team unblacklist <player></red>'
+cannot_unblacklist_self: <red>Вы не можете удалить себя из чёрного списка.</red>
+player_unblacklisted: <green>Вы удалили <white><target></white> из чёрного списка.</green>
+unblacklist_failed: <red>Не удалось удалить игрока из чёрного списка. Повторите попытку.</red>
+player_not_blacklisted: <red><white><target></white> не в чёрном списке.</red>
+feature_disabled_in_world: <red>Функция <white><feature></white> отключена в этом мире (<white><world></white>).</red>
+insufficient_funds: <red>Для использования этой функции нужно <white><cost></white>, но у вас только <white><balance></white>.</red>
+insufficient_funds_join: <red>Для вступления в эту команду нужно <white><cost></white>, но у вас только <white><balance></white>.</red>
+join_fee_paid: <green>С вас списано <white><cost></white> за вступление в <white><team></white>.</green>
+economy_charged: <green>С вас списано <white><cost></white> за использование <white><feature></white>.</green>
+economy_charged_bank: <green>С банка вашей команды списано <white><cost></white> за использование <white><feature></white>.</green>
+economy_charged_split: <green>С банка вашей команды списано <white><bank></white>, а с вашего баланса — <white><player></white> (всего <white><cost></white>) за использование <white><feature></white>.</green>
+economy_disabled: <red>Экономика недоступна на этом сервере.</red>
+insufficient_items: <red>Вам нужно <white><required></white>, но у вас только <white><current></white>.</red>
+items_taken: <green>Использовано <white><items></white> для доступа к <white><feature></white>.</green>
+invalid_item_format: <red>Неверная настройка предмета для <white><feature></white>.</red>
+admin_opened_enderchest: <green>Эндер-сундук команды <white><team_name></white> успешно открыт.</green>
+invalid_color: <red>Неверный цвет. Используйте корректное название цвета (например, RED, BLUE, GREEN). Введите 'reset', чтобы сбросить цвет.</red>
+team_color_updated: <green>Цвет команды изменён на <white><color></white>.</green>
+team_color_reset: <green>Цвет команды сброшен до значения по умолчанию.</green>
+admin_teleported_home: <green>Вы телепортированы к дому команды <white><team></white>.</green>
+usage_admin_home: '<red>Использование: /team admin home <teamName></red>'
+admin_home_not_set: <red>У команды <white><team></white> не установлен дом.</red>
+ally_request_sent: <green>Запрос на союз отправлен команде <white><team></white>!</green>
+ally_request_received: <yellow>Команда <white><team></white> хочет заключить с вами союз! <gray>(Отправил <white><player></white>)</gray></yellow>
+ally_request_accepted: <green>Вы приняли запрос на союз от команды <white><team></white>!</green>
+ally_request_denied: <red>Вы отклонили запрос на союз от команды <white><team></white>.</red>
+ally_request_was_denied: <red>Ваш запрос на союз команде <white><team></white> был отклонён.</red>
+ally_formed: <green>Ваша команда теперь в союзе с <white><team></white>!</green>
+ally_broken: <red>Союз с <white><team></white> разорван.</red>
+ally_removed: <yellow>Команда <white><team></white> удалена из союзников.</yellow>
+ally_already_allies: <red>Вы уже в союзе с <white><team></white>!</red>
+ally_request_already_sent: <red>Вы уже отправили запрос на союз команде <white><team></white>!</red>
+ally_cannot_ally_self: <red>Нельзя заключить союз со своей же командой!</red>
+ally_no_request_found: <red>Запрос на союз от <white><team></white> не найден.</red>
+ally_not_allies: <red>Вы не в союзе с <white><team></white>!</red>
+accept_requests_enabled: <green>Ваша команда теперь принимает заявки на вступление!</green>
+accept_requests_disabled: <red>Ваша команда больше не принимает заявки на вступление!</red>
+accept_requests_enabled_broadcast: <yellow>Приём заявок на вступление включён.</yellow>
+accept_requests_disabled_broadcast: <yellow>Приём заявок на вступление выключен.</yellow>
+usage_ally: '<red>Использование: /team ally [add|remove|accept|deny|toggle|list] [team]</red>'
+usage_ally_add: '<red>Использование: /team ally add <team></red>'
+usage_ally_remove: '<red>Использование: /team ally remove <team></red>'
+usage_ally_accept: '<red>Использование: /team ally accept <teamId></red>'
+usage_ally_deny: '<red>Использование: /team ally deny <teamId></red>'
+combat_tag_blocked: <red>Это нельзя сделать в бою! (осталось <time>с)</red>
+combat_tag_teleport: <red>Нельзя телепортироваться в бою! (осталось <time>с)</red>
+combat_tag_leave: <red>Нельзя покинуть команду в бою! (осталось <time>с)</red>
+combat_tag_disband: <red>Нельзя распустить команду в бою! (осталось <time>с)</red>
+combat_tag_invite: <red>Нельзя приглашать игроков в бою! (осталось <time>с)</red>
+combat_tag_kick: <red>Нельзя исключать участников в бою! (осталось <time>с)</red>
+combat_tag_transfer: <red>Нельзя передать владение в бою! (осталось <time>с)</red>
+combat_tag_bank: <red>Нельзя открыть банк в бою! (осталось <time>с)</red>
+combat_tag_enderchest: <red>Нельзя открыть эндер-сундук в бою! (осталось <time>с)</red>
+combat_tag_settings: <red>Нельзя менять настройки в бою! (осталось <time>с)</red>
+join_fee_enabled: <green>Плата за вступление включена! Теперь игроки платят <white><amount></white>, чтобы вступить в вашу команду.</green>
+join_fee_disabled: <yellow>Плата за вступление выключена. Игроки могут вступать бесплатно.</yellow>
+join_fee_amount_set: '<green>Плата за вступление установлена: <white><amount></white>!</green>'
+join_fee_must_be_positive: <red>Плата за вступление должна быть 0 или больше!</red>
+join_fee_exceeds_permission: <red>Согласно вашим правам вы можете установить плату за вступление не выше <white><max></white>!</red>
+only_owner_can_do_this: <red>Это может сделать только владелец команды!</red>
+max_allies_reached: <red>Вы достигли максимального числа союзников (<white><max></white>).</red>
+ally_toggle_disabled: <red>Переключение запросов на союз отключено на этом сервере.</red>
+teleport_cancelled_damage: <red>Телепортация отменена — вы получили урон!</red>
+teleport_cancelled: <red>Запланированная телепортация отменена.</red>
+prices_button_name: <gradient:#FFD700:#FFA500><bold>Цены команды</bold></gradient>
+prices_button_lore_1: <gray>Установите собственные цены команды на
+prices_button_lore_2: <gray>действия, которые разрешает менять сервер.
+prices_button_lore_3: <yellow>Нажмите, чтобы открыть цены команды.</yellow>
+prices_gui_title: '<dark_gray>Цены команды: <gray><team>'
+prices_gui_action_name: <gradient:#FFD700:#FFA500><bold><action></bold></gradient>
+prices_gui_members_pay: '<gray>Участники платят: <yellow><price>'
+prices_gui_source_team: '<gray>Источник: <green>Цена вашей команды'
+prices_gui_source_default: '<gray>Источник: <white>Стандарт сервера'
+prices_gui_staff_free: <green>С персонала вашей команды плата не взимается.
+prices_gui_left_set_price: <yellow>ЛКМ <gray>— установить цену
+prices_gui_right_reset: <yellow>ПКМ <gray>— сбросить к стандарту
+prices_gui_staff_only: <dark_gray>Это может менять только персонал вашей команды.
+prices_gui_join_fee_name: <gradient:#4C9DDE:#4C96D2><bold>Плата за вступление</bold></gradient>
+prices_gui_join_fee_status: '<gray>Статус: <status>'
+prices_gui_enabled: <green>Включено
+prices_gui_disabled: <red>Выключено
+prices_gui_join_fee_amount: '<gray>Сумма: <yellow><amount>'
+prices_gui_join_fee_desc: <gray>Взимается с игроков, вступающих в вашу команду.
+prices_gui_left_set_amount: <yellow>ЛКМ <gray>— установить сумму
+prices_gui_right_enable: <yellow>ПКМ <gray>— включить
+prices_gui_right_disable: <yellow>ПКМ <gray>— выключить
+prices_gui_coowner_name: <gradient:#4C9D9D:#4C96D2><bold>Доступ совладельца</bold></gradient>
+prices_gui_coowner_yes: '<gray>Совладельцы могут менять цены: <green>Да'
+prices_gui_coowner_no: '<gray>Совладельцы могут менять цены: <red>Нет'
+prices_gui_coowner_desc_1: <gray>Позвольте совладельцам управлять этими
+prices_gui_coowner_desc_2: <gray>ценами и платой за вступление.
+prices_gui_coowner_grant: <yellow>Нажмите, чтобы выдать доступ.</yellow>
+prices_gui_coowner_revoke: <yellow>Нажмите, чтобы отозвать доступ.</yellow>
+prices_gui_back: <gray><bold>Назад</bold></gray>
+quests_gui_progress: '<gray>Прогресс: <yellow><progress><gray>/<yellow><required>'
+quests_gui_reward_points: '<gray>Награда: <gold>+<points> очков'
+quests_gui_reward_money: '<gray>Награда: <green>+<money> монет'
+quests_gui_claimed: <dark_gray>Уже получено
+quests_gui_click_claim: <green>Нажмите, чтобы забрать!
+quests_gui_in_progress: <dark_gray>В процессе...
+buffs_gui_title: '<dark_gray>Усиления команды: <gray><team>'
+buffs_gui_info_name: <gradient:#FFD700:#FFA500><bold>Усиления команды</bold></gradient>
+buffs_gui_active_count: '<gray>Активно: <yellow><active><gray>/<yellow><max>'
+buffs_gui_how: <gray>Соберите <yellow><count><gray> участников в пределах <yellow><radius><gray> блоков
+buffs_gui_how_2: <gray>друг от друга, чтобы активировать эти усиления.
+buffs_gui_status_active: '<gray>Статус: <green>Активно'
+buffs_gui_status_inactive: '<gray>Статус: <red>Неактивно'
+buffs_gui_cost: '<gray>Стоимость включения: <light_purple><cost> очков'
+buffs_gui_click_enable: <yellow>Нажмите, чтобы включить
+buffs_gui_click_disable: <yellow>Нажмите, чтобы выключить
+buffs_gui_staff_only: <dark_gray>Это может менять только персонал вашей команды.
+buffs_gui_back: <gray><bold>Назад</bold></gray>
+buffs_enabled: <green>Усиление команды <white><buff><green> включено.
+buffs_disabled: <gray>Усиление команды <white><buff><gray> выключено.
+buffs_max_active: <red>У вашей команды уже активировано максимальное число усилений (<max>).
+buffs_not_enough_points: <red>Вашей команде нужно <yellow><cost><red> очков, чтобы включить это усиление.
+buffs_charge_failed: <red>Не удалось списать очки команды, попробуйте ещё раз.
+buffs_disabled_server: <red>Усиления команд отключены на этом сервере.
+team_upgrade_insufficient_money: <red>Not enough money for this upgrade! Need <yellow><cost></yellow>, have <yellow><balance></yellow> available from the enabled team bank and your wallet.</red>
+name_invalid_characters: '<red>Team name <white><input></white> contains characters that are not allowed: <white><invalid></white>. Use letters, numbers or underscores (spaces only if the server allows them).</red>'
+tag_invalid_characters: '<red>Team tag <white><input></white> contains characters that are not allowed: <white><invalid></white>. Use letters and numbers; spaces are not allowed in tags.</red>'
+name_formatting_too_long: <red>Team name is too long including colour and formatting codes (at most <white><max_raw_length></white> characters). Remove some formatting.</red>
+tag_formatting_too_long: <red>Team tag is too long including colour and formatting codes (at most <white><max_raw_length></white> characters). Remove some formatting.</red>
+name_missing_letter: <red>Team name <white><input></white> needs at least one letter; it cannot be only numbers, underscores or spaces.</red>
+tag_missing_letter: <red>Team tag <white><input></white> needs at least one letter; it cannot be only numbers.</red>
+name_reserved_text: <red>Team name <white><input></white> contains the blocked word <white><text></white>. Choose a different name.</red>
+tag_reserved_text: <red>Team tag <white><input></white> contains the blocked word <white><text></white>. Choose a different tag.</red>
+tag_too_short: '<red>Team tag <white><input></white> is too short: <white><length></white> characters, at least <white><min_length></white> needed.</red>'
+teammate_visibility_usage: '<gray>Usage: /team visibility [hide|show]'
+teammate_visibility_hidden: <green>Teammates are now hidden from your view. Use /team visibility show to restore them.
+teammate_visibility_shown: <green>Teammates are now visible to you.
+enderchest_unavailable: <red>This team's Ender Chest is in use or awaiting recovery. If it stays unavailable, contact an administrator.</red>
+enderchest_save_failed: <red>The Ender Chest could not be loaded or saved safely. Please contact an administrator if this continues.</red>
+
+# ─── Ender chest, chat prompts, leaderboards, settings and quest menu ───
+enderchest_disabled: <red>The team ender chest is disabled on this server.</red>
+enderchest_disabled_admin: '<gray>Admin info: switched off by <white><key></white> in config.yml. Set it to true and run /team reload.</gray>'
+enderchest_no_member_permission: <red>Your team has not given you access to the team ender chest. Ask the owner or a co-owner.</red>
+prompt_input_hint: <dark_gray>Chat not working? <click:suggest_command:'/team input '><hover:show_text:'<gray>Click to type your answer as a command'><white><u>/team input</u></white></hover></click> followed by your answer works too.</dark_gray>
+prompt_expired: <gray>Your team prompt timed out. Your next chat message is sent as normal chat again.</gray>
+usage_input: '<red>Usage: /team input <answer> (answers an open team prompt).</red>'
+input_no_prompt: <red>There is no open team prompt to answer.</red>
+usage_top: '<red>Usage: /team top [kills|points|balance|members]</red>'
+leaderboard_title_points: ᴛᴏᴘ 10 ᴛᴇᴀᴍs ʙʏ ᴘᴏɪɴᴛs
+leaderboard_stat_points: Points
+settings_color_none: <white>Default</white>
+quests_gui_name: <gold><quest_name>
+quests_gui_description_line: <gray><line>
+quests_gui_bar_filled: <green>|
+quests_gui_bar_empty: <dark_gray>|
+
+quests_disabled: <red>Team quests are disabled on this server.</red>

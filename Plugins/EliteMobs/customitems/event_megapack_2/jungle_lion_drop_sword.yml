@@ -1,0 +1,10 @@
+isEnabled: true
+material: IRON_SWORD
+name: "&6Lion's Might"
+lore:
+- "&6Roar like a lion!"
+enchantments:
+- "DAMAGE_ALL,6"
+potionEffects: 
+- "INCREASE_DAMAGE,1,self,onHit"
+itemType: UNIQUE

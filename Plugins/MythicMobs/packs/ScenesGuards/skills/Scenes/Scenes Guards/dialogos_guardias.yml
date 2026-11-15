@@ -1,0 +1,131 @@
+# ============================================================
+#  dialogos_guardias.yml - Diálogos aleatorios de los NPCs del pack ScenesGuards
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_guardias.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ⛨ Guardia | paleta #C3D3EA -> #5B7DB1 ----------
+# NPCs: scene_guard_stand, scene_guard_interactive, scene_guard_salute, scene_guard_salute_2, scene_guard_walk_1, scene_guard_walk_2, scene_guard_walk_3, scene_guard_march_1, scene_guard_march_2, scene_guard_march_3, scene_guards_duo
+dialogo_guardia:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=item.armor.equip_iron;v=0.5;p=1} @self
+  - particles{p=crit;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_guardia_frase1,dialogo_guardia_frase2,dialogo_guardia_frase3,dialogo_guardia_frase4,dialogo_guardia_frase5,dialogo_guardia_frase6} @trigger
+
+dialogo_guardia_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_guardia_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <dark_gray>» <#EEF2F9>Todo tranquilo por aquí. Como debe ser."} @trigger
+
+dialogo_guardia_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.94} @self
+  - summon{m=holo_guardia_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <dark_gray>» <#EEF2F9>Circula, viajero. Y nada de problemas, ¿eh?"} @trigger
+
+dialogo_guardia_frase3:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_guardia_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <dark_gray>» <#EEF2F9>Mi turno termina al anochecer. Falta muchísimo."} @trigger
+
+dialogo_guardia_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_guardia_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_f4_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <dark_gray>» <#EEF2F9>Si ves algo sospechoso, avísame."} @trigger
+
+dialogo_guardia_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_guardia_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <dark_gray>» <#EEF2F9>Esta armadura pesa más de lo que parece."} @trigger
+
+dialogo_guardia_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_guardia_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1><bold>Guardia</bold></gradient> <dark_gray>» <#EEF2F9>El capitán dice que estemos atentos. Siempre lo dice."} @trigger
+
+# ---------- ☾ Guardia | paleta #CFC9FF -> #7B6FD6 ----------
+# NPCs: scene_guard_sleep_stand
+dialogo_guardia_dormido:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.fox.sleep;v=0.5;p=1} @self
+  - particles{p=cloud;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_guardia_dormido_frase1,dialogo_guardia_dormido_frase2,dialogo_guardia_dormido_frase3,dialogo_guardia_dormido_frase4,dialogo_guardia_dormido_frase5,dialogo_guardia_dormido_frase6} @trigger
+
+dialogo_guardia_dormido_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_guardia_dormido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_dormido_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_dormido_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <dark_gray>» <#F1EFFF>Zzz... no estoy durmiendo, estoy vigilando con los ojos cerrados."} @trigger
+
+dialogo_guardia_dormido_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_guardia_dormido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_dormido_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_dormido_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <dark_gray>» <#F1EFFF>¿Eh? ¡Sí, capitán! Ah... eres tú. Uf."} @trigger
+
+dialogo_guardia_dormido_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_guardia_dormido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_dormido_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_dormido_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <dark_gray>» <#F1EFFF>Cinco minutos más y vuelvo a la ronda..."} @trigger
+
+dialogo_guardia_dormido_frase4:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_guardia_dormido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_dormido_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_dormido_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <dark_gray>» <#F1EFFF>No le digas a nadie que me viste así, ¿vale?"} @trigger
+
+dialogo_guardia_dormido_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_guardia_dormido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_dormido_f5_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <dark_gray>» <#F1EFFF>Zzz... murallas... seguras... zzz..."} @trigger
+
+dialogo_guardia_dormido_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
+  - summon{m=holo_guardia_dormido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_guardia_dormido_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_guardia_dormido_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6><bold>Guardia</bold></gradient> <dark_gray>» <#F1EFFF>Anoche hubo doble turno. Tengo los ojos pegados."} @trigger

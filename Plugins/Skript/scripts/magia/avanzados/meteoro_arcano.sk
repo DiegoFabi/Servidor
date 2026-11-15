@@ -1,0 +1,89 @@
+# ============================================================
+#  Meteoro Arcano  [AVANZADO]
+#  Comando: /meteoro
+#  Marca el bloque al que miras con un círculo de aviso (1,5 s),
+#  hace caer un meteoro desde el cielo y al impactar daña y lanza a
+#  los monstruos cercanos. No rompe bloques ni prende fuego.
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxRing() y fxLinea() de magia/nucleo_magia.sk
+#  Rendimiento: aviso 1 fotograma cada 3 ticks, caída 20 fotogramas,
+#  cada figura con un solo "make".
+# ============================================================
+
+options:
+    force: with force
+    perm: admin.poderes
+    nopermiso: &cNo tienes permiso para usar este poder.
+    cd: 30 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+    alcance: 40
+    altura: 26
+    radio: 6
+    dano: 14
+
+command /meteoro:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        set {_b} to target block of {_p}
+        if any:
+            {_b} is not set
+            distance between {_b} and {_p} > {@alcance}
+        then:
+            send action bar "<#FF6B6B>✖ <#9EA3AE>Mira a un bloque cercano para invocar el meteoro" to {_p}
+            cancel the cooldown
+            stop
+        set {_c} to location of block above {_b}
+        set {_c} to {_c} offset by vector(0.5, 0, 0.5)
+        fxAnuncio({_p}, "☄", "Meteoro Arcano", "El cielo responde", "#FFC27A", "#FF6F45", "Avanzado")
+        play sound "block.beacon.activate" with volume 2 and pitch 0.6 at {_c}
+        play sound "entity.wither.ambient" with volume 1 and pitch 0.5 at {_c}
+
+        # Aviso: círculo de runas que se cierra (10 fotogramas x 3 ticks)
+        set {_f} to 1
+        while {_f} <= 10:
+            make 1 of flame at fxRing({_c}, {@radio}, 40, 0.1, {_f} * 9) with offset vector(0, 0, 0) with extra 0 {@force}
+            make 1 of soul_fire_flame at fxRing({_c}, {@radio} - {_f} * 0.5, 20, 0.1, {_f} * -12) with offset vector(0, 0, 0) with extra 0 {@force}
+            make 1 of enchant at fxRing({_c}, 1.5, 12, 0.5, {_f} * 20) with offset vector(0, 0.5, 0) with extra 0.5 {@force}
+            add 1 to {_f}
+            wait 3 ticks
+
+        # Caída del meteoro en diagonal (20 ticks)
+        set {_ini} to {_c} offset by vector(-8, {@altura}, -8)
+        play sound "entity.ender_dragon.shoot" with volume 2 and pitch 0.5 at {_c}
+        play sound "item.trident.thunder" with volume 1 and pitch 0.6 at {_c}
+        set {_f} to 1
+        while {_f} <= 20:
+            set {_t} to {_f} / 20
+            set {_pos} to {_ini} offset by vector(8 * {_t}, {@altura} * -1 * {_t}, 8 * {_t})
+            make 12 of flame at {_pos} with offset vector(0.6, 0.6, 0.6) with extra 0.02 {@force}
+            make 4 of lava at {_pos} with offset vector(0.5, 0.5, 0.5) with extra 0 {@force}
+            make 6 of large_smoke at {_pos} with offset vector(0.4, 0.4, 0.4) with extra 0.01 {@force}
+            make 2 of soul_fire_flame at fxLinea({_pos}, {_pos} offset by vector(-2, 6.5, -2), 6) with offset vector(0.2, 0.2, 0.2) with extra 0 {@force}
+            add 1 to {_f}
+            wait 1 tick
+
+        # Impacto
+        make 1 of explosion_emitter at {_c} {@force}
+        make 60 of flame at {_c} with offset vector(2, 0.8, 2) with extra 0.15 {@force}
+        make 30 of lava at {_c} with offset vector(2, 0.5, 2) with extra 0 {@force}
+        make 40 of large_smoke at {_c} with offset vector(2.5, 1, 2.5) with extra 0.04 {@force}
+        play sound "entity.generic.explode" with volume 3 and pitch 0.5 at {_c}
+        play sound "entity.dragon_fireball.explode" with volume 2 and pitch 0.7 at {_c}
+        play sound "entity.lightning_bolt.thunder" with volume 1.5 and pitch 0.6 at {_c}
+        loop all monsters in radius {@radio} around {_c}:
+            set {_d} to {@dano} - (distance between loop-entity and {_c}) * 1.5
+            damage loop-entity by max({_d}, 3)
+            push loop-entity away from {_c} with force 1.6
+            push loop-entity upwards with force 0.7
+        # Ondas expansivas y brasas
+        set {_f} to 1
+        while {_f} <= 4:
+            make 2 of flame at fxRing({_c}, {_f} * 1.6, 12 + {_f} * 6, 0.2) with offset vector(0.2, 0.3, 0.2) with extra 0.02 {@force}
+            make 1 of large_smoke at fxRing({_c}, {_f} * 1.6, 10 + {_f} * 4, 0.4) with offset vector(0.2, 0.3, 0.2) with extra 0.01 {@force}
+            play sound "entity.firework_rocket.large_blast" with volume 1 and pitch (0.6 + {_f} * 0.1) at {_c}
+            add 1 to {_f}
+            wait 2 ticks
+        make 25 of lava at {_c} with offset vector(3, 0.3, 3) with extra 0 {@force}

@@ -1,0 +1,606 @@
+# Menus de seleccion abiertos desde el menu principal (menuGeneral.yml -> menuMain).
+# Abrir manualmente: /coremenu <menu>
+#   menuMascotas        -> Mascotas Vanilla (CombatPets) o Custom (MCPets)
+#   menuPersonalizacion -> Muebles, Cosméticos (HMCCosmetics) o Partículas
+#   menuParticulas      -> Partículas cosméticas (Skript personalizacion/particulas_cosmeticas.sk)
+#                          compradas con Shards; ver Scripts/menus_menuSeleccion.yml
+# Acciones en: Scripts/menus_menuSeleccion.yml
+menuMascotas:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Mascotas'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 12
+      - 14
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 23
+      - 24
+      - 25
+      - 26
+      source: vanilla
+      material: purple_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    vanilla:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: bone
+      name: <white><glyph:heart> <gradient:#FFE29A:#FFB347>Mascotas Vanilla</gradient>
+      lore:
+      - <#C9CDD6>Mascotas con apariencia de mobs
+      - <#C9CDD6>que suben de nivel y pelean contigo.
+      - ''
+      - <white><glyph:star> <#E6E8EE>Se capturan en los mundos
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir tu colección
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menumascotas_vanilla_click
+      right_click:
+        Scripts:
+        - menumascotas_vanilla_click
+      shift_left_click:
+        Scripts:
+        - menumascotas_vanilla_click
+      shift_right_click:
+        Scripts:
+        - menumascotas_vanilla_click
+    custom:
+      location: top
+      slots:
+      - 15
+      source: nexo
+      id: pet_category_legendary
+      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Mascotas Custom</gradient>
+      lore:
+      - '<#C9CDD6>Mascotas con modelos únicos:'
+      - <#C9CDD6>grifos, drakonins y monturas.
+      - ''
+      - '<#9EA3AE>Rarezas:'
+      - <white>Común <dark_gray>• <#5CA8FF>Rara <dark_gray>• <#B45CFF>Épica <dark_gray>• <#FFB347>Legendaria
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir el menú
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menumascotas_custom_click
+      right_click:
+        Scripts:
+        - menumascotas_custom_click
+      shift_left_click:
+        Scripts:
+        - menumascotas_custom_click
+      shift_right_click:
+        Scripts:
+        - menumascotas_custom_click
+    tienda:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: emerald
+      name: <white><glyph:diamond> <gradient:#FFE29A:#FFB347>Tienda de Mascotas</gradient>
+      lore:
+      - <#C9CDD6>Adopta compañeros, drakonins
+      - <#C9CDD6>y monturas con Shards.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir la tienda
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_abrir
+      right_click:
+        Scripts:
+        - tmasc_abrir
+      shift_left_click:
+        Scripts:
+        - tmasc_abrir
+      shift_right_click:
+        Scripts:
+        - tmasc_abrir
+    volver:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      lore:
+      - <white><glyph:raton_izq> <#7FB2FF>Click para regresar
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
+menuPersonalizacion:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Personalización'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 12
+      - 14
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 23
+      - 24
+      - 25
+      - 26
+      source: vanilla
+      material: orange_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    muebles:
+      location: top
+      slots:
+      - 11
+      source: nexo
+      id: comfortablechairred
+      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Muebles</gradient>
+      lore:
+      - <#C9CDD6>Decora tu casa con muebles
+      - <#C9CDD6>colocables y rotables.
+      - ''
+      - <white><glyph:checkmark> <#E6E8EE>Sala de estar, Cottage Core,
+      - <#E6E8EE>   Mercado medieval y Taberna
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver el catálogo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menupersonalizacion_muebles_click
+      right_click:
+        Scripts:
+        - menupersonalizacion_muebles_click
+      shift_left_click:
+        Scripts:
+        - menupersonalizacion_muebles_click
+      shift_right_click:
+        Scripts:
+        - menupersonalizacion_muebles_click
+    cosmeticos:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: leather_chestplate
+      name: <white><glyph:crown> <gradient:#FFE29A:#FFB347>Cosméticos</gradient>
+      lore:
+      - <#C9CDD6>Sombreros, capas, alas, bastones
+      - <#C9CDD6>y globos para tu personaje.
+      - ''
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic izquierdo: Mi Armario
+      - <white><glyph:raton_der> <#7FB2FF>Clic derecho: Tienda
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_DYE
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menupersonalizacion_cosmeticos_click
+      right_click:
+        Scripts:
+        - menupersonalizacion_cosmeticos_tienda
+      shift_left_click:
+        Scripts:
+        - menupersonalizacion_cosmeticos_click
+      shift_right_click:
+        Scripts:
+        - menupersonalizacion_cosmeticos_click
+    particulas:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: amethyst_shard
+      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Partículas</gradient>
+      lore:
+      - <#C9CDD6>Efectos decorativos que te
+      - <#C9CDD6>acompañan a donde vayas.
+      - ''
+      - <white><glyph:checkmark> <#E6E8EE>7 partículas exclusivas
+      - <white><glyph:diamond> <#E6E8EE>Pago en <#D89BFF>Shards <#9EA3AE>(compra única)
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver las partículas
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menupersonalizacion_particulas_click
+      right_click:
+        Scripts:
+        - menupersonalizacion_particulas_click
+      shift_left_click:
+        Scripts:
+        - menupersonalizacion_particulas_click
+      shift_right_click:
+        Scripts:
+        - menupersonalizacion_particulas_click
+    volver:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      lore:
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
+menuParticulas:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Partículas'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 18
+      - 19
+      - 20
+      - 22
+      - 24
+      - 25
+      - 26
+      source: vanilla
+      material: cyan_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    alma:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: soul_lantern
+      name: <white><glyph:moon> <gradient:#9FE8FF:#4FB3D9>Aura de Almas</gradient>
+      lore:
+      - <#C9CDD6>Almas azules que orbitan
+      - <#C9CDD6>lentamente a tus pies.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 1500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_alma_click
+      right_click:
+        Scripts:
+        - cosm_alma_click
+      shift_left_click:
+        Scripts:
+        - cosm_alma_click
+      shift_right_click:
+        Scripts:
+        - cosm_alma_click
+    cerezo:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: cherry_leaves
+      name: <white><glyph:flower> <gradient:#FFD1E6:#FF8FB8>Pétalos de Cerezo</gradient>
+      lore:
+      - <#C9CDD6>Pétalos rosados que caen
+      - <#C9CDD6>suavemente a tu alrededor.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 1800 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_cerezo_click
+      right_click:
+        Scripts:
+        - cosm_cerezo_click
+      shift_left_click:
+        Scripts:
+        - cosm_cerezo_click
+      shift_right_click:
+        Scripts:
+        - cosm_cerezo_click
+    chispas:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: lightning_rod
+      name: <white><glyph:high_voltage> <gradient:#FFF3A6:#FFC83D>Halo Eléctrico</gradient>
+      lore:
+      - <#C9CDD6>Un pequeño halo de chispas
+      - <#C9CDD6>sobre tu cabeza.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_chispas_click
+      right_click:
+        Scripts:
+        - cosm_chispas_click
+      shift_left_click:
+        Scripts:
+        - cosm_chispas_click
+      shift_right_click:
+        Scripts:
+        - cosm_chispas_click
+    brasas:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: blaze_powder
+      name: <white><glyph:fire> <gradient:#FFC2A6:#FF6F45>Estela de Brasas</gradient>
+      lore:
+      - <#C9CDD6>Dejas un rastro de brasas
+      - <#C9CDD6>al caminar.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2200 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_brasas_click
+      right_click:
+        Scripts:
+        - cosm_brasas_click
+      shift_left_click:
+        Scripts:
+        - cosm_brasas_click
+      shift_right_click:
+        Scripts:
+        - cosm_brasas_click
+    melodia:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: note_block
+      name: <white><glyph:music_notes> <gradient:#C6FFD6:#4FD99A>Melodía</gradient>
+      lore:
+      - <#C9CDD6>Notas musicales de colores
+      - <#C9CDD6>flotan sobre ti.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_melodia_click
+      right_click:
+        Scripts:
+        - cosm_melodia_click
+      shift_left_click:
+        Scripts:
+        - cosm_melodia_click
+      shift_right_click:
+        Scripts:
+        - cosm_melodia_click
+    corazones:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: pink_dye
+      name: <white><glyph:heart> <gradient:#FFC2D1:#F0607C>Corona de Corazones</gradient>
+      lore:
+      - <#C9CDD6>Una corona de corazones
+      - <#C9CDD6>gira sobre tu cabeza.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_corazones_click
+      right_click:
+        Scripts:
+        - cosm_corazones_click
+      shift_left_click:
+        Scripts:
+        - cosm_corazones_click
+      shift_right_click:
+        Scripts:
+        - cosm_corazones_click
+    escarcha:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: snowball
+      name: <white><glyph:water_drop> <gradient:#E6F7FF:#7FC8FF>Espiral de Escarcha</gradient>
+      lore:
+      - <#C9CDD6>Copos de nieve suben en
+      - <#C9CDD6>espiral a tu alrededor.
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - <white><glyph:star> <#E6E8EE>Solo decorativa
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o activar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - cosm_escarcha_click
+      right_click:
+        Scripts:
+        - cosm_escarcha_click
+      shift_left_click:
+        Scripts:
+        - cosm_escarcha_click
+      shift_right_click:
+        Scripts:
+        - cosm_escarcha_click
+    quitar:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: barrier
+      name: <#FF6B6B>✖ Quitar partícula
+      lore:
+      - <#C9CDD6>Desactiva la partícula que
+      - <#C9CDD6>tengas puesta.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para quitarla
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - cosm_quitar_click
+      right_click:
+        Scripts:
+        - cosm_quitar_click
+      shift_left_click:
+        Scripts:
+        - cosm_quitar_click
+      shift_right_click:
+        Scripts:
+        - cosm_quitar_click
+    volver:
+      location: top
+      slots:
+      - 21
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      lore:
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - shop_personalizacion_volver
+      right_click:
+        Scripts:
+        - shop_personalizacion_volver
+      shift_left_click:
+        Scripts:
+        - shop_personalizacion_volver
+      shift_right_click:
+        Scripts:
+        - shop_personalizacion_volver

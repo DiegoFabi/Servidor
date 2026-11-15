@@ -1,0 +1,33 @@
+{
+	"providers": [{
+		"file": "hmccosmetics:gui/cosmetics_gui.png",
+		"chars": [""],
+		"ascent": 14,
+		"height": 256,
+		"type": "bitmap"
+	}, {
+		"file": "hmccosmetics:gui/shift.png",
+		"chars": [""],
+		"ascent": -32768,
+		"height": -10,
+		"type": "bitmap"
+	}, {
+		"file": "hmccosmetics:gui/dye_menu.png",
+		"chars": [""],
+		"ascent": 13,
+		"height": 256,
+		"type": "bitmap"
+	}, {
+		"file": "hmccosmetics:icons/colorful.png",
+		"chars": [""],
+		"ascent": 8,
+		"height": 8,
+		"type": "bitmap"
+	}, {
+		"file": "hmccosmetics:icons/title.png",
+		"chars": [""],
+		"ascent": 128,
+		"height": 256,
+		"type": "bitmap"
+	}]
+}

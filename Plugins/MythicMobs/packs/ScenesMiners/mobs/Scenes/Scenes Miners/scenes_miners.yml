@@ -1,0 +1,322 @@
+
+scene_miner_sleep:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_miner_1;save=true} @self ~onSpawn
+  - model{mid=scene_miner_1;save=true;delay=5} @self ~onLoad
+  - state{s=sleep;delay=30} @self ~onLoad
+  - defaultstate{m=scene_miner_1;t=idle;s=sleep} @self ~onSpawn
+  - defaultstate{m=scene_miner_1;t=idle;s=sleep;delay=10} @self ~onLoad
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=interact_miner_sleep} ~onInteract
+  - skill{s=dialogo_minero_cansado} @trigger ~onInteract
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_miner_1;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_1;type=STRING;save=true} @self ~onInteract
+
+scene_miner_slab:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - state{s=mine_low;delay=30} @self ~onLoad
+  - model{mid=scene_miner_1;save=true} @self ~onSpawn
+  - model{mid=scene_miner_1;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_miner_1;t=idle;s=mine_low} @self ~onSpawn
+  - defaultstate{m=scene_miner_1;t=idle;s=mine_low;delay=10} @self ~onLoad
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_miner_1;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_1;type=STRING;save=true} @self ~onInteract
+
+scene_miner_block:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - state{s=mine_block;delay=30} @self ~onLoad
+  - model{mid=scene_miner_1;save=true} @self ~onSpawn
+  - model{mid=scene_miner_1;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_miner_1;t=idle;s=mine_block} @self ~onSpawn
+  - defaultstate{m=scene_miner_1;t=idle;s=mine_block;delay=10} @self ~onLoad
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_miner_1;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_1;type=STRING;save=true} @self ~onInteract 
+
+scene_miner_wall:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - state{s=mine_wall;delay=30} @self ~onLoad
+  - model{mid=scene_miner_1;save=true} @self ~onSpawn
+  - model{mid=scene_miner_1;save=true;delay=5} @self ~onLoad
+  - defaultstate{m=scene_miner_1;t=idle;s=mine_wall} @self ~onSpawn
+  - defaultstate{m=scene_miner_1;t=idle;s=mine_wall;delay=10} @self ~onLoad
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_miner_1;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_1;type=STRING;save=true} @self ~onInteract
+
+scene_miner_walk:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.175
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_miner_2;save=true} @self ~onSpawn
+  - model{mid=scene_miner_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=mine1} ~onTimer:10 ?stance{stance=gomine1}
+  - goto{speed=1} @pin{name=mine2} ~onTimer:10 ?stance{stance=gomine2}
+  - setStance{stance=gomine1;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=mine2;distance=<2}
+  - setStance{stance=gomine2;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=mine1;distance=<2}
+  - setStance{stance=gomine1} @self ~onSpawn
+  - light{m=scene_miner_2;p=lantern_light;block=15} @self ~onSpawn
+  - light{m=scene_miner_2;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_2;type=STRING;save=true} @self ~onInteract
+
+scene_miner_walk2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.175
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_miner_2;save=true} @self ~onSpawn
+  - model{mid=scene_miner_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=mine3} ~onTimer:10 ?stance{stance=gomine1}
+  - goto{speed=1} @pin{name=mine4} ~onTimer:10 ?stance{stance=gomine2}
+  - setStance{stance=gomine1;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=mine4;distance=<2}
+  - setStance{stance=gomine2;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=mine3;distance=<2}
+  - setStance{stance=gomine1} @self ~onSpawn
+  - light{m=scene_miner_2;p=lantern_light;block=15} @self ~onSpawn
+  - light{m=scene_miner_2;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_2;type=STRING;save=true} @self ~onInteract
+
+scene_miner_walk3:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.175
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_miner_2;save=true} @self ~onSpawn
+  - model{mid=scene_miner_2;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - goto{speed=1} @pin{name=mine5} ~onTimer:10 ?stance{stance=gomine1}
+  - goto{speed=1} @pin{name=mine6} ~onTimer:10 ?stance{stance=gomine2}
+  - setStance{stance=gomine1;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=mine6;distance=<2}
+  - setStance{stance=gomine2;delay=200} @self ~onTimer:10 ?distanceFromPin{pin=mine5;distance=<2}
+  - setStance{stance=gomine1} @self ~onSpawn
+  - light{m=scene_miner_2;p=lantern_light;block=15} @self ~onSpawn
+  - light{m=scene_miner_2;p=miner_hat_e;block=15} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_miner_2;type=STRING;save=true} @self ~onInteract
+
+scene_miner_interactive:
+  Type: PIG
+  Display: 'scene_miner_interactive'
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=15}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_miner_3;save=true} @self ~onSpawn
+  - model{mid=scene_miner_3;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_miner_3;n=<global.var.skin<caster.uuid>|scene_miner_3>;delay=10} @self ~onLoad
+  - changepart{m=scene_miner_3;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_miner_3;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_miner_3;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_miner_3;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_3;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_miner_3;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=interact_miner} ~onInteract
+  - skill{s=dialogo_minero} @trigger ~onInteract
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_miner_3;p=miner_hat_e;block=15} @self ~onSpawn
+  - light{m=scene_miner_3;p=lantern_light;block=15} @self ~onSpawn
+  - lockhead{lp=true} @self ~onSpawn
+  - lockhead{lp=true} @self ~onLoad
+  - setvariable{var=global.skinchange;value=scene_miner_3;type=STRING;save=true} @self ~onInteract
+
+scene_miner_undead:
+  Type: ZOMBIE
+  Display: 'Undead Miner'
+  Health: 30
+  Damage: 0
+  AITargetSelectors:
+  - players
+  Options:
+    MaxCombatDistance: 32 
+    Silent: true
+    PreventOtherDrops: true
+    KnockbackResistance: 0.2
+    FollowRange: 32
+    MovementSpeed: 0.23
+  Skills:
+  - model{mid=scene_miner_4;save=true} @self ~onSpawn
+  - model{mid=scene_miner_4;save=true;delay=5} @self ~onLoad
+  - randomskill{skills=undeadskinminer1,undeadskinminer2,undeadskinminer3,undeadskinminer4,undeadskinminer5,undeadskinminer6,undeadskinminer7,undeadskinminer8,undeadskinminer9,undeadskinminer10} @self ~onSpawn
+  - randomskill{skills=undeadskinminer1,undeadskinminer2,undeadskinminer3,undeadskinminer4,undeadskinminer5,undeadskinminer6,undeadskinminer7,undeadskinminer8,undeadskinminer9,undeadskinminer10;delay=10} @self ~onLoad 
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - light{m=scene_miner_3;p=miner_hat_e;block=15} @self ~onSpawn
+  - light{m=scene_miner_2;p=lantern_light;block=15} @self ~onSpawn
+  - lockhead{lp=true} @self ~onSpawn
+  - randomskill{skills=minerundeadattack2,minerundeadattack1;cooldown=2} @self ~onAttack
+  - state{m=scene_miner_4;s=death;li=2;lo=2} @self ~onDeath
+  - meleeHit{triggerskills=true;cooldown=3} @target ~onTimer:5 ?targetWithin{distance=3} 
+  - state{m=scene_miner_4;s=hit} @self ~onDamaged
+  - lockmodel{l=true} @self ~onDamaged
+  - lockmodel{l=false;delay=20} @self ~onDamaged
+#a20c154afac9fe503f9d00720d870422

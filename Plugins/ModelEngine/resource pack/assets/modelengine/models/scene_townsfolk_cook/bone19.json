@@ -1,0 +1,1 @@
+{"textures":{"4":"modelengine:entity/models/scene_townsfolk_cook","particle":"#4"},"elements":[{"from":[5.125,8.0,5.25],"to":[10.875,8.0,10.75],"faces":{"up":{"uv":[3.742,9.492,2.258,8.008],"tintindex":0,"rotation":0,"texture":"#4"},"down":{"uv":[9.742,0.008,8.258,1.492],"tintindex":0,"rotation":0,"texture":"#4"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

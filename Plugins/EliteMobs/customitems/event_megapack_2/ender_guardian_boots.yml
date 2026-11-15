@@ -1,0 +1,10 @@
+isEnabled: true
+material: NETHERITE_BOOTS
+name: '&dEnder Guardians Boots'
+lore:
+- "&dWhatever that creature was, you"
+- "&dhave it's boots now!"
+enchantments:
+- "PROTECTION_PROJECTILE,8"
+potionEffects: []
+itemType: UNIQUE

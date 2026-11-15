@@ -1,0 +1,23 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ZOGLIN
+name: $eventBossLevel &2Farmers Pride
+healthMultiplier: 2.0
+damageMultiplier: 0.5
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+powers:
+- summonType: ON_HIT
+  filename: undead_farmer_summon_1.yml
+  spawnNearby: false
+  inheritAggro: true
+  inheritLevel: true
+  amount: 1
+  chance: 0.45
+movementSpeedAttribute: 0.38
+followDistance: 80

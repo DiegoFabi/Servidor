@@ -1,0 +1,1064 @@
+tavern_counter:
+  itemname: Counter
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_counter
+    custom_model_data: 1030
+tavern_counter2:
+  itemname: Counter
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_counter2
+    custom_model_data: 1042
+tavern_counter_angle:
+  itemname: Counter angle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_counter_angle
+    custom_model_data: 1043
+tavern_windows:
+  itemname: Tavern window
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0..1,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_windows
+    custom_model_data: 1044
+tavern_windows_double:
+  itemname: Tavern big window
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0..1,0..1,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 2,2,2
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_windows_double
+    custom_model_data: 1045
+tavern_stool:
+  itemname: Tavern stool
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+      seats:
+      - 0,0.1,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_stool
+    custom_model_data: 1046
+tavern_table:
+  itemname: Tavern table
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0..1,0,0..1
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_table
+    custom_model_data: 1047
+tavern_big_table:
+  itemname: Tavern big table
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - -1..1,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_big_table
+    custom_model_data: 1048
+tavern_bench:
+  itemname: Tavern bench
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - -1..1,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+      seats:
+      - 0,-0.05,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_bench
+    custom_model_data: 1049
+tavern_shelf:
+  itemname: Tavern shelf
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - -1..1,0..2,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+        translation: 0,1,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_shelf
+    custom_model_data: 1051
+tavern_shelf2:
+  itemname: Tavern shelf
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - -1..1,0..2,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+        translation: 0,1,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_shelf2
+    custom_model_data: 1052
+tavern_shelf3:
+  itemname: Tavern shelf
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - -1..1,0..2,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+        translation: 0,1,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_shelf3
+    custom_model_data: 1053
+tavern_bottom_shelf:
+  itemname: Tavern bottom shelf
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0..1,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+        translation: 0.063,0,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_bottom_shelf
+    custom_model_data: 1054
+tavern_hanging_shelf:
+  itemname: Tavern hanging shelf
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: true
+      hitbox:
+        barriers:
+        - 0..1,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_hanging_shelf
+    custom_model_data: 1055
+tavern_bread:
+  itemname: Tavern bread
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.8,0.5
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_bread
+    custom_model_data: 1057
+tavern_hanging_mugs:
+  itemname: Tavern hanging mugs
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: true
+        floor: false
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,1
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_hanging_mugs
+    custom_model_data: 1058
+tavern_keg_support:
+  itemname: Tavern kegs on support
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0..1,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+        translation: 0,0.441,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_keg_support
+    custom_model_data: 1059
+tavern_keg_support_double:
+  itemname: Tavern kegs on support
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0..1,0..1,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+        translation: 0.252,0.441,0
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_keg_support_double
+    custom_model_data: 1060
+tavern_keg:
+  itemname: Tavern keg
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_keg
+    custom_model_data: 1061
+tavern_keg2:
+  itemname: Tavern keg
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_keg2
+    custom_model_data: 1062
+tavern_green_bottle:
+  itemname: Tavern green bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_green_bottle
+    custom_model_data: 1063
+tavern_brown_bottle:
+  itemname: Tavern brown bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_brown_bottle
+    custom_model_data: 1064
+tavern_blue_bottle:
+  itemname: Tavern blue bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_blue_bottle
+    custom_model_data: 1065
+tavern_red_bottle:
+  itemname: Tavern red bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_red_bottle
+    custom_model_data: 1066
+tavern_small_green_bottle:
+  itemname: Tavern small green bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_small_green_bottle
+    custom_model_data: 1067
+tavern_candle_red_bottle:
+  itemname: Tavern candle in red bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+      lights:
+        lights:
+        - 0,1,0 15
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_candle_red_bottle
+    custom_model_data: 1068
+tavern_candle_green_bottle:
+  itemname: Tavern candle in green bottle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+      lights:
+        lights:
+        - 0,1,0 15
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_candle_green_bottle
+    custom_model_data: 1069
+tavern_candle:
+  itemname: Tavern candle
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.6
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+      lights:
+        lights:
+        - 0,1,0 15
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_candle
+    custom_model_data: 1070
+tavern_basket_apple:
+  itemname: Tavern basket of apple
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.7,0.4
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_basket_apple
+    custom_model_data: 1071
+tavern_big_keg:
+  itemname: Tavern big keg
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0..1,0,0..1
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_big_keg
+    custom_model_data: 1072
+tavern_big_keg2:
+  itemname: Tavern big keg
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barriers:
+        - 0..1,0,0..1
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_big_keg2
+    custom_model_data: 1073
+tavern_mug:
+  itemname: Tavern mug
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.4
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_mug
+    custom_model_data: 1074
+tavern_mug2:
+  itemname: Tavern mug
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.4,0.4
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_mug2
+    custom_model_data: 1075
+tavern_multiple_bottles:
+  itemname: Tavern pack of bottles
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,0.5
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_multiple_bottles
+    custom_model_data: 1076
+tavern_pile_bottles:
+  itemname: Tavern pile of bottles
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,0.8
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_pile_bottles
+    custom_model_data: 1077
+tavern_mural_shelf:
+  itemname: Tavern mural shelf
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      hitbox:
+        barriers:
+        - 0..1,0,0
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_mural_shelf
+    custom_model_data: 1078
+tavern_egg_jar:
+  itemname: Tavern jar of eggs
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 0.5,0.8
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_egg_jar
+    custom_model_data: 1079
+tavern_plate1:
+  itemname: Tavern plate of food
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,0.3
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_plate1
+    custom_model_data: 1080
+tavern_plate2:
+  itemname: Tavern plate of food
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,0.3
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_plate2
+    custom_model_data: 1081
+tavern_plate3:
+  itemname: Tavern plate of food
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,0.3
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_plate3
+    custom_model_data: 1082
+tavern_mural_beam:
+  itemname: Tavern mural beam
+  Mechanics:
+    furniture:
+      rotatable: false
+      facing: UP
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      hitbox:
+        barrier: false
+        interactions:
+        - 0,0,0 1,0.3
+      drop:
+        silktouch: false
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      properties:
+        display_transform: NONE
+        scale: 1,1,1
+  material: PAPER
+  Pack:
+    model: shizuart_furnitures:tavern_furniture/tavern_mural_beam
+    custom_model_data: 1083

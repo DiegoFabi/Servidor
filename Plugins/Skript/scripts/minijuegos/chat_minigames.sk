@@ -1,0 +1,231 @@
+# ============================================================
+#  chat_minigames.sk - Minijuegos de chat con recompensa
+#  Requiere: Skript 2.10+ (tags MiniMessage) y Vault
+#
+#  Economia: ExcellentEconomy expone la moneda "money" como
+#  economia de Vault (config.yml -> Integration.Vault.EconomyCurrency: money),
+#  por eso "player's balance" opera directamente sobre ExcellentEconomy money
+#  en memoria, sin ejecutar comandos ni leer archivos.
+#
+#  Rendimiento:
+#  - Un unico evento periodico cada 10 minutos (no hay bucles, ni
+#    "every second", ni "while" con esperas).
+#  - Solo variables en memoria ({-mg::*}): no se escriben en disco.
+#  - El evento de chat es asincrono: se descarta todo lo que no es la
+#    respuesta con comparaciones baratas, y solo la respuesta correcta
+#    pasa al hilo principal (wait 1 tick) donde se reclama el premio de
+#    forma atomica, asi dos jugadores no pueden cobrar el mismo juego.
+# ============================================================
+
+options:
+    # Recompensa aleatoria (money de ExcellentEconomy)
+    min-premio: 500
+    max-premio: 1000
+    # Segundos para responder antes de que el juego expire
+    duracion: 60
+    # Jugadores minimos conectados para lanzar un juego
+    min-jugadores: 1
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:gold:yellow><bold>MiniJuego</bold></gradient> <dark_gray>»<reset>
+
+# ------------------------------------------------------------
+#  Lista de palabras (hardcodeada). Se carga una sola vez en memoria.
+# ------------------------------------------------------------
+on load:
+    delete {-mg::*}
+    set {-mg::palabras::*} to "minecraft", "diamante", "esmeralda", "creeper", "aldeano", "espada", "armadura", "obsidiana", "portal", "dragon", "encantamiento", "pocion", "redstone", "castillo", "molino", "servidor", "aventura", "tesoro", "calabaza", "esqueleto", "zombie", "netherita", "biblioteca", "antorcha", "caballo", "arquero", "herrero", "cofre", "mineral" and "bosque"
+    set {-mg::activo} to true
+
+# ------------------------------------------------------------
+#  Programador: 1 minijuego cada 20 minutos
+# ------------------------------------------------------------
+every 20 minutes:
+    {-mg::activo} is true
+    {-mg::id} is not set
+    number of all players >= {@min-jugadores}
+    mgIniciar()
+
+# ------------------------------------------------------------
+#  Logica del juego
+# ------------------------------------------------------------
+# tipo:  aleatorio | matematicas | suma | resta | multiplicacion | division | palabra
+# premio: -1 = aleatorio entre min-premio y max-premio
+function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
+    {-mg::id} is not set
+    set {_id} to random integer between 1 and 999999999
+    set {_op} to 0
+    if {_tipo} is "suma":
+        set {_op} to 1
+    else if {_tipo} is "resta":
+        set {_op} to 2
+    else if {_tipo} is "multiplicacion":
+        set {_op} to 3
+    else if {_tipo} is "division":
+        set {_op} to 4
+    if {_op} > 0:
+        set {_juego} to 1
+    else if {_tipo} is "matematicas":
+        set {_juego} to 1
+    else if {_tipo} is "palabra":
+        set {_juego} to 2
+    else:
+        set {_juego} to random integer between 1 and 2
+    if {_juego} = 1:
+        if {_op} = 0:
+            set {_op} to random integer between 1 and 4
+        if {_op} = 1:
+            set {_a} to random integer between 10 and 150
+            set {_b} to random integer between 10 and 150
+            set {_r} to {_a} + {_b}
+            set {_s} to "+"
+        else if {_op} = 2:
+            set {_a} to random integer between 20 and 200
+            set {_b} to random integer between 1 and {_a}
+            set {_r} to {_a} - {_b}
+            set {_s} to "-"
+        else if {_op} = 3:
+            set {_a} to random integer between 2 and 15
+            set {_b} to random integer between 2 and 15
+            set {_r} to {_a} * {_b}
+            set {_s} to "x"
+        else:
+            # Division siempre exacta: a = b * r
+            set {_b} to random integer between 2 and 12
+            set {_r} to random integer between 2 and 12
+            set {_a} to {_b} * {_r}
+            set {_s} to "÷"
+        set {-mg::respuesta} to "%{_r}%"
+        set {_titulo} to "<aqua><bold>✚ MATEMÁTICAS</bold>"
+        set {_reto} to "<gray>Resuelve: <white><bold>%{_a}% <gold>%{_s}%<white> %{_b}% <gold>= <yellow>?"
+    else:
+        set {_w} to random element out of {-mg::palabras::*}
+        set {-mg::respuesta} to {_w}
+        set {_len} to length of {_w}
+        loop {_len} times:
+            add subtext of {_w} from characters loop-number to loop-number to {_c::*}
+        # Mezcla las letras; reintenta (max 5) si queda igual a la original
+        loop 5 times:
+            set {_mezcla} to join (shuffled {_c::*}) with ""
+            if {_mezcla} is not {_w}:
+                exit loop
+        set {_titulo} to "<light_purple><bold>✎ ORDENA LA PALABRA</bold>"
+        set {_reto} to "<gray>Descifra: <white><bold>%{_mezcla} in uppercase%"
+
+    if {_premio} > 0:
+        set {-mg::premio} to rounded {_premio}
+    else:
+        set {-mg::premio} to random integer between {@min-premio} and {@max-premio}
+    set {-mg::id} to {_id}
+    set {-mg::inicio} to now
+
+    send "" to all players
+    send "<dark_gray><strikethrough>                                                  " to all players
+    send "  {@prefijo} %{_titulo}%" to all players
+    send "" to all players
+    send "    %{_reto}%" to all players
+    send "    <gray>Premio: <gradient:#55FF55:#00AA00><bold>$%{-mg::premio}%</bold></gradient> <dark_gray>• <gray>Tiempo: <yellow>{@duracion}s" to all players
+    send "    <dark_gray><italic>Escribe la respuesta en el chat" to all players
+    send "<dark_gray><strikethrough>                                                  " to all players
+    send "" to all players
+    play sound "block.note_block.pling" with volume 0.6 and pitch 1.4 to all players
+
+    # Una sola tarea diferida (no es un temporizador repetitivo)
+    wait {@duracion} seconds
+    {-mg::id} = {_id}
+    send "  {@prefijo} <red>⌛ Tiempo agotado. <gray>La respuesta era: <yellow><bold>%{-mg::respuesta}%" to all players
+    mgLimpiar()
+
+function mgLimpiar():
+    delete {-mg::id}
+    delete {-mg::respuesta}
+    delete {-mg::premio}
+    delete {-mg::inicio}
+
+# ------------------------------------------------------------
+#  Respuestas (evento asincrono)
+# ------------------------------------------------------------
+on chat:
+    {-mg::id} is set
+    set {_m} to message
+    replace all " " in {_m} with ""
+    # Comparacion sin distinguir mayusculas (case sensitive: false en config.sk)
+    {_m} is {-mg::respuesta}
+    cancel event
+    set {_id} to {-mg::id}
+    # Pasar al hilo principal: aqui la reclamacion es atomica
+    wait 1 tick
+    {-mg::id} = {_id}
+    player is online
+    set {_premio} to {-mg::premio}
+    set {_resp} to {-mg::respuesta}
+    set {_t} to difference between {-mg::inicio} and now
+    mgLimpiar()
+    add {_premio} to player's balance
+    send "" to all players
+    send "  {@prefijo} <gradient:#FFD700:#FFAA00><bold>¡%player's name%</bold></gradient> <gray>ganó el minijuego!" to all players
+    send "    <gray>Respuesta: <white><bold>%{_resp}%</bold> <dark_gray>• <gray>Premio: <green><bold>+$%{_premio}%</bold> <dark_gray>• <gray>Tiempo: <aqua>%{_t}%" to all players
+    send "" to all players
+    play sound "entity.player.levelup" with volume 0.7 and pitch 1.2 to player
+    play sound "entity.experience_orb.pickup" with volume 0.4 and pitch 1.6 to all players
+
+# ------------------------------------------------------------
+#  Administracion
+#   /mj iniciar [tipo] [recompensa]   -> lanza un juego manualmente
+#   /mj stop                          -> detiene el juego actual
+#   /mj on|off                        -> juegos automaticos cada 10 min
+#  Tipos: aleatorio, matematicas, suma, resta, multiplicacion, division, palabra
+# ------------------------------------------------------------
+command /minijuego [<text>] [<text>] [<text>]:
+    aliases: /mj
+    permission: server.admin
+    trigger:
+        if arg-1 is "iniciar" or "start":
+            if {-mg::id} is set:
+                send "{@prefijo} <red>Ya hay un minijuego en curso. <gray>Usa <yellow>/mj stop<gray>."
+                stop
+            set {_tipo} to "aleatorio"
+            set {_premio} to -1
+            if arg-2 is set:
+                set {_n} to arg-2 parsed as number
+                if {_n} is set:
+                    set {_premio} to {_n}
+                else if arg-2 is "aleatorio" or "matematicas" or "suma" or "resta" or "multiplicacion" or "division" or "palabra":
+                    set {_tipo} to arg-2
+                else:
+                    send "{@prefijo} <red>Tipo inválido. <gray>Usa: <yellow>aleatorio, matematicas, suma, resta, multiplicacion, division, palabra"
+                    stop
+            if arg-3 is set:
+                set {_n} to arg-3 parsed as number
+                if {_n} is not set:
+                    send "{@prefijo} <red>La recompensa debe ser un número."
+                    stop
+                set {_premio} to {_n}
+            if {_premio} is not -1:
+                if {_premio} <= 0:
+                    send "{@prefijo} <red>La recompensa debe ser mayor que 0."
+                    stop
+            send "{@prefijo} <green>Minijuego lanzado: <yellow>%{_tipo}%"
+            mgIniciar({_tipo}, {_premio})
+        else if arg-1 is "stop" or "cancelar":
+            if {-mg::id} is set:
+                set {_resp} to {-mg::respuesta}
+                mgLimpiar()
+                send "  {@prefijo} <yellow>El minijuego fue detenido por un administrador. <gray>Respuesta: <white><bold>%{_resp}%" to all players
+            else:
+                send "{@prefijo} <red>No hay ningún minijuego activo."
+        else if arg-1 is "on":
+            set {-mg::activo} to true
+            send "{@prefijo} <green>Minijuegos automáticos activados."
+        else if arg-1 is "off":
+            set {-mg::activo} to false
+            send "{@prefijo} <red>Minijuegos automáticos desactivados."
+        else:
+            send "<dark_gray><strikethrough>                                        "
+            send " {@prefijo} <gray>Comandos"
+            send "  <yellow>/mj iniciar [tipo] [recompensa] <dark_gray>» <gray>Lanza un juego"
+            send "  <yellow>/mj stop <dark_gray>» <gray>Detiene el juego actual"
+            send "  <yellow>/mj on|off <dark_gray>» <gray>Juegos automáticos (10 min)"
+            send "  <gray>Tipos: <white>aleatorio, matematicas, suma, resta,"
+            send "  <white>multiplicacion, division, palabra"
+            send "  <dark_gray>Ej: /mj iniciar division 2500  |  /mj iniciar 1500"
+            send "<dark_gray><strikethrough>                                        "

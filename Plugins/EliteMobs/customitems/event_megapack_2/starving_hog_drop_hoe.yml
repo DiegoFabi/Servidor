@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_HOE
+name: '&dFarmers Friend'
+lore:
+- '&dGo do some farming!'
+enchantments:
+- DIG_SPEED,5
+- DURABILITY,5
+- LOOT_BONUS_BLOCKS,4
+itemType: UNIQUE

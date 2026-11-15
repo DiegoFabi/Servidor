@@ -1,0 +1,1 @@
+{"textures":{"1":"modelengine:entity/models/scenes_combat_1","particle":"#1"},"elements":[{"from":[7.95,5.5,1.25],"to":[7.95,10.5,16.779999],"faces":{"east":{"uv":[3.25,2.0,3.875,0.0],"tintindex":0,"rotation":90,"texture":"#1"},"west":{"uv":[3.25,0.0,3.875,2.0],"tintindex":0,"rotation":90,"texture":"#1"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

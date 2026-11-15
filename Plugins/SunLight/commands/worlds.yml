@@ -1,0 +1,32 @@
+LiteralNodes:
+  world_unload:
+    Enabled: true
+    Aliases: unloadworld
+    Cooldown: 0
+  world_create:
+    Enabled: true
+    Aliases: createworld
+    Cooldown: 0
+  world_delete:
+    Enabled: true
+    Aliases: deleteworld
+    Cooldown: 0
+  world_editor:
+    Enabled: true
+    Aliases: editworld
+    Cooldown: 0
+  world_load:
+    Enabled: true
+    Aliases: loadworld
+    Cooldown: 0
+RootNodes:
+  world_manager:
+    Enabled: true
+    Aliases: worldmanager
+    Name: World Manager
+    Childrens:
+      world_unload: unload
+      world_create: create
+      world_delete: delete
+      world_editor: editor
+      world_load: load

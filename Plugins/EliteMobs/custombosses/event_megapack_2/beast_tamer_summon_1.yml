@@ -1,0 +1,18 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: ZOGLIN
+disguise: HOGLIN
+name: $eventBossLevel &6Beast
+healthMultiplier: 33.0
+damageMultiplier: 0.1
+dropsEliteMobsLoot: true
+dropsVanillaLoot: false
+dropsRandomLoot: false
+powers:
+- attack_gravity.yml
+movementSpeedAttribute: 0.28
+followDistance: 80

@@ -1,0 +1,262 @@
+# ============================================================
+#  busca_objetos.sk - Minijuego "Busca Objetos"
+#  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
+#
+#  1v1 (cada hora en el chat):
+#   - Se anuncia un duelo con botón [Unirse] (máx. 2 jugadores, 60 s).
+#   - Al unirse se cobra la apuesta; con 2 jugadores: 10 s de cuenta
+#     atrás (title solo para ellos) y se revela el bloque a conseguir.
+#   - 3 minutos: el primero que lo tenga en el inventario gana el bote
+#     (las dos apuestas). Si nadie lo consigue, se devuelve el dinero.
+#  Ruleta roja (todos): boRuletaGlobal() elige un bloque; quien no lo
+#  tenga en el inventario a los 3 minutos pierde esa cantidad.
+#
+#  Bloques: 16 bloques difíciles (hierro, lapislázuli, redstone, oro, cuarzo,
+#   obsidiana llorona, amatista, miel, slime, linterna marina, esmeralda,
+#   piedra del End, diamante, púrpura, escombro ancestral y netherita) con
+#   apuesta de 1000 a 5000 según dificultad. Lista editable en "on load".
+#
+#  Comandos: /buscaobjetos unirse | salir
+#            /buscaobjetos iniciar (admin: busca.admin)
+#  Rendimiento:
+#   - Un solo "every 60 minutes" (lanza el anuncio si no hay partida).
+#   - La detección es por eventos (recoger, craftear, mover objetos en el
+#     inventario) y solo comprueba a los 2 participantes.
+#   - Solo variables en memoria {-bo::*}.
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:aqua:dark_aqua><bold>Busca Objetos</bold></gradient> <dark_gray>»<reset>
+    tiempo: 180
+    inscripcion: 60
+    min-jugadores: 2
+
+# Bloques posibles: "tipo|Nombre|apuesta". La apuesta sube con la dificultad
+# (de 1000 a 5000). Añade o quita líneas aquí; se elige uno al azar.
+on load:
+    delete {-bo::*}
+    delete {-bog::*}
+    add "iron block|Bloque de Hierro|1000" to {-bo::bloques::*}
+    add "lapis block|Bloque de Lapislázuli|1200" to {-bo::bloques::*}
+    add "redstone block|Bloque de Redstone|1200" to {-bo::bloques::*}
+    add "gold block|Bloque de Oro|1500" to {-bo::bloques::*}
+    add "quartz block|Bloque de Cuarzo|1500" to {-bo::bloques::*}
+    add "crying obsidian|Obsidiana Llorona|1800" to {-bo::bloques::*}
+    add "amethyst block|Bloque de Amatista|1800" to {-bo::bloques::*}
+    add "honey block|Bloque de Miel|2000" to {-bo::bloques::*}
+    add "slime block|Bloque de Slime|2000" to {-bo::bloques::*}
+    add "sea lantern|Linterna Marina|2200" to {-bo::bloques::*}
+    add "emerald block|Bloque de Esmeralda|2500" to {-bo::bloques::*}
+    add "end stone|Piedra del End|3000" to {-bo::bloques::*}
+    add "diamond block|Bloque de Diamante|3500" to {-bo::bloques::*}
+    add "purpur block|Bloque de Púrpura|3500" to {-bo::bloques::*}
+    add "ancient debris|Escombro Ancestral|4000" to {-bo::bloques::*}
+    add "netherite block|Bloque de Netherita|5000" to {-bo::bloques::*}
+
+# Elige un bloque al azar de la lista (todos con la misma probabilidad)
+function boElegir(pre: text):
+    set {_lista::*} to {-bo::bloques::*}
+    set {_linea} to random element out of {_lista::*}
+    set {_d::*} to split {_linea} at "|"
+    set {_t} to {_d::1} parsed as itemtype
+    set {_nom} to {_d::2}
+    set {_a} to {_d::3} parsed as number
+    if {_pre} is "bo":
+        set {-bo::tipo} to {_t}
+        set {-bo::nombre} to {_nom}
+        set {-bo::apuesta} to {_a}
+    else:
+        set {-bog::tipo} to {_t}
+        set {-bog::nombre} to {_nom}
+        set {-bog::apuesta} to {_a}
+
+function boEnJuego(p: player) :: boolean:
+    if {-bo::estado} is "juego":
+        if {-bo::jugadores::*} contains {_p}:
+            return true
+    return false
+
+function boDevolver():
+    loop {-bo::jugadores::*}:
+        add {-bo::apuesta} to loop-value's balance
+        if loop-value is online:
+            send "{@prefijo} <#C9CDD6>Se te devolvieron <#7FFF9E>$%{-bo::apuesta}%<#C9CDD6>." to loop-value
+
+# ------------------------------------------------------------
+#  1v1
+# ------------------------------------------------------------
+function boAnunciar():
+    {-bo::estado} is not set
+    add 1 to {-bo::id}
+    set {_id} to {-bo::id}
+    boElegir("bo")
+    set {-bo::estado} to "inscripcion"
+    delete {-bo::jugadores::*}
+    loop all players:
+        notificar(loop-player)
+        send formatted "{@prefijo} <#C9CDD6>¡Duelo de búsqueda! Apuesta <#7FFF9E>$%{-bo::apuesta}% <dark_gray>• <#9EA3AE>2 jugadores  <click:run_command:'/buscaobjetos unirse'><hover:show_text:'<#7FB2FF>Apostar $%{-bo::apuesta}% y unirte'><#7FFF9E><bold>[Unirse]</bold></hover></click>" to loop-player
+    wait {@inscripcion} seconds
+    {-bo::id} = {_id}
+    {-bo::estado} is "inscripcion"
+    # No se llenó: se cancela y se devuelve el dinero
+    boDevolver()
+    send "{@prefijo} <#9EA3AE>Nadie más se unió; el duelo se canceló." to all players
+    delete {-bo::estado}
+    delete {-bo::jugadores::*}
+
+function boEmpezar():
+    set {_id} to {-bo::id}
+    set {-bo::estado} to "espera"
+    loop 10 times:
+        if {-bo::id} is not {_id}:
+            stop
+        set {_s} to 11 - loop-number
+        loop {-bo::jugadores::*}:
+            if loop-value-2 is online:
+                send title "<#5FE3FF><bold>%{_s}%" with subtitle "<#C9CDD6>Prepárate para buscar..." to loop-value-2 for 25 ticks with fadein 0 ticks and fadeout 5 ticks
+                play sound "block.note_block.hat" with volume 0.6 and pitch (0.8 + loop-number-1 * 0.08) to loop-value-2
+        wait 1 second
+    {-bo::id} = {_id}
+    set {-bo::estado} to "juego"
+    loop {-bo::jugadores::*}:
+        if loop-value is online:
+            send title "<#5FE3FF>¡Busca!" with subtitle "<white>%{-bo::nombre}%" to loop-value for 2 seconds with fadein 0 ticks and fadeout 10 ticks
+            send "{@prefijo} <#C9CDD6>Consigue <white><bold>%{-bo::nombre}%</bold> <#C9CDD6>antes que tu rival. Tienes <#FFD36B>3 minutos<#C9CDD6>." to loop-value
+            play sound "block.amethyst_block.chime" with volume 0.8 and pitch 1.4 to loop-value
+            # Puede que ya lo tenga encima
+            if loop-value has {-bo::tipo}:
+                boGanar(loop-value)
+                stop
+    wait {@tiempo} seconds
+    {-bo::id} = {_id}
+    {-bo::estado} is "juego"
+    send "{@prefijo} <#9EA3AE>Se acabó el tiempo y nadie consiguió <white>%{-bo::nombre}%<#9EA3AE>." to all players
+    boDevolver()
+    delete {-bo::estado}
+    delete {-bo::jugadores::*}
+
+function boGanar(p: player):
+    {-bo::estado} is "juego"
+    delete {-bo::estado}
+    add 1 to {-bo::id}
+    set {_bote} to {-bo::apuesta} * 2
+    add {_bote} to {_p}'s balance
+    send title "<#7FFF9E><bold>¡Ganaste!" with subtitle "<#C9CDD6>+$%{_bote}%" to {_p} for 3 seconds with fadein 5 ticks and fadeout 10 ticks
+    play sound "ui.toast.challenge_complete" with volume 0.6 to {_p}
+    send "{@prefijo} <white>%{_p}% <#C9CDD6>encontró <white>%{-bo::nombre}% <#C9CDD6>y gana <#7FFF9E><bold>$%{_bote}%</bold><#C9CDD6>." to all players
+    delete {-bo::jugadores::*}
+
+# Detección por eventos (solo participantes)
+on pick up:
+    {-bo::estado} is "juego"
+    boEnJuego(player) is true
+    wait 1 tick
+    player is online
+    player has {-bo::tipo}
+    boGanar(player)
+
+on craft:
+    {-bo::estado} is "juego"
+    boEnJuego(player) is true
+    wait 1 tick
+    player is online
+    player has {-bo::tipo}
+    boGanar(player)
+
+on inventory click:
+    {-bo::estado} is "juego"
+    boEnJuego(player) is true
+    wait 1 tick
+    player is online
+    player has {-bo::tipo}
+    boGanar(player)
+
+on quit:
+    {-bo::jugadores::*} contains player
+    if {-bo::estado} is "inscripcion":
+        add {-bo::apuesta} to player's balance
+        remove player from {-bo::jugadores::*}
+    else if {-bo::estado} is "juego":
+        # Abandona: gana el rival que sigue conectado
+        loop {-bo::jugadores::*}:
+            if loop-value is not player:
+                set {_rival} to loop-value
+        if {_rival} is online:
+            boGanar({_rival})
+
+every 60 minutes:
+    number of all players >= {@min-jugadores}
+    boAnunciar()
+
+# ------------------------------------------------------------
+#  Ruleta roja: búsqueda para todos
+#  Rellena {-bog::nombre} y {-bog::apuesta} al instante (los usa la
+#  ruleta para el título) y comprueba a los 3 minutos.
+# ------------------------------------------------------------
+function boRuletaGlobal():
+    {-bog::activo} is not set
+    set {-bog::activo} to true
+    boElegir("bog")
+    wait 8 seconds
+    loop all players:
+        notificar(loop-player)
+        send "{@prefijo} <#FF6B6B>Consigue <white><bold>%{-bog::nombre}%</bold> <#FF6B6B>en 3 minutos o perderás <#FFD36B>$%{-bog::apuesta}%<#FF6B6B>." to loop-player
+    wait 150 seconds
+    send "{@prefijo} <#FFB347>¡Quedan 30 segundos para conseguir <white>%{-bog::nombre}%<#FFB347>!" to all players
+    wait 30 seconds
+    set {_a} to 0
+    set {_p} to 0
+    loop all players:
+        if loop-player has {-bog::tipo}:
+            add 1 to {_a}
+            send action bar "<#7FFF9E>✔ A salvo: tienes %{-bog::nombre}%" to loop-player
+        else:
+            set {_q} to {-bog::apuesta}
+            if loop-player's balance < {_q}:
+                set {_q} to loop-player's balance
+            if {_q} > 0:
+                remove {_q} from loop-player's balance
+            add 1 to {_p}
+            send "{@prefijo} <#FF6B6B>No conseguiste <white>%{-bog::nombre}%<#FF6B6B>: pierdes <#FFD36B>$%{_q}%<#FF6B6B>." to loop-player
+            play sound "entity.villager.no" with volume 0.6 to loop-player
+    send "{@prefijo} <#C9CDD6>Fin de la búsqueda: <#7FFF9E>%{_a}% a salvo <dark_gray>• <#FF6B6B>%{_p}% pagaron." to all players
+    delete {-bog::*}
+
+# ------------------------------------------------------------
+#  Comando
+# ------------------------------------------------------------
+command /buscaobjetos [<text>]:
+    aliases: /busca
+    trigger:
+        if arg-1 is "unirse":
+            if {-bo::estado} is not "inscripcion":
+                send "{@prefijo} <#FF6B6B>No hay ningún duelo abierto."
+                stop
+            if {-bo::jugadores::*} contains player:
+                send "{@prefijo} <#FFB347>Ya estás inscrito."
+                stop
+            if size of {-bo::jugadores::*} >= 2:
+                send "{@prefijo} <#FF6B6B>El duelo ya está completo."
+                stop
+            if player's balance < {-bo::apuesta}:
+                send "{@prefijo} <#FF6B6B>Necesitas <#7FFF9E>$%{-bo::apuesta}% <#FF6B6B>para unirte."
+                stop
+            remove {-bo::apuesta} from player's balance
+            add player to {-bo::jugadores::*}
+            send "{@prefijo} <white>%player% <#C9CDD6>se une al duelo <dark_gray>(%size of {-bo::jugadores::*}%/2)" to all players
+            if size of {-bo::jugadores::*} >= 2:
+                boEmpezar()
+        else if arg-1 is "salir":
+            if {-bo::estado} is "inscripcion":
+                if {-bo::jugadores::*} contains player:
+                    remove player from {-bo::jugadores::*}
+                    add {-bo::apuesta} to player's balance
+                    send "{@prefijo} <#9EA3AE>Saliste del duelo y recuperaste tu apuesta."
+        else if arg-1 is "iniciar":
+            if player does not have permission "busca.admin":
+                send "{@prefijo} <#FF6B6B>No tienes permiso."
+                stop
+            boAnunciar()
+        else:
+            send "{@prefijo} <#C9CDD6>Cada hora se abre un duelo 1v1: el primero en conseguir el bloque gana el bote."

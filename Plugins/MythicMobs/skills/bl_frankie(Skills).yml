@@ -1,0 +1,533 @@
+#-------------------------
+#     Made by Bojarsky Legacy 
+#     Discord bojarsky
+#-------------------------
+
+# -- Spawn & Death -- # 
+
+bl_frankie_spawn:
+  Skills:
+  - defaultstate{t=idle;s=not_active} @self 
+  - lockmodel{l=true;delay=2} @self
+  - setspeed{s=0} @self 
+  - addtag{t=bl_frankie_not_active} @self
+  - partvis{mid=bl_frankie;p=stars;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=electrical;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=electrical_eyes;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=wave;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=wave_electrical;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=explosion;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=dust;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=vomiting;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=pan4;v=false;child=true} @self
+  - partvis{mid=bl_frankie;p=vomiting_ball10;v=false;child=true} @self
+  - BodyClamp{mh=25;rde=0;rdu=0} @self
+  
+bl_frankie_death:
+  Skills:
+  - sound{s=bl_frankie.vomiting;v=3;p=0.7;delay=1} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.9;delay=10} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.7;delay=18} @self
+  - sound{s=bl_frankie.slime;v=3;p=0.9;delay=3} @self
+
+bl_frankie_tesla_death:
+  Skills:
+  - sound{s=bl_frankie.woosh_projectile;v=3;p=1.2;delay=2} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.7;delay=6} @self
+
+# -- States -- # 
+
+bl_frankie_active:
+  Cooldown: 10
+  Conditions:
+  - targetwithin{d=20} true
+  - hastag{t=bl_frankie_active} false
+  Skills:
+  - gcd{ticks=135} @self
+  - setspeed{s=0} @self
+  - state{s=active} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.8;delay=20} @self
+  - sound{s=bl_frankie.slime;v=3;p=0.6;delay=55} @self
+  - lockmodel{l=false;delay=110} @self 
+  - defaultstate{t=idle;s=idle} @self
+  - addtag{t=bl_frankie_active} @self
+  - delay 135
+  - removetag{t=bl_frankie_not_active} @self
+  - setspeed{s=0.8} @self
+
+bl_frankie_phase2:
+  Conditions:
+  - offgcd
+  - hastag{t=bl_frankie_phase2} false
+  - health{h=<250} true
+  - targetwithin{d=32} true
+  Skills:
+  - gcd{ticks=12} @self
+  - state{s=transformation} @self
+  - setspeed{s=0} @self
+  - sound{s=bl_frankie.electro1;v=3;p=0.8;delay=5} @self
+  - partvis{mid=bl_frankie;p=electrical;v=true;child=true;delay=5} @self
+  - partvis{mid=bl_frankie;p=electrical_eyes;v=true;child=true;delay=5} @self
+  - partvis{mid=bl_frankie;p=eyes;v=false;child=true;delay=5} @self
+  - addtag{t=bl_frankie_phase2} @self
+  - delay 12
+  - setspeed{s=0.8} @self
+  
+# -- General -- # 
+
+bl_frankie_phase1_skills:
+  Conditions:
+  - hastag{t=bl_frankie_phase2} false
+  - hastag{t=bl_frankie_not_active} false
+  Skills:
+  - randomskill{s=bl_frankie_pan_hit,bl_frankie_hand_hit,bl_frankie_mucus_clot,bl_frankie_burping,bl_frankie_grab_try,bl_frankie_ass_explosion} @target
+  
+bl_frankie_phase2_skills:
+  Conditions:
+  - hastag{t=bl_frankie_phase2} true
+  Skills:
+  - randomskill{s=bl_frankie_pan_hit,bl_frankie_hand_hit,bl_frankie_mucus_clot,bl_frankie_burping,bl_frankie_grab_try,bl_frankie_ass_explosion_p2,bl_frankie_tesla} @target
+
+bl_frankie_step:
+  Conditions:
+  - moving true
+  - inblock{b=WATER,LAVA} false
+  - offgcd
+  Skills:
+  - randomskill{s=bl_frankie_step1,bl_frankie_step2}
+  
+bl_frankie_step1:
+  Skills:
+  - sound{s=bl_frankie.step_walk;v=3;p=1} @self
+  
+bl_frankie_step2:
+  Skills:
+  - sound{s=bl_frankie.step_walk;v=3;p=0.9} @self
+
+bl_frankie_hurt:
+  Conditions:
+  - offgcd
+  - chance{c=0.6} true
+  Skills:
+  - randomskill{s=bl_frankie_hurt1,bl_frankie_hurt2}
+
+bl_frankie_hurt1:
+  Skills:
+  - sound{s=bl_frankie.punching;v=3;p=0.9} @self
+  
+bl_frankie_hurt2:
+  Skills:
+  - sound{s=bl_frankie.punching;v=3;p=0.8} @self
+
+# -- Phase 1 Skills -- #
+
+bl_frankie_pan_hit:
+  Cooldown: 24
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to6} true
+  Skills:
+  - gcd{ticks=68} @self
+  - state{s=pan_hit} @self
+  - setspeed{s=0} @self
+  - sound{s=bl_frankie.pan_hit;v=3;p=0.9;delay=38} @self
+  - partvis{mid=bl_frankie;p=pan4;v=true;child=true;delay=5} @self
+  - partvis{mid=bl_frankie;p=pan4;v=false;child=true;delay=60} @self
+  - aura{auraName=bl_frankie_pan_hit_totem;onTick=bl_frankie_pan_hit_totem_tick;interval=1;duration=8;delay=36} @self
+  - delay 35
+  - setspeed{s=1} @self
+  - delay 5
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - delay 15
+  - lockmodel{l=false} @self
+  - delay 13
+  - setspeed{s=0.8} @self
+  
+bl_frankie_pan_hit_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_frankie_pan_hit_damage;hr=2.5;vr=2.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+  
+bl_frankie_pan_hit_damage:
+  Skills:
+  - basedamage{m=2.5}
+  - throw{v=5;vy=4}
+  - shieldbreak{duration=80}
+
+bl_frankie_hand_hit:
+  Cooldown: 16
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to4} true
+  Skills:
+  - gcd{ticks=46} @self
+  - state{s=hand_hit} @self
+  - setspeed{s=0} @self
+  - sound{s=bl_frankie.hand_hit;v=3;p=0.8;delay=18} @self
+  - aura{auraName=bl_frankie_hand_hit_totem;onTick=bl_frankie_hand_hit_totem_tick;interval=1;duration=6;delay=17} @self
+  - delay 12
+  - setspeed{s=1} @self
+  - delay 8
+  - setspeed{s=0} @self
+  - delay 5
+  - lockmodel{l=true} @self
+  - delay 15
+  - lockmodel{l=false} @self
+  - delay 6
+  - setspeed{s=0.8} @self
+  
+bl_frankie_hand_hit_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_frankie_pan_hit_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+  
+bl_frankie_hand_hit_damage:
+  Skills:
+  - basedamage{m=3}
+  - throw{v=4;vy=4}
+  - shieldbreak{duration=100}
+
+bl_frankie_ass_explosion:
+  Cooldown: 24
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=2to6} true
+  Skills:
+  - gcd{ticks=90} @self
+  - state{s=ass_explosion} @self
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.8;delay=23} @self
+  - sound{s=bl_frankie.ass_explosion;v=3;p=0.8;delay=24} @self
+  - partvis{mid=bl_frankie;p=dust;v=true;child=true;delay=20} @self
+  - partvis{mid=bl_frankie;p=wave;v=true;child=true;delay=20} @self
+  - partvis{mid=bl_frankie;p=dust;v=false;child=true;delay=75} @self
+  - partvis{mid=bl_frankie;p=wave;v=false;child=true;delay=75} @self
+  - aura{auraName=bl_frankie_ass_explosion_totem;onTick=bl_frankie_ass_explosion_totem_tick;interval=1;duration=25;delay=26} @self
+  - delay 75
+  - lockmodel{l=false} @self
+  - delay 15
+  - setspeed{s=0.8} @self
+  
+bl_frankie_ass_explosion_totem_tick:
+  Skills:
+  - totem{md=1;oH=bl_frankie_ass_explosion_damage;hr=4.2;vr=2;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+  
+bl_frankie_ass_explosion_damage:
+  Skills:
+  - basedamage{m=3}
+  - throw{v=6;vy=8}
+  - shieldbreak{duration=160}
+
+bl_frankie_burping:
+  Cooldown: 30
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=2to5} true
+  Skills:
+  - gcd{ticks=126} @self
+  - state{s=burping} @self
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - sound{s=bl_frankie.vomiting;v=3;p=0.6;delay=25} @self
+  - sound{s=bl_frankie.vomiting;v=3;p=0.7;delay=51} @self
+  - sound{s=bl_frankie.vomiting;v=3;p=0.8;delay=65} @self
+  - sound{s=bl_frankie.slime;v=3;p=1;delay=41} @self
+  - sound{s=bl_frankie.slime;v=3;p=1;delay=47} @self
+  - sound{s=bl_frankie.slime;v=3;p=1;delay=58} @self
+  - sound{s=bl_frankie.slime;v=3;p=1;delay=64} @self
+  - sound{s=bl_frankie.slime;v=3;p=1;delay=80} @self
+  - partvis{mid=bl_frankie;p=vomiting;v=true;child=true;delay=20} @self
+  - partvis{mid=bl_frankie;p=vomiting;v=false;child=true;delay=126} @self
+  - aura{auraName=bl_frankie_burping_totem1;onTick=bl_frankie_burping_totem_tick1;interval=1;duration=75;delay=45} @self
+  - aura{auraName=bl_frankie_burping_totem2;onTick=bl_frankie_burping_totem_tick2;interval=1;duration=69;delay=51} @self
+  - aura{auraName=bl_frankie_burping_totem3;onTick=bl_frankie_burping_totem_tick3;interval=1;duration=60;delay=60} @self
+  - aura{auraName=bl_frankie_burping_totem4;onTick=bl_frankie_burping_totem_tick4;interval=1;duration=53;delay=67} @self
+  - aura{auraName=bl_frankie_burping_totem5;onTick=bl_frankie_burping_totem_tick5;interval=1;duration=37;delay=83} @self
+  - delay 126
+  - lockmodel{l=false} @self
+  - setspeed{s=0.8} @self
+  
+bl_frankie_burping_totem_tick1:
+  Skills:
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle2;o=model}
+
+bl_frankie_burping_totem_tick2:
+  Skills:
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle3;o=model}
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle4;o=model}
+
+bl_frankie_burping_totem_tick3:
+  Skills:
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle5;o=model}
+
+bl_frankie_burping_totem_tick4:
+  Skills:
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle6;o=model}
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle7;o=model}
+
+bl_frankie_burping_totem_tick5:
+  Skills:
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle8;o=model}
+  - totem{md=1;oH=bl_frankie_burping_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=vomiting_puddle9;o=model}
+  
+bl_frankie_burping_damage:
+  Skills:
+  - basedamage{m=1}
+  - throw{v=0;vy=0}
+  - shieldbreak{duration=60}
+  - potion{type=SLOW;duration=60;level=3}
+  - potion{type=POISON;duration=60;level=4}
+
+bl_frankie_mucus_clot:
+  Cooldown: 20
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=2to7} true
+  Skills:
+  - gcd{t=64} @self
+  - state{s=mucus_clot} @self
+  - setspeed{s=0} @self
+  - sound{s=bl_frankie.vomiting;v=3;p=0.8;delay=11} @self
+  - sound{s=bl_frankie.woosh_projectile;v=3;p=0.8;delay=32} @self
+  - partvis{mid=bl_frankie;p=vomiting_ball10;v=true;child=true;delay=10} @self
+  - partvis{mid=bl_frankie;p=vomiting_ball10;v=false;child=true;delay=42} @self
+  - delay 38
+  - setspeed{s=1} @self
+  - delay 4
+  - lockmodel{l=true} @self
+  - setspeed{s=0} @self
+  - missile{b=MOB;mm=bl_frankie_projectile;ti=25;v=35;syo=4;tyo=2.5;oH=bl_frankie_mucus_clot_damage}
+  - delay 22
+  - lockmodel{l=false} @self
+  - setspeed{s=0.8} @self
+
+bl_frankie_mucus_clot_damage:
+  Skills:
+  - basedamage{m=3}
+  - throw{v=8;vy=5}
+  - shieldbreak{duration=100}
+  - potion{type=SLOW;duration=80;level=3}
+  - potion{type=POISON;duration=80;level=4}
+
+bl_frankie_grab_try:
+  Cooldown: 30
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to5} true
+  Skills:
+  - gcd{ticks=56} @self
+  - state{s=grab_try} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.6;delay=28} @self
+  - delay 24
+  - setspeed{s=1} @self
+  - delay 10
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - totem{md=6;oH=bl_frankie_grab;hr=2;vr=2;drawhitbox=false;ti=25} @modelpart{pid=grab}
+  - skill{s=bl_frankie_grab_try_check_passengers} @modelpart{pid=grab}
+  
+bl_frankie_grab_try_check_passengers:
+  Conditions:
+  - ModelHasPassenger{p=grab} false
+  Skills:
+  - lockmodel{l=false} @self
+  - setspeed{s=0.8} @self
+   
+bl_frankie_grab:
+  Skills:
+  - gcd{ticks=60} @self
+  - damage{a=6} @ModelPassengers{p=grab}
+  - mountmodel{mid=bl_frankie;driver=false;pbone=grab;dmg=true}
+  - state{s=grab_try;r=true} @self
+  - state{s=grab} @self
+  - sound{s=bl_frankie.woosh_projectile;v=3;p=1;delay=18} @self
+  - delay 5
+  - lockmodel{l=true} @self
+  - delay 15
+  - setspeed{s=1} @self
+  - delay 5
+  - totem{md=1;oH=bl_frankie_grab_throw;hr=1;vr=1;drawhitbox=false;ti=25} @modelpart{pid=grab}
+  - delay 5
+  - setspeed{s=0} @self
+  - delay 30
+  - lockmodel{l=false} @self
+  - setspeed{s=0.8} @self
+
+bl_frankie_grab_throw:
+  Skills:
+  - dismountall{mid=bl_frankie;p=grab} @self
+  - delay 1
+  - throw{v=15;vy=4}
+
+# -- Phase 2 Skills -- #
+
+bl_frankie_tesla:
+  Cooldown: 20
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=2to7} true
+  Skills:
+  - gcd{t=60} @self
+  - state{s=tesla} @self
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - sound{s=bl_frankie.woosh_projectile;v=3;p=1.2;delay=20} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=1.4;delay=25} @self
+  - sound{s=bl_frankie.electrical;v=3;p=1.2;delay=30} @self
+  - delay 28
+  - summon{type=bl_frankie_tesla;amount=1} @modelpart{pid=damage;o=model}
+  - delay 32
+  - lockmodel{l=false} @self
+  - setspeed{s=0.8} @self
+
+bl_frankie_tesla_duble_attack:
+  Cooldown: 16
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to5} true
+  Skills:
+  - gcd{ticks=81} @self
+  - state{s=duble_attack} @self
+  - sound{s=bl_frankie.electrical;v=3;p=0.9;delay=9} @self
+  - sound{s=bl_frankie.electrical;v=3;p=0.9;delay=49} @self
+  - sound{s=bl_frankie.electro3;v=3;p=0.9;delay=26} @self
+  - sound{s=bl_frankie.electro3;v=3;p=0.9;delay=66} @self
+  - partvis{mid=bl_frankie_tesla;p=electrical_waves;v=true;child=true;delay=2} @self
+  - partvis{mid=bl_frankie_tesla;p=electrical_waves;v=false;child=true;delay=80} @self
+  - aura{auraName=bl_frankie_tesla_duble_attack_totem1;onTick=bl_frankie_tesla_duble_attack_totem_tick1;interval=1;duration=9;delay=29} @self
+  - aura{auraName=bl_frankie_tesla_duble_attack_totem2;onTick=bl_frankie_tesla_duble_attack_totem_tick2;interval=1;duration=9;delay=69} @self
+
+bl_frankie_tesla_duble_attack_totem_tick1:
+  Skills:
+  - totem{md=1;oH=bl_frankie_tesla_duble_attack_damage;hr=4;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+  
+bl_frankie_tesla_duble_attack_totem_tick2:
+  Skills:
+  - totem{md=1;oH=bl_frankie_tesla_duble_attack_damage;hr=4;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+
+bl_frankie_tesla_duble_attack_damage:
+  Skills:
+  - damage{a=2;pk=true;pi=true}
+  - throw{v=0;vy=0}
+  - shieldbreak{duration=60}
+
+bl_frankie_tesla_combo_attack:
+  Cooldown: 16
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to5} true
+  Skills:
+  - gcd{ticks=64} @self
+  - state{s=combo_attack} @self
+  - sound{s=bl_frankie.electrical;v=3;p=0.9;delay=10} @self
+  - sound{s=bl_frankie.electrical;v=3;p=0.9;delay=18} @self
+  - sound{s=bl_frankie.electrical;v=3;p=0.9;delay=26} @self
+  - sound{s=bl_frankie.electrical;v=3;p=0.9;delay=34} @self
+  - partvis{mid=bl_frankie_tesla;p=electrical_waves;v=true;child=true;delay=2} @self
+  - partvis{mid=bl_frankie_tesla;p=electrical_waves;v=false;child=true;delay=63} @self
+  - aura{auraName=bl_frankie_tesla_combo_attack_totem1;onTick=bl_frankie_tesla_combo_attack_totem_tick1;interval=1;duration=6;delay=29} @self
+  - aura{auraName=bl_frankie_tesla_combo_attack_totem2;onTick=bl_frankie_tesla_combo_attack_totem_tick2;interval=1;duration=6;delay=39} @self
+  - aura{auraName=bl_frankie_tesla_combo_attack_totem3;onTick=bl_frankie_tesla_combo_attack_totem_tick3;interval=1;duration=6;delay=49} @self
+  - aura{auraName=bl_frankie_tesla_combo_attack_totem4;onTick=bl_frankie_tesla_combo_attack_totem_tick4;interval=1;duration=5;delay=59} @self
+
+bl_frankie_tesla_combo_attack_totem_tick1:
+  Skills:
+  - totem{md=1;oH=bl_frankie_tesla_combo_attack_damage;hr=4;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+  
+bl_frankie_tesla_combo_attack_totem_tick2:
+  Skills:
+  - totem{md=1;oH=bl_frankie_tesla_combo_attack_damage;hr=6;vr=3;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+
+bl_frankie_tesla_combo_attack_totem_tick3:
+  Skills:
+  - totem{md=1;oH=bl_frankie_tesla_combo_attack_damage;hr=8;vr=4.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+
+bl_frankie_tesla_combo_attack_totem_tick4:
+  Skills:
+  - totem{md=1;oH=bl_frankie_tesla_combo_attack_damage;hr=10;vr=5.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+
+bl_frankie_tesla_combo_attack_damage:
+  Skills:
+  - damage{a=2;pk=true;pi=true}
+  - throw{v=0;vy=0}
+  - shieldbreak{duration=60}
+
+bl_frankie_tesla_hurt:
+  Conditions:
+  - offgcd
+  - chance{c=0.6} true
+  Skills:
+  - gcd{ticks=8} @self
+  - state{s=hurt} @self
+
+bl_frankie_ass_explosion_p2:
+  Cooldown: 24
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=2to6} true
+  Skills:
+  - gcd{ticks=90} @self
+  - state{s=ass_explosion} @self
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.8;delay=23} @self
+  - sound{s=bl_frankie.ass_explosion;v=3;p=0.8;delay=24} @self
+  - sound{s=bl_frankie.electro3;v=3;p=0.8;delay=24} @self
+  - partvis{mid=bl_frankie;p=dust;v=true;child=true;delay=20} @self
+  - partvis{mid=bl_frankie;p=explosion;v=true;child=true;delay=20} @self
+  - partvis{mid=bl_frankie;p=wave_electrical;v=true;child=true;delay=20} @self
+  - partvis{mid=bl_frankie;p=dust;v=false;child=true;delay=75} @self
+  - partvis{mid=bl_frankie;p=explosion;v=false;child=true;delay=75} @self
+  - partvis{mid=bl_frankie;p=wave_electrical;v=false;child=true;delay=75} @self
+  - aura{auraName=bl_frankie_ass_explosion_totem_p2;onTick=bl_frankie_ass_explosion_totem_tick_p2;interval=1;duration=25;delay=26} @self
+  - delay 75
+  - lockmodel{l=false} @self
+  - delay 15
+  - setspeed{s=0.8} @self
+  
+bl_frankie_ass_explosion_totem_tick_p2:
+  Skills:
+  - totem{md=1;oH=bl_frankie_ass_explosion_damage_p2;hr=4.2;vr=2;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage;o=model}
+  
+bl_frankie_ass_explosion_damage_p2:
+  Skills:
+  - basedamage{m=6}
+  - throw{v=8;vy=12}
+  - shieldbreak{duration=160}
+  
+bl_frankie_stun:
+  Cooldown: 120
+  Conditions:
+  - offgcd
+  - health{h=<350} true
+  Skills:
+  - gcd{t=126} @self
+  - state{s=stun} @self
+  - setspeed{s=0} @self
+  - sound{s=bl_frankie.step_walk;v=3;p=0.7;delay=10} @self
+  - partvis{mid=bl_frankie;p=stars;v=true;child=true;delay=7} @self
+  - partvis{mid=bl_frankie;p=stars;v=false;child=true;delay=107} @self
+  - sound{s=bl_frankie.bird;v=3;p=0.7;delay=10} @self
+  - delay 9
+  - lockmodel{l=true} @self
+  - delay 106
+  - lockmodel{l=false} @self
+  - delay 11
+  - setspeed{s=0.8} @self
+   
+#-------------------------
+#     Made by Bojarsky Legacy
+#     Discord bojarsky
+#-------------------------
+#e2e7f43cc1241d9925942e25a27cdef4
+#wkU5NjW2MDMEV1N0ZHVHhDTRZ1V31EROVTUU5keVRUT6NGVW52MHZVUiV2MWlEZuJTbGhjN

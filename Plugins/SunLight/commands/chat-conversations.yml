@@ -1,0 +1,32 @@
+LiteralNodes:
+  toggle:
+    Enabled: true
+    Aliases: togglepm,pmtoggle
+    Cooldown: 0
+  message:
+    Enabled: true
+    Aliases: msg,pm,whisper,w,tell
+    Cooldown: 0
+  reply:
+    Enabled: true
+    Aliases: reply,r
+    Cooldown: 0
+  'off':
+    Enabled: false
+    Aliases: pm-off
+    Cooldown: 0
+  'on':
+    Enabled: false
+    Aliases: pm-on
+    Cooldown: 0
+RootNodes:
+  conversations:
+    Enabled: true
+    Aliases: conversations,dm
+    Name: Conversations
+    Childrens:
+      message: send
+      'off': 'off'
+      reply: reply
+      toggle: toggle
+      'on': 'on'

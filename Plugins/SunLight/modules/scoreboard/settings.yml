@@ -1,0 +1,47 @@
+# Here you can create your own, custom scoreboard formats.
+#
+# [ SETTINGS DESCRIPTION ]
+# ├── Update_Interval:
+# │     -> Scoreboard update interval (in game ticks).
+# ├── Priority:
+# │     -> Sets format priority. When multiple formats are available, the one with the highest priority is used.
+# ├── Worlds:
+# │     -> List of worlds, where this format is available. Add '*' to allow all worlds.
+# ├── Groups:
+# │     -> List of ranks (permission groups) to which this format is available. Add '*' to allow all ranks.
+# └── Title + Lines:
+#       -> Sets the text displayed at top (Title) and body (Lines) of the scoreboard.
+#       [>] Text Formations: https://nightexpressdev.com/nightcore/configuration/text-formation/
+#       [>] Placeholders Available:
+#           - %animation:[name]% - include dynamic text (animation) from the 'animations.yml'.
+#           - %player_name% - Player name.
+#           - %player_display_name% - Player display (custom) name.
+#           - %player_prefix% - Player prefix.
+#           - %player_suffix% - Player suffix.
+#           - %player_world% - Player world.
+#           - PlaceholderAPI - https://wiki.placeholderapi.com/
+#
+# [*] Requires LuckPerms OR Vault with a compatible Permissions plugin for the feature to work properly.
+Boards:
+  default:
+    Update_Interval: 10
+    Priority: 1
+    Worlds:
+    - '*'
+    Groups:
+    - '*'
+    Title: <white>
+    Lines:
+    - <glyph:top_logo_1>
+    - <gray>      ⌚ %localtime_time_dd/MM/yyyy%
+    - <gray>
+    - ' <glyph:star> <green>%player_name%'
+    - ' <glyph:crown> <white>Rango: <white>%player_prefix%</white>'
+    - <gray>
+    - '  <glyph:gold_coin> <white>Billetera: <gold>%excellenteconomy_balance_short_legacy_money%'
+    - '  <glyph:castle_entrance> <white>Clan: <white>%justteams_name%'
+    - '  <glyph:trophy> <white>Nivel: <green>%player_level%'
+    - <gray>
+    - ' <glyph:checkmark> <white>Conectados: <aqua>%server_online%'
+    - ' <glyph:diamond> <white>Shards:<light_purple> %excellenteconomy_balance_short_legacy_shards%'
+    - ' '

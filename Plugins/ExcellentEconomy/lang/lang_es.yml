@@ -1,0 +1,198 @@
+Command:
+  Argument:
+    Name:
+      Currency: moneda
+      Page: página
+      Plugin: plugin
+      Symbol: symbol
+      Decimals: allowDecimals
+  Migrate:
+    Desc: Migrar datos de otro(s) plugin(s).
+    Error:
+      Plugin: <lgray>¡Plugin no soportado o no instalado!</lgray>
+    Start: <lgray>¡Se inició la migración de datos desde <lyellow>%name%</lyellow>! Esto puede tomar un tiempo.</lgray>
+    Done: <lgray>¡Datos migrados desde <lyellow>%name%</lyellow>!</lgray>
+  Reset:
+    Desc: Restablecer los saldos de un jugador.
+    Done: <lgray>¡Se han restablecido todos los saldos de moneda para <lyellow>%player_name%</lyellow>!</lgray>
+  Wipe:
+    Desc: Restablecer la moneda para todos los usuarios.
+    Start: <lgray>Se inició la limpieza de datos de la moneda para <lyellow>%currency_name%</lyellow>. Esto puede tomar un tiempo...</lgray>
+    Finish: <lgray>Se completó la limpieza de datos de la moneda para <lyellow>%currency_name%</lyellow>.</lgray>
+  Currency:
+    Root:
+      Desc: Comandos de la moneda %currency_name%.
+    Balance:
+      Desc: Ver saldo.
+    Give:
+      Desc: Agregar moneda a un jugador.
+      Done: '<lgray>Se agregaron <lyellow>%amount%</lyellow> al saldo de <lyellow>%player_name%</lyellow>. Nuevo saldo: <lyellow>%balance%</lyellow>.</lgray>'
+      Notify: <lgray>¡Se han añadido <lyellow>%amount%</lyellow> a tu cuenta!</lgray>
+    GiveAll:
+      Desc: Agregar moneda a todos los jugadores conectados.
+      Done: <lgray>Se agregaron <lyellow>%amount%</lyellow> a <lyellow>todos los jugadores conectados</lyellow>.</lgray>
+    Take:
+      Desc: Quitar moneda a un jugador.
+      Done: '<lgray>Se quitaron <lyellow>%amount%</lyellow> del saldo de <lyellow>%player_name%</lyellow>. Nuevo saldo: <lyellow>%balance%</lyellow>.</lgray>'
+      Notify: <lgray>Se han deducido <lyellow>%amount%</lyellow> de tu cuenta.</lgray>
+    Set:
+      Desc: Establecer el saldo de moneda de un jugador.
+      Done: <lgray>Saldo de <lyellow>%currency_name%</lyellow> de <lyellow>%player_name%</lyellow> establecido en <lyellow>%balance%</lyellow>.</lgray>
+      Notify: <lgray>Tu saldo de <lyellow>%currency_name%</lyellow> se ha establecido en <lyellow>%amount%</lyellow>.</lgray>
+    Send:
+      Desc: Transferir moneda a un jugador.
+      Error:
+        NotEnough: <lgray>¡No tienes suficiente <lred>%currency_name%</lred>!</lgray>
+        TooLow: <lgray>¡No puedes enviar menos de <lred>%amount%</lred>!</lgray>
+        NoPayments: <lgray>¡<lred>%player_name%</lred> no acepta <lred>%currency_name%</lred>!</lgray>
+      Done:
+        Sender: <lgray>Enviaste <lyellow>%amount%</lyellow> a <lyellow>%player_name%</lyellow>!</lgray>
+        Notify: <lgray>Recibiste <lyellow>%amount%</lyellow> de <lyellow>%player_name%</lyellow>!</lgray>
+    Payments:
+      Desc: Activar/desactivar la aceptación de pagos de otros jugadores.
+      Toggle: '<lgray>Aceptación de pagos de <lyellow>%currency_name%</lyellow>: <lyellow>%state%</lyellow>.</lgray>'
+      Target: '<lgray>Aceptación de pagos de <lyellow>%currency_name%</lyellow> para <lyellow>%player_name%</lyellow>: <lyellow>%state%</lyellow>.</lgray>'
+    Exchange:
+      Desc: Intercambiar moneda.
+    Top:
+      Desc: Lista de jugadores con el saldo más alto.
+      List:
+      - '[prefix="false"]'
+      - <cyan><b>%currency_name% Top:</b></cyan>
+      - ' '
+      - '%entry%'
+      - ' '
+      - <lgray>Página <cyan>%current%</cyan> de <cyan>%max%</cyan>.</lgray>
+      Entry: '<cyan>%pos%. <gray>%player_name%: </gray>%balance%</cyan>'
+  Create:
+    Desc: Create a new currency.
+  ResetAll:
+    Desc: Reset balances of all users.
+  Wallet:
+    Desc: View full balance.
+  Syntax:
+    InvalidCurrency: <gray><soft_red>%input%</soft_red> is not a valid currency!</gray>
+Currency:
+  Balance:
+    Display:
+      Own: '<lgray>Saldo: <lyellow>%balance%</lyellow>.</lgray>'
+      Others: '<lgray>Saldo de <lyellow>%player_name%</lyellow>: <lyellow>%balance%</lyellow>.</lgray>'
+  Exchange:
+    Error:
+      Disabled: <lgray>¡<lred>%currency_name%</lred> no se puede intercambiar!</lgray>
+      NoRate: <lgray>¡<lred>%currency_name%</lred> no se puede intercambiar por <lred>%name%</lred>!</lgray>
+      LowAmount: <lgray>¡La cantidad de <lred>%currency_name%</lred> es demasiado baja para el intercambio!</lgray>
+      LimitExceed: <lgray>Podrías obtener <lred>%amount%</lred>, ¡pero no puedes tener más de <lred>%max%</lred> en total!</lgray>
+      LowBalance: <lgray>¡No tienes <lred>%amount%</lred> para el intercambio!</lgray>
+    Success: <lgray>¡Intercambiaste <lyellow>%balance%</lyellow> por <lyellow>%amount%</lyellow>!</lgray>
+  Error:
+    Invalid: <lgray>¡<lred>%value%</lred> no es una moneda válida!</lgray>
+  Operation:
+    Disabled: <soft_red>Currency operations are temporarily disabled.</soft_red>
+    Reset:
+      Feedback: <gray><soft_yellow>%player_name%</soft_yellow>'s balance has been reset to <soft_yellow>%balance%</soft_yellow>.</gray>
+      Notify: <gray>Your balance has been reset to <soft_yellow>%balance%</soft_yellow>.</gray>
+  Create:
+    BadName: <soft_red>Invalid name provided! Only latin letters and digits are supported.</soft_red>
+    Duplicated: <soft_red>There is already a currency with this name.</soft_red>
+    Success: '<gray>Created new currency: <green>%currency_name%</green> (ID: <white>%currency_id%</white>)</gray>'
+  Wallet:
+    Own:
+    - '[prefix="false"]'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    - <gray>[<green>$</green>] Your Wallet:</gray>
+    - ' '
+    - '%entry%'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    Others:
+    - '[prefix="false"]'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    - <gray>[<green>$</green>] <white>%player_name%</white>'s Wallet:</gray>
+    - ' '
+    - '%entry%'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    Entry: <yellow>•</yellow> <white>%currency_name%:</white> <green>%balance%</green>
+Migration:
+  Start:
+    Blocked: <soft_red>Could not start migration due to background tasks already running!</soft_red>
+    BadPlugin: <soft_red>Plugin is not supported or installed!</soft_red>
+    BadCurrency: <soft_red>Could not migrate data from %name% to %currency_name%.</soft_red>
+  Started:
+  - '[prefix="false"]'
+  - <dark_gray><st>--------------------------------</st></dark_gray>
+  - <gray>[<red>→</red>] Data Migration:</gray>
+  - ' '
+  - <gray>Started data migration from <white>%name%</white>. Please wait...</gray>
+  - ' '
+  - <red><u>All currency operations are disabled until migration is completed.</u></red>
+  - <dark_gray><st>--------------------------------</st></dark_gray>
+  Completed:
+  - '[prefix="false"]'
+  - <dark_gray><st>--------------------------------</st></dark_gray>
+  - <gray>[<green>→</green>] Data Migration:</gray>
+  - ' '
+  - <gray>Finished data migration from <white>%name%</white>!</gray>
+  - ' '
+  - <green><u>All currency operations are enabled again.</u></green>
+  - <dark_gray><st>--------------------------------</st></dark_gray>
+ResetAll:
+  Start:
+    Blocked: <soft_red>Could not start balance reset due to background tasks already running!</soft_red>
+  Started:
+    Currency:
+    - '[prefix="false"]'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    - <gray>[<red>$</red>] Balance Reset:</gray>
+    - ' '
+    - <gray>Started <white>%currency_name%</white> balance reset for all players. Please wait...</gray>
+    - ' '
+    - <red><u>All currency operations are disabled until reset is completed.</u></red>
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    Global:
+    - '[prefix="false"]'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    - <gray>[<red>$</red>] Balance Reset:</gray>
+    - ' '
+    - <gray>Started balance reset for all currencies for all players. Please wait...</gray>
+    - ' '
+    - <red><u>All currency operations are disabled until reset is completed.</u></red>
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+  Completed:
+    Currency:
+    - '[prefix="false"]'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    - <gray>[<green>$</green>] Balance Reset:</gray>
+    - ' '
+    - <gray>Finished <white>%currency_name%</white> balance reset for all players!</gray>
+    - ' '
+    - <green><u>All currency operations are enabled again.</u></green>
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    Global:
+    - '[prefix="false"]'
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+    - <gray>[<green>$</green>] Balance Reset:</gray>
+    - ' '
+    - <gray>Finished balance reset for all currencies for all players!</gray>
+    - ' '
+    - <green><u>All currency operations are enabled again.</u></green>
+    - <dark_gray><st>--------------------------------</st></dark_gray>
+TopList:
+  NextPage:
+    Active: <hover:show_text:"<gray>Click to get to the next page.</gray>"><click:run_command:"/%currency_label% top %value%"><green>[→]</green></click></hover>
+    Inactive: <hover:show_text:"<gray>There are no more pages.</gray>"><gray>[→]</gray></hover>
+  PreviousPage:
+    Active: <hover:show_text:"<gray>Click to get to the previous page.</gray>"><click:run_command:"/%currency_label% top %value%"><green>[←]</green></click></hover>
+    Inactive: <hover:show_text:"<gray>There are no more pages.</gray>"><gray>[←]</gray></hover>
+VaultEconomy:
+  Error:
+    InvalidPlayer: Player not found.
+    InsufficientFunds: Insufficient Funds!
+Other:
+  NoTopEntry: <none>
+Leaderboards:
+  UI:
+    Leaderboard:
+      Entry:
+        Name: <yellow>#%pos%</yellow> <white>%player_name%</white>
+        Lore:
+        - <green>%balance%</green>

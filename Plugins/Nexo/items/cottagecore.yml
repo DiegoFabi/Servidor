@@ -1,0 +1,1907 @@
+# Cottage Core - Cozy Home (Manning Design) - muebles colocables para Nexo
+# Convertido desde MythicCrucible. Modelos: models/cottagecore | Texturas: textures/cottagecore
+
+bs_cookie_jar:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_cookie_jar
+    custom_model_data: 8200
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_cookie_jar
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Cookie Jar
+bs_crop_marker_beet:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_crop_marker_beet
+    custom_model_data: 8201
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_crop_marker_beet
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Beet Crop Marker
+bs_crop_marker_carrot:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_crop_marker_carrot
+    custom_model_data: 8202
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_crop_marker_carrot
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Carrot Crop Marker
+bs_crop_marker_potato:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_crop_marker_potato
+    custom_model_data: 8203
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_crop_marker_potato
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Potato Crop Marker
+bs_crop_marker_wheat:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_crop_marker_wheat
+    custom_model_data: 8204
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_crop_marker_wheat
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Wheat Crop Marker
+bs_cutting_board_bread:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_cutting_board_bread
+    custom_model_data: 8205
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_cutting_board_bread
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Bread Cutting Board
+bs_cutting_board_carrot:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_cutting_board_carrot
+    custom_model_data: 8206
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_cutting_board_carrot
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Carrot Cutting Board
+bs_cutting_board_potato:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_cutting_board_potato
+    custom_model_data: 8207
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_cutting_board_potato
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Potato Cutting Board
+bs_diagonal_hoe:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_diagonal_hoe
+    custom_model_data: 8208
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_diagonal_hoe
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Leaning Hoe
+bs_diagonal_ladder:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_diagonal_ladder
+    custom_model_data: 8209
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_diagonal_ladder
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Leaning Ladder
+bs_diagonal_rake:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_diagonal_rake
+    custom_model_data: 8210
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_diagonal_rake
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Leaning Rake
+bs_diagonal_shovel:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_diagonal_shovel
+    custom_model_data: 8211
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_diagonal_shovel
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Leaning Shovel
+bs_flower_box_allium:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_allium
+    custom_model_data: 8212
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_allium
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Alliums
+bs_flower_box_azure_bluet:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_azure_bluet
+    custom_model_data: 8213
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_azure_bluet
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Azure Bluets
+bs_flower_box_blue_orchid:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_blue_orchid
+    custom_model_data: 8214
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_blue_orchid
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Blue Orchids
+bs_flower_box_blue:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_blue
+    custom_model_data: 8215
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_blue
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Blue Varieties
+bs_flower_box_cornflower:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_cornflower
+    custom_model_data: 8216
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_cornflower
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Cornflowers
+bs_flower_box_dandelion:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_dandelion
+    custom_model_data: 8217
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_dandelion
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Dandelions
+bs_flower_box_empty:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_empty
+    custom_model_data: 8218
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_empty
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Empty Flower Box
+bs_flower_box_lily_of_the_valley:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_lily_of_the_valley
+    custom_model_data: 8219
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_lily_of_the_valley
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Lily of the Valleys
+bs_flower_box_orange_tulip:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_orange_tulip
+    custom_model_data: 8220
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_orange_tulip
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Orange Tulips
+bs_flower_box_orange:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_orange
+    custom_model_data: 8221
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_orange
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Orange Varieties
+bs_flower_box_oxeye_daisy:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_oxeye_daisy
+    custom_model_data: 8222
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_oxeye_daisy
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Oxeye Daisies
+bs_flower_box_pink_tulip:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_pink_tulip
+    custom_model_data: 8223
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_pink_tulip
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Pink Tulips
+bs_flower_box_pink:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_pink
+    custom_model_data: 8224
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_pink
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Pink Varieties
+bs_flower_box_poppy:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_poppy
+    custom_model_data: 8225
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_poppy
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Poppies
+bs_flower_box_red_tulip:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_red_tulip
+    custom_model_data: 8226
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_red_tulip
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Red Tulips
+bs_flower_box_red:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_red
+    custom_model_data: 8227
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_red
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of Red Varieties
+bs_flower_box_white_tulip:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_white_tulip
+    custom_model_data: 8228
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_white_tulip
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of White Tulips
+bs_flower_box_white:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_flower_box_white
+    custom_model_data: 8229
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_flower_box_white
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Flower Box of White Varieties
+bs_grandfather_clock:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_grandfather_clock
+    custom_model_data: 8230
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_grandfather_clock
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Grandfather CLock
+bs_hanging_apron_brown:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_hanging_apron_brown
+    custom_model_data: 8231
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_hanging_apron_brown
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Brown Hanging Apron
+bs_hanging_apron_green:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_hanging_apron_green
+    custom_model_data: 8232
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_hanging_apron_green
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Green Hanging Apron
+bs_hanging_apron_red:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_hanging_apron_red
+    custom_model_data: 8233
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_hanging_apron_red
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Red Hanging Apron
+bs_hanging_apron_white:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_hanging_apron_white
+    custom_model_data: 8234
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_hanging_apron_white
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: White Hanging Apron
+bs_hanging_farmer_hat:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_hanging_farmer_hat
+    custom_model_data: 8235
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_hanging_farmer_hat
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Hanging Farmer Hat
+bs_hanging_ivy:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_hanging_ivy
+    custom_model_data: 8236
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_hanging_ivy
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Hanging Ivy
+bs_kitchen_jar_1_2:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_1_2
+    custom_model_data: 8237
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_1_2
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitch Jar 1-2
+bs_kitchen_jar_1_3:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_1_3
+    custom_model_data: 8238
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_1_3
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 1-3
+bs_kitchen_jar_1_4:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_1_4
+    custom_model_data: 8239
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_1_4
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 1-4
+bs_kitchen_jar_1:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_1
+    custom_model_data: 8240
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_1
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 1
+bs_kitchen_jar_2_1:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_2_1
+    custom_model_data: 8241
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_2_1
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 2-1
+bs_kitchen_jar_2_2:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_2_2
+    custom_model_data: 8242
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_2_2
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 2-2
+bs_kitchen_jar_2_3:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_2_3
+    custom_model_data: 8243
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_2_3
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 2-3
+bs_kitchen_jar_2:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_kitchen_jar_2
+    custom_model_data: 8244
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_kitchen_jar_2
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Kitchen Jar 2
+bs_lawn_chair_blue:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_lawn_chair_blue
+    custom_model_data: 8245
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_lawn_chair_blue
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Blue Lawn Chair
+bs_lawn_chair_green:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_lawn_chair_green
+    custom_model_data: 8246
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_lawn_chair_green
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Green Lawn Chair
+bs_lawn_chair_orange:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_lawn_chair_orange
+    custom_model_data: 8247
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_lawn_chair_orange
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Orange Lawn Chair
+bs_lawn_chair_pink:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_lawn_chair_pink
+    custom_model_data: 8248
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_lawn_chair_pink
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Pink Lawn Chair
+bs_lawn_chair_white:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_lawn_chair_white
+    custom_model_data: 8249
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_lawn_chair_white
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: White Lawn Chair
+bs_lawn_chair_yellow:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_lawn_chair_yellow
+    custom_model_data: 8250
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_lawn_chair_yellow
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Yellow Lawn Chair
+bs_loaf_of_bread:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_loaf_of_bread
+    custom_model_data: 8251
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_loaf_of_bread
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Loaf of Bread
+bs_mailbox_blue:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_mailbox_blue
+    custom_model_data: 8252
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_mailbox_blue
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Blue Mailbox
+bs_mailbox_green:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_mailbox_green
+    custom_model_data: 8253
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_mailbox_green
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Green Mailbox
+bs_mailbox_orange:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_mailbox_orange
+    custom_model_data: 8254
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_mailbox_orange
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Orange Mailbox
+bs_mailbox_pink:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_mailbox_pink
+    custom_model_data: 8255
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_mailbox_pink
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Pink Mailbox
+bs_mailbox_white:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_mailbox_white
+    custom_model_data: 8256
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_mailbox_white
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: White Mailbox
+bs_mailbox_yellow:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_mailbox_yellow
+    custom_model_data: 8257
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_mailbox_yellow
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Yellow Mailbox
+bs_plate_single:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_plate_single
+    custom_model_data: 8258
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_plate_single
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Plate
+bs_plates_stacked_messy:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_plates_stacked_messy
+    custom_model_data: 8259
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_plates_stacked_messy
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Messy Stack of Plates
+bs_plates_stacked_neat:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_plates_stacked_neat
+    custom_model_data: 8260
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_plates_stacked_neat
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Neat Stack of Plates
+bs_pumpkin_pie:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_pumpkin_pie
+    custom_model_data: 8261
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_pumpkin_pie
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Pumpkin Pie
+bs_rocking_chair:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_rocking_chair
+    custom_model_data: 8262
+  Mechanics:
+    furniture:
+      seats:
+      - 0,0.6,0
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_rocking_chair
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Rocking Chair
+bs_tea_kettle:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_tea_kettle
+    custom_model_data: 8263
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_tea_kettle
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Tea Kettle
+bs_vintage_lamp_floor:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_vintage_lamp_floor
+    custom_model_data: 8264
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_vintage_lamp_floor
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Vintage Floor Lamp
+bs_vintage_lamp_wall:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_vintage_lamp_wall
+    custom_model_data: 8265
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_vintage_lamp_wall
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Vintage Wall Lamp
+bs_wall_clock:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_wall_clock
+    custom_model_data: 8266
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_wall_clock
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Wall Clock
+bs_wheelbarrow:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_wheelbarrow
+    custom_model_data: 8267
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_wheelbarrow
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Wheelbarrow
+bs_wind_chimes:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_wind_chimes
+    custom_model_data: 8268
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_wind_chimes
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Wind Chimes
+bs_wind_direction_indicator:
+  material: PAPER
+  Pack:
+    model: cottagecore/bs_wind_direction_indicator
+    custom_model_data: 8269
+  Mechanics:
+    furniture:
+      rotatable: false
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: bs_wind_direction_indicator
+          probability: 1.0
+      properties:
+        display_transform: FIXED
+  itemname: Wind Direction Indicator

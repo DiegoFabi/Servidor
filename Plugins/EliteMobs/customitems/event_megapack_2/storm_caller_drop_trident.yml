@@ -1,0 +1,12 @@
+isEnabled: true
+material: TRIDENT
+name: "&bStorm Trident"
+lore:
+- "&bMost of this tridents magical"
+- "&bpower has already been drained."
+enchantments:
+- "LOYALTY,3"
+potionEffects: 
+- "GLOWING,1,target,onHit"
+- "SLOW,1,target,onHit"
+itemType: UNIQUE

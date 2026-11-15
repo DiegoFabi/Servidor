@@ -1,0 +1,82 @@
+# Armario de cosméticos - Globos (abre: /cosmetic menu defaultmenu_balloons)
+title: <white>
+rows: 6
+items:
+  pestana_defaultmenu_hats:
+    slots:
+    - 0
+    item:
+      material: nexo:hmcc_icon_cabeza
+      name: <white>Cabeza
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_hats'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_backpacks:
+    slots:
+    - 18
+    item:
+      material: nexo:hmcc_icon_espalda
+      name: <white>Espalda
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_backpacks'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_hands:
+    slots:
+    - 27
+    item:
+      material: nexo:hmcc_icon_mano
+      name: <white>Mano
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_hands'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  pestana_defaultmenu_balloons:
+    slots:
+    - 36
+    item:
+      material: nexo:hmcc_icon_globo
+      name: <#FFD36B>▶ Globos
+      lore:
+      - <#9EA3AE>Ver cosméticos de esta categoría
+      amount: 1
+    type: empty
+    actions:
+      any:
+      - '[MENU] defaultmenu_balloons'
+      - '[SOUND] minecraft:ui.button.click 1 1'
+  bat_balloon:
+    slots:
+    - 1
+    item:
+      material: hmccosmetics:bat_balloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_bat_balloon%%HMCCosmetics_equipped_bat_balloon%'
+      - ''
+      - '<#9EA3AE>Cómo conseguirlo:'
+      - <white>Tienda de Cosméticos <#9EA3AE>• <#D89BFF>✦ 3500 Shards
+      - <#9EA3AE>Menú Principal › Personalización
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: bat_balloon

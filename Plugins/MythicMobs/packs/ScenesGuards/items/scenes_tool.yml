@@ -1,0 +1,18 @@
+'scenes_tool':
+  Id: STICK
+  Display: '&3Scenes Tool'
+  Lore:
+  - '&6Use this to tweak the scenes'
+  Options:
+    Unbreakable: true
+    PreventStacking: true
+    KeepOnDeath: true
+    Permission: scenes.use
+    PreventCrafting: true
+  Skills:
+  - effect:particle{p=cherry_leaves;amount=5;spread=0,5} @targetlocation ~onUse
+  - skill{skill=rotatescene} ~onInteract
+  - skill{skill=movescene} ~onHit  
+  - command{command="dm open scenes_spawner <trigger.name>"} ~onUse ?crouching{onfailskill=true}
+  - remove @target ~onHit ?crouching{onfailskill=true}
+#2e0cb3a1db267f791b37263774972968

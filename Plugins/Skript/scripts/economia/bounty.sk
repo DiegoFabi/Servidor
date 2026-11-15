@@ -1,0 +1,186 @@
+# ============================================================
+#  bounty.sk - Sistema de Bounty (los más buscados)
+#  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
+#  Acceso: /bounty (botón "Más Buscados" del menú principal de CoreTools)
+#
+#  - Registro MANUAL: solo aparecen quienes pulsan "Registrarme".
+#    Nadie se registra solo, así la lista nunca se satura.
+#  - Recompensa de cada buscado =
+#      mobs matados estando registrado x 2  +  10% de su dinero (máx. 5000)
+#      + 250 por cada voto  +  extra acumulado por rachas
+#  - Votos: un clic en la cabeza de un buscado le suma 250 a su
+#    recompensa. Cada jugador puede votar UNA sola vez por buscado.
+#  - Quien mata a un buscado cobra su recompensa (la paga el servidor)
+#    y la recompensa del buscado vuelve a la base.
+#  - Racha: si un buscado mata a 10 jugadores seguidos sin morir se
+#    anuncia en el chat, su recompensa sube 2500 y él recibe 1000.
+#  - Menú con paginación (28 por página), ordenado por recompensa.
+#
+#  Rendimiento:
+#  - Las recompensas solo se calculan al abrir el menú y solo para los
+#    jugadores registrados (normalmente pocos).
+#  - Eventos: muerte de jugadores y clics en el propio menú; sin
+#    temporizadores.
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:red:dark_red><bold>Bounty</bold></gradient> <dark_gray>»<reset>
+    voto: 250
+    racha: 10
+    racha-extra: 2500
+    racha-premio: 1000
+    max-dinero: 5000
+
+on load:
+    delete {-bounty::*}
+
+# ------------------------------------------------------------
+#  Cálculo de la recompensa
+# ------------------------------------------------------------
+function bountyRecompensa(op: offline player) :: number:
+    set {_u} to uuid of {_op}
+    set {_mobs} to {bounty::mobs::%{_u}%} ? 0
+    set {_din} to rounded ({_op}'s balance * 0.1)
+    if {_din} > {@max-dinero}:
+        set {_din} to {@max-dinero}
+    set {_v} to {bounty::votos::%{_u}%} ? 0
+    set {_e} to {bounty::extra::%{_u}%} ? 0
+    return ({_mobs} * 2) + {_din} + ({_v} * {@voto}) + {_e}
+
+# ------------------------------------------------------------
+#  Menú con paginación
+# ------------------------------------------------------------
+function bountyMenu(p: player, pagina: number):
+    delete {-bounty::slot::%uuid of {_p}%::*}
+    # Ordenar por recompensa (de mayor a menor)
+    loop {bounty::lista::*}:
+        set {_r} to bountyRecompensa(loop-value)
+        set {_orden::%9999999 - {_r}%-%uuid of loop-value%} to loop-value
+        set {_rec::%uuid of loop-value%} to {_r}
+    set {_total} to size of {bounty::lista::*}
+    set {_paginas} to max(1, ceil({_total} / 28))
+    set {_pagina} to min(max({_pagina}, 1), {_paginas})
+    set {_gui} to chest inventory with 6 rows named "<dark_red>☠ <dark_gray>Los Más Buscados <gray>(%{_pagina}%/%{_paginas}%)"
+    set {_slots::*} to 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42 and 43
+    set {_i} to 0
+    set {_inicio} to ({_pagina} - 1) * 28
+    loop {_orden::*}:
+        add 1 to {_i}
+        if {_i} > {_inicio}:
+            if {_i} <= {_inicio} + 28:
+                set {_op} to loop-value
+                set {_u} to uuid of {_op}
+                set {_slot} to {_slots::%{_i} - {_inicio}%}
+                set {_estado} to "<#7FFF9E>● Conectado"
+                if {_op} is not online:
+                    set {_estado} to "<#9EA3AE>● Desconectado"
+                set {_vot} to "<#7FB2FF>Clic para votar (+${@voto})"
+                if {bounty::votado::%uuid of {_p}%::%{_u}%} is set:
+                    set {_vot} to "<#9EA3AE>Ya votaste por este jugador"
+                set slot {_slot} of {_gui} to skull of {_op} named "<#FF6B6B><bold>%{_op}%" with lore "%{_estado}%", "", "<#C9CDD6>Recompensa: <#7FFF9E><bold>$%{_rec::%{_u}%}%", "<#C9CDD6>Votos: <white>%{bounty::votos::%{_u}%} ? 0%", "<#C9CDD6>Racha actual: <#FFD36B>%{-bounty::racha::%{_u}%} ? 0% <#9EA3AE>muertes", "" and "%{_vot}%"
+                set {-bounty::slot::%uuid of {_p}%::%{_slot}%} to {_op}
+    # Barra inferior
+    set {_cristal} to black stained glass pane named " "
+    loop 9 times:
+        set slot (44 + loop-number) of {_gui} to {_cristal}
+    if {_pagina} > 1:
+        set slot 45 of {_gui} to arrow named "<white>« <#FFD36B>Página anterior"
+    if {_pagina} < {_paginas}:
+        set slot 53 of {_gui} to arrow named "<#FFD36B>Página siguiente <white>»"
+    if {bounty::lista::*} contains {_p}:
+        set slot 49 of {_gui} to red dye named "<#FF6B6B>✖ Salir de la lista" with lore "<#C9CDD6>Dejarás de ser un objetivo.", "" and "<#7FB2FF>Clic para salir"
+    else:
+        set slot 49 of {_gui} to lime dye named "<#7FFF9E>✔ Registrarme como buscado" with lore "<#C9CDD6>Aparecerás en la lista y otros", "<#C9CDD6>jugadores podrán cazarte.", "<#C9CDD6>Si sobrevives con rachas, ganas dinero.", "" and "<#7FB2FF>Clic para registrarte"
+    set slot 4 of {_gui} to skull of {_p} named "<#FFD36B>Tu recompensa" with lore "<#C9CDD6>Recompensa actual: <#7FFF9E>$%bountyRecompensa({_p})%" and "<#9EA3AE>(Solo cuenta si estás registrado)"
+    set {-bounty::pagina::%uuid of {_p}%} to {_pagina}
+    set {-bounty::inv::%uuid of {_p}%} to {_gui}
+    open {_gui} to {_p}
+
+on inventory click:
+    set {_u} to uuid of player
+    {-bounty::inv::%{_u}%} is set
+    event-inventory is {-bounty::inv::%{_u}%}
+    cancel event
+    set {_s} to index of event-slot
+    set {_pag} to {-bounty::pagina::%{_u}%}
+    if {_s} = 45:
+        bountyMenu(player, {_pag} - 1)
+    else if {_s} = 53:
+        bountyMenu(player, {_pag} + 1)
+    else if {_s} = 49:
+        if {bounty::lista::*} contains player:
+            remove player from {bounty::lista::*}
+            send "{@prefijo} <#9EA3AE>Has salido de la lista de buscados."
+        else:
+            add player to {bounty::lista::*}
+            send "{@prefijo} <#FF6B6B>Ahora eres un buscado. <#C9CDD6>Sobrevive y gana dinero con tus rachas."
+            send "{@prefijo} <white>%player% <#C9CDD6>se ha registrado como <#FF6B6B>buscado<#C9CDD6>." to all players
+        bountyMenu(player, {_pag})
+    else:
+        set {_t} to {-bounty::slot::%{_u}%::%{_s}%}
+        {_t} is set
+        set {_ut} to uuid of {_t}
+        if {_t} is player:
+            send "{@prefijo} <#FF6B6B>No puedes votar por ti mismo."
+            stop
+        if {bounty::votado::%{_u}%::%{_ut}%} is set:
+            send "{@prefijo} <#9EA3AE>Ya votaste por <white>%{_t}%<#9EA3AE>."
+            stop
+        set {bounty::votado::%{_u}%::%{_ut}%} to true
+        add 1 to {bounty::votos::%{_ut}%}
+        play sound "block.note_block.pling" with volume 0.6 and pitch 1.4 to player
+        send "{@prefijo} <#C9CDD6>Votaste por <white>%{_t}%<#C9CDD6>: su recompensa sube <#7FFF9E>${@voto}<#C9CDD6>."
+        bountyMenu(player, {_pag})
+
+on inventory close:
+    # Solo si se cierra ESTE menú (al cambiar de página se abre otro)
+    {-bounty::inv::%uuid of player%} is set
+    event-inventory is {-bounty::inv::%uuid of player%}
+    delete {-bounty::inv::%uuid of player%}
+    delete {-bounty::slot::%uuid of player%::*}
+
+# Mobs matados por buscados (solo cuenta a los registrados)
+on death of a monster:
+    attacker is a player
+    {bounty::lista::*} contains attacker
+    add 1 to {bounty::mobs::%uuid of attacker%}
+
+# ------------------------------------------------------------
+#  Combate
+# ------------------------------------------------------------
+on death of a player:
+    set {_uv} to uuid of victim
+    # El buscado muere: su racha termina
+    if {bounty::lista::*} contains victim:
+        delete {-bounty::racha::%{_uv}%}
+        if attacker is a player:
+            if attacker is not victim:
+                set {_r} to bountyRecompensa(victim)
+                add {_r} to attacker's balance
+                delete {bounty::votos::%{_uv}%}
+                delete {bounty::extra::%{_uv}%}
+                delete {bounty::mobs::%{_uv}%}
+                send "{@prefijo} <white>%attacker% <#C9CDD6>cazó al buscado <#FF6B6B>%victim% <#C9CDD6>y cobra <#7FFF9E><bold>$%{_r}%</bold>" to all players
+                play sound "ui.toast.challenge_complete" with volume 0.6 to attacker
+    # Un buscado mata a otro jugador: suma racha
+    attacker is a player
+    attacker is not victim
+    {bounty::lista::*} contains attacker
+    set {_ua} to uuid of attacker
+    # No cuenta matar a la misma víctima seguida
+    {-bounty::ultima::%{_ua}%} is not {_uv}
+    set {-bounty::ultima::%{_ua}%} to {_uv}
+    add 1 to {-bounty::racha::%{_ua}%}
+    set {_racha} to {-bounty::racha::%{_ua}%}
+    mod({_racha}, {@racha}) = 0
+    add {@racha-extra} to {bounty::extra::%{_ua}%}
+    add {@racha-premio} to attacker's balance
+    send "{@prefijo} <#FF6B6B><bold>%attacker%</bold> <#C9CDD6>lleva <#FFD36B>%{_racha}% muertes seguidas<#C9CDD6>. ¡Su recompensa sube <#7FFF9E>${@racha-extra}<#C9CDD6>!" to all players
+    send "{@prefijo} <#C9CDD6>Por sobrevivir recibes <#7FFF9E>${@racha-premio}<#C9CDD6>." to attacker
+    play sound "entity.wither.spawn" with volume 0.4 and pitch 1.5 to all players
+
+command /bounty [<text>]:
+    aliases: /buscados, /recompensas
+    trigger:
+        bountyMenu(player, 1)

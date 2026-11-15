@@ -1,0 +1,14 @@
+validBiomesV2: []
+isEnabled: true
+validWorlds: []
+validWorldEnvironments:
+- NORMAL
+- CUSTOM
+validBiomes:
+- PLAINS
+- DESERT
+- SNOWY_PLAINS
+- BADLANDS
+- MEADOW
+isSurfaceSpawn: true
+canSpawnInLight: true

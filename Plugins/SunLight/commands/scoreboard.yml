@@ -1,0 +1,13 @@
+LiteralNodes:
+  toggle:
+    Enabled: true
+    Aliases: scoreboard,board,sb
+    Cooldown: 0
+  'off':
+    Enabled: true
+    Aliases: scoreboard-off,board-off,sb-off
+    Cooldown: 0
+  'on':
+    Enabled: true
+    Aliases: scoreboard-on,board-on,sb-on
+    Cooldown: 0

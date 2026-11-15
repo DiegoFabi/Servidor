@@ -1,0 +1,197 @@
+scene_townsfolk_handler:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+    - opendoors: true
+    - lookAtTarget{r=20;h=true}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.175
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_townsfolk_handler;save=true} @self ~onSpawn
+  - model{mid=scene_townsfolk_handler;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_townsfolk_handler;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler>;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_mozo} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setStance{stance=empty} @self ~onSpawn 
+  - defaultstate{m=scene_townsfolk_handler;t=idle;s=idle_empty} @self ~onSpawn
+  - defaultstate{m=scene_townsfolk_handler;t=walk;s=walk_empty} @self ~onSpawn
+  - setspeed{speed=0.7} @self ~onTimer:5 ?stance{stance=full} 
+  - setspeed{speed=0.9} @self ~onTimer:5 ?stance{stance=empty} 
+  - skill{skill=gotodrop} @self ~onTimer:5
+  - goto{speedModifier=0.7;sh=0;sv=0} @MobsNearOrigin{r=2000;types=scene_townsfolk_handler_provider} ~onTimer:1 ?stance{stance=empty}
+  - goto{speedModifier=0.9;sh=0;sv=0} @MobsNearOrigin{r=2000;types=scene_townsfolk_handler_stock} ~onTimer:1 ?stance{stance=full}
+  - skill{skill=leapdrop} @self ~onTimer:5
+  - skill{skill=leapprovider} @self ~onTimer:5
+  - matchrotation{target=@PIR{radius=50}} @self ~onInteract
+  - skill{skill=gotoprovider} @self ~onTimer:5
+  - skill{skill=stanceskin} ~onTimer:5
+  - setvariable{var=global.skinchange;value=scene_townsfolk_handler;type=STRING;save=true} @self ~onInteract
+  - setStance{stance=<global.var.skin<caster.uuid>>} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_provider} ~onTimer:1
+  - setStance{stance=<global.var.skin<caster.uuid>>} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_stock} ~onTimer:1
+
+    
+
+scene_townsfolk_handler_stock:
+  Type: PILLAGER
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  AITargetSelectors:
+  - clear
+  - scene_townsfolk_handler
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_townsfolk_handler_stock;d=false;ride=true;drive=false;save=true} @self ~onSpawn
+  - model{mid=scene_townsfolk_handler_stock;d=false;ride=true;drive=false;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_townsfolk_handler_stock;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler_stock>;delay=10} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_stock;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_stock;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_stock;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_stock;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_stock;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_stock;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_mozo} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - changepart{m=scene_townsfolk_handler_stock;pid=head2;nm=<caster.stance>;npid=head2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_stock;pid=left_arm2;nm=<caster.stance>;npid=left_arm2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_stock;pid=right_arm2;nm=<caster.stance>;npid=right_arm2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_stock;pid=body2;nm=<caster.stance>;npid=body2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_stock;pid=left_leg2;nm=<caster.stance>;npid=left_leg2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_stock;pid=right_leg2;nm=<caster.stance>;npid=right_leg2} @self ~onTimer:40
+  - setvariable{var=global.skinchange;value=scene_townsfolk_handler_stock;type=STRING;save=true} @self ~onInteract
+scene_townsfolk_handler_provider:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_townsfolk_handler_provider;d=false;ride=true;drive=false;save=true} @self ~onSpawn
+  - model{mid=scene_townsfolk_handler_provider;d=false;ride=true;drive=false;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_townsfolk_handler_provider;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler_provider>;delay=10} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_provider;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_provider;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_provider;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_provider;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_provider;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_handler_provider;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_mozo} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn 
+  - changepart{m=scene_townsfolk_handler_provider;pid=head2;nm=<caster.stance>;npid=head2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_provider;pid=left_arm2;nm=<caster.stance>;npid=left_arm2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_provider;pid=right_arm2;nm=<caster.stance>;npid=right_arm2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_provider;pid=body2;nm=<caster.stance>;npid=body2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_provider;pid=left_leg2;nm=<caster.stance>;npid=left_leg2} @self ~onTimer:40
+  - changepart{m=scene_townsfolk_handler_provider;pid=right_leg2;nm=<caster.stance>;npid=right_leg2} @self ~onTimer:40
+  - setvariable{var=global.skinchange;value=scene_townsfolk_handler_provider;type=STRING;save=true} @self ~onInteract
+scene_townsfolk_cook:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_townsfolk_cook;save=true} @self ~onSpawn
+  - model{mid=scene_townsfolk_cook;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_townsfolk_cook;n=<global.var.skin<caster.uuid>|scene_townsfolk_cook>;delay=10} @self ~onLoad
+  - changepart{m=scene_townsfolk_cook;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_cook;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_cook;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_townsfolk_cook;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_cook;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_cook;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - light{m=scene_townsfolk_cook;p=bone30;block=15} @self ~onSpawn
+  - light{m=scene_townsfolk_cook;p=zzz1;block=15} @self ~onSpawn
+  - light{m=scene_townsfolk_cook;p=zzz2;block=15} @self ~onSpawn
+  - light{m=scene_townsfolk_cook;p=zzz3;block=15} @self ~onSpawn
+  - light{m=scene_townsfolk_cook;p=bone29;block=15} @self ~onSpawn
+  - light{m=scene_townsfolk_cook;p=bone28;block=15} @self ~onSpawn
+  - light{m=scene_townsfolk_cook;p=fire1;block=15} @self ~onSpawn
+  - skill{s=scene_townsfolk_cook_openmenu} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_townsfolk_cook;type=STRING;save=true} @self ~onInteract
+
+scene_townsfolk_sweeper:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_townsfolk_sweeper;save=true} @self ~onSpawn
+  - model{mid=scene_townsfolk_sweeper;save=true;delay=5} @self ~onLoad
+  - remapmodel{m=scene_townsfolk_sweeper;n=<global.var.skin<caster.uuid>|scene_townsfolk_sweeper>;delay=10} @self ~onLoad
+  - changepart{m=scene_townsfolk_sweeper;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_sweeper;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_townsfolk_sweeper;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_townsfolk_sweeper;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_sweeper;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_townsfolk_sweeper;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - skill{s=dialogo_barrendero} @trigger ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_townsfolk_sweeper;type=STRING;save=true} @self ~onInteract
+
+#06d54b3fffc32b7e2281000f77268b91

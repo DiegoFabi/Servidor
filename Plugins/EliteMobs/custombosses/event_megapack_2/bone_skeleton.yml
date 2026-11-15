@@ -1,0 +1,37 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: SKELETON
+isBaby: true
+mainHand: BOW
+name: $eventBossLevel &fBone Skeleton
+level: dynamic
+healthMultiplier: 3.0
+damageMultiplier: 1.0
+powers:
+- attack_arrow.yml
+- arrow_rain.yml
+- skeleton_tracking_arrow.yml
+- bonus_loot.yml
+- corpse.yml
+- invulnerability_fire.yml
+uniqueLootList:
+- filename=bone_skeleton_drop_charm.yml:amount=1:chance=0.25
+movementSpeedAttribute: 0.3
+followDistance: 80
+isPersistent: true
+locationMessage: '&cBone Skeleton: $distance blocks away!'
+spawnMessage: '&cA Bone Skeleton has appeared!'
+deathMessage: '&aThe Bone Skeleton was slain by $players!'
+escapeMessage: '&4The Bone Skeleton has left!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Bone Skeleton has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

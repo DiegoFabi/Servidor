@@ -1,0 +1,311 @@
+# ============================================================
+#  ruleta.sk - Ruleta de eventos (cada 12 horas + comandos admin)
+#  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
+#  Recursos: Nexo/pack/external_packs/Ruleta (fuente con los fotogramas) y el sonido
+#            "nexo:ruleta.spin" (Nexo/sounds.yml)
+#
+#  Idea basada en el datapack "Funciones" (cpaladeds3), simplificada:
+#  - Sin animacion de muerte.
+#  - Colores: rosada (dinero / eventos positivos), amarilla (cambio de
+#    dificultad temporal) y roja (algo malo).
+#
+#  Rendimiento:
+#  - Un unico evento periodico ligero (comprueba la hora guardada); no hay "every tick" ni
+#    scoreboards por jugador como en el datapack.
+#  - Los fotogramas se precalculan una sola vez al cargar (on load).
+#  - Durante el giro (~15 s) una sola tarea envia 1 titulo por tick a
+#    todos los jugadores; al terminar no queda nada corriendo.
+#  - Solo variables en memoria ({-ruleta::*}), salvo los ajustes.
+# ============================================================
+
+options:
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:gold:red><bold>Ruleta</bold></gradient> <dark_gray>»<reset>
+    sonido: nexo:ruleta.spin
+    # Cada cuanto gira la ruleta automatica
+    intervalo: 12 hours
+    # Jugadores minimos conectados para el giro automatico
+    min-jugadores: 1
+    # Duracion de los efectos (bueno / malo)
+    efecto-bueno: 5 minutes
+    efecto-malo: 3 minutes
+
+# Ajustes persistentes (se pueden cambiar con /ruleta auto on|off)
+variables:
+    {ruleta::auto} = true
+
+# ------------------------------------------------------------
+#  Carga de fotogramas (codepoints iguales al datapack original)
+#  amarilla: U+E05C .. +288 | roja: U+E4E5 .. +295 | rosada: U+F000 .. +294
+# ------------------------------------------------------------
+on load:
+    delete {-ruleta::*}
+    ruletaCargar("amarilla", 57436, 288)
+    ruletaCargar("roja", 58597, 295)
+    ruletaCargar("rosada", 61440, 294)
+
+function ruletaCargar(color: text, inicio: integer, total: integer):
+    loop {_total} times:
+        add character from codepoint ({_inicio} + loop-number - 1) to {-ruleta::frames::%{_color}%::*}
+
+# ------------------------------------------------------------
+#  Giro automatico cada 12 horas
+#  La hora del proximo giro se guarda en {ruleta::proximo}, asi el
+#  intervalo se respeta aunque el servidor se reinicie o se recargue
+#  el script. Solo se compara una fecha cada 10 minutos.
+# ------------------------------------------------------------
+every 10 minutes:
+    {ruleta::auto} is true
+    {-ruleta::girando} is not set
+    if {ruleta::proximo} is not set:
+        set {ruleta::proximo} to {@intervalo} after now
+        stop
+    now >= {ruleta::proximo}
+    number of all players >= {@min-jugadores}
+    set {ruleta::proximo} to {@intervalo} after now
+    ruletaGirar()
+
+# ------------------------------------------------------------
+#  Giro
+# ------------------------------------------------------------
+function ruletaGirar(forzar: text = ""):
+    {-ruleta::girando} is not set
+    set {-ruleta::girando} to true
+    if {_forzar} is "amarilla" or "roja" or "rosada":
+        set {_color} to {_forzar}
+    else:
+        set {_color} to random element out of "rosada", "amarilla" and "roja"
+
+    # Lo malo de la ruleta anterior (dificultad) se revierte en cada giro
+    ruletaRestaurar()
+
+    send "" to all players
+    send "  {@prefijo} <yellow>¡La ruleta está girando! <gray>¿Qué te deparará el destino?" to all players
+    play sound "{@sonido}" with volume 1 to all players
+
+    # Animacion: 1 fotograma por tick (igual que el datapack)
+    loop {-ruleta::frames::%{_color}%::*}:
+        send title loop-value to all players for 3 ticks with fadein 0 ticks and fadeout 0 ticks
+        wait 1 tick
+
+    wait 5 ticks
+    ruletaResultado({_color})
+    set {-ruleta::ultimo} to now
+    delete {-ruleta::girando}
+
+# ------------------------------------------------------------
+#  Resultados (un evento al azar por color)
+#  rosada   = dinero o eventos positivos             (8 eventos)
+#  amarilla = cambio de dificultad temporal          (5 eventos)
+#  roja     = algo malo                              (10 eventos, incluye
+#             Busca Objetos y Veneno Tóxico)
+#
+#  Rendimiento: los efectos de pocion se aplican a todos los jugadores
+#  con una sola instruccion; solo se recorre la lista de jugadores
+#  cuando cada uno necesita un valor propio (dinero, nivel, rayo).
+#  No se crean tareas ni temporizadores: los efectos expiran solos y la
+#  dificultad se restaura en el siguiente giro.
+# ------------------------------------------------------------
+function ruletaResultado(color: text):
+    if {_color} is "rosada":
+        set {_n} to random integer between 1 and 8
+        if {_n} = 1:
+            set {_premio} to random integer between 500 and 1500
+            loop all players:
+                add {_premio} to loop-player's balance
+            set {_t} to "Lluvia de dinero"
+            set {_d} to "Todos reciben <green><bold>$%{_premio}%</bold>"
+        else if {_n} = 2:
+            set {_premio} to random integer between 2000 and 4000
+            loop all players:
+                add {_premio} to loop-player's balance
+            set {_t} to "Gran Premio"
+            set {_d} to "¡Premio mayor! Todos reciben <green><bold>$%{_premio}%</bold>"
+        else if {_n} = 3:
+            apply speed 2 to all players for {@efecto-bueno}
+            apply haste 2 to all players for {@efecto-bueno}
+            set {_t} to "Energía"
+            set {_d} to "Velocidad II y Prisa II durante {@efecto-bueno}"
+        else if {_n} = 4:
+            apply regeneration 1 to all players for {@efecto-bueno}
+            apply resistance 1 to all players for {@efecto-bueno}
+            loop all players:
+                heal loop-player
+                set loop-player's food level to 10
+            set {_t} to "Bendición"
+            set {_d} to "Curación total, Regeneración y Resistencia"
+        else if {_n} = 5:
+            loop all players:
+                add 10 to loop-player's level
+            set {_t} to "Sabiduría"
+            set {_d} to "Todos reciben <aqua><bold>10 niveles</bold><gray> de experiencia"
+        else if {_n} = 6:
+            apply strength 1 to all players for {@efecto-bueno}
+            apply jump boost 2 to all players for {@efecto-bueno}
+            set {_t} to "Furia del Guerrero"
+            set {_d} to "Fuerza y Salto II durante {@efecto-bueno}"
+        else if {_n} = 7:
+            apply night vision 1 to all players for 10 minutes
+            apply water breathing 1 to all players for 10 minutes
+            apply fire resistance 1 to all players for 10 minutes
+            set {_t} to "Explorador"
+            set {_d} to "Visión nocturna, Respiración acuática y Resistencia al fuego (10 min)"
+        else:
+            set time in all worlds to 7:00
+            set weather in all worlds to clear
+            apply saturation 1 to all players for 5 seconds
+            set {_t} to "Día Radiante"
+            set {_d} to "Amanece, el cielo se despeja y todos quedan saciados"
+        set {_titulo} to "<gradient:#FF9AE8:#E040C0><bold>%{_t}%"
+        set {_etiqueta} to "<gradient:#FF9AE8:#E040C0><bold>¡ROSADA!</bold></gradient>"
+        play sound "ui.toast.challenge_complete" with volume 0.6 to all players
+    else if {_color} is "amarilla":
+        set {_n} to random integer between 1 and 5
+        set {ruleta::dificultad} to true
+        if {_n} = 1:
+            set difficulty of all worlds to hard
+            set {_t} to "Dificultad Difícil"
+            set {_d} to "El mundo pasa a <red><bold>DIFÍCIL</bold><gray> hasta la próxima ruleta"
+        else if {_n} = 2:
+            set difficulty of all worlds to hard
+            set weather in all worlds to thunder
+            set {_t} to "Tormenta Difícil"
+            set {_d} to "<red><bold>DIFÍCIL</bold><gray> y una tormenta eléctrica cubre el mundo"
+        else if {_n} = 3:
+            set difficulty of all worlds to hard
+            set time in all worlds to 18:00
+            set {_t} to "Noche Difícil"
+            set {_d} to "Cae la noche en <red><bold>DIFÍCIL</bold><gray>: cuidado con los monstruos"
+        else if {_n} = 4:
+            set difficulty of all worlds to easy
+            set {_t} to "Dificultad Fácil"
+            set {_d} to "El mundo pasa a <green><bold>FÁCIL</bold><gray> hasta la próxima ruleta"
+        else:
+            set difficulty of all worlds to peaceful
+            set {_t} to "Paz Temporal"
+            set {_d} to "El mundo pasa a <aqua><bold>PACÍFICO</bold><gray> hasta la próxima ruleta"
+        set {_titulo} to "<gradient:#FFE45C:#FFAA00><bold>%{_t}%"
+        set {_etiqueta} to "<gradient:#FFE45C:#FFAA00><bold>¡AMARILLA!</bold></gradient>"
+        play sound "entity.elder_guardian.curse" with volume 0.5 to all players
+    else:
+        set {_n} to random integer between 1 and 10
+        if {_n} = 9:
+            # Busca Objetos para todos (busca_objetos.sk)
+            boRuletaGlobal()
+            set {_t} to "Busca Objetos"
+            set {_d} to "Consigue <white>%{-bog::nombre}%<gray> en 3 minutos o pierde <red><bold>$%{-bog::apuesta}%</bold>"
+        else if {_n} = 10:
+            # Veneno Tóxico (veneno_toxico.sk)
+            venenoIniciar()
+            set {_t} to "Veneno Tóxico"
+            set {_d} to "Un veneno flota en el aire: <aqua><bold>sumérgete en agua</bold><gray> en 30 segundos"
+        else if {_n} = 1:
+            apply hunger 2 to all players for {@efecto-malo}
+            apply weakness 1 to all players for {@efecto-malo}
+            set {_t} to "Hambruna"
+            set {_d} to "Hambre II y Debilidad durante {@efecto-malo}"
+        else if {_n} = 2:
+            apply slowness 1 to all players for {@efecto-malo}
+            apply mining fatigue 1 to all players for {@efecto-malo}
+            set {_t} to "Pesadez"
+            set {_d} to "Lentitud y Fatiga durante {@efecto-malo}"
+        else if {_n} = 3:
+            apply darkness 1 to all players for {@efecto-malo}
+            set {_t} to "Oscuridad"
+            set {_d} to "La oscuridad te rodea durante {@efecto-malo}"
+        else if {_n} = 4:
+            apply poison 1 to all players for 10 seconds
+            apply nausea 1 to all players for 15 seconds
+            set {_t} to "Veneno"
+            set {_d} to "Veneno y Náuseas por unos segundos"
+        else if {_n} = 5:
+            loop all players:
+                set {_q} to rounded (loop-player's balance * 0.05)
+                if {_q} > 1000:
+                    set {_q} to 1000
+                if {_q} > 0:
+                    remove {_q} from loop-player's balance
+            set {_t} to "Impuesto"
+            set {_d} to "Todos pagan el <red><bold>5%%</bold><gray> de su dinero (máx. $1000)"
+        else if {_n} = 6:
+            set weather in all worlds to thunder
+            loop all players:
+                strike lightning effect at loop-player
+            set {_t} to "Tormenta Eléctrica"
+            set {_d} to "Los rayos caen junto a todos los jugadores"
+        else if {_n} = 7:
+            apply levitation 1 to all players for 3 seconds
+            apply slow falling 1 to all players for 15 seconds
+            set {_t} to "Antigravedad"
+            set {_d} to "Todos salen volando por los aires"
+        else:
+            apply blindness 1 to all players for 10 seconds
+            apply glowing 1 to all players for 2 minutes
+            set {_t} to "Expuestos"
+            set {_d} to "Ceguera y todos brillan a través de las paredes (2 min)"
+        set {_titulo} to "<gradient:#FF5555:#AA0000><bold>%{_t}%"
+        set {_etiqueta} to "<gradient:#FF5555:#AA0000><bold>¡ROJA!</bold></gradient>"
+        play sound "entity.wither.spawn" with volume 0.4 to all players
+    set {_sub} to "<gray>%{_d}%"
+
+    send title {_titulo} with subtitle {_sub} to all players for 5 seconds with fadein 10 ticks and fadeout 20 ticks
+    send "<dark_gray><strikethrough>                                                  " to all players
+    send "  {@prefijo} %{_etiqueta}% <gray>» <white>%{_t}%" to all players
+    send "    <gray>%{_d}%" to all players
+    send "<dark_gray><strikethrough>                                                  " to all players
+    send "" to all players
+
+function ruletaRestaurar():
+    {ruleta::dificultad} is true
+    delete {ruleta::dificultad}
+    set difficulty of all worlds to normal
+    send "  {@prefijo} <green>La dificultad vuelve a <bold>NORMAL</bold>." to all players
+
+# ------------------------------------------------------------
+#  Comandos de administracion
+# ------------------------------------------------------------
+command /ruleta [<text>] [<text>]:
+    permission: ruleta.admin
+    trigger:
+        if arg-1 is "girar":
+            if {-ruleta::girando} is set:
+                send "{@prefijo} <red>La ruleta ya está girando."
+                stop
+            if arg-2 is set:
+                if arg-2 is not "amarilla" or "roja" or "rosada":
+                    send "{@prefijo} <red>Color inválido. <gray>Usa <yellow>rosada<gray>, <yellow>amarilla <gray>o <yellow>roja<gray>."
+                    stop
+            send "{@prefijo} <green>Girando la ruleta..."
+            ruletaGirar(arg-2 ? "")
+        else if arg-1 is "auto":
+            if arg-2 is "on":
+                set {ruleta::auto} to true
+                send "{@prefijo} <green>Ruleta automática activada (cada 12 horas)."
+            else if arg-2 is "off":
+                set {ruleta::auto} to false
+                send "{@prefijo} <red>Ruleta automática desactivada."
+            else:
+                send "{@prefijo} <red>Uso: <yellow>/ruleta auto on|off"
+        else if arg-1 is "restaurar":
+            if {ruleta::dificultad} is true:
+                ruletaRestaurar()
+            else:
+                send "{@prefijo} <gray>No hay ninguna dificultad que restaurar."
+        else if arg-1 is "estado":
+            send "{@prefijo} <gray>Automática: %{ruleta::auto} ? false%"
+            if {-ruleta::girando} is set:
+                send "{@prefijo} <gray>Girando ahora: <green>sí"
+            if {ruleta::proximo} is set:
+                send "{@prefijo} <gray>Próximo giro automático en: <yellow>%difference between now and {ruleta::proximo}%"
+            if {-ruleta::ultimo} is set:
+                send "{@prefijo} <gray>Último giro hace: <yellow>%difference between {-ruleta::ultimo} and now%"
+            if {ruleta::dificultad} is true:
+                send "{@prefijo} <gray>Dificultad difícil activa hasta el próximo giro."
+        else:
+            send "<dark_gray><strikethrough>                              "
+            send " {@prefijo} <gray>Comandos"
+            send "  <yellow>/ruleta girar [rosada|amarilla|roja] <dark_gray>» <gray>Gira ahora"
+            send "  <yellow>/ruleta auto on|off <dark_gray>» <gray>Giro automático cada 12 horas"
+            send "  <yellow>/ruleta restaurar <dark_gray>» <gray>Devuelve la dificultad a normal"
+            send "  <yellow>/ruleta estado <dark_gray>» <gray>Estado de la ruleta"
+            send "<dark_gray><strikethrough>                              "

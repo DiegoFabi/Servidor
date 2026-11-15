@@ -1,0 +1,18 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: GHAST
+isBaby: true
+name: $eventBossLevel &dJeffrey's Friend
+level: dynamic
+healthMultiplier: 1.0
+damageMultiplier: 0.25
+powers:
+- invulnerability_fire.yml
+movementSpeedAttribute: 0.28
+followDistance: 70
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false

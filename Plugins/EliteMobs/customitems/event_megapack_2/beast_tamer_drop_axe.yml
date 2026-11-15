@@ -1,0 +1,12 @@
+isEnabled: true
+material: NETHERITE_AXE
+name: '&eGreat Axe'
+lore:
+- "&eHeavy enough to cleave any beast in two."
+enchantments:
+- "DAMAGE_ALL,8"
+- "DAMAGE_ARTHROPODS,4"
+potionEffects: 
+- "STRENGTH,1,self,continuous"
+potionEffects: []
+itemType: UNIQUE

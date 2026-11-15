@@ -1,0 +1,86 @@
+# ============================================================
+#  limpieza.sk - Limpieza de objetos del suelo (estilo ClearLagg)
+#  Requiere: Skript 2.10+
+#
+#  Cada {@intervalo} se avisa en el chat 1 minuto antes y se borran
+#  los objetos tirados en el suelo del mundo {@mundo} (solo ese).
+#  Avisos: 60 s, 30 s, 10 s y cuenta atrás de 5 s en la barra de acción.
+#
+#  Solo se limpia {@mundo}: el Lobby y los demás mundos no se tocan.
+#
+#  Comandos (permiso limpieza.admin):
+#    /limpieza ahora   -> limpia ya (sin aviso)
+#    /limpieza aviso   -> lanza el aviso de 1 minuto y limpia
+#    /limpieza tiempo  -> cuánto falta para la próxima limpieza (todos)
+#
+#  Rendimiento:
+#   - Un único temporizador cada {@intervalo}; nada se ejecuta entre medias.
+#   - Una sola pasada sobre los "dropped items" de {@mundo} (entidades
+#     ya cargadas en memoria), sin recorrer otros mundos, chunks ni bloques.
+#   - Los avisos son "wait", no temporizadores extra.
+# ============================================================
+
+options:
+    intervalo: 15 minutes
+    mundo: survivalMain
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:aqua:dark_aqua><bold>Basurero</bold></gradient> <dark_gray>»<reset>
+
+on load:
+    set {-limpieza::proxima} to now
+    add {@intervalo} to {-limpieza::proxima}
+
+every {@intervalo}:
+    limpiezaAviso()
+
+# Aviso de 1 minuto y limpieza (se cancela si se lanza otra a la vez)
+function limpiezaAviso():
+    add 1 to {-limpieza::id}
+    set {_id} to {-limpieza::id}
+    set {-limpieza::proxima} to now
+    add {@intervalo} to {-limpieza::proxima}
+    send "{@prefijo} <#C9CDD6>Los objetos del suelo se borrarán en <#FFD36B>1 minuto<#C9CDD6>. ¡Recoge lo que quieras conservar!" to all players
+    wait 30 seconds
+    {-limpieza::id} = {_id}
+    send "{@prefijo} <#C9CDD6>Limpieza de objetos en <#FFB347>30 segundos<#C9CDD6>." to all players
+    wait 20 seconds
+    {-limpieza::id} = {_id}
+    send "{@prefijo} <#FF6B6B>Limpieza de objetos en 10 segundos." to all players
+    wait 5 seconds
+    loop 5 times:
+        if {-limpieza::id} is not {_id}:
+            stop
+        set {_s} to 6 - loop-number
+        send action bar "<#FFB347>⚠ <#C9CDD6>Limpieza de objetos en <#FF6B6B>%{_s}%" to all players
+        wait 1 second
+    {-limpieza::id} = {_id}
+    limpiezaEjecutar()
+
+# Borra los objetos del suelo de {@mundo} y anuncia cuántos
+function limpiezaEjecutar():
+    set {_w} to world "{@mundo}"
+    if {_w} is not set:
+        send "{@prefijo} <#FF6B6B>No existe el mundo {@mundo}." to console
+        stop
+    set {_n} to 0
+    loop all dropped items in {_w}:
+        kill loop-entity
+        add 1 to {_n}
+    send "{@prefijo} <#7FFF9E>Limpieza completada: <white>%{_n}% <#C9CDD6>objeto(s) borrados del suelo." to all players
+
+command /limpieza [<text>]:
+    aliases: /clearlag
+    trigger:
+        if arg-1 is "ahora":
+            if player does not have permission "limpieza.admin":
+                send "{@prefijo} <#FF6B6B>No tienes permiso."
+                stop
+            limpiezaEjecutar()
+        else if arg-1 is "aviso":
+            if player does not have permission "limpieza.admin":
+                send "{@prefijo} <#FF6B6B>No tienes permiso."
+                stop
+            limpiezaAviso()
+        else:
+            set {_falta} to difference between now and {-limpieza::proxima}
+            send "{@prefijo} <#C9CDD6>Próxima limpieza de objetos en <#FFD36B>%{_falta}%<#C9CDD6>."

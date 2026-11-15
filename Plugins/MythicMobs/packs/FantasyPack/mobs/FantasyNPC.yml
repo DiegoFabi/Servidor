@@ -1,0 +1,356 @@
+Naga_STANDSTILL:
+  Type: DROWNED
+  Display: '<green>Naga'
+  Faction: NPC
+  Health: 1000
+  Damage: 2
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  - 2 gotospawnlocation{speed=1;max=2;min=0}
+  Skills:
+  - model{mid=npc_naga;usm=true} @Self ~onSpawn
+  - model{mid=npc_naga;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_NagaInteract} ~onInteract
+  - skill{s=FantasyNPC_NagaQuirk} ~onTimer:400
+  - partvisibility{pid=trident;child=true} @Self ~onSpawn
+  - partvisibility{pid=trident;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 1
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: true
+    Collidable: false
+
+Naga_MOVING:
+  Type: DROWNED
+  Display: '<green>Naga'
+  Faction: NPC
+  Health: 50
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  Skills:
+  - model{mid=npc_naga;usm=true} @Self ~onSpawn
+  - model{mid=npc_naga;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_NagaInteract} ~onInteract
+  - skill{s=FantasyNPC_NagaQuirk} ~onTimer:400
+  - skill{s=FantasyNPC_NagaAttack} ~onTimer:20
+  - skill{s=FantasyNPC_NagaDamaged} ~onDamaged
+  - skill{s=FantasyNPC_NagaDeath} ~onDeath
+  - partvisibility{pid=trident;child=true} @Self ~onSpawn
+  - partvisibility{pid=trident;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 0.4
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.20
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: false
+    Collidable: true
+
+Cultist_STANDSTILL:
+  Type: DROWNED
+  Display: '<light_purple>Cultist'
+  Faction: NPC
+  Health: 1000
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  - 2 gotospawnlocation{speed=1;max=2;min=0}
+  Skills:
+  - model{mid=npc_cultist;usm=true} @Self ~onSpawn
+  - model{mid=npc_cultist;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_CultistInteract} ~onInteract
+  - skill{s=FantasyNPC_CultistQuirk} ~onTimer:400
+  - partvisibility{pid=dagger2;child=true} @Self ~onSpawn
+  - partvisibility{pid=dagger2;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 1
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: true
+    Collidable: false
+
+Cultist_MOVING:
+  Type: DROWNED
+  Display: '<light_purple>Cultist'
+  Faction: NPC
+  Health: 50
+  Damage: 2
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  Skills:
+  - model{mid=npc_cultist;usm=true} @Self ~onSpawn
+  - model{mid=npc_cultist;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_CultistInteract} ~onInteract
+  - skill{s=FantasyNPC_CultistQuirk} ~onTimer:400
+  - skill{s=FantasyNPC_CultistAttack} ~onTimer:20
+  - skill{s=FantasyNPC_CultistDamaged} ~onDamaged
+  - skill{s=FantasyNPC_CultistDeath} ~onDeath
+  - partvisibility{pid=dagger2;child=true} @Self ~onSpawn
+  - partvisibility{pid=dagger2;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 0.4
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.20
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: false
+    Collidable: true
+
+Tusker_STANDSTILL:
+  Type: DROWNED
+  Display: '<aqua>Tusker'
+  Faction: NPC
+  Health: 1000
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  - 2 gotospawnlocation{speed=1;max=2;min=0}
+  Skills:
+  - model{mid=npc_tusker;usm=true} @Self ~onSpawn
+  - model{mid=npc_tusker;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_TuskerInteract} ~onInteract
+  - skill{s=FantasyNPC_TuskerQuirk} ~onTimer:400
+  - partvisibility{pid=anchor;child=true} @Self ~onSpawn
+  - partvisibility{pid=anchor;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 1
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: true
+    Collidable: false
+
+Tusker_MOVING:
+  Type: DROWNED
+  Display: '<aqua>Tusker'
+  Faction: NPC
+  Health: 50
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  Skills:
+  - model{mid=npc_tusker;usm=true} @Self ~onSpawn
+  - model{mid=npc_tusker;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_TuskerInteract} ~onInteract
+  - skill{s=FantasyNPC_TuskerQuirk} ~onTimer:400
+  - skill{s=FantasyNPC_TuskerAttack} ~onTimer:20
+  - skill{s=FantasyNPC_TuskerDamaged} ~onDamaged
+  - skill{s=FantasyNPC_TuskerDeath} ~onDeath
+  - partvisibility{pid=anchor;child=true} @Self ~onSpawn
+  - partvisibility{pid=anchor;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 0.4
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.20
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: false
+    Collidable: true
+
+Fishkin_STANDSTILL:
+  Type: DROWNED
+  Display: '<gold>Fishkin'
+  Faction: NPC
+  Health: 1000
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  - 2 gotospawnlocation{speed=1;max=2;min=0}
+  Skills:
+  - model{mid=npc_fishkin;usm=true} @Self ~onSpawn
+  - model{mid=npc_fishkin;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_FishkinInteract} ~onInteract
+  - skill{s=FantasyNPC_FishkinQuirk} ~onTimer:400
+  - partvisibility{pid=weapon;child=true} @Self ~onSpawn
+  - partvisibility{pid=weapon;child=true;v=true} @Self ~onEnterCombat
+  - partvisibility{pid=weapon;child=true} @Self ~onLoad
+  - partvisibility{pid=weapon;child=true;v=true} @Self ~onDropCombat
+  Options:
+    KnockbackResistance: 1
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: true
+    Collidable: false
+
+Fishkin_MOVING:
+  Type: DROWNED
+  Display: '<gold>Fishkin'
+  Faction: NPC
+  Health: 50
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  Skills:
+  - model{mid=npc_fishkin;usm=true} @Self ~onSpawn
+  - model{mid=npc_fishkin;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_FishkinInteract} ~onInteract
+  - skill{s=FantasyNPC_FishkinQuirk} ~onTimer:800
+  - skill{s=FantasyNPC_FishkinAttack} ~onTimer:20
+  - skill{s=FantasyNPC_FishkinDamaged} ~onDamaged
+  - skill{s=FantasyNPC_FishkinDeath} ~onDeath
+  - partvisibility{pid=weapon;child=true} @Self ~onSpawn
+  - partvisibility{pid=weapon;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 0.4
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.20
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: false
+    Collidable: true
+
+SandGuardian_STANDSTILL:
+  Type: DROWNED
+  Display: '<yellow>Sand Guardian'
+  Faction: NPC
+  Health: 1000
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  - 2 gotospawnlocation{speed=1;max=2;min=0}
+  Skills:
+  - model{mid=npc_sand_guardian;usm=true} @Self ~onSpawn
+  - model{mid=npc_sand_guardian;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_SandGuardianInteract} ~onInteract
+  - skill{s=FantasyNPC_SandGuardianQuirk} ~onTimer:400
+  - partvisibility{pid=weapon;child=true} @Self ~onSpawn
+  - partvisibility{pid=weapon;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 1
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: true
+    Collidable: false
+
+SandGuardian_MOVING:
+  Type: DROWNED
+  Display: '<yellow>Sand Guardian'
+  Faction: NPC
+  Health: 50
+  Modules:
+    ThreatTables: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  Skills:
+  - model{mid=npc_sand_guardian;usm=true} @Self ~onSpawn
+  - model{mid=npc_sand_guardian;usm=true} @Self ~onLoad
+  - setstance{stance=idling} @Self ~onSpawn
+  - skill{s=FantasyNPC_SandGuardianInteract} ~onInteract
+  - skill{s=FantasyNPC_SandGuardianQuirk} ~onTimer:800
+  - skill{s=FantasyNPC_SandGuardianAttack} ~onTimer:20
+  - skill{s=FantasyNPC_SandGuardianDamaged} ~onDamaged
+  - skill{s=FantasyNPC_SandGuardianDeath} ~onDeath
+  - partvisibility{pid=weapon;child=true} @Self ~onSpawn
+  - partvisibility{pid=weapon;child=true} @Self ~onLoad
+  Options:
+    KnockbackResistance: 0.4
+    PreventLeashing: true
+    Silent: true
+    MovementSpeed: 0.20
+    PreventSunburn: true
+    Persistent: true
+    Despawn: false
+    PreventOtherDrops: true
+    Invincible: false
+    Collidable: true
+
+
+# 14946RP5837Q03L0EG

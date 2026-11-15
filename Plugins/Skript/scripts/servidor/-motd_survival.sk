@@ -1,0 +1,68 @@
+# ====================================
+# MOTD Skript - Versión centrada con ícono
+# Compatible con Skript 2.8+ y Minecraft 1.21.8
+# ====================================
+
+options:
+    motd.line1: "&r               &a&lCLOUDSBLUES &7[1.21 - 1.21.8]"
+    motd.line2: "&r   &7&k! &eNo Mods 🏹 &8- &cSupervivencia ☄ &8- &bMiniJuegos 🔥 &7&k!"
+    motd.hover1: "&fBienvenido a &eCloudsBlues Server&f!"
+
+# Evento principal del MOTD
+on server list ping:
+    set {_line1} to {@motd.line1}
+    set {_line2} to {@motd.line2}
+    set motd to "%{_line1}%%newline%%{_line2}%"
+    
+    # Obtener max players desde server.properties (valor por defecto)
+    set {_maxplayers} to max players count
+    set the max players count to {_maxplayers}
+    
+    set {_hover1} to {@motd.hover1}
+    set {_online} to size of all players
+    set {_hover2} to "&7| &aOnline ▶ &f%{_online}%/%{_maxplayers}%"
+    
+    # Limpiar y configurar la lista hover
+    clear the hover list
+    add {_hover1} to the hover list
+    add {_hover2} to the hover list
+
+# Comando para recargar el Skript
+command /reloadmotd:
+    permission: server.admin
+    trigger:
+        send "&b[MOTD] &7Recargando configuración..."
+        wait 1 tick
+        execute console command "/sk reload %script%"
+        send "&b[MOTD] &a✓ Configuración recargada correctamente!"
+
+# Comando /motd reload (alternativo)
+command /motd <text>:
+    permission: server.admin
+    trigger:
+        if arg-1 is "reload":
+            send "&b[MOTD] &7Recargando configuración..."
+            wait 1 tick
+            execute console command "/sk reload %script%"
+            send "&b[MOTD] &a✓ Configuración recargada correctamente!"
+        else:
+            send "&c[MOTD] &7Uso: /motd reload"
+
+# Comando para ver información del MOTD
+command /infomotd:
+    permission: server.admin
+    trigger:
+        send "&b&l[INFO MOTD]"
+        send "&7Línea 1: &r%{@motd.line1}%"
+        send "&7Línea 2: &r%{@motd.line2}%"
+        send "&7Jugadores máximos: &f%max players count% &7(desde server.properties)"
+        send "&7Jugadores online: &f%size of all players%"
+        send "&7Estado del ícono: &fVerificar manualmente server-icon.png"
+
+# Mensajes de carga y descarga del Skript
+on skript load:
+    broadcast "&b[MOTD Skript] &a✓ Cargado correctamente para Minecraft 1.21.4!"
+    broadcast "&b[MOTD Skript] &7Recuerda: El ícono debe llamarse &eserver-icon.png &7(64x64px)"
+
+on skript unload:
+    broadcast "&b[MOTD Skript] &c✗ Desactivado correctamente."

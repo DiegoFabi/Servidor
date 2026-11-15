@@ -1,0 +1,9 @@
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&eFire Stopper'
+lore:
+- "&eOnly half the heat!"
+enchantments:
+- "PROTECTION_FIRE,8"
+potionEffects: []
+itemType: UNIQUE

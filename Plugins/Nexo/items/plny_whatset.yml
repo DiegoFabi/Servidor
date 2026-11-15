@@ -1,0 +1,37 @@
+plny_what_axe:
+  Pack:
+    model: plny_whatset:axe
+    custom_model_data: 1000
+  itemname: <white>What Axe
+  material: IRON_AXE
+  permission: plny_whatset.axe
+plny_what_pickaxe:
+  Pack:
+    model: plny_whatset:pickaxe
+    custom_model_data: 1000
+  itemname: <white>What Pickaxe
+  material: IRON_PICKAXE
+  permission: plny_whatset.pickaxe
+plny_what_shovel:
+  Pack:
+    model: plny_whatset:shovel
+    custom_model_data: 1000
+  itemname: <white>What Shovel
+  material: IRON_SHOVEL
+  permission: plny_whatset.shovel
+plny_what_hoe:
+  Pack:
+    model: plny_whatset:hoe
+    custom_model_data: 1000
+  itemname: <white>What Hoe
+  material: IRON_HOE
+  permission: plny_whatset.hoe
+plny_what_sword:
+  Pack:
+    model: plny_whatset:sword
+    custom_model_data: 1000
+  itemname: <white>What Sword
+  material: IRON_SWORD
+  permission: plny_whatset.sword
+
+# 0a7d8a0d816a6591e9b1001160cfb0bb

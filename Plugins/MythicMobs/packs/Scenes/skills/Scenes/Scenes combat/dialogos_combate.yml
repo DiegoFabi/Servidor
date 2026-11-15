@@ -1,0 +1,313 @@
+# ============================================================
+#  dialogos_combate.yml - Diálogos aleatorios de los NPCs del pack Scenes
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_combate.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ✠ Luchador | paleta #FF9A9A -> #E04848 ----------
+# NPCs: scene_combat_swords_dual, scene_combat_shields_dual, scene_combat_boxing_dual
+dialogo_luchador:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.player.attack.sweep;v=0.5;p=1} @self
+  - particles{p=crit;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_luchador_frase1,dialogo_luchador_frase2,dialogo_luchador_frase3,dialogo_luchador_frase4,dialogo_luchador_frase5,dialogo_luchador_frase6} @trigger
+
+dialogo_luchador_frase1:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
+  - summon{m=holo_luchador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_luchador_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_luchador_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E04848>✠ <gradient:#FF9A9A:#E04848><bold>Luchador</bold></gradient> <dark_gray>» <#FFE2E2>Otra ronda y descanso. Bueno, eso dije hace tres rondas."} @trigger
+
+dialogo_luchador_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
+  - summon{m=holo_luchador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_luchador_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_luchador_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E04848>✠ <gradient:#FF9A9A:#E04848><bold>Luchador</bold></gradient> <dark_gray>» <#FFE2E2>Mantén la guardia arriba, es lo primero que se olvida."} @trigger
+
+dialogo_luchador_frase3:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.95} @self
+  - summon{m=holo_luchador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_luchador_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_luchador_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E04848>✠ <gradient:#FF9A9A:#E04848><bold>Luchador</bold></gradient> <dark_gray>» <#FFE2E2>No se trata de golpear fuerte, sino de golpear bien."} @trigger
+
+dialogo_luchador_frase4:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
+  - summon{m=holo_luchador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_luchador_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_luchador_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E04848>✠ <gradient:#FF9A9A:#E04848><bold>Luchador</bold></gradient> <dark_gray>» <#FFE2E2>Mañana me va a doler todo, pero vale la pena."} @trigger
+
+dialogo_luchador_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
+  - summon{m=holo_luchador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_luchador_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_luchador_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E04848>✠ <gradient:#FF9A9A:#E04848><bold>Luchador</bold></gradient> <dark_gray>» <#FFE2E2>Mi compañero es rápido, pero yo aguanto más."} @trigger
+
+dialogo_luchador_frase6:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.95} @self
+  - summon{m=holo_luchador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_luchador_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_luchador_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#E04848>✠ <gradient:#FF9A9A:#E04848><bold>Luchador</bold></gradient> <dark_gray>» <#FFE2E2>Si quieres entrenar, espera tu turno. Hay cola."} @trigger
+
+# ---------- ➶ Arquero | paleta #C2F59B -> #6CC24A ----------
+# NPCs: scene_combat_bow_training
+dialogo_arquero:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=item.crossbow.loading_end;v=0.5;p=1} @self
+  - particles{p=crit;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_arquero_frase1,dialogo_arquero_frase2,dialogo_arquero_frase3,dialogo_arquero_frase4,dialogo_arquero_frase5,dialogo_arquero_frase6} @trigger
+
+dialogo_arquero_frase1:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
+  - summon{m=holo_arquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_arquero_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_arquero_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6CC24A>➶ <gradient:#C2F59B:#6CC24A><bold>Arquero</bold></gradient> <dark_gray>» <#EDFCE3>Respira, apunta y suelta. Lo difícil es lo de respirar."} @trigger
+
+dialogo_arquero_frase2:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.05} @self
+  - summon{m=holo_arquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_arquero_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_arquero_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6CC24A>➶ <gradient:#C2F59B:#6CC24A><bold>Arquero</bold></gradient> <dark_gray>» <#EDFCE3>El viento cambió, hay que corregir un poco a la izquierda."} @trigger
+
+dialogo_arquero_frase3:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
+  - summon{m=holo_arquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_arquero_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_arquero_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6CC24A>➶ <gradient:#C2F59B:#6CC24A><bold>Arquero</bold></gradient> <dark_gray>» <#EDFCE3>Hoy le di al centro dos veces. Récord personal."} @trigger
+
+dialogo_arquero_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.05} @self
+  - summon{m=holo_arquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_arquero_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_arquero_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6CC24A>➶ <gradient:#C2F59B:#6CC24A><bold>Arquero</bold></gradient> <dark_gray>» <#EDFCE3>Una buena cuerda vale más que un arco caro."} @trigger
+
+dialogo_arquero_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
+  - summon{m=holo_arquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_arquero_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_arquero_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6CC24A>➶ <gradient:#C2F59B:#6CC24A><bold>Arquero</bold></gradient> <dark_gray>» <#EDFCE3>Practico todos los días, aunque llueva."} @trigger
+
+dialogo_arquero_frase6:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.05} @self
+  - summon{m=holo_arquero_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_arquero_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_arquero_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#6CC24A>➶ <gradient:#C2F59B:#6CC24A><bold>Arquero</bold></gradient> <dark_gray>» <#EDFCE3>No te pongas detrás de la diana, por favor."} @trigger
+
+# ---------- ✚ Sanador | paleta #B0FFE0 -> #3FC79A ----------
+# NPCs: scene_combat_medic
+dialogo_sanador:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.brewing_stand.brew;v=0.5;p=1} @self
+  - particles{p=heart;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_sanador_frase1,dialogo_sanador_frase2,dialogo_sanador_frase3,dialogo_sanador_frase4,dialogo_sanador_frase5,dialogo_sanador_frase6} @trigger
+
+dialogo_sanador_frase1:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.0} @self
+  - summon{m=holo_sanador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_sanador_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_sanador_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FC79A>✚ <gradient:#B0FFE0:#3FC79A><bold>Sanador</bold></gradient> <dark_gray>» <#E8FFF6>Quédate quieto, que esto escuece un poco."} @trigger
+
+dialogo_sanador_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_sanador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_sanador_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_sanador_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FC79A>✚ <gradient:#B0FFE0:#3FC79A><bold>Sanador</bold></gradient> <dark_gray>» <#E8FFF6>Mucha agua y descanso. La mitad de mi trabajo es repetir eso."} @trigger
+
+dialogo_sanador_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_sanador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_sanador_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_sanador_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FC79A>✚ <gradient:#B0FFE0:#3FC79A><bold>Sanador</bold></gradient> <dark_gray>» <#E8FFF6>Estos chicos se lastiman más entrenando que peleando."} @trigger
+
+dialogo_sanador_frase4:
+  Skills:
+  - sound{s=entity.villager.trade;v=0.8;p=1.0} @self
+  - summon{m=holo_sanador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_sanador_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_sanador_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FC79A>✚ <gradient:#B0FFE0:#3FC79A><bold>Sanador</bold></gradient> <dark_gray>» <#E8FFF6>Las vendas limpias salvan más vidas que cualquier poción."} @trigger
+
+dialogo_sanador_frase5:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1.0} @self
+  - summon{m=holo_sanador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_sanador_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_sanador_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FC79A>✚ <gradient:#B0FFE0:#3FC79A><bold>Sanador</bold></gradient> <dark_gray>» <#E8FFF6>Si te mareas, siéntate. No es momento de hacerse el valiente."} @trigger
+
+dialogo_sanador_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
+  - summon{m=holo_sanador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_sanador_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_sanador_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FC79A>✚ <gradient:#B0FFE0:#3FC79A><bold>Sanador</bold></gradient> <dark_gray>» <#E8FFF6>Tengo hierbas para casi todo, menos para la terquedad."} @trigger
+
+# ---------- ❣ Herido | paleta #FFBBA8 -> #D9634B ----------
+# NPCs: scene_combat_injured_ground, scene_combat_injured_sit, scene_combat_injured_interactive
+dialogo_herido:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.player.hurt;v=0.5;p=1} @self
+  - particles{p=damage_indicator;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_herido_frase1,dialogo_herido_frase2,dialogo_herido_frase3,dialogo_herido_frase4,dialogo_herido_frase5,dialogo_herido_frase6} @trigger
+
+dialogo_herido_frase1:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.85} @self
+  - summon{m=holo_herido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herido_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herido_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D9634B>❣ <gradient:#FFBBA8:#D9634B><bold>Herido</bold></gradient> <dark_gray>» <#FFEBE6>Estoy bien, estoy bien. Solo necesito un momento."} @trigger
+
+dialogo_herido_frase2:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_herido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herido_f2_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#D9634B>❣ <gradient:#FFBBA8:#D9634B><bold>Herido</bold></gradient> <dark_gray>» <#FFEBE6>No vi venir ese golpe. Literalmente."} @trigger
+
+dialogo_herido_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_herido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herido_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herido_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D9634B>❣ <gradient:#FFBBA8:#D9634B><bold>Herido</bold></gradient> <dark_gray>» <#FFEBE6>La próxima vez me agacho, lo prometo."} @trigger
+
+dialogo_herido_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_herido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herido_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herido_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D9634B>❣ <gradient:#FFBBA8:#D9634B><bold>Herido</bold></gradient> <dark_gray>» <#FFEBE6>Dile al sanador que no tarde, que esto pica."} @trigger
+
+dialogo_herido_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
+  - summon{m=holo_herido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herido_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_herido_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#D9634B>❣ <gradient:#FFBBA8:#D9634B><bold>Herido</bold></gradient> <dark_gray>» <#FFEBE6>Ganó mi compañero, pero le costó, que conste."} @trigger
+
+dialogo_herido_frase6:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.85} @self
+  - summon{m=holo_herido_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_herido_f6_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#D9634B>❣ <gradient:#FFBBA8:#D9634B><bold>Herido</bold></gradient> <dark_gray>» <#FFEBE6>Ay... mejor no me hagas reír ahora."} @trigger
+
+# ---------- ♪ Espectador | paleta #A8EBFF -> #3FB6E8 ----------
+# NPCs: scene_combat_audience_1, scene_combat_audience_2
+dialogo_espectador:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.villager.ambient;v=0.5;p=1} @self
+  - particles{p=note;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_espectador_frase1,dialogo_espectador_frase2,dialogo_espectador_frase3,dialogo_espectador_frase4,dialogo_espectador_frase5,dialogo_espectador_frase6} @trigger
+
+dialogo_espectador_frase1:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=1.25} @self
+  - summon{m=holo_espectador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_espectador_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_espectador_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8><bold>Espectador</bold></gradient> <dark_gray>» <#E6F9FF>¡Vamos, vamos! Ese giro estuvo buenísimo."} @trigger
+
+dialogo_espectador_frase2:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=1.25} @self
+  - summon{m=holo_espectador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_espectador_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_espectador_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8><bold>Espectador</bold></gradient> <dark_gray>» <#E6F9FF>Yo apuesto por el de la izquierda. Bueno, depende del día."} @trigger
+
+dialogo_espectador_frase3:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
+  - summon{m=holo_espectador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_espectador_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_espectador_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8><bold>Espectador</bold></gradient> <dark_gray>» <#E6F9FF>Vengo a ver los entrenamientos casi todas las tardes."} @trigger
+
+dialogo_espectador_frase4:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
+  - summon{m=holo_espectador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_espectador_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_espectador_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8><bold>Espectador</bold></gradient> <dark_gray>» <#E6F9FF>Algún día me animo a entrar yo también. Algún día."} @trigger
+
+dialogo_espectador_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
+  - summon{m=holo_espectador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_espectador_f5_l1;a=1} @selflocation{y=2.35}
+  - message{m="<dark_gray>┃ <#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8><bold>Espectador</bold></gradient> <dark_gray>» <#E6F9FF>Uy, ese golpe se escuchó hasta aquí."} @trigger
+
+dialogo_espectador_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
+  - summon{m=holo_espectador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_espectador_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_espectador_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8><bold>Espectador</bold></gradient> <dark_gray>» <#E6F9FF>Mejor mirar desde aquí, es más seguro."} @trigger

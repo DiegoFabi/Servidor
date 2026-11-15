@@ -1,0 +1,6 @@
+{
+  "layers": {
+    "humanoid": [{ "texture": "knight_pack:gold_knight" }],
+    "humanoid_leggings": [{ "texture": "knight_pack:gold_knight" }]
+  }
+}

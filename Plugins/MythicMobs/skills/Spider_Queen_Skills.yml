@@ -1,0 +1,385 @@
+CancelDamageEvent:
+  Skills:
+  - CancelEvent
+  
+  
+  # Queen death
+  
+S_Queen_Death:
+  Skills:
+  - skill{s=SQ_Dying} @Self
+  
+  - delay 35
+  - sound{s=entity.player.small_fall;p=0.8;v=2} @self
+  
+  - velocity{m=set;x=0;y=0.3;z=0} @EIR{r=6;ignore=samefaction}
+  
+  - effect:particlering{particle=block_crack;material=dirt;points=20;amount=8;radius=3;hs=0.2;vs=1.0;y=0.1} @Origin
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=40;amount=6;radius=3;hs=1;vs=0.5;y=0.1} @Origin
+  
+  
+  
+  
+  
+   # Run or Walk
+  
+S_Queen_Run:
+  Conditions:
+  - incombat true
+  - targetwithin 5 false
+  Skills:
+  - DefaultState{t=WALK;s=run;li=0;lo=0} @Self
+  - setspeed{speed=2;type=walking} @Self
+  - setstance{stance=free_state} @self
+  
+S_Queen_Walk:
+  Conditions:
+  - targetwithin 5 true
+  Skills:
+  - DefaultState{t=WALK;s=walk;li=0;lo=0} @Self
+  - setspeed{speed=1.4;type=walking} @Self
+  - setstance{stance=free_state} @self
+
+  
+ # Random Attack
+  
+  
+S_Queen_Attack:
+  Cooldown: 3
+  Conditions:
+  - stance free_state true
+  - hasaura S_Queen_Aura false
+  Skills:
+  - randomskill{
+    skills=
+    S_Queen_Attack_Blunt,
+    S_Queen_Attack_Sweep
+    
+    } @Self
+
+
+  
+  
+  # Meele Blunt Attack
+  
+S_Queen_Attack_Blunt:
+  Cooldown: 1
+  Conditions:
+  Skills:
+  - setstance{stance=attack1} @self
+  - setAI{ai=false} @self
+  - state{s=attack_melee;li=0;lo=0;delay=0} @Self
+  - skill{s=SQ_Attack} @Self
+  
+  - delay 12
+  - velocity{m=set;x=0;y=0.6;z=0} @EIR{r=6;ignore=samefaction}
+  - damage{a=6;ia=false} @EIR{r=6;ignore=samefaction}
+  - skill{s=SQ_Stomp} @Self
+  
+  - effect:particlering{particle=block_crack;material=dirt;points=20;amount=8;radius=3;hs=0.2;vs=1.0;y=0.1} @Origin
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=40;amount=6;radius=4;hs=0.2;vs=0.5;y=0.1} @Origin
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=60;amount=4;radius=6;hs=0.4;vs=0.2;y=0.1} @Origin
+  
+  
+  
+  - delay 16
+  - setAI{ai=true} @self
+  - setstance{stance=free_state} @self
+  
+  
+  
+  # Meele Sweep Attack
+  
+S_Queen_Attack_Sweep:
+  Cooldown: 1
+  Conditions:
+  Skills:
+  #- setAI{ai=false} @self
+  - setstance{stance=attack2} @self
+  - state{s=melee_sweep;li=0;lo=0;delay=0} @Self
+  - skill{s=SQ_Attack} @Self
+  
+  
+  - delay 6
+  - sound{s=entity.player.attack.sweep} @Self
+  - effect:particles{particle=sweep_attack;amount=1;hS=1;vS=0.3;speed=0;y=1.6;forwardOffset=3;sideOffset=0.5} @Origin
+  - effect:particles{particle=sweep_attack;amount=1;hS=1;vS=0.3;speed=0;y=1.3;forwardOffset=3;sideOffset=0.5} @Origin
+  - effect:particles{particle=sweep_attack;amount=1;hS=1;vS=0.3;speed=0;y=1.0;forwardOffset=3;sideOffset=0.5} @Origin
+  
+  - damage{a=6;ia=false} @Target{ignore=samefaction}
+  
+  - delay 5
+  - sound{s=entity.player.attack.sweep} @Self
+  - effect:particles{particle=sweep_attack;amount=1;hS=1;vS=0.3;speed=0;y=1.6;forwardOffset=3;sideOffset=-0.5} @Origin
+  - effect:particles{particle=sweep_attack;amount=1;hS=1;vS=0.3;speed=0;y=1.3;forwardOffset=3;sideOffset=-0.5} @Origin
+  - effect:particles{particle=sweep_attack;amount=1;hS=1;vS=0.3;speed=0;y=1.0;forwardOffset=3;sideOffset=-0.5} @Origin
+  
+  - delay 16
+  - setstance{stance=free_state} @self
+  #- setAI{ai=true} @self
+  
+  
+  
+  
+  
+  
+  
+  
+  # Darknes jump
+  
+S_Queen_Jump:
+  Cooldown: 6
+  Conditions:
+  - incombat true
+  - targetwithin 15 false
+  - stance free_state true
+  - stance cobweb_prison false
+  - hasaura{n=S_Queen_Aura_2} false
+  Skills:
+  - setstance{stance=jump_attack} @self
+  - skill{s=S_Queen_Aura} @Self
+
+  
+  - potion{type=SLOW;duration=4;level=100} @Self
+  - state{s=jump;li=0;lo=0;delay=0} @Self
+  
+  - delay 4
+  - jump{velocity=2}
+  
+  - effect:particlering{particle=block_crack;material=dirt;points=20;amount=4;radius=3;hs=0.2;vs=1.0;y=0.1} @Origin
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=30;amount=3;radius=4;hs=0.2;vs=0.5;y=0.1} @Origin
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=40;amount=2;radius=6;hs=0.4;vs=0.2;y=0.1} @Origin  
+  
+  - delay 5
+  
+  - potion{type=SLOW;duration=40;level=100} @Self
+  - state{s=attack_potroh;li=0;lo=0;delay=0} @Self
+  
+  - effect:particlesphere{particle=squid_ink;amount=50;radius=2;hs=0.2;vs=0.2} @Self
+  - effect:particlering{particle=squid_ink;points=50;amount=8;radius=4;hs=1;vs=1;s=0.1} @Self
+  - delay 1
+  - teleport{spreadh=0;spreadv=0} @TargetLocation{y=10}
+  
+  
+  - delay 2
+  - effect:particlesphere{particle=squid_ink;amount=50;radius=2;hs=0.2;vs=0.2} @Self
+  - effect:particlering{particle=squid_ink;points=50;amount=8;radius=4;hs=1;vs=1;s=0.1} @Self
+  
+  - delay 10
+  - teleport{spreadh=0;spreadv=0} @TargetLocation{y=0}
+  - delay 10
+  
+  - skill{s=SQ_Attack} @Self
+  - skill{s=SQ_Stomp} @Self
+  - velocity{m=set;x=0;y=0.6;z=0} @EIR{r=6;ignore=samefaction}
+  - damage{a=10;ia=false} @EIR{r=6;ignore=samefaction}
+  
+  - effect:particlering{particle=block_crack;material=dirt;points=20;amount=8;radius=3;hs=0.2;vs=1.0;y=0.1} @Self
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=40;amount=6;radius=4;hs=0.2;vs=0.5;y=0.1} @Self
+  - delay 2
+  - effect:particlering{particle=block_crack;material=dirt;points=60;amount=4;radius=6;hs=0.4;vs=0.2;y=0.1} @Self
+  
+  
+  - setstance{stance=jump_attack} @self
+
+S_Queen_Attack_Potroh:
+  Cooldown: 1
+  Conditions:
+  Skills:
+  - setstance{stance=jump_attack} @self
+  
+  - state{s=attack_potroh;li=0;lo=0;delay=0} @Self
+
+  
+  - delay 80
+  - setstance{stance=free_state} @self
+  
+  
+  
+  
+  
+  
+  # Cobweb Prison
+  
+S_Queen_Attack_Cobweb_Prison:
+  Cooldown: 15
+  Conditions:
+  - incombat true
+  - targetwithin 7 false
+  - stance free_state true
+  - hasaura{n=S_Queen_Aura} false
+  - hasaura{n=S_Queen_Aura_2} false
+  Skills:
+  - setstance{stance=attack_prison} @self
+  - setAI{ai=false} @self
+
+  - state{s=melee_cobweb_prison;li=0;lo=0;delay=0} @Self
+  - skill{s=SQ_Attack} @Self
+  - delay 10
+  - skill{s=Cobweb_Shoot} @Target
+ 
+  
+  - delay 16
+  - setAI{ai=true} @self
+  - delay 20 
+  - setstance{stance=free_state} @self
+  
+Cobweb_Shoot:
+  Skills:
+  - projectile{bulletType=mob;mob=cobweb_mob;i=1;onStart=Cobweb_Shoot-Start;oT=Cobweb_Shoot-Tick;oH=Cobweb_Shoot-Hit;mr=30;sE=true;v=10;syo=2;hnp=true;hp=true;hR=1.4} @Target
+Cobweb_Shoot-Start:
+  Skills:
+  - sound{s=entity.blaze.shoot}
+  - effect:particlesphere{p=snowflake;a=100;r=1;s=0.1;hs=0.4;vs=0.4;y=0.5} @Origin
+Cobweb_Shoot-Tick:
+  Skills:
+  - effect:particlesphere{p=snowflake;a=3;r=1.5;s=0;hs=0.4;vs=0.4;y=0.3} @Origin
+Cobweb_Shoot-Hit:
+  Skills:
+  - damage{a=5;ia=false} 
+  - prison{material=COBWEB;duration=40;breakable=true}
+
+
+S_Queen_Aura:
+  Skills:
+  - aura{auraname=S_Queen_Aura;onStart=S_Q_S;onTick=S_Q_T;onEnd=S_Q_E;i=20;duration=100}
+  
+S_Q_S:
+  Skills:
+
+S_Q_T:
+  Skills:
+
+
+S_Q_E:
+  Skills:
+  
+  
+S_Queen_Aura_2:
+  Skills:
+  - aura{auraname=S_Queen_Aura_2;onStart=S_Q_S;onTick=S_Q_T;onEnd=S_Q_E;i=20;duration=100}
+  
+  
+  
+  
+  
+  
+  # Area Cobweb Prison
+  
+S_Queen_Cobweb_Prison:
+  Cooldown: 20
+  Conditions:
+  - incombat true
+  - stance free_state true
+  - hasaura{n=S_Queen_Aura} false
+  - targetwithin 5 false
+  - targetwithin 25 true
+  Skills:
+  - setstance{stance=cobweb_prison} @self
+  - setAI{ai=false} @self
+  - potion{type=SLOW;duration=90;level=5} @Self
+  - skill{s=S_Queen_Aura_2} @Self
+
+
+  - state{s=cobweb_shot;li=0;lo=0;delay=0} @Self
+
+  
+  - delay 19
+  - skill{s=SQ_Attack} @Self
+  - skill{s=Poison_Shot_R10} @RLNTE{a=2;r=25;s=0;minr=5}
+  - skill{s=Poison_Shot_R10} @Target
+  
+  - delay 16
+  - skill{s=SQ_Attack} @Self
+  - skill{s=Poison_Shot_R15} @RLNTE{a=2;r=25;s=0;minr=5}
+  - skill{s=Poison_Shot_R15} @Target
+  
+  - delay 16
+  - skill{s=SQ_Attack} @Self
+  - skill{s=Poison_Shot_R20} @RLNTE{a=2;r=25;s=0;minr=5}
+  - skill{s=Poison_Shot_R20} @Target
+  
+  - delay 16
+  - skill{s=SQ_Attack} @Self
+  - skill{s=Poison_Shot_R15} @RLNTE{a=2;r=25;s=0;minr=5}
+  - skill{s=Poison_Shot_R15} @Target
+  - skill{s=SQ_Attack} @Self
+  
+  - delay 17
+  - setAI{ai=true} @self
+  - delay 40
+  - setstance{stance=free_state} @self
+  
+
+Poison_Shot_R20:
+  Skills:
+  - projectile{bulletType=mob;mob=cobweb_mob;i=1;onStart=P_Shot-Start;oT=P_Shot-Tick;oH=P_Shot-Hit;oE=P_Shot-End;mr=30;sE=true;syo=4;sfo=-2;hnp=true;hp=true;hR=1.4;v=27;g=1;vO=3} 
+  
+P_Shot-Start:
+  Skills:
+  - sound{s=entity.blaze.shoot}
+  - effect:particlesphere{p=snowflake;a=100;r=1;s=0.1;hs=0.4;vs=0.4;y=0.5} @Origin
+  
+P_Shot-Tick:
+  Skills:
+  - effect:particlesphere{p=snowflake;a=3;r=1.5;s=0;hs=0.4;vs=0.4;y=0.3} @Origin
+  
+P_Shot-Hit:
+  Skills:
+  - damage{a=5;ia=false} 
+  - prison{material=COBWEB;duration=40;breakable=true}
+  
+P_Shot-End:
+  Skills:
+  - effect:particlesphere{p=snowflake;a=100;r=1;s=0.1;hs=0.4;vs=0.4;y=0.5} @Origin
+  
+  
+Poison_Shot_R15:
+  Skills:
+  - projectile{bulletType=mob;mob=cobweb_mob;i=1;onStart=P_Shot-Start;oT=P_Shot-Tick;oH=P_Shot-Hit;oE=P_Shot-End;mr=30;sE=true;syo=4;sfo=-2;hnp=true;hp=true;hR=1.4;v=23;g=1;vO=3} 
+  
+
+Poison_Shot_R10:
+  Skills:
+  - projectile{bulletType=mob;mob=cobweb_mob;i=1;onStart=P_Shot-Start;oT=P_Shot-Tick;oH=P_Shot-Hit;oE=P_Shot-End;mr=30;sE=true;syo=4;sfo=-2;hnp=true;hp=true;hR=1.4;v=18;g=1;vO=3} 
+  
+  
+  
+  
+  
+  
+  
+  # Sounds
+  
+SQ_Attack:
+  Skills:
+  - sound{s=minecraft:spider.queen.attack} @Self
+  
+SQ_Breathing:
+  Skills:
+  - sound{s=minecraft:spider.queen.breathing} @Self
+  
+SQ_Dying:
+  Skills:
+  - sound{s=minecraft:spider.queen.dying} @Self
+  
+SQ_Hurt:
+  Cooldown: 2
+  Skills:
+  - sound{s=minecraft:spider.queen.hurt} @Self
+  
+SQ_Stomp:
+  Skills:
+  - sound{s=minecraft:spider.queen.stomp} @Self
+
+
+
+
+
+# 9593AL6SZV0W7B5WIZWK4

@@ -1,0 +1,35 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: SILVERFISH
+name: $eventBossLevel &2Earth Mite
+level: dynamic
+healthMultiplier: 2.0
+damageMultiplier: 1.0
+isPersistent: true
+powers:
+- invisibility.yml
+uniqueLootList:
+- filename=earth_mite_drop_shovel.yml:amount=1:chance=0.5
+trails:
+- ELECTRIC_SPARK
+- SMOKE_LARGE
+- DRIP_LAVA
+- FALLING_LAVA
+movementSpeedAttribute: 0.33
+followDistance: 80
+deathMessage: '&aGood job $players you sure showed that Earth Mite who''s boss!'
+locationMessage: '&cEarth Mite: $distance blocks away!'
+spawnMessage: '&cA Earth Mite has appeared!'
+escapeMessage: '&4The Earth Mite has left!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Earth Mite has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

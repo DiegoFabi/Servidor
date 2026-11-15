@@ -1,0 +1,7 @@
+interact_fisherman:
+  Skills:
+   - state{s=interactive_idle;r=true;cooldown=32} @self
+   - state{s=interact;cooldown=32} @self
+   - state{s=interactive_idle;delay=600;cooldown=32} @self
+
+#ec2d7c710433712ffdc96c1103739167

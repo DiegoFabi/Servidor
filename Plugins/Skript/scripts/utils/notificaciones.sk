@@ -1,0 +1,16 @@
+# ============================================================
+#  notificaciones.sk - Sonido de notificación GLOBAL
+#  notificar(jugador) reproduce "nexo:ui.notificacion" (Nexo/sounds.yml):
+#  un "ding" corto, bajo y suave para mensajes de chat de recompensas
+#  pendientes, misiones, invitaciones a minijuegos, etc.
+#  Úsalo desde cualquier script; desde otros plugins: /notificar <jugador>
+#  Rendimiento: solo reproduce un sonido al jugador (sin eventos).
+# ============================================================
+
+function notificar(p: player):
+    play sound "nexo:ui.notificacion" with volume 0.6 and pitch 1 to {_p}
+
+command /notificar <player>:
+    executable by: console
+    trigger:
+        notificar(arg-1)

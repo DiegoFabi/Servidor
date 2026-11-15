@@ -1,0 +1,326 @@
+# Convertido desde CommandPanels (panels/MainShop.yml). Abrir: /coremenu <menu>
+MainShop:
+  permission: ''
+  bottom_inventory: true
+  name: '㈮㈮&f㈄'
+  size: 5
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: ' '
+      lore:
+      - ㈒
+      - '&7%vault_eco_balance_formatted%'
+      - '&7'
+      - '&a&lBuying'
+      - '&7Buying (Left Click)'
+      - '&c&lSelling'
+      - '&7Selling (Right Click)'
+      flags:
+      - HIDE_ATTRIBUTES
+    b2:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&e&lBlocks'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b2_click
+      right_click:
+        Scripts:
+        - mainshop_b2_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b2_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b2_click
+    b3:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&b&lValuables'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b3_click
+      right_click:
+        Scripts:
+        - mainshop_b3_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b3_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b3_click
+    b4:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&6&lDrops de Mobs'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b4_click
+      right_click:
+        Scripts:
+        - mainshop_b4_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b4_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b4_click
+    b5:
+      location: top
+      slots:
+      - 21
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&a&lComida'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b5_click
+      right_click:
+        Scripts:
+        - mainshop_b5_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b5_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b5_click
+    b6:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&a&lFarming'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b6_click
+      right_click:
+        Scripts:
+        - mainshop_b6_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b6_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b6_click
+    b7:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&d&lTintes y Colores'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b7_click
+      right_click:
+        Scripts:
+        - mainshop_b7_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b7_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b7_click
+    b8:
+      location: top
+      slots:
+      - 30
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&c&lRedstone'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b8_click
+      right_click:
+        Scripts:
+        - mainshop_b8_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b8_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b8_click
+    b9:
+      location: top
+      slots:
+      - 31
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&d&lSpawners'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b9_click
+      right_click:
+        Scripts:
+        - mainshop_b9_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b9_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b9_click
+    b10:
+      location: top
+      slots:
+      - 32
+      source: vanilla
+      material: DIAMOND
+      custom_model_data_float: 1
+      name: '&6&lMiscellaneous'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_b10_click
+      right_click:
+        Scripts:
+        - mainshop_b10_click
+      shift_left_click:
+        Scripts:
+        - mainshop_b10_click
+      shift_right_click:
+        Scripts:
+        - mainshop_b10_click
+    shopbar_0:
+      location: bottom
+      slots:
+      - 36
+      source: vanilla
+      material: BARRIER
+      name: '&4&lClose'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - mainshop_shopbar_0_click
+      right_click:
+        Scripts:
+        - mainshop_shopbar_0_click
+      shift_left_click:
+        Scripts:
+        - mainshop_shopbar_0_click
+      shift_right_click:
+        Scripts:
+        - mainshop_shopbar_0_click
+    shopbar_1:
+      location: bottom
+      slots:
+      - 37
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '&f'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_2:
+      location: bottom
+      slots:
+      - 38
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '&f'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_3:
+      location: bottom
+      slots:
+      - 39
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '&f'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_4:
+      location: bottom
+      slots:
+      - 40
+      source: vanilla
+      material: player_head
+      texture: player
+      name: '&e&l{caster_name}'
+      lore:
+      - '§aBalance: §7$%vault_eco_balance_formatted%'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_5:
+      location: bottom
+      slots:
+      - 41
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '&f'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_6:
+      location: bottom
+      slots:
+      - 42
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '&f'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_7:
+      location: bottom
+      slots:
+      - 43
+      source: vanilla
+      material: LIGHT_BLUE_STAINED_GLASS_PANE
+      name: '&f'
+      flags:
+      - HIDE_ATTRIBUTES
+    shopbar_8:
+      location: bottom
+      slots:
+      - 44
+      source: vanilla
+      material: BOOK
+      name: '&e&lInformation'
+      lore:
+      - '&a&lBuying'
+      - '&7Buying (Left Click)'
+      - '&c&lSelling'
+      - '&7Selling (Right Click)'
+      flags:
+      - HIDE_ATTRIBUTES

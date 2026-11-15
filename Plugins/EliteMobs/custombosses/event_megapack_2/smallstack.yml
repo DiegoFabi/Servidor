@@ -1,0 +1,33 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: DROWNED
+isBaby: true
+name: $eventBossLevel &bSmallstack Top
+healthMultiplier: 3.0
+damageMultiplier: 0.1
+isPersistent: true
+mountedEntity: smallstack_1.yml
+powers:
+- bonus_coins.yml
+- bonus_loot.yml
+- invulnerability_fire.yml
+- skeleton_tracking_arrow.yml
+movementSpeedAttribute: 0.28
+followDistance: 50
+locationMessage: '&cSmallstack: $distance blocks away!'
+spawnMessage: '&cA Smallstack is roaming the wilds!'
+deathMessage: '&aThe Smallstack was unstacked by $players!'
+escapeMessage: '&4The Smallstack has left!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Smallstack Top has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

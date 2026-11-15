@@ -1,0 +1,9 @@
+isEnabled: true
+validWorlds: []
+validWorldEnvironments:
+- NORMAL
+- CUSTOM
+validBiomesV2: []
+isUndergroundSpawn: true
+lowestYLevel: -64
+highestYLevel: 320

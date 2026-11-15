@@ -1,0 +1,784 @@
+# Workshop Six - Medieval Essentials (convertido de Oraxen a Nexo)
+w6_bulletin_board:
+  itemname: Bulletin Board
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/bulletin_board
+    custom_model_data: 1084
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - 0,1,0
+        - 1,1,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_bulletin_board
+          probability: 1.0
+w6_bulletin_board_small:
+  itemname: Small Bulletin Board
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/bulletin_board_small
+    custom_model_data: 1085
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_bulletin_board_small
+          probability: 1.0
+w6_bulletin_board_wall:
+  itemname: Hanging Bulletin Board
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/bulletin_board_wall
+    custom_model_data: 1086
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        interactions:
+        - 0,0,0 2,1
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_bulletin_board_wall
+          probability: 1.0
+w6_chalk_sign:
+  itemname: Chalk Sign
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/chalk_sign
+    custom_model_data: 1087
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_chalk_sign
+          probability: 1.0
+w6_chalk_sign_hanging:
+  itemname: Hanging Chalk Sign
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/chalk_sign_hanging
+    custom_model_data: 1088
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        interactions:
+        - 0,0,0 2,1
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_chalk_sign_hanging
+          probability: 1.0
+w6_chest:
+  itemname: Chest
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/chest
+    custom_model_data: 1089
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_chest
+          probability: 1.0
+w6_chest_open:
+  itemname: Open Chest
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/chest_open
+    custom_model_data: 1090
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_chest_open
+          probability: 1.0
+w6_coins_1:
+  itemname: Coins
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/coins_1
+    custom_model_data: 1091
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_coins_1
+          probability: 1.0
+w6_coins_2:
+  itemname: Coins
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/coins_2
+    custom_model_data: 1092
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_coins_2
+          probability: 1.0
+w6_coins_3:
+  itemname: Coins
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/coins_3
+    custom_model_data: 1093
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_coins_3
+          probability: 1.0
+w6_crate_bread:
+  itemname: Crate Bread
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_bread
+    custom_model_data: 1094
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_bread
+          probability: 1.0
+w6_crate_carrots:
+  itemname: Crate Carrots
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_carrots
+    custom_model_data: 1095
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_carrots
+          probability: 1.0
+w6_crate_display_bread:
+  itemname: Crate Display Bread
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_display_bread
+    custom_model_data: 1096
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_display_bread
+          probability: 1.0
+w6_crate_display_carrots:
+  itemname: Crate Display Carrots
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_display_carrots
+    custom_model_data: 1097
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_display_carrots
+          probability: 1.0
+w6_crate_display_empty:
+  itemname: Crate Display Empty
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_display_empty
+    custom_model_data: 1098
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_display_empty
+          probability: 1.0
+w6_crate_empty:
+  itemname: Crate Empty
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_empty
+    custom_model_data: 1099
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_empty
+          probability: 1.0
+w6_crate_stack:
+  itemname: Crate Stack
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/crate_stack
+    custom_model_data: 1100
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_crate_stack
+          probability: 1.0
+w6_papers_hanging_1:
+  itemname: Hanging Papers
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/papers_hanging_1
+    custom_model_data: 1101
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        interactions:
+        - 0,0,0 2,1
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_papers_hanging_1
+          probability: 1.0
+w6_papers_hanging_2:
+  itemname: Hanging Papers
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/papers_hanging_2
+    custom_model_data: 1102
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_papers_hanging_2
+          probability: 1.0
+w6_papers_hanging_3:
+  itemname: Hanging Papers
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/papers_hanging_3
+    custom_model_data: 1103
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_papers_hanging_3
+          probability: 1.0
+w6_sack:
+  itemname: Sack
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/sack
+    custom_model_data: 1104
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_sack
+          probability: 1.0
+w6_shipping_crate:
+  itemname: Shipping Crate
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/shipping_crate
+    custom_model_data: 1105
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_shipping_crate
+          probability: 1.0
+w6_shipping_crate_triple_stack:
+  itemname: Shipping Crate Stack
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/shipping_crate_triple_stack
+    custom_model_data: 1106
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+        - 0,1,-1
+        - 0,1,1
+        - 0,0,-1
+        - 0,0,1
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_shipping_crate_triple_stack
+          probability: 1.0
+w6_streamer_post:
+  itemname: Streamer Post
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/streamer_post
+    custom_model_data: 1107
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 1,0,0
+        - -1,0,0
+        - 1,1,0
+        - -1,1,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_streamer_post
+          probability: 1.0
+w6_streamers_hanging:
+  itemname: Hanging Streamers
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/streamers_hanging
+    custom_model_data: 1108
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        interactions:
+        - 0,0,0 2,1
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_streamers_hanging
+          probability: 1.0
+w6_wagon:
+  itemname: Wagon
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/wagon
+    custom_model_data: 1109
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_wagon
+          probability: 1.0
+w6_wagon_full:
+  itemname: Wagon Full
+  material: PAPER
+  Pack:
+    model: workshop_six/essentials/market_furniture/wagon_full
+    custom_model_data: 1113
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_wagon_full
+          probability: 1.0
+w6_canopy_flat:
+  itemname: Canopy Flat
+  material: LEATHER_HORSE_ARMOR
+  color: 255, 255, 255
+  Pack:
+    model: workshop_six/essentials/market_furniture/canopy_flat
+    custom_model_data: 1000
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_canopy_flat
+          probability: 1.0
+w6_canopy_sloped:
+  itemname: Canopy Sloped
+  material: LEATHER_HORSE_ARMOR
+  color: 255, 255, 255
+  Pack:
+    model: workshop_six/essentials/market_furniture/canopy_sloped
+    custom_model_data: 1001
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: false
+        wall: true
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_canopy_sloped
+          probability: 1.0
+w6_shop_cart:
+  itemname: Shop Cart
+  material: LEATHER_HORSE_ARMOR
+  color: 255, 255, 255
+  Pack:
+    model: workshop_six/essentials/market_furniture/shop_cart
+    custom_model_data: 1002
+  Mechanics:
+    furniture:
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      properties:
+        display_transform: FIXED
+      restricted_rotation: VERY_STRICT
+      block_sounds:
+        place_sound: block.wood.place
+        break_sound: block.wood.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: w6_shop_cart
+          probability: 1.0

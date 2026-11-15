@@ -1,0 +1,15 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "AgentitoE",
+      "uniqueId": "15f817f2-a35a-345e-9cd1-d277e6778fb7"
+    },
+    "time": 1794061815210,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/tNSSxGPfxC"
+    }
+  }
+]

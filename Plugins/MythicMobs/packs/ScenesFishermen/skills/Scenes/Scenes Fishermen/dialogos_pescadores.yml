@@ -1,0 +1,72 @@
+# ============================================================
+#  dialogos_pescadores.yml - Diálogos aleatorios de los NPCs del pack ScenesFishermen
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_pescadores.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ⚓ Pescador | paleta #8FE3FF -> #2F7FE0 ----------
+# NPCs: scene_fisherman_boat, scene_fisherman_stick, scene_fisherman_standing, scene_fisherman_sitting, scene_fisherman_interactive
+dialogo_pescador:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=entity.fishing_bobber.splash;v=0.5;p=1} @self
+  - particles{p=splash;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_pescador_frase1,dialogo_pescador_frase2,dialogo_pescador_frase3,dialogo_pescador_frase4,dialogo_pescador_frase5,dialogo_pescador_frase6} @trigger
+
+dialogo_pescador_frase1:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.95} @self
+  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_pescador_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_pescador_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Shh, que se espantan. Bueno, igual hoy no pican."} @trigger
+
+dialogo_pescador_frase2:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
+  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_pescador_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_pescador_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>La paciencia es el mejor cebo, eso decía mi padre."} @trigger
+
+dialogo_pescador_frase3:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.95} @self
+  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_pescador_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_pescador_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Ayer saqué uno así de grande. No, más grande."} @trigger
+
+dialogo_pescador_frase4:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
+  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_pescador_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_pescador_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Al amanecer el agua está tranquila, es la mejor hora."} @trigger
+
+dialogo_pescador_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
+  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_pescador_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_pescador_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>A veces no pesco nada, pero el rato me lo llevo."} @trigger
+
+dialogo_pescador_frase6:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.95} @self
+  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_pescador_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_pescador_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Si pica algo raro, mejor devolverlo al agua. Por si acaso."} @trigger

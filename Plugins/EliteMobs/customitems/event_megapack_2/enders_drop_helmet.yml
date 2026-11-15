@@ -1,0 +1,11 @@
+isEnabled: true
+material: DIAMOND_HELMET
+name: '&dEnder Cap'
+lore:
+- "&dComfy but also quite sturdy."
+enchantments:
+- "PROTECTION_ENVIRONMENTAL,4"
+- "PROTECTION_EXPLOSIONS,1"
+- "DURABILITY,1"
+potionEffects: []
+itemType: UNIQUE

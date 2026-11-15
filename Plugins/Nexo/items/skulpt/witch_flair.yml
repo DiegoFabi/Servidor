@@ -1,0 +1,59 @@
+witch_hat:
+  material: PAPER
+  Pack:
+    model: skulpt:flair/witch_flair/witch_hat
+    custom_model_data: 1177
+  displayname: <gradient:#C38BFF:#5B2A86>Sombrero de Bruja</gradient>
+witch_broom:
+  material: PAPER
+  Pack:
+    model: skulpt:flair/witch_flair/witch_broom
+    custom_model_data: 1178
+  displayname: <gradient:#C38BFF:#5B2A86>Escoba de Bruja</gradient>
+bat_balloon:
+  material: PAPER
+  Pack:
+    model: skulpt:flair/witch_flair/bat_balloon
+    custom_model_data: 1179
+  displayname: <gradient:#C38BFF:#5B2A86>Globo de Murciélago</gradient>
+witch_robe:
+  material: PAPER
+  Pack:
+    model: skulpt:flair/witch_flair/witch_robe
+    custom_model_data: 1180
+  displayname: <gradient:#C38BFF:#5B2A86>Túnica de Bruja</gradient>
+witch_robe_thirdperson:
+  material: PAPER
+  Pack:
+    model: skulpt:flair/witch_flair/witch_robe_thirdperson
+    custom_model_data: 1181
+  displayname: <gradient:#C38BFF:#5B2A86>Túnica de Bruja</gradient>
+pumpkin_plushie:
+  material: PAPER
+  Pack:
+    model: skulpt:flair/witch_flair/pumpkin_plushie
+    custom_model_data: 1182
+  Mechanics:
+    furniture:
+      rotatable: true
+      properties:
+        display_transform: FIXED
+        scale: 0.5,0.5,0.5
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: pumpkin_plushie
+          probability: 1.0
+      hitbox:
+        interactions:
+        - 0,0,0 1.0,1.0
+  displayname: <gradient:#FFB347:#FF7A45>Peluche de Calabaza</gradient>

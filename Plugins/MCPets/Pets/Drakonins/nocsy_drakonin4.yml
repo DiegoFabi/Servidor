@@ -1,0 +1,26 @@
+Id: Nocsy_Drakonin-Cloud
+MythicMob: Nocsy_Drakonin-Cloud-Adult
+Permission: mcpets.nocsy_drakonin.cloud
+Mountable: true
+MountType: flying
+DespawnSkill: Nocsy_Drakonin_Despawn
+Distance: 8
+SpawnRange: 2
+ComingBackRange: 2
+Icon:
+  Material: BLAZE_ROD
+  Name: §fDrakonin de las Nubes
+  CustomModelData: 96504
+  Description:
+  - §7A magnificient beast to
+  - §7help you defeat your opponents
+  - §7and travel around the world
+Signals:
+  Values:
+  - SPELL
+  Item:
+    Name: §6Staff of the Drakomage
+    Material: BLAZE_ROD
+    CustomModelData: 95501
+    Description:
+    - §7Right click to cast a spell

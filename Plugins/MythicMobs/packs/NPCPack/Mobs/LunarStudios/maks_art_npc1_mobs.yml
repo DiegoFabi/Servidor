@@ -1,0 +1,95 @@
+npc_dwarf:
+  Type: ARMOR_STAND
+  Display: "Dwarf Blacksmith"
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+  Options:
+    Despawn: false
+    Invincible: true
+    Collidable: false
+  Skills:
+  - skill{s=maxnpcidledworf} @self ~onTimer:200
+  - model{mid=dworf;n=false;d=false} @self ~onSpawn
+  - skill{s=maxnpcidledworf} @self ~onSpawn
+  - skill{s=hicheckdworf} @self ~onTimer:40
+  - skill{s=dworfInteract} @self ~onInteract
+  - skill{s=dialogo_herrero} @trigger ~onInteract
+  
+npc_farmer:
+  Type: PIG
+  Display: "Farmer"
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  AITargetSelectors:
+  - 0 clear
+  Options:
+    Despawn: false
+    Invincible: true
+    Collidable: false
+    Silent: true
+  Skills:
+  - skill{s=maxnpcidlefarmer} @self ~onTimer:140
+  - model{mid=farmermaxvers;n=false;d=false;} @self ~onSpawn
+  - skill{s=maxnpcidlefarmer} @self ~onSpawn
+  - skill{s=hicheckfarmer} @self ~onTimer:40
+  - skill{s=farmerInteract} @self ~onInteract
+  - skill{s=dialogo_granjero} @trigger ~onInteract
+  - skill{s=DungeonTool_Rotate} @Trigger ~onInteract
+  
+npc_mageshaman:
+  Type: PIG
+  Display: "Shaman"
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  AITargetSelectors:
+  - 0 clear
+  Options:
+    Despawn: false
+    Invincible: true
+    Collidable: false
+    Silent: true
+  Skills:
+  - skill{s=maxnpcidlemageshaman} @self ~onTimer:60
+  - skill{s=maxnpcidlemageshamansound} @self ~onTimer:300
+  - skill{s=maxnpcidlemageshamansound} @self ~onSpawn
+  - model{mid=mageshaman;n=false;d=false} @self ~onSpawn
+  - skill{s=maxnpcidlemageshaman} @self ~onSpawn
+  - skill{s=hicheckmageshaman} @self ~onTimer:40
+  - skill{s=mageshamanInteract} @self ~onInteract
+  - skill{s=dialogo_chaman} @trigger ~onInteract
+
+npc_kingdom_guardian:
+  Type: PIG
+  Display: "Keeper"
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers
+  AITargetSelectors:
+  - 0 clear
+  Options:
+    Despawn: false
+    Invincible: true
+    Collidable: false
+    Silent: true
+  Skills:
+  - skill{s=maxnpcidlekingdom2} @self ~onTimer:400 0.6
+  - model{mid=kingdom_guardian;n=false;d=false} @self ~onSpawn
+  - skill{s=maxnpcidlekingdom} @self ~onTimer:60
+  - state{s=alone;li=3;lo=3} @self ~onSpawn
+  - setstance{stance=alone;li=3;lo=3} @self ~onSpawn
+  - skill{s=maxnpcidlekingdomsound} @self ~onTimer:60
+  - skill{s=maxnpcidlekingdomsound} @self ~onSpawn
+  - skill{s=kingdomInteract} @self ~onInteract
+  - skill{s=dialogo_guardian} @trigger ~onInteract

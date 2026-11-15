@@ -1,0 +1,395 @@
+# ============================================================
+#  subasta.sk - Subastas públicas con pujas en tiempo real
+#  Requiere: Skript 2.10+ (tags MiniMessage), Vault, SkBee y
+#  utils/items.sk (itemDar / buzón global)
+#
+#  Economía: ExcellentEconomy "money" (moneda de Vault), por eso
+#  "player's balance" lee y modifica money directamente.
+#
+#  Comandos:
+#    /subasta <puja inicial>    -> subasta el objeto de tu mano
+#    /subasta pujar [monto]     -> puja (sin monto = puja mínima)
+#    /subasta info              -> estado de la subasta actual
+#    /subasta stop              -> cancela (vendedor sin pujas / admin)
+#    /subasta reclamar          -> recoge objetos pendientes (= /buzon)
+#    /subasta silenciar         -> activa/desactiva los titles de pujas
+#    /subasta adelantar         -> termina ya la subasta: gana la puja más alta
+#                                  (solo el vendedor o un admin, y con pujas)
+#    Permiso para usar las subastas: subasta.usar (sin él no se puede usar)
+#    Permiso admin: subasta.admin (puede cancelar y adelantar siempre)
+#
+#  Funcionamiento:
+#  - Una subasta a la vez, dura {@duracion} s. Si alguien puja en los
+#    últimos {@antisnipe} s, el tiempo vuelve a {@antisnipe} s (anti-snipe).
+#  - Dinero retenido: al pujar se cobra la puja y se devuelve la puja
+#    anterior a quien iba ganando. Así el ganador siempre puede pagar.
+#  - Al terminar el vendedor recibe la puja menos {@impuesto}% de impuesto.
+#  - Si el ganador/vendedor no está conectado o tiene el inventario
+#    lleno, el objeto va a su buzón global (/buzon, utils/items.sk).
+#  - Cada puja se anuncia con title/subtitle y en el chat con botón
+#    para pujar.
+#  - Los objetos de ItemJoin no se pueden subastar.
+#
+#  Rendimiento:
+#  - Sin temporizadores periódicos: el final se espera con "wait"
+#    hasta el siguiente aviso (30 s, 10 s, 5 s y fin), solo mientras
+#    hay subasta activa.
+#  - La subasta se guarda en variables persistentes: si el servidor
+#    se reinicia, al cargar se retoma o se cierra correctamente.
+# ============================================================
+
+options:
+    # Duración en segundos
+    duracion: 90
+    # Si se puja con menos de estos segundos restantes, se reinicia a este valor
+    antisnipe: 15
+    min-inicial: 100
+    max-puja: 100000000
+    # Incremento mínimo entre pujas: el mayor entre % de la puja y el mínimo fijo
+    incremento-pct: 5
+    incremento-min: 50
+    # Impuesto (%) que se descuenta al vendedor
+    impuesto: 5
+    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
+    prefijo: <gradient:gold:yellow><bold>Subasta</bold></gradient> <dark_gray>»<reset>
+    linea: <dark_gray><strikethrough>                                        </strikethrough>
+
+# ------------------------------------------------------------
+#  Utilidades
+# ------------------------------------------------------------
+function subAhora() :: number:
+    return unix timestamp of now
+
+function subRestante() :: number:
+    set {_r} to {subasta::fin} - subAhora()
+    if {_r} < 0:
+        return 0
+    return ceil({_r})
+
+function subNombre(i: item) :: text:
+    set {_n} to name of {_i}
+    if {_n} is not set:
+        set {_n} to "%type of {_i}%"
+    return "%item amount of {_i}%x %{_n}%"
+
+function subMinimo() :: number:
+    if {subasta::pujador} is not set:
+        return {subasta::puja}
+    set {_inc} to floor({subasta::puja} * {@incremento-pct} / 100)
+    if {_inc} < {@incremento-min}:
+        set {_inc} to {@incremento-min}
+    return {subasta::puja} + {_inc}
+
+function subLimpiar():
+    delete {subasta::activa}
+    delete {subasta::item}
+    delete {subasta::vendedor}
+    delete {subasta::puja}
+    delete {subasta::pujador}
+    delete {subasta::fin}
+    delete {subasta::pujas}
+
+# Botones de chat para pujar / ver info
+function subBotones(p: player):
+    set {_min} to subMinimo()
+    send formatted "  <click:run_command:'/subasta pujar'><hover:show_text:'<#9EA3AE>Pujar la cantidad mínima<newline><#7FFF9E>$%{_min}%'><#7FFF9E><bold>[⚡ PUJAR $%{_min}%]</bold></hover></click>  <click:suggest_command:'/subasta pujar '><hover:show_text:'<#9EA3AE>Escribe tu propia puja<newline><dark_gray>/subasta pujar (monto)'><#5FE3FF><bold>[✎ OTRA PUJA]</bold></hover></click>  <click:run_command:'/subasta info'><hover:show_text:'<#9EA3AE>Ver la subasta'><#FFD36B><bold>[☰ INFO]</bold></hover></click>" to {_p}
+
+# Botón para terminar ya la subasta (vendedor o admin)
+function subBotonAdelantar(p: player):
+    {subasta::activa} is true
+    {subasta::pujador} is set
+    send formatted "  <click:run_command:'/subasta adelantar'><hover:show_text:'<#9EA3AE>Termina la subasta ahora<newline><#7FFF9E>Gana la puja más alta: $%{subasta::puja}%'><#FFB347><bold>[⏩ TERMINAR YA]</bold></hover></click> <dark_gray>• <#9EA3AE>Gana %{subasta::pujador}% con $%{subasta::puja}%" to {_p}
+
+function subTitle(t: text, s: text):
+    loop all players:
+        if {subasta::silencio::%uuid of loop-player%} is not set:
+            send title {_t} with subtitle {_s} to loop-player for 2 seconds with fadein 5 ticks and fadeout 10 ticks
+
+# ------------------------------------------------------------
+#  Ciclo de la subasta (solo "wait" hasta el siguiente aviso)
+# ------------------------------------------------------------
+function subCiclo(id: number):
+    while {-subasta::id} = {_id}:
+        if {subasta::activa} is not true:
+            stop
+        set {_r} to subRestante()
+        if {_r} <= 0:
+            subFinalizar()
+            stop
+        if {_r} > 30:
+            set {_m} to 30
+        else if {_r} > 10:
+            set {_m} to 10
+        else if {_r} > 5:
+            set {_m} to 5
+        else:
+            set {_m} to 0
+        set {_w} to {_r} - {_m}
+        set {_ts} to "%{_w}% seconds" parsed as timespan
+        # Respaldo: nunca un wait vacío (evita un bucle sin espera)
+        if {_ts} is not set:
+            set {_ts} to 1 second
+        wait {_ts}
+        if {-subasta::id} is not {_id}:
+            stop
+        if {subasta::activa} is not true:
+            stop
+        # Aviso solo si no hubo anti-snipe (el tiempo sigue en el hito)
+        if {_m} > 0:
+            if subRestante() <= {_m}:
+                loop all players:
+                    send formatted "{@prefijo} <#C9CDD6>Quedan <#FFD36B><bold>%{_m}% s</bold> <#C9CDD6>para <white>%subNombre({subasta::item})% <dark_gray>• <#C9CDD6>puja actual <#7FFF9E>$%{subasta::puja}%" to loop-player
+                    subBotones(loop-player)
+                if {_m} <= 10:
+                    play sound "block.note_block.pling" with volume 0.6 and pitch 1.6 to all players
+
+# ------------------------------------------------------------
+#  Acciones
+# ------------------------------------------------------------
+function subIniciar(p: player, monto: number):
+    if {subasta::activa} is true:
+        send formatted "{@prefijo} <#FF6B6B>Ya hay una subasta en curso. <click:run_command:'/subasta info'><hover:show_text:'<#9EA3AE>Ver subasta'><#FFD36B><underlined>[Ver]</underlined></hover></click>" to {_p}
+        stop
+    set {_i} to tool of {_p}
+    if {_i} is air:
+        send "{@prefijo} <#FF6B6B>Sostén en la mano el objeto que quieres subastar." to {_p}
+        stop
+    if string tag "ItemJoin Name" of custom nbt of {_i} is set:
+        send "{@prefijo} <#FF6B6B>Ese objeto no se puede subastar." to {_p}
+        stop
+    set {_monto} to floor({_monto})
+    if {_monto} < {@min-inicial}:
+        send "{@prefijo} <#FF6B6B>La puja inicial mínima es <#7FFF9E>${@min-inicial}<#FF6B6B>." to {_p}
+        stop
+    if {_monto} > {@max-puja}:
+        send "{@prefijo} <#FF6B6B>La puja inicial máxima es <#7FFF9E>${@max-puja}<#FF6B6B>." to {_p}
+        stop
+    set tool of {_p} to air
+    set {subasta::activa} to true
+    set {subasta::item} to {_i}
+    set {subasta::vendedor} to {_p}
+    set {subasta::puja} to {_monto}
+    delete {subasta::pujador}
+    set {subasta::pujas} to 0
+    set {subasta::fin} to subAhora() + {@duracion}
+    add 1 to {-subasta::id}
+    set {_n} to subNombre({_i})
+    loop all players:
+        send formatted "{@linea}" to loop-player
+        send formatted " {@prefijo} <#FFE29A><bold>¡Nueva subasta!</bold>" to loop-player
+        send formatted "  <#9EA3AE>Vendedor <dark_gray>» <white>%{_p}%" to loop-player
+        send formatted "  <#9EA3AE>Objeto <dark_gray>» <white>%{_n}%" to loop-player
+        send formatted "  <#9EA3AE>Puja inicial <dark_gray>» <#7FFF9E><bold>$%{_monto}%</bold> <dark_gray>• <#9EA3AE>Duración <#FFD36B>{@duracion} s" to loop-player
+        subBotones(loop-player)
+        send formatted "{@linea}" to loop-player
+    subTitle("<gradient:#FFE29A:#FFB347><bold>¡NUEVA SUBASTA!</bold></gradient>", "<white>%{_n}% <dark_gray>• <#7FFF9E>desde $%{_monto}%")
+    play sound "block.note_block.chime" with volume 0.8 and pitch 1.2 to all players
+    subCiclo({-subasta::id})
+
+function subPujar(p: player, monto: number):
+    if {subasta::activa} is not true:
+        send "{@prefijo} <#FF6B6B>No hay ninguna subasta activa." to {_p}
+        stop
+    if subRestante() <= 0:
+        send "{@prefijo} <#FF6B6B>La subasta ya terminó." to {_p}
+        stop
+    if "%uuid of {subasta::vendedor}%" = "%uuid of {_p}%":
+        send "{@prefijo} <#FF6B6B>No puedes pujar en tu propia subasta." to {_p}
+        stop
+    if {subasta::pujador} is set:
+        if "%uuid of {subasta::pujador}%" = "%uuid of {_p}%":
+            send "{@prefijo} <#FFB347>Ya vas ganando con <#7FFF9E>$%{subasta::puja}%<#FFB347>." to {_p}
+            stop
+    set {_min} to subMinimo()
+    if {_monto} is not set:
+        set {_monto} to {_min}
+    set {_monto} to floor({_monto})
+    if {_monto} < {_min}:
+        send "{@prefijo} <#FF6B6B>La puja mínima ahora es <#7FFF9E>$%{_min}%<#FF6B6B>." to {_p}
+        subBotones({_p})
+        stop
+    if {_monto} > {@max-puja}:
+        send "{@prefijo} <#FF6B6B>La puja máxima es <#7FFF9E>${@max-puja}<#FF6B6B>." to {_p}
+        stop
+    if {_p}'s balance < {_monto}:
+        send "{@prefijo} <#FF6B6B>No tienes suficiente money. <#9EA3AE>Saldo <#FFD36B>$%{_p}'s balance%" to {_p}
+        stop
+    # Retención: se cobra la nueva puja y se devuelve la anterior
+    remove {_monto} from {_p}'s balance
+    if {subasta::pujador} is set:
+        set {_ant} to {subasta::pujador}
+        add {subasta::puja} to {_ant}'s balance
+        if {_ant} is online:
+            set {_pa} to "%{_ant}%" parsed as player
+            send formatted "{@prefijo} <#FFB347>¡Te superaron! <white>%{_p}% <#C9CDD6>pujó <#7FFF9E>$%{_monto}%<#C9CDD6>. Te devolvimos <#7FFF9E>$%{subasta::puja}%<#C9CDD6>." to {_pa}
+            play sound "entity.villager.no" with volume 0.8 to {_pa}
+    set {subasta::puja} to {_monto}
+    set {subasta::pujador} to {_p}
+    add 1 to {subasta::pujas}
+    # Anti-snipe
+    set {_extra} to ""
+    if subRestante() < {@antisnipe}:
+        set {subasta::fin} to subAhora() + {@antisnipe}
+        set {_extra} to " <dark_gray>• <#FF9BE6>+tiempo ({@antisnipe} s)"
+    set {_n} to subNombre({subasta::item})
+    loop all players:
+        send formatted "{@prefijo} <white>%{_p}% <#C9CDD6>puja <#7FFF9E><bold>$%{_monto}%</bold> <#C9CDD6>por <white>%{_n}%%{_extra}%" to loop-player
+        if loop-player is not {_p}:
+            subBotones(loop-player)
+    subTitle("<#7FFF9E><bold>$%{_monto}%</bold>", "<white>%{_p}% <#C9CDD6>pujó por <white>%{_n}%")
+    play sound "entity.experience_orb.pickup" with volume 0.7 and pitch 1.4 to all players
+    send action bar "<#7FFF9E>✔ Vas ganando la subasta" to {_p}
+    if {subasta::vendedor} is online:
+        subBotonAdelantar("%{subasta::vendedor}%" parsed as player)
+
+function subFinalizar():
+    {subasta::activa} is true
+    add 1 to {-subasta::id}
+    set {_i} to {subasta::item}
+    set {_n} to subNombre({_i})
+    set {_v} to {subasta::vendedor}
+    if {subasta::pujador} is set:
+        set {_g} to {subasta::pujador}
+        set {_total} to {subasta::puja}
+        set {_tax} to floor({_total} * {@impuesto} / 100)
+        set {_neto} to {_total} - {_tax}
+        add {_neto} to {_v}'s balance
+        itemDar({_g}, {_i})
+        loop all players:
+            send formatted "{@linea}" to loop-player
+            send formatted " {@prefijo} <#FFE29A><bold>¡Subasta terminada!</bold>" to loop-player
+            send formatted "  <#9EA3AE>Ganador <dark_gray>» <#7FFF9E><bold>%{_g}%</bold>" to loop-player
+            send formatted "  <#9EA3AE>Objeto <dark_gray>» <white>%{_n}%" to loop-player
+            send formatted "  <#9EA3AE>Precio final <dark_gray>» <#7FFF9E><bold>$%{_total}%</bold> <dark_gray>• <#9EA3AE>%{subasta::pujas}% pujas" to loop-player
+            send formatted "{@linea}" to loop-player
+        subTitle("<gradient:#FFE29A:#FFB347><bold>¡VENDIDO!</bold></gradient>", "<#7FFF9E>%{_g}% <#C9CDD6>gana por <#7FFF9E>$%{_total}%")
+        play sound "ui.toast.challenge_complete" with volume 0.6 to all players
+        if {_v} is online:
+            set {_pv} to "%{_v}%" parsed as player
+            send formatted "{@prefijo} <#C9CDD6>Recibiste <#7FFF9E><bold>$%{_neto}%</bold> <dark_gray>(<#9EA3AE>impuesto {@impuesto}%% <#FF6B6B>-$%{_tax}%<dark_gray>)" to {_pv}
+    else:
+        itemDar({_v}, {_i})
+        loop all players:
+            send formatted "{@prefijo} <#C9CDD6>La subasta de <white>%{_n}% <#C9CDD6>terminó sin pujas. El objeto volvió a <white>%{_v}%<#C9CDD6>." to loop-player
+    subLimpiar()
+
+function subCancelar(motivo: text):
+    {subasta::activa} is true
+    add 1 to {-subasta::id}
+    if {subasta::pujador} is set:
+        add {subasta::puja} to {subasta::pujador}'s balance
+    itemDar({subasta::vendedor}, {subasta::item})
+    set {_n} to subNombre({subasta::item})
+    loop all players:
+        send formatted "{@prefijo} <#FF6B6B>Subasta cancelada <dark_gray>• <white>%{_n}% <dark_gray>• <#9EA3AE>%{_motivo}%" to loop-player
+    subLimpiar()
+
+function subInfo(p: player):
+    if {subasta::activa} is not true:
+        send "{@prefijo} <#9EA3AE>No hay ninguna subasta activa. <#C9CDD6>Sostén un objeto y usa <#FFD36B>/subasta (puja inicial)<#C9CDD6>." to {_p}
+        stop
+    set {_lider} to "<#9EA3AE>Nadie aún"
+    if {subasta::pujador} is set:
+        set {_lider} to "<#7FFF9E>%{subasta::pujador}%"
+    send formatted "{@linea}" to {_p}
+    send formatted " {@prefijo} <#FFE29A><bold>Subasta actual</bold>" to {_p}
+    send formatted "  <#9EA3AE>Objeto <dark_gray>» <white>%subNombre({subasta::item})%" to {_p}
+    send formatted "  <#9EA3AE>Vendedor <dark_gray>» <white>%{subasta::vendedor}%" to {_p}
+    send formatted "  <#9EA3AE>Puja actual <dark_gray>» <#7FFF9E><bold>$%{subasta::puja}%</bold> <dark_gray>• <#9EA3AE>Líder %{_lider}%" to {_p}
+    send formatted "  <#9EA3AE>Pujas <dark_gray>» <white>%{subasta::pujas}% <dark_gray>• <#9EA3AE>Tiempo <#FFD36B>%subRestante()% s" to {_p}
+    send formatted "  <#9EA3AE>Siguiente puja mínima <dark_gray>» <#7FFF9E>$%subMinimo()%" to {_p}
+    subBotones({_p})
+    if "%uuid of {subasta::vendedor}%" is "%uuid of {_p}%":
+        subBotonAdelantar({_p})
+    else if {_p} has permission "subasta.admin":
+        subBotonAdelantar({_p})
+    send formatted "{@linea}" to {_p}
+
+# ------------------------------------------------------------
+#  Comando
+# ------------------------------------------------------------
+command /subasta [<text>] [<text>]:
+    aliases: /subastas
+    permission: subasta.usar
+    permission message: <gradient:gold:yellow><bold>Subasta</bold></gradient> <dark_gray>» <#FF6B6B>No tienes acceso a las subastas.
+    trigger:
+        if arg-1 is not set:
+            send formatted "{@linea}"
+            send formatted " {@prefijo} <#9EA3AE>Comandos"
+            send formatted "  <click:suggest_command:'/subasta '><#FFD36B>/subasta (puja inicial)</click> <dark_gray>» <#9EA3AE>Subasta el objeto de tu mano"
+            send formatted "  <click:suggest_command:'/subasta pujar '><#FFD36B>/subasta pujar [monto]</click> <dark_gray>» <#9EA3AE>Puja (sin monto = mínima)"
+            send formatted "  <click:run_command:'/subasta info'><#FFD36B>/subasta info</click> <dark_gray>» <#9EA3AE>Estado de la subasta"
+            send formatted "  <click:run_command:'/subasta stop'><#FFD36B>/subasta stop</click> <dark_gray>» <#9EA3AE>Cancelar tu subasta (sin pujas)"
+            send formatted "  <click:run_command:'/subasta reclamar'><#FFD36B>/subasta reclamar</click> <dark_gray>» <#9EA3AE>Recoger objetos pendientes"
+            send formatted "  <click:run_command:'/subasta silenciar'><#FFD36B>/subasta silenciar</click> <dark_gray>» <#9EA3AE>Activar/desactivar titles"
+            send formatted "  <click:run_command:'/subasta adelantar'><#FFD36B>/subasta adelantar</click> <dark_gray>» <#9EA3AE>Terminar ya tu subasta (gana la puja más alta)"
+            send formatted "{@linea}"
+            stop
+        if arg-1 is "info":
+            subInfo(player)
+        else if arg-1 is "pujar" or "bid":
+            if arg-2 is set:
+                set {_m} to arg-2 parsed as number
+                if {_m} is not set:
+                    send "{@prefijo} <#FF6B6B>Monto inválido."
+                    stop
+                subPujar(player, {_m})
+            else:
+                subPujar(player, {_nada})
+        else if arg-1 is "stop" or "cancelar":
+            if {subasta::activa} is not true:
+                send "{@prefijo} <#FF6B6B>No hay ninguna subasta activa."
+                stop
+            if player has permission "subasta.admin":
+                subCancelar("por un administrador")
+                stop
+            if "%uuid of {subasta::vendedor}%" is not "%uuid of player%":
+                send "{@prefijo} <#FF6B6B>Solo el vendedor puede cancelar su subasta."
+                stop
+            if {subasta::pujador} is set:
+                send "{@prefijo} <#FF6B6B>Ya hay pujas: la subasta no se puede cancelar."
+                stop
+            subCancelar("por el vendedor")
+        else if arg-1 is "adelantar" or "terminar":
+            if {subasta::activa} is not true:
+                send "{@prefijo} <#FF6B6B>No hay ninguna subasta activa."
+                stop
+            if "%uuid of {subasta::vendedor}%" is not "%uuid of player%":
+                if player does not have permission "subasta.admin":
+                    send "{@prefijo} <#FF6B6B>Solo el vendedor puede adelantar su subasta."
+                    stop
+            if {subasta::pujador} is not set:
+                send "{@prefijo} <#FF6B6B>Aún no hay pujas: no se puede terminar. <#9EA3AE>Usa <#FFD36B>/subasta stop <#9EA3AE>para cancelarla."
+                stop
+            loop all players:
+                send formatted "{@prefijo} <white>%player% <#C9CDD6>adelantó el final de la subasta." to loop-player
+            subFinalizar()
+        else if arg-1 is "reclamar":
+            buzonReclamar(player)
+        else if arg-1 is "silenciar":
+            if {subasta::silencio::%uuid of player%} is set:
+                delete {subasta::silencio::%uuid of player%}
+                send "{@prefijo} <#7FFF9E>Titles de subasta activados."
+            else:
+                set {subasta::silencio::%uuid of player%} to true
+                send "{@prefijo} <#9EA3AE>Titles de subasta desactivados <dark_gray>(el chat sigue avisando)."
+        else:
+            set {_m} to arg-1 parsed as number
+            if {_m} is not set:
+                send "{@prefijo} <#FF6B6B>Uso: <#FFD36B>/subasta (puja inicial) <dark_gray>| <#FFD36B>/subasta info"
+                stop
+            subIniciar(player, {_m})
+
+# ------------------------------------------------------------
+#  Eventos
+# ------------------------------------------------------------
+# Al recargar o reiniciar: retoma la subasta (o la cierra si ya venció)
+on load:
+    add 1 to {-subasta::id}
+    {subasta::activa} is true
+    wait 5 seconds
+    if subRestante() <= 0:
+        subFinalizar()
+    else:
+        add 1 to {-subasta::id}
+        subCiclo({-subasta::id})

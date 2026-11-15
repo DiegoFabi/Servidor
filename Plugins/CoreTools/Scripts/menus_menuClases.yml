@@ -1,0 +1,87 @@
+# Selección de clases (Lemon Class Selection GUI) - aún sin funcionalidad.
+# Abrir: /coremenu menuClaseGuerrero
+clases_ver_guerrero:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.bamboo_wood_button.click_on";volume=1;pitch=2} @Self'
+  - 'command{c="core-menu menuClaseGuerrero {caster_name}";runas=console} @Self'
+clases_confirmar_guerrero:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuConfirmarGuerrero {caster_name}";runas=console} @Self'
+clases_elegir_guerrero:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
+  - 'closeinventory{} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#FFCC00>Guerrero <#C9CDD6>estará disponible muy pronto."} @Self'
+clases_ver_mago:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.bamboo_wood_button.click_on";volume=1;pitch=2} @Self'
+  - 'command{c="core-menu menuClaseMago {caster_name}";runas=console} @Self'
+clases_confirmar_mago:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuConfirmarMago {caster_name}";runas=console} @Self'
+clases_elegir_mago:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
+  - 'closeinventory{} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#7FB2FF>Mago <#C9CDD6>estará disponible muy pronto."} @Self'
+clases_ver_arquero:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.bamboo_wood_button.click_on";volume=1;pitch=2} @Self'
+  - 'command{c="core-menu menuClaseArquero {caster_name}";runas=console} @Self'
+clases_confirmar_arquero:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuConfirmarArquero {caster_name}";runas=console} @Self'
+clases_elegir_arquero:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
+  - 'closeinventory{} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#7FFF9E>Arquero <#C9CDD6>estará disponible muy pronto."} @Self'
+clases_ver_clerigo:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.bamboo_wood_button.click_on";volume=1;pitch=2} @Self'
+  - 'command{c="core-menu menuClaseClerigo {caster_name}";runas=console} @Self'
+clases_confirmar_clerigo:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuConfirmarClerigo {caster_name}";runas=console} @Self'
+clases_elegir_clerigo:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
+  - 'closeinventory{} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#FFE7A3>Clérigo <#C9CDD6>estará disponible muy pronto."} @Self'
+clases_ver_picaro:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.bamboo_wood_button.click_on";volume=1;pitch=2} @Self'
+  - 'command{c="core-menu menuClasePicaro {caster_name}";runas=console} @Self'
+clases_confirmar_picaro:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuConfirmarPicaro {caster_name}";runas=console} @Self'
+clases_elegir_picaro:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
+  - 'closeinventory{} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#C9A8FF>Pícaro <#C9CDD6>estará disponible muy pronto."} @Self'
+clases_cerrar:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=2} @Self'
+  - 'closeinventory{} @Self'

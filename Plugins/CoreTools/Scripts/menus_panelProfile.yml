@@ -1,0 +1,11 @@
+# Acciones de los menus convertidos desde CommandPanels
+panelprofile_b2_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
+  - 'command{c="pmtoggle";runas=op} @Self'
+panelprofile_b6_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="stats";runas=op} @Self'

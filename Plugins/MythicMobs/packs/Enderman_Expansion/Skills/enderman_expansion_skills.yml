@@ -1,0 +1,821 @@
+### GENERIC SOUNDS
+
+# TALL SOUNDs
+tall_enderman_sound_stare:
+  Skills:
+  - sound{s=enderman_overhaul:tall_stare;v=0.95;p=1} @self
+
+tall_enderman_sound_death_1:
+  Skills:
+  - sound{s=enderman_overhaul:tall_death;v=0.95;p=0.8to1.2} @self
+tall_enderman_sound_death_2:
+  Skills:
+  - sound{s=enderman_overhaul:tall_death_2;v=0.95;p=0.8to1.2} @self
+
+tall_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_1;v=1;p=0.8to1.2} @self
+tall_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_2;v=1;p=0.8to1.2} @self
+tall_enderman_sound_idle_3:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_3;v=1;p=0.8to1.2} @self
+tall_enderman_sound_idle_4:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_4;v=1;p=0.8to1.2} @self
+
+# PLANT SOUNDS
+plant_enderman_sound_hurt_1:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_1;v=0.95;p=0.8to1.2} @self
+plant_enderman_sound_hurt_2:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_2;v=0.95;p=0.8to1.2} @self
+plant_enderman_sound_hurt_3:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_3;v=0.95;p=0.8to1.2} @self
+plant_enderman_sound_hurt_4:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_4;v=0.95;p=0.8to1.2} @self
+
+plant_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:plant_idle_1;v=1;p=0.8to1.2} @self
+plant_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:plant_idle_2;v=1;p=0.8to1.2} @self
+
+# CAVE SOUNDS
+cave_enderman_sound_hurt_1:
+  Skills:
+  - sound{s=enderman_overhaul:cave_hurt_1;v=0.95;p=0.8to1.2} @self
+cave_enderman_sound_hurt_2:
+  Skills:
+  - sound{s=enderman_overhaul:cave_hurt_2;v=0.95;p=0.8to1.2} @self
+cave_enderman_sound_hurt_3:
+  Skills:
+  - sound{s=enderman_overhaul:cave_hurt_3;v=0.95;p=0.8to1.2} @self
+
+cave_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_1;v=1;p=0.8to1.2} @self
+cave_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_2;v=1;p=0.8to1.2} @self
+cave_enderman_sound_idle_3:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_3;v=1;p=0.8to1.2} @self
+cave_enderman_sound_idle_4:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_4;v=1;p=0.8to1.2} @self
+
+
+### ENDERMAN GENERIC
+
+generic_enderman_pickup_block_PRE:
+  TargetConditions:
+  - stance notholdingblock true
+  Skills:
+  - skill{s=generic_enderman_pickup_block_PRE_3} @ObstructingBlock
+
+generic_enderman_pickup_block_PRE_3:
+  TargetConditions:
+  - (triggerblocktype{type=BEDROCK} || triggerblocktype{type=AIR} || triggerblocktype{type=CHEST}) cancel
+  Skills:
+  - skill{s=generic_enderman_pickup_block_PRE_2} @self
+
+generic_enderman_pickup_block_PRE_2:
+  TargetConditions:
+  - stance notholdingblock true
+  Skills:
+  - setVariable{var=caster.pickup_block;type=STRING;value=<target.block.type>} @ObstructingBlock
+  - skill{s=generic_enderman_pickup_block} @self
+  - skill{s=generic_enderman_pickup_block_remove} @self
+
+generic_enderman_pickup_block:
+  Skills:
+  - meg:setitemmodel{mid=<target.var.enderman_name>;bone=mainhand;i=<target.var.pickup_block>} @self
+  ##- message{m=<caster.var.pickup_block>} @world
+  - state{mid=<target.var.enderman_name>;s=pickup_on;r=false} @self
+  - delay 3
+  - state{mid=<target.var.enderman_name>;s=pickup_on;r=true} @self
+  - state{mid=<target.var.enderman_name>;s=pickup;r=false} @self
+generic_enderman_pickup_block_remove:
+  Cooldown: 1
+  TargetConditions:
+  - (blocktype{type=BEDROCK} || blocktype{type=AIR} || blocktype{type=CHEST} || blocktype{type=CHEST}) cancel
+  - nearclaim{r=3} false
+  TargetConditions:
+  - stance notholdingblock true
+  Skills:
+  - setblock{m=AIR} @ObstructingBlock
+  - setstance{s=holdingblock} @self
+
+
+
+generic_enderman_placeblock_PRE_BLOCK_2:
+  Cooldown: 35
+  Skills:
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK} @forward{f=2;y=0}
+
+generic_enderman_placeblock_PRE_BLOCK:
+  TargetConditions:
+  - blocktype{type=AIR} true
+  Skills:
+  - skill{s=generic_enderman_placeblock_PRE} @self
+
+generic_enderman_placeblock_PRE:
+  TargetConditions:
+  - vareq{var=target.pickup_block;value="air"} cancel
+  Skills:
+  - state{mid=<target.var.enderman_name>;s=pickup;r=true} @self
+  - state{mid=<target.var.enderman_name>;s=pickup_off;r=false} @self
+  - delay 3
+  - state{mid=<target.var.enderman_name>;s=pickup_off;r=true} @self
+  - setblock{m=<caster.var.pickup_block>} @forward{f=1;y=0}
+  ##- message{m=<caster.var.pickup_block> Place} @PIR{r=20}
+  - delay 3
+  - setstance{s=notholdingblock} @self
+  - meg:setitemmodel{mid=<target.var.enderman_name>;bone=mainhand;i=air} @self
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self
+
+
+generic_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast generic_enderman_angry_OFF
+  Skills:
+  - defaultstate{mid=<target.var.enderman_name>;type=walk;state=run} @self
+  - state{mid=<target.var.enderman_name>;s=angry;r=false} @self
+  - delay 2
+  ##- message{m="I'm in combat"} @PIR{r=20}
+  - delay 25
+  - skill{s=generic_enderman_angry_OFF} @self
+
+generic_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - defaultstate{mid=<target.var.enderman_name>;type=walk;state=walk} @self
+  - state{mid=<target.var.enderman_name>;s=angry;r=true} @self
+  - delay 2
+  ##- message{m="I left the combat"} @PIR{r=20}
+
+
+generic_enderman_passive_damage_PRE:
+  Skills:
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+  - delay 7
+  - sound{s=entity.enderman.teleport;v=0.23;p=1.4} @self
+  - skill{s=generic_enderman_passive_damage_rtp} @self
+  - delay 3
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+
+generic_enderman_passive_damage_rtp:
+  Skills:
+  - teleportto{location=@TriggerLocation{x=25to-25;z=25to-25;y=1-2}} @self
+
+
+generic_enderman_rtp_PRE:
+  Skills:
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+  - delay 7
+  - sound{s=entity.enderman.teleport;v=0.23;p=1.4} @self
+  - skill{s=generic_enderman_passive_damage_rtp} @self
+  - delay 3
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+
+generic_enderman__rtp:
+  Skills:
+  - teleportto{location=@TriggerLocation{x=32to-32;z=32to-32;y=1-2}} @self
+
+
+
+generic_enderman_particles:
+  Skills:
+  - effect:particles{particle=portal;amount=6;y=1.9;hS=0.24;vS=0.46;speed=0.015} @self
+
+### WARPPED FOREST ENDERMAN
+
+warped_enderman_particles:
+  Skills:
+  - effect:particles{particle=warped_spore;amount=8;y=1.5;hS=0.34;vS=0.65;speed=0.008} @self
+
+warped_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast warped_enderman_angry_OFF
+  - offgcd
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.3} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=warped_enderman_angry_PRE} @self
+
+warped_enderman_angry_OFF:
+  Skills:
+  - potionclear @self
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+### CRIMSON FOREST ENDERMAN
+
+crimson_forest_enderman_particles:
+  Skills:
+  - effect:particles{particle=crimson_spore;amount=12;y=1.5;hS=0.3;vS=0.95;speed=0.0008} @self
+
+crimson_forest_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast crimson_forest_enderman_angry_OFF
+  - offgcd
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.3} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=crimson_forest_enderman_angry_PRE} @self
+
+crimson_forest_enderman_angry_OFF:
+  Skills:
+  - potionclear @self
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+
+### SOULSAND VALLEY ENDERMAN
+
+soulsand_valley_enderman_particles:
+  Skills:
+  - effect:particles{particle=soul_fire_flame;amount=6;y=1.9;hS=0.24;vS=0.46;speed=0.015} @self
+
+soulsand_valley_enderman_angry_PRE_PRE:
+  Conditions:
+  - stance incombat cancel
+  Skills:
+  - setstance{stance=incombat} @self
+  - delay 2
+  #- message{m="I'm in combat _ PRE"} @PIR{r=20}
+
+soulsand_valley_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast soulsand_valley_enderman_angry_OFF
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.5} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=soulsand_valley_enderman_angry_OFF} @self
+
+soulsand_valley_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear{type=SLOW} @self
+  - delay 2
+  - setstance{stance=nocombat} @self
+  #- message{m="I left the combat"} @PIR{r=20}
+
+### NETHER WASTES ENDERMAN
+
+nether_wastes_enderman_particles:
+  Skills:
+  - effect:particles{particle=warped_spore;amount=8;y=1.5;hS=0.34;vS=0.65;speed=0.008} @self
+
+ ### END ENDERMAN
+
+end_enderman_particles:
+  Skills:
+  - effect:particles{particle=portal;amount=8;y=1.5;hS=0.34;vS=0.65;speed=0.008} @self
+
+end_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast end_enderman_angry_OFF
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.5} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=end_enderman_angry_OFF} @self
+
+end_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear{type=SLOW} @self
+  - delay 2
+  - setstance{stance=nocombat} @self
+  #- message{m="I left the combat"} @PIR{r=20}
+
+end_enderman_mechanic_rtp_PRE:
+  Skills:
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @target
+  - delay 2
+  - sound{s=entity.enderman.teleport;v=0.23;p=1.4} @target
+  - skill{s=end_enderman_mechanic__rtp} @target
+  - delay 3
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @target
+
+end_enderman_mechanic__rtp:
+  Skills:
+  - teleportto{location=@TriggerLocation{x=12to-12;z=12to-12;y=3-4}} @target
+  
+ ### END ISLANDS ENDERMAN
+
+end_islands_enderman_particles:
+  Skills:
+  - effect:particles{particle=portal;amount=15;y=1.8;hS=0.34;vS=1.1;speed=0.008} @self
+
+end_islands_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast end_islands_enderman_angry_OFF
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.5} @self
+  - state{mid=end_islands_enderman;s=angry;r=false} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=end_islands_enderman_angry_OFF} @self
+
+end_islands_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear{type=SLOW} @self
+  - delay 1
+  - state{mid=end_islands_enderman;s=angry;r=true;i=true} @self
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+end_islands_enderman_possess_mechanic:
+  Conditions:
+  - mobsInRadius{types=enderman;amount=>0;radius=20} true
+  Skills:
+  - state{mid=end_islands_enderman;s=possess;r=false} @self
+  - delay 4
+  - skill{s=end_islands_enderman_possess_mechanic_PARTICLES} @self
+  - delay 16
+  - sound{s=entity.elder_guardian.curse;v=0.63;p=0.24} @self
+  - skill{s=end_islands_enderman_possess_mechanic_ANGRY_ENDERMANS_PRE} @self
+  - delay 5
+  #- message{m="Posses In Action"} @PIR{r=20}
+
+end_islands_enderman_possess_mechanic_PARTICLES:
+  TargetConditions:
+  - stance posses_off orElseCast end_islands_enderman_possess_mechanic_PARTICLES_OFF
+  Skills:
+  - effect:particles{particle=portal;amount=50;f=-0.85;y=3.35;hS=0.22;vS=0.2;speed=0.008} @self
+  - delay 6
+  - skill{s=end_islands_enderman_possess_mechanic_PARTICLES} @self
+  - delay 14
+  - setstance{s=possess_on} @self
+
+end_islands_enderman_possess_mechanic_PARTICLES_OFF:
+  TargetConditions:
+  - stance possess_on true
+  Skills:
+  - delay 170
+  - setstance{s=posses_off} @self
+
+end_islands_enderman_possess_mechanic_ANGRY_ENDERMANS_PRE:
+  Conditions:
+  - mobsInRadius{types=enderman;amount=>0;radius=20} true
+  Skills:
+  - sudoskill{s=end_islands_enderman_possess_mechanic_ANGRY_ENDERMANS;setcasterastrigger=true} @EIR{r=20;ignore=players}
+
+end_islands_enderman_possess_mechanic_ANGRY_ENDERMANS:
+  Skills:
+  - runaitargetselector{target=clear}
+  - runaitargetselector{target=players}
+
+end_islands_enderman_projectile_mechanic:
+  Cooldown: 20
+  Skills:
+  - ShootShulkerBullet{oH=end_islands_enderman_projectile_mechanic_ONHIT} @PIR{r=30}
+  - delay 1
+  - ShootShulkerBullet{oH=end_islands_enderman_projectile_mechanic_ONHIT} @PIR{r=30}
+  - delay 1
+  - ShootShulkerBullet{oH=end_islands_enderman_projectile_mechanic_ONHIT} @PIR{r=30}
+
+end_islands_enderman_projectile_mechanic_ONHIT:
+  Skills:
+  - Damage{a=2} @target
+  - potion{type=LEVITATION;duration=65;level=1} @target
+
+
+# 059601DE8LQD5077STNG
+
+
+### GENERIC SOUNDS
+
+# TALL SOUNDs
+tall_enderman_sound_stare:
+  Skills:
+  - sound{s=enderman_overhaul:tall_stare;v=0.95;p=1} @self
+
+tall_enderman_sound_death_1:
+  Skills:
+  - sound{s=enderman_overhaul:tall_death;v=0.95;p=0.8to1.2} @self
+tall_enderman_sound_death_2:
+  Skills:
+  - sound{s=enderman_overhaul:tall_death_2;v=0.95;p=0.8to1.2} @self
+
+tall_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_1;v=1;p=0.8to1.2} @self
+tall_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_2;v=1;p=0.8to1.2} @self
+tall_enderman_sound_idle_3:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_3;v=1;p=0.8to1.2} @self
+tall_enderman_sound_idle_4:
+  Skills:
+  - sound{s=enderman_overhaul:tall_idle_4;v=1;p=0.8to1.2} @self
+
+# PLANT SOUNDS
+plant_enderman_sound_hurt_1:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_1;v=0.95;p=0.8to1.2} @self
+plant_enderman_sound_hurt_2:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_2;v=0.95;p=0.8to1.2} @self
+plant_enderman_sound_hurt_3:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_3;v=0.95;p=0.8to1.2} @self
+plant_enderman_sound_hurt_4:
+  Skills:
+  - sound{s=enderman_overhaul:plant_hurt_4;v=0.95;p=0.8to1.2} @self
+
+plant_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:plant_idle_1;v=1;p=0.8to1.2} @self
+plant_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:plant_idle_2;v=1;p=0.8to1.2} @self
+
+# CAVE SOUNDS
+cave_enderman_sound_hurt_1:
+  Skills:
+  - sound{s=enderman_overhaul:cave_hurt_1;v=0.95;p=0.8to1.2} @self
+cave_enderman_sound_hurt_2:
+  Skills:
+  - sound{s=enderman_overhaul:cave_hurt_2;v=0.95;p=0.8to1.2} @self
+cave_enderman_sound_hurt_3:
+  Skills:
+  - sound{s=enderman_overhaul:cave_hurt_3;v=0.95;p=0.8to1.2} @self
+
+cave_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_1;v=1;p=0.8to1.2} @self
+cave_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_2;v=1;p=0.8to1.2} @self
+cave_enderman_sound_idle_3:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_3;v=1;p=0.8to1.2} @self
+cave_enderman_sound_idle_4:
+  Skills:
+  - sound{s=enderman_overhaul:cave_idle_4;v=1;p=0.8to1.2} @self
+
+ # DARK OAK SOUNDS
+
+dark_oak_enderman_sound_idle_1:
+  Skills:
+  - sound{s=enderman_overhaul:dark_oak_idle;v=1;p=0.8to1.2} @self
+dark_oak_enderman_sound_idle_2:
+  Skills:
+  - sound{s=enderman_overhaul:dark_oak_idle_2;v=1;p=0.8to1.2} @self
+dark_oak_enderman_sound_stare:
+  Cooldown: 500
+  Skills:
+  - sound{s=enderman_overhaul:dark_oak_stare;v=1;p=0.8to1.2} @self
+dark_oak_enderman_sound_darkness:
+  Skills:
+  - sound{s=enderman_overhaul:dark_oak_darkness;v=1;p=0.8to1.2} @self
+
+### ENDERMAN GENERIC
+
+generic_enderman_pickup_block_PRE:
+  TargetConditions:
+  - stance notholdingblock true
+  Skills:
+  - skill{s=generic_enderman_pickup_block_PRE_3} @ObstructingBlock
+
+generic_enderman_pickup_block_PRE_3:
+  TargetConditions:
+  - (triggerblocktype{type=BEDROCK} || triggerblocktype{type=AIR} || triggerblocktype{type=CHEST}) cancel
+  Skills:
+  - skill{s=generic_enderman_pickup_block_PRE_2} @self
+
+generic_enderman_pickup_block_PRE_2:
+  TargetConditions:
+  - stance notholdingblock true
+  Skills:
+  - setVariable{var=caster.pickup_block;type=STRING;value=<target.block.type>} @ObstructingBlock
+  - skill{s=generic_enderman_pickup_block} @self
+  - skill{s=generic_enderman_pickup_block_remove} @self
+
+generic_enderman_pickup_block:
+  Skills:
+  - meg:setitemmodel{mid=<target.var.enderman_name>;bone=mainhand;i=<target.var.pickup_block>} @self
+  ##- message{m=<caster.var.pickup_block>} @world
+  - state{mid=<target.var.enderman_name>;s=pickup_on;r=false} @self
+  - delay 3
+  - state{mid=<target.var.enderman_name>;s=pickup_on;r=true} @self
+  - state{mid=<target.var.enderman_name>;s=pickup;r=false} @self
+generic_enderman_pickup_block_remove:
+  Cooldown: 1
+  TargetConditions:
+  - (blocktype{type=BEDROCK} || blocktype{type=AIR} || blocktype{type=CHEST} || blocktype{type=CHEST}) cancel
+  - nearclaim{r=3} false
+  TargetConditions:
+  - stance notholdingblock true
+  Skills:
+  - setblock{m=AIR} @ObstructingBlock
+  - setstance{s=holdingblock} @self
+
+
+
+generic_enderman_placeblock_PRE_BLOCK_2:
+  Cooldown: 35
+  Skills:
+  - skill{s=generic_enderman_placeblock_PRE_BLOCK} @forward{f=2;y=0}
+
+generic_enderman_placeblock_PRE_BLOCK:
+  TargetConditions:
+  - blocktype{type=AIR} true
+  Skills:
+  - skill{s=generic_enderman_placeblock_PRE} @self
+
+generic_enderman_placeblock_PRE:
+  TargetConditions:
+  - vareq{var=target.pickup_block;value="air"} cancel
+  Skills:
+  - state{mid=<target.var.enderman_name>;s=pickup;r=true} @self
+  - state{mid=<target.var.enderman_name>;s=pickup_off;r=false} @self
+  - delay 3
+  - state{mid=<target.var.enderman_name>;s=pickup_off;r=true} @self
+  - setblock{m=<caster.var.pickup_block>} @forward{f=1;y=0}
+  ##- message{m=<caster.var.pickup_block> Place} @PIR{r=20}
+  - delay 3
+  - setstance{s=notholdingblock} @self
+  - meg:setitemmodel{mid=<target.var.enderman_name>;bone=mainhand;i=air} @self
+  - setVariable{var=caster.pickup_block;type=STRING;value=air} @self
+
+
+generic_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast generic_enderman_angry_OFF
+  Skills:
+  - defaultstate{mid=<target.var.enderman_name>;type=walk;state=run} @self
+  - state{mid=<target.var.enderman_name>;s=angry;r=false} @self
+  - delay 2
+  ##- message{m="I'm in combat"} @PIR{r=20}
+  - delay 25
+  - skill{s=generic_enderman_angry_OFF} @self
+
+generic_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - defaultstate{mid=<target.var.enderman_name>;type=walk;state=walk} @self
+  - state{mid=<target.var.enderman_name>;s=angry;r=true} @self
+  - delay 2
+  ##- message{m="I left the combat"} @PIR{r=20}
+
+
+generic_enderman_passive_damage_PRE:
+  Skills:
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+  - delay 7
+  - sound{s=entity.enderman.teleport;v=0.23;p=1.4} @self
+  - skill{s=generic_enderman_passive_damage_rtp} @self
+  - delay 3
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+
+generic_enderman_passive_damage_rtp:
+  Skills:
+  - teleportto{location=@TriggerLocation{x=25to-25;z=25to-25;y=1-2}} @self
+
+
+generic_enderman_rtp_PRE:
+  Skills:
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+  - delay 7
+  - sound{s=entity.enderman.teleport;v=0.23;p=1.4} @self
+  - skill{s=generic_enderman_passive_damage_rtp} @self
+  - delay 3
+  - effect:particles{particle=portal;amount=20;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+
+generic_enderman__rtp:
+  Skills:
+  - teleportto{location=@TriggerLocation{x=32to-32;z=32to-32;y=1-2}} @self
+
+
+
+generic_enderman_particles:
+  Skills:
+  - effect:particles{particle=portal;amount=6;y=1.9;hS=0.24;vS=0.46;speed=0.015} @self
+
+### OCEAN ENDERMAN
+
+enderman_ocean_swim_walk_toggle:
+  Conditions:
+  - inblock{b=WATER} true
+  Skills:
+  - aura{auraName=enderma_ocean_swim_walk_toggle_aura;onStart=enderman_ocean_swim_walk_toggle_aura-Start;duration=70;onEnd=enderman_ocean_swim_walk_toggle_aura-End;rd=true}
+  - effect:particles{particle=bubble;amount=2;hS=0.35;vS=0.1;y=1.2;speed=0.25} @origin 0.85
+  - sound{s=entity.enderman.ambient;v=0.23;p=1.4} @self 0.24
+  
+enderman_ocean_swim_walk_toggle_aura-Start:
+  Skills:
+  - potion{type=DOLPHINS_GRACE;duration=30000;level=1} @self
+  - delay 1
+  - defaultstate{mid=ocean_enderman;type=walk;state=swim}
+  
+enderman_ocean_swim_walk_toggle_aura-End:
+  Skills:
+  - defaultstate{mid=ocean_enderman;type=walk;state=walk}
+
+enderman_ocean_randomtp_PRE:
+  Skills:
+  - effect:particles{particle=bubble;amount=50;y=1.3;hS=0.3;vS=0.4;speed=0.15} @origin
+  - delay 4
+  - sound{s=entity.enderman.teleport;v=0.23;p=1.4} @self
+  - skill{s=enderman_ocean_randomtp} @self
+  - delay 3
+  - effect:particles{particle=bubble;amount=50;y=1.3;hS=0.3;vS=0.4;speed=0.15} @self
+
+enderman_ocean_randomtp:
+  Skills:
+  - teleportto{location=@SelfLocation{x=19to-19;z=19to-19;y=0-4}} @self
+
+
+### DESERT ENDERMAN
+
+desert_enderman_particles:
+  Skills:
+  - effect:particles{particle=falling_dust;amount=7;y=1.9;hS=0.24;vS=0.76;speed=0.015} @self
+
+desert_enderman_mechanic:
+  Skills:
+  - summon{m=endermite;a=1} @selflocation{x=2-0.5;z=2-0.5}
+  - summon{m=endermite;a=1} @selflocation{x=2-0.5;z=2-0.5}
+  - summon{m=endermite;a=1} @selflocation{x=2-0.5;z=2-0.5}
+
+desert_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast desert_enderman_angry_OFF
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.2} @self
+  - delay 2
+  ##- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=desert_enderman_angry_OFF} @self
+
+desert_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear @self
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+### DARK OAK ENDERMAN
+
+dark_oak_enderman_particles:
+  Skills:
+  - effect:particles{particle=portal;amount=7;y=1.75;hS=0.24;vS=0.66;speed=0.015} @self
+
+dark_oak_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast dark_oak_enderman_angry_OFF
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.2} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=dark_oak_enderman_angry_OFF} @self
+
+dark_oak_enderman_angry_PRE_EFFECT_PLAYER:
+  Conditions:
+  - (incombat true && targetwithin{d=20} true) true
+  Skills:
+  - potion{type=BLINDNESS;duration=50;level=1} @target
+  - skill{s=dark_oak_enderman_angry_PRE_EFFECT_PLAYER_SOUNDS}
+
+dark_oak_enderman_angry_PRE_EFFECT_PLAYER_SOUNDS:
+  Cooldown: 60
+  Conditions:
+  - (incombat true && targetwithin{d=20} true) true
+  Skills:
+  - skill{s=dark_oak_enderman_sound_darkness} @target
+
+dark_oak_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear @self
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+### ICE SPIKES ENDERMAN
+
+ice_spikes_enderman_particles:
+  Skills:
+  - effect:particles{particle=snowflake;amount=7;y=2.3;hS=0.24;vS=0.83;speed=0.02} @self
+
+ice_spikes_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast ice_spikes_enderman_angry_OFF
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.2} @self
+  - state{mid=ice_spikes_enderman;s=angry;r=false} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 25
+  - skill{s=ice_spikes_enderman_angry_OFF} @self
+
+ice_spikes_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear @self
+  - state{mid=ice_spikes_enderman;s=angry;r=true} @self
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+
+### SWAMP ENDERMAN
+
+swamp_enderman_particles:
+  Skills:
+  - effect:particles{particle=mycelium;amount=8;y=2;hS=0.24;vS=0.75;speed=0.02} @self
+
+swamp_enderman_angry_PRE_PRE:
+  Conditions:
+  - stance incombat cancel
+  Skills:
+  - setstance{stance=incombat} @self
+  - delay 2
+  #- message{m="I'm in combat _ PRE"} @PIR{r=20}
+
+swamp_enderman_angry_PRE:
+  TargetConditions:
+  - incombat orElseCast swamp_enderman_angry_OFF
+  - stance incombat true
+  Skills:
+  - potionclear @self
+  - potion{type=SLOW;duration=200;level=1.2} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 25
+  - skill{s=swamp_enderman_angry_OFF} @self
+
+swamp_enderman_angry_OFF:
+  Conditions:
+  - incombat cancel
+  Skills:
+  - potionclear{type=SLOW} @self
+  - delay 2
+  - setstance{stance=nocombat} @self
+  #- message{m="I left the combat"} @PIR{r=20}
+  - potion{type=SPEED;duration=100000;level=2.8} @self
+
+
+
+swamp_enderman_mechanic_attack:
+  Skills:
+  - potion{type=POISON;duration=90;level=0} @target
+
+
+### WINDSWEPT HILLS ENDERMAN
+
+windswept_hills_enderman_particles:
+  Skills:
+  - effect:particles{particle=mycelium;amount=8;y=2.2;hS=0.34;vS=0.85;speed=0.038} @self
+
+windswept_hills_enderman_angry_PRE:
+  Conditions:
+  - incombat orElseCast windswept_hills_enderman_angry_OFF
+  - offgcd
+  Skills:
+  - potion{type=SLOW;duration=200;level=1.2} @self
+  - delay 2
+  #- message{m="I'm in combat"} @PIR{r=20}
+  - delay 24
+  - skill{s=windswept_hills_enderman_angry_OFF} @self
+
+windswept_hills_enderman_angry_OFF:
+  Skills:
+  - potionclear @self
+  - potionclear @targeted
+  - delay 2
+  #- message{m="I left the combat"} @PIR{r=20}
+
+windswept_hills_enderman_mechanic_potion:
+  Conditions:
+  - incombat true
+  Skills:
+  - potion{type=SLOW;duration=300;level=1.2} @target
+

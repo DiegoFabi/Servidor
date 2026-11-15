@@ -1,0 +1,375 @@
+# ============================================================
+#  Bendiciones  [COMÚN / RARO]  - Pociones, anillos, gemas y reliquias
+#  Comando: /bendicion <tipo>        Permiso: admin.particles
+#  Script genérico: cada tipo es una mecánica PROPIA (no solo una poción
+#  vanilla). Lo usan los items de ItemJoin (pack1 de Nexo) y puede usarse
+#  desde menús, NPCs o recompensas.
+#
+#  Pociones (común)
+#    vitalidad  Pulso curativo: te cura y cura a los aliados cercanos
+#    celeridad  Embestida hacia delante + estela de viento y velocidad
+#    sombra     Estallido de humo, salto de sombra de 6 bloques e invisibilidad
+#    fortaleza  Onda que repele monstruos + escudo de resistencia/absorción
+#  Anillos (raro)
+#    rubi       Sangre de Rubí: 60 s de robo de vida al golpear
+#    topacio    Ojo de Topacio: marca los minerales cercanos durante 6 s
+#    esmeralda  Bendición Verde: hace crecer cultivos y regenera aliados
+#  Gemas
+#    aguamarina Vórtice de agua que atrae y daña monstruos + conducto
+#    banquete   Banquete compartido: sacia a todos los jugadores cercanos
+#  Elementos (raro)
+#    marea      Ola que empuja a los monstruos de enfrente + gracia de delfín
+#    ignea      Llama Interior: 60 s en que quien te golpea arde
+#    sabiduria  Revela monstruos y jugadores cercanos y te da visión nocturna
+#    llamas     Anillo de fuego expansivo que incendia monstruos
+#  Utilidad (raro)
+#    energia    Sobrecarga: 30 s en que tus golpes lanzan un rayo extra
+#    adrenalina Estallido de velocidad y fuerza con bajón posterior
+#    botiquin   Curación total, limpia efectos negativos y apaga el fuego
+#
+#  Rendimiento: sin temporizadores. Los efectos de 30-60 s se resuelven
+#  en UN evento de daño que solo compara una marca de tiempo en memoria.
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxRing(), fxLinea(), fxAnuncio() y fxResultado() del núcleo.
+# ============================================================
+
+options:
+    force: with force
+    perm: admin.particles
+
+on load:
+    delete {-bd::*}
+
+# ------------------------------------------------------------
+#  Utilidades
+# ------------------------------------------------------------
+function bdAhora() :: number:
+    return unix timestamp of now
+
+function bdActivo(p: player, buff: text) :: boolean:
+    set {_fin} to {-bd::%{_buff}%::%uuid of {_p}%}
+    if {_fin} is set:
+        if {_fin} > bdAhora():
+            return true
+    return false
+
+function bdActivar(p: player, buff: text, segundos: number):
+    set {-bd::%{_buff}%::%uuid of {_p}%} to bdAhora() + {_segundos}
+
+# Columna de partículas que sube alrededor del jugador (6 fotogramas)
+function bdAura(p: player, particula: text):
+    set {_f} to 0
+    while {_f} < 6:
+        if {_p} is not online:
+            stop
+        set {_ring::*} to fxRing(location of {_p}, 0.9, 14, {_f} * 0.35, {_f} * 25)
+        if {_particula} is "heart":
+            make 1 of heart at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "flame":
+            make 1 of flame at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "soul":
+            make 1 of soul_fire_flame at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "spark":
+            make 1 of electric_spark at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "water":
+            make 1 of splash at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "witch":
+            make 1 of witch at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "happy":
+            make 1 of happy_villager at {_ring::*} with extra 0 {@force}
+        else if {_particula} is "crimson":
+            make 2 of crimson_spore at {_ring::*} with extra 0 {@force}
+        else:
+            make 1 of end_rod at {_ring::*} with extra 0 {@force}
+        add 1 to {_f}
+        wait 2 ticks
+
+# Quita solo los efectos negativos (API directa: sin consola ni spam,
+# y si el jugador no tiene el efecto no pasa nada)
+function bdLimpiar(p: player):
+    remove poison, wither, weakness, slowness, blindness, hunger, mining fatigue, nausea and darkness from the potion effects of {_p}
+    extinguish {_p}
+
+# Estela de viento de la celeridad (3 s, cada 3 ticks)
+function bdEstela(p: player):
+    loop 20 times:
+        if {_p} is not online:
+            stop
+        make 3 of cloud at location of {_p} offset by vector(0, 0.2, 0) with offset vector(0.2, 0.1, 0.2) with extra 0.01 {@force}
+        wait 3 ticks
+
+# Marcas de minerales del topacio (6 s)
+function bdMarcarMenas(p: player, menas: locations):
+    loop 6 times:
+        if {_p} is not online:
+            stop
+        make 2 of wax_on at {_menas::*} with offset vector(0.3, 0.3, 0.3) with extra 0 {@force}
+        wait 1 second
+
+# Vórtice de la aguamarina (3 s)
+function bdVortice(p: player, c: location):
+    set {_f} to 0
+    while {_f} < 15:
+        make 1 of splash at fxRing({_c}, 4 - {_f} * 0.2, 18, 0.3, {_f} * 24) with extra 0.05 {@force}
+        make 1 of bubble_pop at fxRing({_c}, 2.5, 10, 1, {_f} * -30) with extra 0.02 {@force}
+        if mod({_f}, 3) = 0:
+            loop all monsters in radius 6 around {_c}:
+                push loop-entity towards {_c} with force 0.35
+                damage loop-entity by 1
+        add 1 to {_f}
+        wait 4 ticks
+
+# Bajón tras la adrenalina
+function bdResaca(p: player):
+    loop 4 times:
+        if {_p} is not online:
+            stop
+        play sound "entity.warden.heartbeat" with volume 1 and pitch 1.4 to {_p}
+        wait 2 seconds
+    {_p} is online
+    apply weakness 1 to {_p} for 10 seconds
+    apply slowness 1 to {_p} for 10 seconds
+    send action bar "<#9EA3AE>La adrenalina se pasa... te sientes agotado" to {_p}
+
+# ------------------------------------------------------------
+#  Presets
+# ------------------------------------------------------------
+function bendicion(p: player, tipo: text):
+    set {_l} to location of {_p}
+    # ---------- Pociones ----------
+    if {_tipo} is "vitalidad":
+        fxAnuncio({_p}, "✚", "Vitalidad", "Un pulso de vida te recorre", "#B8FFC9", "#5FE38A", "Común")
+        heal {_p} by 3
+        apply regeneration 1 to {_p} for 8 seconds
+        set {_n} to 0
+        loop all players in radius 5 around {_p}:
+            if loop-player is not {_p}:
+                heal loop-player by 2
+                make 4 of heart at location of loop-player offset by vector(0, 2, 0) with offset vector(0.3, 0.2, 0.3) with extra 0 {@force}
+                add 1 to {_n}
+        make 1 of heart at fxRing({_l}, 2.5, 16, 0.5) with extra 0 {@force}
+        play sound "block.amethyst_block.chime" with volume 1 and pitch 1.6 at {_p}
+        bdAura({_p}, "heart")
+        fxResultado({_p}, "#5FE38A", "Vitalidad", "Recuperas 3 corazones y curas a %{_n}% aliado(s).")
+    else if {_tipo} is "celeridad":
+        fxAnuncio({_p}, "➹", "Celeridad", "El viento te empuja", "#BFEFFF", "#5FC8FF", "Común")
+        push {_p} forwards with force 1.4
+        push {_p} upwards with force 0.25
+        apply speed 2 to {_p} for 20 seconds
+        play sound "entity.breeze.wind_burst" with volume 1 and pitch 1.3 at {_p}
+        make 20 of cloud at {_l} with offset vector(0.4, 0.2, 0.4) with extra 0.08 {@force}
+        bdEstela({_p})
+    else if {_tipo} is "sombra":
+        fxAnuncio({_p}, "☾", "Sombra", "Te fundes con la oscuridad", "#E3C6FF", "#B07BFF", "Común")
+        make 40 of large_smoke at {_l} offset by vector(0, 1, 0) with offset vector(0.5, 0.8, 0.5) with extra 0.02 {@force}
+        make 20 of squid_ink at {_l} offset by vector(0, 1, 0) with offset vector(0.4, 0.6, 0.4) with extra 0.05 {@force}
+        set {_yaw} to yaw of {_p}
+        set {_dest} to {_l} offset by vector(-6 * sin({_yaw}), 0, 6 * cos({_yaw}))
+        if all:
+            block at {_dest} is passable
+            block above block at {_dest} is passable
+        then:
+            teleport {_p} to {_dest}
+            make 30 of large_smoke at {_dest} offset by vector(0, 1, 0) with offset vector(0.4, 0.8, 0.4) with extra 0.02 {@force}
+        apply invisibility 1 to {_p} for 20 seconds
+        play sound "entity.illusioner.mirror_move" with volume 1 and pitch 1 at {_p}
+    else if {_tipo} is "fortaleza":
+        fxAnuncio({_p}, "⛨", "Fortaleza", "Tu piel se vuelve piedra", "#FFD1E6", "#FF7FB0", "Común")
+        loop 3 times:
+            make 1 of end_rod at fxRing({_l}, loop-number * 1.3, 12 + loop-number * 6, 0.4) with extra 0.02 {@force}
+        loop all monsters in radius 4 around {_p}:
+            push loop-entity away from {_l} with force 1.3
+            push loop-entity upwards with force 0.4
+        apply resistance 2 to {_p} for 15 seconds
+        apply absorption 1 to {_p} for 30 seconds
+        play sound "item.armor.equip_netherite" with volume 1 and pitch 0.8 at {_p}
+        play sound "block.anvil.land" with volume 0.5 and pitch 1.4 at {_p}
+        bdAura({_p}, "end")
+    # ---------- Anillos ----------
+    else if {_tipo} is "rubi":
+        fxAnuncio({_p}, "◆", "Sangre de Rubí", "Tus golpes roban vida (60 s)", "#FFB3B3", "#FF5C5C", "Raro")
+        bdActivar({_p}, "rubi", 60)
+        play sound "block.respawn_anchor.charge" with volume 1 and pitch 1.2 at {_p}
+        play sound "entity.wither.ambient" with volume 0.4 and pitch 1.8 at {_p}
+        bdAura({_p}, "crimson")
+        fxResultado({_p}, "#FF5C5C", "Rubí", "Durante 60 s recuperas el 25%% del daño que causas.")
+    else if {_tipo} is "topacio":
+        fxAnuncio({_p}, "◆", "Ojo de Topacio", "Los minerales brillan para ti", "#FFEBA6", "#FFC83D", "Raro")
+        set {_n} to 0
+        loop blocks in radius 7 around {_p}:
+            set {_t} to "%type of loop-block%"
+            if any:
+                {_t} contains "diamond ore"
+                {_t} contains "emerald ore"
+                {_t} contains "gold ore"
+                {_t} contains "iron ore"
+                {_t} contains "lapis ore"
+                {_t} contains "redstone ore"
+                {_t} contains "ancient debris"
+            then:
+                add location of loop-block offset by vector(0.5, 0.5, 0.5) to {_menas::*}
+                add 1 to {_n}
+        apply haste 1 to {_p} for 60 seconds
+        play sound "block.respawn_anchor.charge" with volume 1 and pitch 1.5 at {_p}
+        bdAura({_p}, "spark")
+        if {_n} > 0:
+            bdMarcarMenas({_p}, {_menas::*})
+        fxResultado({_p}, "#FFC83D", "Topacio", "Has detectado %{_n}% mineral(es) valioso(s) a tu alrededor.")
+    else if {_tipo} is "esmeralda":
+        fxAnuncio({_p}, "◆", "Bendición Verde", "La tierra florece a tu paso", "#C2FFD1", "#4FD97A", "Raro")
+        set {_n} to 0
+        loop blocks in radius 5 around {_p}:
+            set {_t} to "%type of loop-block%"
+            if any:
+                {_t} contains "wheat"
+                {_t} contains "carrot"
+                {_t} contains "potato"
+                {_t} contains "beetroot"
+                {_t} contains "stem"
+                {_t} contains "sapling"
+                {_t} contains "berry"
+            then:
+                apply 3 bone meal to loop-block
+                add 1 to {_n}
+        loop all players in radius 6 around {_p}:
+            apply regeneration 1 to loop-player for 10 seconds
+        apply luck 1 to {_p} for 180 seconds
+        play sound "block.respawn_anchor.charge" with volume 1 and pitch 1.8 at {_p}
+        play sound "item.bone_meal.use" with volume 1 and pitch 1 at {_p}
+        bdAura({_p}, "happy")
+        fxResultado({_p}, "#4FD97A", "Esmeralda", "%{_n}% cultivo(s) crecen y los aliados cercanos se regeneran.")
+    # ---------- Gemas ----------
+    else if {_tipo} is "aguamarina":
+        fxAnuncio({_p}, "◈", "Lágrima del Océano", "El mar responde a tu llamada", "#C6F3FF", "#5FD0FF", "Raro")
+        apply conduit power 1 to {_p} for 60 seconds
+        play sound "block.conduit.activate" with volume 1 and pitch 1 at {_p}
+        play sound "entity.player.splash.high_speed" with volume 1 and pitch 0.8 at {_p}
+        bdVortice({_p}, {_l})
+    else if {_tipo} is "banquete":
+        fxAnuncio({_p}, "◈", "Banquete", "¡Hay comida para todos!", "#FFE2A6", "#FFB43D", "Común")
+        set {_n} to 0
+        loop all players in radius 6 around {_p}:
+            apply saturation 5 to loop-player for 1 second
+            make 6 of happy_villager at location of loop-player offset by vector(0, 2, 0) with offset vector(0.3, 0.2, 0.3) with extra 0 {@force}
+            add 1 to {_n}
+        play sound "entity.player.burp" with volume 1 and pitch 1 at {_p}
+        play sound "entity.villager.celebrate" with volume 0.6 and pitch 1.2 at {_p}
+        fxResultado({_p}, "#FFB43D", "Banquete", "%{_n}% jugador(es) quedan saciados.")
+    # ---------- Elementos ----------
+    else if {_tipo} is "marea":
+        fxAnuncio({_p}, "≈", "Ola de Marea", "Las aguas barren a tus enemigos", "#C6E6FF", "#6FB8FF", "Raro")
+        set {_yaw} to yaw of {_p}
+        set {_k} to 1
+        while {_k} <= 8:
+            set {_o} to {_l} offset by vector({_k} * -1 * sin({_yaw}), 0.3, {_k} * cos({_yaw}))
+            make 6 of splash at {_o} with offset vector(0.8, 0.4, 0.8) with extra 0.1 {@force}
+            make 2 of bubble_pop at {_o} with offset vector(0.8, 0.4, 0.8) with extra 0.02 {@force}
+            loop all monsters in radius 2.5 around {_o}:
+                push loop-entity away from {_l} with force 1.2
+                damage loop-entity by 3
+            add 1 to {_k}
+        apply dolphin's grace 1 to {_p} for 30 seconds
+        apply water breathing 1 to {_p} for 120 seconds
+        play sound "entity.dolphin.splash" with volume 1.5 and pitch 0.7 at {_p}
+        play sound "item.trident.riptide_2" with volume 1 and pitch 1 at {_p}
+    else if {_tipo} is "ignea":
+        fxAnuncio({_p}, "✹", "Llama Interior", "Quien te golpee arderá (60 s)", "#FFC2A6", "#FF6F45", "Raro")
+        bdActivar({_p}, "ignea", 60)
+        apply fire resistance 1 to {_p} for 60 seconds
+        make 40 of flame at {_l} offset by vector(0, 1, 0) with offset vector(0.6, 0.8, 0.6) with extra 0.05 {@force}
+        play sound "item.firecharge.use" with volume 1 and pitch 0.7 at {_p}
+        bdAura({_p}, "flame")
+    else if {_tipo} is "sabiduria":
+        fxAnuncio({_p}, "✎", "Ojos del Sabio", "Nada se oculta a tu mirada", "#C6E3FF", "#6FA8FF", "Raro")
+        set {_m} to 0
+        set {_j} to 0
+        loop all monsters in radius 32 around {_p}:
+            apply glowing 1 to loop-entity for 12 seconds
+            add 1 to {_m}
+        loop all players in radius 32 around {_p}:
+            if loop-player is not {_p}:
+                add 1 to {_j}
+        apply night vision 1 to {_p} for 60 seconds
+        play sound "block.enchantment_table.use" with volume 1 and pitch 0.8 at {_p}
+        bdAura({_p}, "end")
+        fxResultado({_p}, "#6FA8FF", "Sabiduría", "Revelas %{_m}% monstruo(s); hay %{_j}% jugador(es) cerca.")
+    else if {_tipo} is "llamas":
+        fxAnuncio({_p}, "✹", "Círculo de Llamas", "El fuego obedece tu voluntad", "#FFB89A", "#FF5A2D", "Raro")
+        loop 3 times:
+            make 2 of flame at fxRing({_l}, loop-number * 2, 16 + loop-number * 8, 0.2) with offset vector(0.15, 0.3, 0.15) with extra 0.02 {@force}
+        loop all monsters in radius 6 around {_p}:
+            ignite loop-entity for 5 seconds
+            damage loop-entity by 3
+        play sound "entity.blaze.shoot" with volume 1 and pitch 0.8 at {_p}
+        play sound "item.firecharge.use" with volume 1 and pitch 0.6 at {_p}
+    # ---------- Utilidad ----------
+    else if {_tipo} is "energia":
+        fxAnuncio({_p}, "⚡", "Sobrecarga", "Tus golpes liberan rayos (30 s)", "#FFF6B8", "#FFE24D", "Raro")
+        bdActivar({_p}, "energia", 30)
+        apply speed 1 to {_p} for 30 seconds
+        play sound "block.beacon.power_select" with volume 1 and pitch 1.6 at {_p}
+        play sound "entity.lightning_bolt.impact" with volume 0.5 and pitch 1.8 at {_p}
+        bdAura({_p}, "spark")
+    else if {_tipo} is "adrenalina":
+        fxAnuncio({_p}, "✚", "Adrenalina", "Tu corazón se dispara", "#D2FFB8", "#8FE34D", "Raro")
+        apply speed 3 to {_p} for 8 seconds
+        apply strength 2 to {_p} for 8 seconds
+        play sound "entity.warden.heartbeat" with volume 1 and pitch 2 to {_p}
+        make 15 of crit at {_l} offset by vector(0, 1, 0) with offset vector(0.4, 0.6, 0.4) with extra 0.2 {@force}
+        bdResaca({_p})
+    else if {_tipo} is "botiquin":
+        fxAnuncio({_p}, "✚", "Primeros Auxilios", "Heridas vendadas", "#FFD6D6", "#FF6B6B", "Común")
+        heal {_p}
+        bdLimpiar({_p})
+        apply regeneration 1 to {_p} for 5 seconds
+        play sound "item.armor.equip_leather" with volume 1 and pitch 1.2 at {_p}
+        play sound "block.amethyst_block.chime" with volume 0.6 and pitch 1.4 at {_p}
+        bdAura({_p}, "heart")
+        fxResultado({_p}, "#FF6B6B", "Botiquín", "Vida completa y efectos negativos eliminados.")
+
+# ------------------------------------------------------------
+#  Efectos que reaccionan a los golpes (un solo evento)
+# ------------------------------------------------------------
+on damage:
+    # Golpes del jugador: robo de vida (rubí) y sobrecarga (energía)
+    attacker is a player
+    victim is not attacker
+    set {_u} to uuid of attacker
+    # Atajo O(1): sin bendición activa no se llama a ninguna función
+    if all:
+        {-bd::rubi::%{_u}%} is not set
+        {-bd::energia::%{_u}%} is not set
+    then:
+        stop
+    if bdActivo(attacker, "rubi") is true:
+        heal attacker by (damage / 8)
+        make 4 of crimson_spore at location of victim offset by vector(0, 1, 0) with offset vector(0.3, 0.4, 0.3) with extra 0 {@force}
+    if bdActivo(attacker, "energia") is true:
+        damage victim by 1.5
+        make 8 of electric_spark at location of victim offset by vector(0, 1, 0) with offset vector(0.3, 0.5, 0.3) with extra 0.15 {@force}
+        play sound "entity.lightning_bolt.impact" with volume 0.4 and pitch 2 at victim
+
+on damage of a player:
+    # Llama interior: el monstruo que golpea arde
+    attacker is a monster
+    {-bd::ignea::%uuid of victim%} is set
+    bdActivo(victim, "ignea") is true
+    ignite attacker for 4 seconds
+    make 6 of flame at location of attacker offset by vector(0, 1, 0) with offset vector(0.3, 0.5, 0.3) with extra 0.02 {@force}
+
+on quit:
+    delete {-bd::rubi::%uuid of player%}
+    delete {-bd::energia::%uuid of player%}
+    delete {-bd::ignea::%uuid of player%}
+
+command /bendicion <text>:
+    aliases: /bendición
+    permission: {@perm}
+    usage: /bendicion <tipo>
+    trigger:
+        set {_t} to lowercase arg-1
+        # Se valida aquí: bendicion() lanza animaciones con esperas y no puede devolver valores
+        if {_t} is not "vitalidad", "celeridad", "sombra", "fortaleza", "rubi", "topacio", "esmeralda", "aguamarina", "banquete", "marea", "ignea", "sabiduria", "llamas", "energia", "adrenalina" or "botiquin":
+            send "<#FF6B6B>Tipo desconocido. <#9EA3AE>vitalidad, celeridad, sombra, fortaleza, rubi, topacio, esmeralda, aguamarina, banquete, marea, ignea, sabiduria, llamas, energia, adrenalina, botiquin"
+            stop
+        bendicion(player, {_t})

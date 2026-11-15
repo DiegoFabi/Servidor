@@ -1,0 +1,70 @@
+# ============================================================
+#  Cadena de Rayos  [RARO]
+#  Comando: /cadenarayos
+#  Un rayo sale del jugador hacia el monstruo más cercano y salta
+#  hasta 5 veces al siguiente monstruo cercano, perdiendo fuerza en
+#  cada salto. Rayos solo visuales (sin fuego).
+#  Requiere: Skript 2.15+ y SkBee 3.25+ ("make ... at ...")
+#  Usa fxLinea() y fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    force: with force
+    perm: admin.particles
+    nopermiso: &cNo tienes permiso para usar este comando.
+    cd: 12 seconds
+    cdmsg: <red>⌛ <gray>Recargando... espera <yellow>%remaining time%
+    alcance: 14
+    salto: 7
+    saltos: 5
+    dano: 7
+
+# Monstruo más cercano a l (radio r) que no esté en la lista de golpeados
+# (golpeados tiene valor por defecto: Skript no ejecuta una función si un
+#  argumento obligatorio llega vacío, como en el primer salto)
+function cadSiguiente(l: location, r: number, golpeados: texts = "-") :: entity:
+    set {_mejor} to {_r} + 1
+    loop all monsters in radius {_r} around {_l}:
+        if {_golpeados::*} does not contain "%uuid of loop-entity%":
+            set {_d} to distance between loop-entity and {_l}
+            if {_d} < {_mejor}:
+                set {_mejor} to {_d}
+                set {_e} to loop-entity
+    return {_e}
+
+command /cadenarayos:
+    permission: {@perm}
+    cooldown: {@cd}
+    cooldown message: {@cdmsg}
+    trigger:
+        set {_p} to player
+        set {_desde} to location of {_p} offset by vector(0, 1.3, 0)
+        set {_obj} to cadSiguiente(location of {_p}, {@alcance})
+        if {_obj} is not set:
+            send action bar "<#FFD84D>⚡ <#9EA3AE>No hay enemigos cerca" to {_p}
+            play sound "block.note_block.bass" with volume 0.6 at {_p}
+            stop
+        fxAnuncio({_p}, "⚡", "Cadena de Rayos", "La tormenta obedece", "#FFF3A6", "#FFC83D", "Raro")
+        play sound "entity.lightning_bolt.thunder" with volume 1 and pitch 1.6 at {_p}
+        make 20 of electric_spark at {_desde} with offset vector(0.3, 0.3, 0.3) with extra 0.2 {@force}
+        set {_dano} to {@dano}
+        set {_n} to 0
+        while {_n} < {@saltos}:
+            if {_obj} is not set:
+                stop
+            if {_obj} is not alive:
+                stop
+            set {_hasta} to location of {_obj} offset by vector(0, 1, 0)
+            set {_tramos} to ceil((distance between {_desde} and {_hasta}) * 2)
+            make 1 of electric_spark at fxLinea({_desde}, {_hasta}, {_tramos}) with offset vector(0.08, 0.08, 0.08) with extra 0 {@force}
+            make 1 of end_rod at fxLinea({_desde}, {_hasta}, ceil({_tramos} / 2)) with offset vector(0, 0, 0) with extra 0 {@force}
+            strike lightning effect at location of {_obj}
+            damage {_obj} by {_dano}
+            make 15 of electric_spark at {_hasta} with offset vector(0.4, 0.6, 0.4) with extra 0.3 {@force}
+            play sound "entity.lightning_bolt.impact" with volume 1 and pitch (1.2 + {_n} * 0.15) at {_hasta}
+            add "%uuid of {_obj}%" to {_golpeados::*}
+            set {_desde} to {_hasta}
+            set {_dano} to max({_dano} - 1, 2)
+            add 1 to {_n}
+            wait 3 ticks
+            set {_obj} to cadSiguiente({_desde}, {@salto}, {_golpeados::*})

@@ -1,0 +1,6 @@
+# Acciones de los menus convertidos desde CommandPanels
+menus_no_money:
+  Conditions: []
+  Mechanics:
+  - 'message{m="&cNo tienes suficiente dinero para esto."} @Self'
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'

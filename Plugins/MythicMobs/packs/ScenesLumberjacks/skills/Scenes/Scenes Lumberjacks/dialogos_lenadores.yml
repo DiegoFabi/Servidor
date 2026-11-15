@@ -1,0 +1,72 @@
+# ============================================================
+#  dialogos_lenadores.yml - Diálogos aleatorios de los NPCs del pack ScenesLumberjacks
+#  Clic derecho (sin agacharse; agachado abre el editor de Scenes):
+#   - Hologramas sobre el NPC (hologramas_lenadores.yml) + partículas.
+#   - Voz de aldeano según la respuesta (yes / no / trade / ambient)
+#     con un tono propio por rol.
+#   - Chat solo para el jugador que interactuó (message @trigger).
+#  Uso en el mob:  - skill{s=dialogo_<rol>} @trigger ~onInteract
+#  Anti-duplicado: cooldown invisible de 5 s por NPC (variable caster.dialogo_cd).
+#  Sin temporizadores: solo al interactuar.
+# ============================================================
+
+# ---------- ♣ Leñador | paleta #B5E08A -> #5E8C31 ----------
+# NPCs: scene_lumberjack_log, scene_lumberjack_walk, scene_lumberjack_walk2, scene_lumberjack_walk3, scene_lumberjack_saw, scene_lumberjack_cut, scene_lumberjack_interactive
+dialogo_lenador:
+  Conditions:
+  - variableisset{var=caster.dialogo_cd} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.dialogo_cd;type=INTEGER;value=1;duration=100} @self
+  - sound{s=block.wood.break;v=0.5;p=1} @self
+  - particles{p=composter;a=10;hs=0.4;vs=0.3;y=2.2} @self
+  - randomskill{s=dialogo_lenador_frase1,dialogo_lenador_frase2,dialogo_lenador_frase3,dialogo_lenador_frase4,dialogo_lenador_frase5,dialogo_lenador_frase6} @trigger
+
+dialogo_lenador_frase1:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.9} @self
+  - summon{m=holo_lenador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_lenador_f1_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_lenador_f1_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <dark_gray>» <#EAF6DE>Un buen hachazo vale más que diez flojos."} @trigger
+
+dialogo_lenador_frase2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_lenador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_lenador_f2_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_lenador_f2_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <dark_gray>» <#EAF6DE>Siempre planto un árbol por cada uno que corto."} @trigger
+
+dialogo_lenador_frase3:
+  Skills:
+  - sound{s=entity.villager.yes;v=0.8;p=0.9} @self
+  - summon{m=holo_lenador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_lenador_f3_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_lenador_f3_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <dark_gray>» <#EAF6DE>El roble cuesta, pero da la mejor leña."} @trigger
+
+dialogo_lenador_frase4:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=0.9} @self
+  - summon{m=holo_lenador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_lenador_f4_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_lenador_f4_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <dark_gray>» <#EAF6DE>Cuidado, que este se cae para tu lado."} @trigger
+
+dialogo_lenador_frase5:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_lenador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_lenador_f5_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_lenador_f5_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <dark_gray>» <#EAF6DE>El bosque huele distinto después de la lluvia."} @trigger
+
+dialogo_lenador_frase6:
+  Skills:
+  - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
+  - summon{m=holo_lenador_nombre;a=1} @selflocation{y=2.60}
+  - summon{m=holo_lenador_f6_l1;a=1} @selflocation{y=2.35}
+  - summon{m=holo_lenador_f6_l2;a=1} @selflocation{y=2.10}
+  - message{m="<dark_gray>┃ <#5E8C31>♣ <gradient:#B5E08A:#5E8C31><bold>Leñador</bold></gradient> <dark_gray>» <#EAF6DE>Al final del día lo único que quiero es una sopa caliente."} @trigger

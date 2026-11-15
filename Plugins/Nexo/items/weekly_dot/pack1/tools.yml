@@ -1,0 +1,74 @@
+# Creator: Hungry(Hungry22)
+# Discord: https://discord.gg/uNcADBt3Kb
+pack1_silver_sword:
+  itemname: Silver Sword
+  material: IRON_SWORD
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/silver_sword.png
+pack1_silver_pickaxe:
+  itemname: Silver Pickaxe
+  material: IRON_PICKAXE
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/silver_pickaxe.png
+pack1_silver_axe:
+  itemname: Silver Axe
+  material: IRON_AXE
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/silver_axe.png
+pack1_silver_shovel:
+  itemname: Silver Shovel
+  material: IRON_SHOVEL
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/silver_shovel.png
+pack1_silver_hoe:
+  itemname: Silver Hoe
+  material: IRON_HOE
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/silver_hoe.png
+pack1_lithium_sword:
+  itemname: Lithium Sword
+  material: GOLDEN_SWORD
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/lithium_sword.png
+pack1_lithium_pickaxe:
+  itemname: Lithium Pickaxe
+  material: GOLDEN_PICKAXE
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/lithium_pickaxe.png
+pack1_lithium_axe:
+  itemname: Lithium Axe
+  material: GOLDEN_AXE
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/lithium_axe.png
+pack1_lithium_shovel:
+  itemname: Lithium Shovel
+  material: GOLDEN_SHOVEL
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/lithium_shovel.png
+pack1_lithium_hoe:
+  itemname: Lithium Hoe
+  material: GOLDEN_HOE
+  Pack:
+    parent_model: item/handheld
+    custom_model_data: 200350
+    texture: pack1:tools/lithium_hoe.png
+
+# 97d14ee02b2f1a087d9fc5032082c677

@@ -1,0 +1,1599 @@
+# Tienda de Mascotas (MCPets) pagada con Shards. Acciones: Scripts/menus_menuTiendaMascotas.yml
+# Las mascotas de votación no están a la venta (son recompensas).
+menuTiendaMascotas:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Tienda de Mascotas &7• &5Compañeros'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 18
+      - 26
+      - 27
+      - 35
+      - 36
+      - 44
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      source: vanilla
+      material: purple_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    tmasc_a_pet_griffon_griffon:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12034
+      name: <white><gradient:#FFE29A:#FFB347>Grifo</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_griffon
+      right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_griffon
+      shift_left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_griffon
+      shift_right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_griffon
+    tmasc_a_pet_griffon_khonsu:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12035
+      name: <white><gradient:#FFE29A:#FFB347>Grifo Khonsu</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_khonsu
+      right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_khonsu
+      shift_left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_khonsu
+      shift_right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_khonsu
+    tmasc_a_pet_griffon_phoenix:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12036
+      name: <white><gradient:#FFE29A:#FFB347>Grifo Fénix</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_phoenix
+      right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_phoenix
+      shift_left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_phoenix
+      shift_right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_phoenix
+    tmasc_a_pet_griffon_ra:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12037
+      name: <white><gradient:#FFE29A:#FFB347>Grifo Ra</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_ra
+      right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_ra
+      shift_left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_ra
+      shift_right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_ra
+    tmasc_a_pet_griffon_rockstar:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12038
+      name: <white><gradient:#FFE29A:#FFB347>Grifo Rockero</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_rockstar
+      right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_rockstar
+      shift_left_click:
+        Scripts:
+        - tmasc_a_pet_griffon_rockstar
+      shift_right_click:
+        Scripts:
+        - tmasc_a_pet_griffon_rockstar
+    tmasc_b_pet_necromancer_cat_fire_mage:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12039
+      name: <white><gradient:#FFE29A:#FFB347>Gato Nigromante de Fuego</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_fire_mage
+      right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_fire_mage
+      shift_left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_fire_mage
+      shift_right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_fire_mage
+    tmasc_b_pet_necromancer_cat_ice_mage:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12040
+      name: <white><gradient:#FFE29A:#FFB347>Gato Nigromante de Hielo</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_ice_mage
+      right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_ice_mage
+      shift_left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_ice_mage
+      shift_right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_ice_mage
+    tmasc_b_pet_necromancer_cat_necromancer:
+      location: top
+      slots:
+      - 19
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12041
+      name: <white><gradient:#FFE29A:#FFB347>Gato Nigromante</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_necromancer
+      right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_necromancer
+      shift_left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_necromancer
+      shift_right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_necromancer
+    tmasc_b_pet_necromancer_cat_santa:
+      location: top
+      slots:
+      - 20
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12042
+      name: <white><gradient:#FFE29A:#FFB347>Gato Nigromante Navideño</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_santa
+      right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_santa
+      shift_left_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_santa
+      shift_right_click:
+        Scripts:
+        - tmasc_b_pet_necromancer_cat_santa
+    tmasc_c_pet_outlaw_cyborg:
+      location: top
+      slots:
+      - 21
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12043
+      name: <white><gradient:#FFE29A:#FFB347>Forajido Cíborg</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_cyborg
+      right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_cyborg
+      shift_left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_cyborg
+      shift_right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_cyborg
+    tmasc_c_pet_outlaw_officer:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12044
+      name: <white><gradient:#FFE29A:#FFB347>Forajido Oficial</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_officer
+      right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_officer
+      shift_left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_officer
+      shift_right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_officer
+    tmasc_c_pet_outlaw_steampunk:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12045
+      name: <white><gradient:#FFE29A:#FFB347>Forajido Steampunk</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_steampunk
+      right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_steampunk
+      shift_left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_steampunk
+      shift_right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_steampunk
+    tmasc_c_pet_outlaw_wild_west:
+      location: top
+      slots:
+      - 24
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12046
+      name: <white><gradient:#FFE29A:#FFB347>Forajido del Oeste</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_wild_west
+      right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_wild_west
+      shift_left_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_wild_west
+      shift_right_click:
+        Scripts:
+        - tmasc_c_pet_outlaw_wild_west
+    tmasc_d_pet_samurai_shiba_samurai_bamboo:
+      location: top
+      slots:
+      - 25
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12047
+      name: <white><gradient:#FFE29A:#FFB347>Shiba Samurái de Bambú</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_bamboo
+      right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_bamboo
+      shift_left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_bamboo
+      shift_right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_bamboo
+    tmasc_d_pet_samurai_shiba_samurai_new_year:
+      location: top
+      slots:
+      - 28
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12048
+      name: <white><gradient:#FFE29A:#FFB347>Shiba Samurái de Año Nuevo</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_new_year
+      right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_new_year
+      shift_left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_new_year
+      shift_right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_new_year
+    tmasc_d_pet_samurai_shiba_samurai_pirate:
+      location: top
+      slots:
+      - 29
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12049
+      name: <white><gradient:#FFE29A:#FFB347>Shiba Samurái Pirata</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_pirate
+      right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_pirate
+      shift_left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_pirate
+      shift_right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai_pirate
+    tmasc_d_pet_samurai_shiba_samurai:
+      location: top
+      slots:
+      - 30
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12050
+      name: <white><gradient:#FFE29A:#FFB347>Shiba Samurái</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai
+      right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai
+      shift_left_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai
+      shift_right_click:
+        Scripts:
+        - tmasc_d_pet_samurai_shiba_samurai
+    tmasc_e_pet_shark_baby_shark:
+      location: top
+      slots:
+      - 31
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12051
+      name: <white><gradient:#FFE29A:#FFB347>Tiburón Bebé</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_e_pet_shark_baby_shark
+      right_click:
+        Scripts:
+        - tmasc_e_pet_shark_baby_shark
+      shift_left_click:
+        Scripts:
+        - tmasc_e_pet_shark_baby_shark
+      shift_right_click:
+        Scripts:
+        - tmasc_e_pet_shark_baby_shark
+    tmasc_e_pet_shark_chef:
+      location: top
+      slots:
+      - 32
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12052
+      name: <white><gradient:#FFE29A:#FFB347>Tiburón Chef</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_e_pet_shark_chef
+      right_click:
+        Scripts:
+        - tmasc_e_pet_shark_chef
+      shift_left_click:
+        Scripts:
+        - tmasc_e_pet_shark_chef
+      shift_right_click:
+        Scripts:
+        - tmasc_e_pet_shark_chef
+    tmasc_e_pet_shark_dragonborn:
+      location: top
+      slots:
+      - 33
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12053
+      name: <white><gradient:#FFE29A:#FFB347>Tiburón Dracónido</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_e_pet_shark_dragonborn
+      right_click:
+        Scripts:
+        - tmasc_e_pet_shark_dragonborn
+      shift_left_click:
+        Scripts:
+        - tmasc_e_pet_shark_dragonborn
+      shift_right_click:
+        Scripts:
+        - tmasc_e_pet_shark_dragonborn
+    tmasc_e_pet_shark_oceanic:
+      location: top
+      slots:
+      - 34
+      source: vanilla
+      material: brick
+      custom_model_data_float: 12054
+      name: <white><gradient:#FFE29A:#FFB347>Tiburón Oceánico</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Compañeros'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_e_pet_shark_oceanic
+      right_click:
+        Scripts:
+        - tmasc_e_pet_shark_oceanic
+      shift_left_click:
+        Scripts:
+        - tmasc_e_pet_shark_oceanic
+      shift_right_click:
+        Scripts:
+        - tmasc_e_pet_shark_oceanic
+    siguiente:
+      location: top
+      slots:
+      - 53
+      source: vanilla
+      material: arrow
+      name: <#FFD36B>Drakonins <white>»
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_ir_1
+      right_click:
+        Scripts:
+        - tmasc_ir_1
+      shift_left_click:
+        Scripts:
+        - tmasc_ir_1
+      shift_right_click:
+        Scripts:
+        - tmasc_ir_1
+    volver:
+      location: top
+      slots:
+      - 49
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver a Mascotas</gradient>
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_volver
+      right_click:
+        Scripts:
+        - tmasc_volver
+      shift_left_click:
+        Scripts:
+        - tmasc_volver
+      shift_right_click:
+        Scripts:
+        - tmasc_volver
+menuTiendaMascotas2:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Tienda de Mascotas &7• &5Drakonins'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 18
+      - 26
+      - 27
+      - 35
+      - 36
+      - 44
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      source: vanilla
+      material: purple_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    tmasc_nocsy_drakonin_fire:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96501
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin de Fuego</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_fire
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_fire
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_fire
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_fire
+    tmasc_nocsy_drakonin_dark:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96502
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin Oscuro</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_dark
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_dark
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_dark
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_dark
+    tmasc_nocsy_drakonin_water:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96503
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin de Agua</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_water
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_water
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_water
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_water
+    tmasc_nocsy_drakonin_cloud:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96504
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin de las Nubes</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_cloud
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_cloud
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_cloud
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_cloud
+    tmasc_nocsy_drakonin_volcanic:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96505
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin Volcánico</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_volcanic
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_volcanic
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_volcanic
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_volcanic
+    tmasc_nocsy_drakonin_poison:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96506
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin Venenoso</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_poison
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_poison
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_poison
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_poison
+    tmasc_nocsy_drakonin_forest:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96507
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin del Bosque</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_forest
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_forest
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_forest
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_forest
+    tmasc_nocsy_drakonin_night:
+      location: top
+      slots:
+      - 19
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96508
+      name: <white><gradient:#FF8A8A:#C0392B>Drakonin Nocturno</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 6000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_night
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_night
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_night
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_night
+    tmasc_nocsy_drakonin_baby_fire:
+      location: top
+      slots:
+      - 20
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96401
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé de Fuego</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_fire
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_fire
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_fire
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_fire
+    tmasc_nocsy_drakonin_baby_dark:
+      location: top
+      slots:
+      - 21
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96402
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Oscuro</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_dark
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_dark
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_dark
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_dark
+    tmasc_nocsy_drakonin_baby_water:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96403
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé de Agua</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_water
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_water
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_water
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_water
+    tmasc_nocsy_drakonin_baby_cloud:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96404
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé de las Nubes</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_cloud
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_cloud
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_cloud
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_cloud
+    tmasc_nocsy_drakonin_baby_volcanic:
+      location: top
+      slots:
+      - 24
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96405
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Volcánico</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_volcanic
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_volcanic
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_volcanic
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_volcanic
+    tmasc_nocsy_drakonin_baby_poison:
+      location: top
+      slots:
+      - 25
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96406
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Venenoso</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_poison
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_poison
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_poison
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_poison
+    tmasc_nocsy_drakonin_baby_forest:
+      location: top
+      slots:
+      - 28
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96407
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé del Bosque</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_forest
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_forest
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_forest
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_forest
+    tmasc_nocsy_drakonin_baby_night:
+      location: top
+      slots:
+      - 29
+      source: vanilla
+      material: blaze_rod
+      custom_model_data_float: 96408
+      name: <white><gradient:#9FE8FF:#4FB3D9>Drakonin Bebé Nocturno</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Drakonins'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_night
+      right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_night
+      shift_left_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_night
+      shift_right_click:
+        Scripts:
+        - tmasc_nocsy_drakonin_baby_night
+    anterior:
+      location: top
+      slots:
+      - 45
+      source: vanilla
+      material: arrow
+      name: <white>« <#FFD36B>Compañeros
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_ir_0
+      right_click:
+        Scripts:
+        - tmasc_ir_0
+      shift_left_click:
+        Scripts:
+        - tmasc_ir_0
+      shift_right_click:
+        Scripts:
+        - tmasc_ir_0
+    siguiente:
+      location: top
+      slots:
+      - 53
+      source: vanilla
+      material: arrow
+      name: <#FFD36B>Monturas y Especiales <white>»
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_ir_2
+      right_click:
+        Scripts:
+        - tmasc_ir_2
+      shift_left_click:
+        Scripts:
+        - tmasc_ir_2
+      shift_right_click:
+        Scripts:
+        - tmasc_ir_2
+    volver:
+      location: top
+      slots:
+      - 49
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver a Mascotas</gradient>
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_volver
+      right_click:
+        Scripts:
+        - tmasc_volver
+      shift_left_click:
+        Scripts:
+        - tmasc_volver
+      shift_right_click:
+        Scripts:
+        - tmasc_volver
+menuTiendaMascotas3:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Tienda de Mascotas &7• &5Monturas y Especiales'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 17
+      - 18
+      - 26
+      - 27
+      - 35
+      - 36
+      - 44
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      source: vanilla
+      material: purple_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    tmasc_horse_pegasus:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: brick
+      custom_model_data_float: 2523
+      name: <white><gradient:#D9B3FF:#8E44AD>Pegaso</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Monturas y Especiales'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 8000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_horse_pegasus
+      right_click:
+        Scripts:
+        - tmasc_horse_pegasus
+      shift_left_click:
+        Scripts:
+        - tmasc_horse_pegasus
+      shift_right_click:
+        Scripts:
+        - tmasc_horse_pegasus
+    tmasc_horse_spartan:
+      location: top
+      slots:
+      - 11
+      source: vanilla
+      material: brick
+      custom_model_data_float: 2524
+      name: <white><gradient:#D9B3FF:#8E44AD>Caballo Espartano</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Monturas y Especiales'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 8000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_horse_spartan
+      right_click:
+        Scripts:
+        - tmasc_horse_spartan
+      shift_left_click:
+        Scripts:
+        - tmasc_horse_spartan
+      shift_right_click:
+        Scripts:
+        - tmasc_horse_spartan
+    tmasc_kitsune_normal:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: brick
+      custom_model_data_float: 2528
+      name: <white><gradient:#D9B3FF:#8E44AD>Kitsune</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Monturas y Especiales'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 8000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_kitsune_normal
+      right_click:
+        Scripts:
+        - tmasc_kitsune_normal
+      shift_left_click:
+        Scripts:
+        - tmasc_kitsune_normal
+      shift_right_click:
+        Scripts:
+        - tmasc_kitsune_normal
+    tmasc_phantom_ghost:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: brick
+      custom_model_data_float: 2530
+      name: <white><gradient:#D9B3FF:#8E44AD>Fantasma Espectral</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Monturas y Especiales'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 8000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_phantom_ghost
+      right_click:
+        Scripts:
+        - tmasc_phantom_ghost
+      shift_left_click:
+        Scripts:
+        - tmasc_phantom_ghost
+      shift_right_click:
+        Scripts:
+        - tmasc_phantom_ghost
+    tmasc_phoenix_flame:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: brick
+      custom_model_data_float: 2532
+      name: <white><gradient:#D9B3FF:#8E44AD>Fénix</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Monturas y Especiales'
+      - '<#9EA3AE>Montable: <#7FFF9E>Sí'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 8000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_phoenix_flame
+      right_click:
+        Scripts:
+        - tmasc_phoenix_flame
+      shift_left_click:
+        Scripts:
+        - tmasc_phoenix_flame
+      shift_right_click:
+        Scripts:
+        - tmasc_phoenix_flame
+    tmasc_witchcat:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: player_head
+      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjQxNzA2YzU1ODFkZDU5YmUxOGEwOTE1OWU0ZTc0ZTI3YzFlMDM1N2RlMmNjZTQ4NzY4ZGFhYjhkNzE2M2I4OCJ9fX0=
+      name: <white><gradient:#D9B3FF:#8E44AD>Gato de Bruja</gradient>
+      lore:
+      - '<#9EA3AE>Categoría: <white>Monturas y Especiales'
+      - '<#9EA3AE>Montable: <#FF6B6B>No'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuya para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o invocar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - tmasc_witchcat
+      right_click:
+        Scripts:
+        - tmasc_witchcat
+      shift_left_click:
+        Scripts:
+        - tmasc_witchcat
+      shift_right_click:
+        Scripts:
+        - tmasc_witchcat
+    anterior:
+      location: top
+      slots:
+      - 45
+      source: vanilla
+      material: arrow
+      name: <white>« <#FFD36B>Drakonins
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_ir_1
+      right_click:
+        Scripts:
+        - tmasc_ir_1
+      shift_left_click:
+        Scripts:
+        - tmasc_ir_1
+      shift_right_click:
+        Scripts:
+        - tmasc_ir_1
+    volver:
+      location: top
+      slots:
+      - 49
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver a Mascotas</gradient>
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - tmasc_volver
+      right_click:
+        Scripts:
+        - tmasc_volver
+      shift_left_click:
+        Scripts:
+        - tmasc_volver
+      shift_right_click:
+        Scripts:
+        - tmasc_volver

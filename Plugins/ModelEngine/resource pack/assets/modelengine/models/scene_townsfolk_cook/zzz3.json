@@ -1,0 +1,1 @@
+{"textures":{"1":"modelengine:entity/models/zzz_e","particle":"#1"},"elements":[{"from":[4.58,4.58,8.0],"to":[11.42,11.419998,8.0],"faces":{"south":{"uv":[4.484,0.016,0.016,4.484],"tintindex":0,"rotation":0,"texture":"#1"},"north":{"uv":[0.016,0.016,4.484,4.484],"tintindex":0,"rotation":0,"texture":"#1"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

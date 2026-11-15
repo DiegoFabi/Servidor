@@ -1,0 +1,124 @@
+# Convertido desde CommandPanels (panels/panelHelp.yml). Abrir: /coremenu <menu>
+panelHelp:
+  permission: ''
+  bottom_inventory: false
+  name: '          &5ᴘᴀɴᴇʟ ᴅᴇ ᴀʏᴜᴅᴀ'
+  size: 3
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    b1:
+      location: top
+      slots:
+      - 7
+      - 8
+      - 16
+      - 17
+      - 25
+      - 26
+      source: vanilla
+      material: RED_STAINED_GLASS_PANE
+      name: '§c✘ Cerrar Menú!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - panelhelp_b1_click
+      right_click:
+        Scripts:
+        - panelhelp_b1_click
+      shift_left_click:
+        Scripts:
+        - panelhelp_b1_click
+      shift_right_click:
+        Scripts:
+        - panelhelp_b1_click
+    b2:
+      location: top
+      slots:
+      - 10
+      source: vanilla
+      material: RED_BANNER
+      name: '§7→ §cComandos Básicos!'
+      lore:
+      - '§7'
+      - '§7| §f¡Usa esto para abrir un §bMenú §fde'
+      - '§7| §bComandos §fy aprender lo básico!'
+      - '§7'
+      - '§a➹ ¡Toca para abrir menú!'
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - panelhelp_b2_click
+      right_click:
+        Scripts:
+        - panelhelp_b2_click
+      shift_left_click:
+        Scripts:
+        - panelhelp_b2_click
+      shift_right_click:
+        Scripts:
+        - panelhelp_b2_click
+    b3:
+      location: top
+      slots:
+      - 12
+      source: vanilla
+      material: CAMPFIRE
+      name: '§7→ §aTutorial Guiado!'
+      lore:
+      - '§7'
+      - '§7| §fTe §6Guiaremos §fa lo largo de un'
+      - '§7| &6Mapa §fpara aprender sobre lo'
+      - '§7| §fque se puede hacer en el §6Juego§f!'
+      - '§7'
+      - '§a➹ ¡Toca para viajar!'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      enchantments:
+      - unbreaking 1
+      left_click:
+        Scripts:
+        - panelhelp_b3_click
+      right_click:
+        Scripts:
+        - panelhelp_b3_click
+      shift_left_click:
+        Scripts:
+        - panelhelp_b3_click
+      shift_right_click:
+        Scripts:
+        - panelhelp_b3_click
+    b4:
+      location: top
+      slots:
+      - 14
+      source: vanilla
+      material: SUNFLOWER
+      name: '§7→ §eMenú de Opciones!'
+      lore:
+      - '§7'
+      - '§7| §f¡Usa esto para no §aescribir'
+      - '§7| §amuchos comandos §fa mano, podras'
+      - '§7| §fviajar, comprar y más!'
+      - '§7'
+      - '§a➹ ¡Toca para abrir menú!'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      enchantments:
+      - unbreaking 1
+      left_click:
+        Scripts:
+        - panelhelp_b4_click
+      right_click:
+        Scripts:
+        - panelhelp_b4_click
+      shift_left_click:
+        Scripts:
+        - panelhelp_b4_click
+      shift_right_click:
+        Scripts:
+        - panelhelp_b4_click

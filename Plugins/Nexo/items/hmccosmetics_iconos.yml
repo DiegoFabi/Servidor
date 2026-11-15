@@ -1,0 +1,36 @@
+hmcc_icon_cabeza:
+  displayname: <white>
+  material: PAPER
+  Pack:
+    model: hmccosmetics:icons/hat_icon
+    custom_model_data: 1158
+hmcc_icon_espalda:
+  displayname: <white>
+  material: PAPER
+  Pack:
+    model: hmccosmetics:icons/backpack_icon
+    custom_model_data: 1159
+hmcc_icon_mano:
+  displayname: <white>
+  material: PAPER
+  Pack:
+    model: hmccosmetics:icons/hand_icon
+    custom_model_data: 1160
+hmcc_icon_globo:
+  displayname: <white>
+  material: PAPER
+  Pack:
+    model: hmccosmetics:icons/balloon_icon
+    custom_model_data: 1161
+hmcc_flecha_atras:
+  displayname: <white>
+  material: PAPER
+  Pack:
+    model: hmccosmetics:icons/arrow_back
+    custom_model_data: 1162
+hmcc_flecha_siguiente:
+  displayname: <white>
+  material: PAPER
+  Pack:
+    model: hmccosmetics:icons/arrow_next
+    custom_model_data: 1163

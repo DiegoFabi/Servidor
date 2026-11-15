@@ -1,0 +1,117 @@
+# ============================================================
+#  Campo de Gravedad  [RARO]
+#  Comando: /gravity  |  /gravitystop
+#  Campo que atrae y daña a las entidades cercanas durante unos segundos.
+#  Requiere: Skript 2.15+ y SkBee 3.25+ (particulas: "make ... at ...")
+#  Usa fxRing() de magia/nucleo_magia.sk
+# ============================================================
+
+options:
+    # "with force": el cliente dibuja las particulas aunque tenga las
+    # particulas en "Reducidas". Dejalo vacio para ahorrar red.
+    force: with force
+    grav-radio: 10
+    grav-ticks: 200
+    grav-umbral: 0.75
+    grav-dano: 2
+
+# ------------------------------------------------------------
+#  PODER DE GRAVEDAD
+# ------------------------------------------------------------
+command /gravity:
+    permission: gravity.use
+    trigger:
+        set {_p} to player
+        set {_id} to uuid of {_p}
+        if {-grav::activo::%{_id}%} is set:
+            send action bar "<#FF6B6B>✖ <#9EA3AE>Ya tienes un campo de gravedad activo" to {_p}
+            stop
+        set {-grav::activo::%{_id}%} to true
+
+        play sound "entity.warden.heartbeat" with volume 2 and pitch 0.5 at {_p}
+        fxAnuncio({_p}, "⚫", "Campo de Gravedad", "El espacio se dobla a tu alrededor", "#D8B4FF", "#8E44AD", "Raro")
+
+        # Se trabaja en pasos de 2 ticks (100 pasos = 200 ticks)
+        set {_pasos} to {@grav-ticks} / 2
+        loop {_pasos} times:
+            set {_tick} to (loop-number) * 2
+            # /gravitystop o desconexion cortan el poder
+            if {-grav::activo::%{_id}%} is not set:
+                stop
+            if {_p} is not online:
+                delete {-grav::activo::%{_id}%}
+                stop
+            set {_loc} to location of {_p}
+
+            # Anillo exterior que gira: un "make" por tipo para todo el anillo
+            set {_ring::*} to fxRing({_loc}, {@grav-radio}, 20, 1, {_tick} * 3)
+            make 1 of portal at {_ring::*} with offset vector(0.1, 0.3, 0.1) with extra 0.2 {@force}
+            make 1 of large_smoke at {_ring::*} with offset vector(0.1, 0.1, 0.1) with extra 0 {@force}
+
+            # Remolino central
+            set {_cl} to {_loc} offset by vector(0, 1.2, 0)
+            make 6 of portal at {_cl} with offset vector(0.3, 1, 0.3) with extra 0.5 {@force}
+
+            # Anillo en el suelo (cada 4 ticks)
+            if mod({_tick}, 4) is 0:
+                set {_ring::*} to fxRing({_loc}, {@grav-radio} * 0.7, 14, 0.1)
+                make 1 of large_smoke at {_ring::*} with offset vector(0.2, 0, 0.2) with extra 0 {@force}
+
+            # Sonido ambiental cada 2 segundos
+            if mod({_tick}, 40) is 0:
+                play sound "block.portal.ambient" with volume 1.5 and pitch 0.8 at {_loc}
+                play sound "entity.warden.heartbeat" with volume 0.8 and pitch 0.7 at {_loc}
+
+            # Enemigos: se revisan cada 6 ticks
+            if mod({_tick}, 6) is 0:
+                loop all living entities in radius {@grav-radio} around {_loc}:
+                    if loop-entity is not {_p}:
+                        if loop-entity is not an armor stand:
+                            set {_eid} to uuid of loop-entity
+                            set {_el} to location of loop-entity
+
+                            # Efectos, solo la primera vez que entra al campo
+                            if {_afectado::%{_eid}%} is not set:
+                                set {_afectado::%{_eid}%} to true
+                                apply slowness 10 to loop-entity for 20 seconds
+                                apply blindness 2 to loop-entity for 20 seconds
+                                apply slow falling 3 to loop-entity for 20 seconds
+                                apply weakness 2 to loop-entity for 20 seconds
+                                apply mining fatigue 3 to loop-entity for 20 seconds
+
+                            # Si se movio demasiado desde la ultima revision, recibe dano
+                            if {_ultima::%{_eid}%} is set:
+                                if distance between {_ultima::%{_eid}%} and {_el} > {@grav-umbral}:
+                                    damage loop-entity by {@grav-dano}
+                                    play sound "entity.player.hurt" with volume 1 and pitch 0.8 at {_el}
+                                    if loop-entity is a player:
+                                        send action bar "&4💀 &cLa gravedad te está aplastando... ¡No te muevas! &4💀" to loop-entity
+                            set {_ultima::%{_eid}%} to {_el}
+
+                            make 3 of portal at {_el} with offset vector(0.3, 0.6, 0.3) with extra 0.3 {@force}
+                            make 1 of squid_ink at {_el} with offset vector(0.2, 0.4, 0.2) with extra 0 {@force}
+
+                            if mod({_tick}, 30) is 0:
+                                play sound "entity.warden.ambient" with volume 0.8 and pitch 1.2 at {_el}
+                                if loop-entity is a player:
+                                    send action bar "&5⚫ &8Estás siendo afectado por la Gravedad... &5⚫" to loop-entity
+
+            wait 2 ticks
+
+        delete {-grav::activo::%{_id}%}
+        if {_p} is online:
+            fxResultado({_p}, "#D8B4FF", "Gravedad", "El campo se ha disipado.")
+            play sound "entity.warden.sonic_boom" with volume 1 and pitch 1.5 at {_p}
+
+command /gravitystop:
+    permission: gravity.use
+    trigger:
+        if {-grav::activo::%uuid of player%} is set:
+            delete {-grav::activo::%uuid of player%}
+            fxResultado(player, "#D8B4FF", "Gravedad", "Has cancelado el campo.")
+            play sound "entity.warden.sonic_boom" with volume 1 and pitch 1.5 at player
+        else:
+            send action bar "<#FF6B6B>✖ <#9EA3AE>No tienes ningún campo de gravedad activo" to player
+
+on quit:
+    delete {-grav::activo::%uuid of player%}

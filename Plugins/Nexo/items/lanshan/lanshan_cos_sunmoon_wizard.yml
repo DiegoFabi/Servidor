@@ -1,0 +1,36 @@
+sun_wizard_hat:
+  material: LEATHER_HORSE_ARMOR
+  Pack:
+    model: lanshan/cosmetics/sunmoon_wizard/1
+    custom_model_data: 23001
+  displayname: <gradient:#FFE45C:#FF8A00>Sombrero del Mago Solar</gradient>
+sun_wizard_staff:
+  material: LEATHER_HORSE_ARMOR
+  Pack:
+    model: lanshan/cosmetics/sunmoon_wizard/2
+    custom_model_data: 23002
+  displayname: <gradient:#FFE45C:#FF8A00>Bastón del Mago Solar</gradient>
+sun_wizard_cloak:
+  material: LEATHER_HORSE_ARMOR
+  Pack:
+    model: lanshan/cosmetics/sunmoon_wizard/3
+    custom_model_data: 23003
+  displayname: <gradient:#FFE45C:#FF8A00>Capa del Mago Solar</gradient>
+moon_wizard_hat:
+  material: LEATHER_HORSE_ARMOR
+  Pack:
+    model: lanshan/cosmetics/sunmoon_wizard/4
+    custom_model_data: 23004
+  displayname: <gradient:#B8C6FF:#4A5BB3>Sombrero del Mago Lunar</gradient>
+moon_wizard_staff:
+  material: LEATHER_HORSE_ARMOR
+  Pack:
+    model: lanshan/cosmetics/sunmoon_wizard/5
+    custom_model_data: 23005
+  displayname: <gradient:#B8C6FF:#4A5BB3>Bastón del Mago Lunar</gradient>
+moon_wizard_cloak:
+  material: LEATHER_HORSE_ARMOR
+  Pack:
+    model: lanshan/cosmetics/sunmoon_wizard/6
+    custom_model_data: 23006
+  displayname: <gradient:#B8C6FF:#4A5BB3>Capa del Mago Lunar</gradient>

@@ -1,0 +1,20 @@
+level: dynamic
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: BLAZE
+name: $eventBossLevel &fWitches Broom
+healthMultiplier: 2.0
+damageMultiplier: 0.2
+dropsEliteMobsLoot: true
+dropsVanillaLoot: false
+dropsRandomLoot: true
+isPersistent: true
+powers:
+- arrow_rain.yml
+- invisibility.yml
+- invulnerability_fire.yml
+movementSpeedAttribute: 0.37
+followDistance: 80

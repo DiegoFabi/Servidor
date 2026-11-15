@@ -1,0 +1,41 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+classLoot: true
+isEnabled: true
+entityType: BLAZE
+disguise: GIANT
+helmet: LEATHER_HELMET
+chestplate: LEATHER_CHESTPLATE
+leggings: LEATHER_LEGGINGS
+boots: LEATHER_BOOTS
+mainHand: STICK
+name: $eventBossLevel &dMagi Giant
+level: dynamic
+healthMultiplier: 8
+damageMultiplier: 1.25
+isPersistent: true
+powers:
+- invisibility.yml
+- lightning_bolts.yml
+- tracking_fireball.yml
+- invulnerability_fall_damage.yml
+- invulnerability_knockback.yml
+- invulnerability_fire.yml
+uniqueLootList:
+- filename=magi_giant_drop_charm.yml:amount=1:chance=0.05
+movementSpeedAttribute: 0.44
+followDistance: 80
+locationMessage: '&cMagi Giant: $distance blocks away!'
+spawnMessage: '&cA Magi Giant wanders the world!'
+deathMessage: '&aThe Magi Giant was slain by $players!'
+escapeMessage: '&4The Magi Giant has vanished!'
+announcementPriority: 2
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&eThe Giant Magi has been slain!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&aSlayers: $players'
+- '&e&l---------------------------------------------'

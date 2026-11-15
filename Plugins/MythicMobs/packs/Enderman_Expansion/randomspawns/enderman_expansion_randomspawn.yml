@@ -1,0 +1,226 @@
+# ============================================================
+#  Enderman Expansion - una variante por bioma
+#  REPLACE: sustituye a los endermen vanilla que aparecen en cada bioma
+#  (ADD no funciona con GenerateSpawnPoints desactivado en config-spawning).
+# ============================================================
+
+enderman_desert:
+  Type: enderman_desert
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DESERT
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_desert;a=<3;r=100} true
+  - outside true
+
+enderman_dark_oak:
+  Type: enderman_dark_oak
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DARK_FOREST,PALE_GARDEN
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_dark_oak;a=<3;r=100} true
+  - outside true
+
+enderman_ice_spikes:
+  Type: enderman_ice_spikes
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: ICE_SPIKES,FROZEN_PEAKS
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_ice_spikes;a=<3;r=100} true
+  - outside true
+
+enderman_swamp:
+  Type: enderman_swamp
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SWAMP,MANGROVE_SWAMP
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_swamp;a=<3;r=100} true
+  - outside true
+
+enderman_windswept_hills:
+  Type: enderman_windswept_hills
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: WINDSWEPT_HILLS,WINDSWEPT_SAVANNA,WINDSWEPT_FOREST,WINDSWEPT_GRAVELLY_HILLS
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_windswept_hills;a=<3;r=100} true
+  - outside true
+
+enderman_savanna:
+  Type: enderman_savanna
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SAVANNA,SAVANNA_PLATEAU
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_savanna;a=<3;r=100} true
+  - outside true
+
+enderman_badlands:
+  Type: enderman_badlands
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_badlands;a=<3;r=100} true
+  - outside true
+
+enderman_snowy:
+  Type: enderman_snowy
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SNOWY_PLAINS,SNOWY_TAIGA,SNOWY_SLOPES,GROVE
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_snowy;a=<3;r=100} true
+  - outside true
+
+enderman_flower_fields:
+  Type: enderman_flower_fields
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: FLOWER_FOREST,SUNFLOWER_PLAINS,MEADOW,CHERRY_GROVE
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_flower_fields;a=<3;r=100} true
+  - outside true
+
+enderman_cave:
+  Type: enderman_cave
+  Worlds: survivalMain
+  Chance: 0.35
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DRIPSTONE_CAVES,LUSH_CAVES,DEEP_DARK
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_cave;a=<2;r=60} true
+  - outside false
+  - heightbelow{h=40} true
+
+enderman_ocean:
+  Type: enderman_ocean
+  Worlds: survivalMain
+  Chance: 0.05
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: OCEAN,WARM_OCEAN,COLD_OCEAN,DEEP_COLD_OCEAN,DEEP_LUKEWARM_OCEAN,DEEP_OCEAN,LUKEWARM_OCEAN
+  Conditions:
+  - entitytype{t=DROWNED} true
+  - mobsinradius{t=enderman_ocean;a=<2;r=120} true
+
+enderman_warped_forest:
+  Type: enderman_warped_forest
+  Worlds: world_nether
+  Chance: 0.3
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: WARPED_FOREST
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_warped_forest;a=<3;r=100} true
+  - outside true
+
+enderman_crimson_forest:
+  Type: enderman_crimson_forest
+  Worlds: world_nether
+  Chance: 0.3
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: CRIMSON_FOREST
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_crimson_forest;a=<3;r=100} true
+  - outside true
+
+enderman_soulsand_valley:
+  Type: enderman_soulsand_valley
+  Worlds: world_nether
+  Chance: 0.3
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SOUL_SAND_VALLEY
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_soulsand_valley;a=<3;r=100} true
+  - outside true
+
+enderman_nether_wastes:
+  Type: enderman_nether_wastes
+  Worlds: world_nether
+  Chance: 0.3
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: NETHER_WASTES
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_nether_wastes;a=<3;r=100} true
+  - outside true
+
+enderman_end:
+  Type: enderman_end
+  Worlds: world_the_end
+  Chance: 0.3
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: THE_END,END_BARRENS,END_HIGHLANDS,END_MIDLANDS,SMALL_END_ISLANDS
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_end;a=<3;r=100} true
+  - outside true
+
+enderman_end_islands:
+  Type: enderman_end_islands
+  Worlds: world_the_end
+  Chance: 0.08
+  Priority: 1
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: END_BARRENS,END_HIGHLANDS,END_MIDLANDS,SMALL_END_ISLANDS
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+  - mobsinradius{t=enderman_end_islands;a=<1;r=200} true
+  - outside true

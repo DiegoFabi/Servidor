@@ -1,0 +1,101 @@
+#-------------------------
+#     Made by Bojarsky Legacy
+#     Discord bojarsky
+#-------------------------
+
+bl_frankie:
+  Type: husk
+  Display: '&6Frankie'
+  Health: 400
+  Damage: 5
+  DamageModifiers:
+  - SUFFOCATION 0.1
+  - PROJECTILE 0.25
+  - FALL 0.1
+  Faction: bl_frankie
+  Modules:
+    ThreatTable: true
+  Options:
+    AlwaysShowName: true
+    PreventOtherDrops: true
+    Silent: true
+    FollowRange: 64
+    PreventItemPickup: true
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    MovementSpeed: 1
+    KnockbackResistance: 1
+    Collidable: true
+  BossBar:
+    Enabled: true
+    Title: "★"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Skills:
+  - model{mid=bl_frankie;ride=true;drive=true;s=1;d=false} @self ~onSpawn
+  - CancelEvent{sync=true} @self ~onAttack
+  - skill{s=bl_frankie_active} @target ~onTimer:20
+  - skill{s=bl_frankie_phase2} @target ~onTimer:15
+  - skill{s=bl_frankie_spawn} @self ~onSpawn
+  - skill{s=bl_frankie_death} @self ~onDeath
+  - skill{s=bl_frankie_step} @self ~onTimer:26
+  - skill{s=bl_frankie_hurt} @self ~onDamaged
+  - skill{s=bl_frankie_stun} @target ~onDamaged
+  - randomskill{s=bl_frankie_phase1_skills,bl_frankie_phase2_skills} @target ~onTimer:20
+
+bl_frankie_projectile:
+  Type: ARMOR_STAND
+  Display: '&6Frankie'
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=bl_frankie_projectile} @self ~onSpawn
+
+bl_frankie_tesla:
+  Type: HUSK
+  Display: '&6Frankie'
+  Health: 50
+  Faction: bl_frankie
+  DamageModifiers:
+  - SUFFOCATION 0.1
+  - PROJECTILE 0.25
+  - FALL 0.1
+  Modules:
+    ThreatTable: true
+  Options:
+    AlwaysShowName: false
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    PreventRandomEquipment: true
+    KnockbackResistance: 1
+    PreventSunburn: true
+    Silent: true
+    FollowRange: 128
+    Collidable: false
+  Skills:
+  - model{mid=bl_frankie_tesla;n=false;ride=false;drive=false;s=0} @self ~onSpawn
+  - CancelEvent{sync=true} @self ~onAttack
+  - partvis{mid=bl_frankie_tesla;p=electrical;v=false;child=true} @self ~onSpawn
+  - partvis{mid=bl_frankie_tesla;p=electrical_waves;v=false;child=true} @self ~onSpawn
+  - partvis{mid=bl_frankie_tesla;p=electrical;v=true;child=true;delay=17} @self ~onSpawn
+  - randomskill{s=bl_frankie_tesla_duble_attack,bl_frankie_tesla_combo_attack} @target ~onTimer:40
+  - skill{s=bl_frankie_tesla_hurt} @self ~onDamaged
+  - skill{s=bl_frankie_tesla_death} @self ~onDeath
+  - delay 18
+  - setspeed{s=0} @self ~onSpawn
+
+
+#-------------------------
+#     Made by Bojarsky Legacy
+#     Discord bojarsky
+#-------------------------
+#e2e7f43cc1241d9925942e25a27cdef4
+# 395608QDRHTVFLJBVD2TAFIFMKB

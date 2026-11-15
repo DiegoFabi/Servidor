@@ -1,0 +1,124 @@
+# Knight Armor & Weapon Pack - armas 3D
+# Modelos:  pack/assets/minecraft/models/knight_pack/
+# Texturas: pack/assets/minecraft/textures/knight_pack/
+iron_knight_sword:
+  material: IRON_SWORD
+  itemname: <#D8D8D8>Espada de Caballero
+  Pack:
+    model: knight_pack/iron_knight_sword
+    custom_model_data: 1001
+iron_knight_spear:
+  material: IRON_SWORD
+  itemname: <#D8D8D8>Lanza de Caballero
+  Pack:
+    model: knight_pack/iron_knight_spear
+    custom_model_data: 1002
+iron_knight_halberd:
+  material: IRON_AXE
+  itemname: <#D8D8D8>Alabarda de Caballero
+  Pack:
+    model: knight_pack/iron_knight_halberd
+    custom_model_data: 1001
+gold_knight_sword:
+  material: GOLDEN_SWORD
+  itemname: <#FFD54F>Espada de Caballero Dorado
+  Pack:
+    model: knight_pack/gold_knight_sword
+    custom_model_data: 1000
+gold_knight_spear:
+  material: GOLDEN_SWORD
+  itemname: <#FFD54F>Lanza de Caballero Dorado
+  Pack:
+    model: knight_pack/gold_knight_spear
+    custom_model_data: 1001
+gold_knight_halberd:
+  material: GOLDEN_AXE
+  itemname: <#FFD54F>Alabarda de Caballero Dorado
+  Pack:
+    model: knight_pack/gold_knight_halberd
+    custom_model_data: 1000
+
+# Armadura con icono (2D) y textura visible en el jugador.
+# Iconos:            pack/assets/minecraft/textures/knight_pack/armor/
+# Equipamiento:      pack/assets/knight_pack/equipment/<iron|gold>_knight.json
+# Texturas puestas:  pack/assets/knight_pack/textures/entity/equipment/humanoid(_leggings)/
+iron_knight_helmet:
+  material: IRON_HELMET
+  itemname: <#D8D8D8>Casco de Caballero
+  Pack:
+    texture: knight_pack/armor/iron_knight_helmet
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: HEAD
+      asset_id: knight_pack:iron_knight
+iron_knight_chestplate:
+  material: IRON_CHESTPLATE
+  itemname: <#D8D8D8>Peto de Caballero
+  Pack:
+    texture: knight_pack/armor/iron_knight_chestplate
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: CHEST
+      asset_id: knight_pack:iron_knight
+iron_knight_leggings:
+  material: IRON_LEGGINGS
+  itemname: <#D8D8D8>Grebas de Caballero
+  Pack:
+    texture: knight_pack/armor/iron_knight_leggings
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: LEGS
+      asset_id: knight_pack:iron_knight
+iron_knight_boots:
+  material: IRON_BOOTS
+  itemname: <#D8D8D8>Botas de Caballero
+  Pack:
+    texture: knight_pack/armor/iron_knight_boots
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: FEET
+      asset_id: knight_pack:iron_knight
+gold_knight_helmet:
+  material: GOLDEN_HELMET
+  itemname: <#FFD54F>Casco de Caballero Dorado
+  Pack:
+    texture: knight_pack/armor/gold_knight_helmet
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: HEAD
+      asset_id: knight_pack:gold_knight
+gold_knight_chestplate:
+  material: GOLDEN_CHESTPLATE
+  itemname: <#FFD54F>Peto de Caballero Dorado
+  Pack:
+    texture: knight_pack/armor/gold_knight_chestplate
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: CHEST
+      asset_id: knight_pack:gold_knight
+gold_knight_leggings:
+  material: GOLDEN_LEGGINGS
+  itemname: <#FFD54F>Grebas de Caballero Dorado
+  Pack:
+    texture: knight_pack/armor/gold_knight_leggings
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: LEGS
+      asset_id: knight_pack:gold_knight
+gold_knight_boots:
+  material: GOLDEN_BOOTS
+  itemname: <#FFD54F>Botas de Caballero Dorado
+  Pack:
+    texture: knight_pack/armor/gold_knight_boots
+    custom_model_data: 1000
+  Components:
+    equippable:
+      slot: FEET
+      asset_id: knight_pack:gold_knight

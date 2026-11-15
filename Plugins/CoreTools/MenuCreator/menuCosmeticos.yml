@@ -1,0 +1,1081 @@
+# Tienda de Cosméticos (HMCCosmetics) - /coremenu menuCosmeticos
+# Acciones en Scripts/menus_menuCosmeticos.yml. Generado a partir de HMCCosmetics/cosmetics/cosmeticos.yml
+menuCosmeticos:
+  permission: ''
+  bottom_inventory: false
+  name: '&8Tienda de Cosméticos'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    fondo:
+      location: top
+      slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 45
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      - 53
+      source: vanilla
+      material: black_stained_glass_pane
+      name: '&7'
+      flags:
+      - HIDE_ATTRIBUTES
+    cemetery_witch_hat:
+      location: top
+      slots:
+      - 9
+      source: nexo
+      id: cemetery_witch_hat
+      name: <white><gradient:#B57BFF:#6B2FB3>Sombrero de la Bruja del Cementerio</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Bruja del Cementerio'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_cemetery_witch_hat_click
+      right_click:
+        Scripts:
+        - hcosm_cemetery_witch_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_cemetery_witch_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_cemetery_witch_hat_click
+    chained_monstruosity_collar:
+      location: top
+      slots:
+      - 10
+      source: nexo
+      id: chained_monstruosity_collar
+      name: <white><gradient:#C9CDD6:#6E7380>Collar de la Monstruosidad Encadenada</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Monstruosidad Encadenada'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_chained_monstruosity_collar_click
+      right_click:
+        Scripts:
+        - hcosm_chained_monstruosity_collar_click
+      shift_left_click:
+        Scripts:
+        - hcosm_chained_monstruosity_collar_click
+      shift_right_click:
+        Scripts:
+        - hcosm_chained_monstruosity_collar_click
+    crow_lord_hat:
+      location: top
+      slots:
+      - 11
+      source: nexo
+      id: crow_lord_hat
+      name: <white><gradient:#8FA3C7:#2E3A55>Sombrero del Señor de los Cuervos</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Señor de los Cuervos'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_crow_lord_hat_click
+      right_click:
+        Scripts:
+        - hcosm_crow_lord_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_crow_lord_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_crow_lord_hat_click
+    noir_elegance_tophat:
+      location: top
+      slots:
+      - 12
+      source: nexo
+      id: noir_elegance_tophat
+      name: <white><gradient:#FF8A8A:#7A1F2B>Chistera de la Elegancia Noir</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Elegancia Noir'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_noir_elegance_tophat_click
+      right_click:
+        Scripts:
+        - hcosm_noir_elegance_tophat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_noir_elegance_tophat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_noir_elegance_tophat_click
+    archmage_hat:
+      location: top
+      slots:
+      - 13
+      source: nexo
+      id: archmage_hat
+      name: <white><gradient:#7FD8FF:#2F6FB3>Sombrero del Archimago</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Archimago'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_archmage_hat_click
+      right_click:
+        Scripts:
+        - hcosm_archmage_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_archmage_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_archmage_hat_click
+    ritualistic_hoodie:
+      location: top
+      slots:
+      - 14
+      source: nexo
+      id: ritualistic_hoodie
+      name: <white><gradient:#FF7A45:#8B2500>Capucha Ritual</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Ritualista'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_ritualistic_hoodie_click
+      right_click:
+        Scripts:
+        - hcosm_ritualistic_hoodie_click
+      shift_left_click:
+        Scripts:
+        - hcosm_ritualistic_hoodie_click
+      shift_right_click:
+        Scripts:
+        - hcosm_ritualistic_hoodie_click
+    skeleton_control_hat:
+      location: top
+      slots:
+      - 15
+      source: nexo
+      id: skeleton_control_hat
+      name: <white><gradient:#E6E8EE:#8A8F99>Sombrero del Amo de los Esqueletos</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Amo de los Esqueletos'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_skeleton_control_hat_click
+      right_click:
+        Scripts:
+        - hcosm_skeleton_control_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_skeleton_control_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_skeleton_control_hat_click
+    spike_lord_helmet:
+      location: top
+      slots:
+      - 16
+      source: nexo
+      id: spike_lord_helmet
+      name: <white><gradient:#FFB347:#8B4A00>Yelmo del Señor de las Púas</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Señor de las Púas'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_spike_lord_helmet_click
+      right_click:
+        Scripts:
+        - hcosm_spike_lord_helmet_click
+      shift_left_click:
+        Scripts:
+        - hcosm_spike_lord_helmet_click
+      shift_right_click:
+        Scripts:
+        - hcosm_spike_lord_helmet_click
+    witch_hat:
+      location: top
+      slots:
+      - 17
+      source: nexo
+      id: witch_hat
+      name: <white><gradient:#C38BFF:#5B2A86>Sombrero de Bruja</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_witch_hat_click
+      right_click:
+        Scripts:
+        - hcosm_witch_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_witch_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_witch_hat_click
+    sun_wizard_hat:
+      location: top
+      slots:
+      - 18
+      source: nexo
+      id: sun_wizard_hat
+      name: <white><gradient:#FFE45C:#FF8A00>Sombrero del Mago Solar</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Mago Solar'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_sun_wizard_hat_click
+      right_click:
+        Scripts:
+        - hcosm_sun_wizard_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_sun_wizard_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_sun_wizard_hat_click
+    moon_wizard_hat:
+      location: top
+      slots:
+      - 19
+      source: nexo
+      id: moon_wizard_hat
+      name: <white><gradient:#B8C6FF:#4A5BB3>Sombrero del Mago Lunar</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Mago Lunar'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 2500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_moon_wizard_hat_click
+      right_click:
+        Scripts:
+        - hcosm_moon_wizard_hat_click
+      shift_left_click:
+        Scripts:
+        - hcosm_moon_wizard_hat_click
+      shift_right_click:
+        Scripts:
+        - hcosm_moon_wizard_hat_click
+    cemetery_witch_cloak:
+      location: top
+      slots:
+      - 20
+      source: nexo
+      id: cemetery_witch_cloak
+      name: <white><gradient:#B57BFF:#6B2FB3>Capa de la Bruja del Cementerio</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Bruja del Cementerio'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_cemetery_witch_cloak_click
+      right_click:
+        Scripts:
+        - hcosm_cemetery_witch_cloak_click
+      shift_left_click:
+        Scripts:
+        - hcosm_cemetery_witch_cloak_click
+      shift_right_click:
+        Scripts:
+        - hcosm_cemetery_witch_cloak_click
+    chained_monstruosity_back:
+      location: top
+      slots:
+      - 21
+      source: nexo
+      id: chained_monstruosity_back
+      name: <white><gradient:#C9CDD6:#6E7380>Cadenas de la Monstruosidad Encadenada</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Monstruosidad Encadenada'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_chained_monstruosity_back_click
+      right_click:
+        Scripts:
+        - hcosm_chained_monstruosity_back_click
+      shift_left_click:
+        Scripts:
+        - hcosm_chained_monstruosity_back_click
+      shift_right_click:
+        Scripts:
+        - hcosm_chained_monstruosity_back_click
+    crow_lord_wings:
+      location: top
+      slots:
+      - 22
+      source: nexo
+      id: crow_lord_wings
+      name: <white><gradient:#8FA3C7:#2E3A55>Alas del Señor de los Cuervos</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Señor de los Cuervos'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_crow_lord_wings_click
+      right_click:
+        Scripts:
+        - hcosm_crow_lord_wings_click
+      shift_left_click:
+        Scripts:
+        - hcosm_crow_lord_wings_click
+      shift_right_click:
+        Scripts:
+        - hcosm_crow_lord_wings_click
+    noir_elegance_shoulderpads:
+      location: top
+      slots:
+      - 23
+      source: nexo
+      id: noir_elegance_shoulderpads
+      name: <white><gradient:#FF8A8A:#7A1F2B>Hombreras de la Elegancia Noir</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Elegancia Noir'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_noir_elegance_shoulderpads_click
+      right_click:
+        Scripts:
+        - hcosm_noir_elegance_shoulderpads_click
+      shift_left_click:
+        Scripts:
+        - hcosm_noir_elegance_shoulderpads_click
+      shift_right_click:
+        Scripts:
+        - hcosm_noir_elegance_shoulderpads_click
+    archmage_shoulderpads:
+      location: top
+      slots:
+      - 24
+      source: nexo
+      id: archmage_shoulderpads
+      name: <white><gradient:#7FD8FF:#2F6FB3>Hombreras del Archimago</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Archimago'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_archmage_shoulderpads_click
+      right_click:
+        Scripts:
+        - hcosm_archmage_shoulderpads_click
+      shift_left_click:
+        Scripts:
+        - hcosm_archmage_shoulderpads_click
+      shift_right_click:
+        Scripts:
+        - hcosm_archmage_shoulderpads_click
+    ritualistic_back:
+      location: top
+      slots:
+      - 25
+      source: nexo
+      id: ritualistic_back
+      name: <white><gradient:#FF7A45:#8B2500>Ornamento Ritual</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Ritualista'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_ritualistic_back_click
+      right_click:
+        Scripts:
+        - hcosm_ritualistic_back_click
+      shift_left_click:
+        Scripts:
+        - hcosm_ritualistic_back_click
+      shift_right_click:
+        Scripts:
+        - hcosm_ritualistic_back_click
+    skeleton_control_wings:
+      location: top
+      slots:
+      - 26
+      source: nexo
+      id: skeleton_control_wings
+      name: <white><gradient:#E6E8EE:#8A8F99>Alas del Amo de los Esqueletos</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Amo de los Esqueletos'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_skeleton_control_wings_click
+      right_click:
+        Scripts:
+        - hcosm_skeleton_control_wings_click
+      shift_left_click:
+        Scripts:
+        - hcosm_skeleton_control_wings_click
+      shift_right_click:
+        Scripts:
+        - hcosm_skeleton_control_wings_click
+    spike_lord_wings:
+      location: top
+      slots:
+      - 27
+      source: nexo
+      id: spike_lord_wings
+      name: <white><gradient:#FFB347:#8B4A00>Alas del Señor de las Púas</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Señor de las Púas'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_spike_lord_wings_click
+      right_click:
+        Scripts:
+        - hcosm_spike_lord_wings_click
+      shift_left_click:
+        Scripts:
+        - hcosm_spike_lord_wings_click
+      shift_right_click:
+        Scripts:
+        - hcosm_spike_lord_wings_click
+    witch_robe:
+      location: top
+      slots:
+      - 28
+      source: nexo
+      id: witch_robe
+      name: <white><gradient:#C38BFF:#5B2A86>Túnica de Bruja</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_witch_robe_click
+      right_click:
+        Scripts:
+        - hcosm_witch_robe_click
+      shift_left_click:
+        Scripts:
+        - hcosm_witch_robe_click
+      shift_right_click:
+        Scripts:
+        - hcosm_witch_robe_click
+    sun_wizard_cloak:
+      location: top
+      slots:
+      - 29
+      source: nexo
+      id: sun_wizard_cloak
+      name: <white><gradient:#FFE45C:#FF8A00>Capa del Mago Solar</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Mago Solar'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_sun_wizard_cloak_click
+      right_click:
+        Scripts:
+        - hcosm_sun_wizard_cloak_click
+      shift_left_click:
+        Scripts:
+        - hcosm_sun_wizard_cloak_click
+      shift_right_click:
+        Scripts:
+        - hcosm_sun_wizard_cloak_click
+    moon_wizard_cloak:
+      location: top
+      slots:
+      - 30
+      source: nexo
+      id: moon_wizard_cloak
+      name: <white><gradient:#B8C6FF:#4A5BB3>Capa del Mago Lunar</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Mago Lunar'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 4000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_moon_wizard_cloak_click
+      right_click:
+        Scripts:
+        - hcosm_moon_wizard_cloak_click
+      shift_left_click:
+        Scripts:
+        - hcosm_moon_wizard_cloak_click
+      shift_right_click:
+        Scripts:
+        - hcosm_moon_wizard_cloak_click
+    cemetery_witch_broom:
+      location: top
+      slots:
+      - 31
+      source: nexo
+      id: cemetery_witch_broom
+      name: <white><gradient:#B57BFF:#6B2FB3>Escoba de la Bruja del Cementerio</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Bruja del Cementerio'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_cemetery_witch_broom_click
+      right_click:
+        Scripts:
+        - hcosm_cemetery_witch_broom_click
+      shift_left_click:
+        Scripts:
+        - hcosm_cemetery_witch_broom_click
+      shift_right_click:
+        Scripts:
+        - hcosm_cemetery_witch_broom_click
+    chained_monstruosity_sword:
+      location: top
+      slots:
+      - 32
+      source: nexo
+      id: chained_monstruosity_sword
+      name: <white><gradient:#C9CDD6:#6E7380>Espada de la Monstruosidad Encadenada</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Monstruosidad Encadenada'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_chained_monstruosity_sword_click
+      right_click:
+        Scripts:
+        - hcosm_chained_monstruosity_sword_click
+      shift_left_click:
+        Scripts:
+        - hcosm_chained_monstruosity_sword_click
+      shift_right_click:
+        Scripts:
+        - hcosm_chained_monstruosity_sword_click
+    crow_lord_staff:
+      location: top
+      slots:
+      - 33
+      source: nexo
+      id: crow_lord_staff
+      name: <white><gradient:#8FA3C7:#2E3A55>Bastón del Señor de los Cuervos</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Señor de los Cuervos'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_crow_lord_staff_click
+      right_click:
+        Scripts:
+        - hcosm_crow_lord_staff_click
+      shift_left_click:
+        Scripts:
+        - hcosm_crow_lord_staff_click
+      shift_right_click:
+        Scripts:
+        - hcosm_crow_lord_staff_click
+    noir_elegance_staff:
+      location: top
+      slots:
+      - 34
+      source: nexo
+      id: noir_elegance_staff
+      name: <white><gradient:#FF8A8A:#7A1F2B>Bastón de la Elegancia Noir</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Elegancia Noir'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_noir_elegance_staff_click
+      right_click:
+        Scripts:
+        - hcosm_noir_elegance_staff_click
+      shift_left_click:
+        Scripts:
+        - hcosm_noir_elegance_staff_click
+      shift_right_click:
+        Scripts:
+        - hcosm_noir_elegance_staff_click
+    archmage_staff:
+      location: top
+      slots:
+      - 35
+      source: nexo
+      id: archmage_staff
+      name: <white><gradient:#7FD8FF:#2F6FB3>Bastón del Archimago</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Archimago'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_archmage_staff_click
+      right_click:
+        Scripts:
+        - hcosm_archmage_staff_click
+      shift_left_click:
+        Scripts:
+        - hcosm_archmage_staff_click
+      shift_right_click:
+        Scripts:
+        - hcosm_archmage_staff_click
+    ritualistic_staff:
+      location: top
+      slots:
+      - 36
+      source: nexo
+      id: ritualistic_staff
+      name: <white><gradient:#FF7A45:#8B2500>Bastón Ritual</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Ritualista'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_ritualistic_staff_click
+      right_click:
+        Scripts:
+        - hcosm_ritualistic_staff_click
+      shift_left_click:
+        Scripts:
+        - hcosm_ritualistic_staff_click
+      shift_right_click:
+        Scripts:
+        - hcosm_ritualistic_staff_click
+    skeleton_control_mace:
+      location: top
+      slots:
+      - 37
+      source: nexo
+      id: skeleton_control_mace
+      name: <white><gradient:#E6E8EE:#8A8F99>Maza del Amo de los Esqueletos</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Amo de los Esqueletos'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_skeleton_control_mace_click
+      right_click:
+        Scripts:
+        - hcosm_skeleton_control_mace_click
+      shift_left_click:
+        Scripts:
+        - hcosm_skeleton_control_mace_click
+      shift_right_click:
+        Scripts:
+        - hcosm_skeleton_control_mace_click
+    spike_lord_sword:
+      location: top
+      slots:
+      - 38
+      source: nexo
+      id: spike_lord_sword
+      name: <white><gradient:#FFB347:#8B4A00>Espada del Señor de las Púas</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Señor de las Púas'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_spike_lord_sword_click
+      right_click:
+        Scripts:
+        - hcosm_spike_lord_sword_click
+      shift_left_click:
+        Scripts:
+        - hcosm_spike_lord_sword_click
+      shift_right_click:
+        Scripts:
+        - hcosm_spike_lord_sword_click
+    witch_broom:
+      location: top
+      slots:
+      - 39
+      source: nexo
+      id: witch_broom
+      name: <white><gradient:#C38BFF:#5B2A86>Escoba de Bruja</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_witch_broom_click
+      right_click:
+        Scripts:
+        - hcosm_witch_broom_click
+      shift_left_click:
+        Scripts:
+        - hcosm_witch_broom_click
+      shift_right_click:
+        Scripts:
+        - hcosm_witch_broom_click
+    sun_wizard_staff:
+      location: top
+      slots:
+      - 40
+      source: nexo
+      id: sun_wizard_staff
+      name: <white><gradient:#FFE45C:#FF8A00>Bastón del Mago Solar</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Mago Solar'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_sun_wizard_staff_click
+      right_click:
+        Scripts:
+        - hcosm_sun_wizard_staff_click
+      shift_left_click:
+        Scripts:
+        - hcosm_sun_wizard_staff_click
+      shift_right_click:
+        Scripts:
+        - hcosm_sun_wizard_staff_click
+    moon_wizard_staff:
+      location: top
+      slots:
+      - 41
+      source: nexo
+      id: moon_wizard_staff
+      name: <white><gradient:#B8C6FF:#4A5BB3>Bastón del Mago Lunar</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Mago Lunar'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3000 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_moon_wizard_staff_click
+      right_click:
+        Scripts:
+        - hcosm_moon_wizard_staff_click
+      shift_left_click:
+        Scripts:
+        - hcosm_moon_wizard_staff_click
+      shift_right_click:
+        Scripts:
+        - hcosm_moon_wizard_staff_click
+    bat_balloon:
+      location: top
+      slots:
+      - 42
+      source: nexo
+      id: bat_balloon
+      name: <white><gradient:#C38BFF:#5B2A86>Globo de Murciélago</gradient>
+      lore:
+      - '<#9EA3AE>Set: <white>Encanto de Bruja'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - ''
+      - '<white><glyph:diamond> <#E6E8EE>Precio: <#D89BFF>✦ 3500 Shards'
+      - <white><glyph:checkmark> <#E6E8EE>Compra única, tuyo para siempre
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para comprar o equipar
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - hcosm_bat_balloon_click
+      right_click:
+        Scripts:
+        - hcosm_bat_balloon_click
+      shift_left_click:
+        Scripts:
+        - hcosm_bat_balloon_click
+      shift_right_click:
+        Scripts:
+        - hcosm_bat_balloon_click
+    armario:
+      location: top
+      slots:
+      - 49
+      source: nexo
+      id: hmcc_icon_espalda
+      name: <white><gradient:#FFE29A:#FFB347>Mi Armario</gradient>
+      lore:
+      - <#C9CDD6>Equipa o quita los cosméticos
+      - <#C9CDD6>que ya tienes.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      left_click:
+        Scripts:
+        - hcosm_armario_click
+      right_click:
+        Scripts:
+        - hcosm_armario_click
+      shift_left_click:
+        Scripts:
+        - hcosm_armario_click
+      shift_right_click:
+        Scripts:
+        - hcosm_armario_click

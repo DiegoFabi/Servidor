@@ -1,0 +1,15 @@
+Id: Nocsy_Drakonin_Baby-Fire
+MythicMob: Nocsy_Drakonin-Fire-Baby
+Permission: mcpets.nocsy_drakonin_baby.fire
+DespawnSkill: Nocsy_Drakonin_Despawn
+Mountable: false
+Distance: 5
+SpawnRange: 2
+ComingBackRange: 2
+Icon:
+  Material: BLAZE_ROD
+  Name: §6Drakonin Bebé de Fuego
+  CustomModelData: 96401
+  Description:
+  - §7A cute little drakonin
+  - §7that'll follow you everywhere !

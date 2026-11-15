@@ -1,0 +1,8 @@
+# Iconos propios para los menús de CoreTools
+icono_casa:
+  itemname: <white>Casa
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/casa
+    custom_model_data: 1183

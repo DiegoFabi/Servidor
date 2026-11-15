@@ -1,0 +1,19 @@
+# ============================================================
+#  Moss Golem - selvas
+#  Mundo: survivalMain (moderado: probabilidades bajas y límite de
+#  mobs iguales alrededor para no saturar ni afectar el rendimiento).
+#  REPLACE solo sustituye mobs hostiles vanilla (nunca animales).
+# ============================================================
+
+RandomMossGolem:
+  Type: MossGolem
+  Worlds: survivalMain
+  Chance: 0.12
+  Priority: 5
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: JUNGLE,SPARSE_JUNGLE,BAMBOO_JUNGLE,LUSH_CAVES
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,SPIDER} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=MossGolem;a=<2;r=50} true

@@ -1,0 +1,17 @@
+isEnabled: true
+material: CROSSBOW
+name: '&cCursed Crossbow'
+lore:
+- "&cYikes..."
+enchantments:
+- "VANISHING_CURSE,1"
+- "MULTISHOT,8"
+- "QUICK_CHARGE,5"
+- "PIERCING,8"
+potionEffects: 
+- "UNLUCK,2,self,continuous"
+- "SLOW,3,self,continuous"
+- "BLINDNESS,1,self,onHit"
+- "CONFUSION,1,self,onHit"
+- "STRENGTH,2,self,onHit"
+itemType: UNIQUE
