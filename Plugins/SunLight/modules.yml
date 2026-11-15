@@ -36,8 +36,7 @@ Modules:
     Name: Extras
     Prefix: <gradient:#FFAA00:#FF8833:#FF5500><b>EXTRAS</b></gradient><dark_gray> » </dark_gray>
   greetings:
-    # Desactivado: la entrada/salida la anuncia Skript (servidor/anuncios.sk)
-    Enabled: false
+    Enabled: true
     Name: Greetings
     Prefix: <gradient:#FFAA00:#FF8833:#FF5500><b>GREETINGS</b></gradient><dark_gray> » </dark_gray>
   homes:

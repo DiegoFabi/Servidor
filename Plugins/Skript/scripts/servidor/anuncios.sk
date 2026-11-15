@@ -3,22 +3,12 @@
 #  Único script de anuncios: todo aviso para el servidor entero va aquí.
 #  Requiere: Skript 2.10+
 #
-#  - Entrada y salida de jugadores (para todo el servidor).
-#    El módulo "greetings" de SunLight está desactivado para no duplicar;
-#    la bienvenida privada sigue en SunLight (extras > JoinCommands).
 #  - Tótem de la inmortalidad consumido.
+#  (La entrada/salida la anuncia SunLight: modules/greetings/settings.yml)
 #
 #  Rendimiento: solo eventos, sin temporizadores. "on resurrect" solo se
 #  dispara si el tótem salva al jugador (los eventos cancelados se ignoran).
 # ============================================================
-
-on join:
-    set join message to ""
-    broadcast "<#55FF55><bold>+</bold> <gray>%player% <#55FF55>se ha unido al servidor, ¡bienvenido!"
-
-on quit:
-    set quit message to ""
-    broadcast "<#FF5555><bold>-</bold> <gray>%player% <#FF5555>ha salido del servidor."
 
 on resurrect:
     victim is a player

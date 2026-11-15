@@ -14,7 +14,7 @@ Skript carga las subcarpetas automáticamente. Un archivo que empieza con `-` es
 | `minijuegos/` | `chat_minigames.sk`, `ruleta.sk`, `busca_objetos.sk` (1v1 cada hora y evento de la ruleta roja), `veneno_toxico.sk` (evento de la ruleta roja), `reto_clicks.sk` (/retoclicks), `tres_en_raya.sk` (/tresenraya, 1v1 con apuesta cada 40 min) |
 | `items/` | Comportamiento global de items: `tooltip_style.sk` (fondo de tooltip por custom_data), `durabilidad.sk` (usos limitados por custom_data `usos`, /desgastar) |
 | `personalizacion/` | `particulas_cosmeticas.sk` (7 partículas decorativas que se compran con Shards en CoreTools) |
-| `servidor/` | MOTD, `anuncios.sk` (único script de anuncios globales: entrada/salida, tótems), `nametag_propio.sk` y `tutorial.sk` (puente del tutorial de TypeWriter + menú `/historia`) |
+| `servidor/` | MOTD, `anuncios.sk` (único script de anuncios globales, p. ej. tótems), `nametag_propio.sk` y `tutorial.sk` (puente del tutorial de TypeWriter + menú `/historia`) |
 | `examples/` | Ejemplos de Skript (desactivados) |
 
 ## Librería global `utils/items.sk`
