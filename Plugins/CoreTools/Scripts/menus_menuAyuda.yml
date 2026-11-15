@@ -1,0 +1,109 @@
+# Acciones de los botones de menuAyuda (comandos al hacer clic)
+menuayuda_0_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="core-menu menuMain {caster_name}";runas=console} @Self
+menuayuda_5_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="buzon";runas=player} @Self
+menuayuda_6_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="rtp";runas=player} @Self
+menuayuda_7_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="spawn";runas=player} @Self
+menuayuda_8_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="homes";runas=player} @Self
+menuayuda_10_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="historia";runas=player} @Self
+menuayuda_11_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="perfil";runas=player} @Self
+menuayuda_12_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="pv";runas=player} @Self
+menuayuda_13_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="nclaim";runas=player} @Self
+menuayuda_15_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="coinflip";runas=player} @Self
+menuayuda_17_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="jobs";runas=op} @Self
+menuayuda_18_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="bp";runas=player} @Self
+menuayuda_19_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="team";runas=player} @Self
+menuayuda_20_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="mcpets";runas=player} @Self
+menuayuda_21_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="skills";runas=player} @Self
+menuayuda_22_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="magia";runas=player} @Self
+menuayuda_23_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="cosmetic menu defaultmenu_hats {caster_name}";runas=console} @Self
+menuayuda_25_click:
+  Conditions: []
+  Mechanics:
+  - closeinventory{} @Self
+  - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
+  - command{c="bounty";runas=player} @Self

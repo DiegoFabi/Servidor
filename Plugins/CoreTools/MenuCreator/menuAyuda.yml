@@ -1,10 +1,11 @@
-# Guía de funciones que no son evidentes a simple vista.
-# Abrir: /coremenu menuAyuda (botón Ayuda del menú principal). Solo informativo.
+# Guía del servidor: funciones básicas (filas 2-3) y avanzadas (filas 4-5).
+# Abrir: /coremenu menuAyuda. Los botones con comando lo ejecutan al hacer clic
+# (acciones en Scripts/menus_menuAyuda.yml).
 menuAyuda:
   permission: ''
   bottom_inventory: false
   name: '&8Guía del Servidor'
-  size: 5
+  size: 6
   fill_material: AIR
   enable_animation: false
   buttons:
@@ -25,22 +26,17 @@ menuAyuda:
       - 18
       - 26
       - 27
-      - 28
-      - 29
-      - 30
-      - 31
-      - 32
-      - 33
-      - 34
       - 35
       - 36
-      - 37
-      - 38
-      - 39
-      - 41
-      - 42
-      - 43
       - 44
+      - 45
+      - 46
+      - 47
+      - 48
+      - 50
+      - 51
+      - 52
+      - 53
       source: vanilla
       material: purple_stained_glass_pane
       name: '&7'
@@ -51,77 +47,130 @@ menuAyuda:
       slots:
       - 10
       source: vanilla
-      material: iron_axe
-      name: <white><glyph:tree> <gradient:#FFE29A:#FFB347>Tala de Árboles</gradient>
+      material: book
+      name: <white>Menú de <#F28BB6><bold>OPCIONES</bold></#F28BB6> <#9EA3AE>✦ (<white><glyph:settings></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Rompe un tronco con un hacha y
-      - <#C9CDD6>caerá el árbol entero, hojas incluidas.
-      - <#C9CDD6>(Hasta 64 troncos por árbol)
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Hacha + romper la base del tronco
+      - <#C9A8FF>❖ <white>Abre todo lo del servidor desde
+      - <white>  el <#C9A8FF><bold>libro</bold></#C9A8FF> del último slot.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Tiendas, trabajos, pase, mascotas
+      - '  <#9EA3AE>y mucho más en un solo lugar.'
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Acceso: <#7FFF9E>Clic derecho con el libro'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_0_click
+      right_click:
+        Scripts:
+        - menuayuda_0_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_0_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_0_click
     ayuda_11:
       location: top
       slots:
       - 11
       source: vanilla
-      material: iron_pickaxe
-      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Minería en Veta</gradient>
+      material: iron_axe
+      name: <white>Tala de <#F28BB6><bold>ÁRBOLES</bold></#F28BB6> <#9EA3AE>✦ (<white><glyph:tree></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Rompe un mineral con un pico, de pie
-      - '<#C9CDD6>o agachado: se extrae toda la veta.'
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Pico + romper un mineral
+      - <#C9A8FF>❖ <white>Rompe la base de un tronco y
+      - <white>  caerá el <#C9A8FF><bold>árbol entero</bold></#C9A8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Hasta <#7FD8FF><bold>64 troncos</bold></#7FD8FF> por árbol,
+      - '  <#9EA3AE>hojas incluidas.'
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Requisito: <#FFD36B>Un hacha en la mano'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
     ayuda_12:
       location: top
       slots:
       - 12
       source: vanilla
-      material: hopper
-      name: <white><glyph:treasure> <gradient:#FFE29A:#FFB347>Recolección Automática</gradient>
+      material: iron_pickaxe
+      name: <white>Minería en <#F28BB6><bold>VETA</bold></#F28BB6> <#9EA3AE>✦ (<white><glyph:pickaxe></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Lo que rompes o sueltan los mobs
-      - <#C9CDD6>va directo a tu inventario.
-      - <#C9CDD6>La barra de acción muestra lo recogido.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Automático; si no cabe, cae al suelo
+      - <#C9A8FF>❖ <white>Rompe un mineral con un pico y
+      - <white>  se extrae <#C9A8FF><bold>toda la veta</bold></#C9A8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Funciona de pie o agachado.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Requisito: <#FFD36B>Un pico en la mano'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
     ayuda_13:
       location: top
       slots:
       - 13
       source: vanilla
-      material: dropper
-      name: <white><glyph:warning> <gradient:#FFE29A:#FFB347>Cómo Soltar Objetos</gradient>
+      material: hopper
+      name: <white>Recolección <#F28BB6><bold>AUTOMÁTICA</bold></#F28BB6> <#9EA3AE>✦ (<white><glyph:treasure></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>La tecla Q sola está bloqueada
-      - <#C9CDD6>para que no pierdas objetos por error.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Shift + Q para soltar el objeto
+      - <#C9A8FF>❖ <white>Lo que rompes o sueltan los mobs
+      - <white>  va <#C9A8FF><bold>directo a tu inventario</bold></#C9A8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Si no cabe, cae al suelo.
+      - '  <#9EA3AE>La barra de acción te avisa.'
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Estado: <#7FFF9E>Siempre activa ✔'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
     ayuda_14:
       location: top
       slots:
       - 14
       source: vanilla
-      material: book
-      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Menú de Opciones</gradient>
+      material: dropper
+      name: <white>Soltar <#F28BB6><bold>OBJETOS</bold></#F28BB6> <#9EA3AE>✦ (<white><glyph:warning></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>El libro del último slot de tu
-      - <#C9CDD6>barra abre el menú principal.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Clic derecho con el libro
+      - <#C9A8FF>❖ <white>La tecla Q sola está bloqueada
+      - <white>  para que no <#C9A8FF><bold>pierdas objetos</bold></#C9A8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Evita tirar tu equipo por error.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Atajo: <#FFD36B>Shift + Q'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
     ayuda_15:
       location: top
@@ -129,148 +178,746 @@ menuAyuda:
       - 15
       source: vanilla
       material: chest
-      name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Buzón</gradient>
+      name: <white>Tu <#F28BB6><bold>BUZÓN</bold></#F28BB6> <#9EA3AE>(/buzon) <#9EA3AE>✦ (<white><glyph:envelope></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Objetos de subastas, NPCs o premios
-      - <#C9CDD6>que no cupieron en tu inventario.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>/buzon para recogerlos
+      - <#C9A8FF>❖ <white>Recoge los objetos que no
+      - <white>  cupieron en tu <#C9A8FF><bold>inventario</bold></#C9A8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Subastas, NPCs y premios
+      - '  <#9EA3AE>llegan aquí si estás lleno.'
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/buzon ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>EJECUTAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_5_click
+      right_click:
+        Scripts:
+        - menuayuda_5_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_5_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_5_click
     ayuda_16:
       location: top
       slots:
       - 16
       source: vanilla
-      material: gold_ingot
-      name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Subastas</gradient>
+      material: ender_pearl
+      name: <white>Viaje <#F28BB6><bold>ALEATORIO</bold></#F28BB6> <#9EA3AE>(/rtp) <#9EA3AE>✦ (<white><glyph:earth></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Subasta el objeto de tu mano y
-      - <#C9CDD6>los demás pujan con su dinero.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>/subasta (precio inicial)
+      - <#C9A8FF>❖ <white>Te lleva a un lugar <#C9A8FF><bold>al azar</bold></#C9A8FF>
+      - <white>  del mundo para explorar.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Quédate quieto mientras carga.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/rtp ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_6_click
+      right_click:
+        Scripts:
+        - menuayuda_6_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_6_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_6_click
     ayuda_19:
       location: top
       slots:
       - 19
       source: vanilla
-      material: sunflower
-      name: <white><glyph:dollar> <gradient:#FFE29A:#FFB347>Duelos y Minijuegos</gradient>
+      material: compass
+      name: <white>Volver al <#F28BB6><bold>SPAWN</bold></#F28BB6> <#9EA3AE>(/spawn) <#9EA3AE>✦ (<white><glyph:castle_entrance></white><#9EA3AE>)
       lore:
-      - '<#C9CDD6>Apuesta contra otros jugadores:'
-      - '<#C9CDD6>• Coinflip: cara o cruz <#FFD36B>/cf'
-      - <#C9CDD6>• Reto de Clicks 1v1 <#FFD36B>/retoclicks (jugador)
-      - '<#C9CDD6>• Busca Objetos: cada hora en el chat'
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Pulsa los botones del chat para unirte
+      - <#C9A8FF>❖ <white>Regresa a la <#C9A8FF><bold>ciudad principal</bold></#C9A8FF>
+      - <white>  desde cualquier lugar.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Ideal si te pierdes.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/spawn ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_7_click
+      right_click:
+        Scripts:
+        - menuayuda_7_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_7_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_7_click
     ayuda_20:
       location: top
       slots:
       - 20
       source: vanilla
-      material: villager_spawn_egg
-      name: <white><glyph:chat_bubble> <gradient:#FFE29A:#FFB347>NPCs del Mundo</gradient>
+      material: red_bed
+      name: <white>Tus <#F28BB6><bold>HOGARES</bold></#F28BB6> <#9EA3AE>(/homes) <#9EA3AE>✦ (<white><glyph:castle_entrance></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Los NPCs hablan contigo y algunos
-      - <#C9CDD6>tienen minijuegos, como el Frutero.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Clic derecho a un NPC
+      - <#C9A8FF>❖ <white>Guarda puntos para <#C9A8FF><bold>volver</bold></#C9A8FF>
+      - <white>  a tu casa cuando quieras.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Crea uno con <#7FD8FF><bold>/sethome nombre</bold></#7FD8FF>.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/homes ✔'
+      - '<#5C6370>■ <white>Crear: <#FFD36B>/sethome (nombre)'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_8_click
+      right_click:
+        Scripts:
+        - menuayuda_8_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_8_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_8_click
     ayuda_21:
       location: top
       slots:
       - 21
       source: vanilla
-      material: amethyst_shard
-      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Personalización</gradient>
+      material: lead
+      name: <white>Pedir <#F28BB6><bold>TELETRANSPORTE</bold></#F28BB6> <#9EA3AE>(/tpa) <#9EA3AE>✦ (<white><glyph:person></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Muebles, partículas y cosméticos
-      - <#C9CDD6>que se compran con Shards.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Menú de Opciones > Personalización
+      - <#C9A8FF>❖ <white>Pide ir junto a <#C9A8FF><bold>otro jugador</bold></#C9A8FF>
+      - <white>  y espera a que acepte.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Acepta con <#7FD8FF><bold>/tpyes</bold></#7FD8FF> o rechaza
+      - '  <#9EA3AE>con <#7FD8FF><bold>/tpno</bold></#7FD8FF>.'
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Uso: <#FFD36B>/tpa (jugador)'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
     ayuda_22:
       location: top
       slots:
       - 22
       source: vanilla
-      material: shield
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Protecciones</gradient>
+      material: writable_book
+      name: <white>Tu <#F28BB6><bold>HISTORIA</bold></#F28BB6> <#9EA3AE>(/historia) <#9EA3AE>✦ (<white><glyph:stacked_books></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Protege tu terreno para que nadie
-      - <#C9CDD6>rompa ni robe tus cosas.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>/nclaim
+      - <#C9A8FF>❖ <white>Revisa las <#C9A8FF><bold>partes del capítulo</bold></#C9A8FF>
+      - <white>  que ya has desbloqueado.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Avanza hablando con los NPCs.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/historia ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>LEER</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_10_click
+      right_click:
+        Scripts:
+        - menuayuda_10_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_10_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_10_click
     ayuda_23:
       location: top
       slots:
       - 23
       source: vanilla
       material: paper
-      name: <white><glyph:person> <gradient:#FFE29A:#FFB347>Tu Perfil</gradient>
+      name: <white>Mi <#F28BB6><bold>PERFIL</bold></#F28BB6> <#9EA3AE>(/perfil) <#9EA3AE>✦ (<white><glyph:person></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Consulta tu equipamiento, saldo,
-      - <#C9CDD6>vida y nivel en cualquier momento.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Menú de Opciones > Mi Perfil
+      - <#C9A8FF>❖ <white>Consulta tu <#C9A8FF><bold>equipo</bold></#C9A8FF>, saldo,
+      - <white>  vida y nivel al instante.
+      - ''
+      - <#5C6370>■ <#9EA3AE>También desde el Menú de Opciones.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/perfil ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_11_click
+      right_click:
+        Scripts:
+        - menuayuda_11_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_11_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_11_click
     ayuda_24:
       location: top
       slots:
       - 24
       source: vanilla
-      material: blaze_rod
-      name: <white><glyph:high_voltage> <gradient:#FFE29A:#FFB347>Objetos Mágicos</gradient>
+      material: ender_chest
+      name: <white>Cofre <#F28BB6><bold>PERSONAL</bold></#F28BB6> <#9EA3AE>(/pv) <#9EA3AE>✦ (<white><glyph:treasure></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Las runas, bastones y reliquias tienen
-      - <#C9CDD6>poderes y usos limitados (durabilidad).
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>Clic derecho con el objeto en la mano
+      - <#C9A8FF>❖ <white>Un almacén <#C9A8FF><bold>solo tuyo</bold></#C9A8FF> que
+      - <white>  llevas a todas partes.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Nadie más puede abrirlo.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/pv ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_12_click
+      right_click:
+        Scripts:
+        - menuayuda_12_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_12_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_12_click
     ayuda_25:
       location: top
       slots:
       - 25
       source: vanilla
-      material: nether_star
-      name: <white><glyph:trophy> <gradient:#FFE29A:#FFB347>Pase de Batalla</gradient>
+      material: shield
+      name: <white>Tus <#F28BB6><bold>PROTECCIONES</bold></#F28BB6> <#9EA3AE>(/nclaim) <#9EA3AE>✦ (<white><glyph:shield></white><#9EA3AE>)
       lore:
-      - <#C9CDD6>Completa misiones para subir de
-      - <#C9CDD6>nivel y reclamar recompensas.
+      - <#9EA3AE>Básico <glyph:star>
       - ''
-      - <white><glyph:light_bulb> <#7FB2FF>/bp o Menú de Opciones
+      - <#C9A8FF>❖ <white>Protege tu terreno para que
+      - <white>  nadie <#C9A8FF><bold>rompa ni robe</bold></#C9A8FF> nada.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Agrega amigos a tu zona.
+      - ''
+      - <#F28BB6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/nclaim ✔'
+      - ''
+      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_13_click
+      right_click:
+        Scripts:
+        - menuayuda_13_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_13_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_13_click
+    ayuda_28:
+      location: top
+      slots:
+      - 28
+      source: vanilla
+      material: gold_ingot
+      name: <white>Casa de <#5CE1E6><bold>SUBASTAS</bold></#5CE1E6> <#9EA3AE>(/subasta) <#9EA3AE>✦ (<white><glyph:gold_coin></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Subasta el objeto de tu mano
+      - <white>  y los demás <#C9A8FF><bold>pujan</bold></#C9A8FF> con dinero.
+      - ''
+      - <#5C6370>■ <#9EA3AE>El mejor postor se lo lleva.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Uso: <#FFD36B>/subasta (precio inicial)'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_29:
+      location: top
+      slots:
+      - 29
+      source: vanilla
+      material: sunflower
+      name: <white>Cara o <#5CE1E6><bold>CRUZ</bold></#5CE1E6> <#9EA3AE>(/coinflip) <#9EA3AE>✦ (<white><glyph:dollar></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Apuesta dinero contra otro
+      - <white>  jugador en un <#C9A8FF><bold>coinflip</bold></#C9A8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Todo o nada, ¿te atreves?
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/coinflip ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>APOSTAR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_15_click
+      right_click:
+        Scripts:
+        - menuayuda_15_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_15_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_15_click
+    ayuda_30:
+      location: top
+      slots:
+      - 30
+      source: vanilla
+      material: lever
+      name: <white>Reto de <#5CE1E6><bold>CLICKS</bold></#5CE1E6> <#9EA3AE>(/retoclicks) <#9EA3AE>✦ (<white><glyph:crossed_swords></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - '<#C9A8FF>❖ <white>Duelo 1v1: gana quien haga'
+      - <white>  <#C9A8FF><bold>más clicks</bold></#C9A8FF> a tiempo.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Se apuesta dinero entre ambos.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Uso: <#FFD36B>/retoclicks (jugador)'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_31:
+      location: top
+      slots:
+      - 31
+      source: vanilla
+      material: iron_hoe
+      name: <white>Tus <#5CE1E6><bold>TRABAJOS</bold></#5CE1E6> <#9EA3AE>(/jobs) <#9EA3AE>✦ (<white><glyph:pickaxe></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Únete a una <#C9A8FF><bold>profesión</bold></#C9A8FF> y
+      - <white>  gana dinero al trabajar.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Sube de nivel para cobrar más.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/jobs ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>TRABAJAR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_17_click
+      right_click:
+        Scripts:
+        - menuayuda_17_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_17_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_17_click
+    ayuda_32:
+      location: top
+      slots:
+      - 32
+      source: vanilla
+      material: nether_star
+      name: <white>Pase de <#5CE1E6><bold>BATALLA</bold></#5CE1E6> <#9EA3AE>(/bp) <#9EA3AE>✦ (<white><glyph:trophy></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Completa <#C9A8FF><bold>misiones</bold></#C9A8FF> y reclama
+      - <white>  recompensas por nivel.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Misiones diarias y semanales.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/bp ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_18_click
+      right_click:
+        Scripts:
+        - menuayuda_18_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_18_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_18_click
+    ayuda_33:
+      location: top
+      slots:
+      - 33
+      source: vanilla
+      material: white_banner
+      name: <white>Tu <#5CE1E6><bold>EQUIPO</bold></#5CE1E6> <#9EA3AE>(/team) <#9EA3AE>✦ (<white><glyph:crown></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Crea un equipo con tus amigos
+      - <white>  y <#C9A8FF><bold>compartan</bold></#C9A8FF> progreso.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Chat, base y estadísticas.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/team ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_19_click
+      right_click:
+        Scripts:
+        - menuayuda_19_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_19_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_19_click
+    ayuda_34:
+      location: top
+      slots:
+      - 34
+      source: vanilla
+      material: bone
+      name: <white>Tus <#5CE1E6><bold>MASCOTAS</bold></#5CE1E6> <#9EA3AE>(/mcpets) <#9EA3AE>✦ (<white><glyph:clover></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Invoca <#C9A8FF><bold>mascotas</bold></#C9A8FF> que te
+      - <white>  acompañan en la aventura.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Se compran en la Tienda.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/mcpets ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_20_click
+      right_click:
+        Scripts:
+        - menuayuda_20_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_20_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_20_click
+    ayuda_37:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: enchanted_book
+      name: <white>Tus <#5CE1E6><bold>HABILIDADES</bold></#5CE1E6> <#9EA3AE>(/skills) <#9EA3AE>✦ (<white><glyph:light_bulb></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Sube <#C9A8FF><bold>habilidades</bold></#C9A8FF> al jugar y
+      - <white>  desbloquea mejoras.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Minar, talar, luchar y más.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/skills ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_21_click
+      right_click:
+        Scripts:
+        - menuayuda_21_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_21_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_21_click
+    ayuda_38:
+      location: top
+      slots:
+      - 38
+      source: vanilla
+      material: blaze_rod
+      name: <white>Poderes <#5CE1E6><bold>MÁGICOS</bold></#5CE1E6> <#9EA3AE>(/magia) <#9EA3AE>✦ (<white><glyph:high_voltage></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Hechizos y objetos con <#C9A8FF><bold>poderes</bold></#C9A8FF>
+      - <white>  y <#7FD8FF><bold>usos limitados</bold></#7FD8FF>.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Clic derecho con el objeto.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/magia ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_22_click
+      right_click:
+        Scripts:
+        - menuayuda_22_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_22_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_22_click
+    ayuda_39:
+      location: top
+      slots:
+      - 39
+      source: vanilla
+      material: leather_helmet
+      name: <white>Tus <#5CE1E6><bold>COSMÉTICOS</bold></#5CE1E6> <#9EA3AE>✦ (<white><glyph:star></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Sombreros, mochilas y globos
+      - <white>  para <#C9A8FF><bold>personalizar</bold></#C9A8FF> tu estilo.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Se compran con <#7FD8FF><bold>Shards</bold></#7FD8FF>.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Acceso: <#7FFF9E>Armario de cosméticos ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_23_click
+      right_click:
+        Scripts:
+        - menuayuda_23_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_23_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_23_click
+    ayuda_40:
+      location: top
+      slots:
+      - 40
+      source: vanilla
+      material: amethyst_shard
+      name: <white>Partículas <#5CE1E6><bold>MÍSTICAS</bold></#5CE1E6> <#9EA3AE>✦ (<white><glyph:potion></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Efectos que te <#C9A8FF><bold>rodean</bold></#C9A8FF> al
+      - <white>  caminar por el reino.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Se compran con <#7FD8FF><bold>Shards</bold></#7FD8FF>.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Acceso: <#FFD36B>Opciones > Personalización'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_41:
+      location: top
+      slots:
+      - 41
+      source: vanilla
+      material: skeleton_skull
+      name: <white>Cazar <#5CE1E6><bold>RECOMPENSAS</bold></#5CE1E6> <#9EA3AE>(/bounty) <#9EA3AE>✦ (<white><glyph:skull></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Pon precio a la cabeza de
+      - <white>  otro jugador o <#C9A8FF><bold>cobra</bold></#C9A8FF> una.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Quien lo derrote se la lleva.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Comando: <#7FFF9E>/bounty ✔'
+      - ''
+      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - menuayuda_25_click
+      right_click:
+        Scripts:
+        - menuayuda_25_click
+      shift_left_click:
+        Scripts:
+        - menuayuda_25_click
+      shift_right_click:
+        Scripts:
+        - menuayuda_25_click
+    ayuda_42:
+      location: top
+      slots:
+      - 42
+      source: vanilla
+      material: villager_spawn_egg
+      name: <white>NPCs del <#5CE1E6><bold>MUNDO</bold></#5CE1E6> <#9EA3AE>✦ (<white><glyph:chat_bubble></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - '<#C9A8FF>❖ <white>Habla con los NPCs: algunos'
+      - <white>  tienen <#C9A8FF><bold>misiones</bold></#C9A8FF> y minijuegos.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Sigue el rastro blanco de la
+      - '  <#9EA3AE>historia para encontrarlos.'
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Acceso: <#FFD36B>Clic derecho a un NPC'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
+      - HIDE_ADDITIONAL_TOOLTIP
+    ayuda_43:
+      location: top
+      slots:
+      - 43
+      source: vanilla
+      material: clock
+      name: <white>Minijuegos del <#5CE1E6><bold>CHAT</bold></#5CE1E6> <#9EA3AE>✦ (<white><glyph:game_controller></white><#9EA3AE>)
+      lore:
+      - <#9EA3AE>Avanzado <glyph:high_voltage>
+      - ''
+      - <#C9A8FF>❖ <white>Cada cierto tiempo aparece un
+      - <white>  <#C9A8FF><bold>reto</bold></#C9A8FF> en el chat con premio.
+      - ''
+      - <#5C6370>■ <#9EA3AE>Responde primero para ganar.
+      - ''
+      - <#5CE1E6>——— ✦ Información
+      - '<#5C6370>■ <white>Premio: <#7FFF9E>Dinero al instante ✔'
+      - ''
+      - <#9EA3AE>❖ Solo informativo
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ENCHANTS
       - HIDE_ADDITIONAL_TOOLTIP
     volver:
       location: top
       slots:
-      - 40
+      - 49
       source: vanilla
       material: dark_oak_door
       name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
       lore:
       - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar al menú
-      flags:
-      - HIDE_ATTRIBUTES
       left_click:
         Scripts:
         - menuseleccion_volver_click
