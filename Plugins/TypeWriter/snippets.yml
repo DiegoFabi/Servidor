@@ -8,7 +8,7 @@ entity:
   activity:
     look_close:
       range: 10.0
-      # This determines how quickly the npc will look at the player.
+      # Qué tan rápido el NPC gira para mirar al jugador.
       smoothing: 0.2
 objective:
   entity:
@@ -18,31 +18,31 @@ objective:
       dialogue: <white><b>💬
 road_network:
   distance:
-    # The maximum distance that can be between two nodes. 
-    # Therefore it is also the maximum radius the player can be from a node to be inside the road network
+    # Distancia máxima entre dos nodos.
+    # También es el radio máximo al que puede estar el jugador de un nodo para usar la red
     max: 100.0
   path_stream:
-    # When path streams are forcefully canceled after this amount of time in milliseconds
+    # Tiempo en milisegundos tras el cual se cancela un rastro de partículas
     timeout: 15000
 chat:
-  # The amount of messages displayed in the chat history during a dialogue
+  # Cantidad de mensajes del historial de chat que se muestran durante un diálogo
   darken-limit: 12
-  # The amount of padding between the dialogue and the chat history
+  # Separación entre el diálogo y el historial de chat
   spacing: 3
 dialogue:
   spoken:
     format: |-
       <gray><st>                                                            </st>
 
-      <gray><padding>[ <bold><speaker></bold><reset><gray> ]
+      <gray><padding><bold><speaker></bold><reset>
 
       <message>
 
-      <next_color>                     Press<white> <confirmation_key> </white>to <finish_text>
+      <next_color>                     Pulsa<white> <confirmation_key> </white>para <finish_text>
       <gray><st>                                                            </st>
     instruction:
-      next: continue
-      finish: finish
+      next: continuar
+      finish: terminar
       color:
         base: <gray>
         highlight: <red>
@@ -58,7 +58,7 @@ dialogue:
       <white> <speaker><reset>: <text>
 
       <options>
-      <#5d6c78>[ <grey><white>Scroll</white> to change option and press<white> <confirmation_key> </white>to select <#5d6c78>]</#5d6c78>
+      <grey>Usa la <white>rueda</white> para cambiar de opción y pulsa<white> <confirmation_key> </white>para elegir
       <gray><st>                                                            </st>
     prefix:
       selected: <#78ff85>>>
@@ -66,20 +66,20 @@ dialogue:
       down: <white> ↓
       unselected: '  '
     selected: |2
-       <prefix> <#5d6c78>[ <white><option_text> <#5d6c78>]
+       <prefix> <white><option_text>
     unselected: |2
-       <prefix> <#5d6c78>[ <grey><option_text> <#5d6c78>]
+       <prefix> <grey><option_text>
     maxLineLength: 40
-    # The delay in milliseconds between each option being shown.
+    # Retraso en milisegundos entre cada opción mostrada.
     delay: 100
   actionbar:
-    format: '<bold><speaker></bold><reset><gray>: <white><message> <gray>[<confirmation_key>]</gray><padding>'
+    format: '<bold><speaker></bold><reset><gray>: <white><message> <gray>(<confirmation_key>)</gray><padding>'
 quest:
   objective:
     inactive: <gray><display></gray>
     showing: <white><display></white>
 look_at_entity_interaction_bound:
-  # The duration in Milliseconds the player can move their head before the bound forces them to look at teh entity.
+  # Milisegundos que el jugador puede mover la cabeza antes de que se le obligue a mirar al NPC.
   look_back_delay: 500
 cinematic:
   dialogue:
@@ -89,17 +89,17 @@ cinematic:
     subtitle:
       format: <white><message>
       speaker:
-        format: <gray>[ <reset><bold><speaker></bold><reset><gray> ]
+        format: <reset><bold><speaker></bold><reset>
       percentage: 0.4
 action:
   message:
     format: |2
 
-      <gray> [ <bold><speaker></bold><reset><gray> ]
+      <gray> <bold><speaker></bold><reset>
       <reset><white> <message>
 content:
   road_network:
-    # The distance at which the edge particles will still be shown
+    # Distancia a la que todavía se muestran las partículas de los bordes
     show_edge_distance: 30.0
-    # Automatically recalculate the edges of a road node right after it has been placed.
+    # Recalcular automáticamente los bordes de un nodo justo después de colocarlo.
     auto_recalculate_edges_on_place: true
