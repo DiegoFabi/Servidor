@@ -27,11 +27,12 @@ Nametags:
   # └── Color:
   #       -> Color of the player name. List of available colors: https://minecraft.wiki/w/Formatting_codes#Color_codes
   Groups:
-    # Global: [rango de LuckPerms] Nombre  ◆ (Equipo de justTeams)
+    # Línea del medio del nametag: [rango] Nombre. El clan va arriba y las
+    # estadísticas abajo (Skript servidor/nametag.sk).
     todos:
       Priority: 1
       Ranks:
       - '*'
       Prefix: '<white>%player_prefix%</white> '
-      Suffix: ' <glyph:diamond> <white>(%justteams_name%)</white>'
+      Suffix: ''
       Color: white

@@ -1,0 +1,186 @@
+# ============================================================
+#  nametag.sk - Nametag de 3 líneas
+#  Requiere: Skript 2.10+ (display entities), SkBee (objetivos y number
+#  format), Vault + LuckPerms (prefijo) y CoreTools (clan por PAPI).
+#
+#      ◆ (Clan)                     <- text display montado en el jugador
+#   [RANGO] Nombre                  <- nametag de SunLight (prefijo)
+#   ⚔ 0 | ❤ 20 | ✦ 30               <- hueco "below_name" del scoreboard
+#
+#  - El clan lo manda CoreTools (Scripts/nametag.yml) con %justteams_name%
+#    usando el comando de consola /ntequipo <jugador> <texto>: al entrar y
+#    cuando alguien usa /team (se refresca a todos).
+#  - Minecraft no dibuja tu propio nametag: tú ves una copia (nombre +
+#    estadísticas) montada sobre ti y visible solo para ti (en F5).
+#  - Los displays van como PASAJEROS del jugador: el cliente los mueve con
+#    él en cada frame (sin el retraso de los armor stands teletransportados).
+#  - Jugadores invisibles, en espectador o vanish: sin línea de clan.
+#
+#  Rendimiento: solo eventos (entrar, salir, daño, curación, muerte,
+#  reaparecer, teletransporte, cambio de mundo, nivel y /team). Sin
+#  temporizadores. Varias actualizaciones en el mismo tick se agrupan.
+# ============================================================
+
+on load:
+    set {-nt::obj} to objective with id "bajonombre"
+    if {-nt::obj} is not set:
+        set {-nt::obj} to objective with id "bajonombre" with criteria "dummy" named "" in display slot below_name
+    set display slot of {-nt::obj} to below_name
+    loop all players:
+        ntRehacer(loop-player)
+
+# ---------------- textos ----------------
+function ntStats(p: player) :: text:
+    set {_vida} to round(health of {_p} * 2)
+    set {_kills} to player kills stat of {_p}
+    return "<#5CE1E6>⚔ %{_kills}% <dark_gray>| <#FF6B6B>❤ %{_vida}% <dark_gray>| <#7FD8FF>✦ %level of {_p}%"
+
+function ntClan(p: player) :: text:
+    set {_eq} to {-nt::eq::%uuid of {_p}%} ? "Sin Equipo"
+    return "<#6D7CFF>◆ <white>(%{_eq}%)"
+
+function ntPropio(p: player) :: text:
+    set {_pre} to prefix of {_p}
+    if {_pre} is set:
+        return "<white>%{_pre}%</white> <white>%name of {_p}%%nl%%ntStats({_p})%"
+    return "<white>%name of {_p}%%nl%%ntStats({_p})%"
+
+# ---------------- línea de abajo (below_name) ----------------
+function ntStatsActualizar(p: player):
+    {-nt::obj} is set
+    {_p} is online
+    set score of {_p} for {-nt::obj} to 0
+    set number format of {-nt::obj} for {_p} to mini message from ntStats({_p})
+    set {_d} to {-nt::yo::%uuid of {_p}%}
+    if {_d} is alive:
+        set text of {_d} to formatted ntPropio({_p})
+
+function ntPendiente(p: player):
+    set {_u} to uuid of {_p}
+    {-nt::pend::%{_u}%} is not set
+    set {-nt::pend::%{_u}%} to true
+    wait 1 tick
+    delete {-nt::pend::%{_u}%}
+    ntStatsActualizar({_p})
+
+# ---------------- displays montados ----------------
+function ntBorrar(p: player):
+    set {_u} to uuid of {_p}
+    loop "clan" and "yo":
+        set {_d} to {-nt::%loop-value%::%{_u}%}
+        delete {-nt::%loop-value%::%{_u}%}
+        if {_d} is alive:
+            kill {_d}
+
+function ntOculto(p: player) :: boolean:
+    if gamemode of {_p} is spectator:
+        return true
+    if {_p} has potion effect invisibility:
+        return true
+    loop all players:
+        loop-player is not {_p}
+        loop-player can't see {_p}
+        return true
+    return false
+
+function ntCrear(p: player):
+    {_p} is online
+    ntBorrar({_p})
+    ntOculto({_p}) is false
+    set {_u} to uuid of {_p}
+    # Clan: lo ven todos (y tú en F5)
+    spawn text display at location of {_p}:
+        set {_c} to entity
+    set text of {_c} to formatted ntClan({_p})
+    set billboard of {_c} to center
+    set transformation translation of {_c} to vector(0, 0.75, 0)
+    make {_c} ride {_p}
+    set {-nt::clan::%{_u}%} to {_c}
+    # Copia propia (nombre + estadísticas): solo para ti
+    spawn text display at location of {_p}:
+        set {_y} to entity
+        hide entity from all players
+    set text of {_y} to formatted ntPropio({_p})
+    set billboard of {_y} to center
+    set transformation translation of {_y} to vector(0, 0.1, 0)
+    reveal {_y} to {_p}
+    make {_y} ride {_p}
+    set {-nt::yo::%{_u}%} to {_y}
+
+function ntRehacer(p: player):
+    wait 2 ticks
+    ntCrear({_p})
+    ntStatsActualizar({_p})
+
+# ---------------- clan desde CoreTools ----------------
+command /ntequipo <player> <text>:
+    executable by: console
+    trigger:
+        set {-nt::eq::%uuid of arg-1%} to arg-2
+        set {_c} to {-nt::clan::%uuid of arg-1%}
+        if {_c} is alive:
+            set text of {_c} to formatted ntClan(arg-1)
+
+on command:
+    set {_c} to lowercase command
+    {_c} is "team" or "teams" or "clan" or "equipo"
+    wait 20 ticks
+    loop all players:
+        execute console command "core-cast nametag_equipo %loop-player%"
+
+# ---------------- eventos ----------------
+on join:
+    # Las copias propias de los demás no deben verse por quien entra
+    loop {-nt::yo::*}:
+        loop-value is alive
+        hide loop-value from player
+    ntRehacer(player)
+
+on quit:
+    ntBorrar(player)
+    delete {-nt::eq::%uuid of player%}
+    delete {-nt::pend::%uuid of player%}
+
+on respawn:
+    ntRehacer(player)
+
+on teleport:
+    ntRehacer(player)
+
+on world change:
+    ntRehacer(player)
+
+on gamemode change:
+    ntRehacer(player)
+
+on death of a player:
+    ntBorrar(victim)
+    ntPendiente(victim)
+    attacker is a player
+    ntPendiente(attacker)
+
+on damage of a player:
+    set {_v} to victim
+    ntPendiente({_v})
+
+on heal of a player:
+    set {_v} to event-entity
+    ntPendiente({_v})
+
+on level change:
+    ntPendiente(player)
+
+on command:
+    set {_c} to lowercase command
+    {_c} is "vanish" or "v"
+    ntRehacer(player)
+
+on unload:
+    loop {-nt::clan::*}:
+        if loop-value is alive:
+            kill loop-value
+    loop {-nt::yo::*}:
+        if loop-value is alive:
+            kill loop-value
+    delete {-nt::clan::*}
+    delete {-nt::yo::*}

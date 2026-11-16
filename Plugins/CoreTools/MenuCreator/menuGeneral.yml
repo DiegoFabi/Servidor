@@ -269,8 +269,7 @@ menuMain:
       slots:
       - 13
       source: vanilla
-      material: player_head
-      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjc1YmNmZjJlNzRkZWVkMzdhMzE5YTFmNDA0ZTcwZDA2YTVmMzYwY2FjZWU5OWM3MTM0NmYzODU2MGNiZDcyYSJ9fX0=
+      material: emerald
       name: <white><glyph:shopping_cart> <gradient:#FFE29A:#FFB347>Tienda</gradient>
       lore:
       - <#C9CDD6>Compra y vende bloques, minerales,
@@ -394,8 +393,7 @@ menuMain:
       slots:
       - 22
       source: vanilla
-      material: player_head
-      texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM5ZjFjMGRkY2Y1MzgzM2JhYzVmYmY1NzcxNWY3YzI1M2VlZmQyODcyZmYyN2U0YTg5M2JlMzA1MjliYzY4NSJ9fX0=
+      material: ender_pearl
       name: <white><glyph:airplane> <gradient:#FFE29A:#FFB347>Teletransporte</gradient>
       lore:
       - <#C9CDD6>Viaja rápido a las diferentes
