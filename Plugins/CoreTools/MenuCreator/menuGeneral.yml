@@ -361,8 +361,8 @@ menuMain:
       location: top
       slots:
       - 24
-      source: nexo
-      id: icono_casa
+      source: vanilla
+      material: bell
       name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Protecciones</gradient>
       lore:
       - <#C9CDD6>Protege tu casa y tus terrenos

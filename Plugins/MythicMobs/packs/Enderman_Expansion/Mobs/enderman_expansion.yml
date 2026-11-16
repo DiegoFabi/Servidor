@@ -3,8 +3,8 @@ enderman_warped_forest:
   Display: '&fWarped Forest Enderman'
   Health: 50
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -24,14 +24,18 @@ enderman_warped_forest:
   - skill{s=warped_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
   - skill{s=warped_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+  Drops:
+  - ender_pearl 1 0.6
+  - warped_fungus 1 0.4
+  - twisting_vines 1-2 0.4
 
 enderman_crimson_forest:
   Type: ENDERMAN
   Display: '&fCrimson Forest Enderman'
   Health: 50
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -51,14 +55,18 @@ enderman_crimson_forest:
   - skill{s=crimson_forest_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
   - skill{s=crimson_forest_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+  Drops:
+  - ender_pearl 1 0.6
+  - crimson_fungus 1 0.4
+  - nether_wart 1-2 0.4
 
 enderman_soulsand_valley:
   Type: ENDERMAN
   Display: '&fSouldsand Valley Enderman'
   Health: 30
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.23
@@ -77,14 +85,18 @@ enderman_soulsand_valley:
   - skill{s=soulsand_valley_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
   - skill{s=soulsand_valley_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+  Drops:
+  - ender_pearl 1 0.6
+  - soul_sand 1-2 0.5
+  - bone 1-2 0.4
 
 enderman_nether_wastes:
   Type: ENDERMAN
   Display: '&fNether Wastes Enderman'
   Health: 40
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.21
@@ -105,14 +117,18 @@ enderman_nether_wastes:
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.1to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - netherrack 1-3 0.5
+  - quartz 1-2 0.4
 
 enderman_end:
   Type: ENDERMAN
   Display: '&fEnd Enderman'
   Health: 40
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.21
@@ -130,14 +146,17 @@ enderman_end:
   - skill{s=end_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+  Drops:
+  - ender_pearl 1 0.6
+  - end_stone 1-2 0.5
 
 enderman_end_islands:
   Type: ENDERMAN
   Display: '&fEnd Islands Enderman'
   Health: 80
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.21
@@ -158,16 +177,17 @@ enderman_end_islands:
   - skill{s=end_islands_enderman_possess_mechanic} @self ~onTimer:190 0.19
   - skill{s=end_islands_enderman_projectile_mechanic} @self{so=-1.5to1.5} ~onTimer:180 ?incombat true
   - skill{s=tall_enderman_sound_stare} @self ~onTimer:200 0.08
-
-
+  Drops:
+  - ender_pearl 1 0.6
+  - chorus_fruit 1-2 0.6
 
 enderman_ocean:
   Type: DROWNED
   Display: '&fOcean Enderman'
   Health: 30
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventRandomEquipment: true
     PreventVanillaDamage: true
@@ -188,14 +208,18 @@ enderman_ocean:
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
   - sound{s=entity.enderman.teleport;v=0.21;p=1.2to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.1to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - prismarine_shard 1-2 0.5
+  - kelp 1-3 0.5
 
 enderman_desert:
   Type: ENDERMAN
   Display: '&fDesert Enderman'
   Health: 40
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -216,14 +240,18 @@ enderman_desert:
   - skill{s=desert_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - sand 1-3 0.5
+  - cactus 1 0.3
 
 enderman_dark_oak:
   Type: ENDERMAN
   Display: '&fDark Oak Enderman'
   Health: 50
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -246,15 +274,18 @@ enderman_dark_oak:
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.8} @self ~onTeleport
   - randomskill{s=dark_oak_enderman_sound_idle_1,dark_oak_enderman_sound_idle_2} @self ~onTimer:100 0.09
   - skill{s=dark_oak_enderman_sound_stare} @self ~onTimer:200 0.08
-
+  Drops:
+  - ender_pearl 1 0.6
+  - dark_oak_log 1-2 0.5
+  - apple 1 0.3
 
 enderman_ice_spikes:
   Type: ENDERMAN
   Display: '&fIce Spikes Enderman'
   Health: 60
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.22
@@ -269,14 +300,18 @@ enderman_ice_spikes:
   - damage{a=8} @target ~onAttack
   - skill{s=ice_spikes_enderman_angry_PRE} @self ~onTimer:50 ?incombat true
   - skill{s=ice_spikes_enderman_particles} @self ~onTimer:10 0.75
+  Drops:
+  - ender_pearl 1 0.6
+  - ice 1-2 0.5
+  - packed_ice 1 0.3
 
 enderman_swamp:
   Type: ENDERMAN
   Display: '&fSwamp Enderman'
   Health: 50
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.22
@@ -299,14 +334,18 @@ enderman_swamp:
   - skill{s=swamp_enderman_angry_PRE} @self ~onTimer:70 ?incombat true
   - skill{s=swamp_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
+  Drops:
+  - ender_pearl 1 0.6
+  - slime_ball 1 0.35
+  - lily_pad 1 0.4
 
 enderman_windswept_hills:
   Type: ENDERMAN
   Display: '&fWindswept Hills Enderman'
   Health: 50
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.22
@@ -334,14 +373,18 @@ enderman_windswept_hills:
 # Variantes añadidas (modelos del pack que no tenían mob).
 # Usan las habilidades genéricas del pack.
 # ------------------------------------------------------------
+  Drops:
+  - ender_pearl 1 0.6
+  - emerald 1 0.15
+  - gravel 1-2 0.4
 
 enderman_savanna:
   Type: ENDERMAN
   Display: '&fSavanna Enderman'
   Health: 45
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -361,14 +404,18 @@ enderman_savanna:
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - acacia_log 1-2 0.5
+  - wheat 1-2 0.3
 
 enderman_badlands:
   Type: ENDERMAN
   Display: '&fBadlands Enderman'
   Health: 45
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -388,14 +435,18 @@ enderman_badlands:
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - red_sand 1-3 0.5
+  - gold_nugget 1-3 0.4
 
 enderman_snowy:
   Type: ENDERMAN
   Display: '&fSnowy Enderman'
   Health: 50
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -415,6 +466,10 @@ enderman_snowy:
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - snowball 1-3 0.6
+  - spruce_log 1 0.3
 
 enderman_mushroom:
   Type: ENDERMAN
@@ -448,8 +503,8 @@ enderman_flower_fields:
   Display: '&fFlower Fields Enderman'
   Health: 40
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -469,14 +524,19 @@ enderman_flower_fields:
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - poppy 1 0.4
+  - dandelion 1 0.4
+  - bone_meal 1-2 0.4
 
 enderman_cave:
   Type: ENDERMAN
   Display: '&fCave Enderman'
   Health: 55
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventLeashing: false
     PreventVanillaDamage: true
     MovementSpeed: 0.19
@@ -496,3 +556,7 @@ enderman_cave:
   - skill{s=generic_enderman_particles} @self ~onTimer:10 0.75
   - sound{s=entity.enderman.teleport;v=0.21;p=1.1to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.0to0.8} @self ~onTimer:100 0.09
+  Drops:
+  - ender_pearl 1 0.6
+  - coal 1-2 0.5
+  - pointed_dripstone 1 0.3

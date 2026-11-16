@@ -1,6 +1,19 @@
 {
-  "pack":{
+  "pack": {
     "pack_format": 61,
-	"description": "Inventarios Custom"
+    "description": "Inventarios Custom"
+  },
+  "overlays": {
+    "entries": [
+      {
+        "min_format": 46,
+        "max_format": 62,
+        "formats": {
+          "min_inclusive": 46,
+          "max_inclusive": 62
+        },
+        "directory": "inventories_1_21_4"
+      }
+    ]
   }
 }

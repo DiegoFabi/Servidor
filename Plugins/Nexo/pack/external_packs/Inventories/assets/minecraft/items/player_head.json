@@ -9,7 +9,9 @@
         "model": {
           "type": "minecraft:special",
           "base": "minecraft:gui/wallet_head",
-          "model": { "type": "minecraft:head", "kind": "player" }
+          "model": {
+            "type": "minecraft:player_head"
+          }
         }
       },
       {
@@ -17,14 +19,18 @@
         "model": {
           "type": "minecraft:special",
           "base": "minecraft:item/template_skull",
-          "model": { "type": "minecraft:head", "kind": "player" }
+          "model": {
+            "type": "minecraft:player_head"
+          }
         }
       }
     ],
     "fallback": {
       "type": "minecraft:special",
       "base": "minecraft:item/template_skull",
-      "model": { "type": "minecraft:head", "kind": "player" }
+      "model": {
+        "type": "minecraft:player_head"
+      }
     }
   }
 }

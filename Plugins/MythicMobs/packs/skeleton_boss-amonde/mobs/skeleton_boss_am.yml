@@ -5,13 +5,13 @@ skeleton_boss:
   Damage: 5
   Faction: skellies
   Options:
+    PreventOtherDrops: true
     Silent: true
     MovementSpeed: 0.2
     PreventSunburn: true
     PreventJockeyMounts: true
     KnockbackResistance: 1
     Collidable: true
-    PreventOtherDrops: true
     Invisible: true
   Skills:
   - look{i=true} @target ~onTimer:1
@@ -53,6 +53,11 @@ skeleton_boss:
 
   - sound{s=minecraft:entity.skeleton.step;v=1;p=0.1;delay=30} @self ~onDeath
   - sound{s=minecraft:block.mud.break;v=1;p=0.1;delay=30} @self ~onDeath
+  Drops:
+  - bone 5-10 1
+  - bone_block 1-2 1
+  - gold_ingot 2-4 1
+  - diamond 1 0.5
 
 skeleton_minion:
   Display: skeleton_minion
@@ -61,13 +66,13 @@ skeleton_minion:
   Damage: 5
   Faction: skellies
   Options:
+    PreventOtherDrops: true
     Silent: true
     MovementSpeed: 0.17
     PreventSunburn: true
     PreventJockeyMounts: true
     KnockbackResistance: 0.25
     Collidable: true
-    PreventOtherDrops: true
     Invisible: true
   Skills:
   - setai{ai=false;delay=10} @self ~onSpawn
@@ -93,6 +98,10 @@ skeleton_minion:
   - sound{s=minecraft:entity.skeleton.hurt;v=0.6;p=2} @selflocation ~onDamaged
   - particles{p=poof;a=25;hs=0.4;vs=0.4;delay=60} @modelpart{p=torso} ~onDeath
   - particles{p=poof;size=0.5;a=15;hs=0.4;vs=0.4;delay=60} @modelpart{p=head} ~onDeath
+  Drops:
+  - bone 1-3 1
+  - arrow 1-2 0.5
+  - sand 1 0.3
 
 skeleton_boss_poison_vfx:
   Display: skeleton_boss_poison_vfx

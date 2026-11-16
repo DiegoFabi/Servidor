@@ -12,8 +12,8 @@ MossGolem:
     MovementSpeed: 0
     Power: 0.1
   Options:
-    Silent: true
     PreventOtherDrops: true
+    Silent: true
     PreventSunburn: true
     AlwaysShowName: true
     MovementSpeed: 0.24
@@ -33,7 +33,8 @@ MossGolem:
   - heal{a=1} @self ~onTimer:20 <70%
   - effect:particles{p=reddust;color=#41793f;a=3;y=0.8;hs=0.3;vs=0.2} @self ~onTimer:3 <70%
   - skill{s=MossGolemDeath} @self ~onDeath
-  Drops:
-  - MOSSY_COBBLESTONE 16
-
 # 61207S808
+  Drops:
+  - mossy_cobblestone 16 1
+  - moss_block 2-4 0.6
+  - vine 1-3 0.5
