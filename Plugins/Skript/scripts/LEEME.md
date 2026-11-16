@@ -12,7 +12,6 @@ Skript carga las subcarpetas automáticamente. Un archivo que empieza con `-` es
 | `magia/avanzados/` | `clase_humano.sk` (/humano), `ira_del_cielo.sk` (/iradelcielo), `meteoro_arcano.sk` (/meteoro) |
 | `economia/` | Sistemas con money de ExcellentEconomy: `coinflip.sk`, `subasta.sk` |
 | `minijuegos/` | `chat_minigames.sk`, `ruleta.sk`, `busca_objetos.sk` (1v1 cada 80 min y evento de la ruleta roja), `veneno_toxico.sk` (evento de la ruleta roja), `reto_clicks.sk` (/retoclicks), `tres_en_raya.sk` (/tresenraya, 1v1 con apuesta cada 55 min) |
-| `utils/formato_anuncio.sk` | Formato común de los anuncios (centrado, paletas) y separación entre anuncios (no coinciden con SunLight) |
 | `items/` | Comportamiento global de items: `tooltip_style.sk` (fondo de tooltip por custom_data), `durabilidad.sk` (usos limitados por custom_data `usos`, /desgastar) |
 | `personalizacion/` | `particulas_cosmeticas.sk` (7 partículas decorativas que se compran con Shards en CoreTools) |
 | `servidor/` | MOTD, `anuncios.sk` (único script de anuncios globales, p. ej. tótems), `nametag.sk` (nametag de 3 líneas: clan, rango+nombre de SunLight y estadísticas) y `tutorial.sk` (puente del tutorial de TypeWriter + menú `/historia`) |

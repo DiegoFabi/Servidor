@@ -8,7 +8,7 @@
 menuMascotas:
   permission: ''
   bottom_inventory: false
-  name: '&8Mascotas'
+  name: '        &8— ⋄ Mascotas ⋄ —'
   size: 3
   fill_material: AIR
   enable_animation: false
@@ -40,7 +40,7 @@ menuMascotas:
       - 25
       - 26
       source: vanilla
-      material: purple_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES
@@ -153,7 +153,7 @@ menuMascotas:
 menuPersonalizacion:
   permission: ''
   bottom_inventory: false
-  name: '&8Personalización'
+  name: '    &8— ⋄ Personalización ⋄ —'
   size: 3
   fill_material: AIR
   enable_animation: false
@@ -185,7 +185,7 @@ menuPersonalizacion:
       - 25
       - 26
       source: vanilla
-      material: orange_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES
@@ -307,7 +307,7 @@ menuPersonalizacion:
 menuParticulas:
   permission: ''
   bottom_inventory: false
-  name: '&8Partículas'
+  name: '        &8— ⋄ Partículas ⋄ —'
   size: 3
   fill_material: AIR
   enable_animation: false
@@ -334,7 +334,7 @@ menuParticulas:
       - 25
       - 26
       source: vanilla
-      material: cyan_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES

@@ -180,13 +180,13 @@ function subIniciar(p: player, monto: number):
     set {_n} to subNombre({_i})
     set {_bot} to subBotonesTexto()
     loop all players:
-        anArriba(loop-player, {-subc::cab}, "<#3FCF7A><bold>¡NUEVA SUBASTA!</bold>")
-        anLinea(loop-player, "<white>%{_p}% <#C9CDD6>subasta <white>%{_n}%")
-        anLinea(loop-player, "<#C9CDD6>Puja inicial <#3FCF7A><bold>$%{_monto}%</bold> <dark_gray>• <#C9CDD6>Duración <#9BF0B5>{@duracion} s")
+        subArriba(loop-player, {-subc::cab}, "<#3FCF7A><bold>¡NUEVA SUBASTA!</bold>")
+        subLinea(loop-player, "<white>%{_p}% <#C9CDD6>subasta <white>%{_n}%")
+        subLinea(loop-player, "<#C9CDD6>Puja inicial <#3FCF7A><bold>$%{_monto}%</bold> <dark_gray>• <#C9CDD6>Duración <#9BF0B5>{@duracion} s")
         if loop-player is not {_p}:
             send "" to loop-player
-            anLinea(loop-player, {_bot})
-        anAbajo(loop-player)
+            subLinea(loop-player, {_bot})
+        subAbajo(loop-player)
     subTitle("<gradient:#9BF0B5:#3FCF7A><bold>¡NUEVA SUBASTA!</bold></gradient>", "<white>%{_n}% <dark_gray>• <#3FCF7A>desde $%{_monto}%")
     play sound "block.note_block.chime" with volume 0.8 and pitch 1.2 to all players
     subCiclo({-subasta::id})
@@ -260,10 +260,10 @@ function subFinalizar():
         set {_neto} to {_total} - {_tax}
         add {_neto} to {_v}'s balance
         itemDar({_g}, {_i})
-        anArriba(all players, {-subc::cab}, "<#3FCF7A><bold>¡VENDIDO!</bold>")
-        anLinea(all players, "<white>%{_g}% <#C9CDD6>se lleva <white>%{_n}%")
-        anLinea(all players, "<#C9CDD6>Precio final <#3FCF7A><bold>$%{_total}%</bold> <dark_gray>• <#9BF0B5>%{subasta::pujas}% <#C9CDD6>pujas")
-        anAbajo(all players)
+        subArriba(all players, {-subc::cab}, "<#3FCF7A><bold>¡VENDIDO!</bold>")
+        subLinea(all players, "<white>%{_g}% <#C9CDD6>se lleva <white>%{_n}%")
+        subLinea(all players, "<#C9CDD6>Precio final <#3FCF7A><bold>$%{_total}%</bold> <dark_gray>• <#9BF0B5>%{subasta::pujas}% <#C9CDD6>pujas")
+        subAbajo(all players)
         subTitle("<gradient:#9BF0B5:#3FCF7A><bold>¡VENDIDO!</bold></gradient>", "<#3FCF7A>%{_g}% <#C9CDD6>gana por <#3FCF7A>$%{_total}%")
         play sound "ui.toast.challenge_complete" with volume 0.6 to all players
         if {_v} is online:
@@ -387,7 +387,7 @@ command /subasta [<text>] [<text>]:
 # ------------------------------------------------------------
 # Al recargar o reiniciar: retoma la subasta (o la cierra si ya venció)
 on load:
-    # Paleta de las subastas (verde), ver utils/formato_anuncio.sk
+    # Paleta de las subastas (verde); cada sistema usa su propia paleta
     set {-subc::cab} to "<#9BF0B5>— ⚖ Anuncios de subastas ⚖ —"
     add 1 to {-subasta::id}
     {subasta::activa} is true
@@ -397,3 +397,62 @@ on load:
     else:
         add 1 to {-subasta::id}
         subCiclo({-subasta::id})
+
+# ------------------------------------------------------------
+#  Formato del anuncio (centrado automático, sin etiquetas)
+# ------------------------------------------------------------
+function subAncho(t: text) :: number:
+    set {_w} to 0
+    set {_tag} to false
+    set {_bold} to false
+    set {_nombre} to ""
+    loop length of {_t} times:
+        set {_c} to subtext of {_t} from characters loop-number to loop-number
+        if {_tag} is true:
+            # Lo que va entre comillas (texto de hover, comandos) no se ve
+            if {_c} is "'" or """":
+                if {_q} is not set:
+                    set {_q} to {_c}
+                else if {_q} is {_c}:
+                    delete {_q}
+            else if {_q} is set:
+                set {_nombre} to {_nombre}
+            else if {_c} is ">":
+                set {_tag} to false
+                if {_nombre} is "bold" or "b":
+                    set {_bold} to true
+                else if {_nombre} is "/bold" or "/b" or "reset":
+                    set {_bold} to false
+            else:
+                set {_nombre} to "%{_nombre}%%{_c}%"
+        else if {_c} is "<":
+            set {_tag} to true
+            set {_nombre} to ""
+        else:
+            add 5.6 to {_w}
+            if {_bold} is true:
+                add 1 to {_w}
+    return {_w}
+
+function subCentrar(t: text) :: text:
+    set {_n} to rounded down ((320 - subAncho({_t})) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"
+
+function subArriba(p: players, cabecera: text, titulo: text):
+    send "" to {_p::*}
+    send formatted subCentrar({_cabecera}) to {_p::*}
+    send formatted subCentrar({_titulo}) to {_p::*}
+    send "" to {_p::*}
+
+function subLinea(p: players, t: text):
+    send formatted subCentrar({_t}) to {_p::*}
+
+function subAbajo(p: players):
+    send "" to {_p::*}
+    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "" to {_p::*}
+

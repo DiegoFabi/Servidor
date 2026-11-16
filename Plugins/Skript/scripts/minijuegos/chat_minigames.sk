@@ -38,17 +38,17 @@ on load:
 
 # ------------------------------------------------------------
 #  Programador: 1 minijuego cada 35 minutos (separado de los demás
-#  anuncios con anLibre/anMarcar de utils/formato_anuncio.sk)
+#  anuncios con mgLibre/mgMarcar, al final del script)
 # ------------------------------------------------------------
 every 35 minutes:
     {-mg::activo} is true
     {-mg::id} is not set
     number of all players >= {@min-jugadores}
     loop 20 times:
-        if anLibre() is true:
+        if mgLibre() is true:
             exit loop
         wait 30 seconds
-    anMarcar()
+    mgMarcar()
     {-mg::id} is not set
     mgIniciar()
 
@@ -247,3 +247,27 @@ command /minijuego [<text>] [<text>] [<text>]:
             send "  <white>multiplicacion, division, palabra"
             send "  <dark_gray>Ej: /mj iniciar division 2500  |  /mj iniciar 1500"
             send "<dark_gray><strikethrough>                                        "
+
+# ------------------------------------------------------------
+#  Turno: no coincidir con otro anuncio automático (Skript o SunLight).
+#  {-an::*} es compartido por todos los scripts de anuncios.
+#  1020 = "Interval" de SunLight/modules/scheduler/announcers/global.yml
+# ------------------------------------------------------------
+function mgLibre() :: boolean:
+    set {_t} to unix timestamp of now
+    if {_t} - ({-an::ultimo} ? 0) < 300:
+        return false
+    set {_m} to mod({_t} - {-an::inicio}, 1020)
+    if {_m} < 150:
+        return false
+    if {_m} > 1020 - 150:
+        return false
+    return true
+
+function mgMarcar():
+    set {-an::ultimo} to unix timestamp of now
+
+
+on load:
+    if {-an::inicio} is not set:
+        set {-an::inicio} to unix timestamp of now

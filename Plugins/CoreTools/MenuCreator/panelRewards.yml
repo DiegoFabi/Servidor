@@ -2,13 +2,34 @@
 panelRewards:
   permission: ''
   bottom_inventory: false
-  name: '&5      ❗ ʀᴇᴄᴏᴍᴘᴇɴꜱᴀꜱ ᴅɪᴀʀɪᴀꜱ'
+  name: ' &8— ⋄ Recompensas Diarias ⋄ —'
   size: 4
   fill_material: AIR
   enable_animation: false
   start_script:
   - panelrewards_open
   buttons:
+    volver_menu:
+      location: top
+      slots:
+      - 31
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <#B8AAFF>Volver al <#8E7CFF><bold>MENÚ PRINCIPAL</bold>
+      lore:
+      - <white><glyph:raton_izq> <#9EA3AE>Clic para regresar al menú principal
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
     b1:
       location: top
       slots:
@@ -52,7 +73,7 @@ panelRewards:
       - 15
       - 16
       source: vanilla
-      material: LIME_STAINED_GLASS_PANE
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES

@@ -2,11 +2,32 @@
 panelCmdHelp:
   permission: ''
   bottom_inventory: false
-  name: '       &cᴄᴏᴍᴀɴᴅᴏꜱ ᴅᴇʟ ᴊᴜᴇɢᴏ'
+  name: '  &8— ⋄ Comandos del Juego ⋄ —'
   size: 3
   fill_material: AIR
   enable_animation: false
   buttons:
+    volver_menu:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <#B8AAFF>Volver al <#8E7CFF><bold>MENÚ PRINCIPAL</bold>
+      lore:
+      - <white><glyph:raton_izq> <#9EA3AE>Clic para regresar al menú principal
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
     b1:
       location: top
       slots:
@@ -20,8 +41,8 @@ panelCmdHelp:
       - 7
       - 8
       source: vanilla
-      material: BLACK_STAINED_GLASS_PANE
-      name: '§7'
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&7'
       flags:
       - HIDE_ATTRIBUTES
     b2:

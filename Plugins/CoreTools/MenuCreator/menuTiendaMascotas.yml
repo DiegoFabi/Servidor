@@ -3,7 +3,7 @@
 menuTiendaMascotas:
   permission: ''
   bottom_inventory: false
-  name: '&8Tienda de Mascotas &7• &5Compañeros'
+  name: '       &8— ⋄ Compañeros ⋄ —'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -35,7 +35,7 @@ menuTiendaMascotas:
       - 51
       - 52
       source: vanilla
-      material: purple_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES
@@ -735,7 +735,7 @@ menuTiendaMascotas:
 menuTiendaMascotas2:
   permission: ''
   bottom_inventory: false
-  name: '&8Tienda de Mascotas &7• &5Drakonins'
+  name: '        &8— ⋄ Drakonins ⋄ —'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -767,7 +767,7 @@ menuTiendaMascotas2:
       - 51
       - 52
       source: vanilla
-      material: purple_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES
@@ -1333,7 +1333,7 @@ menuTiendaMascotas2:
 menuTiendaMascotas3:
   permission: ''
   bottom_inventory: false
-  name: '&8Tienda de Mascotas &7• &5Monturas y Especiales'
+  name: '&8— ⋄ Monturas y Especiales ⋄ —'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -1365,7 +1365,7 @@ menuTiendaMascotas3:
       - 51
       - 52
       source: vanilla
-      material: purple_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES

@@ -9,7 +9,7 @@
 panelProfile:
   permission: ''
   bottom_inventory: false
-  name: '&8Mi Perfil'
+  name: '         &8— ⋄ Mi Perfil ⋄ —'
   size: 5
   fill_material: AIR
   enable_animation: false

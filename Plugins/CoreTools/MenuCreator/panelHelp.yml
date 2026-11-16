@@ -2,11 +2,32 @@
 panelHelp:
   permission: ''
   bottom_inventory: false
-  name: '          &5ᴘᴀɴᴇʟ ᴅᴇ ᴀʏᴜᴅᴀ'
+  name: '     &8— ⋄ Panel de Ayuda ⋄ —'
   size: 3
   fill_material: AIR
   enable_animation: false
   buttons:
+    volver_menu:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <#B8AAFF>Volver al <#8E7CFF><bold>MENÚ PRINCIPAL</bold>
+      lore:
+      - <white><glyph:raton_izq> <#9EA3AE>Clic para regresar al menú principal
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
     b1:
       location: top
       slots:
@@ -17,22 +38,10 @@ panelHelp:
       - 25
       - 26
       source: vanilla
-      material: RED_STAINED_GLASS_PANE
-      name: '§c✘ Cerrar Menú!'
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&7'
       flags:
       - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - panelhelp_b1_click
-      right_click:
-        Scripts:
-        - panelhelp_b1_click
-      shift_left_click:
-        Scripts:
-        - panelhelp_b1_click
-      shift_right_click:
-        Scripts:
-        - panelhelp_b1_click
     b2:
       location: top
       slots:

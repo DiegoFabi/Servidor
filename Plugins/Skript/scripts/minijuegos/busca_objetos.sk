@@ -95,12 +95,12 @@ function boAnunciar():
     delete {-bo::jugadores::*}
     loop all players:
         notificar(loop-player)
-        anArriba(loop-player, "<#7FDCE6>— ✧ Anuncios de eventos ✧ —", "<#3FD0DE><bold>BUSCA OBJETOS</bold>")
-        anLinea(loop-player, "<white>¡Duelo 1v1! <#C9CDD6>El primero en conseguir el bloque")
-        anLinea(loop-player, "<#C9CDD6>gana el bote de <#7FDCE6>$%{-bo::apuesta} * 2%")
+        boArriba(loop-player, "<#7FDCE6>— ✧ Anuncios de eventos ✧ —", "<#3FD0DE><bold>BUSCA OBJETOS</bold>")
+        boLinea(loop-player, "<white>¡Duelo 1v1! <#C9CDD6>El primero en conseguir el bloque")
+        boLinea(loop-player, "<#C9CDD6>gana el bote de <#7FDCE6>$%{-bo::apuesta} * 2%")
         send "" to loop-player
-        anLinea(loop-player, "<#7FDCE6>✧ <click:run_command:'/buscaobjetos unirse'><hover:show_text:'<#7FDCE6>Apostar $%{-bo::apuesta}% y unirte'><#7FDCE6>¡Click para <bold>UNIRTE</bold>!</hover></click> <#7FDCE6>✧")
-        anAbajo(loop-player)
+        boLinea(loop-player, "<#7FDCE6>✧ <click:run_command:'/buscaobjetos unirse'><hover:show_text:'<#7FDCE6>Apostar $%{-bo::apuesta}% y unirte'><#7FDCE6>¡Click para <bold>UNIRTE</bold>!</hover></click> <#7FDCE6>✧")
+        boAbajo(loop-player)
     wait {@inscripcion} seconds
     {-bo::id} = {_id}
     {-bo::estado} is "inscripcion"
@@ -193,10 +193,10 @@ on quit:
 every 80 minutes:
     number of all players >= {@min-jugadores}
     loop 20 times:
-        if anLibre() is true:
+        if boLibre() is true:
             exit loop
         wait 30 seconds
-    anMarcar()
+    boMarcar()
     boAnunciar()
 
 # ------------------------------------------------------------
@@ -270,3 +270,85 @@ command /buscaobjetos [<text>]:
             boAnunciar()
         else:
             send "{@prefijo} <#C9CDD6>Cada 80 minutos se abre un duelo 1v1: el primero en conseguir el bloque gana el bote."
+
+# ------------------------------------------------------------
+#  Formato del anuncio (centrado automático, sin etiquetas)
+# ------------------------------------------------------------
+function boAncho(t: text) :: number:
+    set {_w} to 0
+    set {_tag} to false
+    set {_bold} to false
+    set {_nombre} to ""
+    loop length of {_t} times:
+        set {_c} to subtext of {_t} from characters loop-number to loop-number
+        if {_tag} is true:
+            # Lo que va entre comillas (texto de hover, comandos) no se ve
+            if {_c} is "'" or """":
+                if {_q} is not set:
+                    set {_q} to {_c}
+                else if {_q} is {_c}:
+                    delete {_q}
+            else if {_q} is set:
+                set {_nombre} to {_nombre}
+            else if {_c} is ">":
+                set {_tag} to false
+                if {_nombre} is "bold" or "b":
+                    set {_bold} to true
+                else if {_nombre} is "/bold" or "/b" or "reset":
+                    set {_bold} to false
+            else:
+                set {_nombre} to "%{_nombre}%%{_c}%"
+        else if {_c} is "<":
+            set {_tag} to true
+            set {_nombre} to ""
+        else:
+            add 5.6 to {_w}
+            if {_bold} is true:
+                add 1 to {_w}
+    return {_w}
+
+function boCentrar(t: text) :: text:
+    set {_n} to rounded down ((320 - boAncho({_t})) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"
+
+function boArriba(p: players, cabecera: text, titulo: text):
+    send "" to {_p::*}
+    send formatted boCentrar({_cabecera}) to {_p::*}
+    send formatted boCentrar({_titulo}) to {_p::*}
+    send "" to {_p::*}
+
+function boLinea(p: players, t: text):
+    send formatted boCentrar({_t}) to {_p::*}
+
+function boAbajo(p: players):
+    send "" to {_p::*}
+    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "" to {_p::*}
+
+# ------------------------------------------------------------
+#  Turno: no coincidir con otro anuncio automático (Skript o SunLight).
+#  {-an::*} es compartido por todos los scripts de anuncios.
+#  1020 = "Interval" de SunLight/modules/scheduler/announcers/global.yml
+# ------------------------------------------------------------
+function boLibre() :: boolean:
+    set {_t} to unix timestamp of now
+    if {_t} - ({-an::ultimo} ? 0) < 300:
+        return false
+    set {_m} to mod({_t} - {-an::inicio}, 1020)
+    if {_m} < 150:
+        return false
+    if {_m} > 1020 - 150:
+        return false
+    return true
+
+function boMarcar():
+    set {-an::ultimo} to unix timestamp of now
+
+
+on load:
+    if {-an::inicio} is not set:
+        set {-an::inicio} to unix timestamp of now

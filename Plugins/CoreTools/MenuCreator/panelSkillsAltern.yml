@@ -2,13 +2,34 @@
 panelskillsaltern:
   permission: ''
   bottom_inventory: false
-  name: '            &dʜᴀʙɪʟɪᴅᴀᴅᴇꜱ'
+  name: '       &8— ⋄ Habilidades ⋄ —'
   size: 3
   fill_material: AIR
   enable_animation: false
   start_script:
   - panelskillsaltern_open
   buttons:
+    volver_menu:
+      location: top
+      slots:
+      - 22
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <#B8AAFF>Volver al <#8E7CFF><bold>MENÚ PRINCIPAL</bold>
+      lore:
+      - <white><glyph:raton_izq> <#9EA3AE>Clic para regresar al menú principal
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
     b1:
       location: top
       slots:
@@ -20,8 +41,8 @@ panelskillsaltern:
       - 19
       - 20
       source: vanilla
-      material: BLUE_STAINED_GLASS_PANE
-      name: '§7'
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&7'
       flags:
       - HIDE_ATTRIBUTES
     b2:
@@ -36,14 +57,13 @@ panelskillsaltern:
       - 12
       - 17
       - 21
-      - 22
       - 23
       - 24
       - 25
       - 26
       source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '§7'
+      material: GRAY_STAINED_GLASS_PANE
+      name: '&7'
       flags:
       - HIDE_ATTRIBUTES
     b3:

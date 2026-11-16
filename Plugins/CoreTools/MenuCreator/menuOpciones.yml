@@ -3,7 +3,7 @@
 menuOpciones:
   permission: ''
   bottom_inventory: false
-  name: '&8Más Opciones'
+  name: '      &8— ⋄ Más Opciones ⋄ —'
   size: 1
   fill_material: AIR
   enable_animation: true
@@ -188,7 +188,7 @@ menuOpciones:
       slots:
       - 7
       source: vanilla
-      material: gray_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES

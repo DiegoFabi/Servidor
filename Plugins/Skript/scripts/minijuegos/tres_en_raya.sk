@@ -212,10 +212,10 @@ on quit:
 every 55 minutes:
     number of all players >= 2
     loop 20 times:
-        if anLibre() is true:
+        if ttLibre() is true:
             exit loop
         wait 30 seconds
-    anMarcar()
+    ttMarcar()
     ttAnunciar()
 
 # ------------------------------------------------------------
@@ -261,3 +261,27 @@ command /tresenraya [<text>]:
             ttAnunciar()
         else:
             send "{@prefijo} <#C9CDD6>Cada 55 minutos se abre un tres en raya 1v1 con apuesta en el chat."
+
+# ------------------------------------------------------------
+#  Turno: no coincidir con otro anuncio automático (Skript o SunLight).
+#  {-an::*} es compartido por todos los scripts de anuncios.
+#  1020 = "Interval" de SunLight/modules/scheduler/announcers/global.yml
+# ------------------------------------------------------------
+function ttLibre() :: boolean:
+    set {_t} to unix timestamp of now
+    if {_t} - ({-an::ultimo} ? 0) < 300:
+        return false
+    set {_m} to mod({_t} - {-an::inicio}, 1020)
+    if {_m} < 150:
+        return false
+    if {_m} > 1020 - 150:
+        return false
+    return true
+
+function ttMarcar():
+    set {-an::ultimo} to unix timestamp of now
+
+
+on load:
+    if {-an::inicio} is not set:
+        set {-an::inicio} to unix timestamp of now

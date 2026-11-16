@@ -36,7 +36,7 @@ options:
 
 on load:
     delete {-cf::*}
-    # Paleta del coinflip (ámbar), ver utils/formato_anuncio.sk.
+    # Paleta del coinflip (ámbar); cada sistema usa su propia paleta.
     # Va aquí y no en options porque allí '#' inicia un comentario.
     set {-cfc::cab} to "<#FFCF7A>— ⛃ Anuncios de apuestas ⛃ —"
     set {-cfc::tit} to "<#F5A623><bold>COINFLIP</bold>"
@@ -67,7 +67,7 @@ function cfBotones(p: player, creador: text, monto: number, privado: boolean = f
     if {_privado} is true:
         set {_b} to "%{_b}%  <click:run_command:'/cf rechazar %{_creador}%'><hover:show_text:'<#FFCF7A>Rechazar el coinflip'><#B07A3A><bold>[✖ RECHAZAR]</bold></hover></click>"
     set {_b} to "%{_b}%  <click:run_command:'/cf panel %{_creador}%'><hover:show_text:'<#FFCF7A>Abrir el panel del coinflip'><#FFE2A8><bold>[⛃ PANEL]</bold></hover></click>"
-    anLinea({_p}, {_b})
+    cfLinea({_p}, {_b})
 
 # ------------------------------------------------------------
 #  Crear
@@ -102,22 +102,22 @@ function cfCrear(p: player, monto: number, objetivoNombre: text = ""):
 
     if {_objetivo} is set:
         send "{@prefijo} <gray>Retaste a <yellow>%name of {_objetivo}% <gray>por <green><bold>$%{_monto}%</bold><gray>. Expira en <yellow>{@expira}s<gray>." to {_p}
-        anArriba({_objetivo}, {-cfc::cab}, {-cfc::tit})
-        anLinea({_objetivo}, "<white>%{_n}% <#C9CDD6>te reta a un coinflip de <#F5A623><bold>$%{_monto}%</bold>")
-        anLinea({_objetivo}, "<#C9CDD6>Premio <#FFCF7A>$%{_monto} * 2% <dark_gray>• <#C9CDD6>Expira en <#FFCF7A>{@expira} s")
+        cfArriba({_objetivo}, {-cfc::cab}, {-cfc::tit})
+        cfLinea({_objetivo}, "<white>%{_n}% <#C9CDD6>te reta a un coinflip de <#F5A623><bold>$%{_monto}%</bold>")
+        cfLinea({_objetivo}, "<#C9CDD6>Premio <#FFCF7A>$%{_monto} * 2% <dark_gray>• <#C9CDD6>Expira en <#FFCF7A>{@expira} s")
         send "" to {_objetivo}
         cfBotones({_objetivo}, {_n}, {_monto}, true)
-        anAbajo({_objetivo})
+        cfAbajo({_objetivo})
         play sound "block.note_block.bell" with volume 0.6 and pitch 1.2 to {_objetivo}
     else:
         loop all players:
-            anArriba(loop-player, {-cfc::cab}, {-cfc::tit})
-            anLinea(loop-player, "<white>%{_n}% <#C9CDD6>abrió un coinflip de <#F5A623><bold>$%{_monto}%</bold>")
-            anLinea(loop-player, "<#C9CDD6>Premio <#FFCF7A>$%{_monto} * 2% <dark_gray>• <#C9CDD6>Expira en <#FFCF7A>{@expira} s")
+            cfArriba(loop-player, {-cfc::cab}, {-cfc::tit})
+            cfLinea(loop-player, "<white>%{_n}% <#C9CDD6>abrió un coinflip de <#F5A623><bold>$%{_monto}%</bold>")
+            cfLinea(loop-player, "<#C9CDD6>Premio <#FFCF7A>$%{_monto} * 2% <dark_gray>• <#C9CDD6>Expira en <#FFCF7A>{@expira} s")
             if loop-player is not {_p}:
                 send "" to loop-player
                 cfBotones(loop-player, {_n}, {_monto})
-            anAbajo(loop-player)
+            cfAbajo(loop-player)
 
 # ------------------------------------------------------------
 #  Aceptar / jugar
@@ -162,10 +162,10 @@ function cfAceptar(p: player, retador: player):
     play sound "entity.experience_orb.pickup" with volume 0.5 and pitch 0.8 to {_p} and {_retador}
     # Pausa unica solo para el suspense: el dinero ya fue entregado arriba
     wait 1 second
-    anArriba(all players, {-cfc::cab}, {-cfc::tit})
-    anLinea(all players, "<#F5A623><bold>¡%{_g}% ganó el coinflip!</bold>")
-    anLinea(all players, "<#C9CDD6>Premio <#FFCF7A>+$%{_premio}% <dark_gray>• <#C9CDD6>Contra <white>%{_l}%")
-    anAbajo(all players)
+    cfArriba(all players, {-cfc::cab}, {-cfc::tit})
+    cfLinea(all players, "<#F5A623><bold>¡%{_g}% ganó el coinflip!</bold>")
+    cfLinea(all players, "<#C9CDD6>Premio <#FFCF7A>+$%{_premio}% <dark_gray>• <#C9CDD6>Contra <white>%{_l}%")
+    cfAbajo(all players)
     if {_ganador} is online:
         play sound "ui.toast.challenge_complete" with volume 0.6 and pitch 1.0 to {_ganador}
     if {_perdedor} is online:
@@ -312,3 +312,62 @@ command /coinflip [<text>] [<text>]:
             cfCrear(player, {_monto}, name of {_o})
         else:
             cfCrear(player, {_monto})
+
+# ------------------------------------------------------------
+#  Formato del anuncio (centrado automático, sin etiquetas)
+# ------------------------------------------------------------
+function cfAncho(t: text) :: number:
+    set {_w} to 0
+    set {_tag} to false
+    set {_bold} to false
+    set {_nombre} to ""
+    loop length of {_t} times:
+        set {_c} to subtext of {_t} from characters loop-number to loop-number
+        if {_tag} is true:
+            # Lo que va entre comillas (texto de hover, comandos) no se ve
+            if {_c} is "'" or """":
+                if {_q} is not set:
+                    set {_q} to {_c}
+                else if {_q} is {_c}:
+                    delete {_q}
+            else if {_q} is set:
+                set {_nombre} to {_nombre}
+            else if {_c} is ">":
+                set {_tag} to false
+                if {_nombre} is "bold" or "b":
+                    set {_bold} to true
+                else if {_nombre} is "/bold" or "/b" or "reset":
+                    set {_bold} to false
+            else:
+                set {_nombre} to "%{_nombre}%%{_c}%"
+        else if {_c} is "<":
+            set {_tag} to true
+            set {_nombre} to ""
+        else:
+            add 5.6 to {_w}
+            if {_bold} is true:
+                add 1 to {_w}
+    return {_w}
+
+function cfCentrar(t: text) :: text:
+    set {_n} to rounded down ((320 - cfAncho({_t})) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"
+
+function cfArriba(p: players, cabecera: text, titulo: text):
+    send "" to {_p::*}
+    send formatted cfCentrar({_cabecera}) to {_p::*}
+    send formatted cfCentrar({_titulo}) to {_p::*}
+    send "" to {_p::*}
+
+function cfLinea(p: players, t: text):
+    send formatted cfCentrar({_t}) to {_p::*}
+
+function cfAbajo(p: players):
+    send "" to {_p::*}
+    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "" to {_p::*}
+

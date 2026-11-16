@@ -64,10 +64,10 @@ every 10 minutes:
     number of all players >= {@min-jugadores}
     set {ruleta::proximo} to {@intervalo} after now
     loop 20 times:
-        if anLibre() is true:
+        if ruletaLibre() is true:
             exit loop
         wait 30 seconds
-    anMarcar()
+    ruletaMarcar()
     ruletaGirar()
 
 # ------------------------------------------------------------
@@ -84,9 +84,9 @@ function ruletaGirar(forzar: text = ""):
     # Lo malo de la ruleta anterior (dificultad) se revierte en cada giro
     ruletaRestaurar()
 
-    anArriba(all players, "<#FFA58A>— ◎ Ruleta del destino ◎ —", "<#F2643C><bold>¡LA RULETA ESTÁ GIRANDO!</bold>")
-    anLinea(all players, "<#C9CDD6>¿Qué te deparará el destino?")
-    anAbajo(all players)
+    ruletaArriba(all players, "<#FFA58A>— ◎ Ruleta del destino ◎ —", "<#F2643C><bold>¡LA RULETA ESTÁ GIRANDO!</bold>")
+    ruletaLinea(all players, "<#C9CDD6>¿Qué te deparará el destino?")
+    ruletaAbajo(all players)
     play sound "{@sonido}" with volume 1 to all players
 
     # Animacion: 1 fotograma por tick (igual que el datapack)
@@ -262,11 +262,11 @@ function ruletaResultado(color: text):
     set {_sub} to "<#C9CDD6>%{_d}%"
     replace all "|" in {_sub} with " "
     send title {_titulo} with subtitle {_sub} to all players for 5 seconds with fadein 10 ticks and fadeout 20 ticks
-    anArriba(all players, "%{_cl}%— ◎ Ruleta del destino ◎ —", "%{_cf}%<bold>¡%{_etiqueta}%! <dark_gray>» %{_cf}%%{_t}%</bold>")
+    ruletaArriba(all players, "%{_cl}%— ◎ Ruleta del destino ◎ —", "%{_cf}%<bold>¡%{_etiqueta}%! <dark_gray>» %{_cf}%%{_t}%</bold>")
     # "|" separa las líneas de las descripciones largas
     loop {_d} split at "|":
-        anLinea(all players, "<#C9CDD6>%loop-value%")
-    anAbajo(all players)
+        ruletaLinea(all players, "<#C9CDD6>%loop-value%")
+    ruletaAbajo(all players)
 
 function ruletaRestaurar():
     {ruleta::dificultad} is true
@@ -322,3 +322,85 @@ command /ruleta [<text>] [<text>]:
             send "  <yellow>/ruleta restaurar <dark_gray>» <gray>Devuelve la dificultad a normal"
             send "  <yellow>/ruleta estado <dark_gray>» <gray>Estado de la ruleta"
             send "<dark_gray><strikethrough>                              "
+
+# ------------------------------------------------------------
+#  Formato del anuncio (centrado automático, sin etiquetas)
+# ------------------------------------------------------------
+function ruletaAncho(t: text) :: number:
+    set {_w} to 0
+    set {_tag} to false
+    set {_bold} to false
+    set {_nombre} to ""
+    loop length of {_t} times:
+        set {_c} to subtext of {_t} from characters loop-number to loop-number
+        if {_tag} is true:
+            # Lo que va entre comillas (texto de hover, comandos) no se ve
+            if {_c} is "'" or """":
+                if {_q} is not set:
+                    set {_q} to {_c}
+                else if {_q} is {_c}:
+                    delete {_q}
+            else if {_q} is set:
+                set {_nombre} to {_nombre}
+            else if {_c} is ">":
+                set {_tag} to false
+                if {_nombre} is "bold" or "b":
+                    set {_bold} to true
+                else if {_nombre} is "/bold" or "/b" or "reset":
+                    set {_bold} to false
+            else:
+                set {_nombre} to "%{_nombre}%%{_c}%"
+        else if {_c} is "<":
+            set {_tag} to true
+            set {_nombre} to ""
+        else:
+            add 5.6 to {_w}
+            if {_bold} is true:
+                add 1 to {_w}
+    return {_w}
+
+function ruletaCentrar(t: text) :: text:
+    set {_n} to rounded down ((320 - ruletaAncho({_t})) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"
+
+function ruletaArriba(p: players, cabecera: text, titulo: text):
+    send "" to {_p::*}
+    send formatted ruletaCentrar({_cabecera}) to {_p::*}
+    send formatted ruletaCentrar({_titulo}) to {_p::*}
+    send "" to {_p::*}
+
+function ruletaLinea(p: players, t: text):
+    send formatted ruletaCentrar({_t}) to {_p::*}
+
+function ruletaAbajo(p: players):
+    send "" to {_p::*}
+    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "" to {_p::*}
+
+# ------------------------------------------------------------
+#  Turno: no coincidir con otro anuncio automático (Skript o SunLight).
+#  {-an::*} es compartido por todos los scripts de anuncios.
+#  1020 = "Interval" de SunLight/modules/scheduler/announcers/global.yml
+# ------------------------------------------------------------
+function ruletaLibre() :: boolean:
+    set {_t} to unix timestamp of now
+    if {_t} - ({-an::ultimo} ? 0) < 300:
+        return false
+    set {_m} to mod({_t} - {-an::inicio}, 1020)
+    if {_m} < 150:
+        return false
+    if {_m} > 1020 - 150:
+        return false
+    return true
+
+function ruletaMarcar():
+    set {-an::ultimo} to unix timestamp of now
+
+
+on load:
+    if {-an::inicio} is not set:
+        set {-an::inicio} to unix timestamp of now

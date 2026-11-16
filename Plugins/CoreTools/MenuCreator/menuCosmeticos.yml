@@ -3,11 +3,32 @@
 menuCosmeticos:
   permission: ''
   bottom_inventory: false
-  name: '&8Tienda de Cosméticos'
+  name: ' &8— ⋄ Tienda de Cosméticos ⋄ —'
   size: 6
   fill_material: AIR
   enable_animation: false
   buttons:
+    volver_menu:
+      location: top
+      slots:
+      - 48
+      source: vanilla
+      material: dark_oak_door
+      name: <white>« <#B8AAFF>Volver al <#8E7CFF><bold>MENÚ PRINCIPAL</bold>
+      lore:
+      - <white><glyph:raton_izq> <#9EA3AE>Clic para regresar al menú principal
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      shift_right_click:
+        Scripts:
+        - menuseleccion_volver_click
     fondo:
       location: top
       slots:
@@ -23,13 +44,12 @@ menuCosmeticos:
       - 45
       - 46
       - 47
-      - 48
       - 50
       - 51
       - 52
       - 53
       source: vanilla
-      material: black_stained_glass_pane
+      material: GRAY_STAINED_GLASS_PANE
       name: '&7'
       flags:
       - HIDE_ATTRIBUTES
