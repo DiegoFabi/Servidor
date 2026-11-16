@@ -57,9 +57,9 @@ Settings:
     PerWorld: false # Cooldowns handled for each world? If disabled, player cannot rtp in another world until original cooldown has passed
   # # Time between command and actually rtp'ing, time is in SECONDS. Set to "0" to disable delay timer #
   Delay:
-    Enabled: true
+    Enabled: false
     Time: 5
-    CancelOnMove: true
+    CancelOnMove: false
   Queue:
     Enabled: true # Allows betterrtp to automatically queue up safe rtp locations prior to players executing `/rtp`
   DisableUpdater: false
@@ -141,6 +141,7 @@ WorldType: # Available types are NORMAL, NETHER
   - world: NORMAL
   - world_nether: NETHER
   - world_the_end: NORMAL
+  - survivalMain: NORMAL
 
 PermissionGroup: # Player requires "betterrtp.group.<group_name>" to trigger these configs
   Enabled: false

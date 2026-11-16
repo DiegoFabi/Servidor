@@ -1,4 +1,11 @@
 # ============================================================
+#  DESACTIVADO (el "-" del nombre hace que Skript no lo cargue).
+#  Paper rechaza CUALQUIER teletransporte de un jugador que lleva
+#  pasajeros: con estos text displays montados fallaban el portal, /rtp,
+#  /spawn y /mv tp ("Failed to async teleport"). Para un nametag de
+#  varias líneas hace falta un plugin por paquetes (el servidor no ve
+#  los pasajeros), p. ej. UnlimitedNametags.
+# ============================================================
 #  nametag.sk - Nametag de 3 líneas
 #  Requiere: Skript 2.10+ (display entities), SkBee (objetivos y number
 #  format), Vault + LuckPerms (prefijo) y CoreTools (clan por PAPI).

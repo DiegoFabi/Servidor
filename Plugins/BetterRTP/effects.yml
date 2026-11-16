@@ -13,7 +13,7 @@ Titles:
     SendMessage: true
   Teleport:
     Title: '&6Teleported!'
-    Subtitle: '&fx=%x% y=%y% z=%z%'
+    Subtitle: '&7¡Bienvenido al mundo survival!'
     SendMessage: true # Allow the teleport success message in chat
   Delay:
     Title: ''
@@ -34,7 +34,6 @@ Titles:
 Particles: # Use `rtp info particles` for a list of particles
   Enabled: true
   Type: # list of particle types at https://github.com/ByteZ1337/ParticleLib/blob/master/src/main/java/xyz/xenondevs/particle/ParticleEffect.java
-    - EXPLOSION_NORMAL
     - CRIT
   Shape: EXPLODE # Types available are "Scan, Teleport and Explode", or use `/rtp info shapes` for a list of shapes
 Invincible: # Amount of time a player should not take damage for
