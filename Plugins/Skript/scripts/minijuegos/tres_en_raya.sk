@@ -2,7 +2,7 @@
 #  tres_en_raya.sk - Minijuego "Tres en Raya" (Tic Tac Toe) 1v1
 #  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
 #
-#  - Cada 40 minutos se anuncia en el chat (formato de eventos) con una
+#  - Cada 55 minutos se anuncia en el chat (formato de eventos) con una
 #    apuesta aleatoria y un botón para unirse (60 s, 2 jugadores).
 #  - Al unirse se cobra la apuesta. Con 2 jugadores se abre a ambos el
 #    mismo inventario: tablero 3x3 en el centro, turno abajo.
@@ -12,7 +12,7 @@
 #
 #  Comandos: /tresenraya unirse | salir | abrir
 #            /tresenraya iniciar (admin: tresenraya.admin)
-#  Rendimiento: un solo "every 40 minutes"; los clics solo se procesan
+#  Rendimiento: un solo "every 55 minutes"; los clics solo se procesan
 #  si el inventario es el de la partida. Variables en memoria {-tt::*}.
 # ============================================================
 
@@ -209,8 +209,13 @@ on quit:
         if {_rival} is online:
             ttGanar({_rival})
 
-every 40 minutes:
+every 55 minutes:
     number of all players >= 2
+    loop 20 times:
+        if anLibre() is true:
+            exit loop
+        wait 30 seconds
+    anMarcar()
     ttAnunciar()
 
 # ------------------------------------------------------------
@@ -255,4 +260,4 @@ command /tresenraya [<text>]:
                 stop
             ttAnunciar()
         else:
-            send "{@prefijo} <#C9CDD6>Cada 40 minutos se abre un tres en raya 1v1 con apuesta en el chat."
+            send "{@prefijo} <#C9CDD6>Cada 55 minutos se abre un tres en raya 1v1 con apuesta en el chat."

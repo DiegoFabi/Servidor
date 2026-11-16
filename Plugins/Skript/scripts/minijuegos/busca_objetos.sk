@@ -2,7 +2,7 @@
 #  busca_objetos.sk - Minijuego "Busca Objetos"
 #  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
 #
-#  1v1 (cada hora en el chat):
+#  1v1 (cada 80 minutos en el chat):
 #   - Se anuncia un duelo con botón [Unirse] (máx. 2 jugadores, 60 s).
 #   - Al unirse se cobra la apuesta; con 2 jugadores: 10 s de cuenta
 #     atrás (title solo para ellos) y se revela el bloque a conseguir.
@@ -19,7 +19,7 @@
 #  Comandos: /buscaobjetos unirse | salir
 #            /buscaobjetos iniciar (admin: busca.admin)
 #  Rendimiento:
-#   - Un solo "every 60 minutes" (lanza el anuncio si no hay partida).
+#   - Un solo "every 80 minutes" (lanza el anuncio si no hay partida).
 #   - La detección es por eventos (recoger, craftear, mover objetos en el
 #     inventario) y solo comprueba a los 2 participantes.
 #   - Solo variables en memoria {-bo::*}.
@@ -95,7 +95,12 @@ function boAnunciar():
     delete {-bo::jugadores::*}
     loop all players:
         notificar(loop-player)
-        send formatted "{@prefijo} <#C9CDD6>¡Duelo de búsqueda! Apuesta <#7FFF9E>$%{-bo::apuesta}% <dark_gray>• <#9EA3AE>2 jugadores  <click:run_command:'/buscaobjetos unirse'><hover:show_text:'<#7FB2FF>Apostar $%{-bo::apuesta}% y unirte'><#7FFF9E><bold>[Unirse]</bold></hover></click>" to loop-player
+        anArriba(loop-player, "<#7FDCE6>— ✧ Anuncios de eventos ✧ —", "<#3FD0DE><bold>BUSCA OBJETOS</bold>")
+        anLinea(loop-player, "<white>¡Duelo 1v1! <#C9CDD6>El primero en conseguir el bloque")
+        anLinea(loop-player, "<#C9CDD6>gana el bote de <#7FDCE6>$%{-bo::apuesta} * 2%")
+        send "" to loop-player
+        anLinea(loop-player, "<#7FDCE6>✧ <click:run_command:'/buscaobjetos unirse'><hover:show_text:'<#7FDCE6>Apostar $%{-bo::apuesta}% y unirte'><#7FDCE6>¡Click para <bold>UNIRTE</bold>!</hover></click> <#7FDCE6>✧")
+        anAbajo(loop-player)
     wait {@inscripcion} seconds
     {-bo::id} = {_id}
     {-bo::estado} is "inscripcion"
@@ -185,8 +190,13 @@ on quit:
         if {_rival} is online:
             boGanar({_rival})
 
-every 60 minutes:
+every 80 minutes:
     number of all players >= {@min-jugadores}
+    loop 20 times:
+        if anLibre() is true:
+            exit loop
+        wait 30 seconds
+    anMarcar()
     boAnunciar()
 
 # ------------------------------------------------------------
@@ -259,4 +269,4 @@ command /buscaobjetos [<text>]:
                 stop
             boAnunciar()
         else:
-            send "{@prefijo} <#C9CDD6>Cada hora se abre un duelo 1v1: el primero en conseguir el bloque gana el bote."
+            send "{@prefijo} <#C9CDD6>Cada 80 minutos se abre un duelo 1v1: el primero en conseguir el bloque gana el bote."

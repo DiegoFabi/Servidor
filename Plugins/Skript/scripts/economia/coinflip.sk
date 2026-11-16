@@ -33,8 +33,13 @@ options:
     # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
     prefijo: <gradient:gold:yellow><bold>CoinFlip</bold></gradient> <dark_gray>»<reset>
 
+
 on load:
     delete {-cf::*}
+    # Paleta del coinflip (ámbar), ver utils/formato_anuncio.sk.
+    # Va aquí y no en options porque allí '#' inicia un comentario.
+    set {-cfc::cab} to "<#FFCF7A>— ⛃ Anuncios de apuestas ⛃ —"
+    set {-cfc::tit} to "<#F5A623><bold>COINFLIP</bold>"
 
 # ------------------------------------------------------------
 #  Utilidades
@@ -57,8 +62,12 @@ function cfBorrar(id: text):
     delete {-cf::%{_id}%::nombre}
     remove {_id} from {-cf::abiertos::*}
 
-function cfBotones(p: player, creador: text, monto: number):
-    send formatted "    <click:run_command:'/cf aceptar %{_creador}%'><hover:show_text:'<green>Apostar <bold>$%{_monto}%</bold> contra %{_creador}%'><green><bold>[✔ ACEPTAR]</bold></hover></click>  <click:run_command:'/cf rechazar %{_creador}%'><hover:show_text:'<red>Rechazar el coinflip'><red><bold>[✖ DECLINAR]</bold></hover></click>  <click:run_command:'/cf panel %{_creador}%'><hover:show_text:'<gold>Abrir el panel del coinflip'><gold><bold>[⛃ PANEL]</bold></hover></click>" to {_p}
+function cfBotones(p: player, creador: text, monto: number, privado: boolean = false):
+    set {_b} to "<click:run_command:'/cf aceptar %{_creador}%'><hover:show_text:'<#FFCF7A>Apostar <bold>$%{_monto}%</bold> contra %{_creador}%'><#F5A623><bold>[✔ ACEPTAR]</bold></hover></click>"
+    if {_privado} is true:
+        set {_b} to "%{_b}%  <click:run_command:'/cf rechazar %{_creador}%'><hover:show_text:'<#FFCF7A>Rechazar el coinflip'><#B07A3A><bold>[✖ RECHAZAR]</bold></hover></click>"
+    set {_b} to "%{_b}%  <click:run_command:'/cf panel %{_creador}%'><hover:show_text:'<#FFCF7A>Abrir el panel del coinflip'><#FFE2A8><bold>[⛃ PANEL]</bold></hover></click>"
+    anLinea({_p}, {_b})
 
 # ------------------------------------------------------------
 #  Crear
@@ -93,22 +102,22 @@ function cfCrear(p: player, monto: number, objetivoNombre: text = ""):
 
     if {_objetivo} is set:
         send "{@prefijo} <gray>Retaste a <yellow>%name of {_objetivo}% <gray>por <green><bold>$%{_monto}%</bold><gray>. Expira en <yellow>{@expira}s<gray>." to {_p}
+        anArriba({_objetivo}, {-cfc::cab}, {-cfc::tit})
+        anLinea({_objetivo}, "<white>%{_n}% <#C9CDD6>te reta a un coinflip de <#F5A623><bold>$%{_monto}%</bold>")
+        anLinea({_objetivo}, "<#C9CDD6>Premio <#FFCF7A>$%{_monto} * 2% <dark_gray>• <#C9CDD6>Expira en <#FFCF7A>{@expira} s")
         send "" to {_objetivo}
-        send "<dark_gray><strikethrough>                                                  " to {_objetivo}
-        send "  {@prefijo} <yellow><bold>%{_n}%</bold> <gray>te reta a un coinflip" to {_objetivo}
-        send "    <gray>Apuesta: <gradient:#55FF55:#00AA00><bold>$%{_monto}%</bold></gradient> <dark_gray>• <gray>Premio: <gold><bold>$%{_monto} * 2%</bold>" to {_objetivo}
-        cfBotones({_objetivo}, {_n}, {_monto})
-        send "<dark_gray><strikethrough>                                                  " to {_objetivo}
+        cfBotones({_objetivo}, {_n}, {_monto}, true)
+        anAbajo({_objetivo})
         play sound "block.note_block.bell" with volume 0.6 and pitch 1.2 to {_objetivo}
     else:
-        send "" to all players
-        send "<dark_gray><strikethrough>                                                  " to all players
-        send "  {@prefijo} <yellow><bold>%{_n}%</bold> <gray>abrió un coinflip" to all players
-        send "    <gray>Apuesta: <gradient:#55FF55:#00AA00><bold>$%{_monto}%</bold></gradient> <dark_gray>• <gray>Premio: <gold><bold>$%{_monto} * 2%</bold> <dark_gray>• <gray>Expira: <yellow>{@expira}s" to all players
         loop all players:
+            anArriba(loop-player, {-cfc::cab}, {-cfc::tit})
+            anLinea(loop-player, "<white>%{_n}% <#C9CDD6>abrió un coinflip de <#F5A623><bold>$%{_monto}%</bold>")
+            anLinea(loop-player, "<#C9CDD6>Premio <#FFCF7A>$%{_monto} * 2% <dark_gray>• <#C9CDD6>Expira en <#FFCF7A>{@expira} s")
             if loop-player is not {_p}:
+                send "" to loop-player
                 cfBotones(loop-player, {_n}, {_monto})
-        send "<dark_gray><strikethrough>                                                  " to all players
+            anAbajo(loop-player)
 
 # ------------------------------------------------------------
 #  Aceptar / jugar
@@ -149,16 +158,14 @@ function cfAceptar(p: player, retador: player):
 
     set {_g} to name of {_ganador}
     set {_l} to name of {_perdedor}
-    send "  {@prefijo} <yellow>%name of {_retador}% <gray>vs <yellow>%name of {_p}% <dark_gray>» <gray>Lanzando la moneda... <gold>⛃" to all players
+    send action bar "<#F5A623>⛃ <white>%name of {_retador}% <#C9CDD6>vs <white>%name of {_p}% <dark_gray>» <#FFCF7A>Lanzando la moneda..." to {_p} and {_retador}
     play sound "entity.experience_orb.pickup" with volume 0.5 and pitch 0.8 to {_p} and {_retador}
     # Pausa unica solo para el suspense: el dinero ya fue entregado arriba
     wait 1 second
-    send "" to all players
-    send "<dark_gray><strikethrough>                                                  " to all players
-    send "  {@prefijo} <gradient:#FFD700:#FF8C00><bold>¡%{_g}% GANÓ EL COINFLIP!</bold></gradient>" to all players
-    send "    <gray>Premio: <green><bold>+$%{_premio}%</bold> <dark_gray>• <gray>Apuesta: <yellow>$%{_monto}% <dark_gray>• <gray>Perdedor: <red>%{_l}%" to all players
-    send "<dark_gray><strikethrough>                                                  " to all players
-    send "" to all players
+    anArriba(all players, {-cfc::cab}, {-cfc::tit})
+    anLinea(all players, "<#F5A623><bold>¡%{_g}% ganó el coinflip!</bold>")
+    anLinea(all players, "<#C9CDD6>Premio <#FFCF7A>+$%{_premio}% <dark_gray>• <#C9CDD6>Contra <white>%{_l}%")
+    anAbajo(all players)
     if {_ganador} is online:
         play sound "ui.toast.challenge_complete" with volume 0.6 and pitch 1.0 to {_ganador}
     if {_perdedor} is online:

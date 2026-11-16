@@ -37,12 +37,19 @@ on load:
     set {-mg::activo} to true
 
 # ------------------------------------------------------------
-#  Programador: 1 minijuego cada 20 minutos
+#  Programador: 1 minijuego cada 35 minutos (separado de los demás
+#  anuncios con anLibre/anMarcar de utils/formato_anuncio.sk)
 # ------------------------------------------------------------
-every 20 minutes:
+every 35 minutes:
     {-mg::activo} is true
     {-mg::id} is not set
     number of all players >= {@min-jugadores}
+    loop 20 times:
+        if anLibre() is true:
+            exit loop
+        wait 30 seconds
+    anMarcar()
+    {-mg::id} is not set
     mgIniciar()
 
 # ------------------------------------------------------------
