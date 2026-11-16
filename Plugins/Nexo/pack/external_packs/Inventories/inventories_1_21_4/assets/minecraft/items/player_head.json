@@ -7,12 +7,21 @@
       {
         "threshold": 1,
         "model": {
-          "type": "minecraft:special",
-          "base": "minecraft:gui/wallet_head",
-          "model": {
-            "type": "minecraft:head",
-            "kind": "player"
-          }
+          "type": "minecraft:composite",
+          "models": [
+            {
+              "type": "minecraft:special",
+              "base": "minecraft:gui/wallet_head",
+              "model": {
+                "type": "minecraft:head",
+                "kind": "player"
+              }
+            },
+            {
+              "type": "minecraft:model",
+              "model": "minecraft:gui/wallet_head_marco"
+            }
+          ]
         }
       },
       {

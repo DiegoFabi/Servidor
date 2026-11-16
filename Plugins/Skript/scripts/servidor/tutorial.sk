@@ -201,7 +201,12 @@ on consume:
     {tutorial::%uuid of player%} < 3
     cancel event
 
+# El portal del spawn (Lobby) teletransporta con TypeWriter (RTP a survivalMain);
+# el portal vanilla no debe mandar al jugador al Nether del Lobby.
 on portal:
+    if "%world of player%" is "Lobby":
+        cancel event
+        stop
     {tutorial::%uuid of player%} is set
     cancel event
 

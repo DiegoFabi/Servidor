@@ -183,15 +183,36 @@ menuOpciones:
       shift_right_click:
         Scripts:
         - opciones_duelos_click
-    vacio_7:
+    bossbar_misiones:
       location: top
       slots:
       - 7
       source: vanilla
-      material: GRAY_STAINED_GLASS_PANE
-      name: '&7'
+      material: filled_map
+      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Bossbar de Misiones</gradient>
+      lore:
+      - <#C9CDD6>Oculta o muestra la barra superior
+      - <#C9CDD6>que guía tus misiones.
+      - ''
+      - <#5C6370>■ <white>Solo es visual: tus misiones
+      - <white>  siguen activas y progresando.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Click para <bold>OCULTAR / MOSTRAR</bold>
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - opciones_bossbar_misiones_click
+      right_click:
+        Scripts:
+        - opciones_bossbar_misiones_click
+      shift_left_click:
+        Scripts:
+        - opciones_bossbar_misiones_click
+      shift_right_click:
+        Scripts:
+        - opciones_bossbar_misiones_click
     volver:
       location: top
       slots:

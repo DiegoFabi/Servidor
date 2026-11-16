@@ -36,3 +36,10 @@ opciones_homes_click:
   - 'closeinventory{} @Self'
   - 'playsound{sound="minecraft:item.bundle.drop_contents";volume=1;pitch=1} @Self'
   - 'command{c="homes list";runas=player} @Self'
+# Oculta/muestra la bossbar de seguimiento de misiones (TypeWriter: /misionesbossbar,
+# fact misiones_bossbar_oculta). Solo visual: la misión sigue activa.
+opciones_bossbar_misiones_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
+  - 'command{c="misionesbossbar {caster_name}";runas=console} @Self'

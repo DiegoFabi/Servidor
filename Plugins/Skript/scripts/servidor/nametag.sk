@@ -5,7 +5,7 @@
 #
 #      ◆ (Clan)                     <- text display montado en el jugador
 #   [RANGO] Nombre                  <- nametag de SunLight (prefijo)
-#   ⚔ 0 | ❤ 20 | ✦ 30               <- hueco "below_name" del scoreboard
+#   ⚔ 0 | ❤ 20 | ✦ 30               <- text display montado (lo ven los demás)
 #
 #  - El clan lo manda CoreTools (Scripts/nametag.yml) con %justteams_name%
 #    usando el comando de consola /ntequipo <jugador> <texto>: al entrar y
@@ -22,10 +22,10 @@
 # ============================================================
 
 on load:
-    set {-nt::obj} to objective with id "bajonombre"
-    if {-nt::obj} is not set:
-        set {-nt::obj} to objective with id "bajonombre" with criteria "dummy" named "" in display slot below_name
-    set display slot of {-nt::obj} to below_name
+    # La línea de estadísticas ya no usa el hueco "below_name": los
+    # scoreboards por jugador (SunLight/CoreTools) lo ocultaban a los demás.
+    execute console command "scoreboard objectives remove bajonombre"
+    delete {-nt::obj}
     loop all players:
         ntRehacer(loop-player)
 
@@ -37,6 +37,8 @@ function ntStats(p: player) :: text:
 
 function ntClan(p: player) :: text:
     set {_eq} to {-nt::eq::%uuid of {_p}%} ? "Sin Equipo"
+    if {_eq} is "No Team" or "" or "none":
+        set {_eq} to "Sin Equipo"
     return "<#6D7CFF>◆ <white>(%{_eq}%)"
 
 function ntPropio(p: player) :: text:
@@ -47,10 +49,10 @@ function ntPropio(p: player) :: text:
 
 # ---------------- línea de abajo (below_name) ----------------
 function ntStatsActualizar(p: player):
-    {-nt::obj} is set
     {_p} is online
-    set score of {_p} for {-nt::obj} to 0
-    set number format of {-nt::obj} for {_p} to mini message from ntStats({_p})
+    set {_s} to {-nt::stats::%uuid of {_p}%}
+    if {_s} is alive:
+        set text of {_s} to formatted ntStats({_p})
     set {_d} to {-nt::yo::%uuid of {_p}%}
     if {_d} is alive:
         set text of {_d} to formatted ntPropio({_p})
@@ -66,7 +68,7 @@ function ntPendiente(p: player):
 # ---------------- displays montados ----------------
 function ntBorrar(p: player):
     set {_u} to uuid of {_p}
-    loop "clan" and "yo":
+    loop "clan", "stats" and "yo":
         set {_d} to {-nt::%loop-value%::%{_u}%}
         delete {-nt::%loop-value%::%{_u}%}
         if {_d} is alive:
@@ -110,6 +112,17 @@ function ntCrear(p: player):
     set transformation translation of {_c} to vector(0, 0.75, 0)
     make {_c} ride {_p}
     set {-nt::clan::%{_u}%} to {_c}
+    # Estadísticas bajo el nombre: las ven todos menos tú (tú ves tu copia)
+    spawn text display at location of {_p}:
+        set {_s} to entity
+        add "ntag" to scoreboard tags of entity
+        add "nt_%{_u}%" to scoreboard tags of entity
+    set text of {_s} to formatted ntStats({_p})
+    set billboard of {_s} to center
+    set transformation translation of {_s} to vector(0, 0.1, 0)
+    hide {_s} from {_p}
+    make {_s} ride {_p}
+    set {-nt::stats::%{_u}%} to {_s}
     # Copia propia (nombre + estadísticas): solo para ti
     spawn text display at location of {_p}:
         set {_y} to entity
@@ -211,5 +224,9 @@ on unload:
     loop {-nt::yo::*}:
         if loop-value is alive:
             kill loop-value
+    loop {-nt::stats::*}:
+        if loop-value is alive:
+            kill loop-value
+    delete {-nt::stats::*}
     delete {-nt::clan::*}
     delete {-nt::yo::*}
