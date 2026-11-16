@@ -62,7 +62,7 @@ function ttAnunciar():
         send "" to loop-player
         send formatted ttCentrar({_b}, "✧ ¡Click para UNIRTE! ✧") to loop-player
         send "" to loop-player
-        send "                               <#9EA3AE>⟐ cloudsblues" to loop-player
+        send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to loop-player
         send "" to loop-player
     wait {@inscripcion} seconds
     {-tt::id} = {_id}

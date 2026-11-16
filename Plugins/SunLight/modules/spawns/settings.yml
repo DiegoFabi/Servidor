@@ -1,5 +1,6 @@
 Settings:
-  Override-Player-Respawn-Location: false
+  # Al morir en cualquier mundo se reaparece en el spawn por defecto (Lobby -12 -11 -44)
+  Override-Player-Respawn-Location: true
   # Sets spawn used by default.
   # If no other spawn is set, specified or available, the default one will be used.
   # Examples:

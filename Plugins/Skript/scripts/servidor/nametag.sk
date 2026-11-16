@@ -72,6 +72,18 @@ function ntBorrar(p: player):
         if {_d} is alive:
             kill {_d}
 
+# Red de seguridad: borra cualquier display del nametag que se haya quedado
+# suelto (sin jinete) o que pertenezca a un jugador concreto.
+function ntLimpiar(u: text = ""):
+    loop all worlds:
+        loop all text displays in loop-world:
+            scoreboard tags of loop-entity contain "ntag"
+            if {_u} is not "":
+                if scoreboard tags of loop-entity contain "nt_%{_u}%":
+                    kill loop-entity
+            else if vehicle of loop-entity is not set:
+                kill loop-entity
+
 function ntOculto(p: player) :: boolean:
     if gamemode of {_p} is spectator:
         return true
@@ -91,6 +103,8 @@ function ntCrear(p: player):
     # Clan: lo ven todos (y tú en F5)
     spawn text display at location of {_p}:
         set {_c} to entity
+        add "ntag" to scoreboard tags of entity
+        add "nt_%{_u}%" to scoreboard tags of entity
     set text of {_c} to formatted ntClan({_p})
     set billboard of {_c} to center
     set transformation translation of {_c} to vector(0, 0.75, 0)
@@ -99,6 +113,8 @@ function ntCrear(p: player):
     # Copia propia (nombre + estadísticas): solo para ti
     spawn text display at location of {_p}:
         set {_y} to entity
+        add "ntag" to scoreboard tags of entity
+        add "nt_%{_u}%" to scoreboard tags of entity
         hide entity from all players
     set text of {_y} to formatted ntPropio({_p})
     set billboard of {_y} to center
@@ -109,6 +125,7 @@ function ntCrear(p: player):
 
 function ntRehacer(p: player):
     wait 2 ticks
+    {_p} is online
     ntCrear({_p})
     ntStatsActualizar({_p})
 
@@ -130,6 +147,7 @@ on command:
 
 # ---------------- eventos ----------------
 on join:
+    ntLimpiar()
     # Las copias propias de los demás no deben verse por quien entra
     loop {-nt::yo::*}:
         loop-value is alive
@@ -137,7 +155,14 @@ on join:
     ntRehacer(player)
 
 on quit:
+    # Primero se borran (antes de que el servidor baje a los pasajeros) y
+    # después se barren los que hayan quedado sueltos (p. ej. si salió
+    # durante una cinemática del tutorial o con un ntRehacer pendiente).
+    set {_u} to uuid of player
     ntBorrar(player)
+    ntLimpiar({_u})
+    wait 5 ticks
+    ntLimpiar({_u})
     delete {-nt::eq::%uuid of player%}
     delete {-nt::pend::%uuid of player%}
 
@@ -174,6 +199,10 @@ on command:
     set {_c} to lowercase command
     {_c} is "vanish" or "v"
     ntRehacer(player)
+
+# Barrido de huérfanos cada minuto (casi gratis: solo mira text displays)
+every 1 minute:
+    ntLimpiar()
 
 on unload:
     loop {-nt::clan::*}:

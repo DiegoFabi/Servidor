@@ -87,7 +87,7 @@ function tutBarra(p: player):
         if {_p} is not online:
             delete {-tut::barra::%{_u}%}
             stop
-        send action bar "<#FFD36B>✦ Tutorial <dark_gray>• <#C9CDD6>Escribe <#FFD36B>/saltar <#C9CDD6>para omitirlo" to {_p}
+        send action bar "<#FFD36B>✦ Tutorial <dark_gray>• <#C9CDD6>Escribe <#FFD36B><underlined>/Saltar</underlined> <#C9CDD6>para omitirlo" to {_p}
         wait 2 seconds
     delete {-tut::barra::%{_u}%}
 

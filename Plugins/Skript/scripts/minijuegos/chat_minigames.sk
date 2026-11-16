@@ -146,7 +146,7 @@ function mgAnuncio(a: text, aplano: text, b: text, bplano: text):
     send mgCentrar({_a}, {_aplano}) to all players
     send mgCentrar({_b}, {_bplano}) to all players
     send "" to all players
-    send "                               <#9EA3AE>⟐ cloudsblues" to all players
+    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to all players
     send "" to all players
 
 function mgLimpiar():
