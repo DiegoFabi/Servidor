@@ -1,5 +1,0 @@
-# Al entrar: manda el clan del jugador a Skript (Scripts/nametag.yml)
-NametagEntrar:
-  Event: PlayerJoinEvent
-  Script: nametag_equipo_entrar
-  run_script_if_event_cancelled: false
