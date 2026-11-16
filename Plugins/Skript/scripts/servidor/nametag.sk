@@ -37,8 +37,6 @@ function ntStats(p: player) :: text:
 
 function ntClan(p: player) :: text:
     set {_eq} to {-nt::eq::%uuid of {_p}%} ? "Sin Equipo"
-    if {_eq} is "No Team" or "" or "none":
-        set {_eq} to "Sin Equipo"
     return "<#6D7CFF>◆ <white>(%{_eq}%)"
 
 function ntPropio(p: player) :: text:
@@ -109,7 +107,8 @@ function ntCrear(p: player):
         add "nt_%{_u}%" to scoreboard tags of entity
     set text of {_c} to formatted ntClan({_p})
     set billboard of {_c} to center
-    set transformation translation of {_c} to vector(0, 0.75, 0)
+    set teleport duration of {_c} to 1 tick
+    set transformation translation of {_c} to vector(0, 0.87, 0)
     make {_c} ride {_p}
     set {-nt::clan::%{_u}%} to {_c}
     # Estadísticas bajo el nombre: las ven todos menos tú (tú ves tu copia)
@@ -119,7 +118,8 @@ function ntCrear(p: player):
         add "nt_%{_u}%" to scoreboard tags of entity
     set text of {_s} to formatted ntStats({_p})
     set billboard of {_s} to center
-    set transformation translation of {_s} to vector(0, 0.1, 0)
+    set teleport duration of {_s} to 1 tick
+    set transformation translation of {_s} to vector(0, 0.22, 0)
     hide {_s} from {_p}
     make {_s} ride {_p}
     set {-nt::stats::%{_u}%} to {_s}
@@ -131,7 +131,8 @@ function ntCrear(p: player):
         hide entity from all players
     set text of {_y} to formatted ntPropio({_p})
     set billboard of {_y} to center
-    set transformation translation of {_y} to vector(0, 0.1, 0)
+    set teleport duration of {_y} to 1 tick
+    set transformation translation of {_y} to vector(0, 0.22, 0)
     reveal {_y} to {_p}
     make {_y} ride {_p}
     set {-nt::yo::%{_u}%} to {_y}
