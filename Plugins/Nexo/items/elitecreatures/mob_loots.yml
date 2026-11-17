@@ -9,6 +9,7 @@ mushroom_spores:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Champiñaca'
   Pack:
     texture: elitecreatures/mushroom_spores
+    custom_model_data: 201008
 axolotl_mucus:
   itemname: <white>Mucosa de Ajolote
   material: PAPER
@@ -17,6 +18,7 @@ axolotl_mucus:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Ajolote'
   Pack:
     texture: elitecreatures/axolotl_mucus
+    custom_model_data: 201017
 desert_cloth:
   itemname: <white>Tela del Desierto
   material: PAPER
@@ -25,6 +27,7 @@ desert_cloth:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Husk'
   Pack:
     texture: elitecreatures/desert_cloth
+    custom_model_data: 201005
 ender_powder:
   itemname: <white>Polvo de Ender
   material: PAPER
@@ -33,6 +36,7 @@ ender_powder:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Enderman y Endermite'
   Pack:
     texture: elitecreatures/ender_powder
+    custom_model_data: 201018
 poison_sac:
   itemname: <white>Saco de Veneno
   material: PAPER
@@ -41,6 +45,7 @@ poison_sac:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Araña de cueva'
   Pack:
     texture: elitecreatures/poison_sac
+    custom_model_data: 201007
 honey_crystal:
   itemname: <white>Cristal de Miel
   material: PAPER
@@ -49,6 +54,7 @@ honey_crystal:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Abeja'
   Pack:
     texture: elitecreatures/honey_crystal
+    custom_model_data: 201019
 wool_ball:
   itemname: <white>Ovillo de Lana
   material: PAPER
@@ -57,6 +63,7 @@ wool_ball:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Llama y Cabra'
   Pack:
     texture: elitecreatures/wool_ball
+    custom_model_data: 201002
 gel:
   itemname: <white>Gel
   material: PAPER
@@ -65,6 +72,7 @@ gel:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Slime'
   Pack:
     texture: elitecreatures/gel
+    custom_model_data: 201001
 warden_heart:
   itemname: <white>Corazón del Warden
   material: PAPER
@@ -73,6 +81,7 @@ warden_heart:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Warden'
   Pack:
     texture: elitecreatures/warden_heart
+    custom_model_data: 201034
 dolphin_fin:
   itemname: <white>Aleta de Delfín
   material: PAPER
@@ -81,6 +90,7 @@ dolphin_fin:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Delfín'
   Pack:
     texture: elitecreatures/dolphin_fin
+    custom_model_data: 201028
 bat_wing:
   itemname: <white>Ala de Murciélago
   material: PAPER
@@ -89,6 +99,7 @@ bat_wing:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Murciélago'
   Pack:
     texture: elitecreatures/bat_wing
+    custom_model_data: 201009
 parrot_feather:
   itemname: <white>Pluma de Loro
   material: PAPER
@@ -97,6 +108,7 @@ parrot_feather:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Loro'
   Pack:
     texture: elitecreatures/parrot_feather
+    custom_model_data: 201006
 ectoplasm:
   itemname: <white>Ectoplasma
   material: PAPER
@@ -105,6 +117,7 @@ ectoplasm:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Vex y Allay'
   Pack:
     texture: elitecreatures/ectoplasm
+    custom_model_data: 201027
 wolf_fang:
   itemname: <white>Colmillo de Lobo
   material: PAPER
@@ -113,6 +126,7 @@ wolf_fang:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Lobo'
   Pack:
     texture: elitecreatures/wolf_fang
+    custom_model_data: 201020
 phantom_scale:
   itemname: <white>Escama de Phantom
   material: PAPER
@@ -121,6 +135,7 @@ phantom_scale:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Phantom'
   Pack:
     texture: elitecreatures/phantom_scale
+    custom_model_data: 201021
 frog_leg:
   itemname: <white>Anca de Rana
   material: PAPER
@@ -129,6 +144,7 @@ frog_leg:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Rana'
   Pack:
     texture: elitecreatures/frog_leg
+    custom_model_data: 201011
 magic_crystals:
   itemname: <white>Cristales Mágicos
   material: PAPER
@@ -137,6 +153,7 @@ magic_crystals:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Bruja'
   Pack:
     texture: elitecreatures/magic_crystals
+    custom_model_data: 201037
 ice_shards:
   itemname: <white>Fragmentos de Hielo
   material: PAPER
@@ -145,6 +162,7 @@ ice_shards:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Gólem de nieve y Oso polar'
   Pack:
     texture: elitecreatures/ice_shards
+    custom_model_data: 201022
 ghast_eye:
   itemname: <white>Ojo de Ghast
   material: PAPER
@@ -153,6 +171,7 @@ ghast_eye:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Ghast'
   Pack:
     texture: elitecreatures/ghast_eye
+    custom_model_data: 201035
 wither_dust:
   itemname: <white>Polvo de Wither
   material: PAPER
@@ -161,6 +180,7 @@ wither_dust:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Esqueleto wither y Wither'
   Pack:
     texture: elitecreatures/wither_dust
+    custom_model_data: 201036
 guardian_spike:
   itemname: <white>Púa de Guardián
   material: PAPER
@@ -169,6 +189,7 @@ guardian_spike:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Guardián'
   Pack:
     texture: elitecreatures/guardian_spike
+    custom_model_data: 201023
 magma_gel:
   itemname: <white>Gel de Magma
   material: PAPER
@@ -177,6 +198,7 @@ magma_gel:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Cubo de magma'
   Pack:
     texture: elitecreatures/magma_gel
+    custom_model_data: 201024
 fish_oil:
   itemname: <white>Aceite de Pescado
   material: PAPER
@@ -185,6 +207,7 @@ fish_oil:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Salmón y Bacalao'
   Pack:
     texture: elitecreatures/fish_oil
+    custom_model_data: 201004
 squid_tentacle:
   itemname: <white>Tentáculo de Calamar
   material: PAPER
@@ -193,6 +216,7 @@ squid_tentacle:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Calamar'
   Pack:
     texture: elitecreatures/squid_tentacle
+    custom_model_data: 201010
 glow_squid_tentacle:
   itemname: <white>Tentáculo Brillante
   material: PAPER
@@ -201,6 +225,7 @@ glow_squid_tentacle:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Calamar brillante'
   Pack:
     texture: elitecreatures/glow_squid_tentacle
+    custom_model_data: 201025
 pig_leather:
   itemname: <white>Cuero de Cerdo
   material: PAPER
@@ -209,6 +234,7 @@ pig_leather:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Cerdo'
   Pack:
     texture: elitecreatures/pig_leather
+    custom_model_data: 201003
 aqua_essence:
   itemname: <white>Esencia Acuática
   material: PAPER
@@ -217,3 +243,118 @@ aqua_essence:
   - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Ahogado'
   Pack:
     texture: elitecreatures/aqua_essence
+    custom_model_data: 201026
+
+# Botín con texturas de Essential Icons (textures/iconos), para los items de ItemJoin
+botin_seashell:
+  itemname: <white>Concha Marina
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/seashell
+    custom_model_data: 201012
+botin_fish_grey:
+  itemname: <white>Espina de Pez
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/fish_grey
+    custom_model_data: 201013
+botin_leaf:
+  itemname: <white>Hoja Marchita
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/leaf
+    custom_model_data: 201014
+botin_candy:
+  itemname: <white>Caramelo Rancio
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/candy
+    custom_model_data: 201015
+botin_medal_bronze:
+  itemname: <white>Medalla de Bronce Oxidada
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/medal_bronze
+    custom_model_data: 201016
+botin_starfish:
+  itemname: <white>Estrella de Mar
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/starfish
+    custom_model_data: 201029
+botin_clover:
+  itemname: <white>Trébol de Cuatro Hojas
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/clover
+    custom_model_data: 201030
+botin_medal_silver:
+  itemname: <white>Medalla de Plata
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/medal_silver
+    custom_model_data: 201031
+botin_crystals:
+  itemname: <white>Fragmentos de Cristal
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/crystals
+    custom_model_data: 201032
+botin_magnet:
+  itemname: <white>Imán Antiguo
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/magnet
+    custom_model_data: 201033
+botin_purple_orb:
+  itemname: <white>Orbe del Vacío
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/purple_orb
+    custom_model_data: 201038
+botin_crown:
+  itemname: <white>Corona Rota
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/crown
+    custom_model_data: 201039
+botin_medal_gold:
+  itemname: <white>Medalla de Oro del Rey
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/medal_gold
+    custom_model_data: 201040
+botin_sun:
+  itemname: <white>Fragmento Solar
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/sun
+    custom_model_data: 201041
+botin_moon:
+  itemname: <white>Fragmento Lunar
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/moon
+    custom_model_data: 201042
+botin_skull:
+  itemname: <white>Cráneo Antiguo
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: iconos/skull
+    custom_model_data: 201043

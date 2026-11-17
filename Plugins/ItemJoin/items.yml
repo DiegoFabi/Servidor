@@ -30,13 +30,19 @@ items:
     - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FE7FFGarras de Dragón'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B6 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B30 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Forjado en la penumbra, guarda el'
-    - ' &8&oespíritu de un dragón caído.»'
+    - ' &8«Forjado en la penumbra, guarda el'
+    - ' &8espíritu de un dragón caído.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: clawstrike'
     - 'op: desgastar'
     commands-sound: BLOCK.NOTE_BLOCK.BANJO
@@ -61,13 +67,19 @@ items:
     - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#7FC8FFMisil de Agua'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36BInstantánea'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B30 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Tallado en coral de un templo'
-    - ' &8&ohundido bajo la marea eterna.»'
+    - ' &8«Tallado en coral de un templo'
+    - ' &8hundido bajo la marea eterna.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: watermisil'
     - 'op: desgastar'
     commands-sound: BLOCK.NOTE_BLOCK.BANJO
@@ -108,13 +120,19 @@ items:
     - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8A5CCarga de Fuego'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B4 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Un obispo bendijo este bastón, pero la'
-    - ' &8&omaldad convirtió sus rezos en llamas.»'
+    - ' &8«Un obispo bendijo este bastón, pero la'
+    - ' &8maldad convirtió sus rezos en llamas.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: explosionmagic'
     - 'op: desgastar'
     commands-sound: BLOCK.NOTE_BLOCK.BANJO
@@ -140,8 +158,8 @@ items:
     - ' &f<glyph:rocket> &#9EA3AEInfinito &8» &#FF6B6BNo'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Un emperador maligno buscaba la'
-    - ' &8&oinmortalidad; solo logró curar heridas.»'
+    - ' &8«Un emperador maligno buscaba la'
+    - ' &8inmortalidad; solo logró curar heridas.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
     interact-right:
@@ -202,13 +220,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36B7 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B8 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B60 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Grabada en hielo que nunca'
-    - ' &8&ose derrite.»'
+    - ' &8«Grabada en hielo que nunca'
+    - ' &8se derrite.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: escarcha'
     - 'op: desgastar'
     commands-sound: BLOCK.AMETHYST_BLOCK.CHIME
@@ -235,13 +259,19 @@ items:
     - ' &f<glyph:rocket> &#9EA3AESaltos &8» &#FFD36B5 Enemigos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B12 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Quien lo sostiene oye truenos'
-    - ' &8&oincluso en días despejados.»'
+    - ' &8«Quien lo sostiene oye truenos'
+    - ' &8incluso en días despejados.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: cadenarayos'
     - 'op: desgastar'
     commands-sound: ITEM.TRIDENT.THUNDER
@@ -268,13 +298,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AEImpacto &8» &#FFD36B6 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B30 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Aún late con el calor de la'
-    - ' &8&oestrella de la que cayó.»'
+    - ' &8«Aún late con el calor de la'
+    - ' &8estrella de la que cayó.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: meteoro'
     - 'op: desgastar'
     commands-sound: ENTITY.BLAZE.SHOOT
@@ -301,13 +337,19 @@ items:
     - ' &f<glyph:cloud> &#9EA3AECaída &8» &#FFD36BSin Daño'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B10 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B60 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Huele a pólvora y a malas'
-    - ' &8&odecisiones.»'
+    - ' &8«Huele a pólvora y a malas'
+    - ' &8decisiones.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: blastpower'
     - 'op: desgastar'
     commands-sound: ENTITY.FIREWORK_ROCKET.LAUNCH
@@ -334,13 +376,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B10 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B20 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Escrito por alguien que miró'
-    - ' &8&oal vacío demasiado tiempo.»'
+    - ' &8«Escrito por alguien que miró'
+    - ' &8al vacío demasiado tiempo.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: gravity'
     - 'op: desgastar'
     commands-sound: ENTITY.WARDEN.SONIC_BOOM
@@ -367,13 +415,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B5 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B30 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Sus páginas brillan con la luz'
-    - ' &8&ode las constelaciones.»'
+    - ' &8«Sus páginas brillan con la luz'
+    - ' &8de las constelaciones.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: humano impacto'
     - 'op: desgastar'
     commands-sound: BLOCK.BEACON.POWER_SELECT
@@ -400,13 +454,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B4 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B45 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Todavía late, aunque su dueño'
-    - ' &8&ocayó hace siglos.»'
+    - ' &8«Todavía late, aunque su dueño'
+    - ' &8cayó hace siglos.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: humano furia'
     - 'op: desgastar'
     commands-sound: ENTITY.RAVAGER.ROAR
@@ -433,13 +493,19 @@ items:
     - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B20 Segundos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B90 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«El cielo no perdona a quien'
-    - ' &8&olo despierta.»'
+    - ' &8«El cielo no perdona a quien'
+    - ' &8lo despierta.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: iradelcielo'
     - 'op: desgastar'
     commands-sound: ENTITY.LIGHTNING_BOLT.THUNDER
@@ -467,8 +533,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Sabe a menta y a hierba'
-    - ' &8&orecién cortada.»'
+    - ' &8«Sabe a menta y a hierba'
+    - ' &8recién cortada.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
     interact-right:
@@ -497,8 +563,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Burbujea como si quisiera'
-    - ' &8&osalir corriendo.»'
+    - ' &8«Burbujea como si quisiera'
+    - ' &8salir corriendo.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
     interact-right:
@@ -527,8 +593,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Nadie recuerda haberla'
-    - ' &8&opreparado.»'
+    - ' &8«Nadie recuerda haberla'
+    - ' &8preparado.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
     interact-right:
@@ -557,8 +623,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Amarga, pero aguanta lo'
-    - ' &8&oque le echen.»'
+    - ' &8«Amarga, pero aguanta lo'
+    - ' &8que le echen.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Beber'
     interact-right:
@@ -586,13 +652,19 @@ items:
     - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B60 Segundos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B5 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Perteneció a un general que'
-    - ' &8&onunca perdió un duelo.»'
+    - ' &8«Perteneció a un general que'
+    - ' &8nunca perdió un duelo.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion rubi'
     - 'op: desgastar'
     commands-sound: BLOCK.RESPAWN_ANCHOR.CHARGE
@@ -619,13 +691,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B7 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B5 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Los mineros juran que da'
-    - ' &8&osuerte bajo tierra.»'
+    - ' &8«Los mineros juran que da'
+    - ' &8suerte bajo tierra.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion topacio'
     - 'op: desgastar'
     commands-sound: BLOCK.RESPAWN_ANCHOR.CHARGE
@@ -652,13 +730,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B5 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B5 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Los aldeanos se inclinan'
-    - ' &8&oal verlo.»'
+    - ' &8«Los aldeanos se inclinan'
+    - ' &8al verlo.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion esmeralda'
     - 'op: desgastar'
     commands-sound: BLOCK.RESPAWN_ANCHOR.CHARGE
@@ -685,13 +769,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B6 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B3 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Dicen que es una lágrima'
-    - ' &8&odel mismo océano.»'
+    - ' &8«Dicen que es una lágrima'
+    - ' &8del mismo océano.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion aguamarina'
     - 'op: desgastar'
     commands-sound: BLOCK.CONDUIT.ACTIVATE
@@ -719,8 +809,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Brilla como pan recién'
-    - ' &8&ohorneado.»'
+    - ' &8«Brilla como pan recién'
+    - ' &8horneado.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
     interact-right:
@@ -748,13 +838,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AEAlcance &8» &#FFD36B8 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B3 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Se mueve sola, como una ola'
-    - ' &8&oatrapada.»'
+    - ' &8«Se mueve sola, como una ola'
+    - ' &8atrapada.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion marea'
     - 'op: desgastar'
     commands-sound: ENTITY.DOLPHIN.PLAY
@@ -781,13 +877,19 @@ items:
     - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B60 Segundos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B4 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Sus páginas están tibias'
-    - ' &8&oal tacto.»'
+    - ' &8«Sus páginas están tibias'
+    - ' &8al tacto.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion ignea'
     - 'op: desgastar'
     commands-sound: ITEM.BOOK.PAGE_TURN
@@ -814,13 +916,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B32 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B2 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Escrito por alguien que'
-    - ' &8&onunca durmió.»'
+    - ' &8«Escrito por alguien que'
+    - ' &8nunca durmió.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion sabiduria'
     - 'op: desgastar'
     commands-sound: ITEM.BOOK.PAGE_TURN
@@ -847,13 +955,19 @@ items:
     - ' &f<glyph:mag_glass> &#9EA3AERadio &8» &#FFD36B6 Bloques'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B15 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Quema a todos menos a'
-    - ' &8&oquien la sostiene.»'
+    - ' &8«Quema a todos menos a'
+    - ' &8quien la sostiene.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion llamas'
     - 'op: desgastar'
     commands-sound: ENTITY.BLAZE.SHOOT
@@ -880,13 +994,19 @@ items:
     - ' &f<glyph:rocket> &#9EA3AERayos &8» &#FFD36B8 Impactos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B60 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Vibra antes de cada'
-    - ' &8&otormenta.»'
+    - ' &8«Vibra antes de cada'
+    - ' &8tormenta.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: humano tormenta'
     - 'op: desgastar'
     commands-sound: ENTITY.LIGHTNING_BOLT.THUNDER
@@ -913,13 +1033,19 @@ items:
     - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B60 Segundos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B90 Segundos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B25 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Los nombres escritos en él'
-    - ' &8&oresponden a la llamada.»'
+    - ' &8«Los nombres escritos en él'
+    - ' &8responden a la llamada.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: humano guardian'
     - 'op: desgastar'
     commands-sound: BLOCK.BEACON.ACTIVATE
@@ -947,7 +1073,7 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Huele a casa.»'
+    - ' &8«Huele a casa.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -976,8 +1102,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Atado con la cinta roja que'
-    - ' &8&ousaba tu abuela.»'
+    - ' &8«Atado con la cinta roja que'
+    - ' &8usaba tu abuela.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1005,13 +1131,19 @@ items:
     - ' &f<glyph:clock> &#9EA3AEDuración &8» &#FFD36B30 Segundos'
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B3 Minutos'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B40 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA1 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Nadie sabe qué hay dentro,'
-    - ' &8&opero zumba.»'
+    - ' &8«Nadie sabe qué hay dentro,'
+    - ' &8pero zumba.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:0'
+    - '%auraskills_mana_int%:over:0'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA1&8)'
     interact-right:
+    - 'console: skills mana remove %player% 1'
     - 'op: bendicion energia'
     - 'op: desgastar'
     commands-sound: BLOCK.BEACON.POWER_SELECT
@@ -1039,8 +1171,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Úsala solo cuando no haya'
-    - ' &8&ootra salida.»'
+    - ' &8«Úsala solo cuando no haya'
+    - ' &8otra salida.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
     interact-right:
@@ -1069,8 +1201,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Vendas, alcohol y mucha'
-    - ' &8&opaciencia.»'
+    - ' &8«Vendas, alcohol y mucha'
+    - ' &8paciencia.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
     interact-right:
@@ -1099,8 +1231,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Escrito con tinta de'
-    - ' &8&oluciérnaga.»'
+    - ' &8«Escrito con tinta de'
+    - ' &8luciérnaga.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1129,8 +1261,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Sus letras se borran al'
-    - ' &8&oterminar de leerlas.»'
+    - ' &8«Sus letras se borran al'
+    - ' &8terminar de leerlas.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1159,8 +1291,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Dibujado por un cartógrafo'
-    - ' &8&oque nunca se perdió.»'
+    - ' &8«Dibujado por un cartógrafo'
+    - ' &8que nunca se perdió.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1189,8 +1321,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Se agita aunque no haya'
-    - ' &8&oviento.»'
+    - ' &8«Se agita aunque no haya'
+    - ' &8viento.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1219,8 +1351,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Bendecido en el templo'
-    - ' &8&omás antiguo del reino.»'
+    - ' &8«Bendecido en el templo'
+    - ' &8más antiguo del reino.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1249,8 +1381,8 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Cada palabra pesa como un'
-    - ' &8&oaño de estudio.»'
+    - ' &8«Cada palabra pesa como un'
+    - ' &8año de estudio.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Leer'
     interact-right:
@@ -1280,13 +1412,19 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B90 Segundos'
     - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A3 corazones al usarla'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Cada uso la vuelve un poco'
-    - ' &8&omás roja.»'
+    - ' &8«Cada uso la vuelve un poco'
+    - ' &8más roja.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: maldicion pacto'
     - 'op: desgastar'
     commands-sound: ENTITY.WARDEN.HEARTBEAT
@@ -1315,13 +1453,19 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B60 Segundos'
     - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A4 s de oscuridad'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Si miras al abismo el tiempo'
-    - ' &8&osuficiente, te devuelve la mirada.»'
+    - ' &8«Si miras al abismo el tiempo'
+    - ' &8suficiente, te devuelve la mirada.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: maldicion abismo'
     - 'op: desgastar'
     commands-sound: ENTITY.WARDEN.SONIC_CHARGE
@@ -1350,13 +1494,19 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B45 Segundos'
     - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A10 s de hambre'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Se oyen voces cuando nadie'
-    - ' &8&ola sostiene.»'
+    - ' &8«Se oyen voces cuando nadie'
+    - ' &8la sostiene.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: maldicion almas'
     - 'op: desgastar'
     commands-sound: PARTICLE.SOUL_ESCAPE
@@ -1385,13 +1535,19 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B75 Segundos'
     - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A4 s de marchitamiento'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«La muerte no olvida un nombre'
-    - ' &8&oescrito en rojo.»'
+    - ' &8«La muerte no olvida un nombre'
+    - ' &8escrito en rojo.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: maldicion muerte'
     - 'op: desgastar'
     commands-sound: ENTITY.WITHER.SPAWN
@@ -1420,18 +1576,877 @@ items:
     - ' &f<glyph:sand_clock> &#9EA3AERecarga &8» &#FFD36B120 Segundos'
     - ' &f<glyph:skull> &#9EA3AEPrecio &8» &#FF8A8A2 corazones al terminar'
     - ' &f<glyph:shield> &#9EA3AEDurabilidad &8» &#FFD36B20 Usos'
+    - ' &f<glyph:potion> &#9EA3AEManá &8» &#A78BFA2 por uso'
     - ' &f<glyph:pickaxe> &#9EA3AECrafteable &8» &#FF6B6BNo'
     - ''
-    - ' &8&o«Perteneció a un rey que se'
-    - ' &8&ocreyó inmortal.»'
+    - ' &8«Perteneció a un rey que se'
+    - ' &8creyó inmortal.»'
     - ''
     - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Invocar'
+    interact-right-conditions:
+    - '%auraskills_mana%:over:1'
+    - '%auraskills_mana_int%:over:1'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6No tienes maná suficiente &8(&#A78BFA2&8)'
     interact-right:
+    - 'console: skills mana remove %player% 2'
     - 'op: maldicion corona'
     - 'op: desgastar'
     commands-sound: ITEM.TOTEM.USE
     commands-particle: TOTEM_OF_UNDYING:24
     commands-cooldown: 120
     cooldown-message: '&#B22222☠ &8» &#C9A8A8La runa aún se está alimentando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+
+  # ================================================================
+  # BOTÍN DE CRIATURAS (drops custom). No son mágicos: materiales para
+  # crafteos/comercio y algunos casi inservibles. Comunes sin fondo; raros
+  # (fondo azul) y míticos (fondo morado) con tooltip_style. Texturas de
+  # Nexo (elitecreatures / iconos) por model-data. Aún no están en ningún mob.
+  # ================================================================
+  botin_gel:
+    id: PAPER
+    model-data: '201001'
+    properties: 'botin:comun'
+    name: '&#E6E8EE● &#B8F5A8Gel'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una masa pegajosa y elástica.'
+    - ' &7Sirve para unir y sellar piezas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Se pega a todo menos a'
+    - ' &8lo que quieres pegar.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_wool_ball:
+    id: PAPER
+    model-data: '201002'
+    properties: 'botin:comun'
+    name: '&#E6E8EE✿ &#F2EEE6Ovillo de Lana'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Lana enredada lista para'
+    - ' &7tejer o rellenar.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Huele a cabra. Mucho.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_pig_leather:
+    id: PAPER
+    model-data: '201003'
+    properties: 'botin:comun'
+    name: '&#E6E8EE▤ &#E8A8A0Cuero de Cerdo'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Cuero fino y resistente,'
+    - ' &7bueno para curtir.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Rosado incluso después'
+    - ' &8de curtido.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_fish_oil:
+    id: PAPER
+    model-data: '201004'
+    properties: 'botin:comun'
+    name: '&#E6E8EE◉ &#F2D27AAceite de Pescado'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Aceite espeso que arde'
+    - ' &7despacio en las lámparas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCombustible'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Nadie quiere estar cerca'
+    - ' &8cuando se calienta.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_desert_cloth:
+    id: PAPER
+    model-data: '201005'
+    properties: 'botin:comun'
+    name: '&#E6E8EE▦ &#E6C99ATela del Desierto'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Tela gastada por la arena'
+    - ' &7y el sol del desierto.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Aún guarda el calor'
+    - ' &8de las dunas.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_parrot_feather:
+    id: PAPER
+    model-data: '201006'
+    properties: 'botin:comun'
+    name: '&#E6E8EE➹ &#7FE07APluma de Loro'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Pluma ligera y colorida,'
+    - ' &7ideal para emplumar flechas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BFlechas'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Repite lo último que'
+    - ' &8escuchó. A veces.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_poison_sac:
+    id: PAPER
+    model-data: '201007'
+    properties: 'botin:comun'
+    name: '&#E6E8EE☠ &#9CE36BSaco de Veneno'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Glándula llena de veneno'
+    - ' &7de araña de cueva.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BAlquimia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«No lo aprietes.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_mushroom_spores:
+    id: PAPER
+    model-data: '201008'
+    properties: 'botin:comun'
+    name: '&#E6E8EE✲ &#E38B8BEsporas de Champiñón'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Esporas húmedas que se'
+    - ' &7deshacen al tocarlas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BCasi ninguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Huelen a sótano viejo.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_bat_wing:
+    id: PAPER
+    model-data: '201009'
+    properties: 'botin:comun'
+    name: '&#E6E8EE⌒ &#9A8FA8Ala de Murciélago'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una membrana fina y'
+    - ' &7arrugada. Poco útil.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BCasi ninguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Las brujas pagan algo'
+    - ' &8por ellas. Poco.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_squid_tentacle:
+    id: PAPER
+    model-data: '201010'
+    properties: 'botin:comun'
+    name: '&#E6E8EE≈ &#8FA7C9Tentáculo de Calamar'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Viscoso y frío.'
+    - ' &7Se resbala de las manos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BCasi ninguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Todavía se mueve un poco.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_frog_leg:
+    id: PAPER
+    model-data: '201011'
+    properties: 'botin:comun'
+    name: '&#E6E8EE❦ &#A6D97AAnca de Rana'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una pata de rana cruda.'
+    - ' &7Mejor no comerla.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BCasi ninguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Salta sola de la mochila.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_seashell:
+    id: PAPER
+    model-data: '201012'
+    properties: 'botin:comun'
+    name: '&#E6E8EE◒ &#F5D7B8Concha Marina'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una concha bonita pero'
+    - ' &7sin ningún valor.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BDecoración'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Si la acercas al oído'
+    - ' &8se oye el mar.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_fish_grey:
+    id: PAPER
+    model-data: '201013'
+    properties: 'botin:comun'
+    name: '&#E6E8EE⋙ &#B5BCC6Espina de Pez'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Restos de un pez que'
+    - ' &7alguien ya se comió.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BNinguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Ni los gatos la quieren.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_leaf:
+    id: PAPER
+    model-data: '201014'
+    properties: 'botin:comun'
+    name: '&#E6E8EE❧ &#C9B26BHoja Marchita'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una hoja seca que se'
+    - ' &7rompe con el viento.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BNinguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Cae sin hacer ruido.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_candy:
+    id: PAPER
+    model-data: '201015'
+    properties: 'botin:comun'
+    name: '&#E6E8EE✦ &#FF9EC4Caramelo Rancio'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un dulce viejo y pegajoso'
+    - ' &7que ya no se puede comer.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FF6B6BNinguno'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Lleva años en algún bolsillo.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_medal_bronze:
+    id: PAPER
+    model-data: '201016'
+    properties: 'botin:comun'
+    name: '&#E6E8EE✪ &#D9A066Medalla de Bronce Oxidada'
+    lore:
+    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una medalla verdosa por'
+    - ' &7el óxido. Vale poco.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BComercio'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Fue de un soldado'
+    - ' &8que nadie recuerda.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_axolotl_mucus:
+    id: PAPER
+    model-data: '201017'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF❂ &#FF9ED8Mucosa de Ajolote'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Moco brillante con un'
+    - ' &7poder regenerador.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BAlquimia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Cura heridas pequeñas'
+    - ' &8al instante.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_ender_powder:
+    id: PAPER
+    model-data: '201018'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF✧ &#5CD6B8Polvo de Ender'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Polvo que vibra cerca'
+    - ' &7del vacío.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BEncantamientos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Desaparece si no lo miras.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_honey_crystal:
+    id: PAPER
+    model-data: '201019'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF⬢ &#FFC94DCristal de Miel'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Miel cristalizada, dura'
+    - ' &7como el ámbar.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BAlquimia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Las abejas lo defienden'
+    - ' &8con su vida.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_wolf_fang:
+    id: PAPER
+    model-data: '201020'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF⚔ &#E6E6E6Colmillo de Lobo'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un colmillo afilado'
+    - ' &7como una daga.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BArmas'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Aún aúlla en luna llena.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_phantom_scale:
+    id: PAPER
+    model-data: '201021'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF◈ &#8FA3FFEscama de Phantom'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Escama ligera que flota'
+    - ' &7en el aire.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BArmaduras'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Cae del cielo'
+    - ' &8las noches sin dormir.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_ice_shards:
+    id: PAPER
+    model-data: '201022'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF❄ &#BFF4FFFragmentos de Hielo'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Hielo que nunca se derrite'
+    - ' &7del todo.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Quema de lo frío que está.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_guardian_spike:
+    id: PAPER
+    model-data: '201023'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF✷ &#7FE3C4Púa de Guardián'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Púa dura de los templos'
+    - ' &7del océano.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BArmas'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Brilla igual que el ojo'
+    - ' &8de su dueño.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_magma_gel:
+    id: PAPER
+    model-data: '201024'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF✹ &#FF8A3DGel de Magma'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Gel ardiente que nunca'
+    - ' &7se enfría.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCombustible'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«No lo guardes junto'
+    - ' &8a la lana.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_glow_squid_tentacle:
+    id: PAPER
+    model-data: '201025'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF✺ &#5FE3FFTentáculo Brillante'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Tentáculo que brilla'
+    - ' &7en la oscuridad.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BIluminación'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Ilumina las cuevas'
+    - ' &8más profundas.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_aqua_essence:
+    id: PAPER
+    model-data: '201026'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF♒ &#4FC3F7Esencia Acuática'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7La esencia de un ahogado'
+    - ' &7condensada en gotas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BAlquimia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Respirar bajo el agua'
+    - ' &8tiene un precio.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_ectoplasm:
+    id: PAPER
+    model-data: '201027'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF☁ &#C9F5E0Ectoplasma'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Restos de un espíritu'
+    - ' &7que no descansa.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BEncantamientos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Murmura nombres'
+    - ' &8que ya nadie usa.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_dolphin_fin:
+    id: PAPER
+    model-data: '201028'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF➶ &#7FB8FFAleta de Delfín'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Aleta lisa y flexible,'
+    - ' &7perfecta para nadar.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«El mar la echa de menos.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_starfish:
+    id: PAPER
+    model-data: '201029'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF★ &#FFB38AEstrella de Mar'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una estrella de mar seca'
+    - ' &7con restos de magia.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BAlquimia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Cayó del cielo'
+    - ' &8al fondo del mar.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_clover:
+    id: PAPER
+    model-data: '201030'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF☘ &#5FE38ATrébol de Cuatro Hojas'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un trébol rarísimo'
+    - ' &7que trae buena suerte.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BSuerte'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Encontrarlo ya fue'
+    - ' &8tu golpe de suerte.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_medal_silver:
+    id: PAPER
+    model-data: '201031'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF✪ &#D9DEE6Medalla de Plata'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una medalla de plata'
+    - ' &7pulida y valiosa.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BComercio'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Premio de un torneo'
+    - ' &8olvidado.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_crystals:
+    id: PAPER
+    model-data: '201032'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF✧ &#C9A8FFFragmentos de Cristal'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Cristales que guardan'
+    - ' &7algo de energía.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BEncantamientos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Zumban si los acercas'
+    - ' &8a un libro.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_magnet:
+    id: PAPER
+    model-data: '201033'
+    properties: 'tooltip_style:minecraft:blue, botin:raro'
+    name: '&#BFDDFF⋂ &#FF8A8AImán Antiguo'
+    lore:
+    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un imán viejo que todavía'
+    - ' &7atrae el hierro.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BHerramientas'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Las brújulas se vuelven'
+    - ' &8locas a su lado.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_warden_heart:
+    id: PAPER
+    model-data: '201034'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3❤ &#4FD9D0Corazón del Warden'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Late despacio en la'
+    - ' &7oscuridad profunda.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BCrafteos legendarios'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Escucha cada paso'
+    - ' &8que das.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_ghast_eye:
+    id: PAPER
+    model-data: '201035'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3◉ &#FFE6E6Ojo de Ghast'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un ojo que todavía'
+    - ' &7llora fuego.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BEncantamientos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Mira hacia el Nether.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_wither_dust:
+    id: PAPER
+    model-data: '201036'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3✠ &#8C8C8CPolvo de Wither'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Ceniza negra que pudre'
+    - ' &7todo lo que toca.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BArmas malditas'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«El silencio después'
+    - ' &8de la tormenta.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_magic_crystals:
+    id: PAPER
+    model-data: '201037'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3✦ &#D27CFFCristales Mágicos'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Cristales puros llenos'
+    - ' &7de magia antigua.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BEncantamientos'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Una bruja dio su vida'
+    - ' &8por ellos.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_purple_orb:
+    id: PAPER
+    model-data: '201038'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3◎ &#B45CFFOrbe del Vacío'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un orbe que absorbe'
+    - ' &7la luz a su alrededor.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BMagia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Dentro se ve'
+    - ' &8un cielo sin estrellas.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_crown:
+    id: PAPER
+    model-data: '201039'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3♛ &#FFD84DCorona Rota'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7La corona partida de'
+    - ' &7un rey olvidado.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BComercio'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Aún pesa como'
+    - ' &8una promesa.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_medal_gold:
+    id: PAPER
+    model-data: '201040'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3✪ &#FFC83DMedalla de Oro del Rey'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Una medalla de oro'
+    - ' &7con el sello real.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BComercio'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Solo los héroes'
+    - ' &8la recibían.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_sun:
+    id: PAPER
+    model-data: '201041'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3☀ &#FFE24DFragmento Solar'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un pedazo de sol'
+    - ' &7que nunca se apaga.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BMagia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Calienta las manos'
+    - ' &8y el alma.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_moon:
+    id: PAPER
+    model-data: '201042'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3☾ &#C6D4FFFragmento Lunar'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un trozo de luna que'
+    - ' &7brilla en la noche.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BMagia'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«Las mareas lo siguen.»'
+    itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
+    triggers: DISABLED
+  botin_skull:
+    id: PAPER
+    model-data: '201043'
+    properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
+    name: '&#FFD1F3☠ &#E6DCC9Cráneo Antiguo'
+    lore:
+    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - ''
+    - ' &7Un cráneo de una'
+    - ' &7época perdida.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEUso &8» &#FFD36BRituales'
+    - ' &f<glyph:skull> &#9EA3AEOrigen &8» &#FFD36BBotín de criaturas'
+    - ' &f<glyph:pickaxe> &#9EA3AEConsumible &8» &#FF6B6BNo'
+    - ''
+    - ' &8«No es de ningún'
+    - ' &8animal conocido.»'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
