@@ -1,5 +1,5 @@
 # Mob Loots Expansion (adaptado de Oraxen a Nexo).
-# Materiales que sueltan los mobs vanilla (drops en MythicMobs/mobs/vanilla_mob_loots.yml).
+# Materiales que sueltan los mobs vanilla (drops en MythicMobs/mobs/VanillaMobs.yml); los items de botín de ItemJoin usan los custom_model_data 201001-201043.
 
 mushroom_spores:
   itemname: <white>Esporas de Champiñón
