@@ -1,7 +1,11 @@
 CAVE_SPIDER:
+  Drops:
+  - nexo poison_sac 1-2 0.75
   Health: 30
   Damage: 7
 WITHER_SKELETON:
+  Drops:
+  - nexo wither_dust 1-3 0.75
   Health: 50
   Damage: 10
 GIANT:
@@ -9,3 +13,102 @@ GIANT:
   Damage: 20
   Skills:
   - potion{type=POISON;duration=100;lvl=1} @target ~onAttack
+
+# ------------------------------------------------------------
+# Mob Loots Expansion: drops extra de los mobs vanilla (items de Nexo,
+# Nexo/items/elitecreatures/mob_loots.yml). Se suman a los drops vanilla.
+# Formato: - nexo <item> <cantidad> <probabilidad>
+# ------------------------------------------------------------
+MOOSHROOM:
+  Drops:
+  - nexo mushroom_spores 1-2 0.75
+AXOLOTL:
+  Drops:
+  - nexo axolotl_mucus 1-2 0.75
+HUSK:
+  Drops:
+  - nexo desert_cloth 1-2 0.75
+ENDERMAN:
+  Drops:
+  - nexo ender_powder 1-2 0.75
+ENDERMITE:
+  Drops:
+  - nexo ender_powder 1-2 0.75
+LLAMA:
+  Drops:
+  - nexo wool_ball 1-2 0.75
+GOAT:
+  Drops:
+  - nexo wool_ball 1-2 0.75
+SLIME:
+  Drops:
+  - nexo gel 1-2 0.75
+WARDEN:
+  Drops:
+  - nexo warden_heart 1 0.75
+DOLPHIN:
+  Drops:
+  - nexo dolphin_fin 1 0.75
+FROG:
+  Drops:
+  - nexo frog_leg 1 0.75
+BAT:
+  Drops:
+  - nexo bat_wing 1 0.75
+PARROT:
+  Drops:
+  - nexo parrot_feather 1 0.75
+VEX:
+  Drops:
+  - nexo ectoplasm 1-2 0.50
+ALLAY:
+  Drops:
+  - nexo ectoplasm 1-2 0.50
+WOLF:
+  Drops:
+  - nexo wolf_fang 1-2 0.75
+PHANTOM:
+  Drops:
+  - nexo phantom_scale 1-2 0.75
+WITCH:
+  Drops:
+  - nexo magic_crystals 1-2 0.50
+SNOW_GOLEM:
+  Drops:
+  - nexo ice_shards 1-2 0.75
+POLAR_BEAR:
+  Drops:
+  - nexo ice_shards 1-2 0.75
+GHAST:
+  Drops:
+  - nexo ghast_eye 1-2 0.50
+WITHER:
+  Drops:
+  - nexo wither_dust 1-3 0.75
+GUARDIAN:
+  Drops:
+  - nexo guardian_spike 1-2 0.75
+MAGMA_CUBE:
+  Drops:
+  - nexo magma_gel 1-2 0.75
+BEE:
+  Drops:
+  - nexo honey_crystal 1-2 0.75
+SALMON:
+  Drops:
+  - nexo fish_oil 1-2 0.50
+COD:
+  Drops:
+  - nexo fish_oil 1-2 0.50
+SQUID:
+  Drops:
+  - nexo squid_tentacle 1-2 0.75
+GLOW_SQUID:
+  Drops:
+  - nexo glow_squid_tentacle 1-2 0.75
+PIG:
+  Drops:
+  - nexo pig_leather 1-2 0.50
+DROWNED:
+  Drops:
+  - nexo aqua_essence 1-2 0.50

@@ -1,0 +1,219 @@
+# Mob Loots Expansion (adaptado de Oraxen a Nexo).
+# Materiales que sueltan los mobs vanilla (drops en MythicMobs/mobs/vanilla_mob_loots.yml).
+
+mushroom_spores:
+  itemname: <white>Esporas de Champiñón
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Champiñaca'
+  Pack:
+    texture: elitecreatures/mushroom_spores
+axolotl_mucus:
+  itemname: <white>Mucosa de Ajolote
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Ajolote'
+  Pack:
+    texture: elitecreatures/axolotl_mucus
+desert_cloth:
+  itemname: <white>Tela del Desierto
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Husk'
+  Pack:
+    texture: elitecreatures/desert_cloth
+ender_powder:
+  itemname: <white>Polvo de Ender
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Enderman y Endermite'
+  Pack:
+    texture: elitecreatures/ender_powder
+poison_sac:
+  itemname: <white>Saco de Veneno
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Araña de cueva'
+  Pack:
+    texture: elitecreatures/poison_sac
+honey_crystal:
+  itemname: <white>Cristal de Miel
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Abeja'
+  Pack:
+    texture: elitecreatures/honey_crystal
+wool_ball:
+  itemname: <white>Ovillo de Lana
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Llama y Cabra'
+  Pack:
+    texture: elitecreatures/wool_ball
+gel:
+  itemname: <white>Gel
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Slime'
+  Pack:
+    texture: elitecreatures/gel
+warden_heart:
+  itemname: <white>Corazón del Warden
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Warden'
+  Pack:
+    texture: elitecreatures/warden_heart
+dolphin_fin:
+  itemname: <white>Aleta de Delfín
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Delfín'
+  Pack:
+    texture: elitecreatures/dolphin_fin
+bat_wing:
+  itemname: <white>Ala de Murciélago
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Murciélago'
+  Pack:
+    texture: elitecreatures/bat_wing
+parrot_feather:
+  itemname: <white>Pluma de Loro
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Loro'
+  Pack:
+    texture: elitecreatures/parrot_feather
+ectoplasm:
+  itemname: <white>Ectoplasma
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Vex y Allay'
+  Pack:
+    texture: elitecreatures/ectoplasm
+wolf_fang:
+  itemname: <white>Colmillo de Lobo
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Lobo'
+  Pack:
+    texture: elitecreatures/wolf_fang
+phantom_scale:
+  itemname: <white>Escama de Phantom
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Phantom'
+  Pack:
+    texture: elitecreatures/phantom_scale
+frog_leg:
+  itemname: <white>Anca de Rana
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Rana'
+  Pack:
+    texture: elitecreatures/frog_leg
+magic_crystals:
+  itemname: <white>Cristales Mágicos
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Bruja'
+  Pack:
+    texture: elitecreatures/magic_crystals
+ice_shards:
+  itemname: <white>Fragmentos de Hielo
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Gólem de nieve y Oso polar'
+  Pack:
+    texture: elitecreatures/ice_shards
+ghast_eye:
+  itemname: <white>Ojo de Ghast
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Ghast'
+  Pack:
+    texture: elitecreatures/ghast_eye
+wither_dust:
+  itemname: <white>Polvo de Wither
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Esqueleto wither y Wither'
+  Pack:
+    texture: elitecreatures/wither_dust
+guardian_spike:
+  itemname: <white>Púa de Guardián
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Guardián'
+  Pack:
+    texture: elitecreatures/guardian_spike
+magma_gel:
+  itemname: <white>Gel de Magma
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Cubo de magma'
+  Pack:
+    texture: elitecreatures/magma_gel
+fish_oil:
+  itemname: <white>Aceite de Pescado
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Salmón y Bacalao'
+  Pack:
+    texture: elitecreatures/fish_oil
+squid_tentacle:
+  itemname: <white>Tentáculo de Calamar
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Calamar'
+  Pack:
+    texture: elitecreatures/squid_tentacle
+glow_squid_tentacle:
+  itemname: <white>Tentáculo Brillante
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Calamar brillante'
+  Pack:
+    texture: elitecreatures/glow_squid_tentacle
+pig_leather:
+  itemname: <white>Cuero de Cerdo
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Cerdo'
+  Pack:
+    texture: elitecreatures/pig_leather
+aqua_essence:
+  itemname: <white>Esencia Acuática
+  material: PAPER
+  lore:
+  - '<#9EA3AE>Material de criatura'
+  - '<#5C6370>■ <#C9CDD6>Lo suelta: <white>Ahogado'
+  Pack:
+    texture: elitecreatures/aqua_essence

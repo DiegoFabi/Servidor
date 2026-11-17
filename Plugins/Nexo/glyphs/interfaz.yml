@@ -22,3 +22,252 @@ raton_der:
   height: 9
   char: 
   font: minecraft:default
+
+# ------------------------------------------------------------
+# Crystal Creations - Essential Icons Vol 1 y Vol 2 (texturas en textures/iconos)
+# Uso: <glyph:essential_icons_heart>  (char asignado automáticamente por Nexo)
+# ------------------------------------------------------------
+essential_icons_anvil:
+  texture: iconos/anvil
+  ascent: 8
+  height: 9
+essential_icons_floating_island:
+  texture: iconos/floating_island
+  ascent: 8
+  height: 9
+essential_icons_heart:
+  texture: iconos/heart
+  ascent: 8
+  height: 9
+essential_icons_experience_orb:
+  texture: iconos/experience_orb
+  ascent: 8
+  height: 9
+essential_icons_judge_gavel:
+  texture: iconos/judge_gavel
+  ascent: 8
+  height: 9
+essential_icons_cave:
+  texture: iconos/cave
+  ascent: 8
+  height: 9
+essential_icons_chef_hat:
+  texture: iconos/chef_hat
+  ascent: 8
+  height: 9
+essential_icons_plant:
+  texture: iconos/plant
+  ascent: 8
+  height: 9
+essential_icons_trees:
+  texture: iconos/trees
+  ascent: 8
+  height: 9
+essential_icons_mana:
+  texture: iconos/mana
+  ascent: 8
+  height: 9
+essential_icons_coins:
+  texture: iconos/coins
+  ascent: 8
+  height: 9
+essential_icons_sword:
+  texture: iconos/sword
+  ascent: 8
+  height: 9
+essential_icons_shield:
+  texture: iconos/shield
+  ascent: 8
+  height: 9
+essential_icons_key:
+  texture: iconos/key
+  ascent: 8
+  height: 9
+essential_icons_skull:
+  texture: iconos/skull
+  ascent: 8
+  height: 9
+essential_icons_purple_orb:
+  texture: iconos/purple_orb
+  ascent: 8
+  height: 9
+essential_icons_star:
+  texture: iconos/star
+  ascent: 8
+  height: 9
+essential_icons_hourglass:
+  texture: iconos/hourglass
+  ascent: 8
+  height: 9
+essential_icons_crown:
+  texture: iconos/crown
+  ascent: 8
+  height: 9
+essential_icons_magnifying_glass:
+  texture: iconos/magnifying_glass
+  ascent: 8
+  height: 9
+essential_icons_book:
+  texture: iconos/book
+  ascent: 8
+  height: 9
+essential_icons_diamond:
+  texture: iconos/diamond
+  ascent: 8
+  height: 9
+essential_icons_sun:
+  texture: iconos/sun
+  ascent: 8
+  height: 9
+essential_icons_fountain:
+  texture: iconos/fountain
+  ascent: 8
+  height: 9
+essential_icons_wizard_tower:
+  texture: iconos/wizard_tower
+  ascent: 8
+  height: 9
+essential_icons_potion:
+  texture: iconos/potion
+  ascent: 8
+  height: 9
+essential_icons_house:
+  texture: iconos/house
+  ascent: 8
+  height: 9
+essential_icons_moon:
+  texture: iconos/moon
+  ascent: 8
+  height: 9
+essential_icons_scroll:
+  texture: iconos/scroll
+  ascent: 8
+  height: 9
+essential_icons_level_up:
+  texture: iconos/level_up
+  ascent: 8
+  height: 9
+essential_icons_anchor:
+  texture: iconos/anchor
+  ascent: 8
+  height: 9
+essential_icons_bomb:
+  texture: iconos/bomb
+  ascent: 8
+  height: 9
+essential_icons_candy:
+  texture: iconos/candy
+  ascent: 8
+  height: 9
+essential_icons_chest:
+  texture: iconos/chest
+  ascent: 8
+  height: 9
+essential_icons_clover:
+  texture: iconos/clover
+  ascent: 8
+  height: 9
+essential_icons_cog:
+  texture: iconos/cog
+  ascent: 8
+  height: 9
+essential_icons_compass:
+  texture: iconos/compass
+  ascent: 8
+  height: 9
+essential_icons_crystals:
+  texture: iconos/crystals
+  ascent: 8
+  height: 9
+essential_icons_dialogue:
+  texture: iconos/dialogue
+  ascent: 8
+  height: 9
+essential_icons_earth:
+  texture: iconos/earth
+  ascent: 8
+  height: 9
+essential_icons_emerald:
+  texture: iconos/emerald
+  ascent: 8
+  height: 9
+essential_icons_exclamation:
+  texture: iconos/exclamation
+  ascent: 8
+  height: 9
+essential_icons_fire:
+  texture: iconos/fire
+  ascent: 8
+  height: 9
+essential_icons_fish_grey:
+  texture: iconos/fish_grey
+  ascent: 8
+  height: 9
+essential_icons_fish:
+  texture: iconos/fish
+  ascent: 8
+  height: 9
+essential_icons_flag_white:
+  texture: iconos/flag_white
+  ascent: 8
+  height: 9
+essential_icons_flag:
+  texture: iconos/flag
+  ascent: 8
+  height: 9
+essential_icons_helmet:
+  texture: iconos/helmet
+  ascent: 8
+  height: 9
+essential_icons_leaf:
+  texture: iconos/leaf
+  ascent: 8
+  height: 9
+essential_icons_lightbulb:
+  texture: iconos/lightbulb
+  ascent: 8
+  height: 9
+essential_icons_lock:
+  texture: iconos/lock
+  ascent: 8
+  height: 9
+essential_icons_magnet:
+  texture: iconos/magnet
+  ascent: 8
+  height: 9
+essential_icons_medal_bronze:
+  texture: iconos/medal_bronze
+  ascent: 8
+  height: 9
+essential_icons_medal_silver:
+  texture: iconos/medal_silver
+  ascent: 8
+  height: 9
+essential_icons_medal_gold:
+  texture: iconos/medal_gold
+  ascent: 8
+  height: 9
+essential_icons_money:
+  texture: iconos/money
+  ascent: 8
+  height: 9
+essential_icons_no:
+  texture: iconos/no
+  ascent: 8
+  height: 9
+essential_icons_palmtree:
+  texture: iconos/palmtree
+  ascent: 8
+  height: 9
+essential_icons_seashell:
+  texture: iconos/seashell
+  ascent: 8
+  height: 9
+essential_icons_starfish:
+  texture: iconos/starfish
+  ascent: 8
+  height: 9
+essential_icons_yes:
+  texture: iconos/yes
+  ascent: 8
+  height: 9
