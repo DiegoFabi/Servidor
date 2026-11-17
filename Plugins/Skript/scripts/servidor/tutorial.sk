@@ -46,7 +46,7 @@ on load:
     # "tutorial historia <jugador> <parte>" desde TypeWriter.
     delete {-hist::*}
     set {-hist::capitulo} to "Capítulo 1: Ecos de la Maleza"
-    set {-hist::total} to 12
+    set {-hist::total} to 13
     set {-hist::nombre::1} to "El Rey sin Memoria"
     set {-hist::desc::1::*} to "Despiertas otra vez sin recuerdos.", "King Draemir te devuelve el libro que", "escribiste vida tras vida y recuperas" and "el primer eco de tu pasado."
     set {-hist::nombre::2} to "Más Allá de los Muros"
@@ -70,12 +70,14 @@ on load:
     # Epílogo con el Mago Overking (TypeWriter, fact "orian_paso")
     set {-hist::nombre::11} to "El Portal de Orian"
     set {-hist::desc::11::*} to "El Mago Overking siguió el rastro del", "Alquimista hasta Orian. Cruzaste el" and "portal hacia la ciudad del otro lado."
+    set {-hist::nombre::12} to "Ármate con Hierro"
+    set {-hist::desc::12::*} to "Sir Aldren, vigía de Orian, te habló", "de la cripta bajo la ciudad y no te", "dejó bajar hasta verte con armadura" and "de hierro completa."
     # Las misiones tipo dungeon se muestran con otro objeto (cabeza de zombi)
-    set {-hist::nombre::12} to "Misión: La Cripta de Orian"
-    set {-hist::tipo::12} to "dungeon"
-    set {-hist::desc::12::*} to "Bajaste a la cripta bajo Orian y", "acabaste con los muertos que el" and "Alquimista usaba como guardianes."
-    # Huecos del menú (2 filas): partes 1-7 arriba y 8-12 abajo
-    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 21, 22, 23, 24 and 25
+    set {-hist::nombre::13} to "Misión: La Cripta de Orian"
+    set {-hist::tipo::13} to "dungeon"
+    set {-hist::desc::13::*} to "Bajaste a la cripta bajo Orian y", "acabaste con los muertos que el" and "Alquimista usaba como guardianes."
+    # Huecos del menú (2 filas): partes 1-7 arriba y 8-13 abajo
+    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23 and 24
 
 # ------------------------------------------------------------
 #  Inicio y comandos de consola
