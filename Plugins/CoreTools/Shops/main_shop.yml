@@ -1,9 +1,11 @@
 # Tienda convertida desde CommandPanels (MainShop.yml): una tienda por categoria.
 # CoreTools: prices.sell = lo que paga el jugador al comprar; prices.buy = lo que recibe al vender.
+# Navegación: pestañas arriba, ◁ ▷ de la textura = páginas (slots 48 y 50, item invisible), moneda = volver.
+# bottom_inventory: false -> el jugador ve su inventario real.
 shop_blocks:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈇'
+  bottom_inventory: false
+  name: ㈮㈮&f㈇
   size: 6
   fill_material: AIR
   default_category: main
@@ -50,65 +52,65 @@ shop_blocks:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -131,7 +133,7 @@ shop_blocks:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -233,7 +235,6 @@ shop_blocks:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -450,54 +451,6 @@ shop_blocks:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Misceláneo'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b10_click
-      right_click:
-        Scripts:
-        - mainshop_b10_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b10_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b10_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eMinerales y Valiosos »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b3_click
-      right_click:
-        Scripts:
-        - mainshop_b3_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b3_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b3_click
     volver_tiendas:
       location: top
       slots:
@@ -525,275 +478,30 @@ shop_blocks:
     previous:
       location: top
       slots:
-      - 45
+      - 48
       source: vanilla
-      material: ARROW
+      material: DIAMOND
+      custom_model_data_float: 1
       name: '&e« Página anterior'
+      lore:
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
     next:
       location: top
       slots:
-      - 53
+      - 50
       source: vanilla
-      material: ARROW
+      material: DIAMOND
+      custom_model_data_float: 1
       name: '&ePágina siguiente »'
-      flags:
-      - HIDE_ATTRIBUTES
-    middlebar_10:
-      location: bottom
-      slots:
-      - 19
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: ' '
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
-      flags:
-      - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
-      slots:
-      - 21
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_blocks_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_blocks_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_blocks_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_blocks_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_blocks_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_blocks_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_blocks_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_blocks_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_blocks_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_blocks_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
-      lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈇'
+      name: ㈮㈮&f㈇
       grass_block:
         options:
           sell: true
@@ -1458,8 +1166,8 @@ shop_blocks:
           material: BROWN_DYE
 shop_valuables:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈊'
+  bottom_inventory: false
+  name: ㈮㈮&f㈊
   size: 6
   fill_material: AIR
   default_category: main
@@ -1506,65 +1214,65 @@ shop_valuables:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -1587,7 +1295,7 @@ shop_valuables:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -1689,7 +1397,6 @@ shop_valuables:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -1906,54 +1613,6 @@ shop_valuables:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Bloques'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b2_click
-      right_click:
-        Scripts:
-        - mainshop_b2_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b2_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b2_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eDrops de Mobs »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b4_click
-      right_click:
-        Scripts:
-        - mainshop_b4_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b4_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b4_click
     volver_tiendas:
       location: top
       slots:
@@ -1978,260 +1637,33 @@ shop_valuables:
       shift_right_click:
         Scripts:
         - shop_blocks_nav48_click
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_valuables_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_valuables_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_valuables_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_valuables_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_valuables_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_valuables_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_valuables_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_valuables_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_valuables_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_valuables_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈊'
+      name: ㈮㈮&f㈊
       coal:
         options:
           sell: true
@@ -2396,8 +1828,8 @@ shop_valuables:
           material: QUARTZ
 shop_mobdrops:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈌'
+  bottom_inventory: false
+  name: ㈮㈮&f㈌
   size: 6
   fill_material: AIR
   default_category: main
@@ -2444,65 +1876,65 @@ shop_mobdrops:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -2525,7 +1957,7 @@ shop_mobdrops:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -2627,7 +2059,6 @@ shop_mobdrops:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -2844,54 +2275,6 @@ shop_mobdrops:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Minerales y Valiosos'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b3_click
-      right_click:
-        Scripts:
-        - mainshop_b3_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b3_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b3_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eComida »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b5_click
-      right_click:
-        Scripts:
-        - mainshop_b5_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b5_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b5_click
     volver_tiendas:
       location: top
       slots:
@@ -2916,260 +2299,33 @@ shop_mobdrops:
       shift_right_click:
         Scripts:
         - shop_blocks_nav48_click
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_mobdrops_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_mobdrops_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_mobdrops_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_mobdrops_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈌'
+      name: ㈮㈮&f㈌
       grass_block:
         options:
           sell: true
@@ -3546,8 +2702,8 @@ shop_mobdrops:
           material: OAK_LOG
 shop_food:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈉'
+  bottom_inventory: false
+  name: ㈮㈮&f㈉
   size: 6
   fill_material: AIR
   default_category: main
@@ -3594,65 +2750,65 @@ shop_food:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -3675,7 +2831,7 @@ shop_food:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -3777,7 +2933,6 @@ shop_food:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -3994,54 +3149,6 @@ shop_food:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Drops de Mobs'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b4_click
-      right_click:
-        Scripts:
-        - mainshop_b4_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b4_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b4_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eCultivos »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b6_click
-      right_click:
-        Scripts:
-        - mainshop_b6_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b6_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b6_click
     volver_tiendas:
       location: top
       slots:
@@ -4066,260 +3173,33 @@ shop_food:
       shift_right_click:
         Scripts:
         - shop_blocks_nav48_click
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_food_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_food_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_food_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_food_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_food_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_food_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_food_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_food_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_food_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_food_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_food_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_food_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_food_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_food_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_food_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_food_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_food_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_food_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_food_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_food_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_food_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_food_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈉'
+      name: ㈮㈮&f㈉
       grass_block:
         options:
           sell: true
@@ -4696,8 +3576,8 @@ shop_food:
           material: OAK_LOG
 shop_farming:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈞'
+  bottom_inventory: false
+  name: ㈮㈮&f㈞
   size: 6
   fill_material: AIR
   default_category: main
@@ -4744,65 +3624,65 @@ shop_farming:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -4825,7 +3705,7 @@ shop_farming:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -4927,7 +3807,6 @@ shop_farming:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -5144,54 +4023,6 @@ shop_farming:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Comida'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b5_click
-      right_click:
-        Scripts:
-        - mainshop_b5_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b5_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b5_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eTintes y Colores »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b7_click
-      right_click:
-        Scripts:
-        - mainshop_b7_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b7_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b7_click
     volver_tiendas:
       location: top
       slots:
@@ -5216,260 +4047,33 @@ shop_farming:
       shift_right_click:
         Scripts:
         - shop_blocks_nav48_click
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_farming_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_farming_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_farming_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_farming_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_farming_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_farming_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_farming_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_farming_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_farming_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_farming_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈞'
+      name: ㈮㈮&f㈞
       melon_seeds:
         options:
           sell: true
@@ -5904,8 +4508,8 @@ shop_farming:
           material: ACACIA_SAPLING
 shop_dyes:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈈'
+  bottom_inventory: false
+  name: ㈮㈮&f㈈
   size: 6
   fill_material: AIR
   default_category: main
@@ -5952,65 +4556,65 @@ shop_dyes:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -6033,7 +4637,7 @@ shop_dyes:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -6135,7 +4739,6 @@ shop_dyes:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -6352,54 +4955,6 @@ shop_dyes:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Cultivos'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b6_click
-      right_click:
-        Scripts:
-        - mainshop_b6_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b6_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b6_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eRedstone »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b8_click
-      right_click:
-        Scripts:
-        - mainshop_b8_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b8_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b8_click
     volver_tiendas:
       location: top
       slots:
@@ -6424,260 +4979,33 @@ shop_dyes:
       shift_right_click:
         Scripts:
         - shop_blocks_nav48_click
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_dyes_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_dyes_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_dyes_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_dyes_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_dyes_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_dyes_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_dyes_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_dyes_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_dyes_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_dyes_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈈'
+      name: ㈮㈮&f㈈
       white_dye:
         options:
           sell: true
@@ -6968,8 +5296,8 @@ shop_dyes:
           material: BROWN_DYE
 shop_redstone:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈍'
+  bottom_inventory: false
+  name: ㈮㈮&f㈍
   size: 6
   fill_material: AIR
   default_category: main
@@ -7016,65 +5344,65 @@ shop_redstone:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -7097,7 +5425,7 @@ shop_redstone:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -7199,7 +5527,6 @@ shop_redstone:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -7416,54 +5743,6 @@ shop_redstone:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Tintes y Colores'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b7_click
-      right_click:
-        Scripts:
-        - mainshop_b7_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b7_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b7_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eSpawners »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b9_click
-      right_click:
-        Scripts:
-        - mainshop_b9_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b9_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b9_click
     volver_tiendas:
       location: top
       slots:
@@ -7488,260 +5767,33 @@ shop_redstone:
       shift_right_click:
         Scripts:
         - shop_blocks_nav48_click
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_redstone_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_redstone_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_redstone_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_redstone_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_redstone_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_redstone_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_redstone_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_redstone_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_redstone_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_redstone_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈍'
+      name: ㈮㈮&f㈍
       redstone:
         options:
           sell: true
@@ -8040,8 +6092,8 @@ shop_redstone:
           material: TRAPPED_CHEST
 shop_spawners:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈎'
+  bottom_inventory: false
+  name: ㈮㈮&f㈎
   size: 6
   fill_material: AIR
   default_category: main
@@ -8088,65 +6140,65 @@ shop_spawners:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -8169,7 +6221,7 @@ shop_spawners:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -8271,7 +6323,6 @@ shop_spawners:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -8488,54 +6539,6 @@ shop_spawners:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Redstone'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b8_click
-      right_click:
-        Scripts:
-        - mainshop_b8_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b8_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b8_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eMisceláneo »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b10_click
-      right_click:
-        Scripts:
-        - mainshop_b10_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b10_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b10_click
     volver_tiendas:
       location: top
       slots:
@@ -8567,7 +6570,7 @@ shop_spawners:
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '§4§lBack'
+      name: §4§lBack
       flags:
       - HIDE_ATTRIBUTES
       left_click:
@@ -8596,260 +6599,33 @@ shop_spawners:
       - '   &7 to change spawner type'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_10:
-      location: bottom
+    previous:
+      location: top
       slots:
-      - 19
+      - 48
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: ' '
+      name: '&e« Página anterior'
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
+    next:
+      location: top
       slots:
-      - 21
+      - 50
       source: vanilla
       material: DIAMOND
       custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_spawners_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_spawners_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_spawners_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_spawners_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_spawners_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_spawners_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_spawners_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_spawners_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_spawners_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_spawners_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
+      name: '&ePágina siguiente »'
       lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈎'
+      name: ㈮㈮&f㈎
       cow_spawn_egg:
         options:
           sell: true
@@ -9156,8 +6932,8 @@ shop_spawners:
           material: SPIDER_SPAWN_EGG
 shop_misc:
   permission: ''
-  bottom_inventory: true
-  name: '㈮㈮&f㈋'
+  bottom_inventory: false
+  name: ㈮㈮&f㈋
   size: 6
   fill_material: AIR
   default_category: main
@@ -9204,65 +6980,65 @@ shop_misc:
     no-permission: '&cNo tienes permiso para abrir esta tienda.'
   sound:
     no_permission:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     insufficient_money:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_sell:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_allowed_to_buy:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     not_enough_item_buy_all:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_inventory:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     no_space_playervault:
-    - 'minecraft:entity.villager.no'
+    - minecraft:entity.villager.no
     - master
     - 1
     - 1
     successful_sell:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
     successful_buy:
-    - 'minecraft:entity.experience_orb.pickup'
+    - minecraft:entity.experience_orb.pickup
     - master
     - 1
     - 1
   sorting:
     default:
-    - '<white>▷ Por defecto'
-    - '<green><bold>▶ Por defecto'
+    - <white>▷ Por defecto
+    - <green><bold>▶ Por defecto
     money_descending:
-    - '<white>▷ Precio mayor'
-    - '<green><bold>▶ Precio mayor'
+    - <white>▷ Precio mayor
+    - <green><bold>▶ Precio mayor
     money_ascending:
-    - '<white>▷ Precio menor'
-    - '<green><bold>▶ Precio menor'
+    - <white>▷ Precio menor
+    - <green><bold>▶ Precio menor
   delivery:
     mode: 1
     playervault: myfirstvault
@@ -9285,7 +7061,7 @@ shop_misc:
   - '&e➜ Shift + click derecho: vender todo'
   bottom_item_lore: []
   advanced:
-    name: '㈮㈮&f㈂'
+    name: ㈮㈮&f㈂
     size: 6
     fill_material: AIR
     animation: ''
@@ -9387,7 +7163,6 @@ shop_misc:
         - 33
         name: '&fVolver'
   buttons:
-    # Pestañas de categorías (fila superior del fondo) y navegación
     pestana_0:
       location: top
       slots:
@@ -9604,54 +7379,6 @@ shop_misc:
       shift_right_click:
         Scripts:
         - mainshop_b10_click
-    cat_anterior:
-      location: top
-      slots:
-      - 48
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e« Spawners'
-      lore:
-      - '&7Categoría anterior'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b9_click
-      right_click:
-        Scripts:
-        - mainshop_b9_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b9_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b9_click
-    cat_siguiente:
-      location: top
-      slots:
-      - 50
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&eBloques »'
-      lore:
-      - '&7Categoría siguiente'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - mainshop_b2_click
-      right_click:
-        Scripts:
-        - mainshop_b2_click
-      shift_left_click:
-        Scripts:
-        - mainshop_b2_click
-      shift_right_click:
-        Scripts:
-        - mainshop_b2_click
     volver_tiendas:
       location: top
       slots:
@@ -9679,275 +7406,30 @@ shop_misc:
     previous:
       location: top
       slots:
-      - 45
+      - 48
       source: vanilla
-      material: ARROW
+      material: DIAMOND
+      custom_model_data_float: 1
       name: '&e« Página anterior'
+      lore:
+      - '&7Ver los objetos anteriores'
       flags:
       - HIDE_ATTRIBUTES
     next:
       location: top
       slots:
-      - 53
+      - 50
       source: vanilla
-      material: ARROW
+      material: DIAMOND
+      custom_model_data_float: 1
       name: '&ePágina siguiente »'
-      flags:
-      - HIDE_ATTRIBUTES
-    middlebar_10:
-      location: bottom
-      slots:
-      - 19
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: ' '
       lore:
-      - ㈒
-      - '&7%vault_eco_balance_formatted%'
-      - '&7'
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
-      flags:
-      - HIDE_ATTRIBUTES
-    middlebar_12:
-      location: bottom
-      slots:
-      - 21
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&e&lBlocks'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_middlebar_12_click
-      right_click:
-        Scripts:
-        - shop_misc_middlebar_12_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_middlebar_12_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_middlebar_12_click
-    middlebar_13:
-      location: bottom
-      slots:
-      - 22
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&b&lValuables'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_middlebar_13_click
-      right_click:
-        Scripts:
-        - shop_misc_middlebar_13_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_middlebar_13_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_middlebar_13_click
-    middlebar_14:
-      location: bottom
-      slots:
-      - 23
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&6&lDrops de Mobs'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_middlebar_14_click
-      right_click:
-        Scripts:
-        - shop_misc_middlebar_14_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_middlebar_14_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_middlebar_14_click
-    middlebar_21:
-      location: bottom
-      slots:
-      - 30
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lComida'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_middlebar_21_click
-      right_click:
-        Scripts:
-        - shop_misc_middlebar_21_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_middlebar_21_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_middlebar_21_click
-    middlebar_22:
-      location: bottom
-      slots:
-      - 31
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&a&lFarming'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_middlebar_22_click
-      right_click:
-        Scripts:
-        - shop_misc_middlebar_22_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_middlebar_22_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_middlebar_22_click
-    middlebar_23:
-      location: bottom
-      slots:
-      - 32
-      source: vanilla
-      material: DIAMOND
-      custom_model_data_float: 1
-      name: '&d&lTintes y Colores'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_middlebar_23_click
-      right_click:
-        Scripts:
-        - shop_misc_middlebar_23_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_middlebar_23_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_middlebar_23_click
-    shopbar_0:
-      location: bottom
-      slots:
-      - 36
-      source: vanilla
-      material: BARRIER
-      name: '&4&lClose'
-      flags:
-      - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - shop_misc_shopbar_0_click
-      right_click:
-        Scripts:
-        - shop_misc_shopbar_0_click
-      shift_left_click:
-        Scripts:
-        - shop_misc_shopbar_0_click
-      shift_right_click:
-        Scripts:
-        - shop_misc_shopbar_0_click
-    shopbar_1:
-      location: bottom
-      slots:
-      - 37
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_2:
-      location: bottom
-      slots:
-      - 38
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_3:
-      location: bottom
-      slots:
-      - 39
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_4:
-      location: bottom
-      slots:
-      - 40
-      source: vanilla
-      material: player_head
-      texture: player
-      name: '&e&l{caster_name}'
-      lore:
-      - '§aBalance: §7$%vault_eco_balance_formatted%'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_5:
-      location: bottom
-      slots:
-      - 41
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_6:
-      location: bottom
-      slots:
-      - 42
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_7:
-      location: bottom
-      slots:
-      - 43
-      source: vanilla
-      material: LIGHT_BLUE_STAINED_GLASS_PANE
-      name: '&f'
-      flags:
-      - HIDE_ATTRIBUTES
-    shopbar_8:
-      location: bottom
-      slots:
-      - 44
-      source: vanilla
-      material: BOOK
-      name: '&e&lInformation'
-      lore:
-      - '&a&lBuying'
-      - '&7Buying (Left Click)'
-      - '&c&lSelling'
-      - '&7Selling (Right Click)'
+      - '&7Ver más objetos'
       flags:
       - HIDE_ATTRIBUTES
   categories:
     main:
-      name: '㈮㈮&f㈋'
+      name: ㈮㈮&f㈋
       arrow:
         options:
           sell: true

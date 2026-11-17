@@ -8,7 +8,7 @@ level-gui:
     level-as-amount: true
     next-page:
       item: arrow name:"&fPágina siguiente"
-      item-inactive: gray_dye name:"&7Next Page"
+      item-inactive: air
       location:
         column: 8
         row: 4
@@ -151,39 +151,71 @@ level-up:
     - '&f'
     enabled: true
 leave-gui:
+  # Recuadro de abajo (5x2): izquierda verde = salir, centro gris = explicación,
+  # derecha rojo = cancelar.
   cancel:
-    item: arrow
+    item: red_stained_glass_pane
     lore:
     - ''
-    - '&f &7Volver al menú de trabajos'
-    name: '&eCancelar'
-    location:
-      column: 4
-      row: 4
-    locations: []
-  confirm:
-    item: player_head texture:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTRiZDlhNDViOTY4MWNlYTViMjhjNzBmNzVhNjk1NmIxZjU5NGZlYzg0MGI5NjA3Nzk4ZmIxZTcwNzc2NDQzMCJ9fX0=
-    lore:
+    - '&#C9CDD6Te quedas en el trabajo y'
+    - '&#C9CDD6vuelves al menú de trabajos.'
     - ''
-    - '&c¿Seguro que quieres salir?'
-    - '%leave_lore%'
-    - ''
-    - '&f &cClick para confirmar'
-    name: '&cSalir de %job%'
+    - '&#FF8A8A✥ ¡Clic para &#FF8A8A&lCANCELAR&#FF8A8A!'
+    name: '&#FF6B6B✘ Cancelar'
     location:
       column: 6
       row: 4
-    locations: []
-  custom-slots:
-  - item: paper name:"&6&l¿Salir del trabajo?"
+    locations:
+    - column: 6
+      row: 4
+    - column: 7
+      row: 4
+    - column: 6
+      row: 5
+    - column: 7
+      row: 5
+  confirm:
+    item: lime_stained_glass_pane
     lore:
     - ''
-    - '&7Perderás el progreso pendiente'
-    - '&7según la configuración del trabajo.'
+    - '&#C9CDD6Dejarás el trabajo &f%job%&#C9CDD6.'
+    - '%leave_lore%'
     - ''
-    - '&7Confirma o cancela en las casillas de abajo.'
+    - '&#7FFF9E✥ ¡Clic para &#7FFF9E&lSALIR&#7FFF9E!'
+    name: '&#7FFF9E✔ Salir de %job%'
+    location:
+      column: 4
+      row: 4
+    locations:
+    - column: 3
+      row: 4
+    - column: 4
+      row: 4
+    - column: 3
+      row: 5
+    - column: 4
+      row: 5
+  custom-slots:
+  - item: gray_stained_glass_pane name:"&#E6E8EE¿Salir del trabajo?"
+    lore:
+    - ''
+    - '&#7FFF9E◀ Verde: &#C9CDD6sales del trabajo.'
+    - '&#FF6B6B▶ Rojo: &#C9CDD6te quedas en él.'
+    - ''
+    - '&#9EA3AEPuede que pierdas el progreso'
+    - '&#9EA3AEsegún la configuración del trabajo.'
     column: 5
-    row: 2
+    row: 4
+  - item: gray_stained_glass_pane name:"&#E6E8EE¿Salir del trabajo?"
+    lore:
+    - ''
+    - '&#7FFF9E◀ Verde: &#C9CDD6sales del trabajo.'
+    - '&#FF6B6B▶ Rojo: &#C9CDD6te quedas en él.'
+    - ''
+    - '&#9EA3AEPuede que pierdas el progreso'
+    - '&#9EA3AEsegún la configuración del trabajo.'
+    column: 5
+    row: 5
   rows: 5
   title: '&f'
   mask:
@@ -199,7 +231,7 @@ disabled-in-worlds: []
 gui:
   next-page:
     item: arrow name:"&fPágina siguiente"
-    item-inactive: gray_dye name:"&7Next Page"
+    item-inactive: air
     location:
       column: 8
       row: 4
@@ -258,7 +290,7 @@ gui:
     - ''
     - '&#FF6B6B✘ ¡No estás trabajando aquí!'
     - ''
-    - '&#C9A8FF<glyph:raton_izq> ¡Click para unirte al &#C9A8FF&lTRABAJO&#C9A8FF!'
+    - '&#C9A8FF<glyph:raton_izq> ¡Clic para unirte al &#C9A8FF&lTRABAJO&#C9A8FF!'
     lore:
     - '&#9EA3AEProfesiones del reino <glyph:pickaxe>'
     - ''
@@ -277,8 +309,8 @@ gui:
     - ''
     - '&#7FFF9E✔ ¡Estás trabajando aquí!'
     - ''
-    - '&#7FB2FF<glyph:raton_izq> Click: ver tus niveles'
-    - '&#FF6B6B<glyph:raton_der> Click derecho: salir del trabajo'
+    - '&#7FB2FF<glyph:raton_izq> Clic: ver tus niveles'
+    - '&#FF6B6B<glyph:raton_der> Clic derecho: salir del trabajo'
     click:
       volume: 1
       sound: ui_button_click
@@ -287,7 +319,7 @@ gui:
       enabled: true
   prev-page:
     item: arrow name:"&fPágina anterior"
-    item-inactive: gray_dye name:"&7Previous Page"
+    item-inactive: air
     location:
       column: 2
       row: 4
