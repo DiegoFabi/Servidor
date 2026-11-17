@@ -1,5 +1,5 @@
-display-name: "Tripleshot"
-description: "Shoot 3 arrows instead of 1"
+display-name: "Disparo Triple"
+description: "Dispara 3 flechas en vez de 1"
 type: normal
 
 targets:

@@ -1,5 +1,5 @@
-display-name: "Wound"
-description: "Gives a &a%chance%%&r chance to give your opponent &a%damage% &rdamage for &a%duration%&r seconds"
+display-name: "Herida"
+description: "Da un &a%chance%%&r de probabilidad de infligir &a%damage% &rde daño a tu rival durante &a%duration%&r segundos"
 placeholders:
   chance: "%level% * 3"
   duration: "0.75 * (%level% + 2)"

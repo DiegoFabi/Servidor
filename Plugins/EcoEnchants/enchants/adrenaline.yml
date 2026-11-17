@@ -1,5 +1,5 @@
-display-name: "Adrenaline"
-description: "Gain strength for &a%placeholder%&r seconds when blocking hits"
+display-name: "Adrenalina"
+description: "Ganas fuerza durante &a%placeholder%&r segundos al bloquear golpes"
 placeholder: "1 + %level% / 2"
 type: normal
 

@@ -1,5 +1,5 @@
-display-name: "Poison Ivy"
-description: "Poisons attackers for &a%seconds%&r seconds for each heart of damage dealt, up to &a%limit%&r seconds"
+display-name: "Hiedra Venenosa"
+description: "Envenena a quien te ataca &a%seconds%&r segundos por cada corazón de daño, hasta &a%limit%&r segundos"
 placeholders:
   seconds: "0.5 * %level%"
   limit: "4 + %level%"

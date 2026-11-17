@@ -1,5 +1,5 @@
-display-name: "Shulker Harvest"
-description: "Gives a &a%placeholder%%&r boost to shulker drops"
+display-name: "Cosecha de Shulker"
+description: "Aumenta un &a%placeholder%%&r lo que sueltan los shulkers"
 placeholder: "ceil(((1 / (%level% + 4)) + ((%level% + 3) / 2)) * 100 - 100)"
 type: normal
 

@@ -1,5 +1,5 @@
-display-name: "Brightness"
-description: "Deal &a%placeholder%%&r more damage to the warden while in the deep dark"
+display-name: "Resplandor"
+description: "Inflige un &a%placeholder%%&r más de daño al Warden en la Oscuridad Profunda"
 placeholder: "4 * %level%"
 type: common
 

@@ -1,5 +1,5 @@
-display-name: "Carve"
-description: "Give &a%damage%&r damage to entities within &a%radius%&r blocks when you swing"
+display-name: "Tajo"
+description: "Inflige &a%damage%&r de daño a las criaturas a &a%radius%&r bloques al golpear"
 placeholders:
   radius: "1 + %level%"
   damage: "%level% * 2"

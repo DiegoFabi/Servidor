@@ -1,5 +1,5 @@
-display-name: "Lifesteal"
-description: "Heals &a%placeholder%%&r of damage dealt"
+display-name: "Robo de Vida"
+description: "Te cura un &a%placeholder%%&r del daño que inflijas"
 placeholder: "%level% * 10"
 type: normal
 

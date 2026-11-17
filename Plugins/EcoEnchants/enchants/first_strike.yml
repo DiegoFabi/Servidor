@@ -1,5 +1,5 @@
-display-name: "First Strike"
-description: "Deal &a%placeholder%% &rmore damage against victims on max health"
+display-name: "Primer Golpe"
+description: "Inflige un &a%placeholder%% &rmás de daño a rivales con la vida al máximo"
 placeholder: "30 + 20 * %level%"
 type: normal
 

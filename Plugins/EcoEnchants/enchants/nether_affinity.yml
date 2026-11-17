@@ -1,5 +1,5 @@
-display-name: "Nether Affinity"
-description: "Increases damage dealt in the nether by &a%placeholder%%"
+display-name: "Afinidad del Nether"
+description: "Aumenta el daño en el Nether un &a%placeholder%%"
 placeholder: "20 + %level% * 10"
 type: normal
 

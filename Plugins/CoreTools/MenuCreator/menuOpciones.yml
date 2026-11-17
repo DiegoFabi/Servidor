@@ -7,6 +7,9 @@ menuOpciones:
   size: 1
   fill_material: AIR
   enable_animation: true
+  # Calcula el estado de la bossbar de misiones para el tooltip
+  start_script:
+  - opciones_bossbar_estado
   buttons:
     baules:
       location: top
@@ -21,7 +24,7 @@ menuOpciones:
       - ''
       - '<white><glyph:treasure> <#E6E8EE>Comando: <#FFD36B>/pv'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -51,7 +54,7 @@ menuOpciones:
       - <white><glyph:gold_coin> <#E6E8EE>Recompensas por mobs, dinero y votos
       - <white><glyph:crossed_swords> <#E6E8EE>Rachas de 10 muertes con premio
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -80,7 +83,7 @@ menuOpciones:
       - ''
       - '<white><glyph:envelope> <#E6E8EE>Comando: <#FFD36B>/buzon'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -109,7 +112,7 @@ menuOpciones:
       - ''
       - '<white><glyph:stacked_books> <#E6E8EE>Comando: <#FFD36B>/historia'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -138,7 +141,7 @@ menuOpciones:
       - ''
       - '<white><glyph:gold_coin> <#E6E8EE>Comando: <#FFD36B>/subasta <puja>'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -167,7 +170,7 @@ menuOpciones:
       - ''
       - '<white><glyph:crossed_swords> <#E6E8EE>Comandos: <#FFD36B>/cf <#9EA3AE>y <#FFD36B>/retoclicks'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -189,15 +192,18 @@ menuOpciones:
       - 7
       source: vanilla
       material: filled_map
-      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Bossbar de Misiones</gradient>
+      name: '<white><glyph:essential_icons_flag></white> <gradient:#FFE29A:#FFB347>Bossbar de Misiones</gradient>'
       lore:
-      - <#C9CDD6>Oculta o muestra la barra superior
-      - <#C9CDD6>que guía tus misiones.
+      - '<#7C8291>Interfaz <white><glyph:essential_icons_cog></white>'
       - ''
-      - <#5C6370>■ <white>Solo es visual: tus misiones
-      - <white>  siguen activas y progresando.
+      - '<white>Oculta o muestra la <#FFB347>barra superior</#FFB347>'
+      - '<white>que guía tus <#7FD8FF>misiones</#7FD8FF>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para <bold>OCULTAR / MOSTRAR</bold>
+      - '<#7FFF9E>✔ <#9EEBA8>Solo es visual: tus misiones siguen activas'
+      - ''
+      - '<white>Estado: %coretools_var_player_bossbar_misiones%'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>CAMBIAR</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -247,7 +253,7 @@ menuOpciones:
       - ''
       - '<white><glyph:castle_entrance> <#E6E8EE>Comando: <#FFD36B>/homes list'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para ver tus homes
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver tus homes
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP

@@ -1,5 +1,5 @@
-display-name: "Curse of Breaklessness"
-description: "Gives a &a%placeholder%%&r chance to fail to break blocks"
+display-name: "Maldición de Torpeza"
+description: "Da un &a%placeholder%%&r de probabilidad de no romper bloques"
 placeholder: "15 * %level%"
 type: curse
 

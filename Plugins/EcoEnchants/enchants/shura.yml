@@ -1,5 +1,5 @@
 display-name: "Shura"
-description: "Gives a &a%placeholder%x&r bonus to critical damage when under half health"
+description: "Da &a%placeholder%x&r de daño crítico extra con menos de la mitad de vida"
 placeholder: "1 + 0.25 * %level%"
 type: normal
 

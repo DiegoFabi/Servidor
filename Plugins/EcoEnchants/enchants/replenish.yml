@@ -1,5 +1,5 @@
-display-name: "Replenish"
-description: "Crops are replanted automatically"
+display-name: "Replantar"
+description: "Los cultivos se replantan solos"
 type: normal
 
 targets:

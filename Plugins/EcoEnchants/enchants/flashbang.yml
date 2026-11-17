@@ -1,5 +1,5 @@
-display-name: "Flashbang"
-description: "Gives a &a%placeholder%%&r chance of blinding your opponent"
+display-name: "Destello"
+description: "Da un &a%placeholder%%&r de probabilidad de cegar a tu rival"
 placeholder: "%level%"
 type: normal
 

@@ -1,5 +1,5 @@
-display-name: "Jumpshot"
-description: "Deal &a%placeholder%%&r more damage in the air"
+display-name: "Golpe Aéreo"
+description: "Inflige un &a%placeholder%%&r más de daño en el aire"
 placeholder: "10 * %level%"
 type: normal
 

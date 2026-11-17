@@ -1,5 +1,5 @@
-display-name: "Infernal Touch"
-description: "Automatically smelts mined blocks"
+display-name: "Toque Infernal"
+description: "Funde automáticamente los bloques minados"
 type: normal
 
 targets:

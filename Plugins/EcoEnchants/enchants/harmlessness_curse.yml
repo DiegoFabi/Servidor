@@ -1,5 +1,5 @@
-display-name: "Curse of Harmlessness"
-description: "Gives a &a%placeholder%% &rchance for attacks to do nothing"
+display-name: "Maldición de Inofensividad"
+description: "Da un &a%placeholder%% &rde probabilidad de que tus ataques no hagan nada"
 placeholder: "15 * %level%"
 type: curse
 

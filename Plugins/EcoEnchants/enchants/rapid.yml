@@ -1,5 +1,5 @@
-display-name: "Rapid"
-description: "Lets you shoot full speed arrows with the bow at &a%placeholder%%&r tension"
+display-name: "Rapidez"
+description: "Dispara flechas a máxima potencia con el arco tensado al &a%placeholder%%"
 placeholder: "100 - (15 * %level%)"
 type: normal
 

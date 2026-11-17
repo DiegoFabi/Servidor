@@ -1,5 +1,5 @@
-display-name: "Abrasion"
-description: "Deals &a%placeholder% &rdamage to your opponents armor"
+display-name: "Abrasión"
+description: "Inflige &a%placeholder% &rde daño a la armadura de tu rival"
 placeholder: "%level%"
 type: normal
 

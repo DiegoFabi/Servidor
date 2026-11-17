@@ -9,7 +9,7 @@
 # "existing" is your lang.yml from before languages were added.
 # If a plugin doesn't have the selected language, it uses english and logs a warning.
 # Changing this requires a server restart.
-language: english
+language: spanish
 
 # How player/server data is saved:
 # sqlite - Stored in data.db: the default, and the right choice for single-node servers (i.e. no BungeeCord/Velocity)

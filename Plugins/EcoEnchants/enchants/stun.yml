@@ -1,5 +1,5 @@
-display-name: "Stun"
-description: "Gives a &a%placeholder%%&r chance to stun attacked mobs for &a2&r seconds"
+display-name: "Aturdimiento"
+description: "Da un &a%placeholder%%&r de probabilidad de aturdir a las criaturas durante &a2&r segundos"
 placeholder: "2.5 + 2.5 * %level%"
 type: normal
 

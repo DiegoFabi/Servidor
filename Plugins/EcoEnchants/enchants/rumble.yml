@@ -1,5 +1,5 @@
-display-name: "Rumble"
-description: "Gives &a%damage%&r damage to all entities in a &a%radius%&r block radius"
+display-name: "Retumbo"
+description: "Inflige &a%damage%&r de daño a todas las criaturas en un radio de &a%radius%&r bloques"
 placeholders:
   radius: "2 + %level%"
   damage: "3 * %level%"

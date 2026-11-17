@@ -1,0 +1,670 @@
+# ============================================================
+#  Casa de Subastas (CoreTools AuctionHouse) — versión simple
+#  Abrir: botón "Subastas" del menú principal
+#         (core-auctionhouse subastas <jugador>)
+#
+#  Como en la mayoría de servidores:
+#  - Solo venta a precio fijo (sin pujas), en Moneda (Vault), 7 días.
+#  - Pantalla principal: 5 filas de objetos y una barra inferior con
+#    Volver, Anterior, Categoría, Orden, Vender, Mis objetos y Siguiente.
+#  - Vender: pon el objeto en la casilla, escribe el precio y confirma.
+#  - Paleta de subastas (verde): #9BF0B5 / #3FCF7A. Relleno gris.
+# ============================================================
+subastas:
+  permission: ''
+  multi_server: single
+  bottom_inventory: false
+  fill_material: 'AIR'
+  name: '<#3FCF7A>⚖ <dark_gray>Subastas <gray>· {category}'
+  size: 6
+  default_category: all
+  default_regions: [ spawn ] # Sin guiones bajos en los nombres de región
+  default_minimum_bid_increment: 50
+  # Sin pujas: siempre precio fijo, siempre Moneda y siempre 7 días
+  default_sales_mode: 'fixed'
+  default_currency: 'vault'
+  default_days: 7
+  player_max_item:
+    default: 10
+    vip: 20
+    vip_plus: 30
+  disable_partial_purchase: false
+
+  player_input:
+    signgui:
+      material: 'OAK_WALL_SIGN'
+      dye_color: 'BLACK'
+      line1: ''
+      line2: '↑ Escribe el precio'
+      line3: 'por unidad y'
+      line4: 'pulsa Listo'
+      input_line: 1
+      max_try: 3
+      regex: "\\d+(\\.\\d+)?"
+    anvilgui:
+      title: 'Escribe el precio'
+      text: '0'
+      slots: [ 2 ]
+      left_item:
+        source: vanilla
+        name: ' '
+        material: paper
+        flags: [ HIDE_ATTRIBUTES ]
+      right_item:
+        source: vanilla
+        name: ' '
+        material: paper
+        flags: [ HIDE_ATTRIBUTES ]
+      result_item:
+        source: vanilla
+        name: '<#3FCF7A>✔ Confirmar precio'
+        material: lime_dye
+        flags: [ HIDE_ATTRIBUTES ]
+      max_try: 3
+      regex: "\\d+(\\.\\d+)?"
+
+  messages:
+    item-listed: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Pusiste a la venta <white>{amount}x {item_name}</white> a <#3FCF7A>${unit_price}</#3FCF7A> cada uno.'
+    item-listed-bid: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Pusiste a la venta <white>{amount}x {item_name}</white> por <#3FCF7A>${unit_price}</#3FCF7A>.'
+    item-listed-not-enough-money: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>Necesitas <#3FCF7A>${total}</#3FCF7A> para publicar este objeto.'
+    item-listed-max-limit: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>Ya tienes el máximo de objetos a la venta.'
+    item-purchased-online-seller: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Vendiste <white>{amount}x {item_name}</white> por <#3FCF7A>${total}</#3FCF7A> <dark_gray>(tras impuestos: <#3FCF7A>${total_after_tax}</#3FCF7A>)'
+    item-purchased-online-buyer: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Compraste <white>{amount}x {item_name}</white> por <#3FCF7A>${total}</#3FCF7A>.'
+    item-won-offline-buyer: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Tienes objetos para recoger en <white>Mis objetos</white>.'
+    item-won-buyer-online: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Recoge <white>{item_name}</white> en <white>Mis objetos</white>.'
+    expired-bid-item-success-online-seller: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Vendiste <white>{amount}x {item_name}</white> por <#3FCF7A>${total}</#3FCF7A>.'
+    expired-bid-item-fail-online-seller: '<#FFB347>⚖ Subastas <dark_gray>» <#C9CDD6>Nadie compró <white>{amount}x {item_name}</white>.'
+    expired-fixed-item-online-seller: '<#FFB347>⚖ Subastas <dark_gray>» <#C9CDD6>Tu publicación de <white>{amount}x {item_name}</white> caducó. Recógela en <white>Mis objetos</white>.'
+    expired-fixed-item-offline-seller: '<#FFB347>⚖ Subastas <dark_gray>» <#C9CDD6>Tienes publicaciones caducadas. Recógelas en <white>Mis objetos</white>.'
+    already-sold: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>Otro jugador ya compró este objeto.'
+    expired: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>Esta publicación ya caducó.'
+    cancelled: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>El vendedor retiró este objeto.'
+    not-enough-amount: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>Ya no queda esa cantidad a la venta.'
+    not-enough-money: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>Necesitas <#3FCF7A>${total}</#3FCF7A> para comprarlo.'
+    money-player-join: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Mientras no estabas vendiste objetos por <#3FCF7A>${total}</#3FCF7A>.'
+    collect-money-from-tax-system: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Recaudaste <#3FCF7A>${total}</#3FCF7A> en impuestos.'
+    bid-cancel-new-bid: '<#FFB347>⚖ Subastas <dark_gray>» <#C9CDD6>Otro jugador superó tu oferta.'
+    bid-place: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Ofertaste <#3FCF7A>${unit_price}</#3FCF7A> por <white>{item_name}</white>.'
+    player-cancel-item: '<#3FCF7A>⚖ Subastas <dark_gray>» <#C9CDD6>Retiraste <white>{amount}x {item_name}</white> de la venta.'
+    player-take-expired-item: ''
+    player-take-won-item: ''
+    delivery-successful-inventory: '<#3FCF7A>⚖ Subastas <dark_gray>» <white>{amount}x {item_name}</white> <#C9CDD6>se añadió a tu inventario.'
+    delivery-successful-playervault: '<#3FCF7A>⚖ Subastas <dark_gray>» <white>{amount}x {item_name}</white> <#C9CDD6>se guardó en tu baúl.'
+    delivery-fail-inventory: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>No tienes espacio en el inventario.'
+    delivery-fail-playervault: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>No tienes espacio en tu baúl.'
+    delivery-fail-inventory-playervault: '<#FF6B6B>⚖ Subastas <dark_gray>» <#C9CDD6>No tienes espacio en el inventario ni en tu baúl.'
+
+  broadcast:
+    item-listed: '<#3FCF7A>⚖ Subastas <dark_gray>» <white>{caster_name} <#C9CDD6>puso a la venta <white>{amount}x {item_name}</white>.'
+    item-listed-bid: ''
+    item-purchased-online-buyer: ''
+    bid-place: ''
+
+  sound:
+    item-listed: [ minecraft:entity.experience_orb.pickup,master,1,1.4 ]
+    item-listed-bid: [ minecraft:entity.experience_orb.pickup,master,1,1.4 ]
+    item-listed-not-enough-money: [ minecraft:entity.villager.no,master,1,1 ]
+    item-purchased-online-seller: [ minecraft:entity.player.levelup,master,0.6,1.6 ]
+    item-purchased-online-buyer: [ minecraft:entity.player.levelup,master,0.6,1.6 ]
+    item-won-offline-buyer: [ minecraft:entity.player.levelup,master,0.6,1.6 ]
+    item-won-buyer-online: [ minecraft:entity.player.levelup,master,0.6,1.6 ]
+    expired-bid-item-success-online-seller: [ minecraft:entity.player.levelup,master,0.6,1.6 ]
+    expired-bid-item-fail-online-seller: [ minecraft:entity.villager.no,master,1,1 ]
+    expired-fixed-item-online-seller: [ minecraft:entity.villager.no,master,1,1 ]
+    expired-fixed-item-offline-seller: [ minecraft:entity.villager.no,master,1,1 ]
+    already-sold: [ minecraft:entity.villager.no,master,1,1 ]
+    expired: [ minecraft:entity.villager.no,master,1,1 ]
+    cancelled: [ minecraft:entity.villager.no,master,1,1 ]
+    not-enough-amount: [ minecraft:entity.villager.no,master,1,1 ]
+    not-enough-money: [ minecraft:entity.villager.no,master,1,1 ]
+    delivery-successful-inventory: [ minecraft:entity.item.pickup,master,1,1 ]
+    delivery-successful-playervault: [ minecraft:entity.item.pickup,master,1,1 ]
+    delivery-fail-inventory: [ minecraft:entity.villager.no,master,1,1 ]
+    delivery-fail-playervault: [ minecraft:entity.villager.no,master,1,1 ]
+    delivery-fail-inventory-playervault: [ minecraft:entity.villager.no,master,1,1 ]
+    money-player-join: [ minecraft:entity.experience_orb.pickup,master,1,1 ]
+    collect-money-from-tax-system: [ minecraft:entity.experience_orb.pickup,master,1,1 ]
+    bid-cancel-new-bid: [ minecraft:entity.villager.no,master,1,1 ]
+    bid-place: [ minecraft:entity.experience_orb.pickup,master,1,1 ]
+    player-cancel-item: [ minecraft:ui.button.click,master,1,1 ]
+    player-take-expired-item: [ minecraft:entity.item.pickup,master,1,1 ]
+    player-take-won-item: [ minecraft:entity.item.pickup,master,1,1 ]
+
+  discord:
+    webhookurl: ''
+    regex: "[^a-zA-Z0-9/■\\s]"
+    contain: []
+    item-listed: ''
+    item-purchased: ''
+    item-expired: ''
+    item-expired-taken: ''
+    bid-place: ''
+    player-cancel-item: ''
+    player-take-expired-item: ''
+    player-take-won-item: ''
+
+  sorting:
+    default_ascending: [ <#C9CDD6>▷ Más recientes,<#3FCF7A><bold>▶ Más recientes ]
+    default_descending: [ <#C9CDD6>▷ Más antiguos,<#3FCF7A><bold>▶ Más antiguos ]
+    expire_ascending: [ <#C9CDD6>▷ Caducan antes,<#3FCF7A><bold>▶ Caducan antes ]
+    expire_descending: [ <#C9CDD6>▷ Caducan después,<#3FCF7A><bold>▶ Caducan después ]
+    price_ascending: [ <#C9CDD6>▷ Precio menor,<#3FCF7A><bold>▶ Precio menor ]
+    price_descending: [ <#C9CDD6>▷ Precio mayor,<#3FCF7A><bold>▶ Precio mayor ]
+
+  # 3 = inventario y, si está lleno, el baúl
+  delivery:
+    deliver_offline_items_on_join: true
+    purchase_mode: 3
+    playervault: [ myfirstvault,account ]
+
+  event_actions:
+    purchase_successful: category
+    purchase_failed: category
+    sell_successful: category
+
+  display_lore:
+    - ''
+    - '<#7C8291>Subasta <white><glyph:essential_icons_judge_gavel></white>'
+    - '<white>Vendedor: <#9BF0B5>{seller}'
+    - '<white>Precio: <#3FCF7A><bold>${price}</bold>'
+    - '<white>Caduca en: <#C9CDD6>{days}d {hours}h {minutes}m'
+    - ''
+    - '<#3FCF7A>✥ ¡Clic para <bold>COMPRAR</bold>!'
+
+  display_lore_bid:
+    - ''
+    - '<white>Vendedor: <#9BF0B5>{seller}'
+    - '<white>Oferta actual: <#3FCF7A><bold>${price}</bold>'
+    - '<white>Caduca en: <#C9CDD6>{days}d {hours}h {minutes}m'
+    - ''
+    - '<#3FCF7A>✥ ¡Clic para <bold>OFERTAR</bold>!'
+
+  category_switcher:
+    all: [ <#C9CDD6>▷ Todo,<#3FCF7A><bold>▶ Todo ]
+    armas: [ <#C9CDD6>▷ Armas,<#3FCF7A><bold>▶ Armas ]
+    armaduras: [ <#C9CDD6>▷ Armaduras,<#3FCF7A><bold>▶ Armaduras ]
+    herramientas: [ <#C9CDD6>▷ Herramientas,<#3FCF7A><bold>▶ Herramientas ]
+    comida: [ <#C9CDD6>▷ Comida,<#3FCF7A><bold>▶ Comida ]
+    pociones: [ <#C9CDD6>▷ Pociones,<#3FCF7A><bold>▶ Pociones ]
+    bloques: [ <#C9CDD6>▷ Bloques,<#3FCF7A><bold>▶ Bloques ]
+
+  # Filas 1-5: objetos a la venta. Fila 6: barra de botones.
+  buttons:
+    fill:
+      location: top
+      slots: [ 52,53 ]
+      source: vanilla
+      name: ' '
+      material: gray_stained_glass_pane
+      flags: [ HIDE_ATTRIBUTES ]
+
+    volver:
+      location: top
+      slots: [ 45 ]
+      source: vanilla
+      material: dark_oak_door
+      name: '<white>« <#B8AAFF>Volver al <#8E7CFF><bold>MENÚ PRINCIPAL</bold>'
+      flags: [ HIDE_ATTRIBUTES ]
+      click:
+        Scripts:
+          - subastas_volver
+
+    previous:
+      location: top
+      slots: [ 46 ]
+      source: vanilla
+      material: arrow
+      name: '<#9BF0B5>« Página anterior'
+      lore: [ ]
+      flags: [ HIDE_ATTRIBUTES ]
+
+    category_switcher:
+      location: top
+      slots: [ 47 ]
+      source: vanilla
+      material: chest
+      name: '<white><glyph:essential_icons_chest></white> <#3FCF7A>Categoría'
+      flags: [ HIDE_ATTRIBUTES ]
+      lore:
+        - ''
+        - '{category_switcher}'
+        - ''
+        - '<#3FCF7A>✥ ¡Clic para <bold>CAMBIAR</bold>!'
+
+    sorting:
+      location: top
+      slots: [ 48 ]
+      source: vanilla
+      material: hopper
+      name: '<white><glyph:essential_icons_magnifying_glass></white> <#3FCF7A>Ordenar'
+      flags: [ HIDE_ATTRIBUTES ]
+      lore:
+        - ''
+        - '{sorting}'
+        - ''
+        - '<#3FCF7A>✥ ¡Clic para <bold>CAMBIAR</bold>!'
+
+    sell:
+      location: top
+      slots: [ 49 ]
+      source: vanilla
+      material: emerald
+      name: '<white><glyph:essential_icons_coins></white> <#3FCF7A>Vender un objeto'
+      flags: [ HIDE_ATTRIBUTES ]
+      lore:
+        - '<#7C8291>Subasta <white><glyph:essential_icons_judge_gavel></white>'
+        - ''
+        - '<white>Pon un objeto a la venta a <#3FCF7A>precio fijo</#3FCF7A>'
+        - '<white>durante <#9BF0B5>7 días</#9BF0B5>. Impuesto: <#FFB347>5%</#FFB347>.'
+        - ''
+        - '<#3FCF7A>✥ ¡Clic para <bold>VENDER</bold>!'
+
+    player_items_all:
+      location: top
+      slots: [ 50 ]
+      source: vanilla
+      material: bundle
+      name: '<white><glyph:essential_icons_scroll></white> <#3FCF7A>Mis objetos'
+      flags: [ HIDE_ATTRIBUTES ]
+      lore:
+        - '<white>Tus ventas activas, compras'
+        - '<white>y publicaciones caducadas.'
+        - ''
+        - '<#3FCF7A>✥ ¡Clic para <bold>VER</bold>!'
+
+    next:
+      location: top
+      slots: [ 51 ]
+      source: vanilla
+      material: arrow
+      name: '<#9BF0B5>Página siguiente »'
+      lore: [ ]
+      flags: [ HIDE_ATTRIBUTES ]
+
+  # ---------------- Mis objetos ----------------
+  player_items:
+    name: '<#3FCF7A>⚖ <dark_gray>Mis objetos <gray>· {page_no}'
+    size: 6
+    bottom_inventory: false
+    bottom_inventory_use_default: false
+
+    active_display_lore:
+      - ''
+      - '<#FF8A8A>✥ ¡Clic para <bold>RETIRAR</bold> de la venta!'
+
+    expired_display_lore:
+      - ''
+      - '<#FFB347>⌛ Esta publicación caducó.'
+      - '<#3FCF7A>✥ ¡Clic para <bold>RECOGER</bold>!'
+
+    buttons:
+      fill:
+        location: top
+        slots: [ 52,53 ]
+        source: vanilla
+        material: gray_stained_glass_pane
+        name: ' '
+        flags: [ HIDE_ATTRIBUTES ]
+
+      home:
+        location: top
+        slots: [ 45 ]
+        source: vanilla
+        material: dark_oak_door
+        name: '<white>« <#3FCF7A>Volver a las subastas'
+        lore: [ ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+      player_items_previous:
+        location: top
+        slots: [ 46 ]
+        source: vanilla
+        material: arrow
+        name: '<#9BF0B5>« Página anterior'
+        lore: [ ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+      player_items_active:
+        location: top
+        slots: [ 47 ]
+        source: vanilla
+        material: emerald
+        name: '<#3FCF7A>En venta'
+        lore: [ '<#C9CDD6>Tus objetos publicados ahora.' ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+      player_items_expired_not_taken:
+        location: top
+        slots: [ 48 ]
+        source: vanilla
+        material: clock
+        name: '<#FFB347>Caducados'
+        lore: [ '<#C9CDD6>Recógelos antes de que se borren.' ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+      player_items_purchased:
+        location: top
+        slots: [ 49 ]
+        source: vanilla
+        material: chest
+        name: '<#9BF0B5>Comprados'
+        lore: [ '<#C9CDD6>Lo que has comprado.' ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+      player_items_all:
+        location: top
+        slots: [ 50 ]
+        source: vanilla
+        material: bundle
+        name: '<white>Todo'
+        lore: [ '<#C9CDD6>Todas tus publicaciones.' ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+      player_items_next:
+        location: top
+        slots: [ 51 ]
+        source: vanilla
+        material: arrow
+        name: '<#9BF0B5>Página siguiente »'
+        lore: [ ]
+        flags: [ HIDE_ATTRIBUTES ]
+
+  # ---------------- Comprar ----------------
+  purchase:
+    name: '<#3FCF7A>⚖ <dark_gray>Comprar'
+    size: 3
+    bottom_inventory: false
+    bottom_inventory_use_default: false
+
+    buttons:
+      fill:
+        location: top
+        slots: [ 0,1,2,3,4,5,6,7,8,9,14,16,17,18,19,20,21,23,24,25,26 ]
+        source: vanilla
+        material: gray_stained_glass_pane
+        name: ' '
+        flags: [ HIDE_ATTRIBUTES ]
+
+      home:
+        location: top
+        slots: [ 22 ]
+        source: vanilla
+        material: dark_oak_door
+        name: '<white>« <#3FCF7A>Volver a las subastas'
+        flags: [ HIDE_ATTRIBUTES ]
+
+      purchase_remove:
+        location: top
+        slots: [ 10 ]
+        source: vanilla
+        material: red_stained_glass_pane
+        name: '<#FF8A8A>- 1'
+        flags: [ HIDE_ATTRIBUTES ]
+
+      purchase_item:
+        location: top
+        slots: [ 11,12 ]
+        source: vanilla
+        material: air
+
+      purchase_add:
+        location: top
+        slots: [ 13 ]
+        source: vanilla
+        material: lime_stained_glass_pane
+        name: '<#3FCF7A>+ 1'
+        flags: [ HIDE_ATTRIBUTES ]
+
+      purchase_confirm:
+        location: top
+        slots: [ 15 ]
+        source: vanilla
+        material: lime_dye
+        empty_slot_material: lime_dye
+        name: '<#3FCF7A><bold>Confirmar compra'
+        flags: [ HIDE_ATTRIBUTES ]
+        lore:
+          - '<white>Cantidad: <#9BF0B5>{amount}'
+          - '<white>Precio por unidad: <#3FCF7A>${unit_price}'
+          - '<white>Total: <#3FCF7A><bold>${total}'
+          - ''
+          - '<#3FCF7A>✥ ¡Clic para <bold>COMPRAR</bold>!'
+        name2: '<#3FCF7A><bold>¿Seguro?'
+        material2: emerald
+        lore2:
+          - '<white>Cantidad: <#9BF0B5>{amount}'
+          - '<white>Total: <#3FCF7A><bold>${total}'
+          - ''
+          - '<#FFB347>Clic otra vez para confirmar.'
+          - '<#7C8291>La compra no se puede deshacer.'
+
+      purchase_confirm_bid:
+        location: top
+        slots: [ 15 ]
+        source: vanilla
+        material: lime_dye
+        empty_slot_material: lime_dye
+        name: '<#3FCF7A><bold>Confirmar oferta'
+        flags: [ HIDE_ATTRIBUTES ]
+        lore:
+          - '<white>Oferta: <#3FCF7A><bold>${total}'
+        name2: '<#3FCF7A><bold>¿Seguro?'
+        material2: emerald
+        lore2:
+          - '<#FFB347>Clic otra vez para confirmar.'
+
+  # ---------------- Vender ----------------
+  sell:
+    name: '<#3FCF7A>⚖ <dark_gray>Vender'
+    size: 3
+
+    buttons:
+      fill:
+        location: top
+        slots: [ 0,1,2,3,4,5,6,7,8,9,10,12,14,16,17,18,19,20,21,23,24,25,26 ]
+        source: vanilla
+        material: gray_stained_glass_pane
+        name: ' '
+        flags: [ HIDE_ATTRIBUTES ]
+
+      home:
+        location: top
+        slots: [ 22 ]
+        source: vanilla
+        material: dark_oak_door
+        name: '<white>« <#3FCF7A>Volver a las subastas'
+        flags: [ HIDE_ATTRIBUTES ]
+
+      sell_player_item:
+        location: top
+        slots: [ 11 ]
+        source: vanilla
+        material: air
+
+      sell_player_input_sign:
+        location: top
+        slots: [ 13 ]
+        source: vanilla
+        material: oak_sign
+        name: '<white><glyph:essential_icons_coins></white> <#3FCF7A>Poner precio'
+        lore:
+          - '<white>1. Pon el objeto en la casilla de la izquierda.'
+          - '<white>2. Escribe el <#3FCF7A>precio por unidad</#3FCF7A>.'
+          - ''
+          - '<#3FCF7A>✥ ¡Clic para <bold>ESCRIBIR</bold>!'
+        flags: [ HIDE_ATTRIBUTES ]
+
+      sell_confirm:
+        location: top
+        slots: [ 15 ]
+        source: vanilla
+        material: lime_dye
+        empty_slot_material: lime_dye
+        name: '<#3FCF7A><bold>Publicar'
+        flags: [ HIDE_ATTRIBUTES ]
+        lore:
+          - '<white>Precio por unidad: <#3FCF7A>${unit_price}'
+          - '<white>Impuesto: <#FFB347>${tax_per_unit} ({tax_percent}%)'
+          - '<white>Recibes por unidad: <#3FCF7A>${earning_per_unit}'
+          - '<white>Total: <#3FCF7A><bold>$({earning_per_unit} * {amount})'
+          - ''
+          - '<#3FCF7A>✥ ¡Clic para <bold>PUBLICAR</bold>!'
+        name2: '<#3FCF7A><bold>¿Seguro?'
+        material2: emerald
+        lore2:
+          - '<white>Total: <#3FCF7A><bold>$({earning_per_unit} * {amount})'
+          - ''
+          - '<#FFB347>Clic otra vez para publicar.'
+
+      sell_confirm_bid:
+        location: top
+        source: vanilla
+        material: lime_dye
+        empty_slot_material: lime_dye
+        name: '<#3FCF7A><bold>Publicar'
+        flags: [ HIDE_ATTRIBUTES ]
+        lore: [ ]
+        name2: '<#3FCF7A><bold>¿Seguro?'
+        material2: emerald
+        lore2: [ ]
+
+  # Impuestos: sin comisión por publicar y 5% de cada venta
+  tax_system:
+    name: '<#3FCF7A>⚖ <dark_gray>Impuestos'
+    size: 6
+    bottom_inventory: false
+    bottom_inventory_use_default: false
+    tax_mode: 1
+    default:
+      listing_fee: '0'
+      sell_tax: '5'
+    buttons:
+      fill:
+        location: top
+        slots: [ 52,53 ]
+        source: vanilla
+        material: gray_stained_glass_pane
+        name: ' '
+        flags: [ HIDE_ATTRIBUTES ]
+      collect_tax:
+        location: top
+        slots: [ 45 ]
+        source: vanilla
+        material: emerald
+        name: '<#3FCF7A>Recaudar impuestos'
+        lore:
+          - "<white>Moneda: {auction_current_vault_subastas}"
+        flags: [ HIDE_ATTRIBUTES ]
+    categories: {}
+
+  categories:
+    all:
+      name: 'Todo'
+
+    armas:
+      name: 'Armas'
+      minimum_bid_increment: -1
+      restriction_advanced:
+        allow:
+          source: [ vanilla ]
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: [wooden_sword,stone_sword,iron_sword,golden_sword,diamond_sword,netherite_sword,bow,crossbow,trident,mace,wooden_axe,stone_axe,iron_axe,golden_axe,diamond_axe,netherite_axe,arrow,spectral_arrow,tipped_arrow]
+        block:
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: []
+
+    armaduras:
+      name: 'Armaduras'
+      minimum_bid_increment: -1
+      restriction_advanced:
+        allow:
+          source: [ vanilla ]
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: [leather_helmet,leather_chestplate,leather_leggings,leather_boots,chainmail_helmet,chainmail_chestplate,chainmail_leggings,chainmail_boots,iron_helmet,iron_chestplate,iron_leggings,iron_boots,golden_helmet,golden_chestplate,golden_leggings,golden_boots,diamond_helmet,diamond_chestplate,diamond_leggings,diamond_boots,netherite_helmet,netherite_chestplate,netherite_leggings,netherite_boots,turtle_helmet,elytra,shield]
+        block:
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: []
+
+    herramientas:
+      name: 'Herramientas'
+      minimum_bid_increment: -1
+      restriction_advanced:
+        allow:
+          source: [ vanilla ]
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: [wooden_pickaxe,stone_pickaxe,iron_pickaxe,golden_pickaxe,diamond_pickaxe,netherite_pickaxe,wooden_shovel,stone_shovel,iron_shovel,golden_shovel,diamond_shovel,netherite_shovel,wooden_hoe,stone_hoe,iron_hoe,golden_hoe,diamond_hoe,netherite_hoe,shears,fishing_rod,flint_and_steel,brush,spyglass]
+        block:
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: []
+
+    comida:
+      name: 'Comida'
+      minimum_bid_increment: -1
+      restriction_advanced:
+        allow:
+          source: [ vanilla ]
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: [apple,golden_apple,enchanted_golden_apple,bread,cooked_beef,cooked_porkchop,cooked_chicken,cooked_mutton,cooked_rabbit,cooked_cod,cooked_salmon,baked_potato,carrot,golden_carrot,potato,beetroot,melon_slice,sweet_berries,glow_berries,cookie,pumpkin_pie,cake,mushroom_stew,rabbit_stew,beetroot_soup,honey_bottle,dried_kelp]
+        block:
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: []
+
+    pociones:
+      name: 'Pociones'
+      minimum_bid_increment: -1
+      restriction_advanced:
+        allow:
+          source: [ vanilla ]
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: [potion,splash_potion,lingering_potion,experience_bottle,totem_of_undying]
+        block:
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: []
+
+    bloques:
+      name: 'Bloques'
+      minimum_bid_increment: -1
+      restriction_advanced:
+        allow:
+          source: [ vanilla ]
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: [all_blocks]
+        block:
+          id: []
+          type: []
+          tier: []
+          material: []
+          vanilla_material: []

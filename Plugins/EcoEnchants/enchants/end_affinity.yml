@@ -1,5 +1,5 @@
-display-name: "End Affinity"
-description: "Increases damage dealt in the end by &a%placeholder%%"
+display-name: "Afinidad del End"
+description: "Aumenta el daño en el End un &a%placeholder%%"
 placeholder: "20 + %level% * 10"
 type: normal
 

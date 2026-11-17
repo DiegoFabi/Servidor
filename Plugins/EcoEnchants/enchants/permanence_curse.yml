@@ -1,5 +1,5 @@
-display-name: "Curse of Permanence"
-description: "Prevents modifying this item in an anvil"
+display-name: "Maldición de Permanencia"
+description: "Impide modificar este objeto en un yunque"
 type: curse
 
 targets:

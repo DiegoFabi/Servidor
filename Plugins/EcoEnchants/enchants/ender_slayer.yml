@@ -1,5 +1,5 @@
-display-name: "Ender Slayer"
-description: "Gives a &a%placeholder%&r bonus to melee damage against end mobs"
+display-name: "Cazador de Ender"
+description: "Da &a%placeholder%&r de daño cuerpo a cuerpo extra contra criaturas del End"
 placeholder: "1 + 0.5 * %level%"
 type: normal
 

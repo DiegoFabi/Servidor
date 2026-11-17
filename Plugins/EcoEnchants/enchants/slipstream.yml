@@ -1,5 +1,5 @@
-display-name: "Slipstream"
-description: "Gives a &a%placeholder%%&r boost to movement speed while holding"
+display-name: "Estela"
+description: "Aumenta la velocidad un &a%placeholder%%&r mientras lo sostienes"
 placeholder: "%level% * 8"
 type: normal
 

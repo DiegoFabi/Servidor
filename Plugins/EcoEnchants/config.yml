@@ -91,11 +91,11 @@ display:
 
   book-targets:
     enabled: false # If enchanted books should show what each enchantment can be applied to
-    format: "&7Applies to: &e%targets%" # The line added under each enchantment on a book
+    format: "&7Se aplica a: &e%targets%" # The line added under each enchantment on a book
 
   book-drag-and-drop-price:
     enabled: false # If enchanted books should show the drag and drop cost under each enchantment that allows it
-    format: "&7Drag and drop cost: &e%price%" # The line added under each enchantment on a book
+    format: "&7Coste al arrastrar: &e%price%" # The line added under each enchantment on a book
 
   book-item:
     priority: type # If both the type and the rarity set book-item, which one is used: type or rarity
@@ -107,7 +107,7 @@ enchantinfo:
   rows: 3 # How many rows for the GUI
   mask: # The background material
     items:
-      - black_stained_glass_pane
+      - gray_stained_glass_pane
     pattern: # 1 for the first item, 2 for the second item, etc
       - "111111111"
       - "111101111"
@@ -120,20 +120,20 @@ enchantinfo:
     word-wrap: 32 # Number of characters on each lore line before it wraps; 0 turns wrapping off
     lore: # The description is automatically appended
       - ""
-      - "&fMax Level: &a%max_level%"
-      - "&fRarity: &a%rarity%"
-      - "&fApplicable to: &a%targets%"
-      - "&fConflicts with: &a%conflicts%"
-      - "&fRequires: &a%required%"
+      - "&fNivel máximo: &a%max_level%"
+      - "&fRareza: &a%rarity%"
+      - "&fSe aplica a: &a%targets%"
+      - "&fIncompatible con: &a%conflicts%"
+      - "&fRequiere: &a%required%"
       - ""
-      - "&fTradeable: &a%tradeable%"
-      - "&fDiscoverable: &a%discoverable%"
-      - "&fDiscoverable (Chests): &a%discoverable_chests%"
-      - "&fDiscoverable (Fishing): &a%discoverable_fishing%"
-      - "&fDiscoverable (Mob Drops): &a%discoverable_mob_drops%"
-      - "&fDiscoverable (Raids): &a%discoverable_raids%"
-      - "&fEnchantable: &a%enchantable%"
-      - "&fDrag and Drop: &a%drag_and_drop%"
+      - "&fComerciable: &a%tradeable%"
+      - "&fSe puede encontrar: &a%discoverable%"
+      - "&fEn cofres: &a%discoverable_chests%"
+      - "&fPescando: &a%discoverable_fishing%"
+      - "&fDe criaturas: &a%discoverable_mob_drops%"
+      - "&fEn asaltos: &a%discoverable_raids%"
+      - "&fEn mesa de encantamientos: &a%enchantable%"
+      - "&fArrastrar y soltar: &a%drag_and_drop%"
 
   # Custom GUI slots; see here for a how-to: https://hub.auxilor.io/wiki/eco/pages#custom-gui-slots
   custom-slots: [ ]
@@ -141,12 +141,12 @@ enchantinfo:
 # Options for the enchant GUI.
 enchant-gui:
   rows: 6 # How many rows to have in the GUI
-  title: "Enchant GUI &7(%page%/%max_page%)" # The title of the GUI
+  title: "&8Encantamientos &7(%page%/%max_page%)" # The title of the GUI
   show-vanilla: true # If vanilla enchantments are shown in the GUI and in /enchantinfo
 
   mask: # The background material
     items:
-      - black_stained_glass_pane
+      - gray_stained_glass_pane
     pattern: # 1 for the first item, 2 for the second item, etc
       - "111101111"
       - "111111111"
@@ -160,12 +160,12 @@ enchant-gui:
 
   # Options for the info item
   info:
-    item: player_head name:"&aHow do I use this?" texture:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjcwNWZkOTRhMGM0MzE5MjdmYjRlNjM5YjBmY2ZiNDk3MTdlNDEyMjg1YTAyYjQzOWUwMTEyZGEyMmIyZTJlYyJ9fX0=
+    item: player_head name:"&a¿Cómo se usa?" texture:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjcwNWZkOTRhMGM0MzE5MjdmYjRlNjM5YjBmY2ZiNDk3MTdlNDEyMjg1YTAyYjQzOWUwMTEyZGEyMmIyZTJlYyJ9fX0=
     lore:
-      - "&fPlace an item in the slot at the top,"
-      - "&fand all the enchantments you can add"
-      - "&fto to this item will show up in the"
-      - "&farea below!"
+      - "&fPon un objeto en la casilla de arriba"
+      - "&fy aquí abajo verás todos los"
+      - "&fencantamientos que puede tener"
+      - "&fese objeto."
     row: 1
     column: 9
     locations: [ ] # Optional list of row/column slots; if set, the button shows in each of them instead of row/column
@@ -182,14 +182,14 @@ enchant-gui:
       pitch: 1.0
       volume: 1.0
     forwards:
-      item: arrow name:"&fNext Page" # The item. Will not show if on the last page.
-      item-inactive: gray_dye name:"&7Next Page" # The item shown on the last page
+      item: arrow name:"&fPágina siguiente" # The item. Will not show if on the last page.
+      item-inactive: gray_dye name:"&7Página siguiente" # The item shown on the last page
       row: 6
       column: 6
       locations: [ ] # Optional list of row/column slots; if set, the button shows in each of them instead of row/column
     backwards:
-      item: arrow name:"&fPrevious Page" # The item. Will not show if on the first page.
-      item-inactive: gray_dye name:"&7Previous Page" # The item shown on the first page
+      item: arrow name:"&fPágina anterior" # The item. Will not show if on the first page.
+      item-inactive: gray_dye name:"&7Página anterior" # The item shown on the first page
       row: 6
       column: 4
       locations: [ ] # Optional list of row/column slots; if set, the button shows in each of them instead of row/column
@@ -198,7 +198,7 @@ enchant-gui:
   close-button:
     enabled: true
     item: barrier
-    name: "&cClose"
+    name: "&cCerrar"
     lore: [ ]
     row: 6
     column: 5
@@ -226,7 +226,7 @@ enchant-gui:
   # Only shown when grouped is true.
   back-button:
     enabled: true
-    item: arrow name:"&fBack to Groups"
+    item: arrow name:"&fVolver a los grupos"
     lore: []
     row: 6
     column: 1
@@ -235,11 +235,11 @@ enchant-gui:
 # Options for the group selection GUI (only used when enchant-gui.grouped is true)
 group-gui:
   rows: 3
-  title: "Enchantment Groups"
+  title: "&8Grupos de encantamientos"
 
   mask:
     items:
-      - black_stained_glass_pane
+      - gray_stained_glass_pane
     pattern:
       - "111111111"
       - "100000001"
@@ -253,27 +253,27 @@ group-gui:
   # Groups with unrecognized IDs are silently ignored.
   groups:
     - id: normal
-      item: enchanted_book name:"&7Normal Enchantments"
+      item: enchanted_book name:"&7Encantamientos normales"
       lore:
-        - "&fClick to browse normal enchantments"
+        - "&fClic para ver los normales"
       row: 2
       column: 2
     - id: spell
-      item: enchanted_book name:"<gradient:#0575E6:#1E3FBA>Spell Enchantments"
+      item: enchanted_book name:"<gradient:#0575E6:#1E3FBA>Encantamientos de hechizo"
       lore:
-        - "&fClick to browse spell enchantments"
+        - "&fClic para ver los de hechizo"
       row: 2
       column: 4
     - id: special
-      item: enchanted_book name:"<gradient:#FB57EC:#EF1DEC>Special Enchantments"
+      item: enchanted_book name:"<gradient:#FB57EC:#EF1DEC>Encantamientos especiales"
       lore:
-        - "&fClick to browse special enchantments"
+        - "&fClic para ver los especiales"
       row: 2
       column: 6
     - id: curse
-      item: enchanted_book name:"&cCurse Enchantments"
+      item: enchanted_book name:"&cMaldiciones"
       lore:
-        - "&fClick to browse curse enchantments"
+        - "&fClic para ver las maldiciones"
       row: 2
       column: 8
 

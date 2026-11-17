@@ -16,16 +16,17 @@ menuMain:
       - 4
       source: vanilla
       material: golden_pickaxe
-      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Trabajos</gradient>
+      name: '<white><glyph:essential_icons_cog></white> <gradient:#FFE29A:#FFB347>Trabajos</gradient>'
       lore:
-      - <#C9CDD6>Únete a un trabajo, sube de nivel
-      - <#C9CDD6>y gana dinero mientras juegas.
+      - '<#7C8291>Economía <white><glyph:essential_icons_coins></white>'
       - ''
-      - '<#9EA3AE>Incluye:'
-      - <white><glyph:pickaxe> <#E6E8EE>Minería, tala, pesca y granja
-      - <white><glyph:gold_coin> <#E6E8EE>Pago en <#FFD36B>Moneda
+      - '<white>Únete a un <#FFB347>trabajo</#FFB347>, sube de <#7FD8FF>nivel</#7FD8FF>'
+      - '<white>y gana <#FFD36B>dinero</#FFD36B> mientras juegas.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para ver los trabajos
+      - '<#7FFF9E>✔ <#9EEBA8>Minería, tala, pesca y granja'
+      - '<#7FFF9E>✔ <#9EEBA8>Pago en Moneda por cada acción'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>VER TRABAJOS</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -48,16 +49,17 @@ menuMain:
       - 5
       source: nexo
       id: pet_category_epic
-      name: <white><glyph:heart> <gradient:#FFE29A:#FFB347>Mascotas</gradient>
+      name: '<white><glyph:essential_icons_heart></white> <gradient:#FFE29A:#FFB347>Mascotas</gradient>'
       lore:
-      - <#C9CDD6>Elige entre mascotas vanilla
-      - <#C9CDD6>o con modelos personalizados.
+      - '<#7C8291>Compañeros <white><glyph:essential_icons_star></white>'
       - ''
-      - '<#9EA3AE>Tipos:'
-      - '<white><glyph:heart> <#E6E8EE>Vanilla: <#FFD36B>suben de nivel'
-      - '<white><glyph:star> <#E6E8EE>Custom: <#FFD36B>grifos y monturas'
+      - '<white>Elige mascotas <#9EEBA8>vanilla</#9EEBA8> o con'
+      - '<#C9A8FF>modelos únicos</#C9A8FF>: grifos y monturas.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para elegir
+      - '<#7FFF9E>✔ <#9EEBA8>Suben de nivel contigo'
+      - '<#7FFF9E>✔ <#9EEBA8>Te acompañan en tus aventuras'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>ELEGIR</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -80,12 +82,16 @@ menuMain:
       - 6
       source: vanilla
       material: bundle
-      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Más Opciones</gradient>
+      name: '<white><glyph:essential_icons_cog></white> <gradient:#FFE29A:#FFB347>Más Opciones</gradient>'
       lore:
-      - <#C9CDD6>Baúles, Homes, Más Buscados, Buzón,
-      - <#C9CDD6>Historia, Subastas y Duelos.
+      - '<#7C8291>Utilidades <white><glyph:essential_icons_key></white>'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para ver todas las opciones
+      - '<white>Baúles, <#FFB347>homes</#FFB347>, buzón, <#7FD8FF>duelos</#7FD8FF>'
+      - '<white>y más funciones en un solo lugar.'
+      - ''
+      - '<#7FFF9E>✔ <#9EEBA8>Ajustes de la bossbar de misiones'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>ABRIR</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -111,16 +117,17 @@ menuMain:
       texture: player
       # CMD 1 = cabeza grande del retrato (Inventories: items/player_head.json)
       custom_model_data_float: 1
-      name: <white><glyph:person> <gradient:#FFE29A:#FFB347>Mi Perfil</gradient>
+      name: '<white><glyph:essential_icons_crown></white> <gradient:#FFE29A:#FFB347>Mi Perfil</gradient>'
       lore:
-      - <#C9CDD6>Tu equipamiento, habilidades
-      - <#C9CDD6>y opciones de jugador.
+      - '<#7C8291>Jugador <white><glyph:essential_icons_helmet></white>'
       - ''
-      - '<white><glyph:person> <#E6E8EE>Jugador: <#FFD36B>{caster_name}'
-      - '<white><glyph:gold_coin> <#E6E8EE>Moneda: <#FFD36B>%excellenteconomy_balance_short_money%'
-      - '<white><glyph:diamond> <#E6E8EE>Shards: <#FFD36B>%excellenteconomy_balance_short_shards%'
+      - '<white>Jugador: <#FFD36B>{caster_name}'
+      - '<white><glyph:essential_icons_coins></white> <white>Moneda: <#FFD36B>%excellenteconomy_balance_short_money%'
+      - '<white><glyph:essential_icons_diamond></white> <white>Shards: <#7FD8FF>%excellenteconomy_balance_short_shards%'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para ver tu perfil
+      - '<#7FFF9E>✔ <#9EEBA8>Equipamiento, habilidades y opciones'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>VER PERFIL</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -143,15 +150,16 @@ menuMain:
       - 19
       source: nexo
       id: icono_discord
-      name: <white><glyph:chat_bubble> <gradient:#9FB4FF:#5865F2>Discord</gradient>
+      name: '<white><glyph:essential_icons_dialogue></white> <gradient:#9FB4FF:#5865F2>Discord</gradient>'
       lore:
-      - <#C9CDD6>Únete a la comunidad de
-      - <#C9CDD6>CloudsBlues en Discord.
+      - '<#7C8291>Comunidad <white><glyph:essential_icons_earth></white>'
       - ''
-      - <white><glyph:megaphone> <#E6E8EE>Anuncios, eventos y soporte
-      - <white><glyph:person> <#E6E8EE>Busca equipo y amigos
+      - '<white>Únete a la <#9FB4FF>comunidad</#9FB4FF> de CloudsBlues:'
+      - '<white>anuncios, <#FFD36B>eventos</#FFD36B> y <#7FFF9E>soporte</#7FFF9E>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para recibir el enlace
+      - '<#7FFF9E>✔ <#9EEBA8>Busca equipo y nuevos amigos'
+      - ''
+      - '<#9FB4FF>✥ ¡Clic para recibir el <bold>ENLACE</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -174,16 +182,17 @@ menuMain:
       - 31
       source: vanilla
       material: gold_ingot
-      name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Subastas</gradient>
+      name: '<white><glyph:essential_icons_judge_gavel></white> <gradient:#FFE29A:#FFB347>Subastas</gradient>'
       lore:
-      - <#C9CDD6>Compra y vende objetos con
-      - <#C9CDD6>otros jugadores del servidor.
+      - '<#7C8291>Economía <white><glyph:essential_icons_coins></white>'
       - ''
-      - '<#9EA3AE>Incluye:'
-      - <white><glyph:shopping_cart> <#E6E8EE>Publica tus objetos a la venta
-      - <white><glyph:gold_coin> <#E6E8EE>Pago en <#FFD36B>Moneda
+      - '<white>Compra y <#FFB347>vende</#FFB347> objetos con'
+      - '<white>otros <#7FD8FF>jugadores</#7FD8FF> del servidor.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir las subastas
+      - '<#7FFF9E>✔ <#9EEBA8>Publica tus objetos a la venta'
+      - '<#7FFF9E>✔ <#9EEBA8>Pago en Moneda'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>ABRIR SUBASTAS</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -206,16 +215,17 @@ menuMain:
       - 32
       source: vanilla
       material: writable_book
-      name: <white><glyph:stacked_books> <gradient:#FFE29A:#FFB347>Historia</gradient>
+      name: '<white><glyph:essential_icons_book></white> <gradient:#FFE29A:#FFB347>Historia</gradient>'
       lore:
-      - <#C9CDD6>Revive el Capítulo 1 del reino
-      - <#C9CDD6>y las partes que ya descubriste.
+      - '<#7C8291>Aventura <white><glyph:essential_icons_scroll></white>'
       - ''
-      - '<#9EA3AE>Incluye:'
-      - <white><glyph:crown> <#E6E8EE>El Rey sin Memoria y la Maleza
-      - <white><glyph:star> <#E6E8EE>Avanza hablando con los NPCs
+      - '<white>Revive el <#FFD36B>Capítulo 1</#FFD36B> del reino'
+      - '<white>y las partes que ya <#C9A8FF>descubriste</#C9A8FF>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para leer tu historia
+      - '<#7FFF9E>✔ <#9EEBA8>El Rey sin Memoria y la Maleza'
+      - '<#7FFF9E>✔ <#9EEBA8>Avanza hablando con los NPCs'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>LEER</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -238,16 +248,16 @@ menuMain:
       - 33
       source: vanilla
       material: enchanted_book
-      name: <white><glyph:high_voltage> <gradient:#FFE29A:#FFB347>Encantamientos</gradient>
+      name: '<white><glyph:essential_icons_purple_orb></white> <gradient:#FFE29A:#FFB347>Encantamientos</gradient>'
       lore:
-      - <#C9CDD6>Descubre los encantamientos
-      - <#C9CDD6>personalizados del servidor.
+      - '<#7C8291>Magia <white><glyph:essential_icons_wizard_tower></white>'
       - ''
-      - '<#9EA3AE>Incluye:'
-      - <white><glyph:potion> <#E6E8EE>Efectos, rarezas y niveles
-      - <white><glyph:light_bulb> <#E6E8EE>Para qué objeto sirve cada uno
+      - '<white>Descubre los <#C9A8FF>encantamientos</#C9A8FF>'
+      - '<white>personalizados y sus <#FFD36B>rarezas</#FFD36B>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para ver los encantamientos
+      - '<#7FFF9E>✔ <#9EEBA8>Efectos, niveles y objetos'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>VER ENCANTAMIENTOS</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -270,14 +280,16 @@ menuMain:
       - 13
       source: vanilla
       material: emerald
-      name: <white><glyph:shopping_cart> <gradient:#FFE29A:#FFB347>Tienda</gradient>
+      name: '<white><glyph:essential_icons_emerald></white> <gradient:#FFE29A:#FFB347>Tienda</gradient>'
       lore:
-      - <#C9CDD6>Compra y vende bloques, minerales,
-      - <#C9CDD6>comida y objetos únicos.
+      - '<#7C8291>Economía <white><glyph:essential_icons_coins></white>'
       - ''
-      - <white><glyph:gold_coin> <#E6E8EE>Pago en <#FFD36B>Moneda
+      - '<white>Compra y vende <#9EEBA8>bloques</#9EEBA8>, <#7FD8FF>minerales</#7FD8FF>,'
+      - '<white>comida y objetos <#FFD36B>únicos</#FFD36B>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir la tienda
+      - '<#7FFF9E>✔ <#9EEBA8>Pago en Moneda'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>COMPRAR</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -300,16 +312,17 @@ menuMain:
       - 14
       source: vanilla
       material: painting
-      name: <white><glyph:art_palette> <gradient:#FFE29A:#FFB347>Personalización</gradient>
+      name: '<white><glyph:essential_icons_star></white> <gradient:#FFE29A:#FFB347>Personalización</gradient>'
       lore:
-      - <#C9CDD6>Dale tu estilo a tu casa
-      - <#C9CDD6>y a tu personaje.
+      - '<#7C8291>Estilo <white><glyph:essential_icons_house></white>'
       - ''
-      - '<#9EA3AE>Incluye:'
-      - <white><glyph:treasure> <#E6E8EE>Muebles <#FFD36B>(Moneda)
-      - <white><glyph:pack1_magic> <#E6E8EE>Partículas
+      - '<white>Dale tu <#FFB347>estilo</#FFB347> a tu casa'
+      - '<white>y a tu <#C9A8FF>personaje</#C9A8FF>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir
+      - '<#7FFF9E>✔ <#9EEBA8>Muebles por Moneda'
+      - '<#7FFF9E>✔ <#9EEBA8>Partículas decorativas'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>PERSONALIZAR</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -332,15 +345,17 @@ menuMain:
       - 15
       source: vanilla
       material: nether_star
-      name: <white><glyph:trophy> <gradient:#FFE29A:#FFB347>Pase de Batalla</gradient>
+      name: '<white><glyph:essential_icons_medal_gold></white> <gradient:#FFE29A:#FFB347>Pase de Batalla</gradient>'
       lore:
-      - <#C9CDD6>Completa misiones de temporada
-      - <#C9CDD6>y desbloquea recompensas.
+      - '<#7C8291>Temporada <white><glyph:essential_icons_hourglass></white>'
       - ''
-      - <white><glyph:present_box> <#E6E8EE>Recompensas por nivel
-      - <white><glyph:clock> <#E6E8EE>Misiones diarias y semanales
+      - '<white>Completa <#FFB347>misiones</#FFB347> de temporada'
+      - '<white>y desbloquea <#FFD36B>recompensas</#FFD36B>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir el pase
+      - '<#7FFF9E>✔ <#9EEBA8>Misiones diarias y semanales'
+      - '<#7FFF9E>✔ <#9EEBA8>Recompensas por nivel'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>ABRIR PASE</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -363,15 +378,17 @@ menuMain:
       - 24
       source: vanilla
       material: bell
-      name: <white><glyph:castle_entrance> <gradient:#FFE29A:#FFB347>Protecciones</gradient>
+      name: '<white><glyph:essential_icons_shield></white> <gradient:#FFE29A:#FFB347>Protecciones</gradient>'
       lore:
-      - <#C9CDD6>Protege tu casa y tus terrenos
-      - <#C9CDD6>para que nadie los rompa.
+      - '<#7C8291>Terrenos <white><glyph:essential_icons_house></white>'
       - ''
-      - <white><glyph:shield> <#E6E8EE>Reclama y administra tus zonas
-      - <white><glyph:person> <#E6E8EE>Agrega a tus amigos
+      - '<white>Protege tu <#FFB347>casa</#FFB347> y tus <#9EEBA8>terrenos</#9EEBA8>'
+      - '<white>para que nadie los <#FF8A8A>rompa</#FF8A8A>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir las protecciones
+      - '<#7FFF9E>✔ <#9EEBA8>Reclama y administra tus zonas'
+      - '<#7FFF9E>✔ <#9EEBA8>Agrega a tus amigos'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>PROTEGER</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -394,14 +411,16 @@ menuMain:
       - 22
       source: vanilla
       material: ender_pearl
-      name: <white><glyph:airplane> <gradient:#FFE29A:#FFB347>Teletransporte</gradient>
+      name: '<white><glyph:essential_icons_compass></white> <gradient:#FFE29A:#FFB347>Teletransporte</gradient>'
       lore:
-      - <#C9CDD6>Viaja rápido a las diferentes
-      - <#C9CDD6>partes del mundo.
+      - '<#7C8291>Viajes <white><glyph:essential_icons_floating_island></white>'
       - ''
-      - <white><glyph:earth> <#E6E8EE>Mundo, Nether y End
+      - '<white>Viaja <#7FD8FF>rápido</#7FD8FF> a las diferentes'
+      - '<white>partes del <#9EEBA8>mundo</#9EEBA8>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para viajar
+      - '<#7FFF9E>✔ <#9EEBA8>Mundo, Nether y End'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>VIAJAR</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -424,16 +443,17 @@ menuMain:
       - 23
       source: vanilla
       material: book
-      name: <white><glyph:light_bulb> <gradient:#FFE29A:#FFB347>Ayuda</gradient>
+      name: '<white><glyph:essential_icons_lightbulb></white> <gradient:#FFE29A:#FFB347>Ayuda</gradient>'
       lore:
-      - <#C9CDD6>Aprende a usar las funciones
-      - <#C9CDD6>especiales del servidor.
+      - '<#7C8291>Guía <white><glyph:essential_icons_magnifying_glass></white>'
       - ''
-      - <white><glyph:tree> <#E6E8EE>Tala, veinminer y recolección
-      - <white><glyph:warning> <#E6E8EE>Cómo soltar objetos
-      - <white><glyph:envelope> <#E6E8EE>Buzón, subastas y más
+      - '<white>Aprende a usar las <#FFB347>funciones</#FFB347>'
+      - '<white>especiales del <#7FD8FF>servidor</#7FD8FF>.'
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir la guía
+      - '<#7FFF9E>✔ <#9EEBA8>Tala, veinminer y recolección'
+      - '<#7FFF9E>✔ <#9EEBA8>Buzón, subastas y más'
+      - ''
+      - '<#FFB347>✥ ¡Clic para <bold>APRENDER</bold>!'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS

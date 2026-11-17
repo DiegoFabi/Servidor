@@ -1,5 +1,5 @@
-display-name: "Arcane Defence"
-description: "Gives a &a%placeholder%%&r chance to ignore potion damage"
+display-name: "Defensa Arcana"
+description: "Da un &a%placeholder%%&r de probabilidad de ignorar el daño de pociones"
 placeholder: "%level% * 4"
 type: normal
 

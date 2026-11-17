@@ -1,5 +1,5 @@
-display-name: "Sparks"
-description: "Hooking onto enemies during storms gives a &a%chance%%&r chance to strike lightning dealing &a%damage%&r damage"
+display-name: "Chispas"
+description: "Enganchar enemigos durante tormentas da un &a%chance%%&r de probabilidad de lanzar un rayo de &a%damage%&r de daño"
 placeholders:
   damage: "1 + %level%"
   chance: "25 + 5 * %level%"

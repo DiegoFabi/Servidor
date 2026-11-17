@@ -1,5 +1,5 @@
-display-name: "Warp Drive"
-description: "Hitting your opponent with an arrow teleports you to them"
+display-name: "Salto Warp"
+description: "Al acertar una flecha a tu rival te teletransportas hacia él"
 placeholder: "%level%"
 type: special
 

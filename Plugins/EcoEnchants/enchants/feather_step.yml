@@ -1,5 +1,5 @@
-display-name: "Feather Step"
-description: "Prevents trampling crops by jumping on them"
+display-name: "Paso Ligero"
+description: "Evita pisotear los cultivos al saltar sobre ellos"
 type: normal
 
 targets:

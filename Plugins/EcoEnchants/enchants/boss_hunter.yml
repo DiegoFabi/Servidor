@@ -1,5 +1,5 @@
-display-name: "Boss Hunter"
-description: "Deal &a%placeholder%% &rmore damage against bosses"
+display-name: "Cazajefes"
+description: "Inflige un &a%placeholder%% &rmás de daño a los jefes"
 placeholder: "10 * %level%"
 type: normal
 

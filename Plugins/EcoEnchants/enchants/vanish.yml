@@ -1,5 +1,5 @@
-display-name: "Vanish"
-description: "Gives a &a%chance%%&r chance to disappear for &a%seconds%&r seconds after taking damage"
+display-name: "Desvanecer"
+description: "Da un &a%chance%%&r de probabilidad de desaparecer durante &a%seconds%&r segundos al recibir daño"
 placeholders:
   chance: "2 * %level%"
   seconds: "0.5 + floor(%level% / 4)"

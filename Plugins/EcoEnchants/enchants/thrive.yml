@@ -1,5 +1,5 @@
-display-name: "Thrive"
-description: "Gives &a%placeholder%&r bonus health"
+display-name: "Vigor"
+description: "Da &a%placeholder%&r de vida extra"
 placeholder: "%level%"
 type: normal
 

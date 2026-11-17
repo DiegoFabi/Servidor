@@ -57,7 +57,7 @@ menuMascotas:
       - ''
       - <white><glyph:star> <#E6E8EE>Se capturan en los mundos
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir tu colección
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir tu colección
       flags:
       - HIDE_ATTRIBUTES
       left_click:
@@ -86,7 +86,7 @@ menuMascotas:
       - '<#9EA3AE>Rarezas:'
       - <white>Común <dark_gray>• <#5CA8FF>Rara <dark_gray>• <#B45CFF>Épica <dark_gray>• <#FFB347>Legendaria
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para abrir el menú
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir el menú
       flags:
       - HIDE_ATTRIBUTES
       left_click:
@@ -135,7 +135,7 @@ menuMascotas:
       material: dark_oak_door
       name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
       lore:
-      - <white><glyph:raton_izq> <#7FB2FF>Click para regresar
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
       flags:
       - HIDE_ATTRIBUTES
       left_click:

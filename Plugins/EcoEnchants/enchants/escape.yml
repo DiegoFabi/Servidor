@@ -1,5 +1,5 @@
-display-name: "Escape"
-description: "Gain a short burst of speed &a%placeholder%%&r after taking damage"
+display-name: "Huida"
+description: "Ganas un breve impulso de velocidad del &a%placeholder%%&r al recibir daño"
 placeholder: "%level%"
 type: normal
 

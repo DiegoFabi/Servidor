@@ -1,5 +1,5 @@
-display-name: "Excavation"
-description: "Digs &a%placeholder%&r extra blocks"
+display-name: "Excavación"
+description: "Excava &a%placeholder%&r bloques extra"
 placeholder: "%level%"
 type: normal
 

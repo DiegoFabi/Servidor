@@ -1,5 +1,5 @@
-display-name: "Soulbound"
-description: "Keep this item on death"
+display-name: "Vínculo de Alma"
+description: "Conservas este objeto al morir"
 type: special
 
 targets:

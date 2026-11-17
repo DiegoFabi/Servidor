@@ -292,7 +292,7 @@ panelProfile:
       - <#C9CDD6>Activa o desactiva los mensajes
       - <#C9CDD6>privados de otros jugadores.
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para alternar
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para alternar
       flags:
       - HIDE_ATTRIBUTES
       left_click:
@@ -315,7 +315,7 @@ panelProfile:
       material: dark_oak_door
       name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
       lore:
-      - <white><glyph:raton_izq> <#7FB2FF>Click para regresar
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
       flags:
       - HIDE_ATTRIBUTES
       left_click:
@@ -341,7 +341,7 @@ panelProfile:
       - <#C9CDD6>Consulta tus estadísticas
       - <#C9CDD6>y poderes de clase.
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Click para ver tus estadísticas
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver tus estadísticas
       flags:
       - HIDE_ATTRIBUTES
       left_click:

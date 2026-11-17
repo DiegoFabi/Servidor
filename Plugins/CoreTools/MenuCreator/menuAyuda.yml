@@ -61,7 +61,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Acceso: <#7FFF9E>Clic derecho con el libro'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -191,7 +191,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/buzon ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>EJECUTAR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>EJECUTAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -226,7 +226,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/rtp ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -261,7 +261,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/spawn ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -297,7 +297,7 @@ menuAyuda:
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/homes ✔'
       - '<#5C6370>■ <white>Crear: <#FFD36B>/sethome (nombre)'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -356,7 +356,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/historia ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>LEER</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>LEER</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -391,7 +391,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/perfil ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -426,7 +426,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/pv ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -461,7 +461,7 @@ menuAyuda:
       - <#F28BB6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/nclaim ✔'
       - ''
-      - <#F28BB6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#F28BB6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -519,7 +519,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/coinflip ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>APOSTAR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>APOSTAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -577,7 +577,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/jobs ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>TRABAJAR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>TRABAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -612,7 +612,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/bp ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -647,7 +647,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/team ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -682,7 +682,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/mcpets ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -717,7 +717,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/skills ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -752,7 +752,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/magia ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -787,7 +787,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Acceso: <#7FFF9E>Armario de cosméticos ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -845,7 +845,7 @@ menuAyuda:
       - <#5CE1E6>——— ✦ Información
       - '<#5C6370>■ <white>Comando: <#7FFF9E>/bounty ✔'
       - ''
-      - <#5CE1E6>❖ ¡Click para <bold>ABRIR</bold>!
+      - <#5CE1E6>❖ ¡Clic para <bold>ABRIR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS

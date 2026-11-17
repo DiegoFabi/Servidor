@@ -1,5 +1,5 @@
-display-name: "One for All"
-description: "Increases damage by &a%placeholder%%&r but conflicts with all other enchantments"
+display-name: "Uno para Todos"
+description: "Aumenta el daño un &a%placeholder%%&r pero es incompatible con todos los demás encantamientos"
 placeholder: "500"
 type: special
 

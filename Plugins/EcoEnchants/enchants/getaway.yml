@@ -1,5 +1,5 @@
-display-name: "Getaway"
-description: "Gain a &a%placeholder%%&r bonus to movement speed below &a20%&r health"
+display-name: "Escapada"
+description: "Ganas un &a%placeholder%%&r de velocidad con menos del &a20%&r de vida"
 placeholder: "10 * %level%"
 type: normal
 

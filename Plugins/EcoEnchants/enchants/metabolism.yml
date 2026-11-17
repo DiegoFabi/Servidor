@@ -1,5 +1,5 @@
-display-name: "Metabolism"
-description: "Increases the hunger gained by eating food by &a%placeholder%%"
+display-name: "Metabolismo"
+description: "Aumenta un &a%placeholder%%&r el hambre que recuperas al comer"
 placeholder: "%level% * 12.5"
 type: normal
 

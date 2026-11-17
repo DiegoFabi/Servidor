@@ -1,5 +1,5 @@
-display-name: "Goliath"
-description: "Deal &a%damage%x &rmore damage for each times your opponent has more health than you, up to &a%limit%x"
+display-name: "Goliat"
+description: "Inflige &a%damage%x &rmás de daño por cada vez que tu rival tenga más vida que tú, hasta &a%limit%x"
 placeholders:
   damage: "0.5 + %level% * 0.1"
   limit: "1.6 + %level% * 0.4"

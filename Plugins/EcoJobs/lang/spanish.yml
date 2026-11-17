@@ -1,0 +1,44 @@
+# Idioma de EcoJobs: español
+messages:
+  prefix: "&#964B00&lTrabajos&r &8» &r"
+  no-permission: "&cNo tienes permiso para hacer esto."
+  not-player: "&cEste comando solo lo puede usar un jugador."
+  invalid-command: "&cSubcomando desconocido."
+  reloaded: "Recargado en %time%ms. Se cargaron %count% trabajos."
+
+  needs-player: "&cDebes indicar un jugador."
+  gave-xp: "&fHas dado &a%xp% &fde XP en %job%&f a %player%&f."
+  reset-xp: "&fHas reiniciado la XP de %player%&f en %job%&f."
+  reset-all-players: "&fHas reiniciado la XP de %job%&f a todos los jugadores."
+  reset-all-jobs: "&fHas reiniciado la XP de %player%&f en todos los trabajos."
+  reset-all-players-all-jobs: "&fHas reiniciado la XP de todos los jugadores en todos los trabajos."
+  needs-job: "&cDebes indicar un trabajo."
+  need-amount: "&cDebes indicar una cantidad."
+  invalid-player: "&cJugador no válido."
+  invalid-job: "&cTrabajo no válido."
+  already-has-job: "&cEse jugador ya tiene este trabajo."
+  doesnt-have-job: "&cEse jugador no tiene este trabajo."
+  player-not-in-job: "&cEse jugador no está en este trabajo."
+  unlocked-job: "&fHas desbloqueado el trabajo %job%&f para %player%."
+  cannot-spawn-job: "&cYa tienes este trabajo desbloqueado."
+  invalid-amount: "&cCantidad no válida."
+  no-job: "&cNo tienes ningún trabajo."
+  joined-job: "&fTe has unido al trabajo %job%&f."
+  left-job: "&fHas dejado el trabajo %job%&f."
+  job-already-joined: "&cYa tienes este trabajo."
+  cannot-join-job: "&cYa tienes demasiados trabajos; deja uno primero."
+  cant-leave-job: "&cNo puedes dejar el trabajo %job%&f."
+  dont-have-job: "&cNo tienes este trabajo desbloqueado."
+  not-in-job: "&cNo estás en este trabajo."
+
+menu:
+  title: "Trabajos"
+
+infinity: "∞"
+
+top-line-format: "%rank%. %player% - Nv. %level%"
+top:
+  empty-position: "&cN/D"
+  format:
+    - "---- Ranking de Trabajos ----"
+    - "%lines%"

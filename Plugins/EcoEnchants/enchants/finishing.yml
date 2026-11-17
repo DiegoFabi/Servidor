@@ -1,5 +1,5 @@
-display-name: "Finishing"
-description: "Increases damage dealt by &a%placeholder%%&r for each percent of health missing on your opponent"
+display-name: "Remate"
+description: "Aumenta el daño un &a%placeholder%%&r por cada porcentaje de vida que le falte a tu rival"
 placeholder: "0.2 * %level%"
 type: normal
 

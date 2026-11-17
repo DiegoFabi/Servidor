@@ -1,5 +1,5 @@
-display-name: "Curse of Misfortune"
-description: "Gives a &a%placeholder%% &rchance for blocks to not drop items"
+display-name: "Maldición de Infortunio"
+description: "Da un &a%placeholder%% &rde probabilidad de que los bloques no suelten nada"
 placeholder: "15 * %level%"
 type: curse
 

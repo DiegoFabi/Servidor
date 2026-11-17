@@ -1,5 +1,5 @@
-display-name: "Xray"
-description: "Makes ores within &a%radius%&r blocks shine through walls for &a%seconds%&r seconds"
+display-name: "Rayos X"
+description: "Hace brillar los minerales a &a%radius%&r bloques a través de las paredes durante &a%seconds%&r segundos"
 placeholders:
   seconds: "1 + %level%"
   radius: "3 + 2 * %level%"

@@ -1,0 +1,9 @@
+multiple-in-craft: '&l&c! &fEsta receta necesita &a%amount%&f de este objeto.'
+
+# Nombres por defecto de los precios creados con ConfiguredPrice#create.
+# Placeholders: %value% y %value_commas%.
+price-display:
+  - type: example_type
+    display: "&e%value% de precio"
+
+no-leaderboard-records: "&cTodavía no hay registros en la clasificación"

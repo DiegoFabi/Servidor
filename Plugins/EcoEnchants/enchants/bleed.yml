@@ -1,5 +1,5 @@
-display-name: "Bleed"
-description: "Gives a &a%placeholder%%&r chance to cause your opponent to bleed, damaging them repeatedly"
+display-name: "Sangrado"
+description: "Da un &a%placeholder%%&r de probabilidad de hacer sangrar a tu rival, dañándolo varias veces"
 placeholder: "1.5 * %level%"
 type: normal
 

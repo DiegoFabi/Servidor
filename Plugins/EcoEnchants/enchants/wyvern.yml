@@ -1,5 +1,5 @@
 display-name: "Wyvern"
-description: "Gives a &a%placeholder%%&r bonus to melee damage"
+description: "Da un &a%placeholder%%&r más de daño cuerpo a cuerpo"
 placeholder: "10 * %level%"
 type: normal
 

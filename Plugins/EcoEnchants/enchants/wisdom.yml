@@ -1,5 +1,5 @@
-display-name: "Wisdom"
-description: "&rIncreases dropped experience by &a%placeholder%%"
+display-name: "Sabiduría"
+description: "&rAumenta la experiencia que sueltan un &a%placeholder%%"
 placeholder: "100 + %level% * 20"
 type: normal
 

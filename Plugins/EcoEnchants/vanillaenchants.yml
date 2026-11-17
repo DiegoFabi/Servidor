@@ -11,7 +11,7 @@
 
 protection:
   name: "Protection"
-  description: "Reduces incoming damage by &a%placeholder%%"
+  description: "Reduce el daño recibido un &a%placeholder%%"
   placeholder: "%level% * 4"
   type: normal
   targets:
@@ -31,7 +31,7 @@ protection:
 
 fire_protection:
   name: "Fire Protection"
-  description: "Reduces incoming fire damage by &a%damage%%&r and burn time by &a%time%%"
+  description: "Reduce el daño por fuego un &a%damage%%&r y el tiempo ardiendo un &a%time%%"
   placeholders:
     damage: "%level% * 8"
     time: "%level% * 15"
@@ -51,7 +51,7 @@ fire_protection:
 
 feather_falling:
   name: "Feather Falling"
-  description: "Reduces fall damage by &a%placeholder%%"
+  description: "Reduce el daño por caída un &a%placeholder%%"
   placeholder: "%level% * 12"
   type: normal
   targets:
@@ -69,7 +69,7 @@ feather_falling:
 
 blast_protection:
   name: "Blast Protection"
-  description: "Reduces incoming explosion damage by &a%damage%%&r and incoming blast knockback by &a%knockback%%"
+  description: "Reduce el daño por explosiones un &a%damage%%&r y su empuje un &a%knockback%%"
   placeholders:
     damage: "%level% * 8"
     knockback: "%level% * 15"
@@ -89,7 +89,7 @@ blast_protection:
 
 projectile_protection:
   name: "Projectile Protection"
-  description: "Reduces incoming projectile damage by &a%placeholder%%"
+  description: "Reduce el daño de proyectiles un &a%placeholder%%"
   placeholder: "%level% * 8"
   type: normal
   targets:
@@ -107,7 +107,7 @@ projectile_protection:
 
 respiration:
   name: "Respiration"
-  description: "Extends underwater breathing time by &a%seconds%&r seconds and gives a &a%chance%%&r chance to ignore drowning damage"
+  description: "Alarga la respiración bajo el agua &a%seconds%&r segundos y da un &a%chance%%&r de probabilidad de ignorar el ahogamiento"
   placeholders:
     seconds: "15 * %level%"
     chance: "%level% / (%level% + 1)"
@@ -127,7 +127,7 @@ respiration:
 
 aqua_affinity:
   name: "Aqua Affinity"
-  description: "Removes underwater mining speed penalty"
+  description: "Quita la penalización de minado bajo el agua"
   type: normal
   targets:
     - helmet
@@ -144,7 +144,7 @@ aqua_affinity:
 
 thorns:
   name: "Thorns"
-  description: "Gives a &a%placeholder%%&r chance to reflect some incoming damage to the attacker"
+  description: "Da un &a%placeholder%%&r de probabilidad de devolver parte del daño al atacante"
   placeholder: "%level% * 15"
   type: normal
   targets:
@@ -162,7 +162,7 @@ thorns:
 
 depth_strider:
   name: "Depth Strider"
-  description: "Reduces underwater movement slowdown by &a%placeholder%%"
+  description: "Reduce un &a%placeholder%%&r la lentitud al moverte bajo el agua"
   placeholder: "%level% * 33.333333"
   type: normal
   targets:
@@ -180,7 +180,7 @@ depth_strider:
 
 frost_walker:
   name: "Frost Walker"
-  description: "Turns water within a &a%placeholder%&r block radius of the player into ice"
+  description: "Congela el agua en un radio de &a%placeholder%&r bloques a tu alrededor"
   placeholder: "%level% + 2"
   type: normal
   targets:
@@ -198,7 +198,7 @@ frost_walker:
 
 binding_curse:
   name: "Curse of Binding"
-  description: Items cannot be removed from armor slots
+  description: "El objeto no se puede quitar de las casillas de armadura"
   type: curse
   targets:
     - armor
@@ -216,7 +216,7 @@ binding_curse:
 
 sharpness:
   name: "Sharpness"
-  description: "Deals &a%placeholder%&r bonus melee damage"
+  description: "Inflige &a%placeholder%&r de daño cuerpo a cuerpo extra"
   placeholder: "0.5 * %level% + 1"
   type: normal
   targets:
@@ -236,7 +236,7 @@ sharpness:
 
 smite:
   name: "Smite"
-  description: "Gives a &a%placeholder%&r bonus to melee damage against undead mobs"
+  description: "Da &a%placeholder%&r de daño cuerpo a cuerpo extra contra no muertos"
   placeholder: "2.5 * %level%"
   type: normal
   targets:
@@ -257,7 +257,7 @@ smite:
 
 bane_of_arthropods:
   name: "Bane of Arthropods"
-  description: "Gives a &a%damage%&r bonus to melee damage against arthropods and gives up to &a%seconds%&r seconds of Slowness IV"
+  description: "Da &a%damage%&r de daño extra contra artrópodos y hasta &a%seconds%&r segundos de Lentitud IV"
   placeholders:
     damage: "2.5 * %level%"
     seconds: "0.5 * %level%"
@@ -280,7 +280,7 @@ bane_of_arthropods:
 
 knockback:
   name: "Knockback"
-  description: "Gives a &a%placeholder%%&r bonus to attack knockback"
+  description: "Da un &a%placeholder%%&r más de empuje al atacar"
   placeholder: "%level% * 85 + 20"
   type: normal
   targets:
@@ -299,7 +299,7 @@ knockback:
 
 fire_aspect:
   name: "Fire Aspect"
-  description: "Sets opponents on fire for &a4&r seconds, dealing &a%placeholder%&r damage each fire tick"
+  description: "Prende fuego a tus rivales durante &a4&r segundos, con &a%placeholder%&r de daño por tick"
   placeholder: "(%level% * 4) - 1"
   type: normal
   targets:
@@ -319,7 +319,7 @@ fire_aspect:
 
 looting:
   name: "Looting"
-  description: "Increases maximum common drops by &a%common%&r, and the chance to get rare drops by &a%rare%%"
+  description: "Aumenta los drops comunes máximos en &a%common%&r y la probabilidad de drops raros un &a%rare%%"
   placeholders:
     common: "%level%"
     rare: "%level%"
@@ -341,7 +341,7 @@ looting:
 # Pre-1.21
 sweeping:
   name: "Sweeping Edge"
-  description: "Increases sweeping attack damage by &a%placeholder%%"
+  description: "Aumenta el daño del ataque de barrido un &a%placeholder%%"
   placeholder: "%level% / (%level% + 1)"
   type: normal
   targets:
@@ -353,7 +353,7 @@ sweeping:
 # 1.21+
 sweeping_edge:
   name: "Sweeping Edge"
-  description: "Increases sweeping attack damage by &a%placeholder%%"
+  description: "Aumenta el daño del ataque de barrido un &a%placeholder%%"
   placeholder: "%level% / (%level% + 1)"
   type: normal
   targets:
@@ -371,7 +371,7 @@ sweeping_edge:
 
 efficiency:
   name: "Efficiency"
-  description: "Increases mining speed by &a%placeholder%%"
+  description: "Aumenta la velocidad de minado un &a%placeholder%%"
   placeholder: "20 + 5 * %level%"
   type: normal
   targets:
@@ -393,7 +393,7 @@ efficiency:
 
 silk_touch:
   name: "Silk Touch"
-  description: "Mined blocks drop themselves exactly"
+  description: "Los bloques minados se sueltan tal cual"
   type: normal
   targets:
     - pickaxe
@@ -413,7 +413,7 @@ silk_touch:
 
 unbreaking:
   name: "Unbreaking"
-  description: "Increases item durability &a%placeholder%x"
+  description: "Aumenta la durabilidad del objeto &a%placeholder%x"
   placeholder: "%level% + 1"
   type: normal
   targets:
@@ -447,7 +447,7 @@ unbreaking:
 
 fortune:
   name: "Fortune"
-  description: "Gives a &a%placeholder%%&r boost to certain block drops"
+  description: "Aumenta un &a%placeholder%%&r lo que sueltan ciertos bloques"
   placeholder: "ceil(((1 / (%level% + 2)) + ((%level% + 1) / 2)) * 100 - 100)"
   type: normal
   targets:
@@ -468,7 +468,7 @@ fortune:
 
 power:
   name: "Power"
-  description: "Gives a &a%placeholder%%&r bonus to arrow damage"
+  description: "Da un &a%placeholder%%&r más de daño a las flechas"
   placeholder: "25 * (%level% + 1)"
   type: normal
   targets:
@@ -486,7 +486,7 @@ power:
 
 punch:
   name: "Punch"
-  description: "Increases arrow knockback by &a%placeholder%&r blocks"
+  description: "Aumenta el empuje de las flechas &a%placeholder%&r bloques"
   placeholder: "3 * %level%"
   type: normal
   targets:
@@ -504,7 +504,7 @@ punch:
 
 flame:
   name: "Flame"
-  description: "Arrows set target on fire, dealing &a5&r fire damage"
+  description: "Las flechas prenden fuego al objetivo, con &a5&r de daño por fuego"
   type: normal
   targets:
     - bow
@@ -521,7 +521,7 @@ flame:
 
 infinity:
   name: "Infinity"
-  description: Stops regular arrows from being consumed when shot
+  description: "Las flechas normales no se gastan al disparar"
   type: normal
   targets:
     - bow
@@ -538,7 +538,7 @@ infinity:
 
 luck_of_the_sea:
   name: "Luck of the Sea"
-  description: "Increases chance of getting treasure loot by &a%placeholder%%"
+  description: "Aumenta un &a%placeholder%%&r la probabilidad de pescar tesoros"
   placeholder: "2 * %level%"
   type: normal
   targets:
@@ -556,7 +556,7 @@ luck_of_the_sea:
 
 lure:
   name: "Lure"
-  description: "Decreases fishing wait time by &a%placeholder%&r seconds"
+  description: "Reduce la espera al pescar &a%placeholder%&r segundos"
   placeholder: "%level% * 5"
   type: normal
   targets:
@@ -574,7 +574,7 @@ lure:
 
 loyalty:
   name: "Loyalty"
-  description: Trident returns after being thrown
+  description: "El tridente vuelve tras lanzarlo"
   type: normal
   targets:
     - trident
@@ -591,7 +591,7 @@ loyalty:
 
 impaling:
   name: "Impaling"
-  description: "Deals &a%placeholder%&r additional damage to ocean mobs"
+  description: "Inflige &a%placeholder%&r de daño extra a criaturas marinas"
   placeholder: "%level% * 2.5"
   type: normal
   targets:
@@ -609,7 +609,7 @@ impaling:
 
 riptide:
   name: "Riptide"
-  description: Trident launches player when thrown in water or while raining
+  description: "El tridente te impulsa al lanzarlo en el agua o bajo la lluvia"
   type: normal
   targets:
     - trident
@@ -626,7 +626,7 @@ riptide:
 
 channeling:
   name: "Channeling"
-  description: Strikes lightning where trident lands during thunderstorms
+  description: "Lanza un rayo donde cae el tridente durante las tormentas"
   type: normal
   targets:
     - trident
@@ -643,7 +643,7 @@ channeling:
 
 multishot:
   name: "Multishot"
-  description: Shoots 3 arrows instead of 1
+  description: "Dispara 3 flechas en vez de 1"
   type: normal
   targets:
     - crossbow
@@ -660,7 +660,7 @@ multishot:
 
 quick_charge:
   name: "Quick Charge"
-  description: "Decreases crossbow charging time by &a%placeholder%&r seconds"
+  description: "Reduce el tiempo de carga de la ballesta &a%placeholder%&r segundos"
   placeholder: "%level% * 0.25"
   type: normal
   targets:
@@ -678,7 +678,7 @@ quick_charge:
 
 piercing:
   name: "Piercing"
-  description: "Arrows pass through &a%placeholder%&r entities"
+  description: "Las flechas atraviesan &a%placeholder%&r criaturas"
   placeholder: "%level% + 1"
   type: normal
   targets:
@@ -696,7 +696,7 @@ piercing:
 
 mending:
   name: "Mending"
-  description: Repair the item while gaining XP orbs
+  description: "Repara el objeto al recoger experiencia"
   type: normal
   targets:
     - pickaxe
@@ -729,7 +729,7 @@ mending:
 
 vanishing_curse:
   name: "Curse of Vanishing"
-  description: Item destroyed on death
+  description: "El objeto se destruye al morir"
   type: curse
   targets:
     - pickaxe
@@ -762,7 +762,7 @@ vanishing_curse:
 
 soul_speed:
   name: "Soul Speed"
-  description: "Increases walking speed on soul sand and soul soil by &a%placeholder%%"
+  description: "Aumenta la velocidad sobre arena y tierra de almas un &a%placeholder%%"
   placeholder: "(%level% * 0.105) + 1.3"
   type: normal
   targets:
@@ -780,7 +780,7 @@ soul_speed:
 
 swift_sneak:
   name: "Swift Sneak"
-  description: "Reduces sneaking movement slowdown by &a%placeholder%%"
+  description: "Reduce la lentitud al agacharte un &a%placeholder%%"
   placeholder: "min(%level% * 15, 100)"
   type: normal
   targets:
@@ -798,7 +798,7 @@ swift_sneak:
 
 density:
   name: "Density"
-  description: "Deals &a%placeholder%&r bonus damage per block fallen"
+  description: "Inflige &a%placeholder%&r de daño extra por cada bloque de caída"
   placeholder: "0.5 * %level%"
   type: normal
   targets:
@@ -816,7 +816,7 @@ density:
 
 breach:
   name: "Breach"
-  description: "Reduces effectiveness of the target's armor by &a%placeholder%%"
+  description: "Reduce la eficacia de la armadura del objetivo un &a%placeholder%%"
   placeholder: "15 * %level%"
   type: normal
   targets:
@@ -834,7 +834,7 @@ breach:
 
 wind_burst:
   name: "Wind Burst"
-  description: "Multiplies upwards knockback on smash attacks by &a%placeholder%"
+  description: "Multiplica el empuje hacia arriba de los golpes aplastantes por &a%placeholder%"
   placeholder: "1.15 + 0.35 * %level%"
   type: normal
   targets:
@@ -852,7 +852,7 @@ wind_burst:
 
 lunge:
   name: "Lunge"
-  description: "Launch forward &a%placeholder%&r blocks per second on jab attacks"
+  description: "Te lanza &a%placeholder%&r bloques por segundo hacia delante con las estocadas"
   placeholder: "round(%level * 9.16)"
   type: normal
   targets:

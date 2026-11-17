@@ -1,5 +1,5 @@
-display-name: "Rebounding"
-description: "Rebounds &a%placeholder%%&r of incoming damage back at your attacker"
+display-name: "Rebote"
+description: "Devuelve un &a%placeholder%%&r del daño recibido a tu atacante"
 placeholder: "20 + %level% * 10"
 type: normal
 

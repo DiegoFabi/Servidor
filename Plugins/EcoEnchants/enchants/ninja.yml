@@ -1,5 +1,5 @@
 display-name: "Ninja"
-description: "Deal &a+%placeholder%&r damage while sneaking"
+description: "Inflige &a+%placeholder%&r de daño al agacharte"
 placeholder: "0.5 + %level% * 0.5"
 type: normal
 

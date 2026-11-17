@@ -1,5 +1,5 @@
-display-name: "Streamlining"
-description: "Gives a &a%placeholder%%&r boost to movement speed"
+display-name: "Aerodinámica"
+description: "Aumenta la velocidad un &a%placeholder%%"
 placeholder: "%level% * 5"
 type: normal
 

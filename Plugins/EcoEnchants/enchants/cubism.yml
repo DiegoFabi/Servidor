@@ -1,5 +1,5 @@
-display-name: "Cubism"
-description: "Deal &a%placeholder%% &rmore against slimes and magma cubes"
+display-name: "Cubismo"
+description: "Inflige un &a%placeholder%% &rmás de daño a slimes y cubos de magma"
 placeholder: "5 * %level%"
 type: normal
 

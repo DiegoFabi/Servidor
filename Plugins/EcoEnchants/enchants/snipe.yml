@@ -1,5 +1,5 @@
-display-name: "Snipe"
-description: "Arrows deal &a%damage%%&r more damage for each &a%blocks%&r blocks travelled"
+display-name: "Francotirador"
+description: "Las flechas infligen un &a%damage%%&r más de daño por cada &a%blocks%&r bloques recorridos"
 placeholders:
   damage: "1 * %level%"
   blocks: "11 - ceil(%level% / 2)"

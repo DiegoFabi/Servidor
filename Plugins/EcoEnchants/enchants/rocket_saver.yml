@@ -1,5 +1,5 @@
-display-name: "Rocket Saver"
-description: "Gives a &a%placeholder%%&r chance to not consume fireworks when boosting"
+display-name: "Ahorro de Cohetes"
+description: "Da un &a%placeholder%%&r de probabilidad de no gastar cohetes al impulsarte"
 placeholder: "%level% * 20"
 type: normal
 

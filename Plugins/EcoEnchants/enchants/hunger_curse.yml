@@ -1,5 +1,5 @@
-display-name: "Curse of Hunger"
-description: "Increases hunger loss by &a%placeholder%%"
+display-name: "Maldición del Hambre"
+description: "Aumenta la pérdida de hambre un &a%placeholder%%"
 placeholder: "50 * %level%"
 type: curse
 

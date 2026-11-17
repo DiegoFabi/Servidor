@@ -1,5 +1,5 @@
-display-name: "Charge"
-description: "Launches you forwards at &a%placeholder%x&r speed"
+display-name: "Embestida"
+description: "Te lanza hacia delante a &a%placeholder%x&r de velocidad"
 placeholder: "5 * %level%"
 type: spell
 

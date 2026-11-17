@@ -39,7 +39,7 @@ menumain_subastas_click:
   Mechanics:
   - 'closeinventory{} @Self'
   - 'playsound{sound="minecraft:block.note_block.bell";volume=1;pitch=1} @Self'
-  - 'command{c="ah";runas=op} @Self'
+  - 'command{c="core-auctionhouse subastas {caster_name}";runas=console} @Self'
 menumain_historia_click:
   Conditions: []
   Mechanics:
@@ -51,4 +51,10 @@ menumain_encantamientos_click:
   Mechanics:
   - 'closeinventory{} @Self'
   - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=1} @Self'
-  - 'command{c="enchants";runas=player} @Self'
+  - 'command{c="ecoenchants gui";runas=player} @Self'
+# Botón "Volver" de la Casa de Subastas (AuctionHouse/subastas.yml)
+subastas_volver:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuMain {caster_name}";runas=console} @Self'

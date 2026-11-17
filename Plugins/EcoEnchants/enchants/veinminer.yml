@@ -1,5 +1,5 @@
-display-name: "Veinminer"
-description: "Mine up to &a%placeholder%&r blocks in veins at once"
+display-name: "Minero de Vetas"
+description: "Mina hasta &a%placeholder%&r bloques de una veta a la vez"
 placeholder: "2 + 3 * %level%"
 type: normal
 

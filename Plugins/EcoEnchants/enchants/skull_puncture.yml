@@ -1,5 +1,5 @@
-display-name: "Skull Puncture"
-description: "Increases headshot damage by &a%placeholder%%"
+display-name: "Perforacráneos"
+description: "Aumenta el daño por disparo a la cabeza un &a%placeholder%%"
 placeholder: "10 * %level%"
 type: normal
 

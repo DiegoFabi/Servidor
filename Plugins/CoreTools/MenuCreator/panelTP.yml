@@ -55,7 +55,7 @@ panelTP:
       - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
       - ''
-      - <#A6F25B>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#A6F25B>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -87,7 +87,7 @@ panelTP:
       - ''
       - '<#5C6370>■ <#9EA3AE>Todo: <#E296F3>Personalizado y optimizado ✔'
       - ''
-      - <#E296F3>❖ ¡Click para <bold>EXPLORAR</bold>!
+      - <#E296F3>❖ ¡Clic para <bold>EXPLORAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -124,7 +124,7 @@ panelTP:
       - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#FF7A8A>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#FF7A8A>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -159,7 +159,7 @@ panelTP:
       - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
       - ''
-      - <#A6F25B>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#A6F25B>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -196,7 +196,7 @@ panelTP:
       - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#C9A8FF>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#C9A8FF>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -229,7 +229,7 @@ panelTP:
       - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
       - '<#5C6370>■ <#9EA3AE>Precio: <#7FFF9E>Gratis ✔'
       - ''
-      - <#FFD54F>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#FFD54F>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -304,7 +304,7 @@ NetherMenu:
       - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#FF7A8A>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#FF7A8A>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -336,7 +336,7 @@ NetherMenu:
       - ''
       - '<#5C6370>■ <#9EA3AE>Todo: <#E296F3>Personalizado y optimizado ✔'
       - ''
-      - <#E296F3>❖ ¡Click para <bold>EXPLORAR</bold>!
+      - <#E296F3>❖ ¡Clic para <bold>EXPLORAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -373,7 +373,7 @@ NetherMenu:
       - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#FF7A8A>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#FF7A8A>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -408,7 +408,7 @@ NetherMenu:
       - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
       - ''
-      - <#A6F25B>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#A6F25B>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -445,7 +445,7 @@ NetherMenu:
       - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#C9A8FF>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#C9A8FF>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -478,7 +478,7 @@ NetherMenu:
       - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
       - '<#5C6370>■ <#9EA3AE>Precio: <#7FFF9E>Gratis ✔'
       - ''
-      - <#FFD54F>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#FFD54F>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS
@@ -553,7 +553,7 @@ EndMenu:
       - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#C9A8FF>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#C9A8FF>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -585,7 +585,7 @@ EndMenu:
       - ''
       - '<#5C6370>■ <#9EA3AE>Todo: <#E296F3>Personalizado y optimizado ✔'
       - ''
-      - <#E296F3>❖ ¡Click para <bold>EXPLORAR</bold>!
+      - <#E296F3>❖ ¡Clic para <bold>EXPLORAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -622,7 +622,7 @@ EndMenu:
       - '<#5C6370>■ <#9EA3AE>Tumbas: <#FF6B6B>No funcionan ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#FF7A8A>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#FF7A8A>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -657,7 +657,7 @@ EndMenu:
       - '<#5C6370>■ <#9EA3AE>Precio RTP: <#7FFF9E>Gratis ✔'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, protege tu zona <glyph:shield>'
       - ''
-      - <#A6F25B>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#A6F25B>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -694,7 +694,7 @@ EndMenu:
       - '<#5C6370>■ <#9EA3AE>Construir: <#FF6B6B>No permitido ✘'
       - '<#5C6370>■ <#9EA3AE>PvP: <#FFB347>Activado, ten cuidado <glyph:warning>'
       - ''
-      - <#C9A8FF>❖ ¡Click para <bold>ABRIR EL MENÚ</bold>!
+      - <#C9A8FF>❖ ¡Clic para <bold>ABRIR EL MENÚ</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -715,7 +715,7 @@ EndMenu:
       - '<#5C6370>■ <#9EA3AE>Reiniciable: <#FF6B6B>Sin reinicios ✘'
       - '<#5C6370>■ <#9EA3AE>Precio: <#7FFF9E>Gratis ✔'
       - ''
-      - <#FFD54F>❖ ¡Click para <bold>VIAJAR</bold>!
+      - <#FFD54F>❖ ¡Clic para <bold>VIAJAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ENCHANTS

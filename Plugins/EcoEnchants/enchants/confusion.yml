@@ -1,5 +1,5 @@
-display-name: "Confusion"
-description: "Gives a &a%placeholder%% &rchance to shuffle your opponents hotbar"
+display-name: "Confusión"
+description: "Da un &a%placeholder%% &rde probabilidad de desordenar la barra rápida de tu rival"
 placeholder: "2 * %level%"
 type: special
 

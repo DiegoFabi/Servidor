@@ -1,5 +1,5 @@
-display-name: "Haunting"
-description: "Dying spawns a harming cloud for &a%placeholder%&r seconds"
+display-name: "Embrujo"
+description: "Al morir creas una nube dañina durante &a%placeholder%&r segundos"
 placeholder: "1 + %level%"
 type: normal
 

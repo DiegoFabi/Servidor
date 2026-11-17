@@ -1,0 +1,68 @@
+messages:
+  prefix: "&#b4ff33&lEfectos&r &8» &r"
+  no-permission: "&cNo tienes permiso para hacer esto."
+  not-player: "&cEste comando solo lo puede usar un jugador."
+  invalid-command: "&cSubcomando desconocido."
+  reloaded: "Recargado en %time%ms."
+
+  cannot-afford: "&cNo te alcanza para esto. &fCoste: &a$$%cost%"
+  cannot-afford-type: "&cNo te alcanza para esto. &fCoste: &a%cost% %type%"
+  cannot-afford-price: "&cNo te alcanza para esto. &fPrecio: %price%"
+  on-cooldown: "&cEste efecto está en enfriamiento. &fFaltan: &a%seconds% segundos"
+  cannot-transmit: "&cAquí no puedes transmitir."
+
+  must-specify-lrcdb-id: "&cDebes indicar el ID de la configuración a descargar (ver &alrcdb.auxilor.io&c)."
+  lrcdb-import-error: "&cError al importar la configuración: &f%message%"
+  lrcdb-import-success: "&fSe importó &a%name%&f. Recarga el plugin para instalarlo."
+  lrcdb-export-error: "&cError al exportar la configuración: &f%message%"
+  lrcdb-export-success: "&fSe exportó &a%name%&f. Míralo en &alrcdb.auxilor.io&f o comparte su ID: &f%id%"
+
+  must-specify-plugin: "&cDebes indicar el plugin."
+  invalid-plugin: "&cNombre de plugin no válido."
+  must-specify-category: "&cDebes indicar la categoría."
+  invalid-category: "&cCategoría no válida."
+  must-specify-config-name: "&cDebes indicar el nombre de la configuración."
+  invalid-config-name: "&cNombre de configuración no válido."
+
+  must-specify-player: "&cDebes indicar el jugador."
+  invalid-player: "&cNombre de jugador no válido."
+
+  must-specify-slot: "&cDebes indicar la casilla."
+  invalid-slot: "&cCasilla &f%slot%&c no válida. Usa una casilla válida para in_slot, como &fmainhand&c, &foffhand&c, &farmor&c, &fany&c, números o varias separadas por comas."
+  empty-slot: "&cLa casilla &f%slot%&c de %player% está vacía."
+  item-data-header: "&aDatos del objeto de %player% en la casilla %slot%"
+
+  must-specify-point: "&cDebes indicar el punto."
+  invalid-point: "&cNombre de punto no válido."
+
+  must-specify-level-id: "&cDebes indicar un ID de nivel."
+  invalid-level-id: "&cID de nivel no válido."
+  must-have-item: "&cEse jugador debe tener un objeto en la mano."
+  item-level-xp-given: "&fSe añadieron &a%amount% &fde XP al objeto de &a%playername%&f para el nivel &a%level%&f."
+  item-level-given: "&fSe añadieron &a%amount% &fnivel(es) al objeto de &a%playername%&f para el nivel &a%level%&f."
+
+  must-specify-amount: "&cDebes indicar la cantidad."
+  invalid-amount: "&cCantidad no válida."
+
+  points-reset: "&fSe reiniciaron los &a%point% &fde &a%playername%&f."
+  points-given: "&fSe añadieron &a%amount% %point% &fa &a%playername%&f."
+  points-taken: "&fSe quitaron &a%amount% %point% &fa &a%playername%&f."
+  points-set: "&f&a%playername%&f ahora tiene &a%amount% %point%&f."
+  points-amount: "&6%playername% &rtiene &e%amount% &rde &a%point%&r."
+
+  points-taken-all: "&fSe quitaron &a%amount% %point% &fa todos los jugadores."
+  points-set-all: "&fTodos los jugadores tienen ahora &a%amount% %point%&f."
+  points-given-all: "&fSe añadieron &a%amount% %point% &fa todos los jugadores."
+  points-reset-all: "&fSe reiniciaron los &a%point% &fde todos los jugadores."
+
+  plugin-not-installed: "&cNo tienes este plugin instalado."
+
+  must-specify-dispatcher: "&cDebes indicar el dispatcher."
+  invalid-dispatcher: "&cDispatcher no válido."
+  must-specify-trigger: "&cDebes indicar el trigger."
+  triggered: "Se activó custom_%id%."
+
+  debug: "La información se registró en la consola del servidor."
+
+picked-up-price-item: "&f+%price%"
+infinity: "∞"

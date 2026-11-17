@@ -1,5 +1,5 @@
-display-name: "Dynamite"
-description: "Mines blocks in a &a%placeholder%x%placeholder%&r area"
+display-name: "Dinamita"
+description: "Mina bloques en un área de &a%placeholder%x%placeholder%"
 placeholder: "1 + %level% * 4"
 type: spell
 

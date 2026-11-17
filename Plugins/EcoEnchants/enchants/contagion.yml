@@ -1,5 +1,5 @@
-display-name: "Contagion"
-description: "Gives a &a%placeholder%%&r chance to spawn a cloud of poison around where your trident lands"
+display-name: "Contagio"
+description: "Da un &a%placeholder%%&r de probabilidad de crear una nube venenosa donde cae tu tridente"
 placeholder: "5 * %level%"
 type: normal
 

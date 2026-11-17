@@ -1,0 +1,59 @@
+# Idioma de EcoEnchants: español
+messages:
+  prefix: "&#C9A8FF&lEncantamientos &r&8» &r"
+  no-permission: "&cNo tienes permiso para hacer esto."
+  not-player: "&cEste comando solo lo puede usar un jugador."
+  invalid-command: "&cSubcomando desconocido."
+  reloaded: "Recargado en %time%ms. Se cargaron %count% encantamientos. &cSi añadiste encantamientos, vuelve a entrar o te expulsará; algunos cambios necesitan reiniciar el servidor."
+  invalid-player: "&cJugador no válido."
+  requires-player: "&cNecesita un jugador."
+  enabled-descriptions: "&fHas &aactivado &flas descripciones de encantamientos."
+  disabled-descriptions: "&fHas &cdesactivado &flas descripciones de encantamientos."
+  descriptions-disabled: "&cLas descripciones de encantamientos están desactivadas en este servidor."
+  not-found: "&cNo hay ningún encantamiento llamado: &f%name%."
+  missing-enchant: "&cDebes indicar un encantamiento."
+  gave-random-book: "&fSe dio a &a%player%&f un libro aleatorio (&r%enchantment%&f)."
+  no-enchantments-found: "&cNo se encontraron encantamientos."
+  invalid-levels: "&cEl nivel mínimo no puede ser mayor que el máximo."
+  invalid-enchantment: "&cEncantamiento no válido."
+  invalid-level: "&cNivel no válido."
+  invalid-amount: "&cCantidad no válida."
+  gave-book: "&fSe dieron a &a%player%&f %amount%x libro(s) (&r%enchantments%&f)."
+  added-enchant: "&fSe añadió &a%enchant%&f al objeto en mano de &a%player%&f."
+  removed-enchant: "&fSe quitó &a%enchant%&f del objeto en mano de &a%player%&f."
+
+
+all: "Todos"
+"yes": "&aSí"
+"no": "&cNo"
+no-conflicts: "Sin conflictos"
+all-conflicts: "Todos los demás encantamientos"
+no-required: "Sin requisitos"
+
+tradeable:
+  "true": "&aSí"
+  "false": "&cNo"
+
+enchantable:
+  "true": "&aSí"
+  "false": "&cNo"
+
+drag-and-drop:
+  "true": "&aSí"
+  "false": "&cNo"
+
+discoverable:
+  "true": "&aSí"
+  "false": "&cNo"
+  chests:
+    "true": "&aSí"
+    "false": "&cNo"
+  fishing:
+    "true": "&aSí"
+    "false": "&cNo"
+  mob-drops:
+    "true": "&aSí"
+    "false": "&cNo"
+  raids:
+    "true": "&aSí"
+    "false": "&cNo"

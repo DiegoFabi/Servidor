@@ -1,5 +1,5 @@
 display-name: "Aura"
-description: "Players within &a%radius%&r blocks of you take &a%reduction%%&r less damage"
+description: "Los jugadores a &a%radius%&r bloques de ti reciben un &a%reduction%%&r menos de daño"
 placeholders:
   reduction: "%level% * 10"
   radius: "3 + %level% * 2"

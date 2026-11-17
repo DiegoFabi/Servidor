@@ -1,5 +1,5 @@
-display-name: "Blackout"
-description: "Gives a &a%chance%%&r chance to give your opponent darkness for &a%seconds%&r seconds"
+display-name: "Apagón"
+description: "Da un &a%chance%%&r de probabilidad de dar oscuridad a tu rival durante &a%seconds%&r segundos"
 placeholders:
   chance: "6 + %level%"
   seconds: "4 + ceil(%level% / 2)"

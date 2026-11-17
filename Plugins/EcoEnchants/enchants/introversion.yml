@@ -1,5 +1,5 @@
-display-name: "Introversion"
-description: "Gives a &a%placeholder%&r bonus to melee damage against players"
+display-name: "Introversión"
+description: "Da &a%placeholder%&r de daño cuerpo a cuerpo extra contra jugadores"
 placeholder: "2.5 * %level%"
 type: normal
 

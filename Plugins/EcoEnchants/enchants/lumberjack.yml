@@ -1,5 +1,5 @@
-display-name: "Lumberjack"
-description: "Chop down up to &a%placeholder%&r blocks of a tree at once"
+display-name: "Leñador"
+description: "Tala hasta &a%placeholder%&r bloques de un árbol a la vez"
 placeholder: "4 * %level%"
 type: normal
 
