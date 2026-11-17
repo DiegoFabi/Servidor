@@ -20,3 +20,12 @@ my_test_variable3:
     - "no"
     - "true"
     - "false"
+# Nombre (con color) de la clase elegida en el menú de clases
+clase_nombre:
+  type: string
+  default: '<#9EA3AE>Ninguna'
+
+# Estado de la bossbar de misiones mostrado en Más Opciones
+bossbar_misiones:
+  type: string
+  default: '<#7FFF9E>Activado'

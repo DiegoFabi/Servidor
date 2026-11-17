@@ -1,4 +1,8 @@
-# Selección de clases (Lemon Class Selection GUI) - aún sin funcionalidad.
+# Selección de clases (Lemon Class Selection GUI). 5 clases, una por marco de la textura:
+#   Guardián, Erudito, Explorador, Sanador y Cazafortunas (ids internos de los menús sin cambiar).
+# Elegir: quita los modificadores "clase" de AuraSkills, pone los nuevos, guarda la clase
+# y el cooldown de 7 días en TypeWriter (clase_actual / clase_cooldown) y lanza la
+# cinemática con /claseelegida <jugador>.
 # Abrir: /coremenu menuClaseGuerrero
 clases_ver_guerrero:
   Conditions: []
@@ -11,11 +15,23 @@ clases_confirmar_guerrero:
   - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
   - 'command{c="core-menu menuConfirmarGuerrero {caster_name}";runas=console} @Self'
 clases_elegir_guerrero:
-  Conditions: []
+  Conditions:
+  - 'comparator{v1="%typewriter_cK6JWeu2N6ZMZkE%";v2="1"} falseElse clases_en_espera'
   Mechanics:
-  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
   - 'closeinventory{} @Self'
-  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#FFCC00>Guerrero <#C9CDD6>estará disponible muy pronto."} @Self'
+  - 'command{c="skills modifier remove {caster_name} crit_chance clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} health clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} luck clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} regeneration clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} speed clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} toughness clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} wisdom clase true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} health clase 10 true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} toughness clase 10 true";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_actual 1 {caster_name}";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_cooldown 1 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=clase_nombre;va="<#FFCC00>Guardián"} @Self'
+  - 'command{c="claseelegida {caster_name}";runas=console} @Self'
 clases_ver_mago:
   Conditions: []
   Mechanics:
@@ -27,11 +43,22 @@ clases_confirmar_mago:
   - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
   - 'command{c="core-menu menuConfirmarMago {caster_name}";runas=console} @Self'
 clases_elegir_mago:
-  Conditions: []
+  Conditions:
+  - 'comparator{v1="%typewriter_cK6JWeu2N6ZMZkE%";v2="1"} falseElse clases_en_espera'
   Mechanics:
-  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
   - 'closeinventory{} @Self'
-  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#7FB2FF>Mago <#C9CDD6>estará disponible muy pronto."} @Self'
+  - 'command{c="skills modifier remove {caster_name} crit_chance clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} health clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} luck clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} regeneration clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} speed clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} toughness clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} wisdom clase true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} wisdom clase 15 true";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_actual 2 {caster_name}";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_cooldown 1 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=clase_nombre;va="<#7FB2FF>Erudito"} @Self'
+  - 'command{c="claseelegida {caster_name}";runas=console} @Self'
 clases_ver_arquero:
   Conditions: []
   Mechanics:
@@ -43,11 +70,23 @@ clases_confirmar_arquero:
   - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
   - 'command{c="core-menu menuConfirmarArquero {caster_name}";runas=console} @Self'
 clases_elegir_arquero:
-  Conditions: []
+  Conditions:
+  - 'comparator{v1="%typewriter_cK6JWeu2N6ZMZkE%";v2="1"} falseElse clases_en_espera'
   Mechanics:
-  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
   - 'closeinventory{} @Self'
-  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#7FFF9E>Arquero <#C9CDD6>estará disponible muy pronto."} @Self'
+  - 'command{c="skills modifier remove {caster_name} crit_chance clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} health clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} luck clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} regeneration clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} speed clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} toughness clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} wisdom clase true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} speed clase 10 true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} luck clase 5 true";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_actual 3 {caster_name}";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_cooldown 1 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=clase_nombre;va="<#7FFF9E>Explorador"} @Self'
+  - 'command{c="claseelegida {caster_name}";runas=console} @Self'
 clases_ver_clerigo:
   Conditions: []
   Mechanics:
@@ -59,11 +98,23 @@ clases_confirmar_clerigo:
   - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
   - 'command{c="core-menu menuConfirmarClerigo {caster_name}";runas=console} @Self'
 clases_elegir_clerigo:
-  Conditions: []
+  Conditions:
+  - 'comparator{v1="%typewriter_cK6JWeu2N6ZMZkE%";v2="1"} falseElse clases_en_espera'
   Mechanics:
-  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
   - 'closeinventory{} @Self'
-  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#FFE7A3>Clérigo <#C9CDD6>estará disponible muy pronto."} @Self'
+  - 'command{c="skills modifier remove {caster_name} crit_chance clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} health clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} luck clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} regeneration clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} speed clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} toughness clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} wisdom clase true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} regeneration clase 15 true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} health clase 5 true";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_actual 4 {caster_name}";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_cooldown 1 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=clase_nombre;va="<#FFE7A3>Sanador"} @Self'
+  - 'command{c="claseelegida {caster_name}";runas=console} @Self'
 clases_ver_picaro:
   Conditions: []
   Mechanics:
@@ -75,13 +126,30 @@ clases_confirmar_picaro:
   - 'playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self'
   - 'command{c="core-menu menuConfirmarPicaro {caster_name}";runas=console} @Self'
 clases_elegir_picaro:
-  Conditions: []
+  Conditions:
+  - 'comparator{v1="%typewriter_cK6JWeu2N6ZMZkE%";v2="1"} falseElse clases_en_espera'
   Mechanics:
-  - 'playsound{sound="minecraft:block.enchantment_table.use";volume=1;pitch=0.5} @Self'
   - 'closeinventory{} @Self'
-  - 'message{m="<dark_gray>┃ <gold><bold>Clases</bold> <dark_gray>» <#C9CDD6>La clase <#C9A8FF>Pícaro <#C9CDD6>estará disponible muy pronto."} @Self'
+  - 'command{c="skills modifier remove {caster_name} crit_chance clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} health clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} luck clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} regeneration clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} speed clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} toughness clase true";runas=console} @Self'
+  - 'command{c="skills modifier remove {caster_name} wisdom clase true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} luck clase 15 true";runas=console} @Self'
+  - 'command{c="skills modifier add {caster_name} crit_chance clase 8 true";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_actual 5 {caster_name}";runas=console} @Self'
+  - 'command{c="typewriter facts set clase_cooldown 1 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=clase_nombre;va="<#C9A8FF>Cazafortunas"} @Self'
+  - 'command{c="claseelegida {caster_name}";runas=console} @Self'
 clases_cerrar:
   Conditions: []
   Mechanics:
   - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=2} @Self'
   - 'closeinventory{} @Self'
+clases_en_espera:
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+  - 'message{m="<dark_gray>┃ <#FFD36B><bold>Clases</bold> <dark_gray>» <#C9CDD6>Ya cambiaste de clase esta semana. <#9EA3AE>Vuelve cuando pasen 7 días desde tu último cambio."} @Self'

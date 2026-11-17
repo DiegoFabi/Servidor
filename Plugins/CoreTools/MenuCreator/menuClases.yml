@@ -1,7 +1,5 @@
-# Selección de clases (Lemon Class Selection GUI, adaptado de Oraxen a Nexo).
-# Fondos: Nexo/pack/external_packs/ClassSelection (U+3290 = desplazamiento -64, U+3291 = selección, U+3292-3296 = confirmación).
-# Iconos: Nexo/items/lemon_class_selection.yml. Acciones: Scripts/menus_menuClases.yml (aún sin funcionalidad).
-# Orden del carrusel: Guerrero > Mago > Arquero > Clérigo > Pícaro. Abrir: /coremenu menuClaseGuerrero
+# Menú de clases (textura Lemon Class Selection de Nexo). 5 clases, una por marco:
+# Guardián, Erudito, Explorador, Sanador y Cazafortunas. Acciones en Scripts/menus_menuClases.yml
 menuClaseGuerrero:
   permission: ''
   bottom_inventory: false
@@ -26,19 +24,25 @@ menuClaseGuerrero:
       - 32
       source: nexo
       id: clase_invisible
-      name: <gradient:#FFCC00:#FFFFFF><bold>Guerrero</bold></gradient>
-      lore: &id001
-      - <#FFCC00>Su espíritu está templado por el fuego
-      - <#FFCC00>y su ira se convierte en pura
-      - <#FFCC00>violencia en combate. El guerrero es
-      - <#FFCC00>una máquina de guerra imparable,
-      - <#FFCC00>resistente a la muerte y sin miedo
-      - <#FFCC00>ante ella.
+      name: <gradient:#FFCC00:#FFFFFF><bold>Guardián</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <#9EA3AE><i>Acumula furia al lanzar habilidades,
-      - <#9EA3AE><i>aumentando temporalmente su daño base.
+      - '<white>Un muro viviente: recibe golpes'
+      - <white>que tumbarían a cualquiera y
+      - <white>sigue en pie para proteger a los suyos.
       - ''
-      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      - <#FFCC00>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Vida'
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Dureza (menos daño recibido)'
+      - ''
+      - <#FFCC00>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si te gusta pelear de cerca o proteger a tus amigos.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#FFCC00>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -48,8 +52,25 @@ menuClaseGuerrero:
       - 22
       source: nexo
       id: clase_guerrero
-      name: <gradient:#FFCC00:#FFFFFF><bold>Guerrero</bold></gradient>
-      lore: *id001
+      name: <gradient:#FFCC00:#FFFFFF><bold>Guardián</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - '<white>Un muro viviente: recibe golpes'
+      - <white>que tumbarían a cualquiera y
+      - <white>sigue en pie para proteger a los suyos.
+      - ''
+      - <#FFCC00>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Vida'
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Dureza (menos daño recibido)'
+      - ''
+      - <#FFCC00>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si te gusta pelear de cerca o proteger a tus amigos.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#FFCC00>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -59,8 +80,8 @@ menuClaseGuerrero:
       - 19
       source: nexo
       id: clase_picaro_sombra
-      name: <#9494B8>Pícaro
-      lore: &id002
+      name: <#9494B8>Cazafortunas
+      lore: &id001
       - <#9EA3AE>Clic para ver esta clase
       flags:
       - HIDE_ATTRIBUTES
@@ -83,8 +104,8 @@ menuClaseGuerrero:
       - 20
       source: nexo
       id: clase_flecha_siguiente
-      name: <#9494B8>« Pícaro
-      lore: *id002
+      name: <#9494B8>« Cazafortunas
+      lore: *id001
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -106,8 +127,8 @@ menuClaseGuerrero:
       - 28
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Pícaro
-      lore: *id002
+      name: <#9494B8>Cazafortunas
+      lore: *id001
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -129,8 +150,8 @@ menuClaseGuerrero:
       - 24
       source: nexo
       id: clase_flecha_anterior
-      name: <#9494B8>Mago »
-      lore: *id002
+      name: <#9494B8>Erudito »
+      lore: *id001
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -152,8 +173,8 @@ menuClaseGuerrero:
       - 25
       source: nexo
       id: clase_mago_sombra
-      name: <#9494B8>Mago
-      lore: *id002
+      name: <#9494B8>Erudito
+      lore: *id001
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -175,8 +196,8 @@ menuClaseGuerrero:
       - 34
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Mago
-      lore: *id002
+      name: <#9494B8>Erudito
+      lore: *id001
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -258,17 +279,23 @@ menuConfirmarGuerrero:
       - 25
       source: nexo
       id: clase_guerrero
-      name: <gradient:#FFCC00:#FFFFFF><bold>Guerrero</bold></gradient>
+      name: <gradient:#FFCC00:#FFFFFF><bold>Guardián</bold></gradient>
       lore:
-      - <#FFCC00>Su espíritu está templado por el fuego
-      - <#FFCC00>y su ira se convierte en pura
-      - <#FFCC00>violencia en combate. El guerrero es
-      - <#FFCC00>una máquina de guerra imparable,
-      - <#FFCC00>resistente a la muerte y sin miedo
-      - <#FFCC00>ante ella.
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <#9EA3AE><i>Acumula furia al lanzar habilidades,
-      - <#9EA3AE><i>aumentando temporalmente su daño base.
+      - '<white>Un muro viviente: recibe golpes'
+      - <white>que tumbarían a cualquiera y
+      - <white>sigue en pie para proteger a los suyos.
+      - ''
+      - <#FFCC00>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Vida'
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Dureza (menos daño recibido)'
+      - ''
+      - <#FFCC00>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si te gusta pelear de cerca o proteger a tus amigos.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -306,11 +333,13 @@ menuConfirmarGuerrero:
       - 53
       source: nexo
       id: clase_invisible
-      name: <#7FFF9E>Confirmar
+      name: <#7FFF9E><bold>Confirmar</bold>
       lore:
-      - <#9EA3AE>Elegir la clase <#FFCC00>Guerrero
+      - <white>Elegir la clase <#FFCC00>Guardián
       - ''
-      - <#FFB347>Próximamente
+      - <#FFB347>⚠ No podrás cambiarla durante 7 días.
+      - ''
+      - <#7FFF9E>✥ ¡Clic para <bold>CONFIRMAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -350,15 +379,25 @@ menuClaseMago:
       - 32
       source: nexo
       id: clase_invisible
-      name: <gradient:#7FB2FF:#FFFFFF><bold>Mago</bold></gradient>
-      lore: &id003
-      - <#7FB2FF>Aprendió las artes mágicas estudiando
-      - <#7FB2FF>el cosmos y ahora puede moldear el
-      - <#7FB2FF>flujo de maná que impregna la tierra.
-      - <#7FB2FF>El mago domina lo desconocido con el
-      - <#7FB2FF>conocimiento.
+      name: <gradient:#7FB2FF:#FFFFFF><bold>Erudito</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      - <white>Estudia cada runa y cada libro.
+      - <white>Su mente guarda más maná y
+      - <white>aprende más rápido que nadie.
+      - ''
+      - <#7FB2FF>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Sabiduría (más maná máximo)'
+      - ' <#7FFF9E>✔ <#9EEBA8>Más experiencia en tus habilidades'
+      - ''
+      - <#7FB2FF>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si usas items mágicos (gastan maná) o quieres subir de nivel rápido.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#7FB2FF>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -368,8 +407,25 @@ menuClaseMago:
       - 22
       source: nexo
       id: clase_mago
-      name: <gradient:#7FB2FF:#FFFFFF><bold>Mago</bold></gradient>
-      lore: *id003
+      name: <gradient:#7FB2FF:#FFFFFF><bold>Erudito</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - <white>Estudia cada runa y cada libro.
+      - <white>Su mente guarda más maná y
+      - <white>aprende más rápido que nadie.
+      - ''
+      - <#7FB2FF>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Sabiduría (más maná máximo)'
+      - ' <#7FFF9E>✔ <#9EEBA8>Más experiencia en tus habilidades'
+      - ''
+      - <#7FB2FF>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si usas items mágicos (gastan maná) o quieres subir de nivel rápido.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#7FB2FF>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -379,8 +435,8 @@ menuClaseMago:
       - 19
       source: nexo
       id: clase_guerrero_sombra
-      name: <#9494B8>Guerrero
-      lore: &id004
+      name: <#9494B8>Guardián
+      lore: &id002
       - <#9EA3AE>Clic para ver esta clase
       flags:
       - HIDE_ATTRIBUTES
@@ -403,8 +459,8 @@ menuClaseMago:
       - 20
       source: nexo
       id: clase_flecha_siguiente
-      name: <#9494B8>« Guerrero
-      lore: *id004
+      name: <#9494B8>« Guardián
+      lore: *id002
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -426,8 +482,8 @@ menuClaseMago:
       - 28
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Guerrero
-      lore: *id004
+      name: <#9494B8>Guardián
+      lore: *id002
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -449,8 +505,8 @@ menuClaseMago:
       - 24
       source: nexo
       id: clase_flecha_anterior
-      name: <#9494B8>Arquero »
-      lore: *id004
+      name: <#9494B8>Explorador »
+      lore: *id002
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -472,8 +528,8 @@ menuClaseMago:
       - 25
       source: nexo
       id: clase_arquero_sombra
-      name: <#9494B8>Arquero
-      lore: *id004
+      name: <#9494B8>Explorador
+      lore: *id002
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -495,8 +551,8 @@ menuClaseMago:
       - 34
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Arquero
-      lore: *id004
+      name: <#9494B8>Explorador
+      lore: *id002
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -578,13 +634,23 @@ menuConfirmarMago:
       - 25
       source: nexo
       id: clase_mago
-      name: <gradient:#7FB2FF:#FFFFFF><bold>Mago</bold></gradient>
+      name: <gradient:#7FB2FF:#FFFFFF><bold>Erudito</bold></gradient>
       lore:
-      - <#7FB2FF>Aprendió las artes mágicas estudiando
-      - <#7FB2FF>el cosmos y ahora puede moldear el
-      - <#7FB2FF>flujo de maná que impregna la tierra.
-      - <#7FB2FF>El mago domina lo desconocido con el
-      - <#7FB2FF>conocimiento.
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - <white>Estudia cada runa y cada libro.
+      - <white>Su mente guarda más maná y
+      - <white>aprende más rápido que nadie.
+      - ''
+      - <#7FB2FF>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Sabiduría (más maná máximo)'
+      - ' <#7FFF9E>✔ <#9EEBA8>Más experiencia en tus habilidades'
+      - ''
+      - <#7FB2FF>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si usas items mágicos (gastan maná) o quieres subir de nivel rápido.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -622,11 +688,13 @@ menuConfirmarMago:
       - 53
       source: nexo
       id: clase_invisible
-      name: <#7FFF9E>Confirmar
+      name: <#7FFF9E><bold>Confirmar</bold>
       lore:
-      - <#9EA3AE>Elegir la clase <#7FB2FF>Mago
+      - <white>Elegir la clase <#7FB2FF>Erudito
       - ''
-      - <#FFB347>Próximamente
+      - <#FFB347>⚠ No podrás cambiarla durante 7 días.
+      - ''
+      - <#7FFF9E>✥ ¡Clic para <bold>CONFIRMAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -666,15 +734,25 @@ menuClaseArquero:
       - 32
       source: nexo
       id: clase_invisible
-      name: <gradient:#7FFF9E:#FFFFFF><bold>Arquero</bold></gradient>
-      lore: &id005
-      - <#7FFF9E>Creció entre lobos y es un experto en
-      - <#7FFF9E>la caza salvaje. Maestro de las armas
-      - <#7FFF9E>a distancia y las trampas, se mueve
-      - <#7FFF9E>con agilidad disparando flechas como
-      - <#7FFF9E>relámpagos.
+      name: <gradient:#7FFF9E:#FFFFFF><bold>Explorador</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      - '<white>Siempre de viaje: conoce cada'
+      - <white>camino y llega antes que
+      - <white>cualquiera a donde quiera.
+      - ''
+      - <#7FFF9E>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Velocidad'
+      - ' <#7FFF9E>✔ <#9EEBA8>+5 de Suerte'
+      - ''
+      - <#7FFF9E>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si te gusta viajar, explorar o huir del peligro.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#7FFF9E>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -684,8 +762,25 @@ menuClaseArquero:
       - 22
       source: nexo
       id: clase_arquero
-      name: <gradient:#7FFF9E:#FFFFFF><bold>Arquero</bold></gradient>
-      lore: *id005
+      name: <gradient:#7FFF9E:#FFFFFF><bold>Explorador</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - '<white>Siempre de viaje: conoce cada'
+      - <white>camino y llega antes que
+      - <white>cualquiera a donde quiera.
+      - ''
+      - <#7FFF9E>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Velocidad'
+      - ' <#7FFF9E>✔ <#9EEBA8>+5 de Suerte'
+      - ''
+      - <#7FFF9E>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si te gusta viajar, explorar o huir del peligro.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#7FFF9E>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -695,8 +790,8 @@ menuClaseArquero:
       - 19
       source: nexo
       id: clase_mago_sombra
-      name: <#9494B8>Mago
-      lore: &id006
+      name: <#9494B8>Erudito
+      lore: &id003
       - <#9EA3AE>Clic para ver esta clase
       flags:
       - HIDE_ATTRIBUTES
@@ -719,8 +814,8 @@ menuClaseArquero:
       - 20
       source: nexo
       id: clase_flecha_siguiente
-      name: <#9494B8>« Mago
-      lore: *id006
+      name: <#9494B8>« Erudito
+      lore: *id003
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -742,8 +837,8 @@ menuClaseArquero:
       - 28
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Mago
-      lore: *id006
+      name: <#9494B8>Erudito
+      lore: *id003
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -765,8 +860,8 @@ menuClaseArquero:
       - 24
       source: nexo
       id: clase_flecha_anterior
-      name: <#9494B8>Clérigo »
-      lore: *id006
+      name: <#9494B8>Sanador »
+      lore: *id003
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -788,8 +883,8 @@ menuClaseArquero:
       - 25
       source: nexo
       id: clase_clerigo_sombra
-      name: <#9494B8>Clérigo
-      lore: *id006
+      name: <#9494B8>Sanador
+      lore: *id003
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -811,8 +906,8 @@ menuClaseArquero:
       - 34
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Clérigo
-      lore: *id006
+      name: <#9494B8>Sanador
+      lore: *id003
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -894,13 +989,23 @@ menuConfirmarArquero:
       - 25
       source: nexo
       id: clase_arquero
-      name: <gradient:#7FFF9E:#FFFFFF><bold>Arquero</bold></gradient>
+      name: <gradient:#7FFF9E:#FFFFFF><bold>Explorador</bold></gradient>
       lore:
-      - <#7FFF9E>Creció entre lobos y es un experto en
-      - <#7FFF9E>la caza salvaje. Maestro de las armas
-      - <#7FFF9E>a distancia y las trampas, se mueve
-      - <#7FFF9E>con agilidad disparando flechas como
-      - <#7FFF9E>relámpagos.
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - '<white>Siempre de viaje: conoce cada'
+      - <white>camino y llega antes que
+      - <white>cualquiera a donde quiera.
+      - ''
+      - <#7FFF9E>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+10 de Velocidad'
+      - ' <#7FFF9E>✔ <#9EEBA8>+5 de Suerte'
+      - ''
+      - <#7FFF9E>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si te gusta viajar, explorar o huir del peligro.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -938,11 +1043,13 @@ menuConfirmarArquero:
       - 53
       source: nexo
       id: clase_invisible
-      name: <#7FFF9E>Confirmar
+      name: <#7FFF9E><bold>Confirmar</bold>
       lore:
-      - <#9EA3AE>Elegir la clase <#7FFF9E>Arquero
+      - <white>Elegir la clase <#7FFF9E>Explorador
       - ''
-      - <#FFB347>Próximamente
+      - <#FFB347>⚠ No podrás cambiarla durante 7 días.
+      - ''
+      - <#7FFF9E>✥ ¡Clic para <bold>CONFIRMAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -982,16 +1089,25 @@ menuClaseClerigo:
       - 32
       source: nexo
       id: clase_invisible
-      name: <gradient:#FFE7A3:#FFFFFF><bold>Clérigo</bold></gradient>
-      lore: &id007
-      - <#FFE7A3>Una fe, un dios ante sus ojos. El
-      - <#FFE7A3>clérigo usa las palabras de su fe para
-      - <#FFE7A3>luchar y proteger.
+      name: <gradient:#FFE7A3:#FFFFFF><bold>Sanador</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <#9EA3AE><i>«Bendice esta arma para purificarlos en
-      - <#9EA3AE><i>tu nombre».
+      - <white>Su cuerpo se recupera de casi
+      - <white>todo. Las heridas le duran poco
+      - <white>y el maná vuelve enseguida.
       - ''
-      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      - <#FFE7A3>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Regeneración (vida y maná)'
+      - ' <#7FFF9E>✔ <#9EEBA8>+5 de Vida'
+      - ''
+      - <#FFE7A3>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si quieres aguantar aventuras largas sin comer tanto.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#FFE7A3>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1001,8 +1117,25 @@ menuClaseClerigo:
       - 22
       source: nexo
       id: clase_clerigo
-      name: <gradient:#FFE7A3:#FFFFFF><bold>Clérigo</bold></gradient>
-      lore: *id007
+      name: <gradient:#FFE7A3:#FFFFFF><bold>Sanador</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - <white>Su cuerpo se recupera de casi
+      - <white>todo. Las heridas le duran poco
+      - <white>y el maná vuelve enseguida.
+      - ''
+      - <#FFE7A3>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Regeneración (vida y maná)'
+      - ' <#7FFF9E>✔ <#9EEBA8>+5 de Vida'
+      - ''
+      - <#FFE7A3>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si quieres aguantar aventuras largas sin comer tanto.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#FFE7A3>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1012,8 +1145,8 @@ menuClaseClerigo:
       - 19
       source: nexo
       id: clase_arquero_sombra
-      name: <#9494B8>Arquero
-      lore: &id008
+      name: <#9494B8>Explorador
+      lore: &id004
       - <#9EA3AE>Clic para ver esta clase
       flags:
       - HIDE_ATTRIBUTES
@@ -1036,8 +1169,8 @@ menuClaseClerigo:
       - 20
       source: nexo
       id: clase_flecha_siguiente
-      name: <#9494B8>« Arquero
-      lore: *id008
+      name: <#9494B8>« Explorador
+      lore: *id004
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1059,8 +1192,8 @@ menuClaseClerigo:
       - 28
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Arquero
-      lore: *id008
+      name: <#9494B8>Explorador
+      lore: *id004
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1082,8 +1215,8 @@ menuClaseClerigo:
       - 24
       source: nexo
       id: clase_flecha_anterior
-      name: <#9494B8>Pícaro »
-      lore: *id008
+      name: <#9494B8>Cazafortunas »
+      lore: *id004
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1105,8 +1238,8 @@ menuClaseClerigo:
       - 25
       source: nexo
       id: clase_picaro_sombra
-      name: <#9494B8>Pícaro
-      lore: *id008
+      name: <#9494B8>Cazafortunas
+      lore: *id004
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1128,8 +1261,8 @@ menuClaseClerigo:
       - 34
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Pícaro
-      lore: *id008
+      name: <#9494B8>Cazafortunas
+      lore: *id004
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1211,14 +1344,23 @@ menuConfirmarClerigo:
       - 25
       source: nexo
       id: clase_clerigo
-      name: <gradient:#FFE7A3:#FFFFFF><bold>Clérigo</bold></gradient>
+      name: <gradient:#FFE7A3:#FFFFFF><bold>Sanador</bold></gradient>
       lore:
-      - <#FFE7A3>Una fe, un dios ante sus ojos. El
-      - <#FFE7A3>clérigo usa las palabras de su fe para
-      - <#FFE7A3>luchar y proteger.
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <#9EA3AE><i>«Bendice esta arma para purificarlos en
-      - <#9EA3AE><i>tu nombre».
+      - <white>Su cuerpo se recupera de casi
+      - <white>todo. Las heridas le duran poco
+      - <white>y el maná vuelve enseguida.
+      - ''
+      - <#FFE7A3>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Regeneración (vida y maná)'
+      - ' <#7FFF9E>✔ <#9EEBA8>+5 de Vida'
+      - ''
+      - <#FFE7A3>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si quieres aguantar aventuras largas sin comer tanto.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1256,11 +1398,13 @@ menuConfirmarClerigo:
       - 53
       source: nexo
       id: clase_invisible
-      name: <#7FFF9E>Confirmar
+      name: <#7FFF9E><bold>Confirmar</bold>
       lore:
-      - <#9EA3AE>Elegir la clase <#FFE7A3>Clérigo
+      - <white>Elegir la clase <#FFE7A3>Sanador
       - ''
-      - <#FFB347>Próximamente
+      - <#FFB347>⚠ No podrás cambiarla durante 7 días.
+      - ''
+      - <#7FFF9E>✥ ¡Clic para <bold>CONFIRMAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1300,16 +1444,25 @@ menuClasePicaro:
       - 32
       source: nexo
       id: clase_invisible
-      name: <gradient:#C9A8FF:#FFFFFF><bold>Pícaro</bold></gradient>
-      lore: &id009
-      - <#C9A8FF>Se mueve entre las sombras para
-      - <#C9A8FF>ejecutar asaltos rápidos y letales.
-      - <#C9A8FF>Sus armas son una extensión de su
-      - <#C9A8FF>cuerpo y vive para la venganza. El
-      - <#C9A8FF>pícaro elimina a quien se cruce en su
-      - <#C9A8FF>camino.
+      name: <gradient:#C9A8FF:#FFFFFF><bold>Cazafortunas</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
       - ''
-      - <white><glyph:raton_izq> <#9EA3AE>Pulsa <#7FFF9E>Siguiente <#9EA3AE>para confirmar
+      - <white>Tiene buen ojo para lo valioso
+      - <white>y mejor puntería para los puntos
+      - <white>débiles de sus enemigos.
+      - ''
+      - <#C9A8FF>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Suerte (más botín)'
+      - ' <#7FFF9E>✔ <#9EEBA8>+8% de Probabilidad de crítico'
+      - ''
+      - <#C9A8FF>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si buscas riquezas al minar y matar, y golpes fuertes.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#C9A8FF>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1319,8 +1472,25 @@ menuClasePicaro:
       - 22
       source: nexo
       id: clase_picaro
-      name: <gradient:#C9A8FF:#FFFFFF><bold>Pícaro</bold></gradient>
-      lore: *id009
+      name: <gradient:#C9A8FF:#FFFFFF><bold>Cazafortunas</bold></gradient>
+      lore:
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - <white>Tiene buen ojo para lo valioso
+      - <white>y mejor puntería para los puntos
+      - <white>débiles de sus enemigos.
+      - ''
+      - <#C9A8FF>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Suerte (más botín)'
+      - ' <#7FFF9E>✔ <#9EEBA8>+8% de Probabilidad de crítico'
+      - ''
+      - <#C9A8FF>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si buscas riquezas al minar y matar, y golpes fuertes.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
+      - ''
+      - <#C9A8FF>✥ ¡Clic en <bold>SIGUIENTE</bold> para elegirla!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1330,8 +1500,8 @@ menuClasePicaro:
       - 19
       source: nexo
       id: clase_clerigo_sombra
-      name: <#9494B8>Clérigo
-      lore: &id010
+      name: <#9494B8>Sanador
+      lore: &id005
       - <#9EA3AE>Clic para ver esta clase
       flags:
       - HIDE_ATTRIBUTES
@@ -1354,8 +1524,8 @@ menuClasePicaro:
       - 20
       source: nexo
       id: clase_flecha_siguiente
-      name: <#9494B8>« Clérigo
-      lore: *id010
+      name: <#9494B8>« Sanador
+      lore: *id005
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1377,8 +1547,8 @@ menuClasePicaro:
       - 28
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Clérigo
-      lore: *id010
+      name: <#9494B8>Sanador
+      lore: *id005
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1400,8 +1570,8 @@ menuClasePicaro:
       - 24
       source: nexo
       id: clase_flecha_anterior
-      name: <#9494B8>Guerrero »
-      lore: *id010
+      name: <#9494B8>Guardián »
+      lore: *id005
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1423,8 +1593,8 @@ menuClasePicaro:
       - 25
       source: nexo
       id: clase_guerrero_sombra
-      name: <#9494B8>Guerrero
-      lore: *id010
+      name: <#9494B8>Guardián
+      lore: *id005
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1446,8 +1616,8 @@ menuClasePicaro:
       - 34
       source: nexo
       id: clase_invisible
-      name: <#9494B8>Guerrero
-      lore: *id010
+      name: <#9494B8>Guardián
+      lore: *id005
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1529,14 +1699,23 @@ menuConfirmarPicaro:
       - 25
       source: nexo
       id: clase_picaro
-      name: <gradient:#C9A8FF:#FFFFFF><bold>Pícaro</bold></gradient>
+      name: <gradient:#C9A8FF:#FFFFFF><bold>Cazafortunas</bold></gradient>
       lore:
-      - <#C9A8FF>Se mueve entre las sombras para
-      - <#C9A8FF>ejecutar asaltos rápidos y letales.
-      - <#C9A8FF>Sus armas son una extensión de su
-      - <#C9A8FF>cuerpo y vive para la venganza. El
-      - <#C9A8FF>pícaro elimina a quien se cruce en su
-      - <#C9A8FF>camino.
+      - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
+      - ''
+      - <white>Tiene buen ojo para lo valioso
+      - <white>y mejor puntería para los puntos
+      - <white>débiles de sus enemigos.
+      - ''
+      - <#C9A8FF>✦ <white>Ventajas
+      - ' <#7FFF9E>✔ <#9EEBA8>+15 de Suerte (más botín)'
+      - ' <#7FFF9E>✔ <#9EEBA8>+8% de Probabilidad de crítico'
+      - ''
+      - <#C9A8FF>✦ <white>¿Para quién?
+      - ' <#C9CDD6>Si buscas riquezas al minar y matar, y golpes fuertes.'
+      - ''
+      - <#7C8291>Solo puedes cambiar de clase 1 vez por semana.
+      - '<white>Tu clase actual: %coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
@@ -1574,11 +1753,13 @@ menuConfirmarPicaro:
       - 53
       source: nexo
       id: clase_invisible
-      name: <#7FFF9E>Confirmar
+      name: <#7FFF9E><bold>Confirmar</bold>
       lore:
-      - <#9EA3AE>Elegir la clase <#C9A8FF>Pícaro
+      - <white>Elegir la clase <#C9A8FF>Cazafortunas
       - ''
-      - <#FFB347>Próximamente
+      - <#FFB347>⚠ No podrás cambiarla durante 7 días.
+      - ''
+      - <#7FFF9E>✥ ¡Clic para <bold>CONFIRMAR</bold>!
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP

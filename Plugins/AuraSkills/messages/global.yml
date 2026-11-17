@@ -9,8 +9,8 @@ abilities:
   alchemist:
     lore: "<green>(+{duration})"
 action_bar:
-  # Vida • Sed (Skript servidor/sed.sk vía TypeWriter) • Maná. Solo símbolos vanilla.
-  idle: "{{action_bar.hp_display}}  <#3A3F4B>|  <#4FC3F7>≈ <#CFEFFF>%typewriter_7dlWnPc7qOgTGUt%<#7C8291>/20  <#3A3F4B>|  {{action_bar.mana_display}}"
+  # Vida • Saturación (PlaceholderAPI, expansión Player) • Maná. Solo símbolos vanilla.
+  idle: "{{action_bar.hp_display}}  <#3A3F4B>|  <#FFB347>♨ <#FFE2C2>%player_saturation%  <#3A3F4B>|  {{action_bar.mana_display}}"
   hp_display: "<#FF5C6C>❤ <#FFD1D6>{hp}<#7C8291>/{max_hp}"
   mana_display: "<#A78BFA>✦ <#E4DBFF>{mana}<#7C8291>/{max_mana}"
   xp: "{{action_bar.hp_display}}  <#3A3F4B>|  <#FFC857>+{xp_gained} {skill} <#7C8291>({current_xp}/{level_xp})  <#3A3F4B>|  {{action_bar.mana_display}}"
