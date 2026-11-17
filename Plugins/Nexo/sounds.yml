@@ -29,6 +29,12 @@ sounds:
   stream: true
   volume: 1.0
   pitch: 1.0
+- id: nexo:music.ocarina
+  # Ocarina. OGG Vorbis estéreo 32 kHz ~44 kbps: 845 KB (el MP3 pesaba 2,5 MB). 2:35 min.
+  sound: nexo:music/ocarina.ogg
+  stream: true
+  volume: 1.0
+  pitch: 1.0
 - id: nexo:music.talking
   sound: nexo:music/talking.ogg
   stream: true
