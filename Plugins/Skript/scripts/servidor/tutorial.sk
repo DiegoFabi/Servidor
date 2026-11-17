@@ -46,7 +46,7 @@ on load:
     # "tutorial historia <jugador> <parte>" desde TypeWriter.
     delete {-hist::*}
     set {-hist::capitulo} to "Capítulo 1: Ecos de la Maleza"
-    set {-hist::total} to 10
+    set {-hist::total} to 12
     set {-hist::nombre::1} to "El Rey sin Memoria"
     set {-hist::desc::1::*} to "Despiertas otra vez sin recuerdos.", "King Draemir te devuelve el libro que", "escribiste vida tras vida y recuperas" and "el primer eco de tu pasado."
     set {-hist::nombre::2} to "Más Allá de los Muros"
@@ -67,8 +67,15 @@ on load:
     set {-hist::desc::9::*} to "Defendiste el reino junto al Guardia", "Real durante la noche en que el" and "Alquimista envió a sus criaturas."
     set {-hist::nombre::10} to "El Rey Recuerda"
     set {-hist::desc::10::*} to "El Rey leyó la crónica y recordó tu", "nombre… y la copa que le dio el" and "Alquimista. El capítulo ha terminado."
-    # Huecos del menú (2 filas): partes 1-7 arriba y 8-10 abajo
-    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 21, 22 and 23
+    # Epílogo con el Mago Overking (TypeWriter, fact "orian_paso")
+    set {-hist::nombre::11} to "El Portal de Orian"
+    set {-hist::desc::11::*} to "El Mago Overking siguió el rastro del", "Alquimista hasta Orian. Cruzaste el" and "portal hacia la ciudad del otro lado."
+    # Las misiones tipo dungeon se muestran con otro objeto (cabeza de zombi)
+    set {-hist::nombre::12} to "Misión: La Cripta de Orian"
+    set {-hist::tipo::12} to "dungeon"
+    set {-hist::desc::12::*} to "Bajaste a la cripta bajo Orian y", "acabaste con los muertos que el" and "Alquimista usaba como guardianes."
+    # Huecos del menú (2 filas): partes 1-7 arriba y 8-12 abajo
+    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 21, 22, 23, 24 and 25
 
 # ------------------------------------------------------------
 #  Inicio y comandos de consola
@@ -246,9 +253,15 @@ function historiaMenu(p: player):
                 loop {-hist::desc::%{_n}%::*}:
                     add "<#C9CDD6>%loop-value-2%" to {_lore::*}
                 add "" and "<#7FB2FF>Clic para recordar" to {_lore::*}
-                set slot {_s} of {_gui} to enchanted book named "<#FFD36B>Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
+                if {-hist::tipo::%{_n}%} is "dungeon":
+                    set slot {_s} of {_gui} to zombie head named "<#FF8A8A>⚔ Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
+                else:
+                    set slot {_s} of {_gui} to enchanted book named "<#FFD36B>Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
             else if {_n} = {_prog} + 1:
-                set slot {_s} of {_gui} to book named "<#9EA3AE>Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FFB347>● Siguiente capítulo", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearlo."
+                if {-hist::tipo::%{_n}%} is "dungeon":
+                    set slot {_s} of {_gui} to zombie head named "<#9EA3AE>⚔ Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FF8A8A>● Misión tipo dungeon", "<#FFB347>Obligatoria para seguir la historia", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearla."
+                else:
+                    set slot {_s} of {_gui} to book named "<#9EA3AE>Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FFB347>● Siguiente capítulo", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearlo."
             else:
                 set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Parte %{_n}%: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
             delete {_lore::*}
