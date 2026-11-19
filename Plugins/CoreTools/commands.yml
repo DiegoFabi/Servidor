@@ -32,8 +32,8 @@ respawn-control:
 
 playervault:
   main: 'core-playervault'
-  aliases:
-    - 'vault'
+  # Sin alias: /vault, /pv, /vaults... los gestiona baules.sk (réplica de AxVaults)
+  aliases: []
   permission: 'OP'
   description: 'Allows players to open their vaults.'
   enabled: true

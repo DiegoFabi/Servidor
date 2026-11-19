@@ -1,0 +1,406 @@
+# Réplica de AxVaults: icono elegido (Shift + Clic) y ranuras usadas de cada baúl.
+
+baul_icono_1:
+  type: string
+  default: 'barrel'
+baul_usados_1:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_2:
+  type: string
+  default: 'barrel'
+baul_usados_2:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_3:
+  type: string
+  default: 'barrel'
+baul_usados_3:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_4:
+  type: string
+  default: 'barrel'
+baul_usados_4:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_5:
+  type: string
+  default: 'barrel'
+baul_usados_5:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_6:
+  type: string
+  default: 'barrel'
+baul_usados_6:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_7:
+  type: string
+  default: 'barrel'
+baul_usados_7:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_8:
+  type: string
+  default: 'barrel'
+baul_usados_8:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_9:
+  type: string
+  default: 'barrel'
+baul_usados_9:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_10:
+  type: string
+  default: 'barrel'
+baul_usados_10:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_11:
+  type: string
+  default: 'barrel'
+baul_usados_11:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_12:
+  type: string
+  default: 'barrel'
+baul_usados_12:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_13:
+  type: string
+  default: 'barrel'
+baul_usados_13:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_14:
+  type: string
+  default: 'barrel'
+baul_usados_14:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_15:
+  type: string
+  default: 'barrel'
+baul_usados_15:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_16:
+  type: string
+  default: 'barrel'
+baul_usados_16:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_17:
+  type: string
+  default: 'barrel'
+baul_usados_17:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_18:
+  type: string
+  default: 'barrel'
+baul_usados_18:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_19:
+  type: string
+  default: 'barrel'
+baul_usados_19:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_20:
+  type: string
+  default: 'barrel'
+baul_usados_20:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_21:
+  type: string
+  default: 'barrel'
+baul_usados_21:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_22:
+  type: string
+  default: 'barrel'
+baul_usados_22:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_23:
+  type: string
+  default: 'barrel'
+baul_usados_23:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_24:
+  type: string
+  default: 'barrel'
+baul_usados_24:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_25:
+  type: string
+  default: 'barrel'
+baul_usados_25:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_26:
+  type: string
+  default: 'barrel'
+baul_usados_26:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_27:
+  type: string
+  default: 'barrel'
+baul_usados_27:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_28:
+  type: string
+  default: 'barrel'
+baul_usados_28:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_29:
+  type: string
+  default: 'barrel'
+baul_usados_29:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_30:
+  type: string
+  default: 'barrel'
+baul_usados_30:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_31:
+  type: string
+  default: 'barrel'
+baul_usados_31:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_32:
+  type: string
+  default: 'barrel'
+baul_usados_32:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_33:
+  type: string
+  default: 'barrel'
+baul_usados_33:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_34:
+  type: string
+  default: 'barrel'
+baul_usados_34:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_35:
+  type: string
+  default: 'barrel'
+baul_usados_35:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_36:
+  type: string
+  default: 'barrel'
+baul_usados_36:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_37:
+  type: string
+  default: 'barrel'
+baul_usados_37:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_38:
+  type: string
+  default: 'barrel'
+baul_usados_38:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_39:
+  type: string
+  default: 'barrel'
+baul_usados_39:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_40:
+  type: string
+  default: 'barrel'
+baul_usados_40:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_41:
+  type: string
+  default: 'barrel'
+baul_usados_41:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_42:
+  type: string
+  default: 'barrel'
+baul_usados_42:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_43:
+  type: string
+  default: 'barrel'
+baul_usados_43:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_44:
+  type: string
+  default: 'barrel'
+baul_usados_44:
+  type: integer
+  default: 0
+  min: 0
+  max: 54
+
+baul_icono_45:
+  type: string
+  default: 'barrel'
+baul_usados_45:
+  type: integer
+  default: 0
+  min: 0
+  max: 54

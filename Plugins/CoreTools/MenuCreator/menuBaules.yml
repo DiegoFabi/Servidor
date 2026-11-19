@@ -1,0 +1,741 @@
+# Réplica del selector de AxVaults (/axvault): 6 filas, baúles en las ranuras
+# 0-44 (barril si lo tienes, panel rojo si no), cerrar en la 49.
+# Clic: abrir baúl · Shift + Clic: cambiar el icono (selector en baules.sk).
+menuBaules:
+  permission: ''
+  bottom_inventory: false
+  name: '<black>My Vaults'
+  size: 6
+  fill_material: AIR
+  enable_animation: false
+  buttons:
+    baul_1:
+      location: top
+      slots: [ 0 ]
+      dynamic_button: baul_boton_1
+      left_click:
+        Scripts:
+        - baul_abrir_1
+      right_click:
+        Scripts:
+        - baul_abrir_1
+      shift_left_click:
+        Scripts:
+        - baul_icono_1
+      shift_right_click:
+        Scripts:
+        - baul_icono_1
+    baul_2:
+      location: top
+      slots: [ 1 ]
+      dynamic_button: baul_boton_2
+      left_click:
+        Scripts:
+        - baul_abrir_2
+      right_click:
+        Scripts:
+        - baul_abrir_2
+      shift_left_click:
+        Scripts:
+        - baul_icono_2
+      shift_right_click:
+        Scripts:
+        - baul_icono_2
+    baul_3:
+      location: top
+      slots: [ 2 ]
+      dynamic_button: baul_boton_3
+      left_click:
+        Scripts:
+        - baul_abrir_3
+      right_click:
+        Scripts:
+        - baul_abrir_3
+      shift_left_click:
+        Scripts:
+        - baul_icono_3
+      shift_right_click:
+        Scripts:
+        - baul_icono_3
+    baul_4:
+      location: top
+      slots: [ 3 ]
+      dynamic_button: baul_boton_4
+      left_click:
+        Scripts:
+        - baul_abrir_4
+      right_click:
+        Scripts:
+        - baul_abrir_4
+      shift_left_click:
+        Scripts:
+        - baul_icono_4
+      shift_right_click:
+        Scripts:
+        - baul_icono_4
+    baul_5:
+      location: top
+      slots: [ 4 ]
+      dynamic_button: baul_boton_5
+      left_click:
+        Scripts:
+        - baul_abrir_5
+      right_click:
+        Scripts:
+        - baul_abrir_5
+      shift_left_click:
+        Scripts:
+        - baul_icono_5
+      shift_right_click:
+        Scripts:
+        - baul_icono_5
+    baul_6:
+      location: top
+      slots: [ 5 ]
+      dynamic_button: baul_boton_6
+      left_click:
+        Scripts:
+        - baul_abrir_6
+      right_click:
+        Scripts:
+        - baul_abrir_6
+      shift_left_click:
+        Scripts:
+        - baul_icono_6
+      shift_right_click:
+        Scripts:
+        - baul_icono_6
+    baul_7:
+      location: top
+      slots: [ 6 ]
+      dynamic_button: baul_boton_7
+      left_click:
+        Scripts:
+        - baul_abrir_7
+      right_click:
+        Scripts:
+        - baul_abrir_7
+      shift_left_click:
+        Scripts:
+        - baul_icono_7
+      shift_right_click:
+        Scripts:
+        - baul_icono_7
+    baul_8:
+      location: top
+      slots: [ 7 ]
+      dynamic_button: baul_boton_8
+      left_click:
+        Scripts:
+        - baul_abrir_8
+      right_click:
+        Scripts:
+        - baul_abrir_8
+      shift_left_click:
+        Scripts:
+        - baul_icono_8
+      shift_right_click:
+        Scripts:
+        - baul_icono_8
+    baul_9:
+      location: top
+      slots: [ 8 ]
+      dynamic_button: baul_boton_9
+      left_click:
+        Scripts:
+        - baul_abrir_9
+      right_click:
+        Scripts:
+        - baul_abrir_9
+      shift_left_click:
+        Scripts:
+        - baul_icono_9
+      shift_right_click:
+        Scripts:
+        - baul_icono_9
+    baul_10:
+      location: top
+      slots: [ 9 ]
+      dynamic_button: baul_boton_10
+      left_click:
+        Scripts:
+        - baul_abrir_10
+      right_click:
+        Scripts:
+        - baul_abrir_10
+      shift_left_click:
+        Scripts:
+        - baul_icono_10
+      shift_right_click:
+        Scripts:
+        - baul_icono_10
+    baul_11:
+      location: top
+      slots: [ 10 ]
+      dynamic_button: baul_boton_11
+      left_click:
+        Scripts:
+        - baul_abrir_11
+      right_click:
+        Scripts:
+        - baul_abrir_11
+      shift_left_click:
+        Scripts:
+        - baul_icono_11
+      shift_right_click:
+        Scripts:
+        - baul_icono_11
+    baul_12:
+      location: top
+      slots: [ 11 ]
+      dynamic_button: baul_boton_12
+      left_click:
+        Scripts:
+        - baul_abrir_12
+      right_click:
+        Scripts:
+        - baul_abrir_12
+      shift_left_click:
+        Scripts:
+        - baul_icono_12
+      shift_right_click:
+        Scripts:
+        - baul_icono_12
+    baul_13:
+      location: top
+      slots: [ 12 ]
+      dynamic_button: baul_boton_13
+      left_click:
+        Scripts:
+        - baul_abrir_13
+      right_click:
+        Scripts:
+        - baul_abrir_13
+      shift_left_click:
+        Scripts:
+        - baul_icono_13
+      shift_right_click:
+        Scripts:
+        - baul_icono_13
+    baul_14:
+      location: top
+      slots: [ 13 ]
+      dynamic_button: baul_boton_14
+      left_click:
+        Scripts:
+        - baul_abrir_14
+      right_click:
+        Scripts:
+        - baul_abrir_14
+      shift_left_click:
+        Scripts:
+        - baul_icono_14
+      shift_right_click:
+        Scripts:
+        - baul_icono_14
+    baul_15:
+      location: top
+      slots: [ 14 ]
+      dynamic_button: baul_boton_15
+      left_click:
+        Scripts:
+        - baul_abrir_15
+      right_click:
+        Scripts:
+        - baul_abrir_15
+      shift_left_click:
+        Scripts:
+        - baul_icono_15
+      shift_right_click:
+        Scripts:
+        - baul_icono_15
+    baul_16:
+      location: top
+      slots: [ 15 ]
+      dynamic_button: baul_boton_16
+      left_click:
+        Scripts:
+        - baul_abrir_16
+      right_click:
+        Scripts:
+        - baul_abrir_16
+      shift_left_click:
+        Scripts:
+        - baul_icono_16
+      shift_right_click:
+        Scripts:
+        - baul_icono_16
+    baul_17:
+      location: top
+      slots: [ 16 ]
+      dynamic_button: baul_boton_17
+      left_click:
+        Scripts:
+        - baul_abrir_17
+      right_click:
+        Scripts:
+        - baul_abrir_17
+      shift_left_click:
+        Scripts:
+        - baul_icono_17
+      shift_right_click:
+        Scripts:
+        - baul_icono_17
+    baul_18:
+      location: top
+      slots: [ 17 ]
+      dynamic_button: baul_boton_18
+      left_click:
+        Scripts:
+        - baul_abrir_18
+      right_click:
+        Scripts:
+        - baul_abrir_18
+      shift_left_click:
+        Scripts:
+        - baul_icono_18
+      shift_right_click:
+        Scripts:
+        - baul_icono_18
+    baul_19:
+      location: top
+      slots: [ 18 ]
+      dynamic_button: baul_boton_19
+      left_click:
+        Scripts:
+        - baul_abrir_19
+      right_click:
+        Scripts:
+        - baul_abrir_19
+      shift_left_click:
+        Scripts:
+        - baul_icono_19
+      shift_right_click:
+        Scripts:
+        - baul_icono_19
+    baul_20:
+      location: top
+      slots: [ 19 ]
+      dynamic_button: baul_boton_20
+      left_click:
+        Scripts:
+        - baul_abrir_20
+      right_click:
+        Scripts:
+        - baul_abrir_20
+      shift_left_click:
+        Scripts:
+        - baul_icono_20
+      shift_right_click:
+        Scripts:
+        - baul_icono_20
+    baul_21:
+      location: top
+      slots: [ 20 ]
+      dynamic_button: baul_boton_21
+      left_click:
+        Scripts:
+        - baul_abrir_21
+      right_click:
+        Scripts:
+        - baul_abrir_21
+      shift_left_click:
+        Scripts:
+        - baul_icono_21
+      shift_right_click:
+        Scripts:
+        - baul_icono_21
+    baul_22:
+      location: top
+      slots: [ 21 ]
+      dynamic_button: baul_boton_22
+      left_click:
+        Scripts:
+        - baul_abrir_22
+      right_click:
+        Scripts:
+        - baul_abrir_22
+      shift_left_click:
+        Scripts:
+        - baul_icono_22
+      shift_right_click:
+        Scripts:
+        - baul_icono_22
+    baul_23:
+      location: top
+      slots: [ 22 ]
+      dynamic_button: baul_boton_23
+      left_click:
+        Scripts:
+        - baul_abrir_23
+      right_click:
+        Scripts:
+        - baul_abrir_23
+      shift_left_click:
+        Scripts:
+        - baul_icono_23
+      shift_right_click:
+        Scripts:
+        - baul_icono_23
+    baul_24:
+      location: top
+      slots: [ 23 ]
+      dynamic_button: baul_boton_24
+      left_click:
+        Scripts:
+        - baul_abrir_24
+      right_click:
+        Scripts:
+        - baul_abrir_24
+      shift_left_click:
+        Scripts:
+        - baul_icono_24
+      shift_right_click:
+        Scripts:
+        - baul_icono_24
+    baul_25:
+      location: top
+      slots: [ 24 ]
+      dynamic_button: baul_boton_25
+      left_click:
+        Scripts:
+        - baul_abrir_25
+      right_click:
+        Scripts:
+        - baul_abrir_25
+      shift_left_click:
+        Scripts:
+        - baul_icono_25
+      shift_right_click:
+        Scripts:
+        - baul_icono_25
+    baul_26:
+      location: top
+      slots: [ 25 ]
+      dynamic_button: baul_boton_26
+      left_click:
+        Scripts:
+        - baul_abrir_26
+      right_click:
+        Scripts:
+        - baul_abrir_26
+      shift_left_click:
+        Scripts:
+        - baul_icono_26
+      shift_right_click:
+        Scripts:
+        - baul_icono_26
+    baul_27:
+      location: top
+      slots: [ 26 ]
+      dynamic_button: baul_boton_27
+      left_click:
+        Scripts:
+        - baul_abrir_27
+      right_click:
+        Scripts:
+        - baul_abrir_27
+      shift_left_click:
+        Scripts:
+        - baul_icono_27
+      shift_right_click:
+        Scripts:
+        - baul_icono_27
+    baul_28:
+      location: top
+      slots: [ 27 ]
+      dynamic_button: baul_boton_28
+      left_click:
+        Scripts:
+        - baul_abrir_28
+      right_click:
+        Scripts:
+        - baul_abrir_28
+      shift_left_click:
+        Scripts:
+        - baul_icono_28
+      shift_right_click:
+        Scripts:
+        - baul_icono_28
+    baul_29:
+      location: top
+      slots: [ 28 ]
+      dynamic_button: baul_boton_29
+      left_click:
+        Scripts:
+        - baul_abrir_29
+      right_click:
+        Scripts:
+        - baul_abrir_29
+      shift_left_click:
+        Scripts:
+        - baul_icono_29
+      shift_right_click:
+        Scripts:
+        - baul_icono_29
+    baul_30:
+      location: top
+      slots: [ 29 ]
+      dynamic_button: baul_boton_30
+      left_click:
+        Scripts:
+        - baul_abrir_30
+      right_click:
+        Scripts:
+        - baul_abrir_30
+      shift_left_click:
+        Scripts:
+        - baul_icono_30
+      shift_right_click:
+        Scripts:
+        - baul_icono_30
+    baul_31:
+      location: top
+      slots: [ 30 ]
+      dynamic_button: baul_boton_31
+      left_click:
+        Scripts:
+        - baul_abrir_31
+      right_click:
+        Scripts:
+        - baul_abrir_31
+      shift_left_click:
+        Scripts:
+        - baul_icono_31
+      shift_right_click:
+        Scripts:
+        - baul_icono_31
+    baul_32:
+      location: top
+      slots: [ 31 ]
+      dynamic_button: baul_boton_32
+      left_click:
+        Scripts:
+        - baul_abrir_32
+      right_click:
+        Scripts:
+        - baul_abrir_32
+      shift_left_click:
+        Scripts:
+        - baul_icono_32
+      shift_right_click:
+        Scripts:
+        - baul_icono_32
+    baul_33:
+      location: top
+      slots: [ 32 ]
+      dynamic_button: baul_boton_33
+      left_click:
+        Scripts:
+        - baul_abrir_33
+      right_click:
+        Scripts:
+        - baul_abrir_33
+      shift_left_click:
+        Scripts:
+        - baul_icono_33
+      shift_right_click:
+        Scripts:
+        - baul_icono_33
+    baul_34:
+      location: top
+      slots: [ 33 ]
+      dynamic_button: baul_boton_34
+      left_click:
+        Scripts:
+        - baul_abrir_34
+      right_click:
+        Scripts:
+        - baul_abrir_34
+      shift_left_click:
+        Scripts:
+        - baul_icono_34
+      shift_right_click:
+        Scripts:
+        - baul_icono_34
+    baul_35:
+      location: top
+      slots: [ 34 ]
+      dynamic_button: baul_boton_35
+      left_click:
+        Scripts:
+        - baul_abrir_35
+      right_click:
+        Scripts:
+        - baul_abrir_35
+      shift_left_click:
+        Scripts:
+        - baul_icono_35
+      shift_right_click:
+        Scripts:
+        - baul_icono_35
+    baul_36:
+      location: top
+      slots: [ 35 ]
+      dynamic_button: baul_boton_36
+      left_click:
+        Scripts:
+        - baul_abrir_36
+      right_click:
+        Scripts:
+        - baul_abrir_36
+      shift_left_click:
+        Scripts:
+        - baul_icono_36
+      shift_right_click:
+        Scripts:
+        - baul_icono_36
+    baul_37:
+      location: top
+      slots: [ 36 ]
+      dynamic_button: baul_boton_37
+      left_click:
+        Scripts:
+        - baul_abrir_37
+      right_click:
+        Scripts:
+        - baul_abrir_37
+      shift_left_click:
+        Scripts:
+        - baul_icono_37
+      shift_right_click:
+        Scripts:
+        - baul_icono_37
+    baul_38:
+      location: top
+      slots: [ 37 ]
+      dynamic_button: baul_boton_38
+      left_click:
+        Scripts:
+        - baul_abrir_38
+      right_click:
+        Scripts:
+        - baul_abrir_38
+      shift_left_click:
+        Scripts:
+        - baul_icono_38
+      shift_right_click:
+        Scripts:
+        - baul_icono_38
+    baul_39:
+      location: top
+      slots: [ 38 ]
+      dynamic_button: baul_boton_39
+      left_click:
+        Scripts:
+        - baul_abrir_39
+      right_click:
+        Scripts:
+        - baul_abrir_39
+      shift_left_click:
+        Scripts:
+        - baul_icono_39
+      shift_right_click:
+        Scripts:
+        - baul_icono_39
+    baul_40:
+      location: top
+      slots: [ 39 ]
+      dynamic_button: baul_boton_40
+      left_click:
+        Scripts:
+        - baul_abrir_40
+      right_click:
+        Scripts:
+        - baul_abrir_40
+      shift_left_click:
+        Scripts:
+        - baul_icono_40
+      shift_right_click:
+        Scripts:
+        - baul_icono_40
+    baul_41:
+      location: top
+      slots: [ 40 ]
+      dynamic_button: baul_boton_41
+      left_click:
+        Scripts:
+        - baul_abrir_41
+      right_click:
+        Scripts:
+        - baul_abrir_41
+      shift_left_click:
+        Scripts:
+        - baul_icono_41
+      shift_right_click:
+        Scripts:
+        - baul_icono_41
+    baul_42:
+      location: top
+      slots: [ 41 ]
+      dynamic_button: baul_boton_42
+      left_click:
+        Scripts:
+        - baul_abrir_42
+      right_click:
+        Scripts:
+        - baul_abrir_42
+      shift_left_click:
+        Scripts:
+        - baul_icono_42
+      shift_right_click:
+        Scripts:
+        - baul_icono_42
+    baul_43:
+      location: top
+      slots: [ 42 ]
+      dynamic_button: baul_boton_43
+      left_click:
+        Scripts:
+        - baul_abrir_43
+      right_click:
+        Scripts:
+        - baul_abrir_43
+      shift_left_click:
+        Scripts:
+        - baul_icono_43
+      shift_right_click:
+        Scripts:
+        - baul_icono_43
+    baul_44:
+      location: top
+      slots: [ 43 ]
+      dynamic_button: baul_boton_44
+      left_click:
+        Scripts:
+        - baul_abrir_44
+      right_click:
+        Scripts:
+        - baul_abrir_44
+      shift_left_click:
+        Scripts:
+        - baul_icono_44
+      shift_right_click:
+        Scripts:
+        - baul_icono_44
+    baul_45:
+      location: top
+      slots: [ 44 ]
+      dynamic_button: baul_boton_45
+      left_click:
+        Scripts:
+        - baul_abrir_45
+      right_click:
+        Scripts:
+        - baul_abrir_45
+      shift_left_click:
+        Scripts:
+        - baul_icono_45
+      shift_right_click:
+        Scripts:
+        - baul_icono_45
+    cerrar:
+      location: top
+      slots: [ 49 ]
+      source: vanilla
+      material: barrier
+      name: '<#FF3333><bold>Close'
+      lore: []
+      click:
+        Scripts:
+        - baul_cerrar_selector

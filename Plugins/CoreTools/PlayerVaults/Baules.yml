@@ -1,0 +1,634 @@
+# Réplica de AxVaults: un baúl de CoreTools por cada "Vault #N" de AxVaults.
+# Mismo permiso que en AxVaults (axvaults.vault.N, modo 0: cada baúl el suyo),
+# así LuckPerms no cambia. 6 filas, 1 página, sin botones (54 ranuras libres).
+# Se abren desde el selector (MenuCreator/menuBaules.yml) o con /pv <número>.
+
+baul_1:
+  permission: 'axvaults.vault.1'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #1'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_1
+  close_script:
+    - baul_cerrado_1
+  one_way_vault: false
+  buttons: {}
+
+baul_2:
+  permission: 'axvaults.vault.2'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #2'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_2
+  close_script:
+    - baul_cerrado_2
+  one_way_vault: false
+  buttons: {}
+
+baul_3:
+  permission: 'axvaults.vault.3'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #3'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_3
+  close_script:
+    - baul_cerrado_3
+  one_way_vault: false
+  buttons: {}
+
+baul_4:
+  permission: 'axvaults.vault.4'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #4'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_4
+  close_script:
+    - baul_cerrado_4
+  one_way_vault: false
+  buttons: {}
+
+baul_5:
+  permission: 'axvaults.vault.5'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #5'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_5
+  close_script:
+    - baul_cerrado_5
+  one_way_vault: false
+  buttons: {}
+
+baul_6:
+  permission: 'axvaults.vault.6'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #6'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_6
+  close_script:
+    - baul_cerrado_6
+  one_way_vault: false
+  buttons: {}
+
+baul_7:
+  permission: 'axvaults.vault.7'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #7'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_7
+  close_script:
+    - baul_cerrado_7
+  one_way_vault: false
+  buttons: {}
+
+baul_8:
+  permission: 'axvaults.vault.8'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #8'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_8
+  close_script:
+    - baul_cerrado_8
+  one_way_vault: false
+  buttons: {}
+
+baul_9:
+  permission: 'axvaults.vault.9'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #9'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_9
+  close_script:
+    - baul_cerrado_9
+  one_way_vault: false
+  buttons: {}
+
+baul_10:
+  permission: 'axvaults.vault.10'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #10'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_10
+  close_script:
+    - baul_cerrado_10
+  one_way_vault: false
+  buttons: {}
+
+baul_11:
+  permission: 'axvaults.vault.11'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #11'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_11
+  close_script:
+    - baul_cerrado_11
+  one_way_vault: false
+  buttons: {}
+
+baul_12:
+  permission: 'axvaults.vault.12'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #12'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_12
+  close_script:
+    - baul_cerrado_12
+  one_way_vault: false
+  buttons: {}
+
+baul_13:
+  permission: 'axvaults.vault.13'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #13'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_13
+  close_script:
+    - baul_cerrado_13
+  one_way_vault: false
+  buttons: {}
+
+baul_14:
+  permission: 'axvaults.vault.14'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #14'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_14
+  close_script:
+    - baul_cerrado_14
+  one_way_vault: false
+  buttons: {}
+
+baul_15:
+  permission: 'axvaults.vault.15'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #15'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_15
+  close_script:
+    - baul_cerrado_15
+  one_way_vault: false
+  buttons: {}
+
+baul_16:
+  permission: 'axvaults.vault.16'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #16'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_16
+  close_script:
+    - baul_cerrado_16
+  one_way_vault: false
+  buttons: {}
+
+baul_17:
+  permission: 'axvaults.vault.17'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #17'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_17
+  close_script:
+    - baul_cerrado_17
+  one_way_vault: false
+  buttons: {}
+
+baul_18:
+  permission: 'axvaults.vault.18'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #18'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_18
+  close_script:
+    - baul_cerrado_18
+  one_way_vault: false
+  buttons: {}
+
+baul_19:
+  permission: 'axvaults.vault.19'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #19'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_19
+  close_script:
+    - baul_cerrado_19
+  one_way_vault: false
+  buttons: {}
+
+baul_20:
+  permission: 'axvaults.vault.20'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #20'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_20
+  close_script:
+    - baul_cerrado_20
+  one_way_vault: false
+  buttons: {}
+
+baul_21:
+  permission: 'axvaults.vault.21'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #21'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_21
+  close_script:
+    - baul_cerrado_21
+  one_way_vault: false
+  buttons: {}
+
+baul_22:
+  permission: 'axvaults.vault.22'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #22'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_22
+  close_script:
+    - baul_cerrado_22
+  one_way_vault: false
+  buttons: {}
+
+baul_23:
+  permission: 'axvaults.vault.23'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #23'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_23
+  close_script:
+    - baul_cerrado_23
+  one_way_vault: false
+  buttons: {}
+
+baul_24:
+  permission: 'axvaults.vault.24'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #24'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_24
+  close_script:
+    - baul_cerrado_24
+  one_way_vault: false
+  buttons: {}
+
+baul_25:
+  permission: 'axvaults.vault.25'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #25'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_25
+  close_script:
+    - baul_cerrado_25
+  one_way_vault: false
+  buttons: {}
+
+baul_26:
+  permission: 'axvaults.vault.26'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #26'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_26
+  close_script:
+    - baul_cerrado_26
+  one_way_vault: false
+  buttons: {}
+
+baul_27:
+  permission: 'axvaults.vault.27'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #27'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_27
+  close_script:
+    - baul_cerrado_27
+  one_way_vault: false
+  buttons: {}
+
+baul_28:
+  permission: 'axvaults.vault.28'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #28'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_28
+  close_script:
+    - baul_cerrado_28
+  one_way_vault: false
+  buttons: {}
+
+baul_29:
+  permission: 'axvaults.vault.29'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #29'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_29
+  close_script:
+    - baul_cerrado_29
+  one_way_vault: false
+  buttons: {}
+
+baul_30:
+  permission: 'axvaults.vault.30'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #30'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_30
+  close_script:
+    - baul_cerrado_30
+  one_way_vault: false
+  buttons: {}
+
+baul_31:
+  permission: 'axvaults.vault.31'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #31'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_31
+  close_script:
+    - baul_cerrado_31
+  one_way_vault: false
+  buttons: {}
+
+baul_32:
+  permission: 'axvaults.vault.32'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #32'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_32
+  close_script:
+    - baul_cerrado_32
+  one_way_vault: false
+  buttons: {}
+
+baul_33:
+  permission: 'axvaults.vault.33'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #33'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_33
+  close_script:
+    - baul_cerrado_33
+  one_way_vault: false
+  buttons: {}
+
+baul_34:
+  permission: 'axvaults.vault.34'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #34'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_34
+  close_script:
+    - baul_cerrado_34
+  one_way_vault: false
+  buttons: {}
+
+baul_35:
+  permission: 'axvaults.vault.35'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #35'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_35
+  close_script:
+    - baul_cerrado_35
+  one_way_vault: false
+  buttons: {}
+
+baul_36:
+  permission: 'axvaults.vault.36'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #36'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_36
+  close_script:
+    - baul_cerrado_36
+  one_way_vault: false
+  buttons: {}
+
+baul_37:
+  permission: 'axvaults.vault.37'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #37'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_37
+  close_script:
+    - baul_cerrado_37
+  one_way_vault: false
+  buttons: {}
+
+baul_38:
+  permission: 'axvaults.vault.38'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #38'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_38
+  close_script:
+    - baul_cerrado_38
+  one_way_vault: false
+  buttons: {}
+
+baul_39:
+  permission: 'axvaults.vault.39'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #39'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_39
+  close_script:
+    - baul_cerrado_39
+  one_way_vault: false
+  buttons: {}
+
+baul_40:
+  permission: 'axvaults.vault.40'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #40'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_40
+  close_script:
+    - baul_cerrado_40
+  one_way_vault: false
+  buttons: {}
+
+baul_41:
+  permission: 'axvaults.vault.41'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #41'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_41
+  close_script:
+    - baul_cerrado_41
+  one_way_vault: false
+  buttons: {}
+
+baul_42:
+  permission: 'axvaults.vault.42'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #42'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_42
+  close_script:
+    - baul_cerrado_42
+  one_way_vault: false
+  buttons: {}
+
+baul_43:
+  permission: 'axvaults.vault.43'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #43'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_43
+  close_script:
+    - baul_cerrado_43
+  one_way_vault: false
+  buttons: {}
+
+baul_44:
+  permission: 'axvaults.vault.44'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #44'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_44
+  close_script:
+    - baul_cerrado_44
+  one_way_vault: false
+  buttons: {}
+
+baul_45:
+  permission: 'axvaults.vault.45'
+  no_permission: '<#FF0000>You don''t own this vault!'
+  name: '<black>Vault #45'
+  size: 6
+  max_page: 1
+  purchased_page: 1
+  start_script:
+    - baul_abierto_45
+  close_script:
+    - baul_cerrado_45
+  one_way_vault: false
+  buttons: {}

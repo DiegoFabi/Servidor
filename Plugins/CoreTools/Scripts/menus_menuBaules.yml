@@ -1,0 +1,1269 @@
+# Scripts de la réplica de AxVaults (menuBaules + PlayerVaults/Baules.yml).
+# Iconos y ranuras usadas se guardan en variables de CoreTools
+# (Variables/baules.yml) que actualiza Skript (scripts/servidor/baules.sk).
+baul_cerrar_selector:
+  Mechanics:
+  - 'closeinventory{} @Self'
+baul_bloqueado:
+  Mechanics:
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <#FF0000>You don''t own this vault!"} @Self'
+
+baul_boton_1:
+  Conditions:
+  - 'Permission{p=axvaults.vault.1} trueElse baul_boton_1_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_1%";amount=1;name="<#55ff00><bold>Vault #1";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_1%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_1_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Vault #1";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_1:
+  Conditions:
+  - 'Permission{p=axvaults.vault.1} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_1} @Self'
+baul_icono_1:
+  Conditions:
+  - 'Permission{p=axvaults.vault.1} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 1 {caster_name}";runas=console} @Self'
+baul_abierto_1:
+  Mechanics:
+  - 'command{c="baulmarca 1 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#1 <white>opened!"} @Self'
+baul_cerrado_1:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#1 <white>closed!"} @Self'
+
+baul_boton_2:
+  Conditions:
+  - 'Permission{p=axvaults.vault.2} trueElse baul_boton_2_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_2%";amount=2;name="<#55ff00><bold>Vault #2";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_2%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_2_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=2;name="<#FF0000><bold>Vault #2";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_2:
+  Conditions:
+  - 'Permission{p=axvaults.vault.2} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_2} @Self'
+baul_icono_2:
+  Conditions:
+  - 'Permission{p=axvaults.vault.2} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 2 {caster_name}";runas=console} @Self'
+baul_abierto_2:
+  Mechanics:
+  - 'command{c="baulmarca 2 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#2 <white>opened!"} @Self'
+baul_cerrado_2:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#2 <white>closed!"} @Self'
+
+baul_boton_3:
+  Conditions:
+  - 'Permission{p=axvaults.vault.3} trueElse baul_boton_3_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_3%";amount=3;name="<#55ff00><bold>Vault #3";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_3%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_3_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=3;name="<#FF0000><bold>Vault #3";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_3:
+  Conditions:
+  - 'Permission{p=axvaults.vault.3} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_3} @Self'
+baul_icono_3:
+  Conditions:
+  - 'Permission{p=axvaults.vault.3} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 3 {caster_name}";runas=console} @Self'
+baul_abierto_3:
+  Mechanics:
+  - 'command{c="baulmarca 3 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#3 <white>opened!"} @Self'
+baul_cerrado_3:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#3 <white>closed!"} @Self'
+
+baul_boton_4:
+  Conditions:
+  - 'Permission{p=axvaults.vault.4} trueElse baul_boton_4_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_4%";amount=4;name="<#55ff00><bold>Vault #4";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_4%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_4_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=4;name="<#FF0000><bold>Vault #4";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_4:
+  Conditions:
+  - 'Permission{p=axvaults.vault.4} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_4} @Self'
+baul_icono_4:
+  Conditions:
+  - 'Permission{p=axvaults.vault.4} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 4 {caster_name}";runas=console} @Self'
+baul_abierto_4:
+  Mechanics:
+  - 'command{c="baulmarca 4 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#4 <white>opened!"} @Self'
+baul_cerrado_4:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#4 <white>closed!"} @Self'
+
+baul_boton_5:
+  Conditions:
+  - 'Permission{p=axvaults.vault.5} trueElse baul_boton_5_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_5%";amount=5;name="<#55ff00><bold>Vault #5";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_5%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_5_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=5;name="<#FF0000><bold>Vault #5";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_5:
+  Conditions:
+  - 'Permission{p=axvaults.vault.5} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_5} @Self'
+baul_icono_5:
+  Conditions:
+  - 'Permission{p=axvaults.vault.5} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 5 {caster_name}";runas=console} @Self'
+baul_abierto_5:
+  Mechanics:
+  - 'command{c="baulmarca 5 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#5 <white>opened!"} @Self'
+baul_cerrado_5:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#5 <white>closed!"} @Self'
+
+baul_boton_6:
+  Conditions:
+  - 'Permission{p=axvaults.vault.6} trueElse baul_boton_6_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_6%";amount=6;name="<#55ff00><bold>Vault #6";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_6%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_6_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=6;name="<#FF0000><bold>Vault #6";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_6:
+  Conditions:
+  - 'Permission{p=axvaults.vault.6} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_6} @Self'
+baul_icono_6:
+  Conditions:
+  - 'Permission{p=axvaults.vault.6} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 6 {caster_name}";runas=console} @Self'
+baul_abierto_6:
+  Mechanics:
+  - 'command{c="baulmarca 6 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#6 <white>opened!"} @Self'
+baul_cerrado_6:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#6 <white>closed!"} @Self'
+
+baul_boton_7:
+  Conditions:
+  - 'Permission{p=axvaults.vault.7} trueElse baul_boton_7_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_7%";amount=7;name="<#55ff00><bold>Vault #7";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_7%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_7_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=7;name="<#FF0000><bold>Vault #7";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_7:
+  Conditions:
+  - 'Permission{p=axvaults.vault.7} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_7} @Self'
+baul_icono_7:
+  Conditions:
+  - 'Permission{p=axvaults.vault.7} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 7 {caster_name}";runas=console} @Self'
+baul_abierto_7:
+  Mechanics:
+  - 'command{c="baulmarca 7 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#7 <white>opened!"} @Self'
+baul_cerrado_7:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#7 <white>closed!"} @Self'
+
+baul_boton_8:
+  Conditions:
+  - 'Permission{p=axvaults.vault.8} trueElse baul_boton_8_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_8%";amount=8;name="<#55ff00><bold>Vault #8";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_8%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_8_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=8;name="<#FF0000><bold>Vault #8";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_8:
+  Conditions:
+  - 'Permission{p=axvaults.vault.8} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_8} @Self'
+baul_icono_8:
+  Conditions:
+  - 'Permission{p=axvaults.vault.8} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 8 {caster_name}";runas=console} @Self'
+baul_abierto_8:
+  Mechanics:
+  - 'command{c="baulmarca 8 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#8 <white>opened!"} @Self'
+baul_cerrado_8:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#8 <white>closed!"} @Self'
+
+baul_boton_9:
+  Conditions:
+  - 'Permission{p=axvaults.vault.9} trueElse baul_boton_9_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_9%";amount=9;name="<#55ff00><bold>Vault #9";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_9%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_9_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=9;name="<#FF0000><bold>Vault #9";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_9:
+  Conditions:
+  - 'Permission{p=axvaults.vault.9} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_9} @Self'
+baul_icono_9:
+  Conditions:
+  - 'Permission{p=axvaults.vault.9} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 9 {caster_name}";runas=console} @Self'
+baul_abierto_9:
+  Mechanics:
+  - 'command{c="baulmarca 9 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#9 <white>opened!"} @Self'
+baul_cerrado_9:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#9 <white>closed!"} @Self'
+
+baul_boton_10:
+  Conditions:
+  - 'Permission{p=axvaults.vault.10} trueElse baul_boton_10_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_10%";amount=10;name="<#55ff00><bold>Vault #10";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_10%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_10_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=10;name="<#FF0000><bold>Vault #10";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_10:
+  Conditions:
+  - 'Permission{p=axvaults.vault.10} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_10} @Self'
+baul_icono_10:
+  Conditions:
+  - 'Permission{p=axvaults.vault.10} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 10 {caster_name}";runas=console} @Self'
+baul_abierto_10:
+  Mechanics:
+  - 'command{c="baulmarca 10 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#10 <white>opened!"} @Self'
+baul_cerrado_10:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#10 <white>closed!"} @Self'
+
+baul_boton_11:
+  Conditions:
+  - 'Permission{p=axvaults.vault.11} trueElse baul_boton_11_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_11%";amount=11;name="<#55ff00><bold>Vault #11";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_11%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_11_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=11;name="<#FF0000><bold>Vault #11";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_11:
+  Conditions:
+  - 'Permission{p=axvaults.vault.11} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_11} @Self'
+baul_icono_11:
+  Conditions:
+  - 'Permission{p=axvaults.vault.11} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 11 {caster_name}";runas=console} @Self'
+baul_abierto_11:
+  Mechanics:
+  - 'command{c="baulmarca 11 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#11 <white>opened!"} @Self'
+baul_cerrado_11:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#11 <white>closed!"} @Self'
+
+baul_boton_12:
+  Conditions:
+  - 'Permission{p=axvaults.vault.12} trueElse baul_boton_12_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_12%";amount=12;name="<#55ff00><bold>Vault #12";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_12%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_12_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=12;name="<#FF0000><bold>Vault #12";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_12:
+  Conditions:
+  - 'Permission{p=axvaults.vault.12} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_12} @Self'
+baul_icono_12:
+  Conditions:
+  - 'Permission{p=axvaults.vault.12} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 12 {caster_name}";runas=console} @Self'
+baul_abierto_12:
+  Mechanics:
+  - 'command{c="baulmarca 12 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#12 <white>opened!"} @Self'
+baul_cerrado_12:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#12 <white>closed!"} @Self'
+
+baul_boton_13:
+  Conditions:
+  - 'Permission{p=axvaults.vault.13} trueElse baul_boton_13_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_13%";amount=13;name="<#55ff00><bold>Vault #13";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_13%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_13_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=13;name="<#FF0000><bold>Vault #13";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_13:
+  Conditions:
+  - 'Permission{p=axvaults.vault.13} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_13} @Self'
+baul_icono_13:
+  Conditions:
+  - 'Permission{p=axvaults.vault.13} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 13 {caster_name}";runas=console} @Self'
+baul_abierto_13:
+  Mechanics:
+  - 'command{c="baulmarca 13 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#13 <white>opened!"} @Self'
+baul_cerrado_13:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#13 <white>closed!"} @Self'
+
+baul_boton_14:
+  Conditions:
+  - 'Permission{p=axvaults.vault.14} trueElse baul_boton_14_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_14%";amount=14;name="<#55ff00><bold>Vault #14";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_14%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_14_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=14;name="<#FF0000><bold>Vault #14";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_14:
+  Conditions:
+  - 'Permission{p=axvaults.vault.14} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_14} @Self'
+baul_icono_14:
+  Conditions:
+  - 'Permission{p=axvaults.vault.14} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 14 {caster_name}";runas=console} @Self'
+baul_abierto_14:
+  Mechanics:
+  - 'command{c="baulmarca 14 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#14 <white>opened!"} @Self'
+baul_cerrado_14:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#14 <white>closed!"} @Self'
+
+baul_boton_15:
+  Conditions:
+  - 'Permission{p=axvaults.vault.15} trueElse baul_boton_15_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_15%";amount=15;name="<#55ff00><bold>Vault #15";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_15%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_15_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=15;name="<#FF0000><bold>Vault #15";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_15:
+  Conditions:
+  - 'Permission{p=axvaults.vault.15} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_15} @Self'
+baul_icono_15:
+  Conditions:
+  - 'Permission{p=axvaults.vault.15} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 15 {caster_name}";runas=console} @Self'
+baul_abierto_15:
+  Mechanics:
+  - 'command{c="baulmarca 15 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#15 <white>opened!"} @Self'
+baul_cerrado_15:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#15 <white>closed!"} @Self'
+
+baul_boton_16:
+  Conditions:
+  - 'Permission{p=axvaults.vault.16} trueElse baul_boton_16_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_16%";amount=16;name="<#55ff00><bold>Vault #16";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_16%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_16_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=16;name="<#FF0000><bold>Vault #16";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_16:
+  Conditions:
+  - 'Permission{p=axvaults.vault.16} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_16} @Self'
+baul_icono_16:
+  Conditions:
+  - 'Permission{p=axvaults.vault.16} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 16 {caster_name}";runas=console} @Self'
+baul_abierto_16:
+  Mechanics:
+  - 'command{c="baulmarca 16 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#16 <white>opened!"} @Self'
+baul_cerrado_16:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#16 <white>closed!"} @Self'
+
+baul_boton_17:
+  Conditions:
+  - 'Permission{p=axvaults.vault.17} trueElse baul_boton_17_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_17%";amount=17;name="<#55ff00><bold>Vault #17";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_17%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_17_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=17;name="<#FF0000><bold>Vault #17";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_17:
+  Conditions:
+  - 'Permission{p=axvaults.vault.17} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_17} @Self'
+baul_icono_17:
+  Conditions:
+  - 'Permission{p=axvaults.vault.17} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 17 {caster_name}";runas=console} @Self'
+baul_abierto_17:
+  Mechanics:
+  - 'command{c="baulmarca 17 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#17 <white>opened!"} @Self'
+baul_cerrado_17:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#17 <white>closed!"} @Self'
+
+baul_boton_18:
+  Conditions:
+  - 'Permission{p=axvaults.vault.18} trueElse baul_boton_18_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_18%";amount=18;name="<#55ff00><bold>Vault #18";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_18%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_18_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=18;name="<#FF0000><bold>Vault #18";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_18:
+  Conditions:
+  - 'Permission{p=axvaults.vault.18} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_18} @Self'
+baul_icono_18:
+  Conditions:
+  - 'Permission{p=axvaults.vault.18} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 18 {caster_name}";runas=console} @Self'
+baul_abierto_18:
+  Mechanics:
+  - 'command{c="baulmarca 18 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#18 <white>opened!"} @Self'
+baul_cerrado_18:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#18 <white>closed!"} @Self'
+
+baul_boton_19:
+  Conditions:
+  - 'Permission{p=axvaults.vault.19} trueElse baul_boton_19_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_19%";amount=19;name="<#55ff00><bold>Vault #19";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_19%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_19_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=19;name="<#FF0000><bold>Vault #19";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_19:
+  Conditions:
+  - 'Permission{p=axvaults.vault.19} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_19} @Self'
+baul_icono_19:
+  Conditions:
+  - 'Permission{p=axvaults.vault.19} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 19 {caster_name}";runas=console} @Self'
+baul_abierto_19:
+  Mechanics:
+  - 'command{c="baulmarca 19 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#19 <white>opened!"} @Self'
+baul_cerrado_19:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#19 <white>closed!"} @Self'
+
+baul_boton_20:
+  Conditions:
+  - 'Permission{p=axvaults.vault.20} trueElse baul_boton_20_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_20%";amount=20;name="<#55ff00><bold>Vault #20";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_20%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_20_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=20;name="<#FF0000><bold>Vault #20";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_20:
+  Conditions:
+  - 'Permission{p=axvaults.vault.20} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_20} @Self'
+baul_icono_20:
+  Conditions:
+  - 'Permission{p=axvaults.vault.20} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 20 {caster_name}";runas=console} @Self'
+baul_abierto_20:
+  Mechanics:
+  - 'command{c="baulmarca 20 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#20 <white>opened!"} @Self'
+baul_cerrado_20:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#20 <white>closed!"} @Self'
+
+baul_boton_21:
+  Conditions:
+  - 'Permission{p=axvaults.vault.21} trueElse baul_boton_21_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_21%";amount=21;name="<#55ff00><bold>Vault #21";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_21%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_21_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=21;name="<#FF0000><bold>Vault #21";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_21:
+  Conditions:
+  - 'Permission{p=axvaults.vault.21} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_21} @Self'
+baul_icono_21:
+  Conditions:
+  - 'Permission{p=axvaults.vault.21} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 21 {caster_name}";runas=console} @Self'
+baul_abierto_21:
+  Mechanics:
+  - 'command{c="baulmarca 21 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#21 <white>opened!"} @Self'
+baul_cerrado_21:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#21 <white>closed!"} @Self'
+
+baul_boton_22:
+  Conditions:
+  - 'Permission{p=axvaults.vault.22} trueElse baul_boton_22_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_22%";amount=22;name="<#55ff00><bold>Vault #22";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_22%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_22_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=22;name="<#FF0000><bold>Vault #22";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_22:
+  Conditions:
+  - 'Permission{p=axvaults.vault.22} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_22} @Self'
+baul_icono_22:
+  Conditions:
+  - 'Permission{p=axvaults.vault.22} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 22 {caster_name}";runas=console} @Self'
+baul_abierto_22:
+  Mechanics:
+  - 'command{c="baulmarca 22 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#22 <white>opened!"} @Self'
+baul_cerrado_22:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#22 <white>closed!"} @Self'
+
+baul_boton_23:
+  Conditions:
+  - 'Permission{p=axvaults.vault.23} trueElse baul_boton_23_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_23%";amount=23;name="<#55ff00><bold>Vault #23";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_23%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_23_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=23;name="<#FF0000><bold>Vault #23";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_23:
+  Conditions:
+  - 'Permission{p=axvaults.vault.23} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_23} @Self'
+baul_icono_23:
+  Conditions:
+  - 'Permission{p=axvaults.vault.23} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 23 {caster_name}";runas=console} @Self'
+baul_abierto_23:
+  Mechanics:
+  - 'command{c="baulmarca 23 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#23 <white>opened!"} @Self'
+baul_cerrado_23:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#23 <white>closed!"} @Self'
+
+baul_boton_24:
+  Conditions:
+  - 'Permission{p=axvaults.vault.24} trueElse baul_boton_24_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_24%";amount=24;name="<#55ff00><bold>Vault #24";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_24%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_24_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=24;name="<#FF0000><bold>Vault #24";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_24:
+  Conditions:
+  - 'Permission{p=axvaults.vault.24} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_24} @Self'
+baul_icono_24:
+  Conditions:
+  - 'Permission{p=axvaults.vault.24} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 24 {caster_name}";runas=console} @Self'
+baul_abierto_24:
+  Mechanics:
+  - 'command{c="baulmarca 24 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#24 <white>opened!"} @Self'
+baul_cerrado_24:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#24 <white>closed!"} @Self'
+
+baul_boton_25:
+  Conditions:
+  - 'Permission{p=axvaults.vault.25} trueElse baul_boton_25_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_25%";amount=25;name="<#55ff00><bold>Vault #25";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_25%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_25_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=25;name="<#FF0000><bold>Vault #25";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_25:
+  Conditions:
+  - 'Permission{p=axvaults.vault.25} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_25} @Self'
+baul_icono_25:
+  Conditions:
+  - 'Permission{p=axvaults.vault.25} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 25 {caster_name}";runas=console} @Self'
+baul_abierto_25:
+  Mechanics:
+  - 'command{c="baulmarca 25 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#25 <white>opened!"} @Self'
+baul_cerrado_25:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#25 <white>closed!"} @Self'
+
+baul_boton_26:
+  Conditions:
+  - 'Permission{p=axvaults.vault.26} trueElse baul_boton_26_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_26%";amount=26;name="<#55ff00><bold>Vault #26";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_26%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_26_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=26;name="<#FF0000><bold>Vault #26";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_26:
+  Conditions:
+  - 'Permission{p=axvaults.vault.26} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_26} @Self'
+baul_icono_26:
+  Conditions:
+  - 'Permission{p=axvaults.vault.26} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 26 {caster_name}";runas=console} @Self'
+baul_abierto_26:
+  Mechanics:
+  - 'command{c="baulmarca 26 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#26 <white>opened!"} @Self'
+baul_cerrado_26:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#26 <white>closed!"} @Self'
+
+baul_boton_27:
+  Conditions:
+  - 'Permission{p=axvaults.vault.27} trueElse baul_boton_27_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_27%";amount=27;name="<#55ff00><bold>Vault #27";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_27%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_27_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=27;name="<#FF0000><bold>Vault #27";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_27:
+  Conditions:
+  - 'Permission{p=axvaults.vault.27} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_27} @Self'
+baul_icono_27:
+  Conditions:
+  - 'Permission{p=axvaults.vault.27} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 27 {caster_name}";runas=console} @Self'
+baul_abierto_27:
+  Mechanics:
+  - 'command{c="baulmarca 27 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#27 <white>opened!"} @Self'
+baul_cerrado_27:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#27 <white>closed!"} @Self'
+
+baul_boton_28:
+  Conditions:
+  - 'Permission{p=axvaults.vault.28} trueElse baul_boton_28_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_28%";amount=28;name="<#55ff00><bold>Vault #28";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_28%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_28_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=28;name="<#FF0000><bold>Vault #28";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_28:
+  Conditions:
+  - 'Permission{p=axvaults.vault.28} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_28} @Self'
+baul_icono_28:
+  Conditions:
+  - 'Permission{p=axvaults.vault.28} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 28 {caster_name}";runas=console} @Self'
+baul_abierto_28:
+  Mechanics:
+  - 'command{c="baulmarca 28 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#28 <white>opened!"} @Self'
+baul_cerrado_28:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#28 <white>closed!"} @Self'
+
+baul_boton_29:
+  Conditions:
+  - 'Permission{p=axvaults.vault.29} trueElse baul_boton_29_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_29%";amount=29;name="<#55ff00><bold>Vault #29";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_29%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_29_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=29;name="<#FF0000><bold>Vault #29";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_29:
+  Conditions:
+  - 'Permission{p=axvaults.vault.29} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_29} @Self'
+baul_icono_29:
+  Conditions:
+  - 'Permission{p=axvaults.vault.29} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 29 {caster_name}";runas=console} @Self'
+baul_abierto_29:
+  Mechanics:
+  - 'command{c="baulmarca 29 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#29 <white>opened!"} @Self'
+baul_cerrado_29:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#29 <white>closed!"} @Self'
+
+baul_boton_30:
+  Conditions:
+  - 'Permission{p=axvaults.vault.30} trueElse baul_boton_30_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_30%";amount=30;name="<#55ff00><bold>Vault #30";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_30%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_30_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=30;name="<#FF0000><bold>Vault #30";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_30:
+  Conditions:
+  - 'Permission{p=axvaults.vault.30} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_30} @Self'
+baul_icono_30:
+  Conditions:
+  - 'Permission{p=axvaults.vault.30} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 30 {caster_name}";runas=console} @Self'
+baul_abierto_30:
+  Mechanics:
+  - 'command{c="baulmarca 30 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#30 <white>opened!"} @Self'
+baul_cerrado_30:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#30 <white>closed!"} @Self'
+
+baul_boton_31:
+  Conditions:
+  - 'Permission{p=axvaults.vault.31} trueElse baul_boton_31_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_31%";amount=31;name="<#55ff00><bold>Vault #31";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_31%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_31_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=31;name="<#FF0000><bold>Vault #31";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_31:
+  Conditions:
+  - 'Permission{p=axvaults.vault.31} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_31} @Self'
+baul_icono_31:
+  Conditions:
+  - 'Permission{p=axvaults.vault.31} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 31 {caster_name}";runas=console} @Self'
+baul_abierto_31:
+  Mechanics:
+  - 'command{c="baulmarca 31 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#31 <white>opened!"} @Self'
+baul_cerrado_31:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#31 <white>closed!"} @Self'
+
+baul_boton_32:
+  Conditions:
+  - 'Permission{p=axvaults.vault.32} trueElse baul_boton_32_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_32%";amount=32;name="<#55ff00><bold>Vault #32";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_32%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_32_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=32;name="<#FF0000><bold>Vault #32";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_32:
+  Conditions:
+  - 'Permission{p=axvaults.vault.32} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_32} @Self'
+baul_icono_32:
+  Conditions:
+  - 'Permission{p=axvaults.vault.32} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 32 {caster_name}";runas=console} @Self'
+baul_abierto_32:
+  Mechanics:
+  - 'command{c="baulmarca 32 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#32 <white>opened!"} @Self'
+baul_cerrado_32:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#32 <white>closed!"} @Self'
+
+baul_boton_33:
+  Conditions:
+  - 'Permission{p=axvaults.vault.33} trueElse baul_boton_33_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_33%";amount=33;name="<#55ff00><bold>Vault #33";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_33%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_33_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=33;name="<#FF0000><bold>Vault #33";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_33:
+  Conditions:
+  - 'Permission{p=axvaults.vault.33} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_33} @Self'
+baul_icono_33:
+  Conditions:
+  - 'Permission{p=axvaults.vault.33} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 33 {caster_name}";runas=console} @Self'
+baul_abierto_33:
+  Mechanics:
+  - 'command{c="baulmarca 33 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#33 <white>opened!"} @Self'
+baul_cerrado_33:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#33 <white>closed!"} @Self'
+
+baul_boton_34:
+  Conditions:
+  - 'Permission{p=axvaults.vault.34} trueElse baul_boton_34_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_34%";amount=34;name="<#55ff00><bold>Vault #34";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_34%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_34_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=34;name="<#FF0000><bold>Vault #34";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_34:
+  Conditions:
+  - 'Permission{p=axvaults.vault.34} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_34} @Self'
+baul_icono_34:
+  Conditions:
+  - 'Permission{p=axvaults.vault.34} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 34 {caster_name}";runas=console} @Self'
+baul_abierto_34:
+  Mechanics:
+  - 'command{c="baulmarca 34 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#34 <white>opened!"} @Self'
+baul_cerrado_34:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#34 <white>closed!"} @Self'
+
+baul_boton_35:
+  Conditions:
+  - 'Permission{p=axvaults.vault.35} trueElse baul_boton_35_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_35%";amount=35;name="<#55ff00><bold>Vault #35";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_35%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_35_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=35;name="<#FF0000><bold>Vault #35";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_35:
+  Conditions:
+  - 'Permission{p=axvaults.vault.35} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_35} @Self'
+baul_icono_35:
+  Conditions:
+  - 'Permission{p=axvaults.vault.35} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 35 {caster_name}";runas=console} @Self'
+baul_abierto_35:
+  Mechanics:
+  - 'command{c="baulmarca 35 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#35 <white>opened!"} @Self'
+baul_cerrado_35:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#35 <white>closed!"} @Self'
+
+baul_boton_36:
+  Conditions:
+  - 'Permission{p=axvaults.vault.36} trueElse baul_boton_36_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_36%";amount=36;name="<#55ff00><bold>Vault #36";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_36%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_36_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=36;name="<#FF0000><bold>Vault #36";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_36:
+  Conditions:
+  - 'Permission{p=axvaults.vault.36} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_36} @Self'
+baul_icono_36:
+  Conditions:
+  - 'Permission{p=axvaults.vault.36} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 36 {caster_name}";runas=console} @Self'
+baul_abierto_36:
+  Mechanics:
+  - 'command{c="baulmarca 36 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#36 <white>opened!"} @Self'
+baul_cerrado_36:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#36 <white>closed!"} @Self'
+
+baul_boton_37:
+  Conditions:
+  - 'Permission{p=axvaults.vault.37} trueElse baul_boton_37_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_37%";amount=37;name="<#55ff00><bold>Vault #37";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_37%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_37_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=37;name="<#FF0000><bold>Vault #37";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_37:
+  Conditions:
+  - 'Permission{p=axvaults.vault.37} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_37} @Self'
+baul_icono_37:
+  Conditions:
+  - 'Permission{p=axvaults.vault.37} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 37 {caster_name}";runas=console} @Self'
+baul_abierto_37:
+  Mechanics:
+  - 'command{c="baulmarca 37 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#37 <white>opened!"} @Self'
+baul_cerrado_37:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#37 <white>closed!"} @Self'
+
+baul_boton_38:
+  Conditions:
+  - 'Permission{p=axvaults.vault.38} trueElse baul_boton_38_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_38%";amount=38;name="<#55ff00><bold>Vault #38";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_38%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_38_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=38;name="<#FF0000><bold>Vault #38";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_38:
+  Conditions:
+  - 'Permission{p=axvaults.vault.38} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_38} @Self'
+baul_icono_38:
+  Conditions:
+  - 'Permission{p=axvaults.vault.38} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 38 {caster_name}";runas=console} @Self'
+baul_abierto_38:
+  Mechanics:
+  - 'command{c="baulmarca 38 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#38 <white>opened!"} @Self'
+baul_cerrado_38:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#38 <white>closed!"} @Self'
+
+baul_boton_39:
+  Conditions:
+  - 'Permission{p=axvaults.vault.39} trueElse baul_boton_39_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_39%";amount=39;name="<#55ff00><bold>Vault #39";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_39%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_39_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=39;name="<#FF0000><bold>Vault #39";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_39:
+  Conditions:
+  - 'Permission{p=axvaults.vault.39} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_39} @Self'
+baul_icono_39:
+  Conditions:
+  - 'Permission{p=axvaults.vault.39} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 39 {caster_name}";runas=console} @Self'
+baul_abierto_39:
+  Mechanics:
+  - 'command{c="baulmarca 39 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#39 <white>opened!"} @Self'
+baul_cerrado_39:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#39 <white>closed!"} @Self'
+
+baul_boton_40:
+  Conditions:
+  - 'Permission{p=axvaults.vault.40} trueElse baul_boton_40_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_40%";amount=40;name="<#55ff00><bold>Vault #40";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_40%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_40_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=40;name="<#FF0000><bold>Vault #40";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_40:
+  Conditions:
+  - 'Permission{p=axvaults.vault.40} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_40} @Self'
+baul_icono_40:
+  Conditions:
+  - 'Permission{p=axvaults.vault.40} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 40 {caster_name}";runas=console} @Self'
+baul_abierto_40:
+  Mechanics:
+  - 'command{c="baulmarca 40 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#40 <white>opened!"} @Self'
+baul_cerrado_40:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#40 <white>closed!"} @Self'
+
+baul_boton_41:
+  Conditions:
+  - 'Permission{p=axvaults.vault.41} trueElse baul_boton_41_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_41%";amount=41;name="<#55ff00><bold>Vault #41";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_41%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_41_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=41;name="<#FF0000><bold>Vault #41";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_41:
+  Conditions:
+  - 'Permission{p=axvaults.vault.41} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_41} @Self'
+baul_icono_41:
+  Conditions:
+  - 'Permission{p=axvaults.vault.41} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 41 {caster_name}";runas=console} @Self'
+baul_abierto_41:
+  Mechanics:
+  - 'command{c="baulmarca 41 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#41 <white>opened!"} @Self'
+baul_cerrado_41:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#41 <white>closed!"} @Self'
+
+baul_boton_42:
+  Conditions:
+  - 'Permission{p=axvaults.vault.42} trueElse baul_boton_42_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_42%";amount=42;name="<#55ff00><bold>Vault #42";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_42%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_42_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=42;name="<#FF0000><bold>Vault #42";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_42:
+  Conditions:
+  - 'Permission{p=axvaults.vault.42} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_42} @Self'
+baul_icono_42:
+  Conditions:
+  - 'Permission{p=axvaults.vault.42} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 42 {caster_name}";runas=console} @Self'
+baul_abierto_42:
+  Mechanics:
+  - 'command{c="baulmarca 42 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#42 <white>opened!"} @Self'
+baul_cerrado_42:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#42 <white>closed!"} @Self'
+
+baul_boton_43:
+  Conditions:
+  - 'Permission{p=axvaults.vault.43} trueElse baul_boton_43_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_43%";amount=43;name="<#55ff00><bold>Vault #43";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_43%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_43_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=43;name="<#FF0000><bold>Vault #43";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_43:
+  Conditions:
+  - 'Permission{p=axvaults.vault.43} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_43} @Self'
+baul_icono_43:
+  Conditions:
+  - 'Permission{p=axvaults.vault.43} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 43 {caster_name}";runas=console} @Self'
+baul_abierto_43:
+  Mechanics:
+  - 'command{c="baulmarca 43 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#43 <white>opened!"} @Self'
+baul_cerrado_43:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#43 <white>closed!"} @Self'
+
+baul_boton_44:
+  Conditions:
+  - 'Permission{p=axvaults.vault.44} trueElse baul_boton_44_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_44%";amount=44;name="<#55ff00><bold>Vault #44";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_44%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_44_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=44;name="<#FF0000><bold>Vault #44";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_44:
+  Conditions:
+  - 'Permission{p=axvaults.vault.44} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_44} @Self'
+baul_icono_44:
+  Conditions:
+  - 'Permission{p=axvaults.vault.44} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 44 {caster_name}";runas=console} @Self'
+baul_abierto_44:
+  Mechanics:
+  - 'command{c="baulmarca 44 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#44 <white>opened!"} @Self'
+baul_cerrado_44:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#44 <white>closed!"} @Self'
+
+baul_boton_45:
+  Conditions:
+  - 'Permission{p=axvaults.vault.45} trueElse baul_boton_45_bloqueado'
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_45%";amount=45;name="<#55ff00><bold>Vault #45";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_45%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+baul_boton_45_bloqueado:
+  Mechanics:
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=45;name="<#FF0000><bold>Vault #45";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+baul_abrir_45:
+  Conditions:
+  - 'Permission{p=axvaults.vault.45} trueElse baul_bloqueado'
+  Mechanics:
+  - 'openvault{name=baul_45} @Self'
+baul_icono_45:
+  Conditions:
+  - 'Permission{p=axvaults.vault.45} trueElse baul_bloqueado'
+  Mechanics:
+  - 'command{c="baulicono 45 {caster_name}";runas=console} @Self'
+baul_abierto_45:
+  Mechanics:
+  - 'command{c="baulmarca 45 {caster_name}";runas=console} @Self'
+  - 'playsound{sound="minecraft:block.barrel.open";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#45 <white>opened!"} @Self'
+baul_cerrado_45:
+  Mechanics:
+  - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
+  - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#45 <white>closed!"} @Self'
