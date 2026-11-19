@@ -313,7 +313,6 @@ function subInfo(p: player):
 command /subasta [<text>] [<text>]:
     aliases: /subastas
     permission: subasta.usar
-    permission message: <gradient:gold:yellow><bold>Subasta</bold></gradient> <dark_gray>» <#FF6B6B>No tienes acceso a las subastas.
     trigger:
         if arg-1 is not set:
             send formatted "{@linea}"

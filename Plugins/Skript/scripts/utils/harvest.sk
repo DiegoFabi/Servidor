@@ -60,7 +60,8 @@ options:
     # que ya no tocan ningún tronco (distance=7) caen de golpe en vez de
     # una a una durante minutos. Sueltan lo normal (brotes, palos, manzanas).
     # Las hojas colocadas por jugadores (persistent=true) nunca se tocan.
-    hd-activo: true
+    # Para desactivarlo, comenta los eventos "on break with priority monitor"
+    # y "on leaves decay" del final del archivo.
     # Ticks que se espera tras romper el tronco: el juego necesita ~7 para
     # recalcular la distancia de las hojas al tronco.
     hd-espera: 10
@@ -364,14 +365,12 @@ function hvRomper(p: player, bloques: blocks, sufijo: text, tipo: text, grupo: t
 #    mismo árbol (cada hoja que cae dispararía el evento otra vez).
 # ------------------------------------------------------------
 on break with priority monitor:
-    "{@hd-activo}" is "true"
     event-block is tagged with minecraft block tag "logs"
     set {_o} to location of event-block
     wait {@hd-espera} ticks
     hvHojasCaer({_o})
 
 on leaves decay:
-    "{@hd-activo}" is "true"
     set {_k} to "%chunk at event-block%"
     {-hv::hd::%{_k}%} is not set
     set {-hv::hd::%{_k}%} to true

@@ -11,5 +11,5 @@
 # ============================================================
 
 on resurrect:
-    victim is a player
-    broadcast "<#FFD13B>⌛ %victim% consumió Tótem"
+    event-entity is a player
+    broadcast "<#FFD13B>⌛ %event-entity% consumió Tótem"
