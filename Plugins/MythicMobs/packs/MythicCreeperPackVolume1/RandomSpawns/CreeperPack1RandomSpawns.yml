@@ -7,7 +7,7 @@ MSO_Bamboo_Creeper_Randomspawn:
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
-  - biome{b=JUNGLE,BAMBOO_JUNGLE,SPARSE_JUNGLE}
+  - biome{b=BAMBOO_JUNGLE}
 MSO_Hills_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
@@ -25,7 +25,7 @@ MSO_Jungle_Creeper_Randomspawn:
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
-  - biome{b=JUNGLE,BAMBOO_JUNGLE,SPARSE_JUNGLE}
+  - biome{b=JUNGLE,SPARSE_JUNGLE}
 MSO_Plains_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain

@@ -43,7 +43,7 @@ MSO_Snowy_Creeper_Randomspawn:
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
-  - biome{b=OLD_GROWTH_SPRUCE_TAIGA,TAIGA}
+  - biome{b=SNOWY_PLAINS,SNOWY_TAIGA,SNOWY_SLOPES,ICE_SPIKES,FROZEN_PEAKS,GROVE}
 
 
 

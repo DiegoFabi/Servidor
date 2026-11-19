@@ -36,28 +36,22 @@ opciones_homes_click:
   - 'closeinventory{} @Self'
   - 'playsound{sound="minecraft:item.bundle.drop_contents";volume=1;pitch=1} @Self'
   - 'command{c="homes list";runas=player} @Self'
-# Bossbar de seguimiento de misiones (TypeWriter, fact misiones_bossbar_oculta:
-# 1 = oculta). Solo visual: la misión sigue activa. Un clic la cambia y el
-# menú se vuelve a abrir para mostrar el estado nuevo en el tooltip.
-opciones_bossbar_estado:
-  Conditions:
-  - 'comparator{v1="%typewriter_zi2Eg3h0p54qGzT%";v2="1"} trueElse opciones_bossbar_estado_on'
-  Mechanics:
-  - 'variable{a=set;v=bossbar_misiones;va="<#FF6B6B>Desactivado"} @Self'
-opciones_bossbar_estado_on:
-  Mechanics:
-  - 'variable{a=set;v=bossbar_misiones;va="<#7FFF9E>Activado"} @Self'
+# Un clic: si está activada la oculta, si está oculta la muestra. El estado lo
+# guarda CoreTools en su variable "bossbar_misiones" (no depende de leer el
+# dato de TypeWriter) y se envía a TypeWriter con /typewriter facts set.
 opciones_bossbar_misiones_click:
   Conditions:
-  - 'comparator{v1="%typewriter_zi2Eg3h0p54qGzT%";v2="1"} trueElse opciones_bossbar_ocultar'
+  - 'comparator{v1="%coretools_var_player_bossbar_misiones%";v2="<#FF6B6B>Desactivado"} trueElse opciones_bossbar_ocultar'
   Mechanics:
   - 'command{c="typewriter facts set misiones_bossbar_oculta 0 {caster_name}";runas=console} @Self'
   - 'variable{a=set;v=bossbar_misiones;va="<#7FFF9E>Activado"} @Self'
   - 'playsound{sound="minecraft:block.note_block.pling";volume=1;pitch=1.6} @Self'
+  - 'message{m="<#9EA3AE>✦ <#C9CDD6>Bossbar de misiones <#7FFF9E>activada<#C9CDD6>."} @Self'
   - 'command{c="core-menu menuOpciones {caster_name}";runas=console} @Self'
 opciones_bossbar_ocultar:
   Mechanics:
   - 'command{c="typewriter facts set misiones_bossbar_oculta 1 {caster_name}";runas=console} @Self'
   - 'variable{a=set;v=bossbar_misiones;va="<#FF6B6B>Desactivado"} @Self'
   - 'playsound{sound="minecraft:block.note_block.bass";volume=1;pitch=1} @Self'
+  - 'message{m="<#9EA3AE>✦ <#C9CDD6>Bossbar de misiones <#FF6B6B>oculta<#C9CDD6>. Tus misiones siguen activas."} @Self'
   - 'command{c="core-menu menuOpciones {caster_name}";runas=console} @Self'

@@ -7,9 +7,6 @@ menuOpciones:
   size: 1
   fill_material: AIR
   enable_animation: true
-  # Calcula el estado de la bossbar de misiones para el tooltip
-  start_script:
-  - opciones_bossbar_estado
   buttons:
     baules:
       location: top
