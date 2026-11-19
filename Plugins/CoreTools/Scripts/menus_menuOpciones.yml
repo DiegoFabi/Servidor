@@ -37,13 +37,15 @@ opciones_homes_click:
   - 'playsound{sound="minecraft:item.bundle.drop_contents";volume=1;pitch=1} @Self'
   - 'command{c="homes list";runas=player} @Self'
 # Un clic: si está activada la oculta, si está oculta la muestra. El estado lo
-# guarda CoreTools en su variable "bossbar_misiones" (no depende de leer el
+# decide con la variable "bossbar_oculta" (0/1, sin colores); "bossbar_misiones"
+# solo es el texto que se muestra. No depende de leer el
 # dato de TypeWriter) y se envía a TypeWriter con /typewriter facts set.
 opciones_bossbar_misiones_click:
   Conditions:
-  - 'comparator{v1="%coretools_var_player_bossbar_misiones%";v2="<#FF6B6B>Desactivado"} trueElse opciones_bossbar_ocultar'
+  - 'comparator{v1="%coretools_var_player_bossbar_oculta%";v2="1"} trueElse opciones_bossbar_ocultar'
   Mechanics:
   - 'command{c="typewriter facts set misiones_bossbar_oculta 0 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=bossbar_oculta;va=0} @Self'
   - 'variable{a=set;v=bossbar_misiones;va="<#7FFF9E>Activado"} @Self'
   - 'playsound{sound="minecraft:block.note_block.pling";volume=1;pitch=1.6} @Self'
   - 'message{m="<#9EA3AE>✦ <#C9CDD6>Bossbar de misiones <#7FFF9E>activada<#C9CDD6>."} @Self'
@@ -51,6 +53,7 @@ opciones_bossbar_misiones_click:
 opciones_bossbar_ocultar:
   Mechanics:
   - 'command{c="typewriter facts set misiones_bossbar_oculta 1 {caster_name}";runas=console} @Self'
+  - 'variable{a=set;v=bossbar_oculta;va=1} @Self'
   - 'variable{a=set;v=bossbar_misiones;va="<#FF6B6B>Desactivado"} @Self'
   - 'playsound{sound="minecraft:block.note_block.bass";volume=1;pitch=1} @Self'
   - 'message{m="<#9EA3AE>✦ <#C9CDD6>Bossbar de misiones <#FF6B6B>oculta<#C9CDD6>. Tus misiones siguen activas."} @Self'

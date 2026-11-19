@@ -1,7 +1,6 @@
 MSO_CreeperPrime:
   Cooldown: 1
   Skills:
-  - message{m="AAAAA"} @PIR{r=20}
   - tint{color=#FF0000}
   - delay 10
   - tint{color=#FFFFFF}
