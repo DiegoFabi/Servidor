@@ -24,16 +24,3 @@ my_test_variable3:
 clase_nombre:
   type: string
   default: '<#9EA3AE>Ninguna'
-
-# Estado de la bossbar de misiones mostrado en Más Opciones
-bossbar_misiones:
-  type: string
-  default: '<#7FFF9E>Activado'
-
-# Lógica del interruptor de la bossbar (0 = visible, 1 = oculta). Sin colores
-# para que el comparator del menú de Opciones funcione siempre.
-bossbar_oculta:
-  type: integer
-  default: 0
-  min: 0
-  max: 1

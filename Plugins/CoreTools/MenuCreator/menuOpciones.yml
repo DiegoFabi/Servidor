@@ -183,39 +183,16 @@ menuOpciones:
       shift_right_click:
         Scripts:
         - opciones_duelos_click
-    bossbar_misiones:
+    relleno:
       location: top
       slots:
       - 7
       source: vanilla
-      material: filled_map
-      name: '<white><glyph:essential_icons_flag></white> <gradient:#FFE29A:#FFB347>Bossbar de Misiones</gradient>'
-      lore:
-      - '<#7C8291>Interfaz <white><glyph:essential_icons_cog></white>'
-      - ''
-      - '<white>Oculta o muestra la <#FFB347>barra superior</#FFB347>'
-      - '<white>que guía tus <#7FD8FF>misiones</#7FD8FF>.'
-      - ''
-      - '<#7FFF9E>✔ <#9EEBA8>Solo es visual: tus misiones siguen activas'
-      - ''
-      - '<white>Estado: %coretools_var_player_bossbar_misiones%'
-      - ''
-      - '<#FFB347>✥ ¡Clic para <bold>CAMBIAR</bold>!'
+      material: gray_stained_glass_pane
+      name: ' '
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-      left_click:
-        Scripts:
-        - opciones_bossbar_misiones_click
-      right_click:
-        Scripts:
-        - opciones_bossbar_misiones_click
-      shift_left_click:
-        Scripts:
-        - opciones_bossbar_misiones_click
-      shift_right_click:
-        Scripts:
-        - opciones_bossbar_misiones_click
     volver:
       location: top
       slots:

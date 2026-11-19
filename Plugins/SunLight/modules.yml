@@ -82,7 +82,7 @@ Modules:
   scoreboard:
     Enabled: true
     Name: Scoreboard
-    Prefix: <gradient:#FFAA00:#FF8833:#FF5500><b>SCOREBOARD</b></gradient><dark_gray> » </dark_gray>
+    Prefix: ''
   spawns:
     Enabled: true
     Name: Spawn
