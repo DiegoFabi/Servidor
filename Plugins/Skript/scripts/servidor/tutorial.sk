@@ -77,7 +77,7 @@ on load:
     set {-hist::tipo::13} to "dungeon"
     set {-hist::desc::13::*} to "Bajaste a la cripta bajo Orian y", "acabaste con los muertos que el" and "Alquimista usaba como guardianes."
     # Misiones: si un episodio tiene misión, en el menú sale justo después
-    # un DIAMANTE que explica qué hay que hacer. Se ve mientras juegas ese
+    # un LIBRO Y PLUMA que explica qué hay que hacer. Se ve mientras juegas ese
     # episodio (progreso = N-1) y queda como completada al terminarlo.
     set {-hist::mision::4} to "El Ritual de Malvor"
     set {-hist::mdesc::4::*} to "<#E6E6E6>• Mata 5 esqueletos (los Olvidados)", "<#E8D27A>• Ten 10 de trigo en el inventario", "<#C38BFF>• Ten 8 fragmentos de amatista" and "<#FFD36B>➜ Vuelve con Malvor el Chamán"
@@ -268,7 +268,7 @@ function historiaMenu(p: player):
             set {_barra} to "%{_barra}%<#FFD36B>■"
         else:
             set {_barra} to "%{_barra}%<dark_gray>■"
-    set slot 4 of {_gui} to skull of {_p} named "<#FFD36B>Tu Historia" with lore "<#C9CDD6>Partes: <white>%{_prog}%<#9EA3AE>/%{_total}%", "%{_barra}%", "", "<#7FD8FF>◆ Diamante<#9EA3AE> = misión del episodio" and "<#9EA3AE>Haz clic en una parte para recordarla."
+    set slot 4 of {_gui} to skull of {_p} named "<#FFD36B>Tu Historia" with lore "<#C9CDD6>Partes: <white>%{_prog}%<#9EA3AE>/%{_total}%", "%{_barra}%", "", "<#7FD8FF>✎ Libro y pluma<#9EA3AE> = misión", "<#FFD36B>✦ Libro encantado<#9EA3AE> = historia" and "<#9EA3AE>Haz clic en una parte para recordarla."
     set {_i} to 0
     loop {-hist::orden::*}:
         add 1 to {_i}
@@ -282,13 +282,13 @@ function historiaMenu(p: player):
                 set {_lore::*} to "<#7FFF9E>✔ Misión completada" and ""
                 loop {-hist::mdesc::%{_n}%::*}:
                     add loop-value-2 to {_lore::*}
-                set slot {_s} of {_gui} to diamond named "<#7FD8FF>◆ Misión Ep. %{_n}%: <white>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
+                set slot {_s} of {_gui} to writable book named "<#7FD8FF>✎ Misión Ep. %{_n}%: <white>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
             else if {_n} = {_prog} + 1:
                 set {_lore::*} to "<#FFB347>● Misión en curso" and ""
                 loop {-hist::mdesc::%{_n}%::*}:
                     add loop-value-2 to {_lore::*}
                 add "" and "<#7FB2FF>Clic para verla en el chat" to {_lore::*}
-                set slot {_s} of {_gui} to diamond named "<#7FD8FF>◆ Misión Ep. %{_n}%: <white>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
+                set slot {_s} of {_gui} to writable book named "<#7FD8FF>✎ Misión Ep. %{_n}%: <white>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
             else:
                 set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Misión Ep. %{_n}%: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
         else if {_n} <= {_prog}:
