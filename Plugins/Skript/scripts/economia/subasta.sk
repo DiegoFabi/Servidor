@@ -445,6 +445,7 @@ function subCentrar(t: text) :: text:
 function subArriba(p: players, cabecera: text, titulo: text):
     send "" to {_p::*}
     send formatted subCentrar({_cabecera}) to {_p::*}
+    send "" to {_p::*}
     send formatted subCentrar({_titulo}) to {_p::*}
     send "" to {_p::*}
 
@@ -453,6 +454,6 @@ function subLinea(p: players, t: text):
 
 function subAbajo(p: players):
     send "" to {_p::*}
-    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to {_p::*}
     send "" to {_p::*}
 

@@ -360,6 +360,7 @@ function cfCentrar(t: text) :: text:
 function cfArriba(p: players, cabecera: text, titulo: text):
     send "" to {_p::*}
     send formatted cfCentrar({_cabecera}) to {_p::*}
+    send "" to {_p::*}
     send formatted cfCentrar({_titulo}) to {_p::*}
     send "" to {_p::*}
 
@@ -368,6 +369,6 @@ function cfLinea(p: players, t: text):
 
 function cfAbajo(p: players):
     send "" to {_p::*}
-    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to {_p::*}
     send "" to {_p::*}
 

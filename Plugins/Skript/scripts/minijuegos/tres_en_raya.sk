@@ -55,14 +55,15 @@ function ttAnunciar():
     loop all players:
         notificar(loop-player)
         send "" to loop-player
-        send "                     <#7FDCE6>— ✧ Anuncios de eventos ✧ —" to loop-player
+        send "                     <#7FDCE6>— ✧ Anuncios de Eventos ✧ —" to loop-player
+        send "" to loop-player
         send "                           <#3FD0DE><bold>TRES EN RAYA" to loop-player
         send "" to loop-player
         send formatted ttCentrar({_a}, {_ap}) to loop-player
         send "" to loop-player
         send formatted ttCentrar({_b}, "✧ ¡Click para UNIRTE! ✧") to loop-player
         send "" to loop-player
-        send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to loop-player
+        send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to loop-player
         send "" to loop-player
     wait {@inscripcion} seconds
     {-tt::id} = {_id}

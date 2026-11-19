@@ -95,7 +95,7 @@ function boAnunciar():
     delete {-bo::jugadores::*}
     loop all players:
         notificar(loop-player)
-        boArriba(loop-player, "<#7FDCE6>— ✧ Anuncios de eventos ✧ —", "<#3FD0DE><bold>BUSCA OBJETOS</bold>")
+        boArriba(loop-player, "<#7FDCE6>— ✧ Anuncios de Eventos ✧ —", "<#3FD0DE><bold>BUSCA OBJETOS</bold>")
         boLinea(loop-player, "<white>¡Duelo 1v1! <#C9CDD6>El primero en conseguir el bloque")
         boLinea(loop-player, "<#C9CDD6>gana el bote de <#7FDCE6>$%{-bo::apuesta} * 2%")
         send "" to loop-player
@@ -318,6 +318,7 @@ function boCentrar(t: text) :: text:
 function boArriba(p: players, cabecera: text, titulo: text):
     send "" to {_p::*}
     send formatted boCentrar({_cabecera}) to {_p::*}
+    send "" to {_p::*}
     send formatted boCentrar({_titulo}) to {_p::*}
     send "" to {_p::*}
 
@@ -326,7 +327,7 @@ function boLinea(p: players, t: text):
 
 function boAbajo(p: players):
     send "" to {_p::*}
-    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to {_p::*}
     send "" to {_p::*}
 
 # ------------------------------------------------------------

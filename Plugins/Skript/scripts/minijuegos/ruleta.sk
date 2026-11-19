@@ -84,7 +84,7 @@ function ruletaGirar(forzar: text = ""):
     # Lo malo de la ruleta anterior (dificultad) se revierte en cada giro
     ruletaRestaurar()
 
-    ruletaArriba(all players, "<#FFA58A>— ◎ Ruleta del destino ◎ —", "<#F2643C><bold>¡LA RULETA ESTÁ GIRANDO!</bold>")
+    ruletaArriba(all players, "<#FFA58A>— ◎ Ruleta del Destino ◎ —", "<#F2643C><bold>¡LA RULETA ESTÁ GIRANDO!</bold>")
     ruletaLinea(all players, "<#C9CDD6>¿Qué te deparará el destino?")
     ruletaAbajo(all players)
     play sound "{@sonido}" with volume 1 to all players
@@ -262,7 +262,7 @@ function ruletaResultado(color: text):
     set {_sub} to "<#C9CDD6>%{_d}%"
     replace all "|" in {_sub} with " "
     send title {_titulo} with subtitle {_sub} to all players for 5 seconds with fadein 10 ticks and fadeout 20 ticks
-    ruletaArriba(all players, "%{_cl}%— ◎ Ruleta del destino ◎ —", "%{_cf}%<bold>¡%{_etiqueta}%! <dark_gray>» %{_cf}%%{_t}%</bold>")
+    ruletaArriba(all players, "%{_cl}%— ◎ Ruleta del Destino ◎ —", "%{_cf}%<bold>¡%{_etiqueta}%! <dark_gray>» %{_cf}%%{_t}%</bold>")
     # "|" separa las líneas de las descripciones largas
     loop {_d} split at "|":
         ruletaLinea(all players, "<#C9CDD6>%loop-value%")
@@ -370,6 +370,7 @@ function ruletaCentrar(t: text) :: text:
 function ruletaArriba(p: players, cabecera: text, titulo: text):
     send "" to {_p::*}
     send formatted ruletaCentrar({_cabecera}) to {_p::*}
+    send "" to {_p::*}
     send formatted ruletaCentrar({_titulo}) to {_p::*}
     send "" to {_p::*}
 
@@ -378,7 +379,7 @@ function ruletaLinea(p: players, t: text):
 
 function ruletaAbajo(p: players):
     send "" to {_p::*}
-    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to {_p::*}
+    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to {_p::*}
     send "" to {_p::*}
 
 # ------------------------------------------------------------

@@ -147,13 +147,14 @@ function mgCentrar(t: text, plano: text) :: text:
 
 function mgAnuncio(a: text, aplano: text, b: text, bplano: text):
     send "" to all players
-    send "                     <#7FDCE6>— ✧ Anuncios de eventos ✧ —" to all players
+    send "                     <#7FDCE6>— ✧ Anuncios de Eventos ✧ —" to all players
+    send "" to all players
     send "                        <#3FD0DE><bold>MINIJUEGOS DEL CHAT" to all players
     send "" to all players
     send mgCentrar({_a}, {_aplano}) to all players
     send mgCentrar({_b}, {_bplano}) to all players
     send "" to all players
-    send "                               <#9EA3AE>⟐ ᴄʟᴏᴜᴅꜱʙʟᴜᴇꜱ" to all players
+    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to all players
     send "" to all players
 
 function mgLimpiar():
