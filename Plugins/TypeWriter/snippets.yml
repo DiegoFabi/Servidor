@@ -56,7 +56,7 @@ dialogue:
       <white> <speaker><reset>: <text>
 
       <options>
-      <grey>Usa la <white>rueda</white> para cambiar de opción y pulsa<white> <confirmation_key> </white>para elegir
+      <grey><white>Rueda</white>: cambiar · <white><confirmation_key></white>: elegir
       <gray><st>                                                            </st>
     prefix:
       selected: <#78ff85>>>
