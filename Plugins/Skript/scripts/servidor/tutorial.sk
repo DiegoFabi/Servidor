@@ -54,7 +54,7 @@ on load:
     set {-hist::nombre::3} to "Los Supervivientes"
     set {-hist::desc::3::*} to "Bram la Herrera, Malvor el Chamán y", "Tobías el Granjero siguen en pie. Una", "visión te mostró una raíz bajo el trono" and "y la Maleza ya sabe que has vuelto."
     set {-hist::nombre::4} to "La Raíz bajo el Trono"
-    set {-hist::desc::4::*} to "Derrotaste a los Olvidados y con hongos", "y amatistas Malvor abrió el ritual. La", "Raíz te habló: su corazón está sellado" and "con un juramento enano."
+    set {-hist::desc::4::*} to "Derrotaste a los Olvidados y con trigo", "y amatistas Malvor abrió el ritual. La", "Raíz te habló: su corazón está sellado" and "con un juramento enano."
     set {-hist::nombre::5} to "El Juramento del Acero"
     set {-hist::desc::5::*} to "Pronunciaste la palabra de la corona:", "«Recuerda». Con hierro, carbón y", "pizarra profunda, Bram forjó la" and "Llave de Raíz."
     set {-hist::nombre::6} to "Las Puertas de la Cripta"
@@ -76,8 +76,31 @@ on load:
     set {-hist::nombre::13} to "Misión: La Cripta de Orian"
     set {-hist::tipo::13} to "dungeon"
     set {-hist::desc::13::*} to "Bajaste a la cripta bajo Orian y", "acabaste con los muertos que el" and "Alquimista usaba como guardianes."
-    # Huecos del menú (2 filas): partes 1-7 arriba y 8-13 abajo
-    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23 and 24
+    # Misiones: si un episodio tiene misión, en el menú sale justo después
+    # un DIAMANTE que explica qué hay que hacer. Se ve mientras juegas ese
+    # episodio (progreso = N-1) y queda como completada al terminarlo.
+    set {-hist::mision::4} to "El Ritual de Malvor"
+    set {-hist::mdesc::4::*} to "<#E6E6E6>• Mata 5 esqueletos (los Olvidados)", "<#E8D27A>• Ten 10 de trigo en el inventario", "<#C38BFF>• Ten 8 fragmentos de amatista" and "<#FFD36B>➜ Vuelve con Malvor el Chamán"
+    set {-hist::mision::5} to "La Llave de Raíz"
+    set {-hist::mdesc::5::*} to "<#D9D9D9>• Ten 24 lingotes de hierro", "<#8A8A8A>• Ten 32 de carbón", "<#8A8AB0>• Pica 48 de pizarra profunda" and "<#FFD36B>➜ Vuelve con Bram la Herrera"
+    set {-hist::mision::6} to "La Purga de la Cripta"
+    set {-hist::mdesc::6::*} to "<#F86363>• Derrota 30 zombis en la entrada", "<#F86363>  de la cripta" and "<#FFD36B>➜ Informa al Guardia Real"
+    set {-hist::mision::7} to "La Cosecha Torcida"
+    set {-hist::mdesc::7::*} to "<#E8D27A>• Cosecha 64 de trigo", "<#FFA34D>• Cosecha 12 calabazas", "<#FFD36B>➜ Vuelve con Tobías el Granjero", "<#F2F2F2>• Ten 32 de polvo de hueso" and "<#FFD36B>➜ Llévaselo a Malvor el Chamán"
+    set {-hist::mision::8} to "La Tinta de las Crónicas"
+    set {-hist::mdesc::8::*} to "<#7FB2FF>• Derrota 10 calamares (tinta)", "<#E0C28A>• Ten 6 libros en el inventario" and "<#FFD36B>➜ Vuelve con Aldric el Cronista"
+    set {-hist::mision::9} to "La Noche de la Maleza"
+    set {-hist::mdesc::9::*} to "<#E6E6E6>• Derrota 10 esqueletos", "<#B05050>• Derrota 12 arañas", "<#7FD86B>• Derrota 6 creepers" and "<#FFD36B>➜ Informa al Guardia Real"
+    set {-hist::mision::12} to "Armadura de Hierro"
+    set {-hist::mdesc::12::*} to "<#D9D9D9>• Equípate casco, peto, pantalones", "<#D9D9D9>  y botas de hierro" and "<#FFD36B>➜ Vuelve con Sir Aldren"
+    # Orden del menú: cada parte ("p:N") seguida de su misión ("m:N") si tiene
+    delete {-hist::orden::*}
+    loop {-hist::total} times:
+        add "p:%loop-number%" to {-hist::orden::*}
+        if {-hist::mision::%loop-number%} is set:
+            add "m:%loop-number%" to {-hist::orden::*}
+    # Huecos del menú (3 filas de 7)
+    set {-hist::slots::*} to 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33 and 34
 
 # ------------------------------------------------------------
 #  Inicio y comandos de consola
@@ -238,35 +261,53 @@ on damage:
 function historiaMenu(p: player):
     set {_prog} to {historia::%uuid of {_p}%} ? 0
     set {_total} to {-hist::total}
-    set {_gui} to chest inventory with 4 rows named "<#FFD36B>✦ <dark_gray>%{-hist::capitulo}% <gray>(%{_prog}%/%{_total}%)"
+    set {_gui} to chest inventory with 5 rows named "<#FFD36B>✦ <dark_gray>%{-hist::capitulo}% <gray>(%{_prog}%/%{_total}%)"
     set {_barra} to ""
     loop {_total} times:
         if loop-number <= {_prog}:
             set {_barra} to "%{_barra}%<#FFD36B>■"
         else:
             set {_barra} to "%{_barra}%<dark_gray>■"
-    set slot 4 of {_gui} to skull of {_p} named "<#FFD36B>Tu Historia" with lore "<#C9CDD6>Partes: <white>%{_prog}%<#9EA3AE>/%{_total}%", "%{_barra}%", "" and "<#9EA3AE>Haz clic en una parte para recordarla."
-    loop {_total} times:
-        set {_n} to loop-number
-        set {_s} to {-hist::slots::%{_n}%}
-        if {_s} is set:
+    set slot 4 of {_gui} to skull of {_p} named "<#FFD36B>Tu Historia" with lore "<#C9CDD6>Partes: <white>%{_prog}%<#9EA3AE>/%{_total}%", "%{_barra}%", "", "<#7FD8FF>◆ Diamante<#9EA3AE> = misión del episodio" and "<#9EA3AE>Haz clic en una parte para recordarla."
+    set {_i} to 0
+    loop {-hist::orden::*}:
+        add 1 to {_i}
+        set {_s} to {-hist::slots::%{_i}%}
+        if {_s} is not set:
+            exit loop
+        set {_tipo} to first character of loop-value-1
+        set {_n} to (subtext of loop-value-1 from character 3 to (length of loop-value-1)) parsed as integer
+        if {_tipo} is "m":
             if {_n} <= {_prog}:
-                set {_lore::*} to "<#7FFF9E>✔ Desbloqueado" and ""
-                loop {-hist::desc::%{_n}%::*}:
-                    add "<#C9CDD6>%loop-value-2%" to {_lore::*}
-                add "" and "<#7FB2FF>Clic para recordar" to {_lore::*}
-                if {-hist::tipo::%{_n}%} is "dungeon":
-                    set slot {_s} of {_gui} to zombie head named "<#FF8A8A>⚔ Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
-                else:
-                    set slot {_s} of {_gui} to enchanted book named "<#FFD36B>Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
+                set {_lore::*} to "<#7FFF9E>✔ Misión completada" and ""
+                loop {-hist::mdesc::%{_n}%::*}:
+                    add loop-value-2 to {_lore::*}
+                set slot {_s} of {_gui} to diamond named "<#7FD8FF>◆ Misión Ep. %{_n}%: <white>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
             else if {_n} = {_prog} + 1:
-                if {-hist::tipo::%{_n}%} is "dungeon":
-                    set slot {_s} of {_gui} to zombie head named "<#9EA3AE>⚔ Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FF8A8A>● Misión tipo dungeon", "<#FFB347>Obligatoria para seguir la historia", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearla."
-                else:
-                    set slot {_s} of {_gui} to book named "<#9EA3AE>Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FFB347>● Siguiente capítulo", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearlo."
+                set {_lore::*} to "<#FFB347>● Misión en curso" and ""
+                loop {-hist::mdesc::%{_n}%::*}:
+                    add loop-value-2 to {_lore::*}
+                add "" and "<#7FB2FF>Clic para verla en el chat" to {_lore::*}
+                set slot {_s} of {_gui} to diamond named "<#7FD8FF>◆ Misión Ep. %{_n}%: <white>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
             else:
-                set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Parte %{_n}%: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
-            delete {_lore::*}
+                set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Misión Ep. %{_n}%: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
+        else if {_n} <= {_prog}:
+            set {_lore::*} to "<#7FFF9E>✔ Desbloqueado" and ""
+            loop {-hist::desc::%{_n}%::*}:
+                add "<#C9CDD6>%loop-value-2%" to {_lore::*}
+            add "" and "<#7FB2FF>Clic para recordar" to {_lore::*}
+            if {-hist::tipo::%{_n}%} is "dungeon":
+                set slot {_s} of {_gui} to zombie head named "<#FF8A8A>⚔ Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
+            else:
+                set slot {_s} of {_gui} to enchanted book named "<#FFD36B>Parte %{_n}%: <white>%{-hist::nombre::%{_n}%}%" with lore {_lore::*}
+        else if {_n} = {_prog} + 1:
+            if {-hist::tipo::%{_n}%} is "dungeon":
+                set slot {_s} of {_gui} to zombie head named "<#9EA3AE>⚔ Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FF8A8A>● Misión tipo dungeon", "<#FFB347>Obligatoria para seguir la historia", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearla."
+            else:
+                set slot {_s} of {_gui} to book named "<#9EA3AE>Parte %{_n}%: <gray>%{-hist::nombre::%{_n}%}%" with lore "<#FFB347>● Siguiente capítulo", "", "<#9EA3AE>Avanza en la historia para" and "<#9EA3AE>desbloquearlo."
+        else:
+            set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Parte %{_n}%: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
+        delete {_lore::*}
     set {-hist::inv::%uuid of {_p}%} to {_gui}
     open {_gui} to {_p}
 
@@ -277,9 +318,21 @@ on inventory click:
     set {_i} to index of event-slot
     loop {-hist::slots::*}:
         if loop-value = {_i}:
-            set {_n} to loop-index parsed as integer
-    {_n} is set
-    {_n} <= ({historia::%uuid of player%} ? 0)
+            set {_k} to loop-index parsed as integer
+    {_k} is set
+    set {_e} to {-hist::orden::%{_k}%}
+    {_e} is set
+    set {_n} to (subtext of {_e} from character 3 to (length of {_e})) parsed as integer
+    set {_prog} to {historia::%uuid of player%} ? 0
+    if first character of {_e} is "m":
+        {_n} <= {_prog} + 1
+        close player's inventory
+        send "{@prefijo-historia} <#7FD8FF><bold>Misión Ep. %{_n}%: %{-hist::mision::%{_n}%}%</bold>" to player
+        loop {-hist::mdesc::%{_n}%::*}:
+            send "<dark_gray>│ %loop-value%" to player
+        play sound "block.amethyst_block.chime" with volume 0.8 to player
+        stop
+    {_n} <= {_prog}
     close player's inventory
     send "{@prefijo-historia} <#FFD36B><bold>%{-hist::capitulo}% • Parte %{_n}%: %{-hist::nombre::%{_n}%}%</bold>" to player
     loop {-hist::desc::%{_n}%::*}:
