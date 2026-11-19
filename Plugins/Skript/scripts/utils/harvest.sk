@@ -1,5 +1,6 @@
 # ============================================================
-#  harvest.sk - Veinminer + Treecapitator (+ soporte MCPets)
+#  harvest.sk - Veinminer + Treecapitator + caída rápida de hojas
+#               (+ soporte MCPets)
 #  Requiere: Skript 2.17+ (blockdata, etiquetas). Sin addons.
 #
 #  RENDIMIENTO
@@ -53,6 +54,23 @@ options:
     tc-troncos: oak_log,spruce_log,birch_log,jungle_log,acacia_log,dark_oak_log,mangrove_log,cherry_log,pale_oak_log
     tc-hojas: oak_leaves,spruce_leaves,birch_leaves,jungle_leaves,acacia_leaves,dark_oak_leaves,mangrove_leaves,cherry_leaves,pale_oak_leaves,azalea_leaves,flowering_azalea_leaves
 
+    # ------------- CAÍDA RÁPIDA DE HOJAS -------------
+    # (sustituye a "instantLeafDecay" de PerfoBooster)
+    # Al romper un tronco, o cuando una hoja cae sola, las hojas naturales
+    # que ya no tocan ningún tronco (distance=7) caen de golpe en vez de
+    # una a una durante minutos. Sueltan lo normal (brotes, palos, manzanas).
+    # Las hojas colocadas por jugadores (persistent=true) nunca se tocan.
+    hd-activo: true
+    # Ticks que se espera tras romper el tronco: el juego necesita ~7 para
+    # recalcular la distancia de las hojas al tronco.
+    hd-espera: 10
+    # Máximo de hojas que se revisan por activación
+    hd-max: 250
+    # Distancia máxima (en bloques) desde el punto de origen
+    hd-radio: 10
+    # Hojas rotas por tick (reparte la carga)
+    hd-lote: 20
+
 # ------------------------------------------------------------
 #  Preparacion (una sola vez al cargar): tablas O(1) y vecinos
 # ------------------------------------------------------------
@@ -92,6 +110,8 @@ on script load:
                         add vector({_x}, {_y}, {_z}) to {-hv::n17::*}
     # Lados + arriba para buscar hojas junto a la copa
     add vector(1, 0, 0), vector(-1, 0, 0), vector(0, 0, 1), vector(0, 0, -1) and vector(0, 1, 0) to {-hv::lados::*}
+    # 6 caras: las hojas calculan su distancia al tronco por las caras
+    add vector(1, 0, 0), vector(-1, 0, 0), vector(0, 1, 0), vector(0, -1, 0), vector(0, 0, 1) and vector(0, 0, -1) to {-hv::n6::*}
 
 # ID de Minecraft de un bloque sin "minecraft:" ni estados, usando el
 # blockdata nativo de Skript ("minecraft:redstone_ore[lit=false]")
@@ -333,3 +353,72 @@ function hvRomper(p: player, bloques: blocks, sufijo: text, tipo: text, grupo: t
     if {_d::*} is set:
         apGive({_p}, {_d::*}, {_ultimo}, {_xp})
     apXp({_p}, {_xp}, {_ultimo})
+# ------------------------------------------------------------
+#  CAÍDA RÁPIDA DE HOJAS
+#  - Solo eventos: romper un tronco (cualquier forma, incluida la tala)
+#    o la caída natural de una hoja. Sin timers ni "every X".
+#  - BFS acotado a hd-max bloques y hd-radio de distancia, por las
+#    6 caras de las hojas; solo rompe las que el juego ya marcó para
+#    caer (distance=7, persistent=false). Rotura por lotes de hd-lote.
+#  - Un candado por chunk evita lanzar varias búsquedas a la vez en el
+#    mismo árbol (cada hoja que cae dispararía el evento otra vez).
+# ------------------------------------------------------------
+on break with priority monitor:
+    "{@hd-activo}" is "true"
+    event-block is tagged with minecraft block tag "logs"
+    set {_o} to location of event-block
+    wait {@hd-espera} ticks
+    hvHojasCaer({_o})
+
+on leaves decay:
+    "{@hd-activo}" is "true"
+    set {_k} to "%chunk at event-block%"
+    {-hv::hd::%{_k}%} is not set
+    set {-hv::hd::%{_k}%} to true
+    set {_o} to location of event-block
+    wait 1 tick
+    hvHojasCaer({_o})
+    delete {-hv::hd::%{_k}%}
+
+function hvHojasCaer(o: location):
+    set {_n} to 0
+    set {_i} to 0
+    # Semilla: las hojas pegadas al punto de origen
+    loop {-hv::n6::*}:
+        set {_b} to block at ({_o} offset by loop-value)
+        if {_b} is tagged with minecraft block tag "leaves":
+            set {_key} to "%location of {_b}%"
+            if {_visto::%{_key}%} is not set:
+                set {_visto::%{_key}%} to true
+                add 1 to {_n}
+                set {_cola::%{_n}%} to {_b}
+    loop {@hd-max} times:
+        add 1 to {_i}
+        set {_actual} to {_cola::%{_i}%}
+        if {_actual} is not set:
+            exit loop
+        set {_bd} to "%block data of {_actual}%"
+        if {_bd} contains "persistent=false":
+            if {_bd} contains "distance=7":
+                add {_actual} to {_caer::*}
+        loop {-hv::n6::*}:
+            if {_n} >= {@hd-max}:
+                exit loop
+            set {_b} to block at ((location of {_actual}) offset by loop-value-2)
+            if {_b} is tagged with minecraft block tag "leaves":
+                if distance between location of {_b} and {_o} <= {@hd-radio}:
+                    set {_key} to "%location of {_b}%"
+                    if {_visto::%{_key}%} is not set:
+                        set {_visto::%{_key}%} to true
+                        add 1 to {_n}
+                        set {_cola::%{_n}%} to {_b}
+    set {_r} to 0
+    loop {_caer::*}:
+        set {_b} to loop-value
+        # Revalidar: pudo cambiar durante los ticks de espera
+        if {_b} is tagged with minecraft block tag "leaves":
+            if "%block data of {_b}%" contains "distance=7":
+                break {_b} naturally
+                add 1 to {_r}
+                if mod({_r}, {@hd-lote}) is 0:
+                    wait 1 tick
