@@ -35,15 +35,6 @@ sounds:
   stream: true
   volume: 1.0
   pitch: 1.0
-- id: nexo:music.talking
-  sound: nexo:music/talking.ogg
-  stream: true
-  volume: 1.0
-  pitch: 1.0
-  jukebox_playable:
-    comparator_output: 15
-    description: Efecto de Sonido de Habla de NPC's
-    duration: 15s
 - id: nexo:ruleta.spin
   sound: nexo:ruleta/ruleta.ogg
   volume: 1.0

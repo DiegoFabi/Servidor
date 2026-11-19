@@ -10,9 +10,9 @@ abilities:
     lore: "<green>(+{duration})"
 action_bar:
   # Vida • Saturación (PlaceholderAPI, expansión Player) • Maná. Solo símbolos vanilla.
-  idle: "{{action_bar.hp_display}}  <#3A3F4B>|  <#FFB347>♨ <#FFE2C2>%player_saturation%  <#3A3F4B>|  {{action_bar.mana_display}}"
-  hp_display: "<#FF5C6C>❤ <#FFD1D6>{hp}<#7C8291>/{max_hp}"
-  mana_display: "<#A78BFA>✦ <#E4DBFF>{mana}<#7C8291>/{max_mana}"
+  idle: "{{action_bar.hp_display}}  <#3A3F4B>|  <#FFB347>♨ <#9EA3AE>Saturación <#FFE2C2>%player_saturation%  <#3A3F4B>|  {{action_bar.mana_display}}"
+  hp_display: "<#FF5C6C>❤ <#9EA3AE>Vida <#FFD1D6>{hp}<#7C8291>/{max_hp}"
+  mana_display: "<#A78BFA>✦ <#9EA3AE>Maná <#E4DBFF>{mana}<#7C8291>/{max_mana}"
   xp: "{{action_bar.hp_display}}  <#3A3F4B>|  <#FFC857>+{xp_gained} {skill} <#7C8291>({current_xp}/{level_xp})  <#3A3F4B>|  {{action_bar.mana_display}}"
   maxed: "{{action_bar.hp_display}}  <#3A3F4B>|  <#FFC857>+{xp_gained} {skill} <#7C8291>({{ui.maxed}})  <#3A3F4B>|  {{action_bar.mana_display}}"
   ability: "{message}"
