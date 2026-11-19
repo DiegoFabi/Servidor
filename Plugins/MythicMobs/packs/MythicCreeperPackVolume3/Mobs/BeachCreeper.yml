@@ -10,6 +10,7 @@ MSO_Creeper_Beach:
   - NAUTILUS_SHELL 1 0.01
   - PRISMARINE_CRYSTALS 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Beach} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_beach;n=false} @self ~onSpawn

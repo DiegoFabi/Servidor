@@ -7,6 +7,7 @@ MSO_Creeper_Savannah:
   - GUNPOWDER 0-2 1
   - ACACIA_LOG 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Savannah} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_savannah;n=false} @self ~onSpawn

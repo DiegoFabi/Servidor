@@ -11,6 +11,7 @@ MSO_Creeper_Cave:
   - EMERALD 1 0.05
   - DIAMOND 1 0.01
   Skills:
+  - skill{s=Botin_Creeper_Cave} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_cave;n=false} @self ~onSpawn

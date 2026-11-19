@@ -6,6 +6,7 @@ MSO_Creeper_Desert:
   Drops:
   - CACTUS 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Desert} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_desert;n=false} @self ~onSpawn

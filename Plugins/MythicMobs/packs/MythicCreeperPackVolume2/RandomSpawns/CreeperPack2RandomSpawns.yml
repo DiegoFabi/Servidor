@@ -3,7 +3,7 @@ MSO_Desert_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Desert
-  Chance: 0.2
+  Chance: 0.04
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
@@ -12,7 +12,7 @@ MSO_Dripstone_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Dripstone
-  Chance: 0.2
+  Chance: 0.04
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
@@ -21,7 +21,7 @@ MSO_Cave_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Cave
-  Chance: 0.2
+  Chance: 0.04
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
@@ -30,7 +30,7 @@ MSO_DarkOak_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_DarkOak
-  Chance: 0.2
+  Chance: 0.04
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}
@@ -39,7 +39,7 @@ MSO_Snowy_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Snowy
-  Chance: 0.2
+  Chance: 0.04
   Priority: 1
   Conditions:
   - mobtype{type=CREEPER}

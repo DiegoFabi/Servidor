@@ -7,6 +7,7 @@ MSO_Creeper_Badlands:
   - GUNPOWDER 0-2 1
   - GOLD_NUGGET 0-6 1
   Skills:
+  - skill{s=Botin_Creeper_Badlands} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_badlands;n=false} @self ~onSpawn

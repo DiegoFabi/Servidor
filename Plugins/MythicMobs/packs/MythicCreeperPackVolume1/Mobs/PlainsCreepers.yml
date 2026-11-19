@@ -10,6 +10,7 @@ MSO_Creeper_Plains:
   - GUNPOWDER 0-2 1 
   - SEEDS 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Plains} @trigger ~onDeath
   - model{mid=creeper_plains;n=false} @Self ~onSpawn
   - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
   - skill:MSO_CreeperPrime @self ~onPrime
@@ -28,6 +29,7 @@ MSO_Creeper_Plains_Christmas:
   Drops:
   - GUNPOWDER 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Plains_Christmas} @trigger ~onDeath
   - model{mid=creeper_plains_christmas;n=false} @Self ~onSpawn
   - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
   - skill:MSO_CreeperPrime @self ~onPrime
@@ -46,6 +48,7 @@ MSO_Creeper_Plains_Halloween:
   Drops:
   - GUNPOWDER 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Plains_Halloween} @trigger ~onDeath
   - model{mid=creeper_plains_halloween;n=false} @Self ~onSpawn
   - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
   - skill:MSO_CreeperPrime @self ~onPrime
@@ -64,6 +67,7 @@ MSO_Creeper_Plains_StPatricksDay:
   Drops:
   - GUNPOWDER 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Plains_StPatricksDay} @trigger ~onDeath
   - model{mid=creeper_plains_stpatricksday;n=false} @Self ~onSpawn
   - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
   - skill:MSO_CreeperPrime @self ~onPrime

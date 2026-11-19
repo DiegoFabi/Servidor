@@ -7,6 +7,7 @@ MSO_Creeper_DarkOak:
   - COBWEB 0-1 1
   - DARK_OAK_LOG 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_DarkOak} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_dark_oak;n=false} @self ~onSpawn

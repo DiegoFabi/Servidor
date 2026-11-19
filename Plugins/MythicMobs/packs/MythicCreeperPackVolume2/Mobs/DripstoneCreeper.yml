@@ -6,6 +6,7 @@ MSO_Creeper_Dripstone:
   Drops:
   - POINTED_DRIPSTONE 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Dripstone} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_dripstone;n=false} @self ~onSpawn

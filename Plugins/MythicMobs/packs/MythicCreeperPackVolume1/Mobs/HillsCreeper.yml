@@ -6,6 +6,7 @@ MSO_Creeper_Hills:
   Drops:
   - GUNPOWDER 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Hills} @trigger ~onDeath
   - model{mid=creeper_hills;n=false} @Self ~onSpawn
   - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
   - skill:MSO_CreeperPrime @self ~onPrime

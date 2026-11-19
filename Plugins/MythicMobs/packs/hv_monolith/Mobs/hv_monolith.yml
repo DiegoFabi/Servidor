@@ -45,6 +45,7 @@ hv_monolith:
     CreateFog: false
     DarkenSky: false
   Skills:
+  - skill{s=Botin_Monolith} @trigger ~onDeath
   - model{mid=hv_monolith;ride=true;drive=true;s=1;save=true;tint=false} @self ~onSpawn
   - model{mid=hv_monolith;ride=true;drive=true;s=1;save=true;tint=false} @self ~onLoad
   - CancelEvent{sync=true} @self ~onAttack

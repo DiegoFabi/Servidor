@@ -7,6 +7,7 @@ MSO_Creeper_Swamp:
   - GUNPOWDER 0-2 1
   - BONE 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Swamp} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_swamp;n=false} @self ~onSpawn

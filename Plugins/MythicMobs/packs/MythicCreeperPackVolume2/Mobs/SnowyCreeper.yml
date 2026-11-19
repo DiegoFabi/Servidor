@@ -11,6 +11,7 @@ MSO_Creeper_Snowy:
     ]}
 
   Skills:
+  - skill{s=Botin_Creeper_Snowy} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_snowy;n=false} @self ~onSpawn

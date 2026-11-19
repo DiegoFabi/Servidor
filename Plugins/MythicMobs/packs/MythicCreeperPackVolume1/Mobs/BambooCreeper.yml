@@ -7,6 +7,7 @@ MSO_Creeper_Bamboo:
   - GUNPOWDER 0-2 1
   - BAMBOO 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Bamboo} @trigger ~onDeath
   - model{mid=creeper_bamboo;n=false} @Self ~onSpawn
   - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
   - skill:MSO_CreeperPrime @self ~onPrime

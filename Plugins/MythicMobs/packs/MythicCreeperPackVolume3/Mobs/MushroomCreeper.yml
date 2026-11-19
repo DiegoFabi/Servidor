@@ -6,6 +6,7 @@ MSO_Creeper_Mushroom:
   Drops:
   - GUNPOWDER 0-2 1
   Skills:
+  - skill{s=Botin_Creeper_Mushroom} @trigger ~onDeath
   - skill:MSO_CreeperPrime @self ~onPrime
   # Spawn model
   - model{m=creeper_mushroom;n=false} @self ~onSpawn

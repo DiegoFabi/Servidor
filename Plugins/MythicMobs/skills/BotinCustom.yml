@@ -1,0 +1,174 @@
+# =====================================================================
+# BOTÍN CUSTOM (items de ItemJoin, no son items de Skript).
+# Se entrega al jugador que mata al mob (onDeath -> @trigger). Si el creeper
+# explota solo o lo mata otra cosa, no hay botín (TargetConditions isplayer).
+# Común 10-15% · Raro 2-5% · Mítico 0.5-1%. Nada de cuero ni carne.
+# =====================================================================
+
+# Común a todos los creepers custom: restos de la explosión
+Botin_Creeper_Base:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get botin_ender_powder <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get botin_wither_dust <target.name> 1";asop=false} @target 0.003
+
+Botin_Creeper_Bamboo:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_leaf <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.03
+
+Botin_Creeper_Hills:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_magnet <target.name> 1";asop=false} @target 0.03
+
+Botin_Creeper_Jungle:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_leaf <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_poison_sac <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.03
+
+Botin_Creeper_Plains:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_leaf <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.03
+
+Botin_Creeper_Plains_Christmas:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_candy <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get botin_ice_shards <target.name> 1";asop=false} @target 0.05
+
+Botin_Creeper_Plains_Halloween:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_candy <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get botin_ectoplasm <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get botin_skull <target.name> 1";asop=false} @target 0.005
+
+Botin_Creeper_Plains_StPatricksDay:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_medal_gold <target.name> 1";asop=false} @target 0.01
+
+Botin_Creeper_Spruce:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_leaf <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_mushroom_spores <target.name> 1";asop=false} @target 0.08
+
+Botin_Creeper_Cave:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_mushroom_spores <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_magnet <target.name> 1";asop=false} @target 0.03
+
+Botin_Creeper_DarkOak:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_mushroom_spores <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_leaf <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_ectoplasm <target.name> 1";asop=false} @target 0.02
+
+Botin_Creeper_Desert:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_desert_cloth <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_medal_bronze <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get botin_sun <target.name> 1";asop=false} @target 0.005
+
+Botin_Creeper_Dripstone:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get botin_magnet <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_aqua_essence <target.name> 1";asop=false} @target 0.02
+
+Botin_Creeper_Snowy:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_ice_shards <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get botin_moon <target.name> 1";asop=false} @target 0.005
+
+Botin_Creeper_Badlands:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_medal_bronze <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_magma_gel <target.name> 1";asop=false} @target 0.03
+  - command{c="itemjoin get botin_medal_silver <target.name> 1";asop=false} @target 0.02
+
+Botin_Creeper_Beach:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_seashell <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_starfish <target.name> 1";asop=false} @target 0.04
+
+Botin_Creeper_Mushroom:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_mushroom_spores <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get botin_purple_orb <target.name> 1";asop=false} @target 0.005
+
+Botin_Creeper_Savannah:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_leaf <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_sun <target.name> 1";asop=false} @target 0.005
+
+Botin_Creeper_Swamp:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=Botin_Creeper_Base}
+  - command{c="itemjoin get botin_gel <target.name> 1";asop=false} @target 0.12
+  - command{c="itemjoin get botin_poison_sac <target.name> 1";asop=false} @target 0.08
+
+# Jefe Monolith (sin randomspawn; solo si se invoca)
+Botin_Monolith:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.35
+  - command{c="itemjoin get botin_magic_crystals <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_purple_orb <target.name> 1";asop=false} @target 0.03
