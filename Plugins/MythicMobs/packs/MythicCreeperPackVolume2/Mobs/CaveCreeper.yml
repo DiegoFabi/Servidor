@@ -1,0 +1,23 @@
+MSO_Creeper_Cave:
+  Type: CREEPER
+  Display: '&8Cave Creeper'
+  Health: 25
+  Damage: 30
+  Drops:
+  - STONE 0-2 1
+  - COAL 0-2 1
+  - RAW_IRON 1 0.2
+  - RAW_GOLD 1 0.1
+  - EMERALD 1 0.05
+  - DIAMOND 1 0.01
+  Skills:
+  - skill:MSO_CreeperPrime @self ~onPrime
+  # Spawn model
+  - model{m=creeper_cave;n=false} @self ~onSpawn
+  - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
+  # Enchant the armor
+  - enchant{m=creeper_cave;pid=armor;en=true;em=false} @self ~onSpawn
+  # Hide the armor on spawn
+  - partvisibility{m=creeper_cave;p=armor;v=false;em=false} @self ~onSpawn
+  # Show the armor on charge
+  - partvisibility{m=creeper_cave;p=armor;v=true;em=false} @self ~onCharged

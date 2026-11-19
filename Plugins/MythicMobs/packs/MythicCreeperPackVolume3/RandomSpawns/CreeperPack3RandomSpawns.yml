@@ -1,0 +1,47 @@
+# Solo en survivalMain (como el resto de randomspawns del servidor)
+MSO_Mushroom_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Mushroom
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=MUSHROOM_FIELDS}
+MSO_Swamp_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Swamp
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=SWAMP}
+MSO_Savannnah_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Savannah
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=SAVANNA,SAVANNA_PLATEAU,WINDSWEPT_SAVANNA}
+MSO_Beach_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Beach
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=BEACH,SNOWY_BEACH}
+MSO_Badlands_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Badlands
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS}
+

@@ -1,0 +1,92 @@
+# One-shot gestures override idle; each starts its sound once.
+
+GinkoFantasyArcaneVanguardInit:
+  Skills:
+  - state{s=idle;l=LOOP;pr=0;li=2;lo=2} @self
+GinkoFantasyArcaneVanguardWildwoodAlchemistIdle2:
+  Conditions:
+  - playernotwithin{d=5}
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=142} @self
+  - state{s=idle2;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:wildwood_alchemist.idle2;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardWildwoodAlchemistHello:
+  Cooldown: 15
+  Conditions:
+  - playernotwithin{d=4} false
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=43} @self
+  - state{s=hello;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:wildwood_alchemist.hello;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardCrystalSageIdle2:
+  Conditions:
+  - playernotwithin{d=5}
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=183} @self
+  - state{s=idle2;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:crystal_sage.idle2;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardCrystalSageHello:
+  Cooldown: 15
+  Conditions:
+  - playernotwithin{d=4} false
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=87} @self
+  - state{s=hello;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:crystal_sage.hello;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardSilvermaneBlademasterIdle2:
+  Conditions:
+  - playernotwithin{d=5}
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=138} @self
+  - state{s=idle2;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:silvermane_blademaster.idle2;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardSilvermaneBlademasterHello:
+  Cooldown: 15
+  Conditions:
+  - playernotwithin{d=4} false
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=83} @self
+  - state{s=hello;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:silvermane_blademaster.hello;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardRuneArchmageIdle2:
+  Conditions:
+  - playernotwithin{d=5}
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=140} @self
+  - state{s=idle2;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:rune_archmage.idle2;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardRuneArchmageHello:
+  Cooldown: 15
+  Conditions:
+  - playernotwithin{d=4} false
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=82} @self
+  - state{s=hello;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:rune_archmage.hello;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardCrimsonKnightIdle2:
+  Conditions:
+  - playernotwithin{d=5}
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=198} @self
+  - state{s=idle2;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:crimson_knight.idle2;v=0.8;p=1;sc=VOICE;r=12} @self
+GinkoFantasyArcaneVanguardCrimsonKnightHello:
+  Cooldown: 15
+  Conditions:
+  - playernotwithin{d=4} false
+  - hasaura{aura=GinkoFantasyArcaneVanguardGesture} false
+  Skills:
+  - aura{auraName=GinkoFantasyArcaneVanguardGesture;duration=62} @self
+  - state{s=hello;pr=1;l=ONCE;ov=true;ez=true;li=2;lo=2} @self
+  - sound{s=ginko_fantasy_arcane_vanguard:crimson_knight.hello;v=0.8;p=1;sc=VOICE;r=12} @self
+
+# 937MDZGIBKJ42OULRD

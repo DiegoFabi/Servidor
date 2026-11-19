@@ -1,0 +1,7 @@
+MSO_DesertCreeperShear:
+  Cooldown: 120
+  TriggerConditions:
+  - holding{m=SHEARS} true
+  Skills:
+  - dropitem{i=cactus} @Self
+#QVRGxGOttmdE9mSiFWYINnMVR1VxkEVNlXQE9EeZRlT6lUbWNlMV5WTlF1QKxkbSBDbDl0N

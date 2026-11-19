@@ -1,0 +1,135 @@
+GinkoFantasyArcaneVanguardWildwoodAlchemist:
+  Type: ARMOR_STAND
+  Display: '&2Wildwood Alchemist'
+  Health: 2000
+  Options:
+    AlwaysActive: true
+    Invincible: true
+    Invisible: true
+    Silent: true
+    NoAI: true
+    NoGravity: true
+    Marker: false
+    Collidable: false
+    Persistent: true
+    Despawn: PERSISTENT
+    PreventOtherDrops: true
+    AlwaysShowName: false
+  Modules:
+    ThreatTable: false
+    ImmunityTable: false
+  Skills:
+  - model{mid=ginko_fantasy_arcane_vanguard_wildwood_alchemist;save=true;usm=true} @self ~onSpawn
+  - model{mid=ginko_fantasy_arcane_vanguard_wildwood_alchemist;save=true;usm=true} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onSpawn
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardWildwoodAlchemistIdle2} @self ~onTimer:200 0.08
+  - skill{s=GinkoFantasyArcaneVanguardWildwoodAlchemistHello} @self ~onTimer:20
+GinkoFantasyArcaneVanguardCrystalSage:
+  Type: ARMOR_STAND
+  Display: '&bCrystal Sage'
+  Health: 2000
+  Options:
+    AlwaysActive: true
+    Invincible: true
+    Invisible: true
+    Silent: true
+    NoAI: true
+    NoGravity: true
+    Marker: false
+    Collidable: false
+    Persistent: true
+    Despawn: PERSISTENT
+    PreventOtherDrops: true
+    AlwaysShowName: false
+  Modules:
+    ThreatTable: false
+    ImmunityTable: false
+  Skills:
+  - model{mid=ginko_fantasy_arcane_vanguard_crystal_sage;save=true;usm=true} @self ~onSpawn
+  - model{mid=ginko_fantasy_arcane_vanguard_crystal_sage;save=true;usm=true} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onSpawn
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardCrystalSageIdle2} @self ~onTimer:200 0.08
+  - skill{s=GinkoFantasyArcaneVanguardCrystalSageHello} @self ~onTimer:20
+GinkoFantasyArcaneVanguardSilvermaneBlademaster:
+  Type: ARMOR_STAND
+  Display: '&fSilvermane Blademaster'
+  Health: 2000
+  Options:
+    AlwaysActive: true
+    Invincible: true
+    Invisible: true
+    Silent: true
+    NoAI: true
+    NoGravity: true
+    Marker: false
+    Collidable: false
+    Persistent: true
+    Despawn: PERSISTENT
+    PreventOtherDrops: true
+    AlwaysShowName: false
+  Modules:
+    ThreatTable: false
+    ImmunityTable: false
+  Skills:
+  - model{mid=ginko_fantasy_arcane_vanguard_silvermane_blademaster;save=true;usm=true} @self ~onSpawn
+  - model{mid=ginko_fantasy_arcane_vanguard_silvermane_blademaster;save=true;usm=true} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onSpawn
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardSilvermaneBlademasterIdle2} @self ~onTimer:200 0.08
+  - skill{s=GinkoFantasyArcaneVanguardSilvermaneBlademasterHello} @self ~onTimer:20
+GinkoFantasyArcaneVanguardRuneArchmage:
+  Type: ARMOR_STAND
+  Display: '&5Rune Archmage'
+  Health: 2000
+  Options:
+    AlwaysActive: true
+    Invincible: true
+    Invisible: true
+    Silent: true
+    NoAI: true
+    NoGravity: true
+    Marker: false
+    Collidable: false
+    Persistent: true
+    Despawn: PERSISTENT
+    PreventOtherDrops: true
+    AlwaysShowName: false
+  Modules:
+    ThreatTable: false
+    ImmunityTable: false
+  Skills:
+  - model{mid=ginko_fantasy_arcane_vanguard_rune_archmage;save=true;usm=true} @self ~onSpawn
+  - model{mid=ginko_fantasy_arcane_vanguard_rune_archmage;save=true;usm=true} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onSpawn
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardRuneArchmageIdle2} @self ~onTimer:200 0.08
+  - skill{s=GinkoFantasyArcaneVanguardRuneArchmageHello} @self ~onTimer:20
+GinkoFantasyArcaneVanguardCrimsonKnight:
+  Type: ARMOR_STAND
+  Display: '&cCrimson Knight'
+  Health: 2000
+  Options:
+    AlwaysActive: true
+    Invincible: true
+    Invisible: true
+    Silent: true
+    NoAI: true
+    NoGravity: true
+    Marker: false
+    Collidable: false
+    Persistent: true
+    Despawn: PERSISTENT
+    PreventOtherDrops: true
+    AlwaysShowName: false
+  Modules:
+    ThreatTable: false
+    ImmunityTable: false
+  Skills:
+  - model{mid=ginko_fantasy_arcane_vanguard_crimson_knight;save=true;usm=true} @self ~onSpawn
+  - model{mid=ginko_fantasy_arcane_vanguard_crimson_knight;save=true;usm=true} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onSpawn
+  - skill{s=GinkoFantasyArcaneVanguardInit} @self ~onLoad
+  - skill{s=GinkoFantasyArcaneVanguardCrimsonKnightIdle2} @self ~onTimer:200 0.08
+  - skill{s=GinkoFantasyArcaneVanguardCrimsonKnightHello} @self ~onTimer:20

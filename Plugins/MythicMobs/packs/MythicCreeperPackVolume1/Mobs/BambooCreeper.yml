@@ -1,0 +1,26 @@
+MSO_Creeper_Bamboo:
+  Type: CREEPER
+  Display: '&aBamboo Creeper'
+  Health: 20
+  Damage: 30
+  Drops:
+  - GUNPOWDER 0-2 1
+  - BAMBOO 0-2 1
+  Skills:
+  - model{mid=creeper_bamboo;n=false} @Self ~onSpawn
+  - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
+  - skill:MSO_CreeperPrime @self ~onPrime
+  # Enchant the armor
+  - enchant{m=creeper_bamboo;pid=armor;en=true;em=false} @self ~onSpawn
+  # Hide the armor on spawn
+  - partvisibility{m=creeper_bamboo;p=armor;v=false;em=false} @self ~onSpawn
+  # Show the armor on charge
+  - partvisibility{m=creeper_bamboo;p=armor;v=true;em=false} @self ~onCharged
+  AITargetSelectors:
+  - clear
+  - players
+  AIGoalSelectors:
+  - clear
+  - randomstroll
+  - creeperswell
+  - fleeConditional{distance=10;speed=2;safespeed=2;conditions=[ - entitytype panda ]}

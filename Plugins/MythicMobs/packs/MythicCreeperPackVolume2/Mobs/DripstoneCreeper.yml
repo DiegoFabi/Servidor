@@ -1,0 +1,18 @@
+MSO_Creeper_Dripstone:
+  Type: CREEPER
+  Display: '&7Dripstone Creeper'
+  Health: 20
+  Damage: 30
+  Drops:
+  - POINTED_DRIPSTONE 0-2 1
+  Skills:
+  - skill:MSO_CreeperPrime @self ~onPrime
+  # Spawn model
+  - model{m=creeper_dripstone;n=false} @self ~onSpawn
+  - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
+  # Enchant the armor
+  - enchant{m=creeper_dripstone;pid=armor;en=true;em=false} @self ~onSpawn
+  # Hide the armor on spawn
+  - partvisibility{m=creeper_dripstone;p=armor;v=false;em=false} @self ~onSpawn
+  # Show the armor on charge
+  - partvisibility{m=creeper_dripstone;p=armor;v=true;em=false} @self ~onCharged

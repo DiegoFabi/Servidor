@@ -1,0 +1,22 @@
+MSO_Creeper_Beach:
+  Type: CREEPER
+  Display: '&eBeach Creeper'
+  Health: 15
+  Damage: 30
+  Drops:
+  - GUNPOWDER 0-2 1
+  - SAND 0-2 1
+  - SEAGRASS 0-2 1
+  - NAUTILUS_SHELL 1 0.01
+  - PRISMARINE_CRYSTALS 0-2 1
+  Skills:
+  - skill:MSO_CreeperPrime @self ~onPrime
+  # Spawn model
+  - model{m=creeper_beach;n=false} @self ~onSpawn
+  - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
+  # Enchant the armor
+  - enchant{m=creeper_beach;pid=armor;en=true;em=false} @self ~onSpawn
+  # Hide the armor on spawn
+  - partvisibility{m=creeper_beach;p=armor;v=false;em=false} @self ~onSpawn
+  # Show the armor on charge
+  - partvisibility{m=creeper_beach;p=armor;v=true;em=false} @self ~onCharged

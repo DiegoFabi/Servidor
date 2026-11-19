@@ -1,0 +1,21 @@
+MSO_Creeper_Badlands:
+  Type: CREEPER
+  Display: '&cBadlands Creeper'
+  Health: 20
+  Damage: 30
+  Drops:
+  - GUNPOWDER 0-2 1
+  - GOLD_NUGGET 0-6 1
+  Skills:
+  - skill:MSO_CreeperPrime @self ~onPrime
+  # Spawn model
+  - model{m=creeper_badlands;n=false} @self ~onSpawn
+  - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
+  # Enchant the armor
+  - enchant{m=creeper_badlands;pid=armor;en=true;em=false} @self ~onSpawn
+  # Hide the armor on spawn
+  - partvisibility{m=creeper_badlands;p=armor;v=false;em=false} @self ~onSpawn
+  # Show the armor on charge
+  - partvisibility{m=creeper_badlands;p=armor;v=true;em=false} @self ~onCharged
+
+# 57833TA8

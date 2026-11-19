@@ -1,0 +1,122 @@
+#-------------------------
+#     Made by helove
+#     Discord helovedev
+#-------------------------
+
+hv_monolith:
+  Type: husk
+  Display: '&b&lMonolith'
+  Health: 180
+  Damage: 2
+  DamageModifiers:
+  - SUFFOCATION 0.1
+  - PROJECTILE 0.4
+  - FALL 0.1
+  Faction: hv_monolith
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - movetowardstarget
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  - OtherFaction
+  Options:
+    AlwaysShowName: true
+    PreventOtherDrops: true
+    Silent: true
+    FollowRange: 64
+    PreventItemPickup: true
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25
+    KnockbackResistance: 1
+    Collidable: true
+    Invisible: false
+  BossBar:
+    Enabled: true
+    Title: '&b&lMonolith &8- &7The Runebound Colossus'
+    Range: 64
+    Color: BLUE
+    Style: SEGMENTED_12
+    CreateFog: false
+    DarkenSky: false
+  Skills:
+  - model{mid=hv_monolith;ride=true;drive=true;s=1;save=true;tint=false} @self ~onSpawn
+  - model{mid=hv_monolith;ride=true;drive=true;s=1;save=true;tint=false} @self ~onLoad
+  - CancelEvent{sync=true} @self ~onAttack
+  - skill{s=hv_monolith_hurt} @self ~onDamaged 
+  - skill{s=hv_monolith_spawn} @self ~onSpawn
+  - skill{s=hv_monolith_activate} @target ~onTimer:10
+  - skill{s=hv_monolith_death} @self ~onDeath
+  - skill{s=hv_monolith_skills} @target ~onTimer:5
+  - skill{s=hv_monolith_totem_protected_hit;sync=true} @self ~onDamaged
+  - skill{s=hv_monolith_totem_shield_check} @self ~onTimer:5
+  - remove @children ~onDeath
+  - sound{s=entity.breeze.whirl;p=0.1;v=2} @self ~onTimer:20
+
+hv_monolith_stones:
+  Type: ARMOR_STAND
+  Display: '&b&lMonolith'
+  Damage: 3
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=hv_monolith_stones;save=true} @self ~onSpawn
+  - defaultstate{t=spawn;s=spawn} @self ~onSpawn
+  - state{s=spawn;sp=1.5} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=CULLED} @self ~onSpawn
+  - remove{delay=199} @self ~onSpawn
+
+hv_monolith_totem:
+  Type: HUSK
+  Display: '&b&lMonolith'
+  Health: 10
+  Damage: 2
+  Options:
+    AlwaysShowName: true
+    PreventOtherDrops: true
+    Silent: true
+    FollowRange: 64
+    PreventItemPickup: true
+    PreventRandomEquipment: true
+    KnockbackResistance: 1
+    Collidable: false
+  Skills:
+  - model{mid=hv_monolith_totem;d=false} @self ~onSpawn
+  - model{mid=hv_monolith_totem;d=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false;alod=CULLED} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false;alod=CULLED} @self ~onLoad
+  - skill{s=hv_monolith_totem_shot} @NearestPlayer{r=24} ~onTimer:10
+  - sound{s=entity.lightning_bolt.impact;v=2.5;p=1} @self ~onSpawn
+  - sound{s=block.trial_spawner.spawn_mob;v=1.3;p=0.75} @self ~onSpawn
+  - sound{s=block.tuff_bricks.place;v=2;p=0.65;delay=3} @self ~onSpawn
+  - fakelightning @self ~onSpawn
+  - effect:particles{p=Campfire_Cosy_Smoke;amount=4;speed=0.01;hS=2;vS=0;delay=16} @self ~onSpawn
+  - partvis{mid=hv_monolith_totem;p=dust_ring_vfx;v=false;child=true;delay=13} @self ~onSpawn
+  - sound{s=block.tuff_bricks.hit;v=1.8;p=0.85} @self ~onDamaged
+  - sound{s=block.trial_spawner.hit;v=0.6;p=1.1} @self ~onDamaged
+  - sound{s=block.trial_spawner.spawn_mob;v=1.3;p=0.75} @self ~onDeath
+  - sound{s=block.tuff_bricks.break;v=2.5;p=0.6} @self ~onDeath
+  - partvis{mid=hv_monolith_totem;p=dust_ring_vfx;v=true;child=true;delay=2} @self ~onDeath
+  - sound{s=block.trial_spawner.break;v=1.5;p=0.7} @self ~onDespawn
+  - sound{s=block.tuff_bricks.break;v=2.5;p=0.6} @self ~onDespawn
+  - particleline{p=soul_fire_flame;amount=1;distanceBetween=0.5;startYOffset=1.5;targetYOffset=4} @parent ~onTimer:20
+  - setai{ai=false} @self ~onSpawn
+  - lockmodel{l=true} @self ~onSpawn
+  - suicide{delay=1000} ~onSpawn
+
+#-------------------------
+#     Made by helove 
+#     Discord helovedev
+# 974B8I58TWUZ

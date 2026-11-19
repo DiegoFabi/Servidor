@@ -1,0 +1,50 @@
+# Solo en survivalMain (como el resto de randomspawns del servidor)
+MSO_Desert_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Desert
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=DESERT}
+MSO_Dripstone_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Dripstone
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=DRIPSTONE_CAVES}
+MSO_Cave_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Cave
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=DRIPSTONE_CAVES,LUSH_CAVES}
+MSO_DarkOak_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_DarkOak
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=DARK_FOREST}
+MSO_Snowy_Creeper_Randomspawn:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Snowy
+  Chance: 0.2
+  Priority: 1
+  Conditions:
+  - mobtype{type=CREEPER}
+  - biome{b=OLD_GROWTH_SPRUCE_TAIGA,TAIGA}
+
+
+
+# 8503SZ2ZS

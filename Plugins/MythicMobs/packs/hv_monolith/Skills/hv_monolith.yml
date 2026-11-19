@@ -1,0 +1,726 @@
+#-------------------------
+#     Made by helove
+#     Discord helovedev
+#-------------------------
+
+# -- Spawn & Death -- #
+
+hv_monolith_spawn:
+  Skills:
+  - setcollidable{c=false} @self
+  - partvis{mid=hv_monolith;p=aura_vfx;v=false;child=true;delay=1} @self
+  - partvis{mid=hv_monolith;p=aura_vfx2;v=false;child=true;delay=1} @self
+  - partvis{mid=hv_monolith;p=lines_vfx;v=false;child=true;delay=1} @self
+  - defaultstate{t=idle;s=not_active} @self
+  - setspeed{speed=0;delay=1} @self
+  - setai{ai=false;delay=1} @self
+  - gcd{ticks=20} @self
+  - state{s=not_active;delay=1} @self
+  - lockmodel{l=true;delay=1} @self
+  - cullconfig{vc=false;bkc=false;blc=false;alod=CULLED} @self
+  - BodyClamp{mh=0;rde=0;rdu=0;playermode=true} @self
+  - skill{s=hv_monolith_partvis_all_false} @self
+  - sound{s=block.tuff_bricks.place;v=4;p=0.55} @self
+  - sound{s=block.heavy_core.place;v=4;p=0.7} @self
+  - effect:particles{p=dust_plume;amount=10;speed=0.03;hS=1.2;vS=0.25;y=0.2} @self
+
+hv_monolith_death:
+  Skills:
+  - sound{s=block.respawn_anchor.deplete;v=5;p=0.5} @self
+  - sound{s=block.beacon.deactivate;v=5;p=0.55} @self
+  - effect:particles{p=electric_spark;amount=18;speed=0.1;hS=1.4;vS=2.4;y=1.2} @self
+  - effect:particles{p=white_ash;amount=12;speed=0.02;hS=1.2;vS=1.8;y=1.2} @self
+  - partvis{mid=hv_monolith;p=aura_vfx2;v=false;child=true;delay=1} @self
+  - partvis{mid=hv_monolith;p=aura_vfx;v=false;child=true;delay=99} @self
+  - partvis{mid=hv_monolith;p=lines_vfx;v=false;child=true;delay=99} @self
+  - skill{s=hv_monolith_partvis_all_true;delay=20}
+  - skill{s=hv_monolith_partvis_all_false;delay=30}
+  - sound{s=entity.iron_golem.death;v=5;p=0.6;delay=20} @self
+  - sound{s=block.tuff_bricks.break;v=5;p=0.55;delay=27} @self
+  - effect:particles{p=dust_plume;amount=20;speed=0.08;hS=1.8;vS=1.4;y=1;delay=27} @self
+  - effect:particles{p=poof;amount=12;speed=0.12;hS=1.6;vS=1.2;y=1;delay=27} @self
+  - sound{s=block.trial_spawner.break;v=5;p=0.55;delay=98} @self
+  - sound{s=block.tuff_bricks.break;v=5;p=0.4;delay=98} @self
+  - skill{s=hv_monolith_shake_area_heavy;delay=98} @PlayersInRadius{r=40}
+  - effect:particles{p=dust_plume;amount=35;speed=0.15;hS=2.2;vS=2.2;y=1.2;delay=98} @self
+  - effect:particles{p=electric_spark;amount=28;speed=0.18;hS=2;vS=2.5;y=1.4;delay=98} @self
+
+hv_monolith_activate:
+  Cooldown: 10
+  Conditions:
+  - targetwithin{d=16} true
+  - hastag{t=hv_monolith_active} false
+  Skills:
+  - gcd{ticks=30} @self
+  - setspeed{s=0} @self
+  - state{s=aura} @self
+  - state{s=active} @self
+  - sound{s=block.trial_spawner.detect_player;v=5;p=0.65} @self
+  - sound{s=block.tuff_bricks.place;v=4;p=0.5} @self
+  - effect:particles{p=reverse_portal;amount=14;speed=0.06;hS=1.1;vS=1.8;y=1.2} @self
+  - lockmodel{l=false} @self
+  - setai{ai=true} @self
+  - defaultstate{t=idle;s=idle} @self
+  - addtag{t=hv_monolith_active} @self
+  - partvis{mid=hv_monolith;p=aura_vfx;v=true;child=true;delay=15} @self
+  - partvis{mid=hv_monolith;p=aura_vfx2;v=true;child=true;delay=15} @self
+  - partvis{mid=hv_monolith;p=lines_vfx;v=true;child=true;delay=15} @self
+  - sound{s=block.beacon.activate;v=5;p=0.65;delay=15} @self
+  - sound{s=block.amethyst_block.resonate;v=4;p=0.65;delay=15} @self
+  - skill{s=hv_monolith_shake_area_light;delay=15} @PlayersInRadius{r=24}
+  - effect:particles{p=flash;amount=1;y=2;delay=15} @self
+  - effect:particles{p=electric_spark;amount=26;speed=0.12;hS=1.4;vS=2.4;y=1.2;delay=15} @self
+  - effect:particles{p=soul_fire_flame;amount=12;speed=0.05;hS=1.1;vS=1.9;y=1;delay=15} @self
+  - sound{s=block.heavy_core.place;v=4;p=0.55;delay=26} @self
+  - effect:particles{p=dust_plume;amount=12;speed=0.08;hS=1.3;vS=0.35;y=0.2;delay=26} @self
+  - delay 30
+  - aura{auraName=hv_monolith_cd;duration=200} @self
+  - setspeed{s=1} @self
+  - setcollidable{c=true} @self
+
+# -- General -- #
+
+hv_monolith_recoil_hit_light:
+  Skills:
+  - recoil{r=0.8;p=-1.5to-0.8;y=-0.15to0.15}
+
+hv_monolith_recoil_hit_medium:
+  Skills:
+  - recoil{r=1;p=-2.2to-1.2;y=-0.25to0.25}
+
+hv_monolith_shake_area_light:
+  Skills:
+  - recoil{r=0.65;p=-1.5to1.5;y=-0.2to0.2;repeat=2;repeatInterval=2}
+
+hv_monolith_shake_area_medium:
+  Skills:
+  - recoil{r=0.75;p=-2.3to2.3;y=-0.35to0.35;repeat=3;repeatInterval=2}
+
+hv_monolith_shake_area_heavy:
+  Skills:
+  - recoil{r=0.9;p=-3to3;y=-0.45to0.45;repeat=1;repeatInterval=2}
+  - recoil{r=0.6;p=-2to2;y=-0.3to0.3;delay=4;repeat=1;repeatInterval=2}
+  - recoil{r=0.35;p=-1to1;y=-0.15to0.15;delay=8;repeat=1;repeatInterval=2}
+
+hv_monolith_partvis_all_false:
+  Skills:
+  - partvis{mid=hv_monolith;p=cut_vfx_main;v=false;child=true} @self
+  - partvis{mid=hv_monolith;p=dust_ring_vfx;v=false;child=true} @self
+  - partvis{mid=hv_monolith;p=slash_vfx;v=false;child=true} @self
+  - partvis{mid=hv_monolith;p=slash_vfx2;v=false;child=true} @self
+  - partvis{mid=hv_monolith;p=slash_line_vfx;v=false;child=true} @self
+  - partvis{mid=hv_monolith;p=ray_vfx_main;v=false;child=true} @self
+
+hv_monolith_partvis_all_true:
+  Skills:
+  - partvis{mid=hv_monolith;p=cut_vfx_main;v=true;child=true} @self
+  - partvis{mid=hv_monolith;p=dust_ring_vfx;v=true;child=true} @self
+  - partvis{mid=hv_monolith;p=slash_vfx;v=true;child=true} @self
+  - partvis{mid=hv_monolith;p=slash_vfx2;v=true;child=true} @self
+  - partvis{mid=hv_monolith;p=slash_line_vfx;v=true;child=true} @self
+  - partvis{mid=hv_monolith;p=ray_vfx_main;v=true;child=true} @self
+
+hv_monolith_hurt:
+  Conditions:
+  - hastag{t=hv_monolith_active} true
+  - children{a=0} true
+  Skills:
+  - randomskill{s=hv_monolith_hurt1,hv_monolith_hurt2,hv_monolith_hurt3}
+
+hv_monolith_hurt1:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;p=0.65;v=1} @self
+  - sound{s=block.trial_spawner.hit;p=0.75;v=1} @self
+  - sound{s=block.amethyst_cluster.hit;p=0.7;v=1} @self
+  - effect:particles{p=dust_plume;amount=3;speed=0.04;hS=0.7;vS=1.1;y=1} @self
+  - effect:particles{p=electric_spark;amount=3;speed=0.06;hS=0.6;vS=1;y=1} @self
+
+hv_monolith_hurt2:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;p=0.8;v=1} @self
+  - sound{s=block.trial_spawner.hit;p=0.9;v=1} @self
+  - sound{s=block.amethyst_cluster.hit;p=0.85;v=1} @self
+  - effect:particles{p=dust_plume;amount=3;speed=0.04;hS=0.7;vS=1.1;y=1} @self
+  - effect:particles{p=electric_spark;amount=3;speed=0.06;hS=0.6;vS=1;y=1} @self
+
+hv_monolith_hurt3:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;p=0.95;v=1} @self
+  - sound{s=block.trial_spawner.hit;p=1.05;v=1} @self
+  - sound{s=block.amethyst_cluster.hit;p=1;v=1} @self
+  - effect:particles{p=dust_plume;amount=3;speed=0.04;hS=0.7;vS=1.1;y=1} @self
+  - effect:particles{p=electric_spark;amount=3;speed=0.06;hS=0.6;vS=1;y=1} @self
+
+hv_monolith_skills:
+  Conditions:
+  - hastag{t=hv_monolith_active} true
+  Skills:
+  - randomskill{s=hv_monolith_melee_bag 3,hv_monolith_special_selector 1} @target
+
+hv_monolith_melee_bag:
+  Skills:
+  - skill{s=hv_monolith_melee_bag_reset} @self
+  - randomskill{s=hv_monolith_melee_order_1,hv_monolith_melee_order_2,hv_monolith_melee_order_3,hv_monolith_melee_order_4,hv_monolith_melee_order_5,hv_monolith_melee_order_6,hv_monolith_melee_order_7,hv_monolith_melee_order_8} @target
+
+hv_monolith_melee_bag_reset:
+  Conditions:
+  - hastag{t=hv_monolith_used_smash} true
+  - hastag{t=hv_monolith_used_spin} true
+  - hastag{t=hv_monolith_used_left} true
+  - hastag{t=hv_monolith_used_right} true
+  Skills:
+  - removetag{t=hv_monolith_used_smash} @self
+  - removetag{t=hv_monolith_used_spin} @self
+  - removetag{t=hv_monolith_used_left} @self
+  - removetag{t=hv_monolith_used_right} @self
+
+hv_monolith_melee_last_clear:
+  Skills:
+  - removetag{t=hv_monolith_last_smash} @self
+  - removetag{t=hv_monolith_last_spin} @self
+  - removetag{t=hv_monolith_last_left} @self
+  - removetag{t=hv_monolith_last_right} @self
+
+hv_monolith_melee_order_1:
+  Skills:
+  - skill{s=hv_monolith_smash_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_spin_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_right_attack} @target
+
+hv_monolith_melee_order_2:
+  Skills:
+  - skill{s=hv_monolith_spin_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_right_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_smash_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_left_attack} @target
+
+hv_monolith_melee_order_3:
+  Skills:
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_smash_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_right_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_spin_attack} @target
+
+hv_monolith_melee_order_4:
+  Skills:
+  - skill{s=hv_monolith_right_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_spin_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_smash_attack} @target
+
+hv_monolith_melee_order_5:
+  Skills:
+  - skill{s=hv_monolith_smash_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_right_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_spin_attack} @target
+
+hv_monolith_melee_order_6:
+  Skills:
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_spin_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_smash_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_right_attack} @target
+
+hv_monolith_melee_order_7:
+  Skills:
+  - skill{s=hv_monolith_spin_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_right_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_smash_attack} @target
+
+hv_monolith_melee_order_8:
+  Skills:
+  - skill{s=hv_monolith_right_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_left_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_smash_attack} @target
+  - delay 1
+  - skill{s=hv_monolith_spin_attack} @target
+
+hv_monolith_special_selector:
+  Skills:
+  - randomskill{s=hv_monolith_ray_attack 2,hv_monolith_grab_try 2,hv_monolith_shoot 1,hv_monolith_totems 3} @target
+
+# -- Skills -- #
+
+hv_monolith_smash_attack:
+  Cooldown: 12
+  Conditions:
+  - hastag{t=hv_monolith_used_smash} false
+  - hastag{t=hv_monolith_last_smash} false
+  - offgcd
+  TargetConditions:
+  - distance{d=0to8} true
+  Skills:
+  - skill{s=hv_monolith_melee_last_clear} @self
+  - addtag{t=hv_monolith_used_smash} @self
+  - addtag{t=hv_monolith_last_smash} @self
+  - gcd{ticks=53} @self
+  - state{s=smash_attack} @self
+  - sound{s=block.tuff_bricks.step;v=4;p=0.55} @self
+  - sound{s=block.trial_spawner.hit;v=4;p=0.65;delay=11} @self
+  - effect:particles{p=reverse_portal;amount=8;speed=0.04;hS=0.9;vS=1.5;y=1.2;delay=11} @self
+  - sound{s=item.mace.smash_air;v=4;p=0.7;delay=23} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.65;delay=24} @self
+  - effect:particles{p=electric_spark;amount=10;speed=0.1;hS=0.8;vS=1.4;y=1.3;delay=24} @self
+  - skill{s=hv_monolith_partvis_all_true;delay=25}
+  - skill{s=hv_monolith_partvis_all_false;delay=40}
+  - setspeed{s=0} @self
+  - setspeed{s=2.5;delay=24} @self
+  - setspeed{s=0;delay=30} @self
+  - setai{ai=false;delay=27} @self
+  - look{force=true;headOnly=false;immediately=true;delay=27} @targetLocation
+  - lockmodel{l=true;delay=28} @self
+  - sound{s=item.mace.smash_ground_heavy;v=5;p=0.6;delay=29} @self
+  - sound{s=block.heavy_core.place;v=4;p=0.5;delay=29} @self
+  - skill{s=hv_monolith_shake_area_heavy;delay=29} @PlayersInRadius{r=20}
+  - effect:particles{p=dust_plume;amount=24;speed=0.16;hS=2.1;vS=0.45;y=0.2;delay=29} @modelpart{pid=damage;o=model;y=-0.45}
+  - effect:particles{p=electric_spark;amount=18;speed=0.14;hS=1.7;vS=0.7;y=0.25;delay=29} @modelpart{pid=damage;o=model;y=-0.45}
+  - summon{m=hv_monolith_stones;amount=1;radius=0;summonerIsParent=false;delay=29} @modelpart{pid=damage;o=model;y=-0.45}
+  - lockmodel{l=false;delay=42} @self
+  - rotatetowards{rotateyaw=true;rotatepitch=false;maxyaw=18;repeat=9;repeatInterval=1;delay=42} @targetLocation
+  - setai{ai=true;delay=52} @self
+  - setspeed{s=1;delay=53} @self
+
+hv_monolith_smash_attack_totem:
+  Skills:
+  - totem{md=2;oH=hv_monolith_smash_attack_damage;hr=5;vr=5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage}
+
+hv_monolith_smash_attack_damage:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;v=1;p=0.6}
+  - sound{s=entity.iron_golem.attack;v=1;p=0.65}
+  - effect:particles{p=crit;amount=10;speed=0.16;hS=0.8;vS=1;y=1}
+  - effect:particles{p=electric_spark;amount=12;speed=0.14;hS=0.8;vS=1.1;y=1}
+  - basedamage{m=8;pi=true;pk=true}
+  - throw{v=5;vy=12}
+  - shieldbreak{d=80}
+
+hv_monolith_spin_attack:
+  Cooldown: 16
+  Conditions:
+  - hastag{t=hv_monolith_used_spin} false
+  - hastag{t=hv_monolith_last_spin} false
+  - hasaura hv_monolith_cd false
+  - offgcd
+  TargetConditions:
+  - distance{d=0to6} true
+  Skills:
+  - skill{s=hv_monolith_melee_last_clear} @self
+  - addtag{t=hv_monolith_used_spin} @self
+  - addtag{t=hv_monolith_last_spin} @self
+  - gcd{ticks=54} @self
+  - state{s=spin_attack} @self
+  - sound{s=block.trial_spawner.hit;v=4;p=0.7} @self
+  - effect:particles{p=reverse_portal;amount=8;speed=0.04;hS=1;vS=1.5;y=1.1} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.65;delay=19} @self
+  - sound{s=entity.breeze.wind_burst;v=4;p=0.7;delay=19} @self
+  - effect:particles{p=electric_spark;amount=9;speed=0.08;hS=1.7;vS=1;y=1;delay=19} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.8;delay=26} @self
+  - effect:particles{p=soul_fire_flame;amount=7;speed=0.06;hS=1.8;vS=1;y=1;delay=26} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.95;delay=33} @self
+  - sound{s=entity.breeze.wind_burst;v=4;p=0.85;delay=33} @self
+  - effect:particles{p=electric_spark;amount=10;speed=0.1;hS=1.9;vS=1.1;y=1;delay=33} @self
+  - skill{s=hv_monolith_partvis_all_true;delay=20}
+  - skill{s=hv_monolith_partvis_all_false;delay=40}
+  - setspeed{s=0} @self
+  - setspeed{s=1.5;delay=22} @self
+  - setspeed{s=0;delay=36} @self
+  - setspeed{s=1;delay=46} @self
+
+hv_monolith_spin_totem:
+  Skills:
+  - totem{md=2;oH=hv_monolith_spin_totem_damage;hr=4.5;vr=4.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage}
+
+hv_monolith_spin_totem_damage:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;v=1;p=0.8}
+  - sound{s=entity.player.attack.strong;v=1;p=0.7}
+  - effect:particles{p=crit;amount=7;speed=0.12;hS=0.7;vS=0.9;y=1}
+  - effect:particles{p=electric_spark;amount=7;speed=0.1;hS=0.7;vS=0.9;y=1}
+  - basedamage{m=2;pi=true;pk=true}
+  - throw{v=3;vy=3}
+  - shieldbreak{d=20}
+
+hv_monolith_right_attack:
+  Cooldown: 8
+  Conditions:
+  - hastag{t=hv_monolith_used_right} false
+  - hastag{t=hv_monolith_last_right} false
+  - offgcd
+  TargetConditions:
+  - distance{d=0to6} true
+  Skills:
+  - skill{s=hv_monolith_melee_last_clear} @self
+  - addtag{t=hv_monolith_used_right} @self
+  - addtag{t=hv_monolith_last_right} @self
+  - gcd{ticks=39} @self
+  - state{s=right_arm_attack} @self
+  - sound{s=block.tuff_bricks.step;v=4;p=0.75} @self
+  - sound{s=item.mace.smash_air;v=4;p=0.85;delay=15} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.75;delay=16} @self
+  - effect:particles{p=electric_spark;amount=8;speed=0.09;hS=0.8;vS=1.1;y=1.3;delay=16} @modelpart{pid=damage}
+  - effect:particles{p=dust_plume;amount=4;speed=0.05;hS=0.7;vS=0.9;y=1.2;delay=16} @modelpart{pid=damage}
+  - skill{s=hv_monolith_partvis_all_true;delay=15}
+  - skill{s=hv_monolith_partvis_all_false;delay=30}
+  - setspeed{s=0} @self
+  - setspeed{s=2;delay=16} @self
+  - setspeed{s=0;delay=20} @self
+  - look{force=true;headOnly=false;immediately=true;delay=19} @targetLocation
+  - setspeed{s=1;delay=39} @self
+
+hv_monolith_right_totem:
+  Skills:
+  - totem{md=2;oH=hv_monolith_right_attack_damage;hr=3.5;vr=3.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage}
+
+hv_monolith_right_attack_damage:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;v=1;p=0.75}
+  - sound{s=entity.iron_golem.attack;v=1;p=0.85}
+  - skill{s=hv_monolith_recoil_hit_light} @target
+  - effect:particles{p=crit;amount=8;speed=0.14;hS=0.7;vS=0.9;y=1}
+  - effect:particles{p=electric_spark;amount=8;speed=0.12;hS=0.7;vS=1;y=1}
+  - basedamage{m=5;pi=true;pk=true}
+  - throw{v=12;vy=3}
+  - shieldbreak{d=50}
+
+hv_monolith_left_attack:
+  Cooldown: 8
+  Conditions:
+  - hastag{t=hv_monolith_used_left} false
+  - hastag{t=hv_monolith_last_left} false
+  - offgcd
+  TargetConditions:
+  - distance{d=0to8} true
+  Skills:
+  - skill{s=hv_monolith_melee_last_clear} @self
+  - addtag{t=hv_monolith_used_left} @self
+  - addtag{t=hv_monolith_last_left} @self
+  - gcd{ticks=39} @self
+  - state{s=left_arm_attack} @self
+  - sound{s=block.tuff_bricks.step;v=4;p=0.8} @self
+  - sound{s=item.mace.smash_air;v=4;p=0.8;delay=15} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.8;delay=16} @self
+  - effect:particles{p=electric_spark;amount=8;speed=0.09;hS=0.8;vS=1.1;y=1.3;delay=16} @modelpart{pid=damage}
+  - effect:particles{p=dust_plume;amount=4;speed=0.05;hS=0.7;vS=0.9;y=1.2;delay=16} @modelpart{pid=damage}
+  - skill{s=hv_monolith_partvis_all_true;delay=15}
+  - skill{s=hv_monolith_partvis_all_false;delay=30}
+  - setspeed{s=0} @self
+  - setspeed{s=2;delay=16} @self
+  - setspeed{s=0;delay=20} @self
+  - look{force=true;headOnly=false;immediately=true;delay=19} @targetLocation
+  - setspeed{s=1;delay=39} @self
+
+hv_monolith_left_totem:
+  Skills:
+  - totem{md=2;oH=hv_monolith_left_attack_damage;hr=3.5;vr=3.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage}
+
+hv_monolith_left_attack_damage:
+  Skills:
+  - sound{s=block.tuff_bricks.hit;v=1;p=0.8}
+  - sound{s=entity.iron_golem.attack;v=1;p=0.8}
+  - skill{s=hv_monolith_recoil_hit_light} @target
+  - effect:particles{p=crit;amount=8;speed=0.14;hS=0.7;vS=0.9;y=1}
+  - effect:particles{p=electric_spark;amount=8;speed=0.12;hS=0.7;vS=1;y=1}
+  - basedamage{m=5;pi=true;pk=true}
+  - throw{v=12;vy=3}
+  - shieldbreak{d=50}
+
+hv_monolith_ray_attack:
+  Cooldown: 24
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to8} true
+  Skills:
+  - gcd{ticks=49} @self
+  - state{s=ray_attack} @self
+  - sound{s=block.respawn_anchor.charge;v=5;p=0.65} @self
+  - sound{s=block.vault.activate;v=4;p=0.75} @self
+  - effect:particles{p=reverse_portal;amount=10;speed=0.04;hS=0.8;vS=1.5;y=1.7} @self
+  - skill{s=hv_monolith_partvis_all_true;delay=10}
+  - effect:particles{p=electric_spark;amount=12;speed=0.08;hS=0.55;vS=0.8;delay=10} @modelpart{pid=ray_damage2}
+  - effect:particles{p=end_rod;amount=5;speed=0.03;hS=0.35;vS=0.55;delay=18} @modelpart{pid=ray_damage2}
+  - skill{s=hv_monolith_partvis_all_false;delay=40}
+  - setspeed{s=0} @self
+  - sound{s=entity.lightning_bolt.impact;v=5;p=1.25;delay=28} @self
+  - sound{s=item.trident.riptide_1;v=4;p=0.75;delay=29} @self
+  - sound{s=block.copper_bulb.turn_off;v=4;p=0.7;delay=40} @self
+  - effect:particles{p=flash;amount=1;delay=29} @modelpart{pid=ray_damage2}
+  - effect:particles{p=electric_spark;amount=22;speed=0.14;hS=0.7;vS=0.9;delay=29} @modelpart{pid=ray_damage2}
+  - setai{ai=false;delay=30} @self
+  - look{force=true;headOnly=false;immediately=true;delay=29} @targetLocation
+  - lockmodel{l=true;delay=30} @self
+  - lockmodel{l=false;delay=42} @self
+  - rotatetowards{rotateyaw=true;rotatepitch=false;maxyaw=18;repeat=9;repeatInterval=1;delay=42} @targetLocation
+  - setai{ai=true;delay=45} @self
+  - setspeed{s=1;delay=49} @self
+
+hv_monolith_ray:
+  Skills:
+  - randomskill{s=hv_monolith_ray_pulse_1,hv_monolith_ray_pulse_2,hv_monolith_ray_pulse_3} @self
+  - particleline{p=electric_spark;amount=1;distanceBetween=0.55;startYOffset=2.7;targetYOffset=0} @modelpart{pid=ray_damage2}
+  - particleline{p=end_rod;amount=1;distanceBetween=1.25;startYOffset=2.7;targetYOffset=0} @modelpart{pid=ray_damage2}
+  - skill{s=hv_monolith_ray_damage} @modelpart{pid=ray_damage2}
+
+hv_monolith_ray_pulse_1:
+  Skills:
+  - sound{s=item.trident.throw;v=1;p=1.45} @self
+  - sound{s=entity.player.attack.sweep;v=1;p=1.2} @self
+
+hv_monolith_ray_pulse_2:
+  Skills:
+  - sound{s=item.trident.throw;v=1;p=1.6} @self
+  - sound{s=entity.player.attack.sweep;v=1;p=1.35} @self
+
+hv_monolith_ray_pulse_3:
+  Skills:
+  - sound{s=item.trident.throw;v=1;p=1.75} @self
+  - sound{s=entity.player.attack.sweep;v=1;p=1.5} @self
+
+hv_monolith_ray_damage:
+  Skills:
+  - basedamage{m=1.5;pi=true;pk=true} @EntitiesInLine{r=1.8}
+  - effect:particles{p=electric_spark;amount=3;speed=0.06;hS=0.5;vS=0.8;y=1} @EntitiesInLine{r=1.8}
+  - effect:particles{p=crit;amount=2;speed=0.05;hS=0.45;vS=0.7;y=1} @EntitiesInLine{r=1.8}
+  - throw{v=3;vy=1}
+  - shieldbreak{d=10} @EntitiesInLine{r=1.8}
+
+hv_monolith_grab_try:
+  Cooldown: 24
+  Conditions:
+  - offgcd
+  - hasaura hv_monolith_cd false
+  TargetConditions:
+  - distance{d=0to8} true
+  Skills:
+  - gcd{ticks=39} @self
+  - state{s=grab_try} @self
+  - sound{s=block.tuff_bricks.step;v=4;p=0.6} @self
+  - sound{s=block.chain.hit;v=4;p=0.65;delay=14} @self
+  - sound{s=item.mace.smash_air;v=4;p=0.85;delay=15} @self
+  - effect:particles{p=electric_spark;amount=8;speed=0.08;hS=0.55;vS=0.9;delay=15} @modelpart{pid=grab}
+  - effect:particles{p=dust_plume;amount=5;speed=0.05;hS=0.5;vS=0.75;delay=15} @modelpart{pid=grab}
+  - skill{s=hv_monolith_partvis_all_true;delay=15}
+  - skill{s=hv_monolith_partvis_all_false;delay=30}
+  - setspeed{s=0} @self
+  - setspeed{s=2.5;delay=16} @self
+  - setspeed{s=0;delay=20} @self
+  - look{force=true;headOnly=false;immediately=true;delay=19} @targetLocation
+  - skill{s=hv_monolith_grab_try_check_passengers;delay=23} @modelpart{p=grab}
+
+hv_monolith_grab_try_totem:
+  Skills:
+  - totem{md=2;oH=hv_monolith_grab;hr=3.5;vr=3.5;hp=true;hnp=false;ht=true;drawhitbox=false;ti=25} @modelpart{pid=damage}
+
+hv_monolith_grab_try_check_passengers:
+  Conditions:
+  - ModelHasPassenger{p=grab} false
+  Skills:
+  - lockmodel{l=false} @self
+  - setspeed{s=1;delay=16} @self
+
+hv_monolith_grab:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - gcd{ticks=29} @self
+  - sound{s=block.chain.place;v=4;p=0.6}
+  - sound{s=block.trial_spawner.hit;v=4;p=0.8}
+  - effect:particles{p=electric_spark;amount=10;speed=0.1;hS=0.7;vS=1;y=1}
+  - basedamage{m=2;pi=true;pk=true}
+  - mountmodel{mid=hv_monolith;driver=false;pbone=grab;dmg=false}
+  - state{s=grab_try;r=true} @self
+  - state{s=grab} @self
+  - sound{s=entity.iron_golem.attack;v=4;p=0.55;delay=10} @ModelPassengers{p=grab}
+  - sound{s=block.tuff_bricks.hit;v=4;p=0.55;delay=10} @ModelPassengers{p=grab}
+  - skill{s=hv_monolith_recoil_hit_medium;delay=10} @ModelPassengers{p=grab}
+  - effect:particles{p=crit;amount=12;speed=0.14;hS=0.7;vS=1;y=1;delay=10} @ModelPassengers{p=grab}
+  - effect:particles{p=electric_spark;amount=12;speed=0.12;hS=0.7;vS=1;y=1;delay=10} @ModelPassengers{p=grab}
+  - basedamage{m=8;pi=true;pk=true;delay=10} @ModelPassengers{p=grab}
+  - shieldbreak{duration=120;delay=10} @ModelPassengers{p=grab}
+  - dismountall{mid=hv_monolith;p=grab;delay=20} @self
+  - sound{s=block.chain.break;v=4;p=0.75;delay=13} @self
+  - sound{s=entity.breeze.wind_burst;v=4;p=0.9;delay=14} @self
+  - effect:particles{p=poof;amount=8;speed=0.08;hS=0.7;vS=0.9;delay=20} @modelpart{pid=grab}
+  - setspeed{s=1;delay=29} @self
+
+hv_monolith_shoot:
+  Cooldown: 8
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=6to32} true
+  Skills:
+  - gcd{ticks=39} @self
+  - state{s=shoot} @self
+  - setspeed{s=0} @self
+  - sound{s=block.copper_bulb.turn_on;v=4;p=0.65} @self
+  - sound{s=block.beacon.power_select;v=4;p=1.35} @self
+  - effect:particles{p=reverse_portal;amount=8;speed=0.04;hS=0.6;vS=0.8;y=2.7;delay=5} @self
+  - effect:particles{p=electric_spark;amount=12;speed=0.09;hS=0.55;vS=0.7;y=2.8;delay=13} @self
+  - sound{s=item.trident.throw;v=4;p=1.15;delay=16} @self
+  - sound{s=entity.player.attack.sweep;v=4;p=0.8;delay=16} @self
+  - sound{s=block.amethyst_cluster.hit;v=4;p=1.35;delay=16} @self
+  - look{force=true;headOnly=false;immediately=true;delay=15} @targetLocation
+  - projectile{bullettype=ME;bulletmodel=hv_monolith_projectile;hr=0.8;vr=0.8;i=1;ti=1;v=34;ac=1;syo=3;sb=true;hnp=true;oT=hv_monolith_shoot_tick;oH=hv_monolith_shoot_damage;oE=hv_monolith_shoot_end;doEndSkillOnHit=false;se=true;delay=16} @targetLocation{y=0.5}
+  - delay 39
+  - setspeed{s=1} @self
+
+hv_monolith_shoot_tick:
+  Skills:
+  - effect:particles{p=electric_spark;amount=2;speed=0.025;hS=0.14;vS=0.14} @origin
+  - effect:particles{p=soul_fire_flame;amount=1;speed=0.015;hS=0.1;vS=0.1} @origin
+
+hv_monolith_shoot_end:
+  Skills:
+  - sound{s=block.copper_bulb.turn_off;v=4;p=1.5} @origin
+  - effect:particles{p=electric_spark;amount=12;speed=0.1;hS=0.55;vS=0.55} @origin
+  - effect:particles{p=poof;amount=6;speed=0.07;hS=0.45;vS=0.45} @origin
+  - effect:particles{p=soul;amount=4;speed=0.04;hS=0.35;vS=0.45} @origin
+
+hv_monolith_shoot_damage:
+  Skills:
+  - sound{s=item.mace.smash_ground;v=2;p=1.05}
+  - sound{s=block.respawn_anchor.deplete;v=2;p=1.35}
+  - sound{s=entity.iron_golem.damage;v=2;p=0.75}
+  - skill{s=hv_monolith_recoil_hit_medium} @target
+  - effect:particles{p=electric_spark;amount=18;speed=0.16;hS=0.75;vS=1;y=1}
+  - effect:particles{p=crit;amount=10;speed=0.13;hS=0.65;vS=0.9;y=1}
+  - effect:particles{p=dust_plume;amount=6;speed=0.07;hS=0.6;vS=0.7;y=0.8}
+  - basedamage{m=8;pi=true;pk=true}
+  - throw{v=10;vy=2}
+  - shieldbreak{d=60}
+
+hv_monolith_totems:
+  Cooldown: 48
+  Conditions:
+  - hasaura hv_monolith_cd false
+  - hastag{t=hv_monolith_totem_shield} false
+  - offgcd
+  TargetConditions:
+  - distance{d=0to16} true
+  Skills:
+  - gcd{ticks=54} @self
+  - setspeed{s=0} @self
+  - state{s=summon} @self
+  - sound{s=block.trial_spawner.ominous_activate;v=5;p=0.55} @self
+  - sound{s=block.tuff_bricks.place;v=4;p=0.5} @self
+  - effect:particles{p=reverse_portal;amount=16;speed=0.06;hS=1.2;vS=1.8;y=1.1} @self
+  - skill{s=hv_monolith_partvis_all_true;delay=10}
+  - sound{s=block.beacon.activate;v=4;p=0.7;delay=16} @self
+  - effect:particles{p=soul_fire_flame;amount=12;speed=0.06;hS=1.1;vS=1.7;y=1.1;delay=16} @self
+  - effect:particles{p=electric_spark;amount=16;speed=0.09;hS=1.2;vS=1.8;y=1.1;delay=25} @self
+  - skill{s=hv_monolith_partvis_all_false;delay=40}
+  - sound{s=block.heavy_core.place;v=5;p=0.5;delay=34} @self
+  - sound{s=entity.lightning_bolt.impact;v=5;p=0.7;delay=35} @self
+  - skill{s=hv_monolith_shake_area_medium;delay=35} @PlayersInRadius{r=24}
+  - effect:particles{p=dust_plume;amount=18;speed=0.12;hS=1.8;vS=0.45;y=0.2;delay=35} @self
+  - effect:particles{p=electric_spark;amount=20;speed=0.14;hS=1.6;vS=1.4;y=0.8;delay=35} @self
+  - summon{m=hv_monolith_totem;amount=1;radius=0;summonerIsParent=true;delay=35} @RandomLocationsNearOrigin{a=5;r=15;minr=5;s=2;os=true}
+  - skill{s=hv_monolith_totem_spawn_retry;delay=38} @self
+  - skill{s=hv_monolith_totem_shield_start;delay=42} @self
+  - setspeed{s=1;delay=54} @self
+
+hv_monolith_totem_spawn_retry:
+  Conditions:
+  - children{a=0} true
+  Skills:
+  - summon{m=hv_monolith_totem;amount=1;radius=0;summonerIsParent=true} @RandomLocationsNearOrigin{a=5;r=10;minr=3;s=1;os=true}
+
+hv_monolith_totem_shield_start:
+  Conditions:
+  - children{a=>0} true
+  Skills:
+  - addtag{t=hv_monolith_totem_shield} @self
+  - sound{s=block.trial_spawner.spawn_mob;v=5;p=0.65} @self
+  - sound{s=block.beacon.activate;v=4;p=0.55} @self
+  - effect:particles{p=end_rod;amount=12;speed=0.06;hS=1.1;vS=1.8;y=1.2} @self
+
+hv_monolith_totem_protected_hit:
+  Conditions:
+  - hastag{t=hv_monolith_totem_shield} true
+  - children{a=>0} true
+  Skills:
+  - cancelevent
+  - sound{s=item.shield.block;v=1;p=0.65} @self
+  - sound{s=block.respawn_anchor.deplete;v=1;p=1.6} @self
+  - effect:particles{p=electric_spark;amount=18;speed=0.12;hS=1.2;vS=2;y=1} @self
+  - effect:particles{p=end_rod;amount=8;speed=0.07;hS=1;vS=1.8;y=1} @self
+  - effect:particles{p=crit;amount=6;speed=0.08;hS=0.9;vS=1.6;y=1} @self
+
+hv_monolith_totem_shield_check:
+  Conditions:
+  - hastag{t=hv_monolith_totem_shield} true
+  - children{a=0} true
+  Skills:
+  - removetag{t=hv_monolith_totem_shield} @self
+  - skill{s=hv_monolith_totem_shield_break} @self
+
+hv_monolith_totem_shield_break:
+  Skills:
+  - sound{s=block.respawn_anchor.deplete;v=5;p=0.55} @self
+  - sound{s=entity.lightning_bolt.impact;v=5;p=0.7} @self
+  - sound{s=block.beacon.deactivate;v=4;p=0.6} @self
+  - sound{s=block.trial_spawner.break;v=4;p=0.6} @self
+  - skill{s=hv_monolith_shake_area_medium} @PlayersInRadius{r=28}
+  - effect:particles{p=flash;amount=1;y=2} @self
+  - effect:particles{p=electric_spark;amount=50;hS=2.5;vS=3;speed=0.2;y=1.5} @self
+  - effect:particles{p=reverse_portal;amount=40;hS=2;vS=2.5;speed=0.15;y=1.5} @self
+  - effect:particles{p=soul;amount=20;hS=1.5;vS=2;speed=0.1;y=1.5} @self
+  - effect:particles{p=dust_plume;amount=14;hS=1.8;vS=1.3;speed=0.1;y=0.8} @self
+
+hv_monolith_totem_shot:
+  Cooldown: 2
+  Conditions:
+  - chance{chance=0.25} true
+  TargetConditions:
+  - distance{d=0to24} true
+  - lineofsight true
+  Skills:
+  - sound{s=block.beacon.power_select;v=1;p=1.8} @self
+  - effect:particles{p=electric_spark;amount=8;speed=0.08;hS=0.25;vS=0.25;y=1.5} @self
+  - effect:particles{p=end_rod;amount=3;speed=0.03;hS=0.18;vS=0.18;y=1.5} @self
+  - skill{s=hv_monolith_totem_shot_fire;delay=8}
+
+hv_monolith_totem_shot_fire:
+  TargetConditions:
+  - distance{d=0to32} true
+  - lineofsight true
+  Skills:
+  - particleline{p=electric_spark;amount=1;distanceBetween=0.3;startYOffset=1.5;targetYOffset=1;zigzag=true;zigzags=10;zigzagOffset=0.15}
+  - particleline{p=end_rod;amount=1;distanceBetween=1;startYOffset=1.5;targetYOffset=1}
+  - sound{s=entity.breeze.shoot;v=1;p=1.8} @self
+  - sound{s=block.copper_bulb.turn_on;v=1;p=1.7} @self
+  - effect:particles{p=electric_spark;amount=10;speed=0.1;hS=0.4;vS=0.6;y=1} @target
+  - effect:particles{p=crit;amount=6;speed=0.08;hS=0.3;vS=0.5;y=1} @target
+  - basedamage{m=1;pi=true;pk=true}
+
+#-------------------------
+#     Made by helove
+#     Discord helovedev
+#-------------------------

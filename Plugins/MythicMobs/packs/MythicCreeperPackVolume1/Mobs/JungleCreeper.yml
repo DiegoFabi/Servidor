@@ -1,0 +1,18 @@
+MSO_Creeper_Jungle:
+  Type: CREEPER
+  Display: '&3Jungle Creeper'
+  Health: 20
+  Damage: 30
+  Drops:
+  - GUNPOWDER 0-2 1
+  - JUNGLE_LOG 0-2 1
+  Skills:
+  - model{mid=creeper_jungle;n=false} @Self ~onSpawn
+  - potion{type=INVISIBILITY;delay=1;l=1;force=true} @Self ~onSpawn
+  - skill:MSO_CreeperPrime @self ~onPrime
+  # Enchant the armor
+  - enchant{m=creeper_jungle;pid=armor;en=true;em=false} @self ~onSpawn
+  # Hide the armor on spawn
+  - partvisibility{m=creeper_jungle;p=armor;v=false;em=false} @self ~onSpawn
+  # Show the armor on charge
+  - partvisibility{m=creeper_jungle;p=armor;v=true;em=false} @self ~onCharged
