@@ -106,4 +106,5 @@ PlayerList:
       Priority: 1
       Ranks:
       - '*'
-      Format: <white> %player_prefix%</white> %player_name%
+      # Nivel = tier de combate de EliteMobs con la flecha verde de Nexo.
+      Format: <white> %player_prefix%</white> %player_name% <dark_gray>•</dark_gray> <white><glyph:essential_icons_level_up></white> <#7FFF9E>%elitemobs_player_combat_tier%</#7FFF9E>

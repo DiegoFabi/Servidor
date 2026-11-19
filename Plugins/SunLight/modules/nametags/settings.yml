@@ -27,15 +27,16 @@ Nametags:
   # └── Color:
   #       -> Color of the player name. List of available colors: https://minecraft.wiki/w/Formatting_codes#Color_codes
   Groups:
-    # Global, en una sola línea:  [RANGO] Nombre (Clan) • ❤ 20 ✦ 30
+    # Global, en una sola línea:  [RANGO] Nombre (Clan) • ❤ 20 ⇧ 12
     # - Rango: prefijo de LuckPerms (%player_prefix%).
     # - Clan: justTeams (%justteams_name%, muestra "No Team" si no tiene).
-    # - Estadísticas (expansión Player de PlaceholderAPI): vida y nivel.
+    # - Vida (expansión Player de PlaceholderAPI) y nivel de combate de EliteMobs
+    #   (%elitemobs_player_combat_tier%) con la flecha verde de Nexo (essential_icons_level_up).
     #   Se refrescan con Update_Interval (40 ticks = 2 s).
     todos:
       Priority: 1
       Ranks:
       - '*'
       Prefix: '<white>%player_prefix%</white> '
-      Suffix: ' <#8C93A8>(%justteams_name%)</#8C93A8> <dark_gray>•</dark_gray> <#FF6B6B>❤ %player_health_rounded%</#FF6B6B> <#7FD8FF>✦ %player_level%</#7FD8FF>'
+      Suffix: ' <#8C93A8>(%justteams_name%)</#8C93A8> <dark_gray>•</dark_gray> <#FF6B6B>❤ %player_health_rounded%</#FF6B6B> <white><glyph:essential_icons_level_up></white> <#7FFF9E>%elitemobs_player_combat_tier%</#7FFF9E>'
       Color: white
