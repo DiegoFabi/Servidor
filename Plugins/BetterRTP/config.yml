@@ -43,7 +43,8 @@ Settings:
   # # Output to console some debugging info
   Debugger: false
   # # Amount of chunks to preload around a safe location
-  PreloadRadius: 5
+  # Optimizado: 2 = solo 25 chunks alrededor del destino (antes 5 = 121).
+  PreloadRadius: 2
   # # Maximum amount of tries before BetterRTP gives up and sends a NotSafeMessage #
   MaxAttempts: 32
   RtpOnFirstJoin: # Will execute as console to override delays
@@ -64,7 +65,7 @@ Settings:
     Enabled: true # Allows betterrtp to automatically queue up safe rtp locations prior to players executing `/rtp`
   DisableUpdater: false
   Logger:
-    Enabled: true # Log all things rtp related to the log.log file
+    Enabled: false # Log all things rtp related to the log.log file
     LogToConsole: false
     Format: yyyy-MM-dd HH:mm:ss
 
@@ -102,46 +103,57 @@ BlacklistedBlocks:
 - kelp
 
 # # Worlds to NOT allow /rtp in, unless there is an override to another enabled world #
+# Mundos sin RTP propio: no generan cola (antes la cola gastaba trabajo en
+# Lobby_nether) y, gracias a Overrides, /rtp desde ellos manda a survivalMain.
 DisabledWorlds:
-- prison
-- creative
+- Lobby
+- Lobby_nether
+- Lobby_the_end
+- Orian
+- Utils
 
 # # Worlds you want to have a custom min/max and spawn center in #
 # # [MaxRadius] and [MinRadius] MUST be positive! These cannot be equal to each other!
+# survivalMain usa "Default" (10-1000 bloques desde 0,0).
 CustomWorlds:
-- custom_world_1:
+- world_nether:
     UseWorldBorder: false
     MaxRadius: 1000
-    MinRadius: 100
+    MinRadius: 50
     CenterX: 0
     CenterZ: 0
-    Price: 50
     Shape: square
-    MaxY: 320
-    MinY: 0
-    Cooldown: 60
-- other_custom_world:
-    MaxRadius: 10000
-    MinRadius: 150
-    CenterX: 123
-    CenterZ: -123
-    Price: 0
-    Biomes:
-    - desert
-    - forest
+    MaxY: 120
+    MinY: 5
+- world_the_end:
+    # La isla principal del End mide ~150 bloques: más allá casi todo es vacío.
+    UseWorldBorder: false
+    MaxRadius: 140
+    MinRadius: 30
+    CenterX: 0
+    CenterZ: 0
     Shape: circle
-    RTPOnDeath: true
+    MaxY: 120
+    MinY: 20
 
 # # Override a world and rtp a player executing the command in one world, to another
+# Desde el Lobby (o cualquier mundo sin RTP) /rtp lleva a survivalMain.
 Overrides:
-- master_world: world
-- creative_world: world
+- Lobby: survivalMain
+- Lobby_nether: survivalMain
+- Lobby_the_end: survivalMain
+- Orian: survivalMain
+- Utils: survivalMain
 
 WorldType: # Available types are NORMAL, NETHER
-  - world: NORMAL
+  - survivalMain: NORMAL
   - world_nether: NETHER
   - world_the_end: NORMAL
-  - survivalMain: NORMAL
+  - Lobby: NORMAL
+  - Lobby_nether: NETHER
+  - Lobby_the_end: NORMAL
+  - Orian: NORMAL
+  - Utils: NORMAL
 
 PermissionGroup: # Player requires "betterrtp.group.<group_name>" to trigger these configs
   Enabled: false

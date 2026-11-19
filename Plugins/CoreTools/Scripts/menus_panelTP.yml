@@ -37,7 +37,7 @@ paneltp_b6_click:
 nethermenu_b1_click:
   Conditions: []
   Mechanics:
-  - 'command{c="rtp world netherMain";runas=op} @Self'
+  - 'command{c="rtp world world_nether";runas=op} @Self'
   - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
   - 'message{m="&6Transporte &8» &aTe has movido al mundo &cInfierno, &aatento a los mobs!"} @Self'
 nethermenu_b2_click:
@@ -50,7 +50,7 @@ nethermenu_b3_click:
   - 'currency{m=check;c=vault;a=1000} falseElse menus_no_money'
   Mechanics:
   - 'currency{m=remove;c=vault;a=1000} @Self'
-  - 'command{c="rtp world netherMain";runas=op} @Self'
+  - 'command{c="rtp world world_nether";runas=op} @Self'
   - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
   - 'message{m="&6Transporte &8» &aTe has movido al mundo &cInfierno, &aatento a los mobs!"} @Self'
 nethermenu_b4_click:
@@ -70,7 +70,7 @@ nethermenu_b6_click:
 endmenu_b1_click:
   Conditions: []
   Mechanics:
-  - 'command{c="rtp world endMain";runas=op} @Self'
+  - 'command{c="rtp world world_the_end";runas=op} @Self'
   - 'playsound{sound="minecraft:entity.enderman.teleport";volume=1;pitch=1} @Self'
   - 'message{m="&6Transporte &8» &aTe has movido al mundo &eFinal, &aatento a los mobs!"} @Self'
 endmenu_b2_click:
