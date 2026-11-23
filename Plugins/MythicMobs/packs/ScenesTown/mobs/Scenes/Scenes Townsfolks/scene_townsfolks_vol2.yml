@@ -30,16 +30,16 @@ scene_townsfolk_handler:
   - setspeed{speed=0.7} @self ~onTimer:5 ?stance{stance=full} 
   - setspeed{speed=0.9} @self ~onTimer:5 ?stance{stance=empty} 
   - skill{skill=gotodrop} @self ~onTimer:5
-  - goto{speedModifier=0.7;sh=0;sv=0} @MobsNearOrigin{r=2000;types=scene_townsfolk_handler_provider} ~onTimer:1 ?stance{stance=empty}
-  - goto{speedModifier=0.9;sh=0;sv=0} @MobsNearOrigin{r=2000;types=scene_townsfolk_handler_stock} ~onTimer:1 ?stance{stance=full}
+  - goto{speedModifier=0.7;sh=0;sv=0} @MobsNearOrigin{r=100;types=scene_townsfolk_handler_provider} ~onTimer:10 ?stance{stance=empty}
+  - goto{speedModifier=0.9;sh=0;sv=0} @MobsNearOrigin{r=100;types=scene_townsfolk_handler_stock} ~onTimer:10 ?stance{stance=full}
   - skill{skill=leapdrop} @self ~onTimer:5
   - skill{skill=leapprovider} @self ~onTimer:5
   - matchrotation{target=@PIR{radius=50}} @self ~onInteract
   - skill{skill=gotoprovider} @self ~onTimer:5
   - skill{skill=stanceskin} ~onTimer:5
   - setvariable{var=global.skinchange;value=scene_townsfolk_handler;type=STRING;save=true} @self ~onInteract
-  - setStance{stance=<global.var.skin<caster.uuid>>} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_provider} ~onTimer:1
-  - setStance{stance=<global.var.skin<caster.uuid>>} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_stock} ~onTimer:1
+  - setStance{stance=<global.var.skin<caster.uuid>>} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_provider} ~onTimer:5
+  - setStance{stance=<global.var.skin<caster.uuid>>} @MobsNearOrigin{r=3;types=scene_townsfolk_handler_stock} ~onTimer:5
 
     
 

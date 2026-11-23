@@ -39,7 +39,7 @@ LUCKY_VILLAGER_PLAINS:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_PLAINS;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_PLAINS;amount=>0;radius=96} false
 #
 LUCKY_VILLAGER_DESERT:
   Type: LUCKY_VILLAGER_DESERT
@@ -57,7 +57,7 @@ LUCKY_VILLAGER_DESERT:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_DESERT;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_DESERT;amount=>0;radius=96} false
 #
 LUCKY_VILLAGER_JUNGLE:
   Type: LUCKY_VILLAGER_JUNGLE
@@ -75,7 +75,7 @@ LUCKY_VILLAGER_JUNGLE:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_JUNGLE;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_JUNGLE;amount=>0;radius=96} false
 #
 LUCKY_VILLAGER_SAVANNA:
   Type: LUCKY_VILLAGER_SAVANNA
@@ -93,7 +93,7 @@ LUCKY_VILLAGER_SAVANNA:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_SAVANNA;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_SAVANNA;amount=>0;radius=96} false
 #
 LUCKY_VILLAGER_SNOW:
   Type: LUCKY_VILLAGER_SNOW
@@ -111,7 +111,7 @@ LUCKY_VILLAGER_SNOW:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_SNOW;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_SNOW;amount=>0;radius=96} false
 #
 LUCKY_VILLAGER_SWAMP:
   Type: LUCKY_VILLAGER_SWAMP
@@ -129,7 +129,7 @@ LUCKY_VILLAGER_SWAMP:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_SWAMP;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_SWAMP;amount=>0;radius=96} false
 #
 LUCKY_VILLAGER_TAIGA:
   Type: LUCKY_VILLAGER_TAIGA
@@ -147,7 +147,7 @@ LUCKY_VILLAGER_TAIGA:
   - inblock{b=WATER,LAVA} false
   - day true
   - outside true
-  - mobsInRadius{types=LUCKY_VILLAGER_TAIGA;amount=>0;radius=200} false
+  - mobsInRadius{types=LUCKY_VILLAGER_TAIGA;amount=>0;radius=96} false
 #
 #
 #

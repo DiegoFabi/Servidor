@@ -78,7 +78,7 @@ shark:
   - BodyClamp{mh=15;mb=15;rde=60;rdu=60} @self ~onSpawn
   - BodyClamp{mh=15;mb=15;rde=60;rdu=60} @self ~onLoad
   
-  - skill{s=shark_cancel} @self ~onTimer:1
+  - skill{s=shark_cancel} @self ~onTimer:5
   - skill{s=shark_bite1} @self ~onTimer:5
   - skill{s=shark_bite1_close} @self ~onTimer:5
   - skill{s=shark_player_aggro} @pir{r=16} ~onTimer:10
@@ -115,7 +115,7 @@ shark_hammer:
   - BodyClamp{mh=15;mb=15;rde=60;rdu=60} @self ~onSpawn
   - BodyClamp{mh=15;mb=15;rde=60;rdu=60} @self ~onLoad
   
-  - skill{s=shark_cancel} @self ~onTimer:1
+  - skill{s=shark_cancel} @self ~onTimer:5
   - skill{s=shark_player_aggro} @pir{r=16} ~onTimer:10  
   - skill{s=shark_bite1} @self ~onTimer:5
   - skill{s=shark_bite1_close} @self ~onTimer:5

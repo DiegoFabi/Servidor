@@ -448,7 +448,7 @@ Forest_Spirit:
   - summon{type=Forest_roots;amount=1;radius=0;os=true} @PIR{r=50} ~onTimer:160
   - summon{type=Spirit_roots;amount=5;radius=8;os=true} @PIR{r=50} ~onTimer:278
   - randomskill{s=FS1 1, FS2 1, FS3 1, FS4 1, FS5 1, FS71 1, FS72 1, FSM1 0.4, FSM2 0.2} ~onTimer:20
-  - look{headOnly=true;immediately=true} @Target ~onTimer:1
+  - look{headOnly=true;immediately=true} @Target ~onTimer:2
   - suicide @self ~onSignal
   - summon{type=Forest_Spirit_Base;amount=1;radius=0;os=true;delay=280} @Self ~onSpawn
   - threat{mode=forcetop} @NearestPlayer ~onTimer:80

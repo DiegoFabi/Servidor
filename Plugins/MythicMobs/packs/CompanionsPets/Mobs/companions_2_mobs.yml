@@ -31,7 +31,7 @@ Pet_Outlaw_Wild_West:
   - skill{s=Pet_Outlaw_Wild_West_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Outlaw_Wild_West} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -68,7 +68,7 @@ Pet_Outlaw_Cyborg:
   - skill{s=Pet_Outlaw_Cyborg_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Outlaw_Wild_West} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -105,7 +105,7 @@ Pet_Outlaw_Officer:
   - skill{s=Pet_Outlaw_Officer_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Outlaw_Wild_West} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -142,7 +142,7 @@ Pet_Outlaw_Steampunk:
   - skill{s=Pet_Outlaw_Steampunk_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Outlaw_Wild_West} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Outlaw_Steampunk_FX} ~onTimer:40
@@ -226,7 +226,7 @@ Pet_Griffon_Griffon:
   - skill{s=Pet_Griffon_Griffon_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Griffon_Griffon} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -264,7 +264,7 @@ Pet_Griffon_Phoenix:
   - skill{s=Pet_Griffon_Phoenix_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Griffon_Griffon} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Griffon_Phoenix_FX} ~onTimer:40
@@ -303,7 +303,7 @@ Pet_Griffon_Rockstar:
   - skill{s=Pet_Griffon_Rockstar_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Griffon_Griffon} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -341,7 +341,7 @@ Pet_Griffon_Khonsu:
   - skill{s=Pet_Griffon_Khonsu_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Griffon_Griffon} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Griffon_Khonsu_FX} ~onTimer:40
@@ -380,7 +380,7 @@ Pet_Griffon_Ra:
   - skill{s=Pet_Griffon_Ra_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Griffon_Griffon} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Griffon_Ra_FX} ~onTimer:40
@@ -418,7 +418,7 @@ Pet_Samurai_Shiba_Samurai:
   - skill{s=Pet_Samurai_Shiba_Samurai_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Samurai_Shiba_Samurai} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -455,7 +455,7 @@ Pet_Samurai_Shiba_Bamboo:
   - skill{s=Pet_Samurai_Shiba_Bamboo_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Samurai_Shiba_Samurai} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -492,7 +492,7 @@ Pet_Samurai_Shiba_Pirate:
   - skill{s=Pet_Samurai_Shiba_Pirate_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Samurai_Shiba_Samurai} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -529,7 +529,7 @@ Pet_Samurai_Shiba_New_Year:
   - skill{s=Pet_Samurai_Shiba_New_Year_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Samurai_Shiba_Samurai} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Samurai_Shiba_New_Year_FX} ~onTimer:40
@@ -670,7 +670,7 @@ Pet_Necromancer_Cat_Necromancer:
   - skill{s=Pet_Necromancer_Cat_Necromancer_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Necromancer_Cat_Necromancer} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -710,7 +710,7 @@ Pet_Necromancer_Cat_Santa:
   - skill{s=Pet_Necromancer_Cat_Santa_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Necromancer_Cat_Necromancer} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -750,7 +750,7 @@ Pet_Necromancer_Cat_Fire_Mage:
   - skill{s=Pet_Necromancer_Cat_Fire_Mage_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Necromancer_Cat_Necromancer} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Necromancer_Cat_Fire_Mage_FX} ~onTimer:40
@@ -791,7 +791,7 @@ Pet_Necromancer_Cat_Ice_Mage:
   - skill{s=Pet_Necromancer_Cat_Ice_Mage_Skill} ~onTimer:40
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Necromancer_Cat_Necromancer} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Necromancer_Cat_Ice_Mage_FX} ~onTimer:40
@@ -893,7 +893,7 @@ Pet_Shark_Oceanic:
   - particles{p=block_crack;m=DIRT;amount=10;hS=0.25;vS=0.06;y=0.03;size=1;speed=0} @self ~onTimer:5 ?ismoving ?hasaura{n=DIGIN}
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Shark_Oceanic} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -948,7 +948,7 @@ Pet_Shark_Baby_Shark:
   - particles{p=block_crack;m=DIRT;amount=10;hS=0.25;vS=0.06;y=0.03;size=1;speed=0} @self ~onTimer:5 ?ismoving ?hasaura{n=DIGIN}
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Shark_Baby_Shark} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -989,7 +989,7 @@ Pet_Shark_Chef:
   - particles{p=block_crack;m=DIRT;amount=10;hS=0.25;vS=0.06;y=0.03;size=1;speed=0} @self ~onTimer:5 ?ismoving ?hasaura{n=DIGIN}
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Shark_Oceanic} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
 
@@ -1031,7 +1031,7 @@ Pet_Shark_Dragonborn:
   - particles{p=lava;amount=3;hS=0.25;vS=0.06;y=0.03;size=1;speed=0} @self ~onTimer:5 ?ismoving ?hasaura{n=DIGIN}
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=EXP_Gain} ~onTimer:100
-  - skill{s=Pet_Look} ~onTimer:1
+  - skill{s=Pet_Look} ~onTimer:2
   - skill{s=Pet_Interact_Shark_Oceanic} ~onInteract
   - setspeed{speed=1.5;type=walking} @self ~onSpawn
   - skill{s=Pet_Shark_Dragonborn_FX} ~onTimer:40

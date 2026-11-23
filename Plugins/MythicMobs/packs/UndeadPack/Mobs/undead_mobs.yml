@@ -84,7 +84,7 @@ Specter:
   - players
   Skills:
   - model{mid=specter;step=1;tint=false;usm=true} @self ~onSpawn
-  - look @target ~onTimer:1
+  - look @target ~onTimer:2
   - effect:sound{s=entity.phantom.ambient;volume=0.75;pitch=0.8} @self ~onTimer:140 0.35
   - effect:sound{s=entity.phantom.ambient;volume=0.75;pitch=1} @self ~onDeath
   - skill{s=Changetarget} ~onTimer:160 <99%
@@ -182,7 +182,7 @@ Nightharrow_Wendigo:
   - setstance{stance=Walking} @self ~onSpawn
   - effect:sound{s=entity.polar_bear.ambient;volume=0.8;pitch=0.6} @self ~onTimer:140 0.35
   - effect:sound{s=entity.polar_bear.ambient;volume=0.8;pitch=0.45} @self ~onDeath
-  - skill{s=Nightharrow_Wendigo_TouchGround} ~onTimer:1
+  - skill{s=Nightharrow_Wendigo_TouchGround} ~onTimer:2
   - skill{s=Changetarget} ~onTimer:160 <99%
   - skill{s=Cancelattack;sync=true} ~onAttack
   - skill{s=Nightharrow_Wendigo_P1} ~onTimer:20 >50%

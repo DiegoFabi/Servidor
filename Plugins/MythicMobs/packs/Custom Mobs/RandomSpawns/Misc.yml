@@ -32,7 +32,7 @@ WATER_CREATURE:
   Priority: 1
   Action: REPLACE
   Conditions:
-  - mobsInRadius{types=WATER_CREATURE;amount=>1;radius=100} false # 2 will spawn in a range of 100
+  - mobsInRadius{types=WATER_CREATURE;amount=>1;radius=64} false # 2 will spawn in a range of 64
   - inblock{b=WATER} true
 #
 #
@@ -132,7 +132,7 @@ END_BLAZE:
   Action: REPLACE
   Conditions:
   - entitytype{type=ENDERMAN} true
-  - mobsInRadius{types=END_BLAZE;amount=>0;radius=100} false
+  - mobsInRadius{types=END_BLAZE;amount=>0;radius=64} false
 #
 #
 #
@@ -150,7 +150,7 @@ TORNADO:
   Conditions:
   - (inclaim || nearclaim{r=6}) false
   - biome{b=minecraft:DESERT} true
-  - mobsInRadius{types=TORNADO;amount=>1;radius=100} false
+  - mobsInRadius{types=TORNADO;amount=>1;radius=64} false
   - outside true
   - onblock{m=SAND,RED_SAND} true
 #
@@ -219,7 +219,7 @@ ALIEN_SUMMON:
   Cooldown: 100
   Conditions:
   - outside true
-  - mobsInRadius{types=ALIEN;amount=>0;radius=200} false
+  - mobsInRadius{types=ALIEN;amount=>0;radius=96} false
   - onblock{t=TINTED_GLASS} false
 #
 #
@@ -264,7 +264,7 @@ LIFEWISP_GUARDIAN:
   - biome{b=minecraft:CHERRY_GROVE} true
   - day true
   - outside true
-  - mobsInRadius{types=LIFEWISP_GUARDIAN;amount=>1;radius=100} false
+  - mobsInRadius{types=LIFEWISP_GUARDIAN;amount=>1;radius=64} false
 #
 #
 #

@@ -14,7 +14,7 @@ skeleton_boss:
     Collidable: true
     Invisible: true
   Skills:
-  - look{i=true} @target ~onTimer:1
+  - look{i=true} @target ~onTimer:2
   - skill{s=skeleboss_roar} ~onCombat
   - randomskill{s=skeleboss_rswipe,skeleboss_lswipe,skeleboss_roar,skeleboss_poisonbreath,skeleboss_rstomp,skeleboss_lstomp} @self ~onTimer:20
   - skill{s=skeleboss_roar;delay=10} ~onSpawn
