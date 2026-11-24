@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/models/circlemagic_lord_gama05_anarchy","particle":"#0"},"elements":[{"from":[-11.51,8.175,-11.49],"to":[7.99,8.175,8.01],"faces":{"up":{"uv":[9.75,4.875,4.875,0.0],"tintindex":0,"rotation":0,"texture":"#0"},"down":{"uv":[9.75,4.875,4.875,9.75],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

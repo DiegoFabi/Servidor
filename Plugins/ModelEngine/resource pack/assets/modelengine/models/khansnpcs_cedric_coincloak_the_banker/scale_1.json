@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/models/khansnpcs_cedric_coincloak_the_banker","particle":"#0"},"elements":[{"from":[8.0,5.75,7.5],"to":[8.0,10.75,8.5],"faces":{"east":{"uv":[5.25,1.625,5.375,2.25],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[5.25,1.625,5.375,2.25],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

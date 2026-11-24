@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/models/khansnpcs_bromnar_the_blacksmith","particle":"#0"},"elements":[{"from":[8.0,3.0,3.0],"to":[8.0,8.0,13.0],"faces":{"east":{"uv":[9.625,1.125,8.375,1.75],"tintindex":0,"rotation":0,"texture":"#0"},"west":{"uv":[4.875,2.0,3.625,2.625],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

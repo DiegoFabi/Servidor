@@ -1,1 +1,0 @@
-{"textures":{"4":"modelengine:entity/models/bl_illusionist_box_vfx","particle":"#4"},"elements":[{"from":[6.25,-7.0,8.0],"to":[9.75,8.0,8.0],"faces":{"south":{"uv":[6.166667,5.0,7.3333335,10.0],"tintindex":0,"rotation":0,"texture":"#4"},"north":{"uv":[6.166667,0.0,7.3333335,5.0],"tintindex":0,"rotation":0,"texture":"#4"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

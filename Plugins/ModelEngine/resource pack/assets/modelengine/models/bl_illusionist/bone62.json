@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/models/bl_illusionist","particle":"#0"},"elements":[{"from":[6.25,7.0,8.0],"to":[10.25,13.0,8.0],"faces":{"south":{"uv":[12.625,5.875,13.125,6.625],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[12.625,5.125,13.125,5.875],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

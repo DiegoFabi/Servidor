@@ -1,1 +1,0 @@
-{"textures":{"0":"modelengine:entity/models/khansnpcs_mizzlewick_the_alchemist","particle":"#0"},"elements":[{"from":[4.5,3.0,5.5],"to":[11.5,8.0,5.5],"faces":{"south":{"uv":[11.5,3.25,9.75,4.5],"tintindex":0,"rotation":0,"texture":"#0"},"north":{"uv":[9.75,3.25,11.5,4.5],"tintindex":0,"rotation":0,"texture":"#0"}}}],"display":{"gui":{"rotation":[-150.0,-45.0,180.0]}}}

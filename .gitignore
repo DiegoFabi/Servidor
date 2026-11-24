@@ -1,1 +1,3 @@
 respaldos/
+# ModelEngine genera esta carpeta solo al arrancar o con /meg reload
+Plugins/ModelEngine/resource pack/
