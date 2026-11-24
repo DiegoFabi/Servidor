@@ -1,81 +1,119 @@
-menu-title: '&fϿϫ'
+menu-title: '&f'
 menu-rows: 2
+
 week-slots:
-  slots: '1...7'
+  slots: '1...7' # ... is used to signify all of the ones in between. It functions the same as 11, 12, 13, 14, 15, 16, 17, 18
+
 menu:
   '9':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior &7(Clic)'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {portal}' 
-      - '[menu](page ! 1) {previous-page}' 
+      - '[menu](page = 1) {portal}'
   '10':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior &7(Clic)'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {portal}' 
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {portal}'
   '11':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior &7(Clic)'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {portal}' 
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {portal}'
   '15':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&eMisiones Diarias &7(%daily_time_left%)'
+      customModelData: 7000
+      name: '{#40E0D0}&lMisiones Diarias'
+      lore:
+        - ''
+        - '{#71797E}¿Necesitas más EXP? Completa'
+        - '{#71797E}las misiones diarias, que'
+        - '{#71797E}se renuevan cada 24 horas.'
+        - ''
+        - '{#40E0D0}Nuevas misiones en: {#c4fff9}%battlepass_time_to_daily_reset%'
+        - ''
+        - '&eVer &8[Clic Izquierdo]'
     actions:
       - '[menu] {daily-quests}'
   '16':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&eMisiones Diarias &7(%daily_time_left%)'
+      customModelData: 7000
+      name: '{#40E0D0}&lMisiones Diarias'
+      lore:
+        - ''
+        - '{#71797E}¿Necesitas más EXP? Completa'
+        - '{#71797E}las misiones diarias, que'
+        - '{#71797E}se renuevan cada 24 horas.'
+        - ''
+        - '{#40E0D0}Nuevas misiones en: {#c4fff9}%battlepass_time_to_daily_reset%'
+        - ''
+        - '&eVer &8[Clic Izquierdo]'
     actions:
       - '[menu] {daily-quests}'
   '17':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&eMisiones Diarias &7(%daily_time_left%)'
+      customModelData: 7000
+      name: '{#40E0D0}&lMisiones Diarias'
+      lore:
+        - ''
+        - '{#71797E}¿Necesitas más EXP? Completa'
+        - '{#71797E}las misiones diarias, que'
+        - '{#71797E}se renuevan cada 24 horas.'
+        - ''
+        - '{#40E0D0}Nuevas misiones en: {#c4fff9}%battlepass_time_to_daily_reset%'
+        - ''
+        - '&eVer &8[Clic Izquierdo]'
     actions:
       - '[menu] {daily-quests}'
+#  '32':
+#    item:
+#      material: arrow:0
+#      name: '&eSiguiente Página &7(Clic)'
+#      lore:
+#        - ''
+#        - '{#71797E}(( Clic para ir a la siguiente página ))'
+#    actions:
+#      - '[menu] {next-page}'
+
 static-items:
   week-item:
     material: 'gold_nugget'
-    customModelData: 505
-    name: '&eSemana %week% &7(%status%&7)'
+    customModelData: 7005
+    name: '{#7CFC00}&lSemana: {#c5ff8c}%week%'
     lore:
       - ''
-      - '&7&o(( Clic para ver las misiones ))'
+      - '{#71797E}Cada semana salen misiones nuevas'
+      - '{#71797E}que puedes completar para ganar EXP.'
+      - ''
+      - '&fMisiones completadas: &7%battlepass_completed_quests_week-%week%%/14'
+      - ''
+      - '&eVer &8[Clic Izquierdo]'
   locked-week-item:
     material: 'gold_nugget'
-    customModelData: 506
-    name: '&eSemana %week% &7(%status%&7)'
+    customModelData: 7006
+    name: '{#F33A6A}&lSemana: {#ffb3c7}%week%'
     lore:
       - ''
-      - '&7&o(( Clic para ver las misiones ))'
-  requires-previous-completion-item:
+      - '&8Status: {#F33A6A}%status%'
+  requires-previous-completion-item: # Only used if you have require previous completion set to true in your settings.yml.
     material: 'gold_nugget'
-    customModelData: 506
-    name: '&eSemana %week% &7(%status%&7)'
+    customModelData: 7006
+    name: '{#F33A6A}&lSemana: {#ffb3c7}%week%'
     lore:
       - ''
-      - '&7&o(( Clic para ver las misiones ))'
+      - '{#71797E}Esta semana se desbloquea cuando'
+      - '{#71797E}completes la semana anterior.'
+      - ''
+      - '&8Status: &c%status%'

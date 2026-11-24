@@ -1,4 +1,4 @@
-menu-title: '&fϿϩ'
+menu-title: '&f'
 menu-rows: 2
 
 quest-slots:
@@ -8,41 +8,46 @@ menu:
   '9':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {portal}'
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {quest-overview}' # If the page is 1, take them to the portal page
   '10':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {portal}'
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {quest-overview}' # If the page is 1, take them to the portal page
   '11':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {portal}'
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {quest-overview}' # If the page is 1, take them to the portal page
   '17':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e¿Cuándo hay misiones nuevas?'
+      customModelData: 7000
+      name: '{#f3db22}&lInformación'
       lore:
-        - '&7Nuevas misiones diarias en &e%daily_time_left%...'
+        - ''
+        - '{#71797E}¿Necesitas más EXP? Completa'
+        - '{#71797E}las misiones diarias, que'
+        - '{#71797E}se renuevan cada 24 horas.'
+        - ''
+        - '{#f3db22}Nuevas misiones en: {#fffb80}%battlepass_time_to_daily_reset%'
     actions: []
+#  '41':
+#    item:
+#      material: arrow:0
+#      name: '&eNext Page'
+#      lore:
+#        - ''
+#        - '&7(( Clic para ir a la siguiente página ))'
+#    actions:
+#      - '[menu] {next-page}' # Take the user to the next page

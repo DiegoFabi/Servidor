@@ -1,57 +1,75 @@
-# Advanced BattlePass - Immersive UI (items de interfaz del menú de BattlePass)
-# GOLD_NUGGET con custom_model_data 500-508, usados por BattlePass/menus y passes.
+# Jeqo's Battle Pass UI: items de interfaz de los menús de BattlePass.
+# GOLD_NUGGET con custom_model_data 7000-7008 (los usan BattlePass/menus y passes).
+# Texturas y modelos en pack/external_packs/BattlePassUI (namespace jeqo).
 
 bp_air:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/air
-    custom_model_data: 500
+    generate_model: false
+    model: jeqo:item/battlepass/air
+    custom_model_data: 7000
+
 bp_lock:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/lock
-    custom_model_data: 501
+    generate_model: false
+    model: jeqo:item/battlepass/lock
+    custom_model_data: 7001
+
 bp_unlock:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/unlock
-    custom_model_data: 502
+    generate_model: false
+    model: jeqo:item/battlepass/unlock
+    custom_model_data: 7002
+
 bp_reward_unclaimed:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/reward_unclaimed
-    custom_model_data: 503
+    generate_model: false
+    model: jeqo:item/battlepass/reward_unclaimed
+    custom_model_data: 7003
+
 bp_reward_claimed:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/reward_claimed
-    custom_model_data: 504
+    generate_model: false
+    model: jeqo:item/battlepass/reward_claimed
+    custom_model_data: 7004
+
 bp_questbook:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/questbook
-    custom_model_data: 505
+    generate_model: false
+    model: jeqo:item/battlepass/questbook
+    custom_model_data: 7005
+
 bp_questbook_gray:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/questbook_gray
-    custom_model_data: 506
+    generate_model: false
+    model: jeqo:item/battlepass/questbook_gray
+    custom_model_data: 7006
+
 bp_reward_locked_gray:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/reward_locked_gray
-    custom_model_data: 507
+    generate_model: false
+    model: jeqo:item/battlepass/reward_locked_gray
+    custom_model_data: 7007
+
 bp_reward_locked_green:
   itemname: <white>
   material: GOLD_NUGGET
   Pack:
-    model: battlepass/reward_locked_green
-    custom_model_data: 508
+    generate_model: false
+    model: jeqo:item/battlepass/reward_locked_green
+    custom_model_data: 7008

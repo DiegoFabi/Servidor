@@ -4,14 +4,14 @@ dont-give-premium-free-rewards: false # This will mean that premium users will n
 items:
   doesnt-have-pass-item: # This is ONLY shown/used if you have dont-give-premium-free-rewards: true. This is used to make it so premium users can only have premium rewards.
     material: 'gold_nugget'
-    customModelData: 507
+    customModelData: 7007
     name: '&eNivel %tier%'
     lore:
       - ''
       - '&cSolo puedes reclamar recompensas premium'
   locked-tier-item:
     material: 'gold_nugget'
-    customModelData: 507
+    customModelData: 7007
     name: '&eNivel %tier%'
     lore:
       - ''
@@ -21,7 +21,7 @@ items:
       - '&7Estado: &cBloqueado'
   unlocked-tier-item:
     material: 'gold_nugget'
-    customModelData: 503
+    customModelData: 7003
     name: '&aNivel %tier%'
     lore:
       - ''
@@ -31,7 +31,7 @@ items:
       - '&7Estado: &aDesbloqueado'
   claimed-tier-item:
     material: 'gold_nugget'
-    customModelData: 504
+    customModelData: 7004
     name: '&aNivel %tier%'
     lore:
       - ''
@@ -40,7 +40,7 @@ items:
       - ''
       - '&7Estado: &aReclamado'
 tier-up-actions:
-  - '[message] {Ϯ &7¡Alcanzaste el nivel &e%tier%&7!}'
+  - '[message] { &7¡Alcanzaste el nivel &e%tier%&7!}'
 tiers:
   '2': # The tier number
     rewards: ['1'] # The reward numbers to give to the player (see rewards.yml).

@@ -1,9 +1,9 @@
-# Menú de clases (textura Lemon Class Selection de Nexo). 5 clases, una por marco:
+# Menú de clases (items vanilla, sin texturas). 5 clases, una por página:
 # Guardián, Erudito, Explorador, Sanador y Cazafortunas. Acciones en Scripts/menus_menuClases.yml
 menuClaseGuerrero:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊑'
+  name: '&8Elige tu Clase • Guardián'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -22,8 +22,8 @@ menuClaseGuerrero:
       - 30
       - 31
       - 32
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <gradient:#FFCC00:#FFFFFF><bold>Guardián</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -50,8 +50,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 22
-      source: nexo
-      id: clase_guerrero
+      source: vanilla
+      material: shield
       name: <gradient:#FFCC00:#FFFFFF><bold>Guardián</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -78,8 +78,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 19
-      source: nexo
-      id: clase_picaro_sombra
+      source: vanilla
+      material: iron_sword
       name: <#9494B8>Cazafortunas
       lore: &id001
       - <#9EA3AE>Clic para ver esta clase
@@ -102,8 +102,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 20
-      source: nexo
-      id: clase_flecha_siguiente
+      source: vanilla
+      material: arrow
       name: <#9494B8>« Cazafortunas
       lore: *id001
       flags:
@@ -125,8 +125,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 28
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Cazafortunas
       lore: *id001
       flags:
@@ -148,8 +148,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 24
-      source: nexo
-      id: clase_flecha_anterior
+      source: vanilla
+      material: arrow
       name: <#9494B8>Erudito »
       lore: *id001
       flags:
@@ -171,8 +171,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_mago_sombra
+      source: vanilla
+      material: enchanted_book
       name: <#9494B8>Erudito
       lore: *id001
       flags:
@@ -194,8 +194,8 @@ menuClaseGuerrero:
       location: top
       slots:
       - 34
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Erudito
       lore: *id001
       flags:
@@ -219,8 +219,8 @@ menuClaseGuerrero:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: barrier
       name: <#FF6B6B>Cerrar
       lore:
       - <#9EA3AE>Cerrar el menú
@@ -245,8 +245,8 @@ menuClaseGuerrero:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E>Siguiente
       lore:
       - <#9EA3AE>Confirmar la clase <#FFCC00>Guerrero
@@ -268,7 +268,7 @@ menuClaseGuerrero:
 menuConfirmarGuerrero:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊒'
+  name: '&8Confirmar Clase • Guardián'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -277,8 +277,8 @@ menuConfirmarGuerrero:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_guerrero
+      source: vanilla
+      material: shield
       name: <gradient:#FFCC00:#FFFFFF><bold>Guardián</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -305,8 +305,8 @@ menuConfirmarGuerrero:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: arrow
       name: <#FF6B6B>Volver
       lore:
       - <#9EA3AE>Volver a <#FFCC00>Guerrero
@@ -331,8 +331,8 @@ menuConfirmarGuerrero:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E><bold>Confirmar</bold>
       lore:
       - <white>Elegir la clase <#FFCC00>Guardián
@@ -358,7 +358,7 @@ menuConfirmarGuerrero:
 menuClaseMago:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊑'
+  name: '&8Elige tu Clase • Erudito'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -377,8 +377,8 @@ menuClaseMago:
       - 30
       - 31
       - 32
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <gradient:#7FB2FF:#FFFFFF><bold>Erudito</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -405,8 +405,8 @@ menuClaseMago:
       location: top
       slots:
       - 22
-      source: nexo
-      id: clase_mago
+      source: vanilla
+      material: enchanted_book
       name: <gradient:#7FB2FF:#FFFFFF><bold>Erudito</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -433,8 +433,8 @@ menuClaseMago:
       location: top
       slots:
       - 19
-      source: nexo
-      id: clase_guerrero_sombra
+      source: vanilla
+      material: shield
       name: <#9494B8>Guardián
       lore: &id002
       - <#9EA3AE>Clic para ver esta clase
@@ -457,8 +457,8 @@ menuClaseMago:
       location: top
       slots:
       - 20
-      source: nexo
-      id: clase_flecha_siguiente
+      source: vanilla
+      material: arrow
       name: <#9494B8>« Guardián
       lore: *id002
       flags:
@@ -480,8 +480,8 @@ menuClaseMago:
       location: top
       slots:
       - 28
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Guardián
       lore: *id002
       flags:
@@ -503,8 +503,8 @@ menuClaseMago:
       location: top
       slots:
       - 24
-      source: nexo
-      id: clase_flecha_anterior
+      source: vanilla
+      material: arrow
       name: <#9494B8>Explorador »
       lore: *id002
       flags:
@@ -526,8 +526,8 @@ menuClaseMago:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_arquero_sombra
+      source: vanilla
+      material: bow
       name: <#9494B8>Explorador
       lore: *id002
       flags:
@@ -549,8 +549,8 @@ menuClaseMago:
       location: top
       slots:
       - 34
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Explorador
       lore: *id002
       flags:
@@ -574,8 +574,8 @@ menuClaseMago:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: barrier
       name: <#FF6B6B>Cerrar
       lore:
       - <#9EA3AE>Cerrar el menú
@@ -600,8 +600,8 @@ menuClaseMago:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E>Siguiente
       lore:
       - <#9EA3AE>Confirmar la clase <#7FB2FF>Mago
@@ -623,7 +623,7 @@ menuClaseMago:
 menuConfirmarMago:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊓'
+  name: '&8Confirmar Clase • Erudito'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -632,8 +632,8 @@ menuConfirmarMago:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_mago
+      source: vanilla
+      material: enchanted_book
       name: <gradient:#7FB2FF:#FFFFFF><bold>Erudito</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -660,8 +660,8 @@ menuConfirmarMago:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: arrow
       name: <#FF6B6B>Volver
       lore:
       - <#9EA3AE>Volver a <#7FB2FF>Mago
@@ -686,8 +686,8 @@ menuConfirmarMago:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E><bold>Confirmar</bold>
       lore:
       - <white>Elegir la clase <#7FB2FF>Erudito
@@ -713,7 +713,7 @@ menuConfirmarMago:
 menuClaseArquero:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊑'
+  name: '&8Elige tu Clase • Explorador'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -732,8 +732,8 @@ menuClaseArquero:
       - 30
       - 31
       - 32
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <gradient:#7FFF9E:#FFFFFF><bold>Explorador</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -760,8 +760,8 @@ menuClaseArquero:
       location: top
       slots:
       - 22
-      source: nexo
-      id: clase_arquero
+      source: vanilla
+      material: bow
       name: <gradient:#7FFF9E:#FFFFFF><bold>Explorador</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -788,8 +788,8 @@ menuClaseArquero:
       location: top
       slots:
       - 19
-      source: nexo
-      id: clase_mago_sombra
+      source: vanilla
+      material: enchanted_book
       name: <#9494B8>Erudito
       lore: &id003
       - <#9EA3AE>Clic para ver esta clase
@@ -812,8 +812,8 @@ menuClaseArquero:
       location: top
       slots:
       - 20
-      source: nexo
-      id: clase_flecha_siguiente
+      source: vanilla
+      material: arrow
       name: <#9494B8>« Erudito
       lore: *id003
       flags:
@@ -835,8 +835,8 @@ menuClaseArquero:
       location: top
       slots:
       - 28
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Erudito
       lore: *id003
       flags:
@@ -858,8 +858,8 @@ menuClaseArquero:
       location: top
       slots:
       - 24
-      source: nexo
-      id: clase_flecha_anterior
+      source: vanilla
+      material: arrow
       name: <#9494B8>Sanador »
       lore: *id003
       flags:
@@ -881,8 +881,8 @@ menuClaseArquero:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_clerigo_sombra
+      source: vanilla
+      material: golden_apple
       name: <#9494B8>Sanador
       lore: *id003
       flags:
@@ -904,8 +904,8 @@ menuClaseArquero:
       location: top
       slots:
       - 34
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Sanador
       lore: *id003
       flags:
@@ -929,8 +929,8 @@ menuClaseArquero:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: barrier
       name: <#FF6B6B>Cerrar
       lore:
       - <#9EA3AE>Cerrar el menú
@@ -955,8 +955,8 @@ menuClaseArquero:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E>Siguiente
       lore:
       - <#9EA3AE>Confirmar la clase <#7FFF9E>Arquero
@@ -978,7 +978,7 @@ menuClaseArquero:
 menuConfirmarArquero:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊔'
+  name: '&8Confirmar Clase • Explorador'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -987,8 +987,8 @@ menuConfirmarArquero:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_arquero
+      source: vanilla
+      material: bow
       name: <gradient:#7FFF9E:#FFFFFF><bold>Explorador</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1015,8 +1015,8 @@ menuConfirmarArquero:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: arrow
       name: <#FF6B6B>Volver
       lore:
       - <#9EA3AE>Volver a <#7FFF9E>Arquero
@@ -1041,8 +1041,8 @@ menuConfirmarArquero:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E><bold>Confirmar</bold>
       lore:
       - <white>Elegir la clase <#7FFF9E>Explorador
@@ -1068,7 +1068,7 @@ menuConfirmarArquero:
 menuClaseClerigo:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊑'
+  name: '&8Elige tu Clase • Sanador'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -1087,8 +1087,8 @@ menuClaseClerigo:
       - 30
       - 31
       - 32
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <gradient:#FFE7A3:#FFFFFF><bold>Sanador</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1115,8 +1115,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 22
-      source: nexo
-      id: clase_clerigo
+      source: vanilla
+      material: golden_apple
       name: <gradient:#FFE7A3:#FFFFFF><bold>Sanador</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1143,8 +1143,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 19
-      source: nexo
-      id: clase_arquero_sombra
+      source: vanilla
+      material: bow
       name: <#9494B8>Explorador
       lore: &id004
       - <#9EA3AE>Clic para ver esta clase
@@ -1167,8 +1167,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 20
-      source: nexo
-      id: clase_flecha_siguiente
+      source: vanilla
+      material: arrow
       name: <#9494B8>« Explorador
       lore: *id004
       flags:
@@ -1190,8 +1190,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 28
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Explorador
       lore: *id004
       flags:
@@ -1213,8 +1213,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 24
-      source: nexo
-      id: clase_flecha_anterior
+      source: vanilla
+      material: arrow
       name: <#9494B8>Cazafortunas »
       lore: *id004
       flags:
@@ -1236,8 +1236,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_picaro_sombra
+      source: vanilla
+      material: iron_sword
       name: <#9494B8>Cazafortunas
       lore: *id004
       flags:
@@ -1259,8 +1259,8 @@ menuClaseClerigo:
       location: top
       slots:
       - 34
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Cazafortunas
       lore: *id004
       flags:
@@ -1284,8 +1284,8 @@ menuClaseClerigo:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: barrier
       name: <#FF6B6B>Cerrar
       lore:
       - <#9EA3AE>Cerrar el menú
@@ -1310,8 +1310,8 @@ menuClaseClerigo:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E>Siguiente
       lore:
       - <#9EA3AE>Confirmar la clase <#FFE7A3>Clérigo
@@ -1333,7 +1333,7 @@ menuClaseClerigo:
 menuConfirmarClerigo:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊕'
+  name: '&8Confirmar Clase • Sanador'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -1342,8 +1342,8 @@ menuConfirmarClerigo:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_clerigo
+      source: vanilla
+      material: golden_apple
       name: <gradient:#FFE7A3:#FFFFFF><bold>Sanador</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1370,8 +1370,8 @@ menuConfirmarClerigo:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: arrow
       name: <#FF6B6B>Volver
       lore:
       - <#9EA3AE>Volver a <#FFE7A3>Clérigo
@@ -1396,8 +1396,8 @@ menuConfirmarClerigo:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E><bold>Confirmar</bold>
       lore:
       - <white>Elegir la clase <#FFE7A3>Sanador
@@ -1423,7 +1423,7 @@ menuConfirmarClerigo:
 menuClasePicaro:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊑'
+  name: '&8Elige tu Clase • Cazafortunas'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -1442,8 +1442,8 @@ menuClasePicaro:
       - 30
       - 31
       - 32
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <gradient:#C9A8FF:#FFFFFF><bold>Cazafortunas</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1470,8 +1470,8 @@ menuClasePicaro:
       location: top
       slots:
       - 22
-      source: nexo
-      id: clase_picaro
+      source: vanilla
+      material: iron_sword
       name: <gradient:#C9A8FF:#FFFFFF><bold>Cazafortunas</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1498,8 +1498,8 @@ menuClasePicaro:
       location: top
       slots:
       - 19
-      source: nexo
-      id: clase_clerigo_sombra
+      source: vanilla
+      material: golden_apple
       name: <#9494B8>Sanador
       lore: &id005
       - <#9EA3AE>Clic para ver esta clase
@@ -1522,8 +1522,8 @@ menuClasePicaro:
       location: top
       slots:
       - 20
-      source: nexo
-      id: clase_flecha_siguiente
+      source: vanilla
+      material: arrow
       name: <#9494B8>« Sanador
       lore: *id005
       flags:
@@ -1545,8 +1545,8 @@ menuClasePicaro:
       location: top
       slots:
       - 28
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Sanador
       lore: *id005
       flags:
@@ -1568,8 +1568,8 @@ menuClasePicaro:
       location: top
       slots:
       - 24
-      source: nexo
-      id: clase_flecha_anterior
+      source: vanilla
+      material: arrow
       name: <#9494B8>Guardián »
       lore: *id005
       flags:
@@ -1591,8 +1591,8 @@ menuClasePicaro:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_guerrero_sombra
+      source: vanilla
+      material: shield
       name: <#9494B8>Guardián
       lore: *id005
       flags:
@@ -1614,8 +1614,8 @@ menuClasePicaro:
       location: top
       slots:
       - 34
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: gray_stained_glass_pane
       name: <#9494B8>Guardián
       lore: *id005
       flags:
@@ -1639,8 +1639,8 @@ menuClasePicaro:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: barrier
       name: <#FF6B6B>Cerrar
       lore:
       - <#9EA3AE>Cerrar el menú
@@ -1665,8 +1665,8 @@ menuClasePicaro:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E>Siguiente
       lore:
       - <#9EA3AE>Confirmar la clase <#C9A8FF>Pícaro
@@ -1688,7 +1688,7 @@ menuClasePicaro:
 menuConfirmarPicaro:
   permission: ''
   bottom_inventory: false
-  name: '&f㊐㊖'
+  name: '&8Confirmar Clase • Cazafortunas'
   size: 6
   fill_material: AIR
   enable_animation: false
@@ -1697,8 +1697,8 @@ menuConfirmarPicaro:
       location: top
       slots:
       - 25
-      source: nexo
-      id: clase_picaro
+      source: vanilla
+      material: iron_sword
       name: <gradient:#C9A8FF:#FFFFFF><bold>Cazafortunas</bold></gradient>
       lore:
       - <#7C8291>Clase <white><glyph:essential_icons_crown></white>
@@ -1725,8 +1725,8 @@ menuConfirmarPicaro:
       - 45
       - 46
       - 47
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: arrow
       name: <#FF6B6B>Volver
       lore:
       - <#9EA3AE>Volver a <#C9A8FF>Pícaro
@@ -1751,8 +1751,8 @@ menuConfirmarPicaro:
       - 51
       - 52
       - 53
-      source: nexo
-      id: clase_invisible
+      source: vanilla
+      material: lime_stained_glass_pane
       name: <#7FFF9E><bold>Confirmar</bold>
       lore:
       - <white>Elegir la clase <#C9A8FF>Cazafortunas

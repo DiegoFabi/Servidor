@@ -7,7 +7,7 @@ disallowed-permission: '&7You do not have permission to use Battlepass.' # This 
 collectable-rewards-notification: '&e&lHEY! &eYou have rewards available to claim.
   Check them out in /bp open rewards.'
 
-daily-quest-reset: 'Ϯ &eSe han renovado algunas misiones diarias.'
+daily-quest-reset: ' &eSe han renovado algunas misiones diarias.'
 
 week-status-locked: '&cLocked'
 week-status-unlocked: '&aUnlocked'
@@ -30,7 +30,7 @@ event-status:
 progress-bar:
   complete-color: '&a'
   incomplete-color: '&c'
-  symbol: 'ϭϺ'
+  symbol: 'Ϻ'
 
 boosters:
   points: Points
@@ -68,9 +68,9 @@ date-time-format: <years:y ><months:mo ><weeks:w ><days:d ><hours:h ><minutes:m 
 
 quests:
   # The base message will be used for all quests unless another message is set.
-  base-message-progressed: 'Ϯ &8[&eMisiones&8] &7Has avanzado en la misión &e%quest_name%
+  base-message-progressed: ' &8[&eMisiones&8] &7Has avanzado en la misión &e%quest_name%
     &8(&e%progress%&7/&8&e%required_progress%&8)'
-  base-message-completed: 'Ϯ &8[&eMisiones&8] &7Has completado la misión &e%quest_name%'
+  base-message-completed: ' &8[&eMisiones&8] &7Has completado la misión &e%quest_name%'
   
   boss-bar-message-progressed: '&7&e%quest_name% Quest Progressed &8(&e%progress%&7/&8&e%required_progress%&8)'
   boss-bar-message-completed: '&7&e%quest_name% Quest Completed'
@@ -86,7 +86,7 @@ quests:
   
   steps:
     completed-info: '&7Already completed'
-    base-message-step-completed: 'Ϯ &8[&eMisiones&8] &7Has completado un paso de la misión
+    base-message-step-completed: ' &8[&eMisiones&8] &7Has completado un paso de la misión
       &e%quest_name%'
     boss-bar-message-step-completed: '&7&e%quest_name% Step Completed'
 
@@ -100,20 +100,20 @@ quest-select:
 daily-quests:
   # This section will only be used if the quest is daily. If messages aren't present here but are in the quest section, it will fall back onto that message.
   # This section is coded so you can remove it entirely and only use the quests messages if you wish.
-  base-message-progressed: 'Ϯ &8[&eMisiones&8] &7Has avanzado en la misión diaria &e%quest_name%
+  base-message-progressed: ' &8[&eMisiones&8] &7Has avanzado en la misión diaria &e%quest_name%
     &8(&e%progress%&7/&8&e%required_progress%&8)'
-  base-message-completed: 'Ϯ &8[&eMisiones&8] &7Has completado la misión diaria &e%quest_name%'
+  base-message-completed: ' &8[&eMisiones&8] &7Has completado la misión diaria &e%quest_name%'
   
   boss-bar-message-progressed: '&7&e%quest_name% Quest Progressed &8(&e%progress%&7/&8&e%required_progress%&8)'
   boss-bar-message-completed: '&7&e%quest_name% Quest Completed'
   
-  askyblock_createisland-progressed: 'Ϯ &8[&eMisiones&8] &7ASkyblock quests progressed.
+  askyblock_createisland-progressed: ' &8[&eMisiones&8] &7ASkyblock quests progressed.
     &8(&e%progress%&7/&8%required_progress%&8)'
-  askyblock_createisland-completed: 'Ϯ &8[&eMisiones&8] &7You completed the ASkyblock
+  askyblock_createisland-completed: ' &8[&eMisiones&8] &7You completed the ASkyblock
     island daily quest!'
   
   steps:
-    base-message-step-completed: 'Ϯ &8[&eMisiones&8] &7Has completado un paso de la misión diaria
+    base-message-step-completed: ' &8[&eMisiones&8] &7Has completado un paso de la misión diaria
       quest &e%quest_name%'
     boss-bar-message-step-completed: '&7&e%quest_name% Step Completed'
 

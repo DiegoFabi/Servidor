@@ -11,7 +11,7 @@ menu:
       name: '&ePrevious Page'
       lore:
         - ''
-        - '&7&o(( Click to go to the previous page ))'
+        - '&7(( Clic para ir a la página anterior ))'
     actions:
       - '[menu](page = 1) {event-list}'
       - '[menu](page ! 1) {previous-page}'
@@ -26,9 +26,9 @@ menu:
   '41':
     item:
       material: arrow:0
-      name: '&eNext Page'
+      name: '&eSiguiente Página'
       lore:
         - ''
-        - '&7&o(( Click to go to the next page ))'
+        - '&7(( Clic para ir a la siguiente página ))'
     actions:
       - '[menu] {next-page}'

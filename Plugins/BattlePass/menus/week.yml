@@ -1,4 +1,4 @@
-menu-title: '&fϿϪ'
+menu-title: '&f'
 menu-rows: 6
 
 quest-slots:
@@ -8,45 +8,50 @@ menu:
   '45':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {quest-overview}'
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {quest-overview}' # If the page is 1, take them to the portal page
+      - '[menu](page ! 1) {previous-page}' # If their page is not 1, take them to the Previous
   '46':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {quest-overview}'
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {quest-overview}' # If the page is 1, take them to the portal page
+      - '[menu](page ! 1) {previous-page}' # If their page is not 1, take them to the Previous
   '47':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e« Página anterior'
-      lore:
-        - ''
-        - '&7&o(( Clic para ir a la página anterior ))'
+      customModelData: 7000
+      name: '{#f33a59}Volver'
+      lore: []
     actions:
-      - '[menu](page = 1) {quest-overview}'
-      - '[menu](page ! 1) {previous-page}'
+      - '[menu](page = 1) {quest-overview}' # If the page is 1, take them to the portal page
+      - '[menu](page ! 1) {previous-page}' # If their page is not 1, take them to the Previous
   '53':
     item:
       material: 'gold_nugget'
-      customModelData: 500
-      name: '&e¿Qué son estas misiones?'
+      customModelData: 7000
+      name: '{#f3db22}&lInformación'
       lore:
+        - '{#71797E}Salen misiones semanales nuevas'
+        - '{#71797E}cada 7 días, que puedes'
+        - '{#71797E}completar para ganar EXP.'
         - ''
-        - '&7Completa estas misiones para'
-        - '&7consigue &epuntos&7 para'
-        - '&7subir tu pase de batalla y recibir'
-        - '&7recompensas increíbles'
+        - '{#71797E}Con el pase premium tienes'
+        - '{#71797E}acceso a más misiones y'
+        - '{#71797E}un bonus de 3.5x de EXP.'
     actions: []
+#  '41':
+#    item:
+#      material: arrow:0
+#      name: '&eNext'
+#      lore:
+#        - ''
+#        - '{#71797E}(( Clic para ir a la siguiente ))'
+#    actions:
+#      - '[menu] {next-page}'

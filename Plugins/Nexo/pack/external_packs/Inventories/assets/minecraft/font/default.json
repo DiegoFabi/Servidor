@@ -6,7 +6,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u32f0"
+                "㋰"
             ]
         },
         {
@@ -15,7 +15,7 @@
             "ascent": 10,
             "height": 13,
             "chars": [
-                "\u3200"
+                "㈀"
             ]
         },
         {
@@ -24,7 +24,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u3201"
+                "㈁"
             ]
         },
         {
@@ -33,7 +33,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3202"
+                "㈂"
             ]
         },
         {
@@ -42,7 +42,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3203"
+                "㈃"
             ]
         },
         {
@@ -51,7 +51,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3204"
+                "㈄"
             ]
         },
         {
@@ -60,7 +60,7 @@
             "ascent": -32768,
             "height": -6,
             "chars": [
-                "\u322e"
+                "㈮"
             ]
         },
         {
@@ -69,7 +69,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3205"
+                "㈅"
             ]
         },
         {
@@ -78,7 +78,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3206"
+                "㈆"
             ]
         },
         {
@@ -87,7 +87,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3207"
+                "㈇"
             ]
         },
         {
@@ -96,7 +96,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3208"
+                "㈈"
             ]
         },
         {
@@ -105,7 +105,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u3209"
+                "㈉"
             ]
         },
         {
@@ -114,7 +114,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u320a"
+                "㈊"
             ]
         },
         {
@@ -123,7 +123,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u320b"
+                "㈋"
             ]
         },
         {
@@ -132,7 +132,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u320c"
+                "㈌"
             ]
         },
         {
@@ -141,7 +141,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u320d"
+                "㈍"
             ]
         },
         {
@@ -150,7 +150,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u320e"
+                "㈎"
             ]
         },
         {
@@ -159,7 +159,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u321e"
+                "㈞"
             ]
         },
         {
@@ -168,7 +168,7 @@
             "ascent": 7,
             "height": 8,
             "chars": [
-                "\u320f"
+                "㈏"
             ]
         },
         {
@@ -177,7 +177,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u3210"
+                "㈐"
             ]
         },
         {
@@ -186,7 +186,7 @@
             "ascent": 7,
             "height": 8,
             "chars": [
-                "\u3211"
+                "㈑"
             ]
         },
         {
@@ -195,7 +195,7 @@
             "ascent": 11,
             "height": 16,
             "chars": [
-                "\u3212"
+                "㈒"
             ]
         },
         {
@@ -204,7 +204,7 @@
             "ascent": 7,
             "height": 8,
             "chars": [
-                "\u3213"
+                "㈓"
             ]
         },
         {
@@ -213,7 +213,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u3214"
+                "㈔"
             ]
         },
         {
@@ -222,7 +222,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u3215"
+                "㈕"
             ]
         },
         {
@@ -231,7 +231,7 @@
             "ascent": 9,
             "height": 12,
             "chars": [
-                "\u3216"
+                "㈖"
             ]
         },
         {
@@ -240,7 +240,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u3217"
+                "㈗"
             ]
         },
         {
@@ -249,7 +249,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u3218"
+                "㈘"
             ]
         },
         {
@@ -258,7 +258,7 @@
             "ascent": 7,
             "height": 8,
             "chars": [
-                "\u3219"
+                "㈙"
             ]
         },
         {
@@ -267,7 +267,7 @@
             "ascent": 8,
             "height": 9,
             "chars": [
-                "\u321a"
+                "㈚"
             ]
         },
         {
@@ -276,7 +276,7 @@
             "ascent": -32768,
             "height": -10,
             "chars": [
-                "\u321b"
+                "㈛"
             ]
         },
         {
@@ -285,7 +285,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u321c"
+                "㈜"
             ]
         },
         {
@@ -294,7 +294,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u321d"
+                "㈝"
             ]
         },
         {
@@ -303,7 +303,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u321e"
+                "㈞"
             ]
         },
         {
@@ -312,7 +312,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u321f"
+                "㈟"
             ]
         },
         {
@@ -321,7 +321,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3220"
+                "㈠"
             ]
         },
         {
@@ -330,7 +330,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3221"
+                "㈡"
             ]
         },
         {
@@ -339,7 +339,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3222"
+                "㈢"
             ]
         },
         {
@@ -348,7 +348,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3223"
+                "㈣"
             ]
         },
         {
@@ -357,7 +357,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3224"
+                "㈤"
             ]
         },
         {
@@ -366,7 +366,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3225"
+                "㈥"
             ]
         },
         {
@@ -375,7 +375,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3226"
+                "㈦"
             ]
         },
         {
@@ -384,7 +384,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3227"
+                "㈧"
             ]
         },
         {
@@ -393,7 +393,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3228"
+                "㈨"
             ]
         },
         {
@@ -402,7 +402,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u3229"
+                "㈩"
             ]
         },
         {
@@ -411,7 +411,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u322a"
+                "㈪"
             ]
         },
         {
@@ -420,7 +420,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u322b"
+                "㈫"
             ]
         },
         {
@@ -429,7 +429,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u322c"
+                "㈬"
             ]
         },
         {
@@ -438,7 +438,7 @@
             "ascent": 8,
             "height": 10,
             "chars": [
-                "\u322d"
+                "㈭"
             ]
         },
         {
@@ -447,7 +447,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u323d"
+                "㈽"
             ]
         },
         {
@@ -456,7 +456,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u324d"
+                "㉍"
             ]
         },
         {
@@ -465,7 +465,7 @@
             "ascent": 21,
             "height": 256,
             "chars": [
-                "\u325d"
+                "㉝"
             ]
         },
         {
@@ -474,78 +474,15 @@
             "ascent": 99,
             "height": 256,
             "chars": [
-                "\u326d"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_portal.png",
-            "ascent": 47,
-            "height": 170,
-            "chars": [
-                "\u03e8"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_daily_quests.png",
-            "ascent": 47,
-            "height": 170,
-            "chars": [
-                "\u03e9"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_week.png",
-            "ascent": 47,
-            "height": 170,
-            "chars": [
-                "\u03ea"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_quest_overview.png",
-            "ascent": 47,
-            "height": 170,
-            "chars": [
-                "\u03eb"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_rewards.png",
-            "ascent": 47,
-            "height": 170,
-            "chars": [
-                "\u03ec"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_progress_bar.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "\u03ed"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/battlepass_bp.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "\u03ee"
+                "㉭"
             ]
         },
         {
             "type": "space",
             "advances": {
-                "\u03ff": -32,
-                "\u03fc": -3,
-                "\u03fa": -1
+                "Ͽ": -32,
+                "ϼ": -3,
+                "Ϻ": -1
             }
         }
     ]
