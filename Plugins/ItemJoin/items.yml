@@ -86,25 +86,6 @@ items:
     commands-particle: END_ROD:64
     itemflags: PLACEMENT, GLOWING, ITEM-MODIFIABLE
     triggers: DISABLED
-  item_11:
-    id: STONE_PICKAXE
-    properties: 'tooltip_style:minecraft:common'
-    name: '&7► &eᴘɪᴄᴏ ᴅᴇ ᴘɪᴇᴅʀᴀ'
-    lore:
-    - '&f<glyph:lz_tool> <glyph:lz_common> &8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ɪɴɪᴄɪᴏ'
-    - '&7'
-    - '&7  | &aʙɪᴇɴᴠᴇɴɪᴅᴏ &7ᴀʟ ꜱᴇʀᴠɪᴅᴏʀ'
-    - '&7  | ᴇꜱᴛᴇ ꜱᴇʀᴀ ᴛᴜ &aᴋɪᴛ &7ᴘᴀʀᴀ'
-    - '&7  | &aᴇᴍᴘᴇᴢᴀʀ &7ᴄᴏɴ ᴛᴜ &aᴀᴠᴇɴᴛᴜʀᴀ'
-    - '&7'
-    - '&a✔ &fʀᴇᴄᴜᴇʀᴅᴀ ᴜꜱᴀʀ &6/ᴍᴇɴᴜ &fᴘᴀʀᴀ'
-    - '&f   ᴍᴏᴠᴇʀᴛᴇ ᴘᴏʀ ʟᴏꜱ &6ᴍᴜɴᴅᴏꜱ'
-    - '&f   ʏ ᴜꜱᴀʀ ʟᴀꜱ &6ᴏᴘᴄɪᴏɴᴇꜱ'
-    - '&7'
-    - '&7  | &dʙᴜᴇɴᴀ ꜱᴜᴇʀᴛᴇ, ᴅɪᴠɪᴇʀᴛᴇᴛᴇ ☺'
-    itemflags: HIDE-ATTRIBUTES, HIDE-ENCHANTS, HIDE-FLAGS
-    triggers: DISABLED
-    leather-color: LIGHT_BLUE
   item_6:
     id: PAPER
     model-data: '200370'
@@ -167,26 +148,6 @@ items:
     - 'op: health restore %player_name%'
     - 'op: spiralheart'
     itemflags: UNBREAKABLE, NOT-HAT, PLACEMENT, GLOWING, DEATH-KEEP, DISPOSABLE, ITEM-MODIFIABLE
-    triggers: DISABLED
-  item_1:
-    id: FISHING_ROD
-    properties: 'tooltip_style:minecraft:rare'
-    name: '&7► &bᴄᴀɴᴀ ᴅᴇ ᴘᴇꜱᴄᴀʀ &7| &bᴛɪᴇʀ ɪɪɪ'
-    lore:
-    - '&f<glyph:lz_tool> <glyph:lz_rare> &8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ꜱᴏʟᴅᴀᴅᴏ'
-    - '&7'
-    - '&7  | ɢʀᴀᴄɪᴀꜱ ᴘᴏʀ ᴀᴅǫᴜɪʀɪʀ ᴇʟ ʀᴀɴɢᴏ'
-    - '&7  | &aꜱᴏʟᴅᴀᴅᴏ ʏ ᴀᴘᴏʏᴀʀ &7ᴀʟ ꜱᴇʀᴠɪᴅᴏʀ.'
-    - '&7  | &aᴄᴏᴍʙᴀᴛɪʀ &7ᴄᴏɴᴛʀᴀ &aᴇɴᴛɪᴅᴀᴅᴇꜱ...'
-    - '&7  | &7ꜱᴇʀᴀ ᴀʜᴏʀᴀ ᴜɴ ᴘᴏᴄᴏ ᴍᴀꜱ ꜰᴀᴄɪʟ'
-    - '&7'
-    - '&a✔ &eɴᴏᴛᴀ. &fʀᴇᴠɪꜱᴀ ᴛᴜꜱ ʙᴇɴᴇꜰɪᴄɪᴏꜱ'
-    - '&f   ᴇɴ ɴᴜᴇꜱᴛʀᴀ ᴘᴀɢɪɴᴀ ʏ ᴀᴘʀᴏᴠᴇᴄʜᴀ'
-    - '&f   ᴛᴜ ʀᴀɴɢᴏ ʏ ᴏᴘᴄɪᴏɴᴇꜱ ᴀʟ ᴍᴀxɪᴍᴏ'
-    - '&7'
-    - '&7  | &dʙᴜᴇɴᴀ ꜱᴜᴇʀᴛᴇ, ᴅɪᴠɪᴇʀᴛᴇᴛᴇ ☺'
-    - ''
-    itemflags: HIDE-ATTRIBUTES, HIDE-ENCHANTS, HIDE-FLAGS
     triggers: DISABLED
   item_9:
     id:
@@ -1600,6 +1561,264 @@ items:
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
 
+  # ================================================================
+  # POSTRES (Dessert 1 de weekly_dot). Textura de Nexo por model-data
+  # (Nexo/items/weekly_dot/pack1/dessert1.yml). Al comerlos (clic derecho)
+  # dan un efecto de vanilla (y los más llenadores, saciedad); sin Skript.
+  # ================================================================
+  postre_chocolate1:
+    id: PAPER
+    model-data: '200450'
+    properties: 'tooltip_style:minecraft:gold'
+    name: '&#C8865A● &#8B5A2BChocolate'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#8B5A2BEnergía de Cacao'
+    - ' &7Un bocado y sientes las piernas'
+    - ' &7más ligeras.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#8B5A2BRapidez I • 60 s'
+    - ' &f<glyph:apple> &#9EA3AESaciedad &8» &#FFD36BLlena el Hambre'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Amargo, como la vida'
+    - ' &8del aventurero.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:speed 60 0 true'
+    - 'console: effect give %player% minecraft:saturation 1 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_chocolate2:
+    id: PAPER
+    model-data: '200451'
+    properties: 'tooltip_style:minecraft:white'
+    name: '&#FFF4E0● &#E8D8B8Chocolate Blanco'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#E8D8B8Dulzura Reparadora'
+    - ' &7Te recupera poco a poco'
+    - ' &7mientras lo saboreas.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#E8D8B8Regeneración I • 10 s'
+    - ' &f<glyph:apple> &#9EA3AESaciedad &8» &#FFD36BLlena el Hambre'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Ni es chocolate'
+    - ' &8ni le importa.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:regeneration 10 0 true'
+    - 'console: effect give %player% minecraft:saturation 1 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_candy1:
+    id: PAPER
+    model-data: '200452'
+    properties: 'tooltip_style:minecraft:light_purple'
+    name: '&#FFC0E0● &#FF8AC8Caramelo'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF8AC8Azúcar Minera'
+    - ' &7El subidón de azúcar hace'
+    - ' &7que el pico vuele.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8AC8Prisa Minera I • 60 s'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Para los mineros'
+    - ' &8golosos.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:haste 60 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_candy2:
+    id: PAPER
+    model-data: '200453'
+    properties: 'tooltip_style:minecraft:red'
+    name: '&#FFB3B3● &#FF6B6BCaramelo de Fresa'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF6B6BSaltos de Alegría'
+    - ' &7Tanta energía que no'
+    - ' &7puedes estarte quieto.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF6B6BSalto I • 45 s'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Brincas sin darte'
+    - ' &8cuenta.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:jump_boost 45 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_cake1:
+    id: PAPER
+    model-data: '200454'
+    properties: 'tooltip_style:minecraft:yellow'
+    name: '&#FFE9C2● &#FFD9A0Pastel'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FFD9A0Banquete del Reino'
+    - ' &7Una porción generosa que'
+    - ' &7te protege y te llena.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FFD9A0Absorción I • 60 s'
+    - ' &f<glyph:apple> &#9EA3AESaciedad &8» &#FFD36BLlena el Hambre'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Receta de la cocina'
+    - ' &8del castillo.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:absorption 60 0 true'
+    - 'console: effect give %player% minecraft:saturation 1 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_cake2:
+    id: PAPER
+    model-data: '200455'
+    properties: 'tooltip_style:minecraft:light_purple'
+    name: '&#FFD0D8● &#FF8FA3Pastel de Fresa'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF8FA3Corazón de Fresa'
+    - ' &7Cura tus heridas de golpe'
+    - ' &7con su dulzor.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF8FA3Regeneración II • 6 s'
+    - ' &f<glyph:apple> &#9EA3AESaciedad &8» &#FFD36BLlena el Hambre'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Con fresas del huerto'
+    - ' &8de Tobías.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:regeneration 6 1 true'
+    - 'console: effect give %player% minecraft:saturation 1 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_donut:
+    id: PAPER
+    model-data: '200456'
+    properties: 'tooltip_style:minecraft:gold'
+    name: '&#F5C28A● &#E8A86BDona'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#E8A86BFuerza Glaseada'
+    - ' &7El glaseado te da fuerzas'
+    - ' &7para el próximo combate.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#E8A86BFuerza I • 30 s'
+    - ' &f<glyph:apple> &#9EA3AESaciedad &8» &#FFD36BLlena el Hambre'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Redonda como un escudo'
+    - ' &8y igual de útil.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:strength 30 0 true'
+    - 'console: effect give %player% minecraft:saturation 1 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_icecream1:
+    id: PAPER
+    model-data: '200457'
+    properties: 'tooltip_style:minecraft:aqua'
+    name: '&#D8F6FF● &#9EE7FFHelado'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#9EE7FFFrescor Polar'
+    - ' &7Tan frío que el fuego y la'
+    - ' &7lava te molestan menos.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#9EE7FFResistencia al Fuego • 90 s'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Se derrite antes de'
+    - ' &8que lo termines.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:fire_resistance 90 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
+  postre_icecream2:
+    id: PAPER
+    model-data: '200458'
+    properties: 'tooltip_style:minecraft:aqua'
+    name: '&#FFD6E4● &#FF9EBFHelado de Fresa'
+    lore:
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPostre &8• &#FFD36BEspecial'
+    - ''
+    - '&f<glyph:star> &#FF9EBFBurbuja Helada'
+    - ' &7Aguantas la respiración'
+    - ' &7bajo el agua sin problema.'
+    - ''
+    - '&f<glyph:settings> &#E6E8EEDetalles'
+    - ' &f<glyph:high_voltage> &#9EA3AEEfecto &8» &#FF9EBFRespiración Acuática • 90 s'
+    - ' &f<glyph:sand_clock> &#9EA3AEUso &8» &#FFD36BUn Solo Uso'
+    - ''
+    - ' &8«Mejor que una'
+    - ' &8escafandra.»'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Comer'
+    interact-right:
+    - 'console: effect give %player% minecraft:water_breathing 90 0 true'
+    commands-sound: ENTITY_GENERIC_EAT
+    commands-particle: HAPPY_VILLAGER:6
+    commands-cooldown: 2
+    itemflags: PLACEMENT, DISPOSABLE, ITEM-MODIFIABLE
+    triggers: DISABLED
   # ================================================================
   # BOTÍN DE CRIATURAS (drops custom). No son mágicos: materiales para
   # crafteos/comercio y algunos casi inservibles. Comunes sin fondo; raros
