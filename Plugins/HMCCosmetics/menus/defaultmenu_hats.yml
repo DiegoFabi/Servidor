@@ -300,3 +300,39 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: moon_wizard_hat
+  mage_hat:
+    slots:
+    - 13
+    item:
+      material: hmccosmetics:mage_hat
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_mage_hat%%HMCCosmetics_equipped_mage_hat%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: mage_hat
+  wooden_bucket:
+    slots:
+    - 14
+    item:
+      material: hmccosmetics:wooden_bucket
+      lore:
+      - '<#9EA3AE>Colección: <white>Caballero del Barril'
+      - '<#9EA3AE>Espacio: <white>Cabeza'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_wooden_bucket%%HMCCosmetics_equipped_wooden_bucket%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: wooden_bucket

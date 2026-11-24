@@ -1,54 +1,89 @@
-title: '{{abilities_title}}'
-size: 4
+title: '<white><shift:-18> %nexo_aura_abilities_menu%'
+size: 6
 fill:
-  enabled: true
+  enabled: false
   material: black_stained_glass_pane
 items:
+
   back:
-    material: arrow
-    pos: 3,0
-    display_name: '<green>{{back}}'
+    pos: 0,1
+    material: BRICK
+    nbt:
+      CustomModelData: 40051
+    display_name: '<white>{{back}}'
     lore:
       - '<gray>{{back_click}}'
+  skull:
+    skull_meta:
+      placeholder_uuid: '{player}'
+    pos: 1,2
+    material: player_head
+    nbt:
+      CustomModelData: 100
+    display_name: ''
+    
 templates:
   locked_ability:
-    material: gray_dye
-    display_name: '<aqua>{name}'
+    options:
+      slots:
+        - '14'
+        - '15'
+        - '16'
+        - '23'
+        - '24'
+        - '25'
+    material: BRICK
+    nbt:
+      CustomModelData: 40082
+    display_name: '<#cf3932><bold>{name}'
     lore:
-      - '<white>{{description}}:'
-      - text: '{desc}'
+      - ' <gray>▪ <white>{{description}}:'
+      - text: ' {desc}'
         wrap: true
         wrap_indent: '  '
         style: '<gray>'
       - ' '
-      - text: '{{unlocked_at}}'
+      - text: ' <gray>▪ {{unlocked_at}}'
         styles:
           1: '<gray>'
-          2: '<dark_aqua>'
+          2: '<#86A7FC>'
       - ' '
-      - '<red>{{locked}}'
+      - '<#cf3932> → {{locked}}'
   locked_mana_ability:
-    pos: 2,4
-    material: gray_dye
-    display_name: '<light_purple>{name}'
+    pos: 3,6
+    material: BRICK
+    nbt:
+      CustomModelData: 40081
+    display_name: '<#cf3932><bold>{name}'
     lore:
-      - '<white>{{description}}:'
-      - text: '{desc}'
+      - ' <gray>▪ <white>{{description}}:'
+      - text: ' {desc}'
         wrap: true
         wrap_indent: '  '
         styles:
           0: '<gray>'
-          1: '<yellow>'
+          1: '<dark_gray>'
       - ' '
       - text: '{{unlocked_at}}'
         styles:
           1: '<gray>'
-          2: '<dark_aqua>'
+          2: '<#86A7FC>'
       - ' '
-      - '<red>{{locked}}'
+      - '<#cf3932> → {{locked}}'
   unlocked_ability:
-    material: light_blue_dye
-    display_name: '<aqua>{name}'
+    slots:
+    options:
+      slots:
+        - '14'
+        - '15'
+        - '16'
+        - '23'
+        - '24'
+        - '25'
+    material: BRICK
+    nbt:
+      CustomModelData: 40080
+    display_name: '<white><bold>{name}'
     lore:
       - component: your_level
       - component: your_level_maxed
@@ -56,11 +91,13 @@ templates:
       - component: unlocked_desc
       - component: unlocked_desc_maxed
       - ' '
-      - '<green>{{unlocked}}'
+      - '<#82CD47> → {{unlocked}}'
   unlocked_mana_ability:
-    pos: 2,4
-    material: magenta_dye
-    display_name: '&d{name}'
+    pos: 3,6
+    material: BRICK
+    nbt:
+      CustomModelData: 40079
+    display_name: '<white><bold>{name}'
     lore:
       - component: your_level
       - component: your_level_maxed
@@ -68,38 +105,38 @@ templates:
       - component: unlocked_desc
       - component: unlocked_desc_maxed
       - ' '
-      - '<green>{{unlocked}}'
+      - '<#82CD47> → {{unlocked}}'
 components:
   your_level:
     context: AbstractAbility
     lore:
-      - '<white>{{your_level}}: <aqua>{level}'
+      - ' <gray>▪ <white>{{your_level}}: <#86A7FC>{level}'
   your_level_maxed:
     context: AbstractAbility
     lore:
-      - '<white>{{your_level}}: <aqua>{level} <gold>(MAXED)'
+      - ' <gray>▪ <white>{{your_level}}: <#86A7FC>{level} <gold>(MAXED)'
   unlocked_desc:
     context: AbstractAbility
     lore:
-      - text: '{{next_upgrade_at}}'
+      - text: ' <gray>▪ {{next_upgrade_at}}'
         styles:
           1: '<white>'
-          2: '<dark_aqua>'
-      - text: '{desc}'
+          2: '<#86A7FC>'
+      - text: ' {desc}'
         wrap: true
         wrap_indent: '  '
         styles:
           0: '<gray>'
-          1: '<yellow>'
+          1: '<dark_gray>'
   unlocked_desc_maxed:
     context: AbstractAbility
     lore:
-      - '<white>{{description}}:'
-      - text: '{desc}'
+      - ' <gray>▪ <white>{{description}}:'
+      - text: ' {desc}'
         wrap: true
         wrap_indent: '  '
         styles:
           0: '<gray>'
-          1: '<yellow>'
+          1: '<dark_gray>'
 formats:
   desc_upgrade_value: '<gray>{current}<dark_gray>→{next}<gray>'

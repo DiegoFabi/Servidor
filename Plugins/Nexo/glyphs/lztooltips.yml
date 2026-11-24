@@ -1,0 +1,402 @@
+# Ultimate Tooltips (LZBlocks): etiquetas de tipo y rareza para lores. Uso: <glyph:lz_epic> <glyph:lz_armor>
+# Texturas en textures/interfaz/lztooltips_*.png. Los fondos de tooltip (tooltip_style) están en textures/gui/sprites/tooltip.
+
+lz_item:
+  texture: interfaz/lztooltips_item
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_currency:
+  texture: interfaz/lztooltips_currency
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_block:
+  texture: interfaz/lztooltips_block
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_furniture:
+  texture: interfaz/lztooltips_furniture
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_armor:
+  texture: interfaz/lztooltips_armor
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_hat:
+  texture: interfaz/lztooltips_hat
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_weapon:
+  texture: interfaz/lztooltips_weapon
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_food:
+  texture: interfaz/lztooltips_food
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_tool:
+  texture: interfaz/lztooltips_tool
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_other:
+  texture: interfaz/lztooltips_other
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_common:
+  texture: interfaz/lztooltips_common
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_uncommon:
+  texture: interfaz/lztooltips_uncommon
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_rare:
+  texture: interfaz/lztooltips_rare
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_epic:
+  texture: interfaz/lztooltips_epic
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_legendary:
+  texture: interfaz/lztooltips_legendary
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_artifact:
+  texture: interfaz/lztooltips_artifact
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_pet:
+  texture: interfaz/lztooltips_pet
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_accessory:
+  texture: interfaz/lztooltips_accessory
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_cosmetic:
+  texture: interfaz/lztooltips_cosmetic
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_decoration:
+  texture: interfaz/lztooltips_decoration
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_1_blue:
+  texture: interfaz/lztooltips_1_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_2_blue:
+  texture: interfaz/lztooltips_2_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_3_blue:
+  texture: interfaz/lztooltips_3_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_4_blue:
+  texture: interfaz/lztooltips_4_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_5_blue:
+  texture: interfaz/lztooltips_5_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_6_blue:
+  texture: interfaz/lztooltips_6_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_7_blue:
+  texture: interfaz/lztooltips_7_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_8_blue:
+  texture: interfaz/lztooltips_8_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_9_blue:
+  texture: interfaz/lztooltips_9_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_10_blue:
+  texture: interfaz/lztooltips_10_blue
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_1_red:
+  texture: interfaz/lztooltips_1_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_2_red:
+  texture: interfaz/lztooltips_2_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_3_red:
+  texture: interfaz/lztooltips_3_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_4_red:
+  texture: interfaz/lztooltips_4_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_5_red:
+  texture: interfaz/lztooltips_5_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_6_red:
+  texture: interfaz/lztooltips_6_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_7_red:
+  texture: interfaz/lztooltips_7_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_8_red:
+  texture: interfaz/lztooltips_8_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_9_red:
+  texture: interfaz/lztooltips_9_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_10_red:
+  texture: interfaz/lztooltips_10_red
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_1_green:
+  texture: interfaz/lztooltips_1_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_2_green:
+  texture: interfaz/lztooltips_2_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_3_green:
+  texture: interfaz/lztooltips_3_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_4_green:
+  texture: interfaz/lztooltips_4_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_5_green:
+  texture: interfaz/lztooltips_5_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_6_green:
+  texture: interfaz/lztooltips_6_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_7_green:
+  texture: interfaz/lztooltips_7_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_8_green:
+  texture: interfaz/lztooltips_8_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_9_green:
+  texture: interfaz/lztooltips_9_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin
+
+lz_10_green:
+  texture: interfaz/lztooltips_10_green
+  is_emoji: true
+  height: 7
+  ascent: 7
+  chat:
+    permission: lztooltips.admin

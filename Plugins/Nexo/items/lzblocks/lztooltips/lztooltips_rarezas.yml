@@ -1,0 +1,427 @@
+# Ejemplos de Ultimate Tooltips: tooltip_style por rareza + etiquetas <glyph:lz_*>
+netherite_helmet:
+  itemname: <gradient:#CC3938:#AA1A2A>Netherite Helmet
+  lore:
+  - <glyph:lz_artifact><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: NETHERITE_HELMET
+  Enchantments:
+    protection: 8
+    unbreaking: 5
+    thorns: 2
+    mending: 1
+    respiration: 3
+  Components:
+    tooltip_style: minecraft:artifact
+netherite_chestplate:
+  itemname: <gradient:#CC3938:#AA1A2A>Netherite Chestplate
+  lore:
+  - <glyph:lz_artifact><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: NETHERITE_CHESTPLATE
+  Enchantments:
+    protection: 8
+    unbreaking: 5
+    thorns: 2
+    mending: 1
+  Components:
+    tooltip_style: minecraft:artifact
+netherite_leggings:
+  itemname: <gradient:#CC3938:#AA1A2A>Netherite Leggings
+  lore:
+  - <glyph:lz_artifact><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: NETHERITE_LEGGINGS
+  Enchantments:
+    protection: 8
+    unbreaking: 5
+    thorns: 2
+    mending: 1
+    swift_sneak: 3
+  Components:
+    tooltip_style: minecraft:artifact
+netherite_boots:
+  itemname: <gradient:#CC3938:#AA1A2A>Netherite Boots
+  lore:
+  - <glyph:lz_artifact><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: NETHERITE_BOOTS
+  Enchantments:
+    protection: 8
+    unbreaking: 5
+    thorns: 2
+    mending: 1
+    feather_falling: 4
+    soul_speed: 3
+    frost_walker: 2
+  Components:
+    tooltip_style: minecraft:artifact
+netherite_sword:
+  itemname: <gradient:#CC3938:#AA1A2A>Netherite Sword
+  lore:
+  - <glyph:lz_artifact><glyph:lz_weapon>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: NETHERITE_SWORD
+  Enchantments:
+    sharpness: 8
+    unbreaking: 5
+    sweeping_edge: 2
+    mending: 1
+    looting: 3
+    fire_aspect: 2
+    knockback: 2
+  Components:
+    tooltip_style: minecraft:artifact
+diamond_helmet:
+  itemname: <gradient:#F8BD16:#E39201>Diamond Helmet
+  lore:
+  - <glyph:lz_legendary><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: DIAMOND_HELMET
+  Enchantments:
+    protection: 5
+    unbreaking: 3
+    thorns: 2
+    mending: 1
+    respiration: 3
+  Components:
+    tooltip_style: minecraft:legendary
+diamond_chestplate:
+  itemname: <gradient:#F8BD16:#E39201>Diamond Chestplate
+  lore:
+  - <glyph:lz_legendary><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: DIAMOND_CHESTPLATE
+  Enchantments:
+    protection: 5
+    unbreaking: 3
+    thorns: 2
+    mending: 1
+  Components:
+    tooltip_style: minecraft:legendary
+diamond_leggings:
+  itemname: <gradient:#F8BD16:#E39201>Diamond Leggings
+  lore:
+  - <glyph:lz_legendary><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: DIAMOND_LEGGINGS
+  Enchantments:
+    protection: 5
+    unbreaking: 3
+    thorns: 2
+    mending: 1
+    swift_sneak: 3
+  Components:
+    tooltip_style: minecraft:legendary
+diamond_boots:
+  itemname: <gradient:#F8BD16:#E39201>Diamond Boots
+  lore:
+  - <glyph:lz_legendary><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: DIAMOND_BOOTS
+  Enchantments:
+    protection: 5
+    unbreaking: 3
+    thorns: 2
+    mending: 1
+    feather_falling: 4
+    soul_speed: 3
+    frost_walker: 2
+  Components:
+    tooltip_style: minecraft:legendary
+diamond_sword:
+  itemname: <gradient:#F8BD16:#E39201>Diamond Sword
+  lore:
+  - <glyph:lz_legendary><glyph:lz_weapon>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: DIAMOND_SWORD
+  Enchantments:
+    sharpness: 5
+    unbreaking: 3
+    sweeping_edge: 2
+    mending: 1
+    looting: 3
+    fire_aspect: 2
+    knockback: 2
+  Components:
+    tooltip_style: minecraft:legendary
+iron_helmet:
+  itemname: <gradient:#CA8EFF:#9147FF>Iron Helmet
+  lore:
+  - <glyph:lz_epic><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: IRON_HELMET
+  Enchantments:
+    protection: 4
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+    respiration: 3
+  Components:
+    tooltip_style: minecraft:epic
+iron_chestplate:
+  itemname: <gradient:#CA8EFF:#9147FF>Iron Chestplate
+  lore:
+  - <glyph:lz_epic><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: IRON_CHESTPLATE
+  Enchantments:
+    protection: 4
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+  Components:
+    tooltip_style: minecraft:epic
+iron_leggings:
+  itemname: <gradient:#CA8EFF:#9147FF>Iron Leggings
+  lore:
+  - <glyph:lz_epic><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: IRON_LEGGINGS
+  Enchantments:
+    protection: 4
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+    swift_sneak: 3
+  Components:
+    tooltip_style: minecraft:epic
+iron_boots:
+  itemname: <gradient:#CA8EFF:#9147FF>Iron Boots
+  lore:
+  - <glyph:lz_epic><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: IRON_BOOTS
+  Enchantments:
+    protection: 4
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+    feather_falling: 4
+    soul_speed: 3
+    frost_walker: 2
+  Components:
+    tooltip_style: minecraft:epic
+iron_sword:
+  itemname: <gradient:#CA8EFF:#9147FF>Iron Sword
+  lore:
+  - <glyph:lz_epic><glyph:lz_weapon>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: IRON_SWORD
+  Enchantments:
+    sharpness: 4
+    unbreaking: 2
+    sweeping_edge: 2
+    mending: 1
+    looting: 3
+    fire_aspect: 2
+    knockback: 2
+  Components:
+    tooltip_style: minecraft:epic
+chainmail_helmet:
+  itemname: <gradient:#518BFF:#3154E0>Chainmail Helmet
+  lore:
+  - <glyph:lz_rare><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  - HIDE_ARMOR_TRIM
+  material: CHAINMAIL_HELMET
+  Enchantments:
+    protection: 3
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+    respiration: 1
+  Components:
+    tooltip_style: minecraft:rare
+chainmail_chestplate:
+  itemname: <gradient:#518BFF:#3154E0>Chainmail Chestplate
+  lore:
+  - <glyph:lz_rare><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: CHAINMAIL_CHESTPLATE
+  Enchantments:
+    protection: 3
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+  Components:
+    tooltip_style: minecraft:rare
+chainmail_leggings:
+  itemname: <gradient:#518BFF:#3154E0>Chainmail Leggings
+  lore:
+  - <glyph:lz_rare><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: CHAINMAIL_LEGGINGS
+  Enchantments:
+    protection: 3
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+    swift_sneak: 3
+  Components:
+    tooltip_style: minecraft:rare
+chainmail_boots:
+  itemname: <gradient:#518BFF:#3154E0>Chainmail Boots
+  lore:
+  - <glyph:lz_rare><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: CHAINMAIL_BOOTS
+  Enchantments:
+    protection: 3
+    unbreaking: 2
+    thorns: 2
+    mending: 1
+    feather_falling: 2
+    soul_speed: 1
+    frost_walker: 1
+  Components:
+    tooltip_style: minecraft:rare
+stone_sword:
+  itemname: <gradient:#518BFF:#3154E0>Stone Sword
+  lore:
+  - <glyph:lz_rare><glyph:lz_weapon>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: STONE_SWORD
+  Enchantments:
+    sharpness: 3
+    unbreaking: 2
+    sweeping_edge: 2
+    mending: 1
+    looting: 2
+    fire_aspect: 2
+    knockback: 2
+  Components:
+    tooltip_style: minecraft:rare
+leather_helmet:
+  itemname: <gradient:#70DB32:#44A826>Leather Helmet
+  lore:
+  - <glyph:lz_uncommon><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  - HIDE_DYE
+  material: LEATHER_HELMET
+  Enchantments:
+    protection: 2
+    unbreaking: 1
+    thorns: 2
+    mending: 1
+    respiration: 1
+  Components:
+    tooltip_style: minecraft:uncommon
+leather_chestplate:
+  itemname: <gradient:#70DB32:#44A826>Leather Chestplate
+  lore:
+  - <glyph:lz_uncommon><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  - HIDE_DYE
+  material: LEATHER_CHESTPLATE
+  Enchantments:
+    protection: 2
+    unbreaking: 1
+    thorns: 2
+    mending: 1
+  Components:
+    tooltip_style: minecraft:uncommon
+leather_leggings:
+  itemname: <gradient:#70DB32:#44A826>Leather Leggings
+  lore:
+  - <glyph:lz_uncommon><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  - HIDE_DYE
+  material: LEATHER_LEGGINGS
+  Enchantments:
+    protection: 2
+    unbreaking: 1
+    thorns: 2
+    mending: 1
+    swift_sneak: 3
+  Components:
+    tooltip_style: minecraft:uncommon
+leather_boots:
+  itemname: <gradient:#70DB32:#44A826>Leather Boots
+  lore:
+  - <glyph:lz_uncommon><glyph:lz_armor>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  - HIDE_DYE
+  material: LEATHER_BOOTS
+  Enchantments:
+    protection: 2
+    unbreaking: 1
+    thorns: 1
+    mending: 1
+    feather_falling: 2
+    soul_speed: 1
+    frost_walker: 1
+  Components:
+    tooltip_style: minecraft:uncommon
+wooden_sword:
+  itemname: <gradient:#70DB32:#44A826>Wooden Sword
+  lore:
+  - <glyph:lz_uncommon><glyph:lz_weapon>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: WOODEN_SWORD
+  Enchantments:
+    sharpness: 2
+    unbreaking: 1
+    sweeping_edge: 1
+    mending: 1
+    looting: 1
+    fire_aspect: 1
+    knockback: 1
+  Components:
+    tooltip_style: minecraft:uncommon
+apple:
+  itemname: <#7F7F7F>Apple
+  lore:
+  - An apple a day keeps the doctor away!
+  - <glyph:lz_common><glyph:lz_food>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: APPLE
+  Components:
+    tooltip_style: minecraft:common
+bow:
+  itemname: <#7F7F7F>Bow
+  lore:
+  - Just a long piece of wood
+  - <glyph:lz_common><glyph:lz_weapon>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: BOW
+  Components:
+    tooltip_style: minecraft:common
+diamond:
+  itemname: <gradient:#F8BD16:#E39201>Diamond
+  lore:
+  - <glyph:lz_legendary><glyph:lz_item>
+  ItemFlags:
+  - HIDE_ATTRIBUTES
+  material: DIAMOND
+  Components:
+    tooltip_style: minecraft:legendary
+
+#c07d5fd725ff84eaffb3e4da02ee35eb

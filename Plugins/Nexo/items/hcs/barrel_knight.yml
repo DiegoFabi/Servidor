@@ -1,0 +1,44 @@
+# Barrel Knight 1.1 (cosméticos de HMCCosmetics). Modelos: models/hcs/barrel_knight | Texturas: textures/hcs/barrel_knight
+wooden_bucket:
+  itemname: <#C9A86B>Cubo de Madera
+  material: PAPER
+  permission: barrel_knight.cosmetics
+  Pack:
+    generate_model: false
+    model: hcs/barrel_knight/wooden_bucket
+pitchfork:
+  itemname: <#C9A86B>Horca
+  material: LEATHER_HORSE_ARMOR
+  permission: barrel_knight.cosmetics
+  Pack:
+    generate_model: false
+    model: hcs/barrel_knight/pitchfork
+wooden_wheel_cosmetic:
+  itemname: <#C9A86B>Rueda de Madera
+  material: PAPER
+  permission: barrel_knight.cosmetics
+  Pack:
+    generate_model: false
+    model: hcs/barrel_knight/wooden_wheel
+wooden_wheel:
+  itemname: <#C9A86B>Rueda de Madera
+  material: SHIELD
+  permission: barrel_knight.cosmetics
+  Pack:
+    generate_model: false
+    model: hcs/barrel_knight/wooden_wheel
+    blocking_model: hcs/barrel_knight/wooden_wheel_blocking
+barrel_chestplate:
+  itemname: <#C9A86B>Barril
+  material: LEATHER_HORSE_ARMOR
+  permission: barrel_knight.cosmetics
+  Pack:
+    generate_model: false
+    model: hcs/barrel_knight/barrel
+barrel_chestplate_thirdperson:
+  itemname: <#C9A86B>Barril (tercera persona)
+  material: LEATHER_HORSE_ARMOR
+  permission: barrel_knight.cosmetics
+  Pack:
+    generate_model: false
+    model: hcs/barrel_knight/barrel_thirdperson

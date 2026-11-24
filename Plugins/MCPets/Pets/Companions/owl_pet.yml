@@ -1,0 +1,12 @@
+Id: owl_pet
+MythicMob: owl_pet
+Permission: mcpet.owl_pet
+Mountable: false
+Distance: 6
+SpawnRange: 1
+ComingBackRange: 3
+Icon:
+  Name: §bBúho
+  Material: FEATHER
+  Description:
+  - §7¡Tu nuevo amigo te seguirá a donde vayas!

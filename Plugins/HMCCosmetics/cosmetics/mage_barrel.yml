@@ -1,0 +1,65 @@
+# Mage Set Vol. 1 y Barrel Knight 1.1. Items y modelos en Nexo/items/hcs/mage_set.yml y barrel_knight.yml
+# Permiso: hmccosmetics.<id>
+
+mage_hat:
+  slot: HELMET
+  permission: hmccosmetics.mage_hat
+  item:
+    material: nexo:mage_hat
+    name: '<gradient:#9B7BFF:#5B3FB3>Sombrero del Mago</gradient>'
+    amount: 1
+mage_body:
+  slot: BACKPACK
+  permission: hmccosmetics.mage_body
+  item:
+    material: nexo:mage_body
+    name: '<gradient:#9B7BFF:#5B3FB3>Túnica del Mago</gradient>'
+    amount: 1
+mage_stick:
+  slot: OFFHAND
+  permission: hmccosmetics.mage_stick
+  item:
+    material: nexo:mage_stick
+    name: '<gradient:#9B7BFF:#5B3FB3>Báculo del Mago</gradient>'
+    amount: 1
+owl_baloon:
+  slot: BALLOON
+  show-lead: true
+  permission: hmccosmetics.owl_baloon
+  item:
+    material: nexo:owl_baloon
+    name: '<gradient:#9B7BFF:#5B3FB3>Globo de Búho</gradient>'
+    amount: 1
+wooden_bucket:
+  slot: HELMET
+  permission: hmccosmetics.wooden_bucket
+  item:
+    material: nexo:wooden_bucket
+    name: '<#C9A86B>Cubo de Madera'
+    amount: 1
+barrel_chestplate:
+  slot: BACKPACK
+  dyeable: true
+  permission: hmccosmetics.barrel_chestplate
+  item:
+    material: nexo:barrel_chestplate
+    name: '<#C9A86B>Barril'
+    amount: 1
+  firstperson-item:
+    material: nexo:barrel_chestplate_thirdperson
+    amount: 1
+pitchfork:
+  slot: OFFHAND
+  dyeable: true
+  permission: hmccosmetics.pitchfork
+  item:
+    material: nexo:pitchfork
+    name: '<#C9A86B>Horca'
+    amount: 1
+wooden_wheel:
+  slot: OFFHAND
+  permission: hmccosmetics.wooden_wheel
+  item:
+    material: nexo:wooden_wheel_cosmetic
+    name: '<#C9A86B>Rueda de Madera'
+    amount: 1

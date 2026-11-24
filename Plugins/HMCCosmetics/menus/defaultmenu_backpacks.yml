@@ -300,3 +300,39 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: moon_wizard_cloak
+  mage_body:
+    slots:
+    - 13
+    item:
+      material: hmccosmetics:mage_body
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_mage_body%%HMCCosmetics_equipped_mage_body%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: mage_body
+  barrel_chestplate:
+    slots:
+    - 14
+    item:
+      material: hmccosmetics:barrel_chestplate
+      lore:
+      - '<#9EA3AE>Colección: <white>Caballero del Barril'
+      - '<#9EA3AE>Espacio: <white>Espalda'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_barrel_chestplate%%HMCCosmetics_equipped_barrel_chestplate%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: barrel_chestplate

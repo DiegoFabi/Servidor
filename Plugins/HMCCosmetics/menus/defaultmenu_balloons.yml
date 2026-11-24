@@ -98,3 +98,21 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: jester_balloon
+  owl_baloon:
+    slots:
+    - 3
+    item:
+      material: hmccosmetics:owl_baloon
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago'
+      - '<#9EA3AE>Espacio: <white>Globo'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_owl_baloon%%HMCCosmetics_equipped_owl_baloon%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: owl_baloon

@@ -1,0 +1,77 @@
+# Dessert 1 (weekly_dot). Texturas: pack/assets/pack1/textures/items/dessert1_*.png
+# Creator: Hungry(Hungry22)
+# Discord: https://discord.gg/uNcADBt3Kb
+dessert1_chocolate1:
+  itemname: "<#8B5A2B>Chocolate"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200450
+    textures:
+      - pack1:items/dessert1_chocolate1.png
+dessert1_chocolate2:
+  itemname: "<#8B5A2B>Chocolate Blanco"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200451
+    textures:
+      - pack1:items/dessert1_chocolate2.png
+dessert1_candy1:
+  itemname: "<#FF8AC8>Caramelo"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200452
+    textures:
+      - pack1:items/dessert1_candy1.png
+dessert1_candy2:
+  itemname: "<#FF8AC8>Caramelo de Fresa"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200453
+    textures:
+      - pack1:items/dessert1_candy2.png
+dessert1_cake1:
+  itemname: "<#FFD9A0>Pastel"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200454
+    textures:
+      - pack1:items/dessert1_cake1.png
+dessert1_cake2:
+  itemname: "<#FFD9A0>Pastel de Fresa"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200455
+    textures:
+      - pack1:items/dessert1_cake2.png
+dessert1_donut:
+  itemname: "<#E8A86B>Dona"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200456
+    textures:
+      - pack1:items/dessert1_donut.png
+dessert1_icecream1:
+  itemname: "<#9EE7FF>Helado"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200457
+    textures:
+      - pack1:items/dessert1_icecream1.png
+dessert1_icecream2:
+  itemname: "<#9EE7FF>Helado de Fresa"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200458
+    textures:
+      - pack1:items/dessert1_icecream2.png
+
+#75c88185ce158b4329f01094b830b89d

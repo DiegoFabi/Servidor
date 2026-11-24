@@ -6,5 +6,5 @@ queso_suizo:
   material: PAPER
   excludeFromInventory: true
   Pack:
-    texture: criaturas/queso_suizo
+    texture: elitecreatures/queso_suizo
     custom_model_data: 1110036

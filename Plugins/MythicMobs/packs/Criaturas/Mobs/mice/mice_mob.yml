@@ -21,6 +21,8 @@ black_mouse:
   -  nearestConditionalTarget{conditions=[
        - stance{s=breedable} true
      ]}
+  Drops:
+  - LEATHER 1 0.6
   Options:
     NoDamageTicks: 10
     MovementSpeed: 0.3
@@ -72,6 +74,8 @@ brown_mouse:
   -  nearestConditionalTarget{conditions=[
        - stance{s=breedable} true
      ]}
+  Drops:
+  - LEATHER 1 0.6
   Options:
     NoDamageTicks: 10
     MovementSpeed: 0.3
@@ -123,6 +127,8 @@ gray_mouse:
   -  nearestConditionalTarget{conditions=[
        - stance{s=breedable} true
      ]}
+  Drops:
+  - LEATHER 1 0.6
   Options:
     NoDamageTicks: 10
     MovementSpeed: 0.2
@@ -174,6 +180,8 @@ white_mouse:
   -  nearestConditionalTarget{conditions=[
        - stance{s=breedable} true
      ]}
+  Drops:
+  - LEATHER 1 0.6
   Options:
     NoDamageTicks: 10
     MovementSpeed: 0.2

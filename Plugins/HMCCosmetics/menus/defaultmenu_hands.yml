@@ -300,3 +300,57 @@ items:
       - HIDE_ADDITIONAL_TOOLTIP
     type: cosmetic
     cosmetic: moon_wizard_staff
+  mage_stick:
+    slots:
+    - 13
+    item:
+      material: hmccosmetics:mage_stick
+      lore:
+      - '<#9EA3AE>Colección: <white>Mago'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_mage_stick%%HMCCosmetics_equipped_mage_stick%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: mage_stick
+  pitchfork:
+    slots:
+    - 14
+    item:
+      material: hmccosmetics:pitchfork
+      lore:
+      - '<#9EA3AE>Colección: <white>Caballero del Barril'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#7FFF9E>Sí'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_pitchfork%%HMCCosmetics_equipped_pitchfork%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: pitchfork
+  wooden_wheel:
+    slots:
+    - 15
+    item:
+      material: hmccosmetics:wooden_wheel
+      lore:
+      - '<#9EA3AE>Colección: <white>Caballero del Barril'
+      - '<#9EA3AE>Espacio: <white>Mano'
+      - '<#9EA3AE>Coloreable: <#FF6B6B>No'
+      - '<#9EA3AE>Estado: %HMCCosmetics_unlocked_wooden_wheel%%HMCCosmetics_equipped_wooden_wheel%'
+      - ''
+      - <#7FB2FF>Clic para equipar o quitar
+      flags:
+      - HIDE_DYE
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    type: cosmetic
+    cosmetic: wooden_wheel

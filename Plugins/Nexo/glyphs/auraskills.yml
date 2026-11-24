@@ -1,0 +1,81 @@
+# Glyphs de los menús de Animated AuraSkills. Uso en AuraSkills: %nexo_aura_<id>%
+
+aura_skills_menu_book:
+  texture: gui/aura_skills_menu_book
+  ascent: 48
+  height: 256
+
+aura_abilities_menu:
+  texture: gui/aura_abilities_menu
+  ascent: 48
+  height: 256
+
+aura_progress_menu:
+  texture: gui/aura_progress_menu
+  ascent: 48
+  height: 256
+
+aura_stats_menu:
+  texture: gui/aura_stats_menu
+  ascent: 48
+  height: 256
+
+aura_leaderboard_menu:
+  texture: gui/aura_leaderboard_menu
+  ascent: 48
+  height: 256
+
+aura_stat_hearts:
+  texture: gui/aura_stat_hearts
+  ascent: 9
+  height: 11
+
+aura_stats_regeneration:
+  texture: gui/aura_stats_regeneration
+  ascent: 9
+  height: 11
+
+aura_stats_speed:
+  texture: gui/aura_stats_speed
+  ascent: 9
+  height: 11
+
+aura_stats_strength:
+  texture: gui/aura_stats_strength
+  ascent: 9
+  height: 11
+
+aura_stats_luck:
+  texture: gui/aura_stats_luck
+  ascent: 9
+  height: 11
+
+aura_stats_toughness:
+  texture: gui/aura_stats_toughness
+  ascent: 9
+  height: 11
+
+aura_stats_wisdom:
+  texture: gui/aura_stats_wisdom
+  ascent: 9
+  height: 11
+
+aura_stats_crit_chance:
+  texture: gui/aura_stats_crit_chance
+  ascent: 9
+  height: 11
+
+aura_stats_crit_damage:
+  texture: gui/aura_stats_crit_damage
+  ascent: 9
+  height: 11
+
+aura_skill_book_sources:
+  texture: gui/aura_book_all_squares
+  ascent: 48
+  height: 256
+
+aura_xp_bar_lore:
+  texture: gui/aura_xp_bar
+  ascent: 6
+  height: 7

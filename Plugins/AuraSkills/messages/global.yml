@@ -96,30 +96,30 @@ rewards:
     default_chat_message_multiple: "\n  {display_name} {amount}x"
 stats:
   strength:
-    color: "<dark_red>"
-    symbol: "➽"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stats_strength%'
   health:
-    color: "<red>"
-    symbol: "❤"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stat_hearts%'
   regeneration:
-    color: "<gold>"
-    symbol: "❥"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stats_regeneration%'
   luck:
-    color: "<dark_green>"
-    symbol: "☘"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stats_luck%'
   wisdom:
-    color: "<blue>"
-    symbol: "✿"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stats_wisdom%'
   toughness:
-    color: "<dark_purple>"
-    symbol: "✦"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stats_toughness%'
   crit_chance:
-    color: "<green>"
-    symbol: "⌘"
+    color: '<#ffffff>'
+    symbol: '%nexo_aura_stats_crit_chance%'
   crit_damage:
-    color: "<dark_aqua>"
-    symbol: "★"
+    color: '<#ffffff>'
+    symbol: ''
   speed:
-    color: "<white>"
-    symbol: "➤"
+    color: '<#ffffff>'
+    symbol: ''
 file_version: 3

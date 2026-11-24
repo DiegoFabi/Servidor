@@ -1,0 +1,25 @@
+# Mage Set Vol. 1 (cosméticos de HMCCosmetics). Modelos: models/hcs/mage_set | Texturas: textures/hcs/mage_set
+
+mage_body:
+  itemname: <gradient:#9B7BFF:#5B3FB3>Túnica del Mago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/mage_set/mage_body
+
+mage_hat:
+  itemname: <gradient:#9B7BFF:#5B3FB3>Sombrero del Mago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/mage_set/mage_hat
+
+mage_stick:
+  itemname: <gradient:#9B7BFF:#5B3FB3>Báculo del Mago</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/mage_set/mage_stick
+
+owl_baloon:
+  itemname: <gradient:#9B7BFF:#5B3FB3>Globo de Búho</gradient>
+  material: PAPER
+  Pack:
+    model: hcs/mage_set/owl_baloon

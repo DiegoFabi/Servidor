@@ -1,0 +1,373 @@
+# Animated AuraSkills (Spectra): items de los menús de AuraSkills (BRICK/PLAYER_HEAD, CMD 40048-40084).
+# Texturas: textures/gui/aura_*.png | Modelos: models/aura_*.json | Glyphs: glyphs/auraskills.yml
+
+skill_empty_slot:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_empty_slot
+    custom_model_data: 40051
+
+skill_left_arrow:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_left_arrow
+    custom_model_data: 40052
+
+skill_right_arrow:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_right_arrow
+    custom_model_data: 40053
+
+skills_level_next:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_level_next
+    custom_model_data: 40054
+
+skills_level_previous:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_level_previous
+    custom_model_data: 40055
+
+skills_abilities_btn:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_abilities_btn
+    custom_model_data: 40056
+
+skills_xp_source_btn:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_xp_source_btn
+    custom_model_data: 40057
+
+skills_leaderboard_btn:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_leaderboard_btn
+    custom_model_data: 40058
+
+skills_level_close:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_level_close
+    custom_model_data: 40047
+
+skill_farming:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_farming
+    custom_model_data: 40048
+
+skill_foraging:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_foraging
+    custom_model_data: 40049
+
+skill_fishing:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_fishing
+    custom_model_data: 40059
+
+skill_archery:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_archery
+    custom_model_data: 40060
+
+skill_defence:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_defence
+    custom_model_data: 40061
+
+skill_excavation:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_excavation
+    custom_model_data: 40062
+
+skill_agility:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_agility
+    custom_model_data: 40063
+
+skill_fighting:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_fighting
+    custom_model_data: 40064
+
+skill_enchanting:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_enchanting
+    custom_model_data: 40065
+
+skill_alchemy:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_alchemy
+    custom_model_data: 40066
+
+skill_mining:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skill_mining
+    custom_model_data: 40067
+
+skills_level_completed:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_level_completed
+    custom_model_data: 40068
+
+skills_level_locked:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_level_locked
+    custom_model_data: 40069
+
+skills_level_progress:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_skills_level_progress
+    custom_model_data: 40070
+
+skills_head:
+  itemname: <white>
+  material: PLAYER_HEAD
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_skills_head
+    custom_model_data: 100
+
+book_previous_nav:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_book_previous_nav
+    custom_model_data: 40071
+
+book_next_nav:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_book_next_nav
+    custom_model_data: 40072
+
+stats_animation:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_stats_animation
+    custom_model_data: 40073
+
+monster_head:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_monster_head
+    custom_model_data: 40074
+
+monster_body_right:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_monster_body_right
+    custom_model_data: 40075
+
+monster_body_left:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_monster_body_left
+    custom_model_data: 40076
+
+skill_ship:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_skill_ship
+    custom_model_data: 40077
+
+skill_flag:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    generate_model: false
+    model: aura_skill_flag
+    custom_model_data: 40078
+
+icon_mana:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_icon_mana
+    custom_model_data: 40079
+
+icon_ability:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_icon_ability
+    custom_model_data: 40080
+
+icon_mana_locked:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_icon_mana_locked
+    custom_model_data: 40081
+
+icon_ability_locked:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_icon_ability_locked
+    custom_model_data: 40082
+
+job_icon_enabled:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_job_icon_enabled
+    custom_model_data: 40083
+
+job_icon_off:
+  itemname: <white>
+  material: BRICK
+  excludeFromInventory: true
+  Pack:
+    parent_model: item/generated
+    textures:
+    - gui/aura_job_icon_off
+    custom_model_data: 40084
