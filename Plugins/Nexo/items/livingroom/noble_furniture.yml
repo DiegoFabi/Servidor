@@ -1,0 +1,284 @@
+# Lionos Noble Furniture (muebles de piedra pulida). Modelos y texturas: livingroom/noble_*
+noble_polished_stone_bench_blue:
+  itemname: <white>Banco de Piedra Pulida Azul
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      seats:
+      - 0,0.5,0
+      - 1,0.5,0
+      - -1,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_bench_blue
+noble_polished_stone_bench_red:
+  itemname: <white>Banco de Piedra Pulida Rojo
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      seats:
+      - 0,0.5,0
+      - 1,0.5,0
+      - -1,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_bench_red
+noble_polished_stone_bench_purple:
+  itemname: <white>Banco de Piedra Pulida Morado
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      seats:
+      - 0,0.5,0
+      - 1,0.5,0
+      - -1,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_bench_purple
+noble_polished_stone_bench_green:
+  itemname: <white>Banco de Piedra Pulida Verde
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 1,0,0
+        - -1,0,0
+      seats:
+      - 0,0.5,0
+      - 1,0.5,0
+      - -1,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_bench_green
+noble_polished_stone_chair_blue:
+  itemname: <white>Silla de Piedra Pulida Azul
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_chair_blue
+noble_polished_stone_chair_red:
+  itemname: <white>Silla de Piedra Pulida Roja
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_chair_red
+noble_polished_stone_chair_purple:
+  itemname: <white>Silla de Piedra Pulida Morada
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_chair_purple
+noble_polished_stone_chair_green:
+  itemname: <white>Silla de Piedra Pulida Verde
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      seats:
+      - 0,0.5,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_chair_green
+noble_polished_stone_table_blue:
+  itemname: <white>Mesa de Piedra Pulida Azul
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_table_blue
+noble_polished_stone_table_red:
+  itemname: <white>Mesa de Piedra Pulida Roja
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_table_red
+noble_polished_stone_table_purple:
+  itemname: <white>Mesa de Piedra Pulida Morada
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_table_purple
+noble_polished_stone_table_green:
+  itemname: <white>Mesa de Piedra Pulida Verde
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_table_green
+noble_polished_stone_pillar:
+  itemname: <white>Pilar de Piedra Pulida
+  material: PAPER
+  Mechanics:
+    furniture:
+      block_sounds:
+        place_sound: block.deepslate.place
+        break_sound: block.deepslate.break
+      hitbox:
+        barriers:
+        - 0,0,0
+        - 0,1,0
+        - 0,2,0
+      properties:
+        display_transform: FIXED
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+  Pack:
+    model: livingroom/noble_polished_stone_pillar
+
+#d9443e7bc0b13e3c3ec2f2640bf8c436

@@ -1,0 +1,38 @@
+# Weapons Pack - Free Edition (Redstone Labs): 6 armas 2D. Texturas: knight_pack/<arma>.png
+cosmic_sword:
+  itemname: <white>Espada Cósmica
+  material: DIAMOND_SWORD
+  Pack:
+    parent_model: item/handheld
+    texture: knight_pack/cosmic_sword
+storm_katana:
+  itemname: <white>Katana de la Tormenta
+  material: DIAMOND_SWORD
+  Pack:
+    parent_model: item/handheld
+    texture: knight_pack/storm_katana
+poison_dagger:
+  itemname: <white>Daga Venenosa
+  material: DIAMOND_SWORD
+  Pack:
+    parent_model: item/handheld
+    texture: knight_pack/poison_dagger
+frost_axe:
+  itemname: <white>Hacha de Escarcha
+  material: DIAMOND_AXE
+  Pack:
+    parent_model: item/handheld
+    texture: knight_pack/frost_axe
+molten_mace:
+  itemname: <white>Maza Fundida
+  material: MACE
+  Pack:
+    parent_model: item/handheld
+    texture: knight_pack/molten_mace
+reapers_scythe:
+  itemname: <white>Guadaña del Segador
+  material: DIAMOND_SWORD
+  Pack:
+    parent_model: item/handheld
+    texture: knight_pack/reapers_scythe
+

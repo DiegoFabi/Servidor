@@ -1,0 +1,204 @@
+# Dark Lightning (Hydra Team): armadura, herramientas y espada.
+# Modelos/texturas: knight_pack/dark_lightning_* | Armadura: knight_pack/armor/dark_lightning_armor_layer_*
+# ========================================
+# --              ITEMS                 --
+# ========================================
+
+dark_lightning_book:
+  itemname: <bold><blue>Rayo Oscuro <white>Libro
+  material: PAPER
+  lore:
+  - <gray>Sirve como decoración.
+  Pack:
+    texture: knight_pack/dark_lightning_book
+    
+# ========================================
+# --             2D ARMOR               --
+# ========================================
+
+dark_lightning_helmet:
+  itemname: <bold><blue>Rayo Oscuro <white>Casco
+  material: DIAMOND_HELMET
+  lore:
+  - <gray>Protege bien y es resistente.
+  unbreakable: false
+  Pack:
+    texture: knight_pack/dark_lightning_helmet
+  Components:
+    equippable:
+      slot: HEAD
+      asset_id: nexo:dark_lightning
+dark_lightning_chestplate:
+  itemname: <bold><blue>Rayo Oscuro <white>Peto
+  material: IRON_CHESTPLATE
+  lore:
+  - <gray>Protege bien y es resistente.
+  unbreakable: false
+  Pack:
+    texture: knight_pack/dark_lightning_chestplate
+  Components:
+    equippable:
+      slot: CHEST
+      asset_id: nexo:dark_lightning
+dark_lightning_leggings:
+  itemname: <bold><blue>Rayo Oscuro <white>Pantalones
+  material: IRON_LEGGINGS
+  lore:
+  - <gray>Protegen bien y son resistentes.
+  unbreakable: false
+  Pack:
+    texture: knight_pack/dark_lightning_leggings
+  Components:
+    equippable:
+      slot: LEGS
+      asset_id: nexo:dark_lightning
+dark_lightning_boots:
+  itemname: <bold><blue>Rayo Oscuro <white>Botas
+  material: IRON_BOOTS
+  lore:
+  - <gray>Protegen bien y son resistentes.
+  unbreakable: false
+  Pack:
+    texture: knight_pack/dark_lightning_boots
+  Components:
+    equippable:
+      slot: FEET
+      asset_id: nexo:dark_lightning
+
+# ========================================
+# --              TOOLS                 --
+# ========================================
+
+dark_lightning_axe:
+  itemname: <bold><blue>Rayo Oscuro <white>Hacha
+  material: DIAMOND_AXE
+  lore:
+  - <gray>Útil para talar y romper
+  - <gray>bloques de madera.
+  AttributeModifiers:
+  - amount: 4.0
+    attribute: ATTACK_DAMAGE
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 1.0
+    attribute: ATTACK_SPEED
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: MAX_HEALTH
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: MOVEMENT_SPEED
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ARMOR
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ARMOR_TOUGHNESS
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ATTACK_KNOCKBACK
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: LUCK
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  unbreakable: false
+  Pack:
+    model: knight_pack/dark_lightning_axe
+dark_lightning_pickaxe:
+  itemname: <bold><blue>Rayo Oscuro <white>Pico
+  material: DIAMOND_PICKAXE
+  lore:
+  - <gray>Útil para minar y romper
+  - <gray>piedra.
+  AttributeModifiers:
+  - amount: 3.0
+    attribute: ATTACK_DAMAGE
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 1.0
+    attribute: ATTACK_SPEED
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: MAX_HEALTH
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: MOVEMENT_SPEED
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ARMOR
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ARMOR_TOUGHNESS
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ATTACK_KNOCKBACK
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: LUCK
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  unbreakable: false
+  Pack:
+    model: knight_pack/dark_lightning_pickaxe
+
+# ========================================
+# --              WEAPONS               --
+# ========================================
+
+dark_lightning_sword:
+  itemname: <bold><blue>Rayo Oscuro <white>Espada
+  material: DIAMOND_SWORD
+  lore:
+  - <gray>Daño normal y velocidad
+  - <gray>de ataque media:
+  - <gray>buena para combate a media distancia.
+  AttributeModifiers:
+  - amount: 6.0
+    attribute: ATTACK_DAMAGE
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 1.0
+    attribute: ATTACK_SPEED
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: MAX_HEALTH
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: MOVEMENT_SPEED
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ARMOR
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ARMOR_TOUGHNESS
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: ATTACK_KNOCKBACK
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  - amount: 0.0
+    attribute: LUCK
+    operation: ADD_NUMBER
+    slot: MAINHAND
+  unbreakable: false
+  Pack:
+    model: knight_pack/dark_lightning_sword
+
