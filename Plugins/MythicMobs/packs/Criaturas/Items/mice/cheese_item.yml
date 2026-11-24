@@ -1,0 +1,14 @@
+# Textura del queso: Nexo (items/criaturas.yml, PAPER custom_model_data 1110036)
+#Swiss
+swiss:
+  Display: "<white>Queso Suizo"
+  Material: PAPER
+  Model: 1110036
+  Consumable:
+    ConsumeSeconds: 2
+  Food:
+    Nutrition: 6
+    Saturation: 6
+    CanAlwaysEat: false
+
+# 694LUQMHF1XS758HENG3F1Q83T

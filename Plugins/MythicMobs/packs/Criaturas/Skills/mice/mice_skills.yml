@@ -1,0 +1,307 @@
+#Black Mouse
+black_mouse_smell_cheese:
+  TargetConditions:
+  - holding{m=swiss} orElseCast black_mouse_walk
+  Conditions:
+  - playerwithin{d=2} CastInstead black_mouse_stand_still
+  - hasaura{n=blackMouseBred} false
+  Skills:
+  - goto{speedModifier=1;sh=0;sv=1} @PIR{r=10;limit=1;sort=NEAREST}
+  - setspeed{speed=1;type=WALKING} @self
+
+black_mouse_stand_still:
+  Skills:
+  - setspeed{speed=0;type=WALKING} @self
+
+black_mouse_walk:
+  Skills:
+  - setspeed{speed=1;type=WALKING} @self
+
+black_mouse_feed_cheese:
+  Cooldown: 120
+  TriggerConditions:
+  - holding{m=swiss} true
+  Conditions:
+  - offgcd true
+  Skills:
+  - gcd{ticks=40}
+  - setspeed{speed=0;type=WALKING} @self
+  - state{model=black_mouse;state=cheese} @self
+  - consumeslot{slot=HAND;amount=1} @trigger
+  - rootmotion{ov=true} @self
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 20
+  - setstance{s=breedable} @self
+  - runaigoalselector{goal=meleeattack}
+  - particles{particle=heart;a=1;hs=0.25;vs=0.25;s=0.5;y=0.25;repeat=5;repeatInterval=5} @self
+  - rootmotion{ov=false} @self
+  - setspeed{speed=1;type=WALKING} @self
+
+black_mouse_breed_succes:
+  Cooldown: 120
+  TargetConditions:
+  - stance{s=breedable} true
+  Conditions:
+  - stance{s=breedable} true
+  Skills:
+  - skill{s=black_mouse_bred} @target
+  - delay 10
+  - aura{auraName=blackMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+  - delay 30
+  - randomskill{skills=spawn_mouse_child_black,spawn_mouse_child_brown,spawn_mouse_child_gray,spawn_mouse_child_white} @self
+
+black_mouse_bred:
+  TriggerConditions:
+  - stance{s=breedable} true
+  Skills:
+  - delay 10
+  - aura{auraName=blackMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+
+spawn_mouse_child_black:
+  Skills:
+  - summon{t=black_mouse;a=1} @self
+
+black_mouse_death:
+  Skills:
+  - sound{s=entity.fox.death} @self
+  - delay 20
+  - particle{p=cloud;amount=50;x=5;z=20;s=0.07} @self
+
+#Brown Mouse
+brown_mouse_smell_cheese:
+  TargetConditions:
+  - holding{m=swiss} orElseCast brown_mouse_walk
+  Conditions:
+  - playerwithin{d=2} CastInstead brown_mouse_stand_still
+  - hasaura{n=brownMouseBred} false
+  Skills:
+  - goto{speedModifier=1;sh=0;sv=1} @PIR{r=10;limit=1;sort=NEAREST}
+  - setspeed{speed=1;type=WALKING} @self
+
+brown_mouse_stand_still:
+  Skills:
+  - setspeed{speed=0;type=WALKING} @self
+
+brown_mouse_walk:
+  Skills:
+  - setspeed{speed=1;type=WALKING} @self
+
+brown_mouse_feed_cheese:
+  Cooldown: 120
+  TriggerConditions:
+  - holding{m=swiss} true
+  Conditions:
+  - offgcd true
+  Skills:
+  - gcd{ticks=40}
+  - setspeed{speed=0;type=WALKING} @self
+  - state{model=brown_mouse;state=cheese} @self
+  - consumeslot{slot=HAND;amount=1} @trigger
+  - rootmotion{ov=true} @self
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 20
+  - setstance{s=breedable} @self
+  - runaigoalselector{goal=meleeattack}
+  - particles{particle=heart;a=1;hs=0.25;vs=0.25;s=0.5;y=0.25;repeat=5;repeatInterval=5} @self
+  - rootmotion{ov=false} @self
+  - setspeed{speed=1;type=WALKING} @self
+
+brown_mouse_breed_succes:
+  Cooldown: 120
+  TargetConditions:
+  - stance{s=breedable} true
+  Conditions:
+  - stance{s=breedable} true
+  Skills:
+  - skill{s=brown_mouse_bred} @target
+  - delay 10
+  - aura{auraName=brownMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+  - delay 30
+  - randomskill{skills=spawn_mouse_child_black,spawn_mouse_child_brown,spawn_mouse_child_gray,spawn_mouse_child_white} @self
+
+brown_mouse_bred:
+  TriggerConditions:
+  - stance{s=breedable} true
+  Skills:
+  - delay 10
+  - aura{auraName=brownMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+
+spawn_mouse_child_brown:
+  Skills:
+  - summon{t=brown_mouse;a=1} @self
+
+brown_mouse_death:
+  Skills:
+  - sound{s=entity.fox.death} @self
+  - delay 20
+  - particle{p=cloud;amount=50;x=5;z=20;s=0.07} @self
+
+#Gray Mouse
+gray_mouse_smell_cheese:
+  TargetConditions:
+  - holding{m=swiss} orElseCast gray_mouse_walk
+  Conditions:
+  - playerwithin{d=2} CastInstead gray_mouse_stand_still
+  - hasaura{n=grayMouseBred} false
+  Skills:
+  - goto{speedModifier=1;sh=0;sv=1} @PIR{r=10;limit=1;sort=NEAREST}
+  - setspeed{speed=1;type=WALKING} @self
+
+gray_mouse_stand_still:
+  Skills:
+  - setspeed{speed=0;type=WALKING} @self
+
+gray_mouse_walk:
+  Skills:
+  - setspeed{speed=1;type=WALKING} @self
+
+gray_mouse_feed_cheese:
+  Cooldown: 120
+  TriggerConditions:
+  - holding{m=swiss} true
+  Conditions:
+  - offgcd true
+  Skills:
+  - gcd{ticks=40}
+  - setspeed{speed=0;type=WALKING} @self
+  - state{model=gray_mouse;state=cheese} @self
+  - consumeslot{slot=HAND;amount=1} @trigger
+  - rootmotion{ov=true} @self
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 20
+  - setstance{s=breedable} @self
+  - runaigoalselector{goal=meleeattack}
+  - particles{particle=heart;a=1;hs=0.25;vs=0.25;s=0.5;y=0.25;repeat=5;repeatInterval=5} @self
+  - rootmotion{ov=false} @self
+  - setspeed{speed=1;type=WALKING} @self
+
+gray_mouse_breed_succes:
+  Cooldown: 120
+  TargetConditions:
+  - stance{s=breedable} true
+  Conditions:
+  - stance{s=breedable} true
+  Skills:
+  - skill{s=gray_mouse_bred} @target
+  - delay 10
+  - aura{auraName=grayMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+  - delay 30
+  - randomskill{skills=spawn_mouse_child_black,spawn_mouse_child_brown,spawn_mouse_child_gray,spawn_mouse_child_white} @self
+
+gray_mouse_bred:
+  TriggerConditions:
+  - stance{s=breedable} true
+  Skills:
+  - delay 10
+  - aura{auraName=grayMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+
+spawn_mouse_child_gray:
+  Skills:
+  - summon{t=gray_mouse;a=1} @self
+
+gray_mouse_death:
+  Skills:
+  - sound{s=entity.fox.death} @self
+  - delay 20
+  - particle{p=cloud;amount=50;x=5;z=20;s=0.07} @self
+
+#White Mouse
+white_mouse_smell_cheese:
+  TargetConditions:
+  - holding{m=swiss} orElseCast white_mouse_walk
+  Conditions:
+  - playerwithin{d=2} CastInstead white_mouse_stand_still
+  - hasaura{n=whiteMouseBred} false
+  Skills:
+  - goto{speedModifier=1;sh=0;sv=1} @PIR{r=10;limit=1;sort=NEAREST}
+  - setspeed{speed=1;type=WALKING} @self
+
+white_mouse_stand_still:
+  Skills:
+  - setspeed{speed=0;type=WALKING} @self
+
+white_mouse_walk:
+  Skills:
+  - setspeed{speed=1;type=WALKING} @self
+
+white_mouse_feed_cheese:
+  Cooldown: 120
+  TriggerConditions:
+  - holding{m=swiss} true
+  Conditions:
+  - offgcd true
+  Skills:
+  - gcd{ticks=40}
+  - setspeed{speed=0;type=WALKING} @self
+  - state{model=white_mouse;state=cheese} @self
+  - consumeslot{slot=HAND;amount=1} @trigger
+  - rootmotion{ov=true} @self
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 10
+  - sound{s=entity.generic.eat;v=3;p=2} @self
+  - delay 20
+  - setstance{s=breedable} @self
+  - runaigoalselector{goal=meleeattack}
+  - particles{particle=heart;a=1;hs=0.25;vs=0.25;s=0.5;y=0.25;repeat=5;repeatInterval=5} @self
+  - rootmotion{ov=false} @self
+  - setspeed{speed=1;type=WALKING} @self
+
+white_mouse_breed_succes:
+  Cooldown: 120
+  TargetConditions:
+  - stance{s=breedable} true
+  Conditions:
+  - stance{s=breedable} true
+  Skills:
+  - skill{s=white_mouse_bred} @target
+  - delay 10
+  - aura{auraName=whiteMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+  - delay 30
+  - randomskill{skills=spawn_mouse_child_black,spawn_mouse_child_brown,spawn_mouse_child_gray,spawn_mouse_child_white} @self
+
+white_mouse_bred:
+  TriggerConditions:
+  - stance{s=breedable} true
+  Skills:
+  - delay 10
+  - aura{auraName=whiteMouseBred;d=2400} @self
+  - setstance{s=idle} @self
+  - runaigoalselector{goal=clear}
+
+spawn_mouse_child_white:
+  Skills:
+  - summon{t=white_mouse;a=1} @self
+
+white_mouse_death:
+  Skills:
+  - sound{s=entity.fox.death} @self
+  - delay 20
+  - particle{p=cloud;amount=50;x=5;z=20;s=0.07} @self

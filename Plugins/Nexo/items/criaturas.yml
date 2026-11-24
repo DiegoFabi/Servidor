@@ -1,0 +1,10 @@
+# Items de las criaturas de MythicMobs (packs/Criaturas).
+# El queso es un item de MythicMobs ('swiss', PAPER CMD 1110036); aquí solo
+# se le da la textura con el mismo custom_model_data.
+queso_suizo:
+  itemname: <white>Queso Suizo
+  material: PAPER
+  excludeFromInventory: true
+  Pack:
+    texture: criaturas/queso_suizo
+    custom_model_data: 1110036
