@@ -20,7 +20,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_aqua, usos:30'
     name: '&#7FE7FF⚔ &#5FD0FFInvocador de Dragón'
     lore:
-    - '&#5C9DFF&lÉpico &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5C9DFF&lÉpico &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#7FE7FFFuria Dracónica'
     - ' &7Desata una secuencia de garras de'
@@ -57,7 +57,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, usos:30'
     name: '&#9FE8FF☂ &#6FB8FFBastón de las Mareas'
     lore:
-    - '&#5C9DFF&lÉpico &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5C9DFF&lÉpico &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#7FC8FFOla Arrolladora'
     - ' &7Dispara un torrente de agua que'
@@ -88,9 +88,10 @@ items:
     triggers: DISABLED
   item_11:
     id: STONE_PICKAXE
+    properties: 'tooltip_style:minecraft:common'
     name: '&7► &eᴘɪᴄᴏ ᴅᴇ ᴘɪᴇᴅʀᴀ'
     lore:
-    - '&8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ɪɴɪᴄɪᴏ'
+    - '&f<glyph:lz_tool> <glyph:lz_common> &8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ɪɴɪᴄɪᴏ'
     - '&7'
     - '&7  | &aʙɪᴇɴᴠᴇɴɪᴅᴏ &7ᴀʟ ꜱᴇʀᴠɪᴅᴏʀ'
     - '&7  | ᴇꜱᴛᴇ ꜱᴇʀᴀ ᴛᴜ &aᴋɪᴛ &7ᴘᴀʀᴀ'
@@ -110,7 +111,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
     name: '&#FFB347☄ &#FF7A45Bastón del Obispo'
     lore:
-    - '&#B45CFF&lLegendario &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#B45CFF&lLegendario &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF8A5CRezo Corrompido'
     - ' &7Lanza una carga de fuego que arrasa'
@@ -146,7 +147,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple'
     name: '&#FF9AB8❤ &#F0607CPoción del Emperador'
     lore:
-    - '&#5C9DFF&lÉpico &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#5C9DFF&lÉpico &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF8FA8Elixir Imperial'
     - ' &7Recupera toda tu vida al instante'
@@ -169,9 +170,10 @@ items:
     triggers: DISABLED
   item_1:
     id: FISHING_ROD
+    properties: 'tooltip_style:minecraft:rare'
     name: '&7► &bᴄᴀɴᴀ ᴅᴇ ᴘᴇꜱᴄᴀʀ &7| &bᴛɪᴇʀ ɪɪɪ'
     lore:
-    - '&8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ꜱᴏʟᴅᴀᴅᴏ'
+    - '&f<glyph:lz_tool> <glyph:lz_rare> &8  ᴘᴀʀᴛᴇ ᴅᴇʟ ᴋɪᴛ ꜱᴏʟᴅᴀᴅᴏ'
     - '&7'
     - '&7  | ɢʀᴀᴄɪᴀꜱ ᴘᴏʀ ᴀᴅǫᴜɪʀɪʀ ᴇʟ ʀᴀɴɢᴏ'
     - '&7  | &aꜱᴏʟᴅᴀᴅᴏ ʏ ᴀᴘᴏʏᴀʀ &7ᴀʟ ꜱᴇʀᴠɪᴅᴏʀ.'
@@ -194,7 +196,7 @@ items:
       '1': '&f&eMenú de Opciones'
     lore:
       '1':
-      - '&7'
+      - '&f<glyph:lz_other>'
       - '&f¡Usa esto para no &aescribir'
       - '&amuchos comandos &fa mano!'
     interact:
@@ -209,7 +211,7 @@ items:
     properties: 'tooltip_style:minecraft:aqua, usos:60'
     name: '&#BFF4FF❄ &#7FD8FFRuna de Escarcha'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#9EF0C6&lComún &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#7FD8FFNova de Escarcha'
     - ' &7Libera una onda de hielo que daña'
@@ -248,7 +250,7 @@ items:
     properties: 'tooltip_style:minecraft:yellow, usos:40'
     name: '&#FFF3A6⚡ &#FFD84DBastón de la Tormenta'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5CA8FF&lRaro &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FFD84DCadena de Rayos'
     - ' &7Un rayo salta de enemigo en enemigo,'
@@ -287,7 +289,7 @@ items:
     properties: 'tooltip_style:minecraft:gold, usos:25'
     name: '&#FFC27A☄ &#FF8A3DNúcleo del Meteoro'
     lore:
-    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF8A3DMeteoro Arcano'
     - ' &7Invoca un meteoro sobre el bloque'
@@ -326,7 +328,7 @@ items:
     properties: 'tooltip_style:minecraft:red, usos:60'
     name: '&#FFB38A✸ &#FF7A45Elixir Explosivo'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#9EF0C6&lComún &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF7A45Salto Explosivo'
     - ' &7Te impulsa hacia el cielo y al caer'
@@ -365,7 +367,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_purple, usos:40'
     name: '&#D8B4FF⚫ &#A66BFFPergamino del Vacío'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5CA8FF&lRaro &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#A66BFFCampo de Gravedad'
     - ' &7Abre un campo que atrae y aplasta'
@@ -404,7 +406,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, usos:25'
     name: '&#BFE3FF✧ &#7FB8FFTomo Celestial'
     lore:
-    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#7FB8FFImpacto Celestial'
     - ' &7Saltas hacia el cielo y caes como'
@@ -443,7 +445,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:25'
     name: '&#FF9A9A❣ &#E04848Corazón del Titán'
     lore:
-    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#E04848Furia Titánica'
     - ' &7Despierta la fuerza de los titanes'
@@ -482,7 +484,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, usos:25'
     name: '&#E7C6FF⚡ &#B45CFFEsencia de la Tormenta'
     lore:
-    - '&#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#B45CFF&lAvanzado &8• &#9EA3AEMagia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#B45CFFIra del Cielo'
     - ' &7Desata 20 segundos de tormenta:'
@@ -521,7 +523,7 @@ items:
     properties: 'tooltip_style:minecraft:green'
     name: '&#B8FFC9✚ &#5FE38AElixir de Vitalidad'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#5FE38APulso de Vida'
     - ' &7Libera un pulso que te cura y sana'
@@ -551,7 +553,7 @@ items:
     properties: 'tooltip_style:minecraft:aqua'
     name: '&#BFEFFF➹ &#5FC8FFElixir de Celeridad'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#5FC8FFEmbestida del Viento'
     - ' &7Sales disparado hacia delante y'
@@ -581,7 +583,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_purple'
     name: '&#E3C6FF☾ &#B07BFFElixir de Sombra'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#B07BFFPaso de Sombra'
     - ' &7Estallas en humo, saltas 6 bloques'
@@ -611,7 +613,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple'
     name: '&#FFD1E6⛨ &#FF7FB0Elixir de Fortaleza'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEPoción &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF7FB0Piel de Piedra'
     - ' &7Una onda aparta a los monstruos y'
@@ -641,7 +643,7 @@ items:
     properties: 'tooltip_style:minecraft:red, usos:40'
     name: '&#FFB3B3◆ &#FF5C5CAnillo de Rubí'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_accessory> &#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF5C5CSangre de Rubí'
     - ' &7Cada golpe que das te devuelve'
@@ -680,7 +682,7 @@ items:
     properties: 'tooltip_style:minecraft:yellow, usos:40'
     name: '&#FFEBA6◆ &#FFC83DAnillo de Topacio'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_accessory> &#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FFC83DOjo de Topacio'
     - ' &7Revela los minerales valiosos que'
@@ -719,7 +721,7 @@ items:
     properties: 'tooltip_style:minecraft:green, usos:40'
     name: '&#C2FFD1◆ &#4FD97AAnillo de Esmeralda'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_accessory> &#5CA8FF&lRaro &8• &#9EA3AEReliquia &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#4FD97ABendición Verde'
     - ' &7Hace crecer los cultivos cercanos'
@@ -758,7 +760,7 @@ items:
     properties: 'tooltip_style:minecraft:aqua, usos:40'
     name: '&#C6F3FF◈ &#5FD0FFLágrima de Aguamarina'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEGema &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_accessory> &#5CA8FF&lRaro &8• &#9EA3AEGema &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#5FD0FFLágrima del Océano'
     - ' &7Un vórtice de agua atrae y daña'
@@ -797,7 +799,7 @@ items:
     properties: 'tooltip_style:minecraft:gold'
     name: '&#FFE2A6◈ &#FFB43DTopacio del Banquete'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEGema &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_accessory> &#9EF0C6&lComún &8• &#9EA3AEGema &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FFB43DBanquete Compartido'
     - ' &7Sacia el hambre de todos los'
@@ -827,7 +829,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, usos:40'
     name: '&#C6E6FF≈ &#6FB8FFEsencia de Marea'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEElemento &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5CA8FF&lRaro &8• &#9EA3AEElemento &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#6FB8FFOla de Marea'
     - ' &7Una ola barre a los monstruos que'
@@ -866,7 +868,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:40'
     name: '&#FFC2A6✹ &#FF6F45Grimorio Ígneo'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AETomo &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5CA8FF&lRaro &8• &#9EA3AETomo &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF6F45Llama Interior'
     - ' &7Los monstruos que te golpeen'
@@ -905,7 +907,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, usos:40'
     name: '&#C6E3FF✎ &#6FA8FFGrimorio del Sabio'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AETomo &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5CA8FF&lRaro &8• &#9EA3AETomo &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#6FA8FFOjos del Sabio'
     - ' &7Revela monstruos y te dice cuántos'
@@ -944,7 +946,7 @@ items:
     properties: 'tooltip_style:minecraft:red, usos:40'
     name: '&#FFB89A✹ &#FF5A2DRuna de Llamas'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AERuna &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#5CA8FF&lRaro &8• &#9EA3AERuna &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF5A2DCírculo de Llamas'
     - ' &7Un anillo de fuego se expande e'
@@ -983,7 +985,7 @@ items:
     properties: 'tooltip_style:minecraft:yellow, usos:25'
     name: '&#FFF3A6⚡ &#FFD84DRuna del Trueno'
     lore:
-    - '&#B45CFF&lAvanzado &8• &#9EA3AERuna &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_weapon> &#B45CFF&lAvanzado &8• &#9EA3AERuna &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FFD84DTormenta de Relámpagos'
     - ' &7Llama a los relámpagos sobre'
@@ -1022,7 +1024,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, usos:25'
     name: '&#D6E6FF✠ &#8FB3FFPergamino de Invocación'
     lore:
-    - '&#B45CFF&lAvanzado &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#B45CFF&lAvanzado &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#8FB3FFInvocar Guardianes'
     - ' &7Convoca guardianes de hierro que'
@@ -1061,7 +1063,7 @@ items:
     properties: 'tooltip_style:minecraft:white'
     name: '&#F2F2F2↺ &#C9CDD6Pergamino de Retorno'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#C9CDD6Retorno'
     - ' &7Te lleva de vuelta al punto'
@@ -1090,7 +1092,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red'
     name: '&#FFC9C9⌂ &#FF8A8APergamino del Hogar'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF8A8AHogar'
     - ' &7Te devuelve a tu hogar'
@@ -1120,7 +1122,7 @@ items:
     properties: 'tooltip_style:minecraft:yellow, usos:40'
     name: '&#FFF6B8⚡ &#FFE24DBatería Arcana'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEArtefacto &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_accessory> &#5CA8FF&lRaro &8• &#9EA3AEArtefacto &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FFE24DSobrecarga'
     - ' &7Cada golpe que das libera una'
@@ -1159,7 +1161,7 @@ items:
     properties: 'tooltip_style:minecraft:green'
     name: '&#D2FFB8✚ &#8FE34DJeringa de Adrenalina'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#5CA8FF&lRaro &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#8FE34DAdrenalina'
     - ' &7Un estallido de fuerza y'
@@ -1189,7 +1191,7 @@ items:
     properties: 'tooltip_style:minecraft:white'
     name: '&#FFD6D6✚ &#FF6B6BBotiquín'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEConsumible &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FF6B6BPrimeros Auxilios'
     - ' &7Restaura toda tu vida y limpia'
@@ -1219,7 +1221,7 @@ items:
     properties: 'tooltip_style:minecraft:yellow'
     name: '&#FFF6C2☀ &#FFD84DPergamino de Luz'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#FFD84DLuz Sagrada'
     - ' &7Orbes de luz te acompañan y'
@@ -1249,7 +1251,7 @@ items:
     properties: 'tooltip_style:minecraft:aqua'
     name: '&#E6FFF6✧ &#7FE3C4Pergamino de Purificación'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#7FE3C4Purificación'
     - ' &7Limpia venenos y maldiciones,'
@@ -1279,7 +1281,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_purple'
     name: '&#E3D6FF◉ &#9A85F0Pergamino de Revelación'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#9A85F0Revelación'
     - ' &7Hace brillar a jugadores y monstruos'
@@ -1309,7 +1311,7 @@ items:
     properties: 'tooltip_style:minecraft:aqua'
     name: '&#E6F7FF➶ &#8FD8FFPergamino del Viento'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#8FD8FFRáfaga'
     - ' &7Una ráfaga te impulsa hacia donde'
@@ -1339,7 +1341,7 @@ items:
     properties: 'tooltip_style:minecraft:blue'
     name: '&#D6E6FF⛨ &#8FB3FFPergamino de Protección'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#8FB3FFCírculo Sagrado'
     - ' &7Un círculo de fuego de alma'
@@ -1369,7 +1371,7 @@ items:
     properties: 'tooltip_style:minecraft:green'
     name: '&#C6FFE0✎ &#4FD99APergamino del Saber'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEPergamino &8• &#FFD36BEspecial'
     - ''
     - '&f<glyph:star> &#4FD99AConocimiento'
     - ' &7Absorbes lo que está escrito y'
@@ -1399,7 +1401,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
     name: '&#FF8A8A☠ &#C0392BRuna del Pacto de Sangre'
     lore:
-    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - '&f<glyph:lz_weapon> &#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
     - ''
     - '&f<glyph:star> &#FF5C5CPacto de Sangre'
     - ' &7Fuerza, velocidad y regeneración'
@@ -1440,7 +1442,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
     name: '&#C9A8FF◉ &#6A1B9ARuna del Ojo del Abismo'
     lore:
-    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - '&f<glyph:lz_weapon> &#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
     - ''
     - '&f<glyph:star> &#B07BFFOjo del Abismo'
     - ' &7Devasta, frena y marca a todos los'
@@ -1481,7 +1483,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
     name: '&#9FE8FF☁ &#2B5F75Runa del Grito de Almas'
     lore:
-    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - '&f<glyph:lz_weapon> &#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
     - ''
     - '&f<glyph:star> &#9FE8FFGrito de Almas'
     - ' &7Drena la vida de cada monstruo cercano;'
@@ -1522,7 +1524,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
     name: '&#E0C0C0☠ &#5A0000Runa de la Marca de la Muerte'
     lore:
-    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - '&f<glyph:lz_weapon> &#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
     - ''
     - '&f<glyph:star> &#C9A8A8Marca de la Muerte'
     - ' &7Marca a los tres monstruos más cercanos:'
@@ -1563,7 +1565,7 @@ items:
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
     name: '&#FFE7A3♛ &#B8860BRuna de la Corona del Caído'
     lore:
-    - '&#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
+    - '&f<glyph:lz_weapon> &#B22222&l☠ Maldito &8• &#9EA3AERuna Maldita &8• &#FFD36B&lMuy Raro'
     - ''
     - '&f<glyph:star> &#FFE7A3Corona del Caído'
     - ' &7Casi nada puede herirte y quien te'
@@ -1610,7 +1612,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE● &#B8F5A8Gel'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Una masa pegajosa y elástica.'
     - ' &7Sirve para unir y sellar piezas.'
@@ -1630,7 +1632,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE✿ &#F2EEE6Ovillo de Lana'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Lana enredada lista para'
     - ' &7tejer o rellenar.'
@@ -1649,7 +1651,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE▤ &#E8A8A0Cuero de Cerdo'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Cuero fino y resistente,'
     - ' &7bueno para curtir.'
@@ -1669,7 +1671,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE◉ &#F2D27AAceite de Pescado'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Aceite espeso que arde'
     - ' &7despacio en las lámparas.'
@@ -1689,7 +1691,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE▦ &#E6C99ATela del Desierto'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Tela gastada por la arena'
     - ' &7y el sol del desierto.'
@@ -1709,7 +1711,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE➹ &#7FE07APluma de Loro'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Pluma ligera y colorida,'
     - ' &7ideal para emplumar flechas.'
@@ -1729,7 +1731,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE☠ &#9CE36BSaco de Veneno'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Glándula llena de veneno'
     - ' &7de araña de cueva.'
@@ -1748,7 +1750,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE✲ &#E38B8BEsporas de Champiñón'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Esporas húmedas que se'
     - ' &7deshacen al tocarlas.'
@@ -1767,7 +1769,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE⌒ &#9A8FA8Ala de Murciélago'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Una membrana fina y'
     - ' &7arrugada. Poco útil.'
@@ -1787,7 +1789,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE≈ &#8FA7C9Tentáculo de Calamar'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Viscoso y frío.'
     - ' &7Se resbala de las manos.'
@@ -1806,7 +1808,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE❦ &#A6D97AAnca de Rana'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Una pata de rana cruda.'
     - ' &7Mejor no comerla.'
@@ -1825,7 +1827,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE◒ &#F5D7B8Concha Marina'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Una concha bonita pero'
     - ' &7sin ningún valor.'
@@ -1845,7 +1847,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE⋙ &#B5BCC6Espina de Pez'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Restos de un pez que'
     - ' &7alguien ya se comió.'
@@ -1864,7 +1866,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE❧ &#C9B26BHoja Marchita'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Una hoja seca que se'
     - ' &7rompe con el viento.'
@@ -1883,7 +1885,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE✦ &#FF9EC4Caramelo Rancio'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_food> &#9EF0C6&lComún &8• &#9EA3AEDesecho &8• &#C9CDD6Botín'
     - ''
     - ' &7Un dulce viejo y pegajoso'
     - ' &7que ya no se puede comer.'
@@ -1902,7 +1904,7 @@ items:
     properties: 'botin:comun'
     name: '&#E6E8EE✪ &#D9A066Medalla de Bronce Oxidada'
     lore:
-    - '&#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_currency> &#9EF0C6&lComún &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Una medalla verdosa por'
     - ' &7el óxido. Vale poco.'
@@ -1922,7 +1924,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF❂ &#FF9ED8Mucosa de Ajolote'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Moco brillante con un'
     - ' &7poder regenerador.'
@@ -1942,7 +1944,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF✧ &#5CD6B8Polvo de Ender'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Polvo que vibra cerca'
     - ' &7del vacío.'
@@ -1961,7 +1963,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF⬢ &#FFC94DCristal de Miel'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Miel cristalizada, dura'
     - ' &7como el ámbar.'
@@ -1981,7 +1983,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF⚔ &#E6E6E6Colmillo de Lobo'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Un colmillo afilado'
     - ' &7como una daga.'
@@ -2000,7 +2002,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF◈ &#8FA3FFEscama de Phantom'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Escama ligera que flota'
     - ' &7en el aire.'
@@ -2020,7 +2022,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF❄ &#BFF4FFFragmentos de Hielo'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Hielo que nunca se derrite'
     - ' &7del todo.'
@@ -2039,7 +2041,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF✷ &#7FE3C4Púa de Guardián'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Púa dura de los templos'
     - ' &7del océano.'
@@ -2059,7 +2061,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF✹ &#FF8A3DGel de Magma'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Gel ardiente que nunca'
     - ' &7se enfría.'
@@ -2079,7 +2081,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF✺ &#5FE3FFTentáculo Brillante'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Tentáculo que brilla'
     - ' &7en la oscuridad.'
@@ -2099,7 +2101,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF♒ &#4FC3F7Esencia Acuática'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7La esencia de un ahogado'
     - ' &7condensada en gotas.'
@@ -2119,7 +2121,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF☁ &#C9F5E0Ectoplasma'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Restos de un espíritu'
     - ' &7que no descansa.'
@@ -2139,7 +2141,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF➶ &#7FB8FFAleta de Delfín'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Aleta lisa y flexible,'
     - ' &7perfecta para nadar.'
@@ -2158,7 +2160,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF★ &#FFB38AEstrella de Mar'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Una estrella de mar seca'
     - ' &7con restos de magia.'
@@ -2178,7 +2180,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF☘ &#5FE38ATrébol de Cuatro Hojas'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Un trébol rarísimo'
     - ' &7que trae buena suerte.'
@@ -2198,7 +2200,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF✪ &#D9DEE6Medalla de Plata'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_currency> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Una medalla de plata'
     - ' &7pulida y valiosa.'
@@ -2218,7 +2220,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF✧ &#C9A8FFFragmentos de Cristal'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Cristales que guardan'
     - ' &7algo de energía.'
@@ -2238,7 +2240,7 @@ items:
     properties: 'tooltip_style:minecraft:blue, botin:raro'
     name: '&#BFDDFF⋂ &#FF8A8AImán Antiguo'
     lore:
-    - '&#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#5CA8FF&lRaro &8• &#9EA3AEMaterial &8• &#C9CDD6Botín'
     - ''
     - ' &7Un imán viejo que todavía'
     - ' &7atrae el hierro.'
@@ -2258,7 +2260,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3❤ &#4FD9D0Corazón del Warden'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Late despacio en la'
     - ' &7oscuridad profunda.'
@@ -2278,7 +2280,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3◉ &#FFE6E6Ojo de Ghast'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Un ojo que todavía'
     - ' &7llora fuego.'
@@ -2297,7 +2299,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3✠ &#8C8C8CPolvo de Wither'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Ceniza negra que pudre'
     - ' &7todo lo que toca.'
@@ -2317,7 +2319,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3✦ &#D27CFFCristales Mágicos'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Cristales puros llenos'
     - ' &7de magia antigua.'
@@ -2337,7 +2339,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3◎ &#B45CFFOrbe del Vacío'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Un orbe que absorbe'
     - ' &7la luz a su alrededor.'
@@ -2357,7 +2359,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3♛ &#FFD84DCorona Rota'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7La corona partida de'
     - ' &7un rey olvidado.'
@@ -2377,7 +2379,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3✪ &#FFC83DMedalla de Oro del Rey'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_currency> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Una medalla de oro'
     - ' &7con el sello real.'
@@ -2397,7 +2399,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3☀ &#FFE24DFragmento Solar'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Un pedazo de sol'
     - ' &7que nunca se apaga.'
@@ -2417,7 +2419,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3☾ &#C6D4FFFragmento Lunar'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Un trozo de luna que'
     - ' &7brilla en la noche.'
@@ -2436,7 +2438,7 @@ items:
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
     name: '&#FFD1F3☠ &#E6DCC9Cráneo Antiguo'
     lore:
-    - '&#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
+    - '&f<glyph:lz_item> &#FF6FD8&lMítico &8• &#9EA3AEReliquia &8• &#C9CDD6Botín'
     - ''
     - ' &7Un cráneo de una'
     - ' &7época perdida.'
@@ -2460,7 +2462,7 @@ items:
     id: TRIAL_KEY
     name: '&#C38BFF✦ Llave de Raíz'
     lore:
-    - '&#FFD36B&lHistoria &8• &#9EA3AEObjeto de misión'
+    - '&f<glyph:lz_item> &#FFD36B&lHistoria &8• &#9EA3AEObjeto de misión'
     - ''
     - ' &7Forjada por Bram con el juramento'
     - ' &7de su clan: &#FFD36B«Recuerda»&7.'
@@ -2472,7 +2474,7 @@ items:
     id: SHIELD
     name: '&#F86363✦ Escudo de la Guardia'
     lore:
-    - '&#FFD36B&lHistoria &8• &#9EA3AERecompensa'
+    - '&f<glyph:lz_armor> &#FFD36B&lHistoria &8• &#9EA3AERecompensa'
     - ''
     - ' &7Lo llevó la guardia que custodiaba'
     - ' &7las puertas de Orian.'
@@ -2482,7 +2484,7 @@ items:
     id: WHEAT_SEEDS
     name: '&#9EE37D✦ Semillas Limpias'
     lore:
-    - '&#FFD36B&lHistoria &8• &#9EA3AERecompensa'
+    - '&f<glyph:lz_item> &#FFD36B&lHistoria &8• &#9EA3AERecompensa'
     - ''
     - ' &7Purificadas por Malvor.'
     - ' &7Lo primero sano que crece en años.'
@@ -2492,7 +2494,7 @@ items:
     id: WRITABLE_BOOK
     name: '&#E0C28A✦ Crónica Restaurada'
     lore:
-    - '&#FFD36B&lHistoria &8• &#9EA3AEObjeto de misión'
+    - '&f<glyph:lz_item> &#FFD36B&lHistoria &8• &#9EA3AEObjeto de misión'
     - ''
     - ' &7Las páginas que la Maleza borró,'
     - ' &7reescritas por Aldric el Cronista.'
@@ -2504,7 +2506,7 @@ items:
     id: IRON_CHESTPLATE
     name: '&#F86363✦ Coraza de la Guardia'
     lore:
-    - '&#FFD36B&lHistoria &8• &#9EA3AERecompensa'
+    - '&f<glyph:lz_armor> &#FFD36B&lHistoria &8• &#9EA3AERecompensa'
     - ''
     - ' &7Forjada para la guardia del Rey.'
     - ' &7Ganada en la Noche de la Maleza.'
