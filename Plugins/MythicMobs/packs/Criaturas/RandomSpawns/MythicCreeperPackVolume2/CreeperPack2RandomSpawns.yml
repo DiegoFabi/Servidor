@@ -35,16 +35,3 @@ MSO_DarkOak_Creeper_Randomspawn:
   Conditions:
   - mobtype{type=CREEPER}
   - biome{b=DARK_FOREST}
-MSO_Snowy_Creeper_Randomspawn:
-  Action: REPLACE
-  Worlds: survivalMain
-  MobType: MSO_Creeper_Snowy
-  Chance: 0.04
-  Priority: 1
-  Conditions:
-  - mobtype{type=CREEPER}
-  - biome{b=SNOWY_PLAINS,SNOWY_TAIGA,SNOWY_SLOPES,ICE_SPIKES,FROZEN_PEAKS,GROVE}
-
-
-
-# 8503SZ2ZS
