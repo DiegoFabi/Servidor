@@ -1,0 +1,41 @@
+{
+  "pack": {
+    "description": "2D Player Heads",
+    "pack_format": 46,
+    "supported_formats": {
+      "min_inclusive": 46,
+      "max_inclusive": 99
+    }
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "2d_player_heads_1_21_4",
+        "min_format": 42,
+        "max_format": 55,
+        "formats": {
+          "min_inclusive": 42,
+          "max_inclusive": 55
+        }
+      },
+      {
+        "directory": "2d_player_heads_1_21_6",
+        "min_format": 63,
+        "max_format": 83,
+        "formats": {
+          "min_inclusive": 63,
+          "max_inclusive": 83
+        }
+      },
+      {
+        "directory": "2d_player_heads_26_1",
+        "min_format": 84,
+        "max_format": 99,
+        "formats": {
+          "min_inclusive": 84,
+          "max_inclusive": 99
+        }
+      }
+    ]
+  }
+}

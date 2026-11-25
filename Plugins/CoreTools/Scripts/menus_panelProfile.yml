@@ -9,3 +9,28 @@ panelprofile_b6_click:
   Mechanics:
   - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
   - 'command{c="stats";runas=op} @Self'
+panelprofile_trabajos_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="jobs";runas=player} @Self'
+panelprofile_bovedas_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+panelprofile_mascotas_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="mcpets";runas=player} @Self'
+panelprofile_cosmeticos_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuCosmeticos {caster_name}";runas=console} @Self'
+panelprofile_historia_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="historia";runas=player} @Self'

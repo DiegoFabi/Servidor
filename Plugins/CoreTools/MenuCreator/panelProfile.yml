@@ -1,290 +1,168 @@
-# Perfil del jugador. Abrir: /coremenu panelProfile
-# Equipamiento: botones fijos con descripción. NO se usan los placeholders de
-# objetos de la expansión Player de PlaceholderAPI (armadura y manos): lanzan un
-# NullPointerException con el slot vacío e impiden abrir el menú.
-# (placeholders de PlaceholderAPI, expansion Player). Los dynamic_button
-# anteriores construian el item con un placeholder como material y
-# hacian fallar la apertura del menu.
-# Habilidades: solo visuales, preparadas para AuraSkills (sin comandos).
+# Perfil del jugador (diseño con textura: Inventories/along:font/gui/perfil.png, carácter U+3290).
+# Cabeza 2D grande: player_head con custom_model_data 100 (pack 2DPlayerHeads + player_head.json de Inventories).
+# Equipamiento: iconos fijos (los placeholders de objetos de PAPI fallan con el slot vacío).
 panelProfile:
   permission: ''
   bottom_inventory: false
-  name: '         &8— ⋄ Mi Perfil ⋄ —'
+  name: ㈮㈮&f㊐
   size: 5
   fill_material: AIR
   enable_animation: false
   buttons:
-    eq_casco:
+    volver:
       location: top
       slots:
-      - 10
+      - 0
       source: vanilla
-      material: iron_helmet
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Casco</gradient>
+      material: arrow
+      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
       lore:
-      - '<#C9CDD6>Protege tu cabeza.'
-      - '<#C9CDD6>Mira tu inventario para ver tu cabeza.'
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    eq_pecho:
+      left_click:
+        Scripts:
+        - menuseleccion_volver_click
+      right_click:
+        Scripts:
+        - menuseleccion_volver_click
+    jugador:
       location: top
       slots:
       - 19
       source: vanilla
-      material: iron_chestplate
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pechera</gradient>
-      lore:
-      - '<#C9CDD6>Protege tu torso.'
-      - '<#C9CDD6>Mira tu inventario para ver tu torso.'
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    eq_piernas:
-      location: top
-      slots:
-      - 28
-      source: vanilla
-      material: iron_leggings
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pantalones</gradient>
-      lore:
-      - '<#C9CDD6>Protege tus piernas.'
-      - '<#C9CDD6>Mira tu inventario para ver tu piernas.'
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    eq_botas:
-      location: top
-      slots:
-      - 37
-      source: vanilla
-      material: iron_boots
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Botas</gradient>
-      lore:
-      - '<#C9CDD6>Protege tus pies.'
-      - '<#C9CDD6>Mira tu inventario para ver tu pies.'
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    eq_mano:
-      location: top
-      slots:
-      - 20
-      source: vanilla
-      material: iron_sword
-      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Mano principal</gradient>
-      lore:
-      - '<#C9CDD6>El objeto que llevas en la mano'
-      - '<#C9CDD6>derecha (arma o herramienta).'
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    eq_offhand:
-      location: top
-      slots:
-      - 29
-      source: vanilla
-      material: shield
-      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Mano secundaria</gradient>
-      lore:
-      - '<#C9CDD6>El objeto de tu mano izquierda'
-      - '<#C9CDD6>(escudo, antorcha, tótem...).'
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    jugador:
-      location: top
-      slots:
-      - 11
-      source: vanilla
       material: player_head
-      texture: player
       name: <white><glyph:person> <gradient:#FFE29A:#FFB347>{caster_name}</gradient>
       lore:
-      - <#C9CDD6>Tu equipamiento a la izquierda
-      - <#C9CDD6>y tus habilidades a la derecha.
+      - <#C9CDD6>Tu perfil en el servidor.
       - ''
-      - '<white><glyph:gold_coin> <#E6E8EE>Moneda: <#FFD36B>%excellenteconomy_balance_short_money%'
-      - '<white><glyph:diamond> <#E6E8EE>Shards: <#FFD36B>%excellenteconomy_balance_short_shards%'
-      - '<white><glyph:heart> <#E6E8EE>Vida: <#FFD36B>%player_health_rounded%'
       - '<white><glyph:pack1_up> <#E6E8EE>Nivel: <#FFD36B>%player_level%'
+      - '<white><glyph:heart> <#E6E8EE>Vida: <#FFD36B>%player_health_rounded%'
+      - '<white><glyph:star> <#E6E8EE>Clase: <#FFD36B>%coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
-    # Posible implementacion: AuraSkills -> nivel %auraskills_mining% (cambia "—" por el placeholder)
-    hab_mineria:
+      - HIDE_ADDITIONAL_TOOLTIP
+      texture: player
+      custom_model_data_float: 100
+    dinero:
+      location: top
+      slots:
+      - 13
+      source: vanilla
+      material: gold_ingot
+      name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Dinero</gradient>
+      lore:
+      - <#E6E8EE>Tienes <#FFD36B>%excellenteconomy_balance_short_money%
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    shards:
       location: top
       slots:
       - 14
       source: vanilla
-      material: iron_pickaxe
-      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Minería</gradient>
+      material: amethyst_shard
+      name: <white><glyph:diamond> <gradient:#FFE29A:#FFB347>Shards</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - <#E6E8EE>Tienes <#D89BFF>✦ %excellenteconomy_balance_short_shards%
+      - <#9EA3AE>Desbloquean bóvedas, mascotas y más.
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_foraging% (cambia "—" por el placeholder)
-    hab_tala:
+    clan:
       location: top
       slots:
       - 15
       source: vanilla
-      material: iron_axe
-      name: <white><glyph:tree> <gradient:#FFE29A:#FFB347>Tala</gradient>
+      material: white_banner
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Clan</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - <#E6E8EE>%justteams_display%
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_farming% (cambia "—" por el placeholder)
-    hab_agricultura:
+    tiempo:
       location: top
       slots:
-      - 16
+      - 22
       source: vanilla
-      material: wheat
-      name: <white><glyph:clover> <gradient:#FFE29A:#FFB347>Agricultura</gradient>
+      material: clock
+      name: <white><glyph:sand_clock> <gradient:#FFE29A:#FFB347>Tiempo Jugado Hoy</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - <#FFD36B>%typewriter_dYrRCibppvxbeBO%h %typewriter_LVykDvao4aWrRNE%m
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_fishing% (cambia "—" por el placeholder)
-    hab_pesca:
+    clase:
       location: top
       slots:
       - 23
       source: vanilla
-      material: fishing_rod
-      name: <white><glyph:wave> <gradient:#FFE29A:#FFB347>Pesca</gradient>
+      material: nether_star
+      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Clase</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - '<#E6E8EE>Tu clase: <#FFD36B>%coretools_var_player_clase_nombre%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_fighting% (cambia "—" por el placeholder)
-    hab_combate:
+    trabajos:
       location: top
       slots:
-      - 24
+      - 31
       source: vanilla
-      material: iron_sword
-      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Combate</gradient>
+      material: iron_pickaxe
+      name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Trabajos</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
+      - <#C9CDD6>Gana dinero con tu oficio.
       - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_archery% (cambia "—" por el placeholder)
-    hab_arqueria:
-      location: top
-      slots:
-      - 25
-      source: vanilla
-      material: bow
-      name: <white><glyph:rocket> <gradient:#FFE29A:#FFB347>Arquería</gradient>
-      lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_defense% (cambia "—" por el placeholder)
-    hab_defensa:
+      left_click:
+        Scripts:
+        - panelprofile_trabajos_click
+      right_click:
+        Scripts:
+        - panelprofile_trabajos_click
+    habilidades:
       location: top
       slots:
       - 32
       source: vanilla
-      material: shield
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Defensa</gradient>
+      material: diamond_sword
+      name: <white><glyph:pack1_stats> <gradient:#FFE29A:#FFB347>Habilidades y Poderes</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
+      - <#C9CDD6>Tus estadísticas y poderes
+      - <#C9CDD6>de clase.
       - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_agility% (cambia "—" por el placeholder)
-    hab_agilidad:
+      left_click:
+        Scripts:
+        - panelprofile_b6_click
+      right_click:
+        Scripts:
+        - panelprofile_b6_click
+    combate:
       location: top
       slots:
       - 33
       source: vanilla
-      material: feather
-      name: <white><glyph:feather> <gradient:#FFE29A:#FFB347>Agilidad</gradient>
+      material: experience_bottle
+      name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Poder de Habilidades</gradient>
       lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
-    # Posible implementacion: AuraSkills -> nivel %auraskills_alchemy% (cambia "—" por el placeholder)
-    hab_alquimia:
-      location: top
-      slots:
-      - 34
-      source: vanilla
-      material: brewing_stand
-      name: <white><glyph:potion> <gradient:#FFE29A:#FFB347>Alquimia</gradient>
-      lore:
-      - <#C9CDD6>Sube de nivel realizando
-      - <#C9CDD6>acciones de esta habilidad.
-      - ''
-      - '<white><glyph:pack1_stats> <#E6E8EE>Nivel: <#FFD36B>—'
-      - '<white><glyph:pack1_up> <#E6E8EE>Progreso: <#FFD36B>—'
-      - ''
-      - <#7A7F8A>Próximamente
+      - '<#E6E8EE>Poder total: <#FFD36B>%auraskills_power%'
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
     mensajes:
       location: top
       slots:
-      - 39
+      - 34
       source: vanilla
       material: writable_book
       name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Mensajes Privados</gradient>
@@ -295,64 +173,138 @@ panelProfile:
       - <white><glyph:raton_izq> <#7FB2FF>Clic para alternar
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
         - panelprofile_b2_click
       right_click:
         Scripts:
         - panelprofile_b2_click
-      shift_left_click:
-        Scripts:
-        - panelprofile_b2_click
-      shift_right_click:
-        Scripts:
-        - panelprofile_b2_click
-    volver:
+    eq_casco:
       location: top
       slots:
-      - 40
+      - 17
       source: vanilla
-      material: dark_oak_door
-      name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
+      material: leather_helmet
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Casco</gradient>
       lore:
-      - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
+      - <#C9CDD6>Protege tu cabeza.
       flags:
       - HIDE_ATTRIBUTES
-      left_click:
-        Scripts:
-        - menuseleccion_volver_click
-      right_click:
-        Scripts:
-        - menuseleccion_volver_click
-      shift_left_click:
-        Scripts:
-        - menuseleccion_volver_click
-      shift_right_click:
-        Scripts:
-        - menuseleccion_volver_click
-    estadisticas:
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_pecho:
       location: top
       slots:
-      - 41
+      - 26
       source: vanilla
-      material: gold_ingot
-      name: <white><glyph:pack1_stats> <gradient:#FFE29A:#FFB347>Habilidades y Poderes</gradient>
+      material: leather_chestplate
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pechera</gradient>
       lore:
-      - <#C9CDD6>Consulta tus estadísticas
-      - <#C9CDD6>y poderes de clase.
+      - <#C9CDD6>Protege tu torso.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_piernas:
+      location: top
+      slots:
+      - 35
+      source: vanilla
+      material: leather_leggings
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pantalones</gradient>
+      lore:
+      - <#C9CDD6>Protege tus piernas.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    eq_botas:
+      location: top
+      slots:
+      - 44
+      source: vanilla
+      material: leather_boots
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Botas</gradient>
+      lore:
+      - <#C9CDD6>Protege tus pies.
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    boveda:
+      location: top
+      slots:
+      - 36
+      source: vanilla
+      material: barrel
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Bóvedas</gradient>
+      lore:
+      - <#C9CDD6>Tus cofres personales.
       - ''
-      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver tus estadísticas
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
       flags:
       - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
       left_click:
         Scripts:
-        - panelprofile_b6_click
+        - panelprofile_bovedas_click
       right_click:
         Scripts:
-        - panelprofile_b6_click
-      shift_left_click:
+        - panelprofile_bovedas_click
+    mascotas:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: bone
+      name: <white><glyph:heart> <gradient:#FFE29A:#FFB347>Mascotas</gradient>
+      lore:
+      - <#C9CDD6>Invoca a tus compañeros.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
         Scripts:
-        - panelprofile_b6_click
-      shift_right_click:
+        - panelprofile_mascotas_click
+      right_click:
         Scripts:
-        - panelprofile_b6_click
+        - panelprofile_mascotas_click
+    cosmeticos:
+      location: top
+      slots:
+      - 38
+      source: vanilla
+      material: leather_horse_armor
+      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Cosméticos</gradient>
+      lore:
+      - <#C9CDD6>Sombreros, mochilas y más.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - panelprofile_cosmeticos_click
+      right_click:
+        Scripts:
+        - panelprofile_cosmeticos_click
+    historia:
+      location: top
+      slots:
+      - 39
+      source: vanilla
+      material: book
+      name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Historia</gradient>
+      lore:
+      - <#C9CDD6>Tu progreso en la historia.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+      left_click:
+        Scripts:
+        - panelprofile_historia_click
+      right_click:
+        Scripts:
+        - panelprofile_historia_click

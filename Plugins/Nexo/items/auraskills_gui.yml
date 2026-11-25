@@ -231,15 +231,6 @@ skills_level_progress:
     - gui/aura_skills_level_progress
     custom_model_data: 40070
 
-skills_head:
-  itemname: <white>
-  material: PLAYER_HEAD
-  excludeFromInventory: true
-  Pack:
-    generate_model: false
-    model: aura_skills_head
-    custom_model_data: 100
-
 book_previous_nav:
   itemname: <white>
   material: BRICK

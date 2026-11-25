@@ -32,6 +32,26 @@
             "type": "minecraft:player_head"
           }
         }
+      },
+      {
+        "threshold": 100,
+        "model": {
+          "type": "minecraft:special",
+          "base": "nexo:2d_player_head_large",
+          "model": {
+            "type": "minecraft:player_head"
+          }
+        }
+      },
+      {
+        "threshold": 101,
+        "model": {
+          "type": "minecraft:special",
+          "base": "nexo:2d_player_head",
+          "model": {
+            "type": "minecraft:player_head"
+          }
+        }
       }
     ],
     "fallback": {
@@ -41,5 +61,6 @@
         "type": "minecraft:player_head"
       }
     }
-  }
+  },
+  "oversized_in_gui": true
 }

@@ -1,7 +1,7 @@
 # ============================================================
 #  Casa de Subastas (CoreTools AuctionHouse) — versión simple
 #  Abrir: botón "Subastas" del menú principal
-#         (core-auctionhouse subastas <jugador>)
+#         (core-auctionhouse:ah subastas spawn <jugador>)
 #
 #  Como en la mayoría de servidores:
 #  - Solo venta a precio fijo (sin pujas), en Moneda (Vault), 7 días.

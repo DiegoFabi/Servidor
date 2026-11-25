@@ -39,7 +39,7 @@ menumain_subastas_click:
   Mechanics:
   - 'closeinventory{} @Self'
   - 'playsound{sound="minecraft:block.note_block.bell";volume=1;pitch=1} @Self'
-  - 'command{c="core-auctionhouse subastas {caster_name}";runas=console} @Self'
+  - 'command{c="core-auctionhouse:ah subastas spawn {caster_name}";runas=console} @Self'
 menumain_historia_click:
   Conditions: []
   Mechanics:

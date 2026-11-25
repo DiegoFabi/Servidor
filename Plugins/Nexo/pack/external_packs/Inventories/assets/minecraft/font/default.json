@@ -1,489 +1,498 @@
 {
-    "providers": [
-        {
-            "type": "bitmap",
-            "file": "along:font/midas_menu.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㋰"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/chat/coin.png",
-            "ascent": 10,
-            "height": 13,
-            "chars": [
-                "㈀"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/chat/prefix.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈁"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/buy.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈂"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/buy_stacks.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈃"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/main.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈄"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/space_split.png",
-            "ascent": -32768,
-            "height": -6,
-            "chars": [
-                "㈮"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/sell.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈅"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/sell_stacks.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈆"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/blocks.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈇"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/dyes.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈈"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/foods.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈉"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/minerals_ores.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈊"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/miscellaneous.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈋"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/mob_drops.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈌"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/redstone.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈍"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/spawner.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈎"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/categories/farming.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈞"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/balance.png",
-            "ascent": 7,
-            "height": 8,
-            "chars": [
-                "㈏"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/buy.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈐"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/cancel.png",
-            "ascent": 7,
-            "height": 8,
-            "chars": [
-                "㈑"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/coin.png",
-            "ascent": 11,
-            "height": 16,
-            "chars": [
-                "㈒"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/confirm.png",
-            "ascent": 7,
-            "height": 8,
-            "chars": [
-                "㈓"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/equal.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈔"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/minus.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈕"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/mouse.png",
-            "ascent": 9,
-            "height": 12,
-            "chars": [
-                "㈖"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/negative_equal.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈗"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/plus.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈘"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/price.png",
-            "ascent": 7,
-            "height": 8,
-            "chars": [
-                "㈙"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/icon/sell.png",
-            "ascent": 8,
-            "height": 9,
-            "chars": [
-                "㈚"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/misc/empty.png",
-            "ascent": -32768,
-            "height": -10,
-            "chars": [
-                "㈛"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/misc/air.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈜"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/blocks.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈝"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/dyes.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈞"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/farming.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈟"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/minerals.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈠"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/miscellaneous.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈡"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/mob_drops.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈢"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/redstone.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈣"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/spawner.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈤"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/blocks.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈥"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/dyes.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈦"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/farming.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈧"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/foods.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈨"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/minerals.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈩"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/miscellaneous.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈪"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/mob_drops.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈫"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/redstone.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈬"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/title/category/spawner.png",
-            "ascent": 8,
-            "height": 10,
-            "chars": [
-                "㈭"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/mundo.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㈽"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/fin.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㉍"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/inframundo.png",
-            "ascent": 21,
-            "height": 256,
-            "chars": [
-                "㉝"
-            ]
-        },
-        {
-            "type": "bitmap",
-            "file": "along:font/gui/wallet_1.png",
-            "ascent": 99,
-            "height": 256,
-            "chars": [
-                "㉭"
-            ]
-        },
-        {
-            "type": "space",
-            "advances": {
-                "Ͽ": -32,
-                "ϼ": -3,
-                "Ϻ": -1
-            }
-        }
-    ]
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "along:font/midas_menu.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㋰"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/chat/coin.png",
+      "ascent": 10,
+      "height": 13,
+      "chars": [
+        "㈀"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/chat/prefix.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈁"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/buy.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈂"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/buy_stacks.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈃"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/main.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈄"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/space_split.png",
+      "ascent": -32768,
+      "height": -6,
+      "chars": [
+        "㈮"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/sell.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈅"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/sell_stacks.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈆"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/blocks.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈇"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/dyes.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈈"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/foods.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈉"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/minerals_ores.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈊"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/miscellaneous.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈋"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/mob_drops.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈌"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/redstone.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈍"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/spawner.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈎"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/categories/farming.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈞"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/balance.png",
+      "ascent": 7,
+      "height": 8,
+      "chars": [
+        "㈏"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/buy.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈐"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/cancel.png",
+      "ascent": 7,
+      "height": 8,
+      "chars": [
+        "㈑"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/coin.png",
+      "ascent": 11,
+      "height": 16,
+      "chars": [
+        "㈒"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/confirm.png",
+      "ascent": 7,
+      "height": 8,
+      "chars": [
+        "㈓"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/equal.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈔"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/minus.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈕"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/mouse.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "㈖"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/negative_equal.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈗"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/plus.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈘"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/price.png",
+      "ascent": 7,
+      "height": 8,
+      "chars": [
+        "㈙"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/icon/sell.png",
+      "ascent": 8,
+      "height": 9,
+      "chars": [
+        "㈚"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/misc/empty.png",
+      "ascent": -32768,
+      "height": -10,
+      "chars": [
+        "㈛"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/misc/air.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈜"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/blocks.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈝"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/dyes.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈞"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/farming.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈟"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/minerals.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈠"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/miscellaneous.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈡"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/mob_drops.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈢"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/redstone.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈣"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/spawner.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈤"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/blocks.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈥"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/dyes.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈦"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/farming.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈧"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/foods.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈨"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/minerals.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈩"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/miscellaneous.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈪"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/mob_drops.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈫"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/redstone.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈬"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/title/category/spawner.png",
+      "ascent": 8,
+      "height": 10,
+      "chars": [
+        "㈭"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/mundo.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㈽"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/fin.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㉍"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/inframundo.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㉝"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/wallet_1.png",
+      "ascent": 99,
+      "height": 256,
+      "chars": [
+        "㉭"
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+        "Ͽ": -32,
+        "ϼ": -3,
+        "Ϻ": -1
+      }
+    },
+    {
+      "type": "bitmap",
+      "file": "along:font/gui/perfil.png",
+      "ascent": 21,
+      "height": 256,
+      "chars": [
+        "㊐"
+      ]
+    }
+  ]
 }
