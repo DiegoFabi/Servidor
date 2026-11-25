@@ -223,7 +223,7 @@ items:
     id: PAPER
     model-data: '200387'
     properties: 'tooltip_style:minecraft:red, usos:60'
-    name: '&#FFB38A✸ &#FF7A45Elixir Explosivo'
+    name: '&#FFB38A🔥 &#FF7A45Elixir Explosivo'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_common>'
     - '&f<glyph:star> &#FF7A45Salto Explosivo'
@@ -252,7 +252,7 @@ items:
     id: PAPER
     model-data: '200381'
     properties: 'tooltip_style:minecraft:dark_purple, usos:40'
-    name: '&#D8B4FF⚫ &#A66BFFPergamino del Vacío'
+    name: '&#D8B4FF● &#A66BFFPergamino del Vacío'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_rare>'
     - '&f<glyph:star> &#A66BFFCampo de Gravedad'
@@ -282,7 +282,7 @@ items:
     id: PAPER
     model-data: '200372'
     properties: 'tooltip_style:minecraft:blue, usos:25'
-    name: '&#BFE3FF✧ &#7FB8FFTomo Celestial'
+    name: '&#BFE3FF⭐ &#7FB8FFTomo Celestial'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_epic>'
     - '&f<glyph:star> &#7FB8FFImpacto Celestial'
@@ -372,7 +372,7 @@ items:
     id: PAPER
     model-data: '200388'
     properties: 'tooltip_style:minecraft:green'
-    name: '&#B8FFC9✚ &#5FE38AElixir de Vitalidad'
+    name: '&#B8FFC9❤ &#5FE38AElixir de Vitalidad'
     lore:
     - '&f<glyph:lz_food> <glyph:lz_common>'
     - '&f<glyph:star> &#5FE38APulso de Vida'
@@ -395,7 +395,7 @@ items:
     id: PAPER
     model-data: '200389'
     properties: 'tooltip_style:minecraft:aqua'
-    name: '&#BFEFFF➹ &#5FC8FFElixir de Celeridad'
+    name: '&#BFEFFF⏩ &#5FC8FFElixir de Celeridad'
     lore:
     - '&f<glyph:lz_food> <glyph:lz_common>'
     - '&f<glyph:star> &#5FC8FFEmbestida del Viento'
@@ -418,7 +418,7 @@ items:
     id: PAPER
     model-data: '200390'
     properties: 'tooltip_style:minecraft:dark_purple'
-    name: '&#E3C6FF☾ &#B07BFFElixir de Sombra'
+    name: '&#E3C6FF☽ &#B07BFFElixir de Sombra'
     lore:
     - '&f<glyph:lz_food> <glyph:lz_common>'
     - '&f<glyph:star> &#B07BFFPaso de Sombra'
@@ -554,7 +554,7 @@ items:
     id: PAPER
     model-data: '200352'
     properties: 'tooltip_style:minecraft:aqua, usos:40'
-    name: '&#C6F3FF◈ &#5FD0FFLágrima de Aguamarina'
+    name: '&#C6F3FF◆ &#5FD0FFLágrima de Aguamarina'
     lore:
     - '&f<glyph:lz_accessory> <glyph:lz_rare>'
     - '&f<glyph:star> &#5FD0FFLágrima del Océano'
@@ -584,7 +584,7 @@ items:
     id: PAPER
     model-data: '200351'
     properties: 'tooltip_style:minecraft:gold'
-    name: '&#FFE2A6◈ &#FFB43DTopacio del Banquete'
+    name: '&#FFE2A6◆ &#FFB43DTopacio del Banquete'
     lore:
     - '&f<glyph:lz_accessory> <glyph:lz_common>'
     - '&f<glyph:star> &#FFB43DBanquete Compartido'
@@ -637,7 +637,7 @@ items:
     id: PAPER
     model-data: '200373'
     properties: 'tooltip_style:minecraft:dark_red, usos:40'
-    name: '&#FFC2A6✹ &#FF6F45Grimorio Ígneo'
+    name: '&#FFC2A6🔥 &#FF6F45Grimorio Ígneo'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_rare>'
     - '&f<glyph:star> &#FF6F45Llama Interior'
@@ -697,7 +697,7 @@ items:
     id: PAPER
     model-data: '200376'
     properties: 'tooltip_style:minecraft:red, usos:40'
-    name: '&#FFB89A✹ &#FF5A2DRuna de Llamas'
+    name: '&#FFB89A🔥 &#FF5A2DRuna de Llamas'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_rare>'
     - '&f<glyph:star> &#FF5A2DCírculo de Llamas'
@@ -756,7 +756,7 @@ items:
     id: PAPER
     model-data: '200380'
     properties: 'tooltip_style:minecraft:blue, usos:25'
-    name: '&#D6E6FF✠ &#8FB3FFPergamino de Invocación'
+    name: '&#D6E6FF⚑ &#8FB3FFPergamino de Invocación'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_epic>'
     - '&f<glyph:star> &#8FB3FFInvocar Guardianes'
@@ -786,7 +786,7 @@ items:
     id: PAPER
     model-data: '200378'
     properties: 'tooltip_style:minecraft:white'
-    name: '&#F2F2F2↺ &#C9CDD6Pergamino de Retorno'
+    name: '&#F2F2F2⏪ &#C9CDD6Pergamino de Retorno'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - '&f<glyph:star> &#C9CDD6Retorno'
@@ -862,7 +862,7 @@ items:
     id: PAPER
     model-data: '200385'
     properties: 'tooltip_style:minecraft:green'
-    name: '&#D2FFB8✚ &#8FE34DJeringa de Adrenalina'
+    name: '&#D2FFB8🧪 &#8FE34DJeringa de Adrenalina'
     lore:
     - '&f<glyph:lz_food> <glyph:lz_rare>'
     - '&f<glyph:star> &#8FE34DAdrenalina'
@@ -885,7 +885,7 @@ items:
     id: PAPER
     model-data: '200384'
     properties: 'tooltip_style:minecraft:white'
-    name: '&#FFD6D6✚ &#FF6B6BBotiquín'
+    name: '&#FFD6D6❤ &#FF6B6BBotiquín'
     lore:
     - '&f<glyph:lz_food> <glyph:lz_common>'
     - '&f<glyph:star> &#FF6B6BPrimeros Auxilios'
@@ -931,7 +931,7 @@ items:
     id: PAPER
     model-data: '200378'
     properties: 'tooltip_style:minecraft:aqua'
-    name: '&#E6FFF6✧ &#7FE3C4Pergamino de Purificación'
+    name: '&#E6FFF6◇ &#7FE3C4Pergamino de Purificación'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - '&f<glyph:star> &#7FE3C4Purificación'
@@ -954,7 +954,7 @@ items:
     id: PAPER
     model-data: '200378'
     properties: 'tooltip_style:minecraft:dark_purple'
-    name: '&#E3D6FF◉ &#9A85F0Pergamino de Revelación'
+    name: '&#E3D6FF◎ &#9A85F0Pergamino de Revelación'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - '&f<glyph:star> &#9A85F0Revelación'
@@ -977,7 +977,7 @@ items:
     id: PAPER
     model-data: '200378'
     properties: 'tooltip_style:minecraft:aqua'
-    name: '&#E6F7FF➶ &#8FD8FFPergamino del Viento'
+    name: '&#E6F7FF☁ &#8FD8FFPergamino del Viento'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - '&f<glyph:star> &#8FD8FFRáfaga'
@@ -1078,7 +1078,7 @@ items:
     id: PAPER
     model-data: '200553'
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
-    name: '&#C9A8FF◉ &#6A1B9ARuna del Ojo del Abismo'
+    name: '&#C9A8FF◎ &#6A1B9ARuna del Ojo del Abismo'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_artifact>'
     - '&f<glyph:star> &#B07BFFOjo del Abismo'
@@ -1172,7 +1172,7 @@ items:
     id: PAPER
     model-data: '200553'
     properties: 'tooltip_style:minecraft:dark_red, usos:20'
-    name: '&#FFE7A3♛ &#B8860BRuna de la Corona del Caído'
+    name: '&#FFE7A3★ &#B8860BRuna de la Corona del Caído'
     lore:
     - '&f<glyph:lz_weapon> <glyph:lz_artifact>'
     - '&f<glyph:star> &#FFE7A3Corona del Caído'
@@ -1436,7 +1436,7 @@ items:
     id: PAPER
     model-data: '201002'
     properties: 'botin:comun'
-    name: '&#E6E8EE✿ &#F2EEE6Ovillo de Lana'
+    name: '&#E6E8EE● &#F2EEE6Ovillo de Lana'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Lana enredada lista para'
@@ -1449,7 +1449,7 @@ items:
     id: PAPER
     model-data: '201003'
     properties: 'botin:comun'
-    name: '&#E6E8EE▤ &#E8A8A0Cuero de Cerdo'
+    name: '&#E6E8EE■ &#E8A8A0Cuero de Cerdo'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Cuero fino y resistente,'
@@ -1462,7 +1462,7 @@ items:
     id: PAPER
     model-data: '201004'
     properties: 'botin:comun'
-    name: '&#E6E8EE◉ &#F2D27AAceite de Pescado'
+    name: '&#E6E8EE● &#F2D27AAceite de Pescado'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Aceite espeso que arde'
@@ -1475,7 +1475,7 @@ items:
     id: PAPER
     model-data: '201005'
     properties: 'botin:comun'
-    name: '&#E6E8EE▦ &#E6C99ATela del Desierto'
+    name: '&#E6E8EE▒ &#E6C99ATela del Desierto'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Tela gastada por la arena'
@@ -1488,7 +1488,7 @@ items:
     id: PAPER
     model-data: '201006'
     properties: 'botin:comun'
-    name: '&#E6E8EE➹ &#7FE07APluma de Loro'
+    name: '&#E6E8EE✎ &#7FE07APluma de Loro'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Pluma ligera y colorida,'
@@ -1514,7 +1514,7 @@ items:
     id: PAPER
     model-data: '201008'
     properties: 'botin:comun'
-    name: '&#E6E8EE✲ &#E38B8BEsporas de Champiñón'
+    name: '&#E6E8EE∴ &#E38B8BEsporas de Champiñón'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Esporas húmedas que se'
@@ -1527,7 +1527,7 @@ items:
     id: PAPER
     model-data: '201009'
     properties: 'botin:comun'
-    name: '&#E6E8EE⌒ &#9A8FA8Ala de Murciélago'
+    name: '&#E6E8EE▼ &#9A8FA8Ala de Murciélago'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Una membrana fina y'
@@ -1553,7 +1553,7 @@ items:
     id: PAPER
     model-data: '201011'
     properties: 'botin:comun'
-    name: '&#E6E8EE❦ &#A6D97AAnca de Rana'
+    name: '&#E6E8EE♣ &#A6D97AAnca de Rana'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Una pata de rana cruda.'
@@ -1566,7 +1566,7 @@ items:
     id: PAPER
     model-data: '201012'
     properties: 'botin:comun'
-    name: '&#E6E8EE◒ &#F5D7B8Concha Marina'
+    name: '&#E6E8EE◇ &#F5D7B8Concha Marina'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Una concha bonita pero'
@@ -1579,7 +1579,7 @@ items:
     id: PAPER
     model-data: '201013'
     properties: 'botin:comun'
-    name: '&#E6E8EE⋙ &#B5BCC6Espina de Pez'
+    name: '&#E6E8EE🎣 &#B5BCC6Espina de Pez'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Restos de un pez que'
@@ -1592,7 +1592,7 @@ items:
     id: PAPER
     model-data: '201014'
     properties: 'botin:comun'
-    name: '&#E6E8EE❧ &#C9B26BHoja Marchita'
+    name: '&#E6E8EE♧ &#C9B26BHoja Marchita'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_common>'
     - ' &7Una hoja seca que se'
@@ -1605,7 +1605,7 @@ items:
     id: PAPER
     model-data: '201015'
     properties: 'botin:comun'
-    name: '&#E6E8EE✦ &#FF9EC4Caramelo Rancio'
+    name: '&#E6E8EE● &#FF9EC4Caramelo Rancio'
     lore:
     - '&f<glyph:lz_food> <glyph:lz_common>'
     - ' &7Un dulce viejo y pegajoso'
@@ -1618,7 +1618,7 @@ items:
     id: PAPER
     model-data: '201016'
     properties: 'botin:comun'
-    name: '&#E6E8EE✪ &#D9A066Medalla de Bronce Oxidada'
+    name: '&#E6E8EE⭘ &#D9A066Medalla de Bronce Oxidada'
     lore:
     - '&f<glyph:lz_currency> <glyph:lz_common>'
     - ' &7Una medalla verdosa por'
@@ -1631,7 +1631,7 @@ items:
     id: PAPER
     model-data: '201017'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF❂ &#FF9ED8Mucosa de Ajolote'
+    name: '&#BFDDFF● &#FF9ED8Mucosa de Ajolote'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Moco brillante con un'
@@ -1644,7 +1644,7 @@ items:
     id: PAPER
     model-data: '201018'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF✧ &#5CD6B8Polvo de Ender'
+    name: '&#BFDDFF◇ &#5CD6B8Polvo de Ender'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Polvo que vibra cerca'
@@ -1657,7 +1657,7 @@ items:
     id: PAPER
     model-data: '201019'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF⬢ &#FFC94DCristal de Miel'
+    name: '&#BFDDFF◆ &#FFC94DCristal de Miel'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Miel cristalizada, dura'
@@ -1683,7 +1683,7 @@ items:
     id: PAPER
     model-data: '201021'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF◈ &#8FA3FFEscama de Phantom'
+    name: '&#BFDDFF◆ &#8FA3FFEscama de Phantom'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Escama ligera que flota'
@@ -1709,7 +1709,7 @@ items:
     id: PAPER
     model-data: '201023'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF✷ &#7FE3C4Púa de Guardián'
+    name: '&#BFDDFF▲ &#7FE3C4Púa de Guardián'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Púa dura de los templos'
@@ -1722,7 +1722,7 @@ items:
     id: PAPER
     model-data: '201024'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF✹ &#FF8A3DGel de Magma'
+    name: '&#BFDDFF🔥 &#FF8A3DGel de Magma'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Gel ardiente que nunca'
@@ -1735,7 +1735,7 @@ items:
     id: PAPER
     model-data: '201025'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF✺ &#5FE3FFTentáculo Brillante'
+    name: '&#BFDDFF☀ &#5FE3FFTentáculo Brillante'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Tentáculo que brilla'
@@ -1748,7 +1748,7 @@ items:
     id: PAPER
     model-data: '201026'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF♒ &#4FC3F7Esencia Acuática'
+    name: '&#BFDDFF🌊 &#4FC3F7Esencia Acuática'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7La esencia de un ahogado'
@@ -1774,7 +1774,7 @@ items:
     id: PAPER
     model-data: '201028'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF➶ &#7FB8FFAleta de Delfín'
+    name: '&#BFDDFF🌊 &#7FB8FFAleta de Delfín'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Aleta lisa y flexible,'
@@ -1800,7 +1800,7 @@ items:
     id: PAPER
     model-data: '201030'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF☘ &#5FE38ATrébol de Cuatro Hojas'
+    name: '&#BFDDFF♣ &#5FE38ATrébol de Cuatro Hojas'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Un trébol rarísimo'
@@ -1813,7 +1813,7 @@ items:
     id: PAPER
     model-data: '201031'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF✪ &#D9DEE6Medalla de Plata'
+    name: '&#BFDDFF⭘ &#D9DEE6Medalla de Plata'
     lore:
     - '&f<glyph:lz_currency> <glyph:lz_rare>'
     - ' &7Una medalla de plata'
@@ -1826,7 +1826,7 @@ items:
     id: PAPER
     model-data: '201032'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF✧ &#C9A8FFFragmentos de Cristal'
+    name: '&#BFDDFF◇ &#C9A8FFFragmentos de Cristal'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Cristales que guardan'
@@ -1839,7 +1839,7 @@ items:
     id: PAPER
     model-data: '201033'
     properties: 'tooltip_style:minecraft:blue, botin:raro'
-    name: '&#BFDDFF⋂ &#FF8A8AImán Antiguo'
+    name: '&#BFDDFF∩ &#FF8A8AImán Antiguo'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_rare>'
     - ' &7Un imán viejo que todavía'
@@ -1865,7 +1865,7 @@ items:
     id: PAPER
     model-data: '201035'
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
-    name: '&#FFD1F3◉ &#FFE6E6Ojo de Ghast'
+    name: '&#FFD1F3◎ &#FFE6E6Ojo de Ghast'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_legendary>'
     - ' &7Un ojo que todavía'
@@ -1878,7 +1878,7 @@ items:
     id: PAPER
     model-data: '201036'
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
-    name: '&#FFD1F3✠ &#8C8C8CPolvo de Wither'
+    name: '&#FFD1F3☠ &#8C8C8CPolvo de Wither'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_legendary>'
     - ' &7Ceniza negra que pudre'
@@ -1891,7 +1891,7 @@ items:
     id: PAPER
     model-data: '201037'
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
-    name: '&#FFD1F3✦ &#D27CFFCristales Mágicos'
+    name: '&#FFD1F3◆ &#D27CFFCristales Mágicos'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_legendary>'
     - ' &7Cristales puros llenos'
@@ -1917,7 +1917,7 @@ items:
     id: PAPER
     model-data: '201039'
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
-    name: '&#FFD1F3♛ &#FFD84DCorona Rota'
+    name: '&#FFD1F3★ &#FFD84DCorona Rota'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_legendary>'
     - ' &7La corona partida de'
@@ -1930,7 +1930,7 @@ items:
     id: PAPER
     model-data: '201040'
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
-    name: '&#FFD1F3✪ &#FFC83DMedalla de Oro del Rey'
+    name: '&#FFD1F3⭘ &#FFC83DMedalla de Oro del Rey'
     lore:
     - '&f<glyph:lz_currency> <glyph:lz_legendary>'
     - ' &7Una medalla de oro'
@@ -1956,7 +1956,7 @@ items:
     id: PAPER
     model-data: '201042'
     properties: 'tooltip_style:minecraft:light_purple, botin:mitico'
-    name: '&#FFD1F3☾ &#C6D4FFFragmento Lunar'
+    name: '&#FFD1F3☽ &#C6D4FFFragmento Lunar'
     lore:
     - '&f<glyph:lz_item> <glyph:lz_legendary>'
     - ' &7Un trozo de luna que'
@@ -1986,18 +1986,18 @@ items:
   # ================================================================
   historia_llave_raiz:
     id: TRIAL_KEY
-    name: '&#C38BFF✦ Llave de Raíz'
+    name: '&#C38BFF★ Llave de Raíz'
     lore:
     - '&f<glyph:lz_item> &#FFD36B&lHistoria'
     - ' &7Forjada por Bram con el juramento'
     - ' &7de su clan: &#FFD36B«Recuerda»&7.'
     - ''
-    - '&#7FFF9E➜ &#C9CDD6Llévasela al Rey Draemir.'
+    - '&#7FFF9E→ &#C9CDD6Llévasela al Rey Draemir.'
     itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP, DISPOSABLE, PLACEMENT
     triggers: DISABLED
   historia_escudo_guardia:
     id: SHIELD
-    name: '&#F86363✦ Escudo de la Guardia'
+    name: '&#F86363★ Escudo de la Guardia'
     lore:
     - '&f<glyph:lz_armor> &#FFD36B&lHistoria'
     - ' &7Lo llevó la guardia que custodiaba'
@@ -2006,7 +2006,7 @@ items:
     triggers: DISABLED
   historia_semillas_limpias:
     id: WHEAT_SEEDS
-    name: '&#9EE37D✦ Semillas Limpias'
+    name: '&#9EE37D★ Semillas Limpias'
     lore:
     - '&f<glyph:lz_item> &#FFD36B&lHistoria'
     - ' &7Purificadas por Malvor.'
@@ -2015,18 +2015,18 @@ items:
     triggers: DISABLED
   historia_cronica:
     id: WRITABLE_BOOK
-    name: '&#E0C28A✦ Crónica Restaurada'
+    name: '&#E0C28A★ Crónica Restaurada'
     lore:
     - '&f<glyph:lz_item> &#FFD36B&lHistoria'
     - ' &7Las páginas que la Maleza borró,'
     - ' &7reescritas por Aldric el Cronista.'
     - ''
-    - '&#7FFF9E➜ &#C9CDD6Llévasela al Rey Draemir.'
+    - '&#7FFF9E→ &#C9CDD6Llévasela al Rey Draemir.'
     itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP, DISPOSABLE
     triggers: DISABLED
   historia_coraza_guardia:
     id: IRON_CHESTPLATE
-    name: '&#F86363✦ Coraza de la Guardia'
+    name: '&#F86363★ Coraza de la Guardia'
     lore:
     - '&f<glyph:lz_armor> &#FFD36B&lHistoria'
     - ' &7Forjada para la guardia del Rey.'
