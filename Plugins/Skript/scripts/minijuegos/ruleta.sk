@@ -89,9 +89,12 @@ function ruletaGirar(forzar: text = ""):
     ruletaAbajo(all players)
     play sound "{@sonido}" with volume 1 to all players
 
-    # Animacion: 1 fotograma por tick (igual que el datapack)
+    # Animacion: 1 fotograma por tick (igual que el datapack).
+    # Los fotogramas estan en su propia fuente (minecraft:ruleta) para no pisar
+    # los espacios/glifos de Nexo de la fuente por defecto; /title permite indicar la fuente.
+    execute console command "title @a times 0 3 0"
     loop {-ruleta::frames::%{_color}%::*}:
-        send title loop-value to all players for 3 ticks with fadein 0 ticks and fadeout 0 ticks
+        execute console command "title @a title {""text"":""%loop-value%"",""font"":""minecraft:ruleta""}"
         wait 1 tick
 
     wait 5 ticks

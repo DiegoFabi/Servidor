@@ -118,8 +118,8 @@ stats:
     symbol: '%nexo_aura_stats_crit_chance%'
   crit_damage:
     color: '<#ffffff>'
-    symbol: ''
+    symbol: '%nexo_aura_stats_crit_damage%'
   speed:
     color: '<#ffffff>'
-    symbol: ''
+    symbol: '%nexo_aura_stats_speed%'
 file_version: 3
