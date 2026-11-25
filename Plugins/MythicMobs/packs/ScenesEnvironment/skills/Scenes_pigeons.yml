@@ -1,6 +1,6 @@
 
 pigeons_fly:
-  Cooldown: 77
+  Cooldown: 240
   TargetConditions:
   - isplayer
   Conditions:
@@ -10,7 +10,8 @@ pigeons_fly:
   Skills:
   - state{s=fly;li=3;lo=3} @self
   - sound{s=entity.bat.takeoff} @self
-  - remove{delay=100} @self
+  # En vez de borrarse (pensado para spawners), vuelven a aterrizar en su sitio
+  - state{s=land;li=10;lo=10;delay=140} @self
 
 
 pigeon_skin_1:
@@ -29,7 +30,7 @@ pigeon_skin_3:
   - model{mid=scenes_pigeon3;save=true} @self ~onLoad
 
 pigeon_fly:
-  Cooldown: 77
+  Cooldown: 220
   TargetConditions:
   - isplayer
   Conditions:
@@ -39,7 +40,7 @@ pigeon_fly:
   Skills:
   - state{s=fly} @self
   - sound{s=entity.bat.takeoff} @self
-  - remove{delay=65} @self
+  - state{s=land;li=10;lo=10;delay=120} @self
 
 deleteb:
   TargetConditions:
