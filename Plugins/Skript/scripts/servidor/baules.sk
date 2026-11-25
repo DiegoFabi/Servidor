@@ -44,7 +44,8 @@ command /pv [<integer>]:
         if arg-1 > {@baules}:
             send formatted "{@prefijo-baul} <#FF0000>The <#BB0000>number <#FF0000>must be between <#BB0000>1 <#FF0000>and <#BB0000>{@baules}<#FF0000>!" to player
             stop
-        if player doesn't have permission "axvaults.vault.%arg-1%":
+        if arg-1 > 1:
+            player doesn't have permission "axvaults.vault.%arg-1%"
             send formatted "{@prefijo-baul} <#FF0000>You don't own this vault!" to player
             stop
         execute console command "core-playervault baul_%arg-1% %player% 1"

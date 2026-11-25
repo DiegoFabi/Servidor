@@ -4,7 +4,7 @@
 # Se abren desde el selector (MenuCreator/menuBaules.yml) o con /pv <número>.
 
 baul_1:
-  permission: 'axvaults.vault.1'
+  permission: ''
   no_permission: '<#FF0000>You don''t own this vault!'
   name: '<black>Vault #1'
   size: 6

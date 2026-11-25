@@ -1,3 +1,4 @@
+# Bóveda #1 gratis para todos; las demás se compran en orden con Shards (100, 150, 200... +50 cada una).
 # Scripts de la réplica de AxVaults (menuBaules + PlayerVaults/Baules.yml).
 # Iconos y ranuras usadas se guardan en variables de CoreTools
 # (Variables/baules.yml) que actualiza Skript (scripts/servidor/baules.sk).
@@ -9,21 +10,18 @@ baul_bloqueado:
   - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <#FF0000>You don''t own this vault!"} @Self'
 
 baul_boton_1:
-  Conditions:
-  - 'Permission{p=axvaults.vault.1} trueElse baul_boton_1_bloqueado'
+  Conditions: []
   Mechanics:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_1%";amount=1;name="<#55ff00><bold>Vault #1";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_1%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_1_bloqueado:
   Mechanics:
   - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Vault #1";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_1:
-  Conditions:
-  - 'Permission{p=axvaults.vault.1} trueElse baul_bloqueado'
+  Conditions: []
   Mechanics:
   - 'openvault{name=baul_1} @Self'
 baul_icono_1:
-  Conditions:
-  - 'Permission{p=axvaults.vault.1} trueElse baul_bloqueado'
+  Conditions: []
   Mechanics:
   - 'command{c="baulicono 1 {caster_name}";runas=console} @Self'
 baul_abierto_1:
@@ -43,10 +41,10 @@ baul_boton_2:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_2%";amount=2;name="<#55ff00><bold>Vault #2";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_2%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_2_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=2;name="<#FF0000><bold>Vault #2";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #2";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 100 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_2:
   Conditions:
-  - 'Permission{p=axvaults.vault.2} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.2} trueElse baul_comprar_2'
   Mechanics:
   - 'openvault{name=baul_2} @Self'
 baul_icono_2:
@@ -71,10 +69,10 @@ baul_boton_3:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_3%";amount=3;name="<#55ff00><bold>Vault #3";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_3%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_3_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=3;name="<#FF0000><bold>Vault #3";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #3";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 150 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_3:
   Conditions:
-  - 'Permission{p=axvaults.vault.3} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.3} trueElse baul_comprar_3'
   Mechanics:
   - 'openvault{name=baul_3} @Self'
 baul_icono_3:
@@ -99,10 +97,10 @@ baul_boton_4:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_4%";amount=4;name="<#55ff00><bold>Vault #4";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_4%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_4_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=4;name="<#FF0000><bold>Vault #4";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #4";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 200 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_4:
   Conditions:
-  - 'Permission{p=axvaults.vault.4} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.4} trueElse baul_comprar_4'
   Mechanics:
   - 'openvault{name=baul_4} @Self'
 baul_icono_4:
@@ -127,10 +125,10 @@ baul_boton_5:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_5%";amount=5;name="<#55ff00><bold>Vault #5";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_5%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_5_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=5;name="<#FF0000><bold>Vault #5";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #5";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 250 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_5:
   Conditions:
-  - 'Permission{p=axvaults.vault.5} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.5} trueElse baul_comprar_5'
   Mechanics:
   - 'openvault{name=baul_5} @Self'
 baul_icono_5:
@@ -155,10 +153,10 @@ baul_boton_6:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_6%";amount=6;name="<#55ff00><bold>Vault #6";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_6%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_6_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=6;name="<#FF0000><bold>Vault #6";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #6";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 300 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_6:
   Conditions:
-  - 'Permission{p=axvaults.vault.6} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.6} trueElse baul_comprar_6'
   Mechanics:
   - 'openvault{name=baul_6} @Self'
 baul_icono_6:
@@ -183,10 +181,10 @@ baul_boton_7:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_7%";amount=7;name="<#55ff00><bold>Vault #7";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_7%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_7_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=7;name="<#FF0000><bold>Vault #7";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #7";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 350 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_7:
   Conditions:
-  - 'Permission{p=axvaults.vault.7} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.7} trueElse baul_comprar_7'
   Mechanics:
   - 'openvault{name=baul_7} @Self'
 baul_icono_7:
@@ -211,10 +209,10 @@ baul_boton_8:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_8%";amount=8;name="<#55ff00><bold>Vault #8";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_8%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_8_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=8;name="<#FF0000><bold>Vault #8";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #8";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 400 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_8:
   Conditions:
-  - 'Permission{p=axvaults.vault.8} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.8} trueElse baul_comprar_8'
   Mechanics:
   - 'openvault{name=baul_8} @Self'
 baul_icono_8:
@@ -239,10 +237,10 @@ baul_boton_9:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_9%";amount=9;name="<#55ff00><bold>Vault #9";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_9%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_9_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=9;name="<#FF0000><bold>Vault #9";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #9";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 450 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_9:
   Conditions:
-  - 'Permission{p=axvaults.vault.9} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.9} trueElse baul_comprar_9'
   Mechanics:
   - 'openvault{name=baul_9} @Self'
 baul_icono_9:
@@ -267,10 +265,10 @@ baul_boton_10:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_10%";amount=10;name="<#55ff00><bold>Vault #10";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_10%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_10_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=10;name="<#FF0000><bold>Vault #10";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #10";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 500 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_10:
   Conditions:
-  - 'Permission{p=axvaults.vault.10} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.10} trueElse baul_comprar_10'
   Mechanics:
   - 'openvault{name=baul_10} @Self'
 baul_icono_10:
@@ -295,10 +293,10 @@ baul_boton_11:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_11%";amount=11;name="<#55ff00><bold>Vault #11";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_11%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_11_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=11;name="<#FF0000><bold>Vault #11";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #11";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 550 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_11:
   Conditions:
-  - 'Permission{p=axvaults.vault.11} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.11} trueElse baul_comprar_11'
   Mechanics:
   - 'openvault{name=baul_11} @Self'
 baul_icono_11:
@@ -323,10 +321,10 @@ baul_boton_12:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_12%";amount=12;name="<#55ff00><bold>Vault #12";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_12%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_12_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=12;name="<#FF0000><bold>Vault #12";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #12";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 600 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_12:
   Conditions:
-  - 'Permission{p=axvaults.vault.12} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.12} trueElse baul_comprar_12'
   Mechanics:
   - 'openvault{name=baul_12} @Self'
 baul_icono_12:
@@ -351,10 +349,10 @@ baul_boton_13:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_13%";amount=13;name="<#55ff00><bold>Vault #13";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_13%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_13_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=13;name="<#FF0000><bold>Vault #13";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #13";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 650 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_13:
   Conditions:
-  - 'Permission{p=axvaults.vault.13} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.13} trueElse baul_comprar_13'
   Mechanics:
   - 'openvault{name=baul_13} @Self'
 baul_icono_13:
@@ -379,10 +377,10 @@ baul_boton_14:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_14%";amount=14;name="<#55ff00><bold>Vault #14";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_14%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_14_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=14;name="<#FF0000><bold>Vault #14";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #14";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 700 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_14:
   Conditions:
-  - 'Permission{p=axvaults.vault.14} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.14} trueElse baul_comprar_14'
   Mechanics:
   - 'openvault{name=baul_14} @Self'
 baul_icono_14:
@@ -407,10 +405,10 @@ baul_boton_15:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_15%";amount=15;name="<#55ff00><bold>Vault #15";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_15%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_15_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=15;name="<#FF0000><bold>Vault #15";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #15";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 750 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_15:
   Conditions:
-  - 'Permission{p=axvaults.vault.15} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.15} trueElse baul_comprar_15'
   Mechanics:
   - 'openvault{name=baul_15} @Self'
 baul_icono_15:
@@ -435,10 +433,10 @@ baul_boton_16:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_16%";amount=16;name="<#55ff00><bold>Vault #16";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_16%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_16_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=16;name="<#FF0000><bold>Vault #16";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #16";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 800 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_16:
   Conditions:
-  - 'Permission{p=axvaults.vault.16} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.16} trueElse baul_comprar_16'
   Mechanics:
   - 'openvault{name=baul_16} @Self'
 baul_icono_16:
@@ -463,10 +461,10 @@ baul_boton_17:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_17%";amount=17;name="<#55ff00><bold>Vault #17";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_17%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_17_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=17;name="<#FF0000><bold>Vault #17";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #17";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 850 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_17:
   Conditions:
-  - 'Permission{p=axvaults.vault.17} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.17} trueElse baul_comprar_17'
   Mechanics:
   - 'openvault{name=baul_17} @Self'
 baul_icono_17:
@@ -491,10 +489,10 @@ baul_boton_18:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_18%";amount=18;name="<#55ff00><bold>Vault #18";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_18%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_18_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=18;name="<#FF0000><bold>Vault #18";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #18";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 900 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_18:
   Conditions:
-  - 'Permission{p=axvaults.vault.18} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.18} trueElse baul_comprar_18'
   Mechanics:
   - 'openvault{name=baul_18} @Self'
 baul_icono_18:
@@ -519,10 +517,10 @@ baul_boton_19:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_19%";amount=19;name="<#55ff00><bold>Vault #19";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_19%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_19_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=19;name="<#FF0000><bold>Vault #19";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #19";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 950 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_19:
   Conditions:
-  - 'Permission{p=axvaults.vault.19} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.19} trueElse baul_comprar_19'
   Mechanics:
   - 'openvault{name=baul_19} @Self'
 baul_icono_19:
@@ -547,10 +545,10 @@ baul_boton_20:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_20%";amount=20;name="<#55ff00><bold>Vault #20";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_20%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_20_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=20;name="<#FF0000><bold>Vault #20";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #20";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1000 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_20:
   Conditions:
-  - 'Permission{p=axvaults.vault.20} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.20} trueElse baul_comprar_20'
   Mechanics:
   - 'openvault{name=baul_20} @Self'
 baul_icono_20:
@@ -575,10 +573,10 @@ baul_boton_21:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_21%";amount=21;name="<#55ff00><bold>Vault #21";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_21%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_21_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=21;name="<#FF0000><bold>Vault #21";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #21";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1050 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_21:
   Conditions:
-  - 'Permission{p=axvaults.vault.21} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.21} trueElse baul_comprar_21'
   Mechanics:
   - 'openvault{name=baul_21} @Self'
 baul_icono_21:
@@ -603,10 +601,10 @@ baul_boton_22:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_22%";amount=22;name="<#55ff00><bold>Vault #22";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_22%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_22_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=22;name="<#FF0000><bold>Vault #22";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #22";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1100 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_22:
   Conditions:
-  - 'Permission{p=axvaults.vault.22} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.22} trueElse baul_comprar_22'
   Mechanics:
   - 'openvault{name=baul_22} @Self'
 baul_icono_22:
@@ -631,10 +629,10 @@ baul_boton_23:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_23%";amount=23;name="<#55ff00><bold>Vault #23";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_23%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_23_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=23;name="<#FF0000><bold>Vault #23";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #23";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1150 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_23:
   Conditions:
-  - 'Permission{p=axvaults.vault.23} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.23} trueElse baul_comprar_23'
   Mechanics:
   - 'openvault{name=baul_23} @Self'
 baul_icono_23:
@@ -659,10 +657,10 @@ baul_boton_24:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_24%";amount=24;name="<#55ff00><bold>Vault #24";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_24%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_24_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=24;name="<#FF0000><bold>Vault #24";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #24";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1200 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_24:
   Conditions:
-  - 'Permission{p=axvaults.vault.24} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.24} trueElse baul_comprar_24'
   Mechanics:
   - 'openvault{name=baul_24} @Self'
 baul_icono_24:
@@ -687,10 +685,10 @@ baul_boton_25:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_25%";amount=25;name="<#55ff00><bold>Vault #25";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_25%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_25_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=25;name="<#FF0000><bold>Vault #25";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #25";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1250 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_25:
   Conditions:
-  - 'Permission{p=axvaults.vault.25} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.25} trueElse baul_comprar_25'
   Mechanics:
   - 'openvault{name=baul_25} @Self'
 baul_icono_25:
@@ -715,10 +713,10 @@ baul_boton_26:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_26%";amount=26;name="<#55ff00><bold>Vault #26";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_26%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_26_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=26;name="<#FF0000><bold>Vault #26";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #26";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1300 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_26:
   Conditions:
-  - 'Permission{p=axvaults.vault.26} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.26} trueElse baul_comprar_26'
   Mechanics:
   - 'openvault{name=baul_26} @Self'
 baul_icono_26:
@@ -743,10 +741,10 @@ baul_boton_27:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_27%";amount=27;name="<#55ff00><bold>Vault #27";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_27%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_27_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=27;name="<#FF0000><bold>Vault #27";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #27";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1350 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_27:
   Conditions:
-  - 'Permission{p=axvaults.vault.27} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.27} trueElse baul_comprar_27'
   Mechanics:
   - 'openvault{name=baul_27} @Self'
 baul_icono_27:
@@ -771,10 +769,10 @@ baul_boton_28:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_28%";amount=28;name="<#55ff00><bold>Vault #28";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_28%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_28_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=28;name="<#FF0000><bold>Vault #28";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #28";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1400 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_28:
   Conditions:
-  - 'Permission{p=axvaults.vault.28} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.28} trueElse baul_comprar_28'
   Mechanics:
   - 'openvault{name=baul_28} @Self'
 baul_icono_28:
@@ -799,10 +797,10 @@ baul_boton_29:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_29%";amount=29;name="<#55ff00><bold>Vault #29";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_29%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_29_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=29;name="<#FF0000><bold>Vault #29";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #29";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1450 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_29:
   Conditions:
-  - 'Permission{p=axvaults.vault.29} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.29} trueElse baul_comprar_29'
   Mechanics:
   - 'openvault{name=baul_29} @Self'
 baul_icono_29:
@@ -827,10 +825,10 @@ baul_boton_30:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_30%";amount=30;name="<#55ff00><bold>Vault #30";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_30%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_30_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=30;name="<#FF0000><bold>Vault #30";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #30";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1500 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_30:
   Conditions:
-  - 'Permission{p=axvaults.vault.30} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.30} trueElse baul_comprar_30'
   Mechanics:
   - 'openvault{name=baul_30} @Self'
 baul_icono_30:
@@ -855,10 +853,10 @@ baul_boton_31:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_31%";amount=31;name="<#55ff00><bold>Vault #31";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_31%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_31_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=31;name="<#FF0000><bold>Vault #31";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #31";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1550 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_31:
   Conditions:
-  - 'Permission{p=axvaults.vault.31} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.31} trueElse baul_comprar_31'
   Mechanics:
   - 'openvault{name=baul_31} @Self'
 baul_icono_31:
@@ -883,10 +881,10 @@ baul_boton_32:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_32%";amount=32;name="<#55ff00><bold>Vault #32";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_32%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_32_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=32;name="<#FF0000><bold>Vault #32";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #32";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1600 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_32:
   Conditions:
-  - 'Permission{p=axvaults.vault.32} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.32} trueElse baul_comprar_32'
   Mechanics:
   - 'openvault{name=baul_32} @Self'
 baul_icono_32:
@@ -911,10 +909,10 @@ baul_boton_33:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_33%";amount=33;name="<#55ff00><bold>Vault #33";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_33%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_33_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=33;name="<#FF0000><bold>Vault #33";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #33";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1650 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_33:
   Conditions:
-  - 'Permission{p=axvaults.vault.33} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.33} trueElse baul_comprar_33'
   Mechanics:
   - 'openvault{name=baul_33} @Self'
 baul_icono_33:
@@ -939,10 +937,10 @@ baul_boton_34:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_34%";amount=34;name="<#55ff00><bold>Vault #34";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_34%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_34_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=34;name="<#FF0000><bold>Vault #34";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #34";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1700 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_34:
   Conditions:
-  - 'Permission{p=axvaults.vault.34} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.34} trueElse baul_comprar_34'
   Mechanics:
   - 'openvault{name=baul_34} @Self'
 baul_icono_34:
@@ -967,10 +965,10 @@ baul_boton_35:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_35%";amount=35;name="<#55ff00><bold>Vault #35";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_35%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_35_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=35;name="<#FF0000><bold>Vault #35";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #35";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1750 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_35:
   Conditions:
-  - 'Permission{p=axvaults.vault.35} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.35} trueElse baul_comprar_35'
   Mechanics:
   - 'openvault{name=baul_35} @Self'
 baul_icono_35:
@@ -995,10 +993,10 @@ baul_boton_36:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_36%";amount=36;name="<#55ff00><bold>Vault #36";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_36%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_36_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=36;name="<#FF0000><bold>Vault #36";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #36";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1800 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_36:
   Conditions:
-  - 'Permission{p=axvaults.vault.36} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.36} trueElse baul_comprar_36'
   Mechanics:
   - 'openvault{name=baul_36} @Self'
 baul_icono_36:
@@ -1023,10 +1021,10 @@ baul_boton_37:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_37%";amount=37;name="<#55ff00><bold>Vault #37";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_37%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_37_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=37;name="<#FF0000><bold>Vault #37";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #37";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1850 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_37:
   Conditions:
-  - 'Permission{p=axvaults.vault.37} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.37} trueElse baul_comprar_37'
   Mechanics:
   - 'openvault{name=baul_37} @Self'
 baul_icono_37:
@@ -1051,10 +1049,10 @@ baul_boton_38:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_38%";amount=38;name="<#55ff00><bold>Vault #38";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_38%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_38_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=38;name="<#FF0000><bold>Vault #38";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #38";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1900 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_38:
   Conditions:
-  - 'Permission{p=axvaults.vault.38} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.38} trueElse baul_comprar_38'
   Mechanics:
   - 'openvault{name=baul_38} @Self'
 baul_icono_38:
@@ -1079,10 +1077,10 @@ baul_boton_39:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_39%";amount=39;name="<#55ff00><bold>Vault #39";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_39%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_39_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=39;name="<#FF0000><bold>Vault #39";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #39";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 1950 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_39:
   Conditions:
-  - 'Permission{p=axvaults.vault.39} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.39} trueElse baul_comprar_39'
   Mechanics:
   - 'openvault{name=baul_39} @Self'
 baul_icono_39:
@@ -1107,10 +1105,10 @@ baul_boton_40:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_40%";amount=40;name="<#55ff00><bold>Vault #40";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_40%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_40_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=40;name="<#FF0000><bold>Vault #40";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #40";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 2000 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_40:
   Conditions:
-  - 'Permission{p=axvaults.vault.40} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.40} trueElse baul_comprar_40'
   Mechanics:
   - 'openvault{name=baul_40} @Self'
 baul_icono_40:
@@ -1135,10 +1133,10 @@ baul_boton_41:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_41%";amount=41;name="<#55ff00><bold>Vault #41";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_41%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_41_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=41;name="<#FF0000><bold>Vault #41";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #41";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 2050 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_41:
   Conditions:
-  - 'Permission{p=axvaults.vault.41} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.41} trueElse baul_comprar_41'
   Mechanics:
   - 'openvault{name=baul_41} @Self'
 baul_icono_41:
@@ -1163,10 +1161,10 @@ baul_boton_42:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_42%";amount=42;name="<#55ff00><bold>Vault #42";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_42%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_42_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=42;name="<#FF0000><bold>Vault #42";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #42";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 2100 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_42:
   Conditions:
-  - 'Permission{p=axvaults.vault.42} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.42} trueElse baul_comprar_42'
   Mechanics:
   - 'openvault{name=baul_42} @Self'
 baul_icono_42:
@@ -1191,10 +1189,10 @@ baul_boton_43:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_43%";amount=43;name="<#55ff00><bold>Vault #43";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_43%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_43_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=43;name="<#FF0000><bold>Vault #43";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #43";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 2150 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_43:
   Conditions:
-  - 'Permission{p=axvaults.vault.43} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.43} trueElse baul_comprar_43'
   Mechanics:
   - 'openvault{name=baul_43} @Self'
 baul_icono_43:
@@ -1219,10 +1217,10 @@ baul_boton_44:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_44%";amount=44;name="<#55ff00><bold>Vault #44";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_44%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_44_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=44;name="<#FF0000><bold>Vault #44";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #44";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 2200 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_44:
   Conditions:
-  - 'Permission{p=axvaults.vault.44} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.44} trueElse baul_comprar_44'
   Mechanics:
   - 'openvault{name=baul_44} @Self'
 baul_icono_44:
@@ -1247,10 +1245,10 @@ baul_boton_45:
   - 'itemstack{source="vanilla";material="%coretools_var_player_baul_icono_45%";amount=45;name="<#55ff00><bold>Vault #45";lore=" , <gray>- <white>Slots: <#aaffaa>%coretools_var_player_baul_usados_45%<gray>/<#55ff00>54, ,<#55ff00><bold>(!)</bold> <#55ff00>Click - Open Vault,<#55ff00><bold>(!)</bold> <#55ff00>Shift + Click - Change Item";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
 baul_boton_45_bloqueado:
   Mechanics:
-  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=45;name="<#FF0000><bold>Vault #45";lore=" , <gray>- <white>You have <#FF0000>not unlocked <white>this vault yet!, ,<#FF0000><bold>(!)</bold> <#FF0000>Locked Vault";flags="HIDE_ATTRIBUTES"}'
+  - 'itemstack{source="vanilla";material=red_stained_glass_pane;amount=1;name="<#FF0000><bold>Bóveda #45";lore=" , <gray>- <white>Aún <#FF0000>no has desbloqueado <white>esta bóveda., <gray>- <white>Precio: <#D89BFF>✦ 2250 Shards, ,<#FFD36B><bold>(!)</bold> <#FFD36B>Clic - Desbloquear";flags="HIDE_ATTRIBUTES"}'
 baul_abrir_45:
   Conditions:
-  - 'Permission{p=axvaults.vault.45} trueElse baul_bloqueado'
+  - 'Permission{p=axvaults.vault.45} trueElse baul_comprar_45'
   Mechanics:
   - 'openvault{name=baul_45} @Self'
 baul_icono_45:
@@ -1267,3 +1265,495 @@ baul_cerrado_45:
   Mechanics:
   - 'playsound{sound="minecraft:block.barrel.close";volume=1;pitch=1} @Self'
   - 'message{m="<gradient:#55ff00:#AAFF00><b>AxVaults</b></gradient> <gray>» <white>Vault <#55FF00>#45 <white>closed!"} @Self'
+
+baul_comprar_2:
+  Conditions:
+  - 'currency{m=check;c=coinsengine-shards;a=100} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=100} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.2 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #2 <#C9CDD6>por <#D89BFF>✦ 100<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_3:
+  Conditions:
+  - 'Permission{p=axvaults.vault.2} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=150} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=150} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.3 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #3 <#C9CDD6>por <#D89BFF>✦ 150<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_4:
+  Conditions:
+  - 'Permission{p=axvaults.vault.3} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=200} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=200} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.4 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #4 <#C9CDD6>por <#D89BFF>✦ 200<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_5:
+  Conditions:
+  - 'Permission{p=axvaults.vault.4} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=250} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=250} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.5 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #5 <#C9CDD6>por <#D89BFF>✦ 250<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_6:
+  Conditions:
+  - 'Permission{p=axvaults.vault.5} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=300} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=300} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.6 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #6 <#C9CDD6>por <#D89BFF>✦ 300<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_7:
+  Conditions:
+  - 'Permission{p=axvaults.vault.6} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=350} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=350} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.7 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #7 <#C9CDD6>por <#D89BFF>✦ 350<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_8:
+  Conditions:
+  - 'Permission{p=axvaults.vault.7} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=400} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=400} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.8 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #8 <#C9CDD6>por <#D89BFF>✦ 400<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_9:
+  Conditions:
+  - 'Permission{p=axvaults.vault.8} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=450} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=450} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.9 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #9 <#C9CDD6>por <#D89BFF>✦ 450<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_10:
+  Conditions:
+  - 'Permission{p=axvaults.vault.9} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=500} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=500} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.10 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #10 <#C9CDD6>por <#D89BFF>✦ 500<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_11:
+  Conditions:
+  - 'Permission{p=axvaults.vault.10} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=550} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=550} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.11 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #11 <#C9CDD6>por <#D89BFF>✦ 550<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_12:
+  Conditions:
+  - 'Permission{p=axvaults.vault.11} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=600} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=600} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.12 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #12 <#C9CDD6>por <#D89BFF>✦ 600<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_13:
+  Conditions:
+  - 'Permission{p=axvaults.vault.12} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=650} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=650} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.13 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #13 <#C9CDD6>por <#D89BFF>✦ 650<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_14:
+  Conditions:
+  - 'Permission{p=axvaults.vault.13} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=700} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=700} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.14 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #14 <#C9CDD6>por <#D89BFF>✦ 700<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_15:
+  Conditions:
+  - 'Permission{p=axvaults.vault.14} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=750} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=750} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.15 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #15 <#C9CDD6>por <#D89BFF>✦ 750<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_16:
+  Conditions:
+  - 'Permission{p=axvaults.vault.15} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=800} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=800} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.16 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #16 <#C9CDD6>por <#D89BFF>✦ 800<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_17:
+  Conditions:
+  - 'Permission{p=axvaults.vault.16} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=850} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=850} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.17 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #17 <#C9CDD6>por <#D89BFF>✦ 850<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_18:
+  Conditions:
+  - 'Permission{p=axvaults.vault.17} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=900} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=900} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.18 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #18 <#C9CDD6>por <#D89BFF>✦ 900<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_19:
+  Conditions:
+  - 'Permission{p=axvaults.vault.18} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=950} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=950} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.19 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #19 <#C9CDD6>por <#D89BFF>✦ 950<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_20:
+  Conditions:
+  - 'Permission{p=axvaults.vault.19} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1000} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1000} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.20 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #20 <#C9CDD6>por <#D89BFF>✦ 1000<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_21:
+  Conditions:
+  - 'Permission{p=axvaults.vault.20} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1050} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1050} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.21 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #21 <#C9CDD6>por <#D89BFF>✦ 1050<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_22:
+  Conditions:
+  - 'Permission{p=axvaults.vault.21} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1100} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1100} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.22 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #22 <#C9CDD6>por <#D89BFF>✦ 1100<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_23:
+  Conditions:
+  - 'Permission{p=axvaults.vault.22} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1150} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1150} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.23 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #23 <#C9CDD6>por <#D89BFF>✦ 1150<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_24:
+  Conditions:
+  - 'Permission{p=axvaults.vault.23} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1200} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1200} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.24 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #24 <#C9CDD6>por <#D89BFF>✦ 1200<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_25:
+  Conditions:
+  - 'Permission{p=axvaults.vault.24} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1250} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1250} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.25 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #25 <#C9CDD6>por <#D89BFF>✦ 1250<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_26:
+  Conditions:
+  - 'Permission{p=axvaults.vault.25} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1300} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1300} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.26 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #26 <#C9CDD6>por <#D89BFF>✦ 1300<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_27:
+  Conditions:
+  - 'Permission{p=axvaults.vault.26} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1350} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1350} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.27 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #27 <#C9CDD6>por <#D89BFF>✦ 1350<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_28:
+  Conditions:
+  - 'Permission{p=axvaults.vault.27} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1400} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1400} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.28 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #28 <#C9CDD6>por <#D89BFF>✦ 1400<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_29:
+  Conditions:
+  - 'Permission{p=axvaults.vault.28} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1450} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1450} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.29 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #29 <#C9CDD6>por <#D89BFF>✦ 1450<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_30:
+  Conditions:
+  - 'Permission{p=axvaults.vault.29} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1500} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1500} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.30 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #30 <#C9CDD6>por <#D89BFF>✦ 1500<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_31:
+  Conditions:
+  - 'Permission{p=axvaults.vault.30} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1550} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1550} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.31 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #31 <#C9CDD6>por <#D89BFF>✦ 1550<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_32:
+  Conditions:
+  - 'Permission{p=axvaults.vault.31} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1600} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1600} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.32 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #32 <#C9CDD6>por <#D89BFF>✦ 1600<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_33:
+  Conditions:
+  - 'Permission{p=axvaults.vault.32} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1650} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1650} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.33 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #33 <#C9CDD6>por <#D89BFF>✦ 1650<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_34:
+  Conditions:
+  - 'Permission{p=axvaults.vault.33} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1700} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1700} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.34 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #34 <#C9CDD6>por <#D89BFF>✦ 1700<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_35:
+  Conditions:
+  - 'Permission{p=axvaults.vault.34} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1750} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1750} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.35 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #35 <#C9CDD6>por <#D89BFF>✦ 1750<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_36:
+  Conditions:
+  - 'Permission{p=axvaults.vault.35} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1800} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1800} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.36 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #36 <#C9CDD6>por <#D89BFF>✦ 1800<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_37:
+  Conditions:
+  - 'Permission{p=axvaults.vault.36} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1850} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1850} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.37 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #37 <#C9CDD6>por <#D89BFF>✦ 1850<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_38:
+  Conditions:
+  - 'Permission{p=axvaults.vault.37} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1900} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1900} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.38 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #38 <#C9CDD6>por <#D89BFF>✦ 1900<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_39:
+  Conditions:
+  - 'Permission{p=axvaults.vault.38} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=1950} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=1950} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.39 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #39 <#C9CDD6>por <#D89BFF>✦ 1950<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_40:
+  Conditions:
+  - 'Permission{p=axvaults.vault.39} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=2000} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2000} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.40 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #40 <#C9CDD6>por <#D89BFF>✦ 2000<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_41:
+  Conditions:
+  - 'Permission{p=axvaults.vault.40} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=2050} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2050} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.41 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #41 <#C9CDD6>por <#D89BFF>✦ 2050<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_42:
+  Conditions:
+  - 'Permission{p=axvaults.vault.41} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=2100} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2100} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.42 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #42 <#C9CDD6>por <#D89BFF>✦ 2100<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_43:
+  Conditions:
+  - 'Permission{p=axvaults.vault.42} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=2150} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2150} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.43 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #43 <#C9CDD6>por <#D89BFF>✦ 2150<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_44:
+  Conditions:
+  - 'Permission{p=axvaults.vault.43} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=2200} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2200} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.44 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #44 <#C9CDD6>por <#D89BFF>✦ 2200<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_comprar_45:
+  Conditions:
+  - 'Permission{p=axvaults.vault.44} trueElse baul_orden'
+  - 'currency{m=check;c=coinsengine-shards;a=2250} falseElse baul_sin_shards'
+  Mechanics:
+  - 'currency{m=remove;c=coinsengine-shards;a=2250} @Self'
+  - 'command{c="lp user {caster_name} permission set axvaults.vault.45 true";runas=console} @Self'
+  - 'playsound{sound="minecraft:entity.player.levelup";volume=1;pitch=1.2} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#C9CDD6>Has desbloqueado la <#55FF00>Bóveda #45 <#C9CDD6>por <#D89BFF>✦ 2250<#C9CDD6>."} @Self'
+  - 'command{c="core-menu menuBaules {caster_name}";runas=console} @Self'
+
+baul_sin_shards:
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#FF6B6B>No tienes suficientes <#D89BFF>Shards <#FF6B6B>para esta bóveda."} @Self'
+baul_orden:
+  Mechanics:
+  - 'playsound{sound="minecraft:entity.villager.no";volume=1;pitch=1} @Self'
+  - 'message{m="<dark_gray>┃ <gold><bold>Bóvedas</bold> <dark_gray>» <#FF6B6B>Desbloquea antes la bóveda anterior."} @Self'
