@@ -1,0 +1,74 @@
+# Document (weekly_dot). Texturas: pack/assets/pack1/textures/items/document_*.png
+
+document_crumpled_paper:
+  itemname: "<#E8D9B5>Papel Arrugado"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200700
+    textures:
+      - pack1:items/document_crumpled_paper.png
+document_paper:
+  itemname: "<#E8D9B5>Hoja de Papel"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200701
+    textures:
+      - pack1:items/document_paper.png
+document_paper_stack:
+  itemname: "<#E8D9B5>Pila de Papeles"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200702
+    textures:
+      - pack1:items/document_paper_stack.png
+document_letter:
+  itemname: "<#E8D9B5>Carta"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200703
+    textures:
+      - pack1:items/document_letter.png
+document_letter_stack:
+  itemname: "<#E8D9B5>Montón de Cartas"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200704
+    textures:
+      - pack1:items/document_letter_stack.png
+document_mail:
+  itemname: "<#E8D9B5>Sobre Sellado"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200705
+    textures:
+      - pack1:items/document_mail.png
+document_torn_scroll:
+  itemname: "<#E8D9B5>Pergamino Rasgado"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200706
+    textures:
+      - pack1:items/document_torn_scroll.png
+document_scroll1:
+  itemname: "<#E8D9B5>Pergamino Enrollado"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200707
+    textures:
+      - pack1:items/document_scroll1.png
+document_scroll2:
+  itemname: "<#E8D9B5>Pergamino Abierto"
+  material: PAPER
+  Pack:
+    generate_model: true
+    custom_model_data: 200708
+    textures:
+      - pack1:items/document_scroll2.png
