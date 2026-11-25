@@ -35,6 +35,25 @@ sounds:
   stream: true
   volume: 1.0
   pitch: 1.0
+# Blade Into Void (música de jefe) en 3 partes. OGG Vorbis estéreo q0 (~62 kbps).
+- id: nexo:music.blade_into_void.inicio
+  # Parte 1: inicio de la canción (17 s).
+  sound: nexo:music/blade_into_void_inicio.ogg
+  stream: true
+  volume: 1.0
+  pitch: 1.0
+- id: nexo:music.blade_into_void.transicion
+  # Parte 2: transición (20 s).
+  sound: nexo:music/blade_into_void_transicion.ogg
+  stream: true
+  volume: 1.0
+  pitch: 1.0
+- id: nexo:music.blade_into_void.drop
+  # Parte 3: drop (9 s).
+  sound: nexo:music/blade_into_void_drop.ogg
+  stream: true
+  volume: 1.0
+  pitch: 1.0
 - id: nexo:ruleta.spin
   sound: nexo:ruleta/ruleta.ogg
   volume: 1.0
