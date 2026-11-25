@@ -1,5 +1,5 @@
 # ============================================================
-#  perfil.sk - Menú "Mi Perfil" con equipamiento dinámico
+#  perfil.sk - Menú "Mi Perfil" (diseño "Tu Perfil") con equipamiento dinámico
 #  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
 #  Abrir: /perfil (botón "Mi Perfil" del menú principal de CoreTools)
 #
@@ -24,46 +24,46 @@ function pfPieza(i: item, nombre: text, donde: text) :: item:
     return {_i}
 
 function pfEquipo(p: player, gui: inventory):
-    set slot 11 of {_gui} to pfPieza(helmet of {_p}, "Casco", "la cabeza")
-    set slot 20 of {_gui} to pfPieza(chestplate of {_p}, "Pechera", "el torso")
-    set slot 29 of {_gui} to pfPieza(leggings of {_p}, "Pantalones", "las piernas")
-    set slot 38 of {_gui} to pfPieza(boots of {_p}, "Botas", "los pies")
-    set slot 19 of {_gui} to pfPieza(tool of {_p}, "Mano Principal", "la mano derecha")
-    set slot 21 of {_gui} to pfPieza(offhand tool of {_p}, "Mano Secundaria", "la mano izquierda")
+    # Columna derecha del diseño: armadura real
+    set slot 17 of {_gui} to pfPieza(helmet of {_p}, "Casco", "la cabeza")
+    set slot 26 of {_gui} to pfPieza(chestplate of {_p}, "Pechera", "el torso")
+    set slot 35 of {_gui} to pfPieza(leggings of {_p}, "Pantalones", "las piernas")
+    set slot 44 of {_gui} to pfPieza(boots of {_p}, "Botas", "los pies")
+    # Pestañas inferiores: las dos manos
+    set slot 36 of {_gui} to pfPieza(tool of {_p}, "Mano Principal", "la mano derecha")
+    set slot 37 of {_gui} to pfPieza(offhand tool of {_p}, "Mano Secundaria", "la mano izquierda")
 
 function pfBoton(gui: inventory, slot: number, i: item, nombre: text, l1: text, l2: text, accion: text):
     set slot {_slot} of {_gui} to {_i} named "<white>%{_nombre}%" with lore "<#C9CDD6>%{_l1}%", "<#C9CDD6>%{_l2}%", "" and "<#7FB2FF>Clic para %{_accion}%"
 
+# Diseño "Tu Perfil": fondo del pack Inventories (carácter U+3290, 5 filas).
+# Panel cabeza (cabeza 2D, CMD 101) · panel de estadísticas · armadura a la derecha · pestañas abajo.
 function perfilMenu(p: player):
-    set {_gui} to chest inventory with 6 rows named "<dark_gray>Mi Perfil"
-    # Marco oscuro de la cruz (5 columnas de la izquierda)
-    set {_marco} to gray stained glass pane named " "
-    loop 0, 1, 2, 3, 4, 9, 10, 12, 13, 18, 22, 27, 31, 36, 37, 39, 40, 45, 46, 47, 48 and 49:
-        set slot loop-value of {_gui} to {_marco}
-    set {_lado} to black stained glass pane named " "
-    loop 5, 14, 23, 32, 41 and 50:
-        set slot loop-value of {_gui} to {_lado}
-    pfEquipo({_p}, {_gui})
-    # Huecos libres de la cruz: nivel y vida
-    set slot 28 of {_gui} to experience bottle named "<#7FFF9E>Nivel %level of {_p}%" with lore "<#9EA3AE>Experiencia actual"
-    set slot 30 of {_gui} to red dye named "<#FF6B6B>❤ %round(health of {_p} * 2)%<#9EA3AE>/%round(max health of {_p} * 2)%" with lore "<#9EA3AE>Vida actual"
-    # Estadísticas
+    set {_gui} to chest inventory with 5 rows named "㈮㈮<white>㊐"
+    # Botón volver: la flecha está dibujada en el fondo; el item es transparente (diamond CMD 1)
+    set slot 0 of {_gui} to diamond with custom model data 1 named "<white>« <#FFD36B>Volver al Menú Principal"
     set {_dinero} to round({_p}'s balance)
     set {_hist} to {historia::%uuid of {_p}%} ? 0
     set {_bounty} to bountyRecompensa({_p})
-    set slot 6 of {_gui} to skull of {_p} named "<gradient:#FFE29A:#FFB347><bold>%{_p}%</bold></gradient>" with lore "<#C9CDD6>Mundo: <white>%world of {_p}%", "<#C9CDD6>Ping: <white>%ping of {_p}% ms", "", "<#C9CDD6>Dinero: <#7FFF9E>$%{_dinero}%", "<#C9CDD6>Historia: <#FFD36B>Parte %{_hist}%" and "<#C9CDD6>Recompensa (bounty): <#FF6B6B>$%{_bounty}%"
-    set slot 7 of {_gui} to clock named "<#FFD36B>Hambre y Saturación" with lore "<#C9CDD6>Hambre: <white>%food level of {_p}%<#9EA3AE>/20" and "<#C9CDD6>Saturación: <white>%round(saturation of {_p})%"
-    # Accesos
-    pfBoton({_gui}, 15, golden pickaxe, "<gradient:#FFE29A:#FFB347>Trabajos", "Elige un oficio y", "gana dinero trabajando.", "abrir tus trabajos")
-    pfBoton({_gui}, 16, bone, "<gradient:#FFE29A:#FFB347>Mascotas", "Tus compañeros", "de aventura.", "ver tus mascotas")
-    pfBoton({_gui}, 17, leather chestplate, "<gradient:#FFE29A:#FFB347>Cosméticos", "Viste a tu personaje", "con tu armario.", "abrir tu armario")
-    pfBoton({_gui}, 24, writable book, "<gradient:#FFE29A:#FFB347>Historia", "Revisa las partes de la", "historia que desbloqueaste.", "abrir la historia")
-    pfBoton({_gui}, 25, bundle, "<gradient:#FFE29A:#FFB347>Mis Homes", "Tus puntos de", "regreso guardados.", "ver tus homes")
-    pfBoton({_gui}, 26, oak door, "<gradient:#FFE29A:#FFB347>Protecciones", "Gestiona tus terrenos", "protegidos.", "abrir tus protecciones")
-    pfBoton({_gui}, 33, amethyst shard, "<gradient:#FFE29A:#FFB347>Partículas", "Efectos cosméticos", "a tu alrededor.", "elegir partículas")
-    pfBoton({_gui}, 34, ender chest, "<gradient:#FFE29A:#FFB347>Baúles", "Tus baúles personales", "desde cualquier lugar.", "abrir tus baúles")
-    pfBoton({_gui}, 35, chest, "<gradient:#FFE29A:#FFB347>Buzón", "Objetos que te llegaron", "con el inventario lleno.", "recoger objetos")
-    set slot 53 of {_gui} to arrow named "<white>« <#FFD36B>Volver al Menú Principal"
+    set slot 10 of {_gui} to (skull of {_p}) with custom model data 101 named "<gradient:#FFE29A:#FFB347><bold>%{_p}%</bold></gradient>" with lore "<#C9CDD6>Mundo: <white>%world of {_p}%" and "<#C9CDD6>Ping: <white>%ping of {_p}% ms"
+    # Panel de estadísticas
+    set slot 12 of {_gui} to gold ingot named "<gradient:#FFE29A:#FFB347>Dinero" with lore "<#7FFF9E>$%{_dinero}%"
+    set slot 13 of {_gui} to experience bottle named "<gradient:#FFE29A:#FFB347>Nivel" with lore "<#7FFF9E>Nivel %level of {_p}%"
+    set slot 14 of {_gui} to red dye named "<gradient:#FFE29A:#FFB347>Vida" with lore "<#FF6B6B>❤ %round(health of {_p} * 2)%<#9EA3AE>/%round(max health of {_p} * 2)%"
+    set slot 21 of {_gui} to clock named "<gradient:#FFE29A:#FFB347>Hambre y Saturación" with lore "<#C9CDD6>Hambre: <white>%food level of {_p}%<#9EA3AE>/20" and "<#C9CDD6>Saturación: <white>%round(saturation of {_p})%"
+    set slot 22 of {_gui} to iron sword named "<gradient:#FFE29A:#FFB347>Recompensa" with lore "<#C9CDD6>Tu cabeza vale: <#FF6B6B>$%{_bounty}%"
+    pfBoton({_gui}, 30, golden pickaxe, "<gradient:#FFE29A:#FFB347>Trabajos", "Elige un oficio y", "gana dinero trabajando.", "abrir tus trabajos")
+    pfBoton({_gui}, 31, writable book, "<gradient:#FFE29A:#FFB347>Historia", "Parte actual: %{_hist}%", "Revisa lo que desbloqueaste.", "abrir la historia")
+    pfBoton({_gui}, 32, bone, "<gradient:#FFE29A:#FFB347>Mascotas", "Tus compañeros", "de aventura.", "ver tus mascotas")
+    pfBoton({_gui}, 33, leather chestplate, "<gradient:#FFE29A:#FFB347>Cosméticos", "Viste a tu personaje", "con tu armario.", "abrir tu armario")
+    # Pestañas inferiores (36 y 37 = manos, en pfEquipo)
+    pfBoton({_gui}, 38, amethyst shard, "<gradient:#FFE29A:#FFB347>Partículas", "Efectos cosméticos", "a tu alrededor.", "elegir partículas")
+    pfBoton({_gui}, 39, bundle, "<gradient:#FFE29A:#FFB347>Mis Homes", "Tus puntos de", "regreso guardados.", "ver tus homes")
+    pfBoton({_gui}, 40, oak door, "<gradient:#FFE29A:#FFB347>Protecciones", "Gestiona tus terrenos", "protegidos.", "abrir tus protecciones")
+    pfBoton({_gui}, 41, ender chest, "<gradient:#FFE29A:#FFB347>Baúles", "Tus baúles personales", "desde cualquier lugar.", "abrir tus baúles")
+    pfBoton({_gui}, 42, chest, "<gradient:#FFE29A:#FFB347>Buzón", "Objetos que te llegaron", "con el inventario lleno.", "recoger objetos")
+    pfBoton({_gui}, 43, diamond sword, "<gradient:#FFE29A:#FFB347>Habilidades", "Tus estadísticas y", "poderes de clase.", "ver tus habilidades")
+    pfEquipo({_p}, {_gui})
     set {-pf::inv::%uuid of {_p}%} to {_gui}
     open {_gui} to {_p}
     pfRefresco({_p}, {_gui})
@@ -87,29 +87,32 @@ on inventory click:
     cancel event
     set {_s} to index of event-slot
     set {_n} to name of player
-    if {_s} = 15:
+    if {_s} = 30:
         make player execute command "jobs"
-    else if {_s} = 16:
-        execute console command "core-menu menuMascotas %{_n}%"
-    else if {_s} = 17:
-        execute console command "cosmetic menu defaultmenu_hats %{_n}%"
-    else if {_s} = 24:
+    else if {_s} = 31:
         make player execute command "historia"
-    else if {_s} = 25:
+    else if {_s} = 32:
+        execute console command "core-menu menuMascotas %{_n}%"
+    else if {_s} = 33:
+        execute console command "cosmetic menu defaultmenu_hats %{_n}%"
+    else if {_s} = 38:
+        execute console command "core-menu menuParticulas %{_n}%"
+    else if {_s} = 39:
         close player's inventory
         make player execute command "homes list"
-    else if {_s} = 26:
+    else if {_s} = 40:
         close player's inventory
         make player execute command "nclaim"
-    else if {_s} = 33:
-        execute console command "core-menu menuParticulas %{_n}%"
-    else if {_s} = 34:
+    else if {_s} = 41:
         close player's inventory
         make player execute command "pv"
-    else if {_s} = 35:
+    else if {_s} = 42:
         close player's inventory
         make player execute command "buzon"
-    else if {_s} = 53:
+    else if {_s} = 43:
+        close player's inventory
+        make player execute command "stats"
+    else if {_s} = 0:
         execute console command "core-menu menuMain %{_n}%"
     else:
         stop
