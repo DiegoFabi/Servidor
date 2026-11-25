@@ -5,6 +5,8 @@ pigeons_fly:
   - isplayer
   Conditions:
   - targets{a=>0}  
+  # 5 s de gracia tras aparecer para que se vean al invocarlas cerca
+  - variableisset{var=caster.paloma_lista} true
   Skills:
   - state{s=fly;li=3;lo=3} @self
   - sound{s=entity.bat.takeoff} @self
@@ -32,6 +34,8 @@ pigeon_fly:
   - isplayer
   Conditions:
   - targets{a=>0}  
+  # 5 s de gracia tras aparecer para que se vean al invocarlas cerca
+  - variableisset{var=caster.paloma_lista} true
   Skills:
   - state{s=fly} @self
   - sound{s=entity.bat.takeoff} @self
