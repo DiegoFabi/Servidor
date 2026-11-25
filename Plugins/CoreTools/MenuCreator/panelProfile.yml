@@ -1,5 +1,5 @@
 # Perfil del jugador (diseño con textura: Inventories/along:font/gui/perfil.png, carácter U+3290).
-# Cabeza 2D grande: player_head con custom_model_data 100 (pack 2DPlayerHeads + player_head.json de Inventories).
+# Cabeza 2D grande: player_head con custom_model_data 101 (pequeña, cabe en el panel 3x3) (pack 2DPlayerHeads + player_head.json de Inventories).
 # Equipamiento: iconos fijos (los placeholders de objetos de PAPI fallan con el slot vacío).
 panelProfile:
   permission: ''
@@ -30,7 +30,7 @@ panelProfile:
     jugador:
       location: top
       slots:
-      - 19
+      - 10
       source: vanilla
       material: player_head
       name: <white><glyph:person> <gradient:#FFE29A:#FFB347>{caster_name}</gradient>
@@ -44,11 +44,11 @@ panelProfile:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
       texture: player
-      custom_model_data_float: 100
+      custom_model_data_float: 101
     dinero:
       location: top
       slots:
-      - 13
+      - 12
       source: vanilla
       material: gold_ingot
       name: <white><glyph:gold_coin> <gradient:#FFE29A:#FFB347>Dinero</gradient>
@@ -60,7 +60,7 @@ panelProfile:
     shards:
       location: top
       slots:
-      - 14
+      - 13
       source: vanilla
       material: amethyst_shard
       name: <white><glyph:diamond> <gradient:#FFE29A:#FFB347>Shards</gradient>
@@ -73,7 +73,7 @@ panelProfile:
     clan:
       location: top
       slots:
-      - 15
+      - 14
       source: vanilla
       material: white_banner
       name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Clan</gradient>
@@ -85,7 +85,7 @@ panelProfile:
     tiempo:
       location: top
       slots:
-      - 22
+      - 21
       source: vanilla
       material: clock
       name: <white><glyph:sand_clock> <gradient:#FFE29A:#FFB347>Tiempo Jugado Hoy</gradient>
@@ -97,7 +97,7 @@ panelProfile:
     clase:
       location: top
       slots:
-      - 23
+      - 22
       source: vanilla
       material: nether_star
       name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Clase</gradient>
@@ -109,7 +109,7 @@ panelProfile:
     trabajos:
       location: top
       slots:
-      - 31
+      - 30
       source: vanilla
       material: iron_pickaxe
       name: <white><glyph:pickaxe> <gradient:#FFE29A:#FFB347>Trabajos</gradient>
@@ -129,7 +129,7 @@ panelProfile:
     habilidades:
       location: top
       slots:
-      - 32
+      - 31
       source: vanilla
       material: diamond_sword
       name: <white><glyph:pack1_stats> <gradient:#FFE29A:#FFB347>Habilidades y Poderes</gradient>
@@ -150,9 +150,9 @@ panelProfile:
     combate:
       location: top
       slots:
-      - 33
+      - 32
       source: vanilla
-      material: experience_bottle
+      material: diamond_sword
       name: <white><glyph:red_sword> <gradient:#FFE29A:#FFB347>Poder de Habilidades</gradient>
       lore:
       - '<#E6E8EE>Poder total: <#FFD36B>%auraskills_power%'
@@ -162,7 +162,7 @@ panelProfile:
     mensajes:
       location: top
       slots:
-      - 34
+      - 43
       source: vanilla
       material: writable_book
       name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Mensajes Privados</gradient>
@@ -231,7 +231,7 @@ panelProfile:
     boveda:
       location: top
       slots:
-      - 36
+      - 39
       source: vanilla
       material: barrel
       name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Bóvedas</gradient>
@@ -251,7 +251,7 @@ panelProfile:
     mascotas:
       location: top
       slots:
-      - 37
+      - 40
       source: vanilla
       material: bone
       name: <white><glyph:heart> <gradient:#FFE29A:#FFB347>Mascotas</gradient>
@@ -271,7 +271,7 @@ panelProfile:
     cosmeticos:
       location: top
       slots:
-      - 38
+      - 41
       source: vanilla
       material: leather_horse_armor
       name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Cosméticos</gradient>
@@ -291,7 +291,7 @@ panelProfile:
     historia:
       location: top
       slots:
-      - 39
+      - 42
       source: vanilla
       material: book
       name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Historia</gradient>
@@ -308,3 +308,15 @@ panelProfile:
       right_click:
         Scripts:
         - panelprofile_historia_click
+    nivel:
+      location: top
+      slots:
+      - 33
+      source: vanilla
+      material: experience_bottle
+      name: <white><glyph:pack1_up> <gradient:#FFE29A:#FFB347>Nivel</gradient>
+      lore:
+      - '<#E6E8EE>Nivel de experiencia: <#FFD36B>%player_level%'
+      flags:
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
