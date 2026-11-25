@@ -243,6 +243,12 @@ bl_illusionist_attack_box_slow:
   - throw{v=0;vy=0}
   - potion{type=SLOW;duration=20;level=7}
 
+bl_illusionist_box_atrapar:
+  Skills:
+  - throw{v=0;vy=0} @PlayersInRadius{r=1.8}
+  - potion{type=SLOWNESS;duration=112;level=10;hasParticles=false;hasIcon=false} @PlayersInRadius{r=1.8}
+  - potion{type=JUMP_BOOST;duration=112;level=250;hasParticles=false;hasIcon=false} @PlayersInRadius{r=1.8}
+
 bl_illusionist_attack_box_tick:
   Skills:
   - effect:particles{p=dust_color_transition;color1=#b41e3d;color2=#891a34;amount=5;hS=0.5;vS=0.8;speed=0;size=1}

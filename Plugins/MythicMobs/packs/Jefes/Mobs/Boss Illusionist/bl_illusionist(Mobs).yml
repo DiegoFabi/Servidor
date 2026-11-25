@@ -25,7 +25,8 @@ bl_illusionist:
   Modules:
     ThreatTable: true
   Options:
-    MovementSpeed: 1
+    # 1 = 4x la velocidad normal (setspeed es multiplicador sobre este valor)
+    MovementSpeed: 0.28
     FollowRange: 32
     KnockbackResistance: 1
     Silent: true
@@ -110,6 +111,8 @@ bl_illusionist_box:
   - aura{auraName=bl_illusionist_attack_box_totem_3;onTick=bl_illusionist_attack_box_totem_tick;interval=1;duration=4;delay=66} @self ~onSpawn
   - aura{auraName=bl_illusionist_attack_box_totem_4;onTick=bl_illusionist_attack_box_totem_tick;interval=1;duration=4;delay=94} @self ~onSpawn
   - aura{auraName=bl_illusionist_attack_box_totem_5;onTick=bl_illusionist_attack_box_totem_tick_slow;interval=10;duration=111;delay=0} @self ~onSpawn
+  # Atrapa al jugador dentro de la caja mientras dura (sin caminar ni saltar)
+  - skill{s=bl_illusionist_box_atrapar} @self ~onSpawn
   - state{s=spawn} @self ~onSpawn
   - state{s=attack_swords;delay=8} @self ~onSpawn
   - state{s=end;delay=119} @self ~onSpawn
@@ -140,7 +143,7 @@ bl_illusionist_rabbit:
   Modules:
     ThreatTable: true
   Options:
-    MovementSpeed: 1.3
+    MovementSpeed: 0.3
     FollowRange: 32
     KnockbackResistance: 1
     Silent: true

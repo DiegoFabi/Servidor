@@ -54,6 +54,29 @@ sounds:
   stream: true
   volume: 1.0
   pitch: 1.0
+# Boss Illusionist (MythicMobs usa sound{s=bl_illusionist.X}). Los .ogg ya estaban pero sin registrar.
+- id: minecraft:bl_illusionist.box
+  sound: minecraft:bl_illusionist/box.ogg
+- id: minecraft:bl_illusionist.card
+  sound: minecraft:bl_illusionist/card.ogg
+- id: minecraft:bl_illusionist.cards_fell
+  sound: minecraft:bl_illusionist/cards_fell.ogg
+- id: minecraft:bl_illusionist.cards_whoosh
+  sound: minecraft:bl_illusionist/cards_whoosh.ogg
+- id: minecraft:bl_illusionist.circus_focus
+  sound: minecraft:bl_illusionist/circus_focus.ogg
+- id: minecraft:bl_illusionist.magical_death
+  sound: minecraft:bl_illusionist/magical_death.ogg
+- id: minecraft:bl_illusionist.magical_ray
+  sound: minecraft:bl_illusionist/magical_ray.ogg
+- id: minecraft:bl_illusionist.regeneration
+  sound: minecraft:bl_illusionist/regeneration.ogg
+- id: minecraft:bl_illusionist.summon_rabbits
+  sound: minecraft:bl_illusionist/summon_rabbits.ogg
+- id: minecraft:bl_illusionist.swing_dagger
+  sound: minecraft:bl_illusionist/swing_dagger.ogg
+- id: minecraft:bl_illusionist.whoosh
+  sound: minecraft:bl_illusionist/whoosh.ogg
 - id: nexo:ruleta.spin
   sound: nexo:ruleta/ruleta.ogg
   volume: 1.0

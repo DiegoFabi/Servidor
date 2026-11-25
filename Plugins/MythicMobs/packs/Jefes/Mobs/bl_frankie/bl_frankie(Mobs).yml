@@ -23,7 +23,7 @@ bl_frankie:
     PreventItemPickup: true
     PreventSunburn: true
     PreventRandomEquipment: true
-    MovementSpeed: 1
+    MovementSpeed: 0.28
     KnockbackResistance: 1
     Collidable: true
   BossBar:
