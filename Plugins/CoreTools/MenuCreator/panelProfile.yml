@@ -1,6 +1,7 @@
 # Perfil del jugador (diseño con textura: Inventories/along:font/gui/perfil.png, carácter U+3290).
 # Cabeza 2D grande: player_head con custom_model_data 101 (pequeña, cabe en el panel 3x3) (pack 2DPlayerHeads + player_head.json de Inventories).
 # Equipamiento: iconos fijos (los placeholders de objetos de PAPI fallan con el slot vacío).
+# Botón volver: flecha dibujada en la textura; el item es transparente (diamond + CMD 1 de Inventories, como MainShop).
 panelProfile:
   permission: ''
   bottom_inventory: false
@@ -14,7 +15,7 @@ panelProfile:
       slots:
       - 0
       source: vanilla
-      material: arrow
+      material: diamond
       name: <white>« <gradient:#FFE29A:#FFB347>Volver</gradient>
       lore:
       - <white><glyph:raton_izq> <#7FB2FF>Clic para regresar
@@ -27,6 +28,7 @@ panelProfile:
       right_click:
         Scripts:
         - menuseleccion_volver_click
+      custom_model_data_float: 1
     jugador:
       location: top
       slots:
