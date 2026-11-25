@@ -6,7 +6,7 @@ MSO_Beach_Creeper_Randomspawn:
   Chance: 0.04
   Priority: 1
   Conditions:
-  - mobtype{type=CREEPER}
+  - entitytype{t=CREEPER} true
   - biome{b=BEACH,SNOWY_BEACH}
 MSO_Badlands_Creeper_Randomspawn:
   Action: REPLACE
@@ -15,6 +15,6 @@ MSO_Badlands_Creeper_Randomspawn:
   Chance: 0.04
   Priority: 1
   Conditions:
-  - mobtype{type=CREEPER}
+  - entitytype{t=CREEPER} true
   - biome{b=BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS}
 

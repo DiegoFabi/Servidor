@@ -1,18 +1,21 @@
 # ============================================================
 #  Ratones (Mice Pack) - survivalMain, aparición moderada.
-#  ADD: se añaden ocasionalmente junto a otros spawns naturales en la
-#  superficie de praderas, bosques y taigas. Máximo 3 ratones en 48 bloques.
+#  REPLACE: con GenerateSpawnPoints desactivado (config-spawning) ADD no
+#  genera nada, así que sustituyen a una pequeña parte de los spawns
+#  naturales de la superficie (animales pequeños de día y monstruos
+#  comunes de noche). Máximo 3 ratones en 48 bloques.
 #  Despawn activado en el mob para que no se acumulen.
 # ============================================================
 Raton_black_mouse:
   Type: black_mouse
   Worlds: survivalMain
-  Chance: 0.01
+  Chance: 0.03
   Priority: 1
-  Action: ADD
+  Action: REPLACE
   UseWorldScaling: false
   Biomes: DARK_FOREST,OLD_GROWTH_SPRUCE_TAIGA,TAIGA
   Conditions:
+  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
@@ -20,12 +23,13 @@ Raton_black_mouse:
 Raton_brown_mouse:
   Type: brown_mouse
   Worlds: survivalMain
-  Chance: 0.01
+  Chance: 0.03
   Priority: 1
-  Action: ADD
+  Action: REPLACE
   UseWorldScaling: false
   Biomes: FOREST,BIRCH_FOREST,FLOWER_FOREST
   Conditions:
+  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
@@ -33,12 +37,13 @@ Raton_brown_mouse:
 Raton_gray_mouse:
   Type: gray_mouse
   Worlds: survivalMain
-  Chance: 0.01
+  Chance: 0.03
   Priority: 1
-  Action: ADD
+  Action: REPLACE
   UseWorldScaling: false
   Biomes: PLAINS,SUNFLOWER_PLAINS,MEADOW
   Conditions:
+  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
@@ -46,12 +51,13 @@ Raton_gray_mouse:
 Raton_white_mouse:
   Type: white_mouse
   Worlds: survivalMain
-  Chance: 0.01
+  Chance: 0.03
   Priority: 1
-  Action: ADD
+  Action: REPLACE
   UseWorldScaling: false
   Biomes: SNOWY_PLAINS,SNOWY_TAIGA,GROVE
   Conditions:
+  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true

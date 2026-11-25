@@ -6,7 +6,7 @@ MSO_Desert_Creeper_Randomspawn:
   Chance: 0.04
   Priority: 1
   Conditions:
-  - mobtype{type=CREEPER}
+  - entitytype{t=CREEPER} true
   - biome{b=DESERT}
 MSO_Dripstone_Creeper_Randomspawn:
   Action: REPLACE
@@ -15,7 +15,7 @@ MSO_Dripstone_Creeper_Randomspawn:
   Chance: 0.04
   Priority: 1
   Conditions:
-  - mobtype{type=CREEPER}
+  - entitytype{t=CREEPER} true
   - biome{b=DRIPSTONE_CAVES}
 MSO_Cave_Creeper_Randomspawn:
   Action: REPLACE
@@ -24,7 +24,7 @@ MSO_Cave_Creeper_Randomspawn:
   Chance: 0.04
   Priority: 1
   Conditions:
-  - mobtype{type=CREEPER}
+  - entitytype{t=CREEPER} true
   - biome{b=DRIPSTONE_CAVES,LUSH_CAVES}
 MSO_DarkOak_Creeper_Randomspawn:
   Action: REPLACE
@@ -33,5 +33,5 @@ MSO_DarkOak_Creeper_Randomspawn:
   Chance: 0.04
   Priority: 1
   Conditions:
-  - mobtype{type=CREEPER}
+  - entitytype{t=CREEPER} true
   - biome{b=DARK_FOREST}
