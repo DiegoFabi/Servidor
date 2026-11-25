@@ -1,0 +1,46 @@
+
+pigeons_fly:
+  Cooldown: 77
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  - state{s=fly;li=3;lo=3} @self
+  - sound{s=entity.bat.takeoff} @self
+  - remove{delay=100} @self
+
+
+pigeon_skin_1:
+  Skills:
+  - model{mid=scenes_pigeon1;save=true} @self ~onSpawn
+  - model{mid=scenes_pigeon1;save=true} @self ~onLoad
+
+pigeon_skin_2:
+  Skills:
+  - model{mid=scenes_pigeon2;save=true} @self ~onSpawn
+  - model{mid=scenes_pigeon2;save=true} @self ~onLoad
+
+pigeon_skin_3:
+  Skills:
+  - model{mid=scenes_pigeon3;save=true} @self ~onSpawn
+  - model{mid=scenes_pigeon3;save=true} @self ~onLoad
+
+pigeon_fly:
+  Cooldown: 77
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  - state{s=fly} @self
+  - sound{s=entity.bat.takeoff} @self
+  - remove{delay=65} @self
+
+deleteb:
+  TargetConditions:
+  - crouching true
+  - gamemode{m=CREATIVE} true
+  Skills:
+  - remove{targetcreative=true} @self
+#15294ee9c3f1a5e24721761e181fe52c

@@ -13,6 +13,8 @@ Icon:
     minecraft:custom_data: '{PublicBukkitValues:{"nexo:id":"pet_category_rare"}}'
   schema_version: 1
 Pets:
+- scenes_butterflies_pet
+- scenes_butterfly_pet
 - bs_vm_crab
 - bs_vm_armadillo
 - bs_vm_penguin

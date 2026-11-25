@@ -1,0 +1,322 @@
+scenes_butterflies_pet:
+  Type: bee
+  Display: '§4Butterflies' 
+  Health: 20
+  Damage: 1
+  Options:
+    PreventSunburn: true
+    KnockbackResistance: 10
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    PreventOtherDrops: true
+    NoGravity: true
+    Persistent: false
+    Invincible: true
+    LockPitch: true
+    FollowRange: 0
+    MovementSpeed: 0
+    Silent: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotoowner 15
+  AITargetSelectors:
+  - 0 clear
+  Disguise: armor_stand
+  Skills:
+  - sudoskill{s=[ - pull{v=17;to=true;Origin=@Forward{f=0;y=0.6;sideOffset=0;sudoowner=true;lockpitch=true;lockyaw=true};fo=true} @trigger ];cat=true} @owner{conditions=[ - crouching false]} ~onTimer:1
+  - lockhead{lp=true;lyaw=true} @self ~onSpawn
+  - model{mid=scenes_butterflies_pet;mode=pet} @self ~onSpawn
+  - state{s=pet;li=3;lo=3} @self ~onSpawn
+  - LockModel{l=true} @self ~onSpawn
+  - skill{s=fall} @owner ~onTimer:1
+  - skill{s=falling} @self ~onTimer:1
+  - skill{s=ground} @self ~onTimer:1
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scenes_butterfly_pet:
+  Type: bee
+  Display: '§4Butterflies' 
+  Health: 20
+  Damage: 1
+  Options:
+    PreventSunburn: true
+    KnockbackResistance: 10
+    PreventRandomEquipment: true
+    AlwaysShowName: true
+    PreventOtherDrops: true
+    Persistent: false
+    NoGravity: true
+    Invincible: true
+    LockPitch: flase
+    FollowRange: 5
+    MovementSpeed: 0
+    Silent: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotoowner 15
+  #- 2 lookatplayers
+  AITargetSelectors:
+  - 0 clear
+  Disguise: armor_stand
+  Skills:
+  - sudoskill{s=[ - pull{v=10;to=true;Origin=@Forward{f=-0.3;y=1.5;sideOffset=0.7;sudoowner=true;lockpitch=false};fo=true} @trigger ];cat=true} @owner{conditions=[ - crouching false]} ~onTimer:1
+  - randomskill{skills=butterfly_green,butterfly_blue,butterfly_gold,butterfly_orange,butterfly_purple,butterfly_red,butterfly_white} @self ~onSpawn
+  - randomskill{skills=butterfly_green,butterfly_blue,butterfly_gold,butterfly_orange,butterfly_purple,butterfly_red,butterfly_white} @self ~onLoad
+  - state{s=fly;li=0;lo=80;priority=1} @self ~onSpawn
+  - state{s=fly;li=0;lo=80;priority=1} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  
+
+butterfly:
+  Type: bat
+  Display: 'Butterfly'
+  Health: 1
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  Options:
+    KnockbackResistance: 10
+    Collidable: true
+    MovementSpeed: 0.1
+    NoGravity: true
+    Invincible: false
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - randomskill{skills=butterfly_green,butterfly_blue,butterfly_gold,butterfly_orange,butterfly_purple,butterfly_red,butterfly_white} @self ~onSpawn
+  - randomskill{skills=butterfly_green,butterfly_blue,butterfly_gold,butterfly_orange,butterfly_purple,butterfly_red,butterfly_white} @self ~onLoad
+  - state{s=fly} @self ~onSpawn
+  - state{s=fly} @self ~onLoad
+  - state{s=fly} @self ~onMove 
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  # - skill{s=butterfly_panic} @PIR{r=10} ~onTimer:5
+
+
+scene_butterflies:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    NoGravity: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scenes_butterflies;save=true} @self ~onSpawn
+  - model{mid=scenes_butterflies;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterflies_circle:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    NoGravity: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scenes_butterflies_circle;save=true} @self ~onSpawn
+  - model{mid=scenes_butterflies_circle;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_blue_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    NoGravity: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_blue_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_blue_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_red_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    NoGravity: true
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_red_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_red_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_gold_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    NoGravity: true
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_gold_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_gold_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_green_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    NoGravity: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_green_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_green_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_orange_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    NoGravity: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_orange_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_orange_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_purple_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    NoGravity: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_purple_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_purple_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scene_butterfly_white_static:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    NoGravity: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scene_butterfly_white_static;save=true} @self ~onSpawn
+  - model{mid=scene_butterfly_white_static;save=true;delay=5} @self ~onLoad
+  - skill{s=deleteb} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn

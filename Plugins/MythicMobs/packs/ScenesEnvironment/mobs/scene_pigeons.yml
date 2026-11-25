@@ -1,0 +1,89 @@
+scenes_pigeons_ground:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scenes_pigeons_ground;save=true} @self ~onSpawn
+  - model{mid=scenes_pigeons_ground;save=true;delay=5} @self ~onLoad
+  - state{s=land;lo=10} @self ~onSpawn
+  - state{s=land;lo=10} @self ~onLoad
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=land;lo=10} @self ~onSpawn
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=land;lo=10} @self ~onLoad
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=idle;li=10;delay=240} @self ~onSpawn
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=idle;li=10;delay=240} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=pigeons_fly} @PIR{r=12} ~onTimer:10 # You can adjust the value of r=10 to change the radius that determines how close the player needs to be to scare the pigeons. Increasing the value will expand the range, while decreasing it will make the radius smaller. 
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+
+scenes_pigeons_fly:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  Options:
+    Despawn: persistent
+    NoGravity: true
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=scenes_pigeons_fly;save=true} @self ~onSpawn
+  - model{mid=scenes_pigeons_fly;save=true;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - state{s=fly;sp=0.8} @self ~onSpawn
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - skill{s=deleteb} ~onInteract 
+
+scenes_pigeon:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - randomskill{skills=pigeon_skin_1,pigeon_skin_2,pigeon_skin_3} @self ~onSpawn
+  - randomskill{skills=pigeon_skin_1,pigeon_skin_2,pigeon_skin_3;delay=5} @self ~onLoad
+  - state{s=land;lo=10} @self ~onSpawn
+  - state{s=land;lo=10} @self ~onLoad
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=land;lo=10} @self ~onSpawn
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=land;lo=10} @self ~onLoad
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=idle;li=10;delay=100} @self ~onSpawn
+  - defaultstate{mid=scenes_pigeons_ground;type=idle;state=idle;li=10;delay=100} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - skill{s=pigeon_fly} @PIR{r=7} ~onTimer:10 # You can adjust the value of r=7 to change the radius that determines how close the player needs to be to scare the single pigeon. Increasing the value will expand the range, while decreasing it will make the radius smaller. 
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - runaigoalselector{goal=lookatplayers{r=30};delay=100} @self ~onSpawn
+  - runaigoalselector{goal=lookatplayers{r=30};delay=100} @self ~onLoad
+
+#15294ee9c3f1a5e24721761e181fe52c

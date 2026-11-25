@@ -1,0 +1,12 @@
+Id: scenes_butterflies_pet
+MythicMob: scenes_butterflies_pet
+Permission: mcpet.scenes_butterflies_pet
+Mountable: false
+Distance: 6
+SpawnRange: 3
+ComingBackRange: 4
+Icon:
+  Name: §dEnjambre de Mariposas
+  Material: MAGENTA_DYE
+  Description:
+  - §7Un pequeño enjambre que revolotea a tu alrededor.

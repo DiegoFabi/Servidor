@@ -1,0 +1,66 @@
+fall:
+  TargetConditions:
+  - gamemode{m=CREATIVE} false
+  - gliding false
+  Conditions:
+  - altitude{h=>5}
+  Skills:
+  - potion{type=SLOW_FALLING;duration=200;level=4;p=false;a=false;i=false}
+
+falling:
+  Conditions:
+  - altitude{h=>5}
+  Skills:
+  - state{s=pet;li=3;lo=3;r=true}
+  - state{s=falling;li=10;lo=10;sp=1.4;f=false}
+
+ground:
+  Conditions:
+  - altitude{h=<5}
+  Skills:
+  - state{s=falling;li=10;lo=10;r=true}
+  - state{s=pet;li=10;lo=10;f=false}
+
+butterfly_green:
+  Skills:
+  - model{mid=scenes_butterfly_green} @self ~onSpawn
+  - model{mid=scenes_butterfly_green} @self ~onLoad
+
+butterfly_blue:
+  Skills:
+  - model{mid=scenes_butterfly_blue} @self ~onSpawn
+  - model{mid=scenes_butterfly_blue} @self ~onLoad
+
+butterfly_gold:
+  Skills:
+  - model{mid=scenes_butterfly_gold} @self ~onSpawn
+  - model{mid=scenes_butterfly_gold} @self ~onLoad
+
+butterfly_orange:
+  Skills:
+  - model{mid=scenes_butterfly_orange} @self ~onSpawn
+  - model{mid=scenes_butterfly_orange} @self ~onLoad
+
+butterfly_purple:
+  Skills:
+  - model{mid=scenes_butterfly_purple} @self ~onSpawn
+  - model{mid=scenes_butterfly_purple} @self ~onLoad
+
+butterfly_red:
+  Skills:
+  - model{mid=scenes_butterfly_red} @self ~onSpawn
+  - model{mid=scenes_butterfly_red} @self ~onLoad
+
+butterfly_white:
+  Skills:
+  - model{mid=scenes_butterfly_white} @self ~onSpawn
+  - model{mid=scenes_butterfly_white} @self ~onLoad
+
+deleteb:
+  TargetConditions:
+  - crouching true
+  - gamemode{m=CREATIVE} true
+  Skills:
+  - remove{targetcreative=true} @self
+
+# 345ESW9N874W

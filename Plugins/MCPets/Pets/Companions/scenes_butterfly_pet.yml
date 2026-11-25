@@ -1,0 +1,12 @@
+Id: scenes_butterfly_pet
+MythicMob: scenes_butterfly_pet
+Permission: mcpet.scenes_butterfly_pet
+Mountable: false
+Distance: 6
+SpawnRange: 3
+ComingBackRange: 4
+Icon:
+  Name: §bMariposa
+  Material: LIGHT_BLUE_DYE
+  Description:
+  - §7Pequeña, pero muy bonita.
