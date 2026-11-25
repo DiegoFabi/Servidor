@@ -1429,7 +1429,7 @@ items:
     - ' &7Una masa pegajosa y elástica.'
     - ' &7Sirve para unir y sellar piezas.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos'
+    - ' &#9EA3AEUso &8» &#FFD36BPegamento para crafteos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_wool_ball:
@@ -1442,7 +1442,7 @@ items:
     - ' &7Lana enredada lista para'
     - ' &7tejer o rellenar.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para tejidos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_pig_leather:
@@ -1455,7 +1455,7 @@ items:
     - ' &7Cuero fino y resistente,'
     - ' &7bueno para curtir.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para armaduras de cuero'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_fish_oil:
@@ -1468,7 +1468,7 @@ items:
     - ' &7Aceite espeso que arde'
     - ' &7despacio en las lámparas.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCombustible'
+    - ' &#9EA3AEUso &8» &#FFD36BCombustible para hornos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_desert_cloth:
@@ -1481,7 +1481,7 @@ items:
     - ' &7Tela gastada por la arena'
     - ' &7y el sol del desierto.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para tejidos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_parrot_feather:
@@ -1494,7 +1494,7 @@ items:
     - ' &7Pluma ligera y colorida,'
     - ' &7ideal para emplumar flechas.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BFlechas'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para flechas'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_poison_sac:
@@ -1507,7 +1507,7 @@ items:
     - ' &7Glándula llena de veneno'
     - ' &7de araña de cueva.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BAlquimia'
+    - ' &#9EA3AEUso &8» &#FFD36BIngrediente de pociones de veneno'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_mushroom_spores:
@@ -1520,7 +1520,7 @@ items:
     - ' &7Esporas húmedas que se'
     - ' &7deshacen al tocarlas.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BCasi ninguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_bat_wing:
@@ -1533,7 +1533,7 @@ items:
     - ' &7Una membrana fina y'
     - ' &7arrugada. Poco útil.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BCasi ninguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_squid_tentacle:
@@ -1546,7 +1546,7 @@ items:
     - ' &7Viscoso y frío.'
     - ' &7Se resbala de las manos.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BCasi ninguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_frog_leg:
@@ -1559,7 +1559,7 @@ items:
     - ' &7Una pata de rana cruda.'
     - ' &7Mejor no comerla.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BCasi ninguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_seashell:
@@ -1572,7 +1572,7 @@ items:
     - ' &7Una concha bonita pero'
     - ' &7sin ningún valor.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BDecoración'
+    - ' &#9EA3AEUso &8» &#FFD36BSolo decorativo'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_fish_grey:
@@ -1585,7 +1585,7 @@ items:
     - ' &7Restos de un pez que'
     - ' &7alguien ya se comió.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BNinguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_leaf:
@@ -1598,7 +1598,7 @@ items:
     - ' &7Una hoja seca que se'
     - ' &7rompe con el viento.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BNinguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_candy:
@@ -1611,7 +1611,7 @@ items:
     - ' &7Un dulce viejo y pegajoso'
     - ' &7que ya no se puede comer.'
     - ''
-    - ' &f<glyph:high_voltage> &#FF6B6BNinguno'
+    - ' &#9EA3AEUso &8» &#FF6B6BSin uso'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_medal_bronze:
@@ -1624,7 +1624,7 @@ items:
     - ' &7Una medalla verdosa por'
     - ' &7el óxido. Vale poco.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BComercio'
+    - ' &#9EA3AEUso &8» &#FFD36BObjeto para comerciar'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_axolotl_mucus:
@@ -1637,7 +1637,7 @@ items:
     - ' &7Moco brillante con un'
     - ' &7poder regenerador.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BAlquimia'
+    - ' &#9EA3AEUso &8» &#FFD36BIngrediente de pociones de regeneración'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_ender_powder:
@@ -1650,7 +1650,7 @@ items:
     - ' &7Polvo que vibra cerca'
     - ' &7del vacío.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BEncantamientos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para encantamientos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_honey_crystal:
@@ -1663,7 +1663,7 @@ items:
     - ' &7Miel cristalizada, dura'
     - ' &7como el ámbar.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BAlquimia'
+    - ' &#9EA3AEUso &8» &#FFD36BIngrediente de pociones'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_wolf_fang:
@@ -1676,7 +1676,7 @@ items:
     - ' &7Un colmillo afilado'
     - ' &7como una daga.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BArmas'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para armas'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_phantom_scale:
@@ -1689,7 +1689,7 @@ items:
     - ' &7Escama ligera que flota'
     - ' &7en el aire.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BArmaduras'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para armaduras'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_ice_shards:
@@ -1702,7 +1702,7 @@ items:
     - ' &7Hielo que nunca se derrite'
     - ' &7del todo.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para crafteos de hielo'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_guardian_spike:
@@ -1715,7 +1715,7 @@ items:
     - ' &7Púa dura de los templos'
     - ' &7del océano.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BArmas'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para armas acuáticas'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_magma_gel:
@@ -1728,7 +1728,7 @@ items:
     - ' &7Gel ardiente que nunca'
     - ' &7se enfría.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCombustible'
+    - ' &#9EA3AEUso &8» &#FFD36BCombustible para hornos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_glow_squid_tentacle:
@@ -1741,7 +1741,7 @@ items:
     - ' &7Tentáculo que brilla'
     - ' &7en la oscuridad.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BIluminación'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para antorchas y luces'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_aqua_essence:
@@ -1754,7 +1754,7 @@ items:
     - ' &7La esencia de un ahogado'
     - ' &7condensada en gotas.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BAlquimia'
+    - ' &#9EA3AEUso &8» &#FFD36BIngrediente de pociones de respiración'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_ectoplasm:
@@ -1767,7 +1767,7 @@ items:
     - ' &7Restos de un espíritu'
     - ' &7que no descansa.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BEncantamientos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para encantamientos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_dolphin_fin:
@@ -1780,7 +1780,7 @@ items:
     - ' &7Aleta lisa y flexible,'
     - ' &7perfecta para nadar.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para crafteos acuáticos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_starfish:
@@ -1793,7 +1793,7 @@ items:
     - ' &7Una estrella de mar seca'
     - ' &7con restos de magia.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BAlquimia'
+    - ' &#9EA3AEUso &8» &#FFD36BIngrediente de pociones'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_clover:
@@ -1806,7 +1806,7 @@ items:
     - ' &7Un trébol rarísimo'
     - ' &7que trae buena suerte.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BSuerte'
+    - ' &#9EA3AEUso &8» &#FFD36BAmuleto de suerte'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_medal_silver:
@@ -1819,7 +1819,7 @@ items:
     - ' &7Una medalla de plata'
     - ' &7pulida y valiosa.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BComercio'
+    - ' &#9EA3AEUso &8» &#FFD36BObjeto para comerciar'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_crystals:
@@ -1832,7 +1832,7 @@ items:
     - ' &7Cristales que guardan'
     - ' &7algo de energía.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BEncantamientos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para encantamientos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_magnet:
@@ -1845,7 +1845,7 @@ items:
     - ' &7Un imán viejo que todavía'
     - ' &7atrae el hierro.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BHerramientas'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para herramientas'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_warden_heart:
@@ -1858,7 +1858,7 @@ items:
     - ' &7Late despacio en la'
     - ' &7oscuridad profunda.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BCrafteos legendarios'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para crafteos legendarios'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_ghast_eye:
@@ -1871,7 +1871,7 @@ items:
     - ' &7Un ojo que todavía'
     - ' &7llora fuego.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BEncantamientos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para encantamientos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_wither_dust:
@@ -1884,7 +1884,7 @@ items:
     - ' &7Ceniza negra que pudre'
     - ' &7todo lo que toca.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BArmas malditas'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para armas malditas'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_magic_crystals:
@@ -1897,7 +1897,7 @@ items:
     - ' &7Cristales puros llenos'
     - ' &7de magia antigua.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BEncantamientos'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para encantamientos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_purple_orb:
@@ -1910,7 +1910,7 @@ items:
     - ' &7Un orbe que absorbe'
     - ' &7la luz a su alrededor.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BMagia'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para objetos mágicos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_crown:
@@ -1923,7 +1923,7 @@ items:
     - ' &7La corona partida de'
     - ' &7un rey olvidado.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BComercio'
+    - ' &#9EA3AEUso &8» &#FFD36BObjeto para comerciar'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_medal_gold:
@@ -1936,7 +1936,7 @@ items:
     - ' &7Una medalla de oro'
     - ' &7con el sello real.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BComercio'
+    - ' &#9EA3AEUso &8» &#FFD36BObjeto para comerciar'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_sun:
@@ -1949,7 +1949,7 @@ items:
     - ' &7Un pedazo de sol'
     - ' &7que nunca se apaga.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BMagia'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para objetos mágicos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_moon:
@@ -1962,7 +1962,7 @@ items:
     - ' &7Un trozo de luna que'
     - ' &7brilla en la noche.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BMagia'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para objetos mágicos'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
   botin_skull:
@@ -1975,7 +1975,7 @@ items:
     - ' &7Un cráneo de una'
     - ' &7época perdida.'
     - ''
-    - ' &f<glyph:high_voltage> &#FFD36BRituales'
+    - ' &#9EA3AEUso &8» &#FFD36BMaterial para rituales'
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
 
