@@ -1,0 +1,183 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "items",
+      "prefix": "items/"
+    },
+    {
+      "type": "directory",
+      "source": "blocks",
+      "prefix": "blocks/"
+    },
+    {
+      "type": "directory",
+      "source": "tools",
+      "prefix": "tools/"
+    },
+    {
+      "type": "directory",
+      "source": "tavern_furniture",
+      "prefix": "tavern_furniture/"
+    },
+    {
+      "type": "directory",
+      "source": "flair",
+      "prefix": "flair/"
+    },
+    {
+      "type": "directory",
+      "source": "icons",
+      "prefix": "icons/"
+    },
+    {
+      "type": "directory",
+      "source": "cottagecore",
+      "prefix": "cottagecore/"
+    },
+    {
+      "type": "directory",
+      "source": "elitecreatures",
+      "prefix": "elitecreatures/"
+    },
+    {
+      "type": "directory",
+      "source": "gui",
+      "prefix": "gui/"
+    },
+    {
+      "type": "directory",
+      "source": "hcs",
+      "prefix": "hcs/"
+    },
+    {
+      "type": "directory",
+      "source": "iconos",
+      "prefix": "iconos/"
+    },
+    {
+      "type": "directory",
+      "source": "knight_pack",
+      "prefix": "knight_pack/"
+    },
+    {
+      "type": "directory",
+      "source": "lanshan",
+      "prefix": "lanshan/"
+    },
+    {
+      "type": "directory",
+      "source": "lemon_mcpets",
+      "prefix": "lemon_mcpets/"
+    },
+    {
+      "type": "directory",
+      "source": "livingroom",
+      "prefix": "livingroom/"
+    },
+    {
+      "type": "directory",
+      "source": "nogs_menagerie",
+      "prefix": "nogs_menagerie/"
+    },
+    {
+      "type": "directory",
+      "source": "required",
+      "prefix": "required/"
+    },
+    {
+      "type": "directory",
+      "source": "royal_pack",
+      "prefix": "royal_pack/"
+    },
+    {
+      "type": "directory",
+      "source": "workshop_six",
+      "prefix": "workshop_six/"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_axe"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_brutal_sword"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_claws"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_crossbow"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_crossbow_firework"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_great_axe"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_great_hammer"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_great_spear"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_head"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_hoe"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_hood"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_outline"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_pickaxe"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_sable"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_scythe"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_shovel"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_spike"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:abyss_knight_sword"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:boots"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:chest"
+    },
+    {
+      "type": "single",
+      "resource": "abyss:legs"
+    }
+  ]
+}

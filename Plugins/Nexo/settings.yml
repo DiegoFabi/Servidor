@@ -24,7 +24,7 @@ Recipes:
   furnace_cooldown_duration: 1s
 Pack:
   obfuscation:
-    type: SIMPLE
+    type: NONE
     cache: true
   validate:
     models: true
