@@ -25,6 +25,10 @@ offensivePowers:
 - fireworks_barrage.yml
 - lightning_bolts.yml
 - taze.yml
+# Poderes custom del servidor (solo efectos vanilla)
+- rayo_castigador.lua
+- circulo_arcano.lua
+- pulso_helado.lua
 # Sets the miscellaneous powers natural elites can randomly roll.
 # Both .lua filenames and legacy .yml aliases are accepted.
 miscellaneousPowers:
@@ -43,6 +47,10 @@ miscellaneousPowers:
 - moonwalk.yml
 - movement_speed.yml
 - taunt.yml
+# Poderes custom del servidor (solo efectos vanilla)
+- aura_sombria.lua
+- mareo_arcano.lua
+- salto_sombrio.lua
 majorPowers:
   # Sets the major powers ALLAY elites can randomly roll.
   ALLAY: []
@@ -59,7 +67,8 @@ majorPowers:
   - firestorm.lua
   - flame_pyre.lua
   # Sets the major powers BOGGED elites can randomly roll.
-  BOGGED: []
+  BOGGED:
+  - mareo_arcano.lua
   # Sets the major powers BREEZE elites can randomly roll.
   BREEZE: []
   # Sets the major powers CAMEL elites can randomly roll.
@@ -69,7 +78,8 @@ majorPowers:
   # Sets the major powers CAT elites can randomly roll.
   CAT: []
   # Sets the major powers CAVE_SPIDER elites can randomly roll.
-  CAVE_SPIDER: []
+  CAVE_SPIDER:
+  - mareo_arcano.lua
   # Sets the major powers CHICKEN elites can randomly roll.
   CHICKEN: []
   # Sets the major powers COD elites can randomly roll.
@@ -81,13 +91,16 @@ majorPowers:
   # Sets the major powers CREAKING elites can randomly roll.
   CREAKING: []
   # Sets the major powers CREEPER elites can randomly roll.
-  CREEPER: []
+  CREEPER:
+  - pulso_helado.lua
+  - aura_sombria.lua
   # Sets the major powers DOLPHIN elites can randomly roll.
   DOLPHIN: []
   # Sets the major powers DONKEY elites can randomly roll.
   DONKEY: []
   # Sets the major powers DROWNED elites can randomly roll.
-  DROWNED: []
+  DROWNED:
+  - pulso_helado.lua
   # Sets the major powers ELDER_GUARDIAN elites can randomly roll.
   ELDER_GUARDIAN: []
   # Sets the major powers ENDER_DRAGON elites can randomly roll.
@@ -121,7 +134,8 @@ majorPowers:
   # Sets the major powers HORSE elites can randomly roll.
   HORSE: []
   # Sets the major powers HUSK elites can randomly roll.
-  HUSK: []
+  HUSK:
+  - circulo_arcano.lua
   # Sets the major powers ILLUSIONER elites can randomly roll.
   ILLUSIONER: []
   # Sets the major powers IRON_GOLEM elites can randomly roll.
@@ -145,7 +159,8 @@ majorPowers:
   # Sets the major powers PARROT elites can randomly roll.
   PARROT: []
   # Sets the major powers PHANTOM elites can randomly roll.
-  PHANTOM: []
+  PHANTOM:
+  - rayo_castigador.lua
   # Sets the major powers PIG elites can randomly roll.
   PIG: []
   # Sets the major powers PIGLIN elites can randomly roll.
@@ -153,7 +168,8 @@ majorPowers:
   # Sets the major powers PIGLIN_BRUTE elites can randomly roll.
   PIGLIN_BRUTE: []
   # Sets the major powers PILLAGER elites can randomly roll.
-  PILLAGER: []
+  PILLAGER:
+  - rayo_castigador.lua
   # Sets the major powers POLAR_BEAR elites can randomly roll.
   POLAR_BEAR: []
   # Sets the major powers PUFFERFISH elites can randomly roll.
@@ -178,17 +194,21 @@ majorPowers:
   # Sets the major powers SKELETON_HORSE elites can randomly roll.
   SKELETON_HORSE: []
   # Sets the major powers SLIME elites can randomly roll.
-  SLIME: []
+  SLIME:
+  - pulso_helado.lua
   # Sets the major powers SNIFFER elites can randomly roll.
   SNIFFER: []
   # Sets the major powers SNOW_GOLEM elites can randomly roll.
   SNOW_GOLEM: []
   # Sets the major powers SPIDER elites can randomly roll.
-  SPIDER: []
+  SPIDER:
+  - salto_sombrio.lua
+  - mareo_arcano.lua
   # Sets the major powers SQUID elites can randomly roll.
   SQUID: []
   # Sets the major powers STRAY elites can randomly roll.
-  STRAY: []
+  STRAY:
+  - pulso_helado.lua
   # Sets the major powers STRIDER elites can randomly roll.
   STRIDER: []
   # Sets the major powers TADPOLE elites can randomly roll.
@@ -204,17 +224,22 @@ majorPowers:
   # Sets the major powers VILLAGER elites can randomly roll.
   VILLAGER: []
   # Sets the major powers VINDICATOR elites can randomly roll.
-  VINDICATOR: []
+  VINDICATOR:
+  - rayo_castigador.lua
   # Sets the major powers WANDERING_TRADER elites can randomly roll.
   WANDERING_TRADER: []
   # Sets the major powers WARDEN elites can randomly roll.
   WARDEN: []
   # Sets the major powers WITCH elites can randomly roll.
-  WITCH: []
+  WITCH:
+  - circulo_arcano.lua
+  - mareo_arcano.lua
   # Sets the major powers WITHER elites can randomly roll.
   WITHER: []
   # Sets the major powers WITHER_SKELETON elites can randomly roll.
-  WITHER_SKELETON: []
+  WITHER_SKELETON:
+  - aura_sombria.lua
+  - salto_sombrio.lua
   # Sets the major powers WOLF elites can randomly roll.
   WOLF: []
   # Sets the major powers ZOGLIN elites can randomly roll.
