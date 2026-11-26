@@ -9,7 +9,7 @@
 Raton_black_mouse:
   Type: black_mouse
   Worlds: survivalMain
-  Chance: 0.03
+  Chance: 0.07
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
@@ -23,7 +23,7 @@ Raton_black_mouse:
 Raton_brown_mouse:
   Type: brown_mouse
   Worlds: survivalMain
-  Chance: 0.03
+  Chance: 0.07
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
@@ -37,7 +37,7 @@ Raton_brown_mouse:
 Raton_gray_mouse:
   Type: gray_mouse
   Worlds: survivalMain
-  Chance: 0.03
+  Chance: 0.07
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
@@ -51,7 +51,7 @@ Raton_gray_mouse:
 Raton_white_mouse:
   Type: white_mouse
   Worlds: survivalMain
-  Chance: 0.03
+  Chance: 0.07
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false

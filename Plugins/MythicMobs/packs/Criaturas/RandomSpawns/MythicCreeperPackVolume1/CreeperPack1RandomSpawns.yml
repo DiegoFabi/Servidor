@@ -3,7 +3,7 @@ MSO_Bamboo_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Bamboo
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true
@@ -12,7 +12,7 @@ MSO_Hills_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Hills
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true
@@ -21,7 +21,7 @@ MSO_Jungle_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Jungle
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true
@@ -30,7 +30,7 @@ MSO_Plains_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Plains
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true
@@ -39,7 +39,7 @@ MSO_Spruce_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Spruce
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true

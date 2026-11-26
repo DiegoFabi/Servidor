@@ -3,7 +3,7 @@ MSO_Beach_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Beach
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true
@@ -12,7 +12,7 @@ MSO_Badlands_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Badlands
-  Chance: 0.04
+  Chance: 0.1
   Priority: 1
   Conditions:
   - entitytype{t=CREEPER} true

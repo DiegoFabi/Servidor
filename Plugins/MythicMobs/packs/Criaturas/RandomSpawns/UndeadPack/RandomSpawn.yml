@@ -8,7 +8,7 @@
 RandomGhoul:
   Type: Ghoul
   Worlds: survivalMain
-  Chance: 0.18
+  Chance: 0.3
   Priority: 5
   Action: REPLACE
   UseWorldScaling: false
@@ -23,7 +23,7 @@ RandomGhoul:
 RandomSpecter:
   Type: Specter
   Worlds: survivalMain
-  Chance: 0.15
+  Chance: 0.25
   Priority: 5
   Action: REPLACE
   UseWorldScaling: false
@@ -39,7 +39,7 @@ RandomSpecter:
 RandomZombieBrute:
   Type: Zombie_Brute
   Worlds: survivalMain
-  Chance: 0.03
+  Chance: 0.06
   Priority: 5
   Action: REPLACE
   UseWorldScaling: false
@@ -54,7 +54,7 @@ RandomZombieBrute:
 RandomWendigo:
   Type: Nightharrow_Wendigo
   Worlds: survivalMain
-  Chance: 0.004
+  Chance: 0.01
   Priority: 8
   Action: REPLACE
   UseWorldScaling: false

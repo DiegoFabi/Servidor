@@ -8,7 +8,7 @@
 RandomMossGolem:
   Type: MossGolem
   Worlds: survivalMain
-  Chance: 0.12
+  Chance: 0.22
   Priority: 5
   Action: REPLACE
   UseWorldScaling: false

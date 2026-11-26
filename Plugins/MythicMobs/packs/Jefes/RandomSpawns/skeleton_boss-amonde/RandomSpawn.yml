@@ -8,7 +8,7 @@
 RandomSkeletonMinion:
   Type: skeleton_minion
   Worlds: survivalMain
-  Chance: 0.25
+  Chance: 0.35
   Priority: 5
   Action: REPLACE
   UseWorldScaling: false
