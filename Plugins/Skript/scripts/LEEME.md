@@ -4,7 +4,7 @@ Skript carga las subcarpetas automáticamente. Un archivo que empieza con `-` es
 
 | Carpeta | Contenido |
 |---|---|
-| `utils/` | Librerías **globales** reutilizables: `items.sk` (quitar/dar items, buzón), `notificaciones.sk` (sonido suave notificar()), autopickup, cosecha, `limpieza.sk` (objetos del suelo) y `perfil.sk` (Mi Perfil) |
+| `utils/` | Librerías **globales** reutilizables: `items.sk` (quitar/dar items, buzón), `notificaciones.sk` (sonido suave notificar()), autopickup, cosecha, `limpieza.sk` (objetos del suelo) y `perfil.sk` (abre Mi Perfil de CoreTools con la armadura puesta) |
 | `magia/` | Poderes. `nucleo_magia.sk` (fxRing, fxLinea, protección de caída) y `menu_magia.sk` (/magia) |
 | `magia/comunes/` | `curacion_espiral.sk` (/spiralheart), `misil_de_agua.sk` (/watermisil), `salto_explosivo.sk` (/blastpower), `nova_de_escarcha.sk` (/escarcha), `bendiciones.sk` (/bendicion <tipo>: mecánicas propias de pociones, anillos, gemas y reliquias), `pergaminos.sk` (/pergamino <tipo>: 6 pergaminos) |
 | `magia/raros/` | `bola_de_fuego.sk` (/explosionmagic), `garras_de_dragon.sk` (/clawstrike), `campo_de_gravedad.sk` (/gravity), `cadena_de_rayos.sk` (/cadenarayos) |

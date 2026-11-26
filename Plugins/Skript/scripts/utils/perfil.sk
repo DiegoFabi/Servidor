@@ -1,129 +1,30 @@
 # ============================================================
-#  perfil.sk - Menú "Mi Perfil" (diseño "Tu Perfil") con equipamiento dinámico
-#  Requiere: Skript 2.10+ y Vault (money de ExcellentEconomy)
+#  perfil.sk - Abre "Mi Perfil" (menú de CoreTools panelProfile)
 #  Abrir: /perfil (botón "Mi Perfil" del menú principal de CoreTools)
 #
-#  Izquierda: una cruz con tu equipo real (casco, pechera, pantalones,
-#  botas y las dos manos). Si un hueco está vacío se ve un soporte de
-#  armadura indicando que ahí va esa pieza. Se actualiza solo mientras
-#  el menú está abierto (cada segundo).
-#  Derecha: estadísticas y accesos a las demás opciones.
-#
-#  Rendimiento: un bucle por jugador SOLO mientras tiene el menú abierto;
-#  solo reescribe los 6 huecos del equipo.
+#  Antes de abrir guarda la armadura que lleva el jugador en variables
+#  de CoreTools (Variables/perfil.yml): pf_casco, pf_pecho, pf_piernas,
+#  pf_botas. Los botones dinámicos del menú muestran esa pieza o un
+#  soporte de armadura si el hueco está vacío.
 # ============================================================
 
-options:
-    # Sin colores hex (#) aqui: en las opciones '#' inicia un comentario de Skript
-    prefijo: <gradient:gold:yellow><bold>Perfil</bold></gradient> <dark_gray>»<reset>
-
-# Pieza del equipo o soporte de armadura si está vacía
-function pfPieza(i: item, nombre: text, donde: text) :: item:
+function pfMaterial(i: item) :: text:
     if {_i} is air:
-        return armor stand named "<#9EA3AE>%{_nombre}% <dark_gray>(vacío)" with lore "<#7A7F8A>Equípate algo en %{_donde}%" and "<#7A7F8A>y aparecerá aquí."
-    return {_i}
+        return "armor_stand"
+    set {_t} to "%type of {_i}%"
+    replace all " " with "_" in {_t}
+    return {_t}
 
-function pfEquipo(p: player, gui: inventory):
-    # Columna derecha del diseño: armadura real
-    set slot 17 of {_gui} to pfPieza(helmet of {_p}, "Casco", "la cabeza")
-    set slot 26 of {_gui} to pfPieza(chestplate of {_p}, "Pechera", "el torso")
-    set slot 35 of {_gui} to pfPieza(leggings of {_p}, "Pantalones", "las piernas")
-    set slot 44 of {_gui} to pfPieza(boots of {_p}, "Botas", "los pies")
-    # Pestañas inferiores: las dos manos
-    set slot 36 of {_gui} to pfPieza(tool of {_p}, "Mano Principal", "la mano derecha")
-    set slot 37 of {_gui} to pfPieza(offhand tool of {_p}, "Mano Secundaria", "la mano izquierda")
-
-function pfBoton(gui: inventory, slot: number, i: item, nombre: text, l1: text, l2: text, accion: text):
-    set slot {_slot} of {_gui} to {_i} named "<white>%{_nombre}%" with lore "<#C9CDD6>%{_l1}%", "<#C9CDD6>%{_l2}%", "" and "<#7FB2FF>Clic para %{_accion}%"
-
-# Diseño "Tu Perfil": fondo del pack Inventories (carácter U+3290, 5 filas).
-# Panel cabeza (cabeza 2D, CMD 101) · panel de estadísticas · armadura a la derecha · pestañas abajo.
-function perfilMenu(p: player):
-    set {_gui} to chest inventory with 5 rows named "㈮㈮<white>㊐"
-    # Botón volver: la flecha está dibujada en el fondo; el item es transparente (diamond CMD 1)
-    set slot 0 of {_gui} to diamond with custom model data 1 named "<white>« <#FFD36B>Volver al Menú Principal"
-    set {_dinero} to round({_p}'s balance)
-    set {_hist} to {historia::%uuid of {_p}%} ? 0
-    set {_bounty} to bountyRecompensa({_p})
-    set slot 10 of {_gui} to (skull of {_p}) with custom model data 101 named "<gradient:#FFE29A:#FFB347><bold>%{_p}%</bold></gradient>" with lore "<#C9CDD6>Mundo: <white>%world of {_p}%" and "<#C9CDD6>Ping: <white>%ping of {_p}% ms"
-    # Panel de estadísticas
-    set slot 12 of {_gui} to gold ingot named "<gradient:#FFE29A:#FFB347>Dinero" with lore "<#7FFF9E>$%{_dinero}%"
-    set slot 13 of {_gui} to experience bottle named "<gradient:#FFE29A:#FFB347>Nivel" with lore "<#7FFF9E>Nivel %level of {_p}%"
-    set slot 14 of {_gui} to red dye named "<gradient:#FFE29A:#FFB347>Vida" with lore "<#FF6B6B>❤ %round(health of {_p} * 2)%<#9EA3AE>/%round(max health of {_p} * 2)%"
-    set slot 21 of {_gui} to clock named "<gradient:#FFE29A:#FFB347>Hambre y Saturación" with lore "<#C9CDD6>Hambre: <white>%food level of {_p}%<#9EA3AE>/20" and "<#C9CDD6>Saturación: <white>%round(saturation of {_p})%"
-    set slot 22 of {_gui} to iron sword named "<gradient:#FFE29A:#FFB347>Recompensa" with lore "<#C9CDD6>Tu cabeza vale: <#FF6B6B>$%{_bounty}%"
-    pfBoton({_gui}, 30, golden pickaxe, "<gradient:#FFE29A:#FFB347>Trabajos", "Elige un oficio y", "gana dinero trabajando.", "abrir tus trabajos")
-    pfBoton({_gui}, 31, writable book, "<gradient:#FFE29A:#FFB347>Historia", "Parte actual: %{_hist}%", "Revisa lo que desbloqueaste.", "abrir la historia")
-    pfBoton({_gui}, 32, bone, "<gradient:#FFE29A:#FFB347>Mascotas", "Tus compañeros", "de aventura.", "ver tus mascotas")
-    pfBoton({_gui}, 33, leather chestplate, "<gradient:#FFE29A:#FFB347>Cosméticos", "Viste a tu personaje", "con tu armario.", "abrir tu armario")
-    # Pestañas inferiores (36 y 37 = manos, en pfEquipo)
-    pfBoton({_gui}, 38, amethyst shard, "<gradient:#FFE29A:#FFB347>Partículas", "Efectos cosméticos", "a tu alrededor.", "elegir partículas")
-    pfBoton({_gui}, 39, bundle, "<gradient:#FFE29A:#FFB347>Mis Homes", "Tus puntos de", "regreso guardados.", "ver tus homes")
-    pfBoton({_gui}, 40, oak door, "<gradient:#FFE29A:#FFB347>Protecciones", "Gestiona tus terrenos", "protegidos.", "abrir tus protecciones")
-    pfBoton({_gui}, 41, ender chest, "<gradient:#FFE29A:#FFB347>Baúles", "Tus baúles personales", "desde cualquier lugar.", "abrir tus baúles")
-    pfBoton({_gui}, 42, chest, "<gradient:#FFE29A:#FFB347>Buzón", "Objetos que te llegaron", "con el inventario lleno.", "recoger objetos")
-    pfBoton({_gui}, 43, diamond sword, "<gradient:#FFE29A:#FFB347>Habilidades", "Tus estadísticas y", "poderes de clase.", "ver tus habilidades")
-    pfEquipo({_p}, {_gui})
-    set {-pf::inv::%uuid of {_p}%} to {_gui}
-    open {_gui} to {_p}
-    pfRefresco({_p}, {_gui})
-
-# Refresco del equipo mientras el menú siga abierto
-function pfRefresco(p: player, gui: inventory):
-    set {_u} to uuid of {_p}
-    loop 600 times:
-        wait 1 second
-        if {_p} is not online:
-            stop
-        if {-pf::inv::%{_u}%} is not set:
-            stop
-        if {-pf::inv::%{_u}%} is not {_gui}:
-            stop
-        pfEquipo({_p}, {_gui})
-
-on inventory click:
-    {-pf::inv::%uuid of player%} is set
-    event-inventory is {-pf::inv::%uuid of player%}
-    cancel event
-    set {_s} to index of event-slot
-    set {_n} to name of player
-    if {_s} = 30:
-        make player execute command "jobs"
-    else if {_s} = 31:
-        make player execute command "historia"
-    else if {_s} = 32:
-        execute console command "core-menu menuMascotas %{_n}%"
-    else if {_s} = 33:
-        execute console command "cosmetic menu defaultmenu_hats %{_n}%"
-    else if {_s} = 38:
-        execute console command "core-menu menuParticulas %{_n}%"
-    else if {_s} = 39:
-        close player's inventory
-        make player execute command "homes list"
-    else if {_s} = 40:
-        close player's inventory
-        make player execute command "nclaim"
-    else if {_s} = 41:
-        close player's inventory
-        make player execute command "pv"
-    else if {_s} = 42:
-        close player's inventory
-        make player execute command "buzon"
-    else if {_s} = 43:
-        close player's inventory
-        make player execute command "stats"
-    else if {_s} = 0:
-        execute console command "core-menu menuMain %{_n}%"
-    else:
-        stop
-    play sound "ui.button.click" with volume 0.6 to player
-
-on inventory close:
-    {-pf::inv::%uuid of player%} is set
-    event-inventory is {-pf::inv::%uuid of player%}
-    delete {-pf::inv::%uuid of player%}
+function pfAbrir(p: player):
+    set {_n} to name of {_p}
+    execute console command "core-variables set pf_casco %pfMaterial(helmet of {_p})% %{_n}%"
+    execute console command "core-variables set pf_pecho %pfMaterial(chestplate of {_p})% %{_n}%"
+    execute console command "core-variables set pf_piernas %pfMaterial(leggings of {_p})% %{_n}%"
+    execute console command "core-variables set pf_botas %pfMaterial(boots of {_p})% %{_n}%"
+    wait 2 ticks
+    execute console command "core-menu panelProfile %{_n}%"
 
 command /perfil:
     aliases: /profile
     trigger:
-        perfilMenu(player)
+        pfAbrir(player)

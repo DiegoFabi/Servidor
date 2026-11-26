@@ -56,6 +56,17 @@
             "kind": "player"
           }
         }
+      },
+      {
+        "threshold": 102,
+        "model": {
+          "type": "minecraft:special",
+          "base": "nexo:2d_player_head_medium",
+          "model": {
+            "type": "minecraft:head",
+            "kind": "player"
+          }
+        }
       }
     ],
     "fallback": {

@@ -119,13 +119,14 @@ menuMain:
       custom_model_data_float: 1
       name: '<white><glyph:essential_icons_crown></white> <gradient:#FFE29A:#FFB347>Mi Perfil</gradient>'
       lore:
-      - '<#7C8291>Jugador <white><glyph:essential_icons_helmet></white>'
+      - '<#7C8291>Tu Personaje'
       - ''
-      - '<white>Jugador: <#FFD36B>{caster_name}'
-      - '<white><glyph:essential_icons_coins></white> <white>Moneda: <#FFD36B>%excellenteconomy_balance_short_money%'
-      - '<white><glyph:essential_icons_diamond></white> <white>Shards: <#7FD8FF>%excellenteconomy_balance_short_shards%'
+      - ' <white><glyph:essential_icons_coins></white> <#9EA3AE>Moneda <dark_gray>» <#FFD36B>%excellenteconomy_balance_short_money%'
+      - ' <white><glyph:essential_icons_diamond></white> <#9EA3AE>Shards <dark_gray>» <#D89BFF>%excellenteconomy_balance_short_shards%'
+      - ' <white><glyph:essential_icons_helmet></white> <#9EA3AE>Clase <dark_gray>» <#FFD36B>%coretools_var_player_clase_nombre%'
       - ''
-      - '<#7FFF9E>✔ <#9EEBA8>Equipamiento, habilidades y opciones'
+      - '<#C9CDD6>Tu equipo, estadísticas, rango,'
+      - '<#C9CDD6>homes, baúles y mucho más.'
       - ''
       - '<#FFB347>✥ ¡Clic para <bold>VER PERFIL</bold>!'
       flags:

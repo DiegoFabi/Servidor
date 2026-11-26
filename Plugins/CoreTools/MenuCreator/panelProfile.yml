@@ -1,7 +1,8 @@
-# Perfil del jugador (diseño con textura: Inventories/along:font/gui/perfil.png, carácter U+3290).
-# Cabeza 2D grande: player_head con custom_model_data 101 (pequeña, cabe en el panel 3x3) (pack 2DPlayerHeads + player_head.json de Inventories).
-# Equipamiento: iconos fijos (los placeholders de objetos de PAPI fallan con el slot vacío).
-# Botón volver: flecha dibujada en la textura; el item es transparente (diamond + CMD 1 de Inventories, como MainShop).
+# Perfil del jugador "Tu Perfil" (fondo: Inventories/along:font/gui/perfil.png, carácter U+3290).
+# Se abre con /perfil (botón "Mi Perfil" del menú principal): Skript guarda antes la armadura
+# puesta en variables de CoreTools (pf_casco...) y abre este menú.
+# Cabeza 2D mediana: player_head con custom_model_data 102 (centrada en el panel de la cabeza).
+# Botón volver: flecha dibujada en el fondo; item transparente (diamond + CMD 1 de Inventories).
 panelProfile:
   permission: ''
   bottom_inventory: false
@@ -32,7 +33,7 @@ panelProfile:
     jugador:
       location: top
       slots:
-      - 10
+      - 19
       source: vanilla
       material: player_head
       name: <white><glyph:person> <gradient:#FFE29A:#FFB347>{caster_name}</gradient>
@@ -46,7 +47,7 @@ panelProfile:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
       texture: player
-      custom_model_data_float: 101
+      custom_model_data_float: 102
     dinero:
       location: top
       slots:
@@ -186,50 +187,22 @@ panelProfile:
       location: top
       slots:
       - 17
-      source: vanilla
-      material: leather_helmet
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Casco</gradient>
-      lore:
-      - <#C9CDD6>Protege tu cabeza.
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
+      dynamic_button: pf_boton_casco
     eq_pecho:
       location: top
       slots:
       - 26
-      source: vanilla
-      material: leather_chestplate
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pechera</gradient>
-      lore:
-      - <#C9CDD6>Protege tu torso.
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
+      dynamic_button: pf_boton_pecho
     eq_piernas:
       location: top
       slots:
       - 35
-      source: vanilla
-      material: leather_leggings
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Pantalones</gradient>
-      lore:
-      - <#C9CDD6>Protege tus piernas.
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
+      dynamic_button: pf_boton_piernas
     eq_botas:
       location: top
       slots:
       - 44
-      source: vanilla
-      material: leather_boots
-      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Botas</gradient>
-      lore:
-      - <#C9CDD6>Protege tus pies.
-      flags:
-      - HIDE_ATTRIBUTES
-      - HIDE_ADDITIONAL_TOOLTIP
+      dynamic_button: pf_boton_botas
     boveda:
       location: top
       slots:
@@ -322,3 +295,130 @@ panelProfile:
       flags:
       - HIDE_ATTRIBUTES
       - HIDE_ADDITIONAL_TOOLTIP
+    rango:
+      location: top
+      slots:
+      - 15
+      source: vanilla
+      material: name_tag
+      name: <white><glyph:person> <gradient:#FFE29A:#FFB347>Rango</gradient>
+      lore:
+      - '<#E6E8EE>Tu rango: <#FFD36B>%luckperms_primary_group_name%'
+      flags: &id001
+      - HIDE_ATTRIBUTES
+      - HIDE_ADDITIONAL_TOOLTIP
+    conexion:
+      location: top
+      slots:
+      - 16
+      source: vanilla
+      material: compass
+      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Conexión</gradient>
+      lore:
+      - '<#E6E8EE>Ping: <#7FD8FF>%player_ping% ms'
+      - '<#E6E8EE>Mundo: <#FFD36B>%player_world%'
+      flags: *id001
+    vida:
+      location: top
+      slots:
+      - 23
+      source: vanilla
+      material: golden_apple
+      name: <white><glyph:heart> <gradient:#FFE29A:#FFB347>Vida</gradient>
+      lore:
+      - <#FF6B6B>❤ %player_health_rounded%<#9EA3AE>/%player_max_health_rounded%
+      flags: *id001
+    hambre:
+      location: top
+      slots:
+      - 24
+      source: vanilla
+      material: cooked_beef
+      name: <white><glyph:apple> <gradient:#FFE29A:#FFB347>Hambre</gradient>
+      lore:
+      - '<#E6E8EE>Hambre: <#FFD36B>%player_food_level%<#9EA3AE>/20'
+      flags: *id001
+    mana:
+      location: top
+      slots:
+      - 25
+      source: vanilla
+      material: lapis_lazuli
+      name: <white><glyph:potion> <gradient:#FFE29A:#FFB347>Maná</gradient>
+      lore:
+      - <#A78BFA>✦ %auraskills_mana_int%<#9EA3AE>/%auraskills_mana_max%
+      - <#9EA3AE>Lo usan los objetos mágicos.
+      flags: *id001
+    protecciones:
+      location: top
+      slots:
+      - 34
+      source: vanilla
+      material: oak_door
+      name: <white><glyph:shield> <gradient:#FFE29A:#FFB347>Protecciones</gradient>
+      lore:
+      - <#C9CDD6>Gestiona tus terrenos.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para abrir
+      flags: *id001
+      left_click:
+        Scripts:
+        - panelprofile_protecciones_click
+      right_click:
+        Scripts:
+        - panelprofile_protecciones_click
+    homes:
+      location: top
+      slots:
+      - 36
+      source: vanilla
+      material: red_bed
+      name: <white><glyph:settings> <gradient:#FFE29A:#FFB347>Mis Homes</gradient>
+      lore:
+      - <#C9CDD6>Tus puntos de regreso.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para ver
+      flags: *id001
+      left_click:
+        Scripts:
+        - panelprofile_homes_click
+      right_click:
+        Scripts:
+        - panelprofile_homes_click
+    particulas:
+      location: top
+      slots:
+      - 37
+      source: vanilla
+      material: blaze_powder
+      name: <white><glyph:star> <gradient:#FFE29A:#FFB347>Partículas</gradient>
+      lore:
+      - <#C9CDD6>Efectos a tu alrededor.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para elegir
+      flags: *id001
+      left_click:
+        Scripts:
+        - panelprofile_particulas_click
+      right_click:
+        Scripts:
+        - panelprofile_particulas_click
+    buzon:
+      location: top
+      slots:
+      - 38
+      source: vanilla
+      material: chest
+      name: <white><glyph:envelope> <gradient:#FFE29A:#FFB347>Buzón</gradient>
+      lore:
+      - <#C9CDD6>Objetos que te llegaron
+      - <#C9CDD6>con el inventario lleno.
+      - ''
+      - <white><glyph:raton_izq> <#7FB2FF>Clic para recoger
+      flags: *id001
+      left_click:
+        Scripts:
+        - panelprofile_buzon_click
+      right_click:
+        Scripts:
+        - panelprofile_buzon_click

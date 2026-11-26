@@ -1,0 +1,14 @@
+# Mi Perfil (panelProfile): pieza de armadura que lleva el jugador. Las rellena Skript
+# (utils/perfil.sk) al abrir el menú; 'armor_stand' = hueco vacío.
+pf_casco:
+  type: string
+  default: 'armor_stand'
+pf_pecho:
+  type: string
+  default: 'armor_stand'
+pf_piernas:
+  type: string
+  default: 'armor_stand'
+pf_botas:
+  type: string
+  default: 'armor_stand'

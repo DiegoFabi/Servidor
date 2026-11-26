@@ -34,3 +34,58 @@ panelprofile_historia_click:
   Mechanics:
   - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
   - 'command{c="historia";runas=player} @Self'
+panelprofile_protecciones_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="nclaim";runas=player} @Self'
+panelprofile_homes_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="homes list";runas=player} @Self'
+panelprofile_particulas_click:
+  Conditions: []
+  Mechanics:
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="core-menu menuParticulas {caster_name}";runas=console} @Self'
+panelprofile_buzon_click:
+  Conditions: []
+  Mechanics:
+  - 'closeinventory{} @Self'
+  - 'playsound{sound="minecraft:block.note_block.banjo";volume=1;pitch=1} @Self'
+  - 'command{c="buzon";runas=player} @Self'
+pf_boton_casco:
+  Conditions:
+  - 'comparator{v1="%coretools_var_player_pf_casco%";v2="armor_stand"} falseElse pf_boton_casco_puesto'
+  Mechanics:
+  - 'itemstack{source="vanilla";material=armor_stand;amount=1;name="<#9EA3AE>Casco <dark_gray>(vacío)";lore="<#7A7F8A>Equípate algo y aparecerá aquí.";flags="HIDE_ATTRIBUTES"}'
+pf_boton_casco_puesto:
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_pf_casco%";amount=1;name="<white><glyph:shield> <gradient:#FFE29A:#FFB347>Casco</gradient>";lore="<#C9CDD6>Lo llevas puesto ahora.";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+pf_boton_pecho:
+  Conditions:
+  - 'comparator{v1="%coretools_var_player_pf_pecho%";v2="armor_stand"} falseElse pf_boton_pecho_puesto'
+  Mechanics:
+  - 'itemstack{source="vanilla";material=armor_stand;amount=1;name="<#9EA3AE>Pechera <dark_gray>(vacío)";lore="<#7A7F8A>Equípate algo y aparecerá aquí.";flags="HIDE_ATTRIBUTES"}'
+pf_boton_pecho_puesto:
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_pf_pecho%";amount=1;name="<white><glyph:shield> <gradient:#FFE29A:#FFB347>Pechera</gradient>";lore="<#C9CDD6>Lo llevas puesto ahora.";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+pf_boton_piernas:
+  Conditions:
+  - 'comparator{v1="%coretools_var_player_pf_piernas%";v2="armor_stand"} falseElse pf_boton_piernas_puesto'
+  Mechanics:
+  - 'itemstack{source="vanilla";material=armor_stand;amount=1;name="<#9EA3AE>Pantalones <dark_gray>(vacío)";lore="<#7A7F8A>Equípate algo y aparecerá aquí.";flags="HIDE_ATTRIBUTES"}'
+pf_boton_piernas_puesto:
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_pf_piernas%";amount=1;name="<white><glyph:shield> <gradient:#FFE29A:#FFB347>Pantalones</gradient>";lore="<#C9CDD6>Lo llevas puesto ahora.";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
+pf_boton_botas:
+  Conditions:
+  - 'comparator{v1="%coretools_var_player_pf_botas%";v2="armor_stand"} falseElse pf_boton_botas_puesto'
+  Mechanics:
+  - 'itemstack{source="vanilla";material=armor_stand;amount=1;name="<#9EA3AE>Botas <dark_gray>(vacío)";lore="<#7A7F8A>Equípate algo y aparecerá aquí.";flags="HIDE_ATTRIBUTES"}'
+pf_boton_botas_puesto:
+  Mechanics:
+  - 'itemstack{source="vanilla";material="%coretools_var_player_pf_botas%";amount=1;name="<white><glyph:shield> <gradient:#FFE29A:#FFB347>Botas</gradient>";lore="<#C9CDD6>Lo llevas puesto ahora.";flags="HIDE_ATTRIBUTES,HIDE_ADDITIONAL_TOOLTIP"}'
