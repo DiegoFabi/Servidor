@@ -252,37 +252,37 @@ survivalMain:
     water_underground_creature:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 7
       exceptions: []
     ambient:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 15
       exceptions: []
     animal:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 14
       exceptions: []
     water_animal:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 7
       exceptions: []
     monster:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 90
       exceptions: []
     water_ambient:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 25
       exceptions: []
     axolotl:
       spawn: true
       tick-rate: -1
-      spawn-limit: -1
+      spawn-limit: 7
       exceptions: []
     misc:
       spawn: true
