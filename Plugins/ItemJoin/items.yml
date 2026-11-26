@@ -1986,6 +1986,7 @@ items:
   # ================================================================
   historia_llave_raiz:
     id: TRIAL_KEY
+    model-data: '990001'
     name: '&#C38BFF★ Llave de Raíz'
     lore:
     - '&f<glyph:lz_item> &#FFD36B&lHistoria'
@@ -1997,6 +1998,7 @@ items:
     triggers: DISABLED
   historia_escudo_guardia:
     id: SHIELD
+    model-data: '990003'
     name: '&#F86363★ Escudo de la Guardia'
     lore:
     - '&f<glyph:lz_armor> &#FFD36B&lHistoria'
@@ -2006,6 +2008,7 @@ items:
     triggers: DISABLED
   historia_semillas_limpias:
     id: WHEAT_SEEDS
+    model-data: '990005'
     name: '&#9EE37D★ Semillas Limpias'
     lore:
     - '&f<glyph:lz_item> &#FFD36B&lHistoria'
@@ -2015,6 +2018,7 @@ items:
     triggers: DISABLED
   historia_cronica:
     id: WRITABLE_BOOK
+    model-data: '990002'
     name: '&#E0C28A★ Crónica Restaurada'
     lore:
     - '&f<glyph:lz_item> &#FFD36B&lHistoria'
@@ -2026,6 +2030,7 @@ items:
     triggers: DISABLED
   historia_coraza_guardia:
     id: IRON_CHESTPLATE
+    model-data: '990004'
     name: '&#F86363★ Coraza de la Guardia'
     lore:
     - '&f<glyph:lz_armor> &#FFD36B&lHistoria'

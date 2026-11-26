@@ -9,9 +9,9 @@ abilities:
   alchemist:
     lore: "<green>(+{duration})"
 action_bar:
-  # Vida (rojo) • Maná (celeste). Solo símbolos vanilla.
+  # Salud (rojo) • Maná (celeste). Solo símbolos vanilla.
   idle: "{{action_bar.hp_display}}  <#5A6070>|  {{action_bar.mana_display}}"
-  hp_display: "<#FF3B4E>❤ Vida <#FF8A95>{hp}<#FF3B4E>/{max_hp}"
+  hp_display: "<#FF3B4E>❤ Salud <#FF8A95>{hp}<#FF3B4E>/{max_hp}"
   mana_display: "<#3FD4FF>✦ Maná <#9BEBFF>{mana}<#3FD4FF>/{max_mana}"
   xp: "{{action_bar.hp_display}}  <#5A6070>|  <#FFC857>+{xp_gained} {skill} <#7C8291>({current_xp}/{level_xp})  <#5A6070>|  {{action_bar.mana_display}}"
   maxed: "{{action_bar.hp_display}}  <#5A6070>|  <#FFC857>+{xp_gained} {skill} <#7C8291>({{ui.maxed}})  <#5A6070>|  {{action_bar.mana_display}}"
@@ -72,8 +72,8 @@ commands:
     skill_entry: "<white>{rank}. <aqua>{player} <white>- {level}"
     average_entry: "<white>{rank}. <aqua>{player} <white>- {level}"
 leveler_format:
-  title: "<green>{{leveler.level_up}}"
-  subtitle: "<gold>{old} ➜ {new}"
+  title: "<green>{skill}"
+  subtitle: ""
   chat: |-
     <dark_aqua><strikethrough>----------------------------------------
     <reset> <dark_aqua>{{leveler.skill_level_up}} <aqua><bold>{skill}</bold> <dark_gray>{old}➜<dark_aqua><bold>{new}</bold>
