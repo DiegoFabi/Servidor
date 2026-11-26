@@ -1,0 +1,21 @@
+# ============================================================
+#  Mariposas (ScenesEnvironment, mob "butterfly") - survivalMain.
+#  REPLACE: GenerateSpawnPoints está desactivado, así que sustituyen
+#  a una pequeña parte de los animales pasivos que aparecen de día en
+#  biomas vanilla templados (flores, bosques, llanuras, selvas...).
+#  Máximo 4 mariposas en 48 bloques. Despawn por defecto (config-mobs).
+# ============================================================
+Mariposa_superficie:
+  Type: butterfly
+  Worlds: survivalMain
+  Chance: 0.12
+  Priority: 2
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,MEADOW,FLOWER_FOREST,FOREST,BIRCH_FOREST,OLD_GROWTH_BIRCH_FOREST,CHERRY_GROVE,DARK_FOREST,PALE_GARDEN,JUNGLE,SPARSE_JUNGLE,BAMBOO_JUNGLE,SWAMP,MANGROVE_SWAMP,SAVANNA,SAVANNA_PLATEAU,RIVER,TAIGA,OLD_GROWTH_SPRUCE_TAIGA,OLD_GROWTH_PINE_TAIGA,WINDSWEPT_FOREST,MUSHROOM_FIELDS
+  Conditions:
+  - entitytype{t=CHICKEN,RABBIT,PIG,COW,SHEEP,FOX,BEE} true
+  - day true
+  - outside true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=butterfly;a=<4;r=48} true

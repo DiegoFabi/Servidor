@@ -5,6 +5,8 @@
 #  naturales de la superficie (animales pequeños de día y monstruos
 #  comunes de noche). Máximo 3 ratones en 48 bloques.
 #  Despawn activado en el mob para que no se acumulen.
+#  Cubren todos los biomas vanilla de superficie del Overworld
+#  (cada color en su grupo de biomas).
 # ============================================================
 Raton_black_mouse:
   Type: black_mouse
@@ -13,9 +15,9 @@ Raton_black_mouse:
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
-  Biomes: DARK_FOREST,OLD_GROWTH_SPRUCE_TAIGA,TAIGA
+  Biomes: DARK_FOREST,PALE_GARDEN,OLD_GROWTH_SPRUCE_TAIGA,OLD_GROWTH_PINE_TAIGA,TAIGA,SWAMP,MANGROVE_SWAMP
   Conditions:
-  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
+  - entitytype{t=CHICKEN,RABBIT,FOX,PIG,COW,SHEEP,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
@@ -27,9 +29,9 @@ Raton_brown_mouse:
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
-  Biomes: FOREST,BIRCH_FOREST,FLOWER_FOREST
+  Biomes: FOREST,BIRCH_FOREST,OLD_GROWTH_BIRCH_FOREST,FLOWER_FOREST,JUNGLE,SPARSE_JUNGLE,BAMBOO_JUNGLE,SAVANNA,SAVANNA_PLATEAU,WINDSWEPT_SAVANNA,DESERT,BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS
   Conditions:
-  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
+  - entitytype{t=CHICKEN,RABBIT,FOX,PIG,COW,SHEEP,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
@@ -41,9 +43,9 @@ Raton_gray_mouse:
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
-  Biomes: PLAINS,SUNFLOWER_PLAINS,MEADOW
+  Biomes: PLAINS,SUNFLOWER_PLAINS,MEADOW,CHERRY_GROVE,WINDSWEPT_HILLS,WINDSWEPT_GRAVELLY_HILLS,WINDSWEPT_FOREST,STONY_SHORE,BEACH,RIVER,MUSHROOM_FIELDS
   Conditions:
-  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
+  - entitytype{t=CHICKEN,RABBIT,FOX,PIG,COW,SHEEP,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
@@ -55,9 +57,9 @@ Raton_white_mouse:
   Priority: 1
   Action: REPLACE
   UseWorldScaling: false
-  Biomes: SNOWY_PLAINS,SNOWY_TAIGA,GROVE
+  Biomes: SNOWY_PLAINS,ICE_SPIKES,SNOWY_TAIGA,GROVE,SNOWY_SLOPES,SNOWY_BEACH,FROZEN_RIVER,JAGGED_PEAKS,FROZEN_PEAKS
   Conditions:
-  - entitytype{t=CHICKEN,RABBIT,FOX,ZOMBIE,SKELETON,SPIDER} true
+  - entitytype{t=CHICKEN,RABBIT,FOX,PIG,COW,SHEEP,ZOMBIE,SKELETON,SPIDER} true
   - outside true
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
