@@ -3,7 +3,7 @@ menumain_b1_click:
   Conditions: []
   Mechanics:
   - 'playsound{sound="minecraft:block.note_block.hat";volume=1;pitch=1} @Self'
-  - 'command{c="perfil";runas=player} @Self'
+  - 'command{c="core-menu panelProfile {caster_name}";runas=console} @Self'
 menumain_b3_click:
   Conditions: []
   Mechanics:

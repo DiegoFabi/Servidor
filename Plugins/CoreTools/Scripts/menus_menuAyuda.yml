@@ -40,7 +40,7 @@ menuayuda_11_click:
   Mechanics:
   - closeinventory{} @Self
   - playsound{sound="minecraft:ui.button.click";volume=1;pitch=1} @Self
-  - command{c="perfil";runas=player} @Self
+  - command{c="core-menu panelProfile {caster_name}";runas=console} @Self
 menuayuda_12_click:
   Conditions: []
   Mechanics:

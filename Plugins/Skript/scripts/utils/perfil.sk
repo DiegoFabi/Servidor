@@ -1,11 +1,10 @@
 # ============================================================
-#  perfil.sk - Abre "Mi Perfil" (menú de CoreTools panelProfile)
-#  Abrir: /perfil (botón "Mi Perfil" del menú principal de CoreTools)
-#
-#  Antes de abrir guarda la armadura que lleva el jugador en variables
-#  de CoreTools (Variables/perfil.yml): pf_casco, pf_pecho, pf_piernas,
-#  pf_botas. Los botones dinámicos del menú muestran esa pieza o un
-#  soporte de armadura si el hueco está vacío.
+#  perfil.sk - Apoyo de "Mi Perfil" (menú de CoreTools panelProfile)
+#  El botón "Mi Perfil" abre el menú directamente (core-menu panelProfile).
+#  Este script solo mantiene al día la armadura que lleva cada jugador en
+#  variables de CoreTools (Variables/perfil.yml): pf_casco, pf_pecho,
+#  pf_piernas, pf_botas ('armor_stand' = hueco vacío). Se actualizan al
+#  entrar, al cambiar de armadura y al usar /perfil.
 # ============================================================
 
 function pfMaterial(i: item) :: text:
@@ -15,16 +14,25 @@ function pfMaterial(i: item) :: text:
     replace all " " with "_" in {_t}
     return {_t}
 
-function pfAbrir(p: player):
+function pfSync(p: player):
     set {_n} to name of {_p}
     execute console command "core-variables set pf_casco %pfMaterial(helmet of {_p})% %{_n}%"
     execute console command "core-variables set pf_pecho %pfMaterial(chestplate of {_p})% %{_n}%"
     execute console command "core-variables set pf_piernas %pfMaterial(leggings of {_p})% %{_n}%"
     execute console command "core-variables set pf_botas %pfMaterial(boots of {_p})% %{_n}%"
-    wait 2 ticks
-    execute console command "core-menu panelProfile %{_n}%"
+
+on join:
+    wait 2 seconds
+    player is online
+    pfSync(player)
+
+on armor change:
+    wait 1 tick
+    pfSync(player)
 
 command /perfil:
     aliases: /profile
     trigger:
-        pfAbrir(player)
+        pfSync(player)
+        wait 2 ticks
+        execute console command "core-menu panelProfile %player%"
