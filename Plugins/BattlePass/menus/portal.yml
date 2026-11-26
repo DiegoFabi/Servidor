@@ -1,4 +1,4 @@
-menu-title: '&f㌀㌁'
+menu-title: '&f'
 menu-rows: 4
 
 menu:
@@ -416,7 +416,7 @@ menu:
         - ''
         - '&eComprar &8[Clic Izquierdo]'
     actions:
-      - '[message] {㌇ &7Consigue el &aPase Premium &7en la tienda del servidor.}'
+      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
       - '[menu] {close}'
       - '[sound] {BLOCK_LEVER_CLICK:1:1}'
   '28':
@@ -433,7 +433,7 @@ menu:
         - ''
         - '&eComprar &8[Clic Izquierdo]'
     actions:
-      - '[message] {㌇ &7Consigue el &aPase Premium &7en la tienda del servidor.}'
+      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
       - '[menu] {close}'
       - '[sound] {BLOCK_LEVER_CLICK:1:1}'
   '29':
@@ -450,7 +450,7 @@ menu:
         - ''
         - '&eComprar &8[Clic Izquierdo]'
     actions:
-      - '[message] {㌇ &7Consigue el &aPase Premium &7en la tienda del servidor.}'
+      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
       - '[menu] {close}'
       - '[sound] {BLOCK_LEVER_CLICK:1:1}'
   '30':
@@ -467,6 +467,6 @@ menu:
         - ''
         - '&eComprar &8[Clic Izquierdo]'
     actions:
-      - '[message] {㌇ &7Consigue el &aPase Premium &7en la tienda del servidor.}'
+      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
       - '[menu] {close}'
       - '[sound] {BLOCK_LEVER_CLICK:1:1}'

@@ -40,7 +40,7 @@ items:
       - ''
       - '&7Estado: &aReclamado'
 tier-up-actions:
-  - '[message] {㌇ &7¡Alcanzaste el nivel &e%tier%&7!}'
+  - '[message] { &7¡Alcanzaste el nivel &e%tier%&7!}'
 tiers:
   '2': # The tier number
     rewards: ['1'] # The reward numbers to give to the player (see rewards.yml).
