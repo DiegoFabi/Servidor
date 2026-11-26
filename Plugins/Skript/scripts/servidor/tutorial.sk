@@ -91,6 +91,10 @@ on load:
     set {-hist::mdesc::8::*} to "<#7FB2FF>• Derrota 10 Calamares (Tinta)", "<#E0C28A>• Ten 6 Libros en el Inventario" and "<#FFD36B>➜ Vuelve Con Aldric el Cronista"
     set {-hist::mision::9} to "La Noche de la Maleza"
     set {-hist::mdesc::9::*} to "<#E6E6E6>• Derrota 10 Esqueletos", "<#B05050>• Derrota 12 Arañas", "<#7FD86B>• Derrota 6 Creepers" and "<#FFD36B>➜ Informa al Guardia Real"
+    # Jefe entre la parte 10 y la 11 (jefes/jefe1.sk): sale como DIAMANTE
+    set {-hist::mision::10} to "Jefe: El Ilusionista"
+    set {-hist::mtipo::10} to "jefe"
+    set {-hist::mdesc::10::*} to "<#C38BFF>• Vence al Ilusionista en su arena", "<#9EA3AE>• Combate en solitario: cada jugador tiene su jefe", "<#9EA3AE>• Sin comandos durante el combate (/abandonar)" and "<#FFD36B>➜ Después habla con el Mago Overking"
     set {-hist::mision::12} to "Armadura de Hierro"
     set {-hist::mdesc::12::*} to "<#D9D9D9>• Equípate Casco, Peto, Pantalones y Botas" and "<#FFD36B>➜ Vuelve Con Sir Aldren"
     # Orden del menú: cada parte ("p:N") seguida de su misión ("m:N") si tiene
@@ -278,7 +282,19 @@ function historiaMenu(p: player):
         set {_tipo} to first character of loop-value-1
         set {_n} to (subtext of loop-value-1 from character 3 to (length of loop-value-1)) parsed as integer
         if {_tipo} is "m":
-            if {_n} <= {_prog}:
+            if {-hist::mtipo::%{_n}%} is "jefe":
+                set {_lore::*} to "<#C38BFF>● Jefe" and ""
+                loop {-hist::mdesc::%{_n}%::*}:
+                    add loop-value-2 to {_lore::*}
+                if {jefe1::vencido::%uuid of {_p}%} is set:
+                    add "" and "<#7FFF9E>✔ Jefe derrotado" and "<#7FB2FF>Clic para la revancha" to {_lore::*}
+                    set slot {_s} of {_gui} to diamond named "<#7FFF9E>✔ <#C38BFF>%{-hist::mision::%{_n}%}%" with lore {_lore::*}
+                else if {_prog} >= {_n}:
+                    add "" and "<#FFB347>Clic para enfrentarlo" to {_lore::*}
+                    set slot {_s} of {_gui} to diamond named "<#C38BFF>⚔ %{-hist::mision::%{_n}%}%" with lore {_lore::*}
+                else:
+                    set slot {_s} of {_gui} to gray stained glass pane named "<#9EA3AE>🔒 Jefe: <gray>???" with lore "<#9EA3AE>Aún no has llegado hasta aquí."
+            else if {_n} <= {_prog}:
                 set {_lore::*} to "<#7FFF9E>✔ Misión completada" and ""
                 loop {-hist::mdesc::%{_n}%::*}:
                     add loop-value-2 to {_lore::*}
@@ -325,6 +341,11 @@ on inventory click:
     set {_n} to (subtext of {_e} from character 3 to (length of {_e})) parsed as integer
     set {_prog} to {historia::%uuid of player%} ? 0
     if first character of {_e} is "m":
+        if {-hist::mtipo::%{_n}%} is "jefe":
+            {_prog} >= {_n}
+            close player's inventory
+            execute console command "jefe1 iniciar %player%"
+            stop
         {_n} <= {_prog} + 1
         close player's inventory
         send " " to player

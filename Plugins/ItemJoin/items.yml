@@ -2038,3 +2038,40 @@ items:
     - ' &7Ganada en la Noche de la Maleza.'
     itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP
     triggers: DISABLED
+  jefe1_baraja:
+    id: PAPER
+    properties: 'tooltip_style:minecraft:purple, usos:40'
+    name: '&#E3C6FF★ &#B07BFFBaraja del Ilusionista'
+    lore:
+    - '&f<glyph:lz_weapon> <glyph:lz_epic>'
+    - '&f<glyph:star> &#C38BFFCartas de Fuego'
+    - ' &7Lanza una carta que estalla en'
+    - ' &7llamas mágicas al impactar.'
+    - ''
+    - ' &f<glyph:potion> &#A78BFA8 Maná &8• &f<glyph:sand_clock> &#FFD36B8 s &8• &f<glyph:shield> &#FFD36B40 Usos'
+    - ''
+    - '&f<glyph:raton_der> &#7FB2FFClic Derecho para Usar'
+    interact-right-conditions:
+    - '%auraskills_mana_int%:over:7'
+    interact-right-fail-message: '&#A78BFA✦ &8» &#C9CDD6Maná insuficiente &8(&#A78BFA%auraskills_mana_int%&8/&#A78BFA8&8)'
+    interact-right:
+    - 'console: skills mana remove %player% 8'
+    - 'op: explosionmagic'
+    - 'op: desgastar'
+    commands-sound: ITEM.BOOK.PAGE_TURN
+    commands-particle: WITCH:48
+    commands-cooldown: 8
+    cooldown-message: '&#FF6B6B⌛ &8» &#C9CDD6Barajando&8... &#C9CDD6Espera &#FFD36B%timeleft% Segundos'
+    itemflags: PLACEMENT, DEATH-DROPS, ITEM-MODIFIABLE
+    triggers: DISABLED
+  jefe1_chistera:
+    id: LEATHER_HELMET
+    leather-color: BLACK
+    enchantment: PROTECTION:2, UNBREAKING:3
+    name: '&#E3C6FF★ &#B07BFFChistera del Ilusionista'
+    lore:
+    - '&f<glyph:lz_hat> <glyph:lz_epic>'
+    - ' &7Trofeo del primer jefe. Aún se'
+    - ' &7oyen aplausos dentro de ella.'
+    itemflags: DEATH-DROPS, ITEM-MODIFIABLE
+    triggers: DISABLED

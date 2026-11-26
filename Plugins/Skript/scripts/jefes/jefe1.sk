@@ -1,0 +1,306 @@
+# ============================================================
+#  jefe1.sk - Primer jefe de la historia: El Ilusionista
+#  Entre la parte 10 ("El Rey Recuerda") y la 11 ("El Portal de Orian").
+#
+#  Se inicia desde el menú de historia (diamante "Jefe: El Ilusionista")
+#  o con /jefe1 iniciar <jugador> (consola/op).
+#
+#  - Arena: región WorldGuard boss_1 del mundo Utils. El punto del jugador
+#    y el del jefe se calculan sobre la superficie (bloque más alto), así no
+#    dependen de una altura fija. Ajusta las coordenadas en options.
+#  - Filtro por jugador: cada jugador tiene SU jefe. Los demás jugadores y
+#    sus jefes se ocultan, y el daño cruzado se cancela.
+#  - Secuencia: cámara de entrada (espectador), oscuridad, música
+#    Blade Into Void (inicio -> transición -> drop en bucle), rayo y
+#    aparición del jefe, títulos y partículas.
+#  - Restricciones: sin comandos (salvo /abandonar), inventario conservado
+#    si mueres, tiempo límite.
+#  - Recompensas (solo la primera victoria): 2000 monedas, Baraja y
+#    Chistera del Ilusionista (ItemJoin) y fact de Typewriter
+#    jefe1_derrotado = 1 (desbloquea al Mago Overking).
+# ============================================================
+
+options:
+    prefijo: <gradient:#C38BFF:#7A5CFF><bold>Jefe</bold></gradient> <dark_gray>»<reset>
+    mundo: Utils
+    # Centro aproximado de la región boss_1 (x 262-396, z 190-405)
+    jugador-x: 329.5
+    jugador-z: 310.5
+    jefe-x: 329.5
+    jefe-z: 290.5
+    mob: jefe1_ilusionista
+    limite: 600
+    recompensa: 2000
+
+# ------------------------------------------------------------
+#  Puntos de la arena (sobre la superficie)
+# ------------------------------------------------------------
+function j1Suelo(x: number, z: number) :: location:
+    set {_l} to location({_x}, 0, {_z}, world "{@mundo}")
+    set {_l} to location of highest solid block at {_l}
+    add 1 to y-coordinate of {_l}
+    return {_l}
+
+function j1Mirar(desde: location, hacia: location) :: location:
+    set {_dx} to (x-coordinate of {_hacia}) - (x-coordinate of {_desde})
+    set {_dy} to (y-coordinate of {_hacia}) - (y-coordinate of {_desde})
+    set {_dz} to (z-coordinate of {_hacia}) - (z-coordinate of {_desde})
+    set {_h} to sqrt(({_dx} * {_dx}) + ({_dz} * {_dz}))
+    set {_l} to {_desde}
+    set yaw of {_l} to atan2({_dx}, {_dz}) - 90
+    set pitch of {_l} to 0 - atan2({_h}, {_dy})
+    return {_l}
+
+function j1Particula(p: player, l: location, tipo: text, cantidad: number, dispersion: number):
+    execute console command "execute at %{_p}% positioned %x-coordinate of {_l}% %y-coordinate of {_l}% %z-coordinate of {_l}% run particle %{_tipo}% ~ ~ ~ %{_dispersion}% %{_dispersion}% %{_dispersion}% 0.05 %{_cantidad}% force %{_p}%"
+
+# ------------------------------------------------------------
+#  Filtro por jugador: ocultar a los demás y a sus jefes
+# ------------------------------------------------------------
+function j1Aislar(p: player):
+    loop all players:
+        loop-player is not {_p}
+        hide {_p} from loop-player
+        hide loop-player from {_p}
+    loop {-jefe1::boss::*}:
+        loop-value is alive
+        {-jefe1::dueno::%uuid of loop-value%} is not "%uuid of {_p}%"
+        hide loop-value from {_p}
+
+function j1Liberar(p: player):
+    loop all players:
+        reveal {_p} to loop-player
+        reveal loop-player to {_p}
+
+on join:
+    loop {-jefe1::boss::*}:
+        loop-value is alive
+        hide loop-value from player
+    loop all players:
+        {-jefe1::estado::%uuid of loop-player%} is set
+        hide loop-player from player
+
+# ------------------------------------------------------------
+#  Inicio
+# ------------------------------------------------------------
+function jefe1Iniciar(p: player):
+    set {_u} to "%uuid of {_p}%"
+    if {-jefe1::estado::%{_u}%} is set:
+        send formatted "{@prefijo} <#FF6B6B>Ya estás en el combate." to {_p}
+        stop
+    if ({historia::%{_u}%} ? 0) < 10:
+        send formatted "{@prefijo} <#9EA3AE>Aún no estás preparado. Avanza en la historia." to {_p}
+        stop
+    set {-jefe1::estado::%{_u}%} to "intro"
+    set {-jefe1::volver::%{_u}%} to location of {_p}
+    close {_p}'s inventory
+    set {_pj} to j1Suelo({@jugador-x}, {@jugador-z})
+    set {_pb} to j1Suelo({@jefe-x}, {@jefe-z})
+    set {-jefe1::pj::%{_u}%} to {_pj}
+    set {-jefe1::pb::%{_u}%} to {_pb}
+    teleport {_p} to j1Mirar({_pj}, {_pb})
+    j1Aislar({_p})
+    # --- Secuencia de entrada ---
+    set gamemode of {_p} to spectator
+    apply darkness to {_p} for 9 seconds
+    play sound "nexo:music.blade_into_void.inicio" with volume 1 to {_p}
+    send title "<#C38BFF>El Ilusionista" with subtitle "<#C9CDD6>Primer Jefe" to {_p} for 4 seconds with fadein 20 ticks and fadeout 20 ticks
+    set {_a} to {_pb} ~ vector(0, 9, 22)
+    set {_b} to {_pb} ~ vector(0, 3, 9)
+    loop 120 times:
+        {-jefe1::estado::%{_u}%} is "intro"
+        {_p} is online
+        set {_t} to loop-number / 120
+        set {_c} to location((x-coordinate of {_a}) + ((x-coordinate of {_b}) - (x-coordinate of {_a})) * {_t}, (y-coordinate of {_a}) + ((y-coordinate of {_b}) - (y-coordinate of {_a})) * {_t}, (z-coordinate of {_a}) + ((z-coordinate of {_b}) - (z-coordinate of {_a})) * {_t}, world "{@mundo}")
+        teleport {_p} to j1Mirar({_c}, {_pb} ~ vector(0, 1.5, 0))
+        if mod(loop-number, 10) = 0:
+            j1Particula({_p}, {_pb} ~ vector(0, 1, 0), "minecraft:reverse_portal", 40, 1.2)
+            j1Particula({_p}, {_pb} ~ vector(0, 0.2, 0), "minecraft:soul_fire_flame", 15, 1.5)
+        wait 1 tick
+    {-jefe1::estado::%{_u}%} is "intro"
+    {_p} is online
+    # Aparición
+    strike lightning effect at {_pb}
+    play sound "entity.lightning_bolt.thunder" with volume 1 to {_p}
+    play sound "bl_illusionist.circus_focus" with volume 1 to {_p}
+    j1Particula({_p}, {_pb} ~ vector(0, 1, 0), "minecraft:totem_of_undying", 120, 1.5)
+    j1Particula({_p}, {_pb} ~ vector(0, 1, 0), "minecraft:sonic_boom", 1, 0)
+    jefe1Aparecer({_p})
+    wait 20 ticks
+    {_p} is online
+    teleport {_p} to j1Mirar({_pj}, {_pb})
+    set gamemode of {_p} to survival
+    set {-jefe1::estado::%{_u}%} to "lucha"
+    set {-jefe1::inicio::%{_u}%} to now
+    send title "<#FF6B6B>¡Lucha!" with subtitle "<#9EA3AE>/abandonar para rendirte" to {_p} for 2 seconds with fadein 5 ticks and fadeout 10 ticks
+    play sound "nexo:music.blade_into_void.transicion" with volume 1 to {_p}
+    jefe1Bucle({_p})
+
+function jefe1Aparecer(p: player):
+    set {_u} to "%uuid of {_p}%"
+    set {_pb} to {-jefe1::pb::%{_u}%}
+    execute console command "mm mobs spawn {@mob} 1 {@mundo},%x-coordinate of {_pb}%,%y-coordinate of {_pb}%,%z-coordinate of {_pb}%"
+    wait 3 ticks
+    loop all entities in radius 4 of {_pb}:
+        loop-entity is not a player
+        {-jefe1::dueno::%uuid of loop-entity%} is not set
+        loop-entity is a husk
+        set {-jefe1::dueno::%uuid of loop-entity%} to {_u}
+        set {-jefe1::boss::%{_u}%} to loop-entity
+        exit loop
+    set {_b} to {-jefe1::boss::%{_u}%}
+    {_b} is set
+    loop all players:
+        loop-player is not {_p}
+        hide {_b} from loop-player
+
+# ------------------------------------------------------------
+#  Bucle del combate (música, objetivo, límite de tiempo)
+# ------------------------------------------------------------
+function jefe1Bucle(p: player):
+    set {_u} to "%uuid of {_p}%"
+    set {_seg} to 0
+    while {-jefe1::estado::%{_u}%} is "lucha":
+        wait 1 second
+        add 1 to {_seg}
+        if {_p} is not online:
+            jefe1Terminar({_p}, "desconexion")
+            stop
+        if world of {_p} is not world "{@mundo}":
+            jefe1Terminar({_p}, "salio")
+            stop
+        set {_b} to {-jefe1::boss::%{_u}%}
+        if {_b} is set:
+            {_b} is alive
+            set target of {_b} to {_p}
+        # Música: transición 20 s y después el drop en bucle (9 s)
+        if {_seg} >= 20:
+            if mod({_seg} - 20, 9) = 0:
+                play sound "nexo:music.blade_into_void.drop" with volume 1 to {_p}
+        if {_seg} >= {@limite}:
+            jefe1Terminar({_p}, "tiempo")
+            stop
+
+# ------------------------------------------------------------
+#  Victoria / derrota
+# ------------------------------------------------------------
+on death:
+    set {_u} to {-jefe1::dueno::%uuid of victim%}
+    {_u} is set
+    clear drops
+    delete {-jefe1::dueno::%uuid of victim%}
+    delete {-jefe1::boss::%{_u}%}
+    jefe1VictoriaU({_u})
+
+function jefe1VictoriaU(u: text):
+    loop all players:
+        "%uuid of loop-player%" is {_u}
+        jefe1Victoria(loop-player)
+
+function jefe1Victoria(p: player):
+    set {_u} to "%uuid of {_p}%"
+    {-jefe1::estado::%{_u}%} is "lucha"
+    set {-jefe1::estado::%{_u}%} to "victoria"
+    stop all sounds for {_p}
+    play sound "ui.toast.challenge_complete" with volume 1 to {_p}
+    play sound "entity.player.levelup" with volume 1 to {_p}
+    send title "<#FFD36B>¡Victoria!" with subtitle "<#C9CDD6>El Ilusionista ha caído" to {_p} for 4 seconds with fadein 10 ticks and fadeout 20 ticks
+    j1Particula({_p}, location of {_p} ~ vector(0, 1, 0), "minecraft:totem_of_undying", 150, 1.2)
+    if {jefe1::vencido::%{_u}%} is not set:
+        set {jefe1::vencido::%{_u}%} to true
+        execute console command "eco give %{_p}% {@recompensa} -sf"
+        execute console command "itemjoin get jefe1_baraja %{_p}%"
+        execute console command "itemjoin get jefe1_chistera %{_p}%"
+        execute console command "tw facts set JqkG7oaDsX82Ler 1 %{_p}%"
+        send formatted " " to {_p}
+        send formatted "{@prefijo} <#FFD36B><bold>Recompensas</bold>" to {_p}
+        send formatted "<dark_gray>│ <#7FFF9E>+{@recompensa} monedas" to {_p}
+        send formatted "<dark_gray>│ <#B07BFF>Baraja del Ilusionista" to {_p}
+        send formatted "<dark_gray>│ <#B07BFF>Chistera del Ilusionista" to {_p}
+        send formatted "<dark_gray>│ <#C9CDD6>Habla con el <#C9A8FF>Mago Overking<#C9CDD6> para seguir la historia." to {_p}
+        send formatted " " to {_p}
+    else:
+        send formatted "{@prefijo} <#C9CDD6>Revancha superada. <#9EA3AE>(Las recompensas solo se dan la primera vez)" to {_p}
+    wait 8 seconds
+    jefe1Terminar({_p}, "victoria")
+
+function jefe1Terminar(p: player, motivo: text):
+    set {_u} to "%uuid of {_p}%"
+    {-jefe1::estado::%{_u}%} is set
+    delete {-jefe1::estado::%{_u}%}
+    set {_b} to {-jefe1::boss::%{_u}%}
+    if {_b} is set:
+        delete {-jefe1::dueno::%uuid of {_b}%}
+        delete {-jefe1::boss::%{_u}%}
+        {_b} is alive
+        kill {_b}
+    {_p} is online
+    stop all sounds for {_p}
+    set gamemode of {_p} to survival
+    j1Liberar({_p})
+    if {-jefe1::volver::%{_u}%} is set:
+        teleport {_p} to {-jefe1::volver::%{_u}%}
+    delete {-jefe1::volver::%{_u}%}
+    if {_motivo} is "tiempo":
+        send formatted "{@prefijo} <#FF6B6B>Se acabó el tiempo. Inténtalo de nuevo desde <#FFD36B>/historia<#FF6B6B>." to {_p}
+    else if {_motivo} is "rendicion":
+        send formatted "{@prefijo} <#9EA3AE>Te has retirado del combate." to {_p}
+    else if {_motivo} is "muerte":
+        send formatted "{@prefijo} <#FF6B6B>Has caído. Conservas tu inventario; vuelve a intentarlo desde <#FFD36B>/historia<#FF6B6B>." to {_p}
+
+# Muerte del jugador en el combate: conserva inventario y nivel
+on death of player:
+    {-jefe1::estado::%uuid of victim%} is set
+    keep the inventory and experience
+    set {_p} to victim
+    wait 1 tick
+    jefe1Terminar({_p}, "muerte")
+
+on quit:
+    {-jefe1::estado::%uuid of player%} is set
+    jefe1Terminar(player, "desconexion")
+
+# ------------------------------------------------------------
+#  Restricciones
+# ------------------------------------------------------------
+on command:
+    sender is a player
+    {-jefe1::estado::%uuid of player%} is set
+    command is not "abandonar"
+    cancel event
+    send formatted "{@prefijo} <#FF6B6B>No puedes usar comandos durante el combate. <#9EA3AE>(/abandonar)" to player
+
+command /abandonar:
+    trigger:
+        {-jefe1::estado::%uuid of player%} is set
+        jefe1Terminar(player, "rendicion")
+
+# Daño cruzado: nadie puede herir el jefe de otro ni recibir daño de él
+on damage:
+    if {-jefe1::dueno::%uuid of victim%} is set:
+        attacker is a player
+        "%uuid of attacker%" is not {-jefe1::dueno::%uuid of victim%}
+        cancel event
+    else if {-jefe1::dueno::%uuid of attacker%} is set:
+        victim is a player
+        "%uuid of victim%" is not {-jefe1::dueno::%uuid of attacker%}
+        cancel event
+
+# ------------------------------------------------------------
+#  Comando de consola / admin
+# ------------------------------------------------------------
+command /jefe1 <text> [<player>]:
+    permission: op
+    usage: /jefe1 <iniciar|terminar|reiniciar> <jugador>
+    trigger:
+        if arg-2 is not set:
+            send "/jefe1 <iniciar|terminar|reiniciar> <jugador>"
+            stop
+        if arg-1 is "iniciar":
+            jefe1Iniciar(arg-2)
+        else if arg-1 is "terminar":
+            jefe1Terminar(arg-2, "rendicion")
+        else if arg-1 is "reiniciar":
+            delete {jefe1::vencido::%uuid of arg-2%}
+            execute console command "tw facts set JqkG7oaDsX82Ler 0 %arg-2%"
+            send "Jefe 1 reiniciado para %arg-2%"

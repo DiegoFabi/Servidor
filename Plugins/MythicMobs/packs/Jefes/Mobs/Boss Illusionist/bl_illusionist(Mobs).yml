@@ -232,3 +232,20 @@ bl_illusionist_cards:
   - remove{delay=65} @self ~onSpawn
 
 # 8424981AT54RY7HMO9
+
+# Primer jefe de la historia (entre la parte 10 y 11). Lo invoca Skript (jefes/jefe1.sk)
+# en la región boss_1 del mundo Utils: uno por jugador, oculto para los demás.
+jefe1_ilusionista:
+  Template: bl_illusionist
+  Display: '<#C38BFF>El Ilusionista'
+  Health: 450
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 48
+    Despawn: false
+  BossBar:
+    Enabled: true
+    Title: '<#C38BFF>✦ El Ilusionista ✦'
+    Range: 60
+    Color: PURPLE
+    Style: SEGMENTED_10
