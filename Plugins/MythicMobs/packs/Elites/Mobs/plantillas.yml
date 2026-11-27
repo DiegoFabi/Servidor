@@ -137,7 +137,8 @@ elite_jefe_esbirro:
 #  El élite actualiza el texto con settextdisplay @Passenger.
 #  Limpieza a prueba de todo (fuego, caída, lava, /kill, despawn, chunk):
 #   - El élite la borra al morir o desaparecer (si aún va montada).
-#   - La placa se vigila sola cada 2 s: si ya no va montada en nada, se borra.
+#   - Nace ya montada (summonpassenger) y se vigila sola cada 2 s: si deja
+#     de ir montada en algo, se borra.
 #   - Al descargarse el chunk, MythicMobs la elimina (Despawn: true, no persistente).
 # ============================================================
 elite_placa:
@@ -157,6 +158,5 @@ elite_placa:
     Despawn: true
     Persistent: false
   Skills:
-  - mounttarget @Parent ~onSpawn
   - remove @self ~onTimer:40 ?!mounted
   - remove @self ~onDismounted

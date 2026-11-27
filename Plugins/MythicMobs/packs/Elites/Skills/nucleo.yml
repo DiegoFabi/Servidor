@@ -7,11 +7,11 @@ elite_aparecer:
   - setlevel{a=add;l=<random.0to4>} @self
   - setlevel{a=set;l=250} @self ?level{l=>250}
   - skill{s=elite_rango} @self
-  - summon{type=elite_placa;amount=1} @self
+  - summonpassenger{type=elite_placa} @self
   - skill{s=elite_nombre;delay=3} @self
   - randomskill{s=elite_escala_060 1,elite_escala_075 3,elite_escala_090 4,elite_escala_100 5,elite_escala_120 4,elite_escala_140 2,elite_escala_165 1} @self
   - randomskill{s=elite_escala_140 1,elite_escala_165 2,elite_escala_190 1} @self ?level{l=>189} 0.6
-  - skill{s=elite_aura_asignar} @self 0.4
+  - skill{s=elite_aura_asignar} @self
   - skill{s=elite_estilo} @self
   - skill{s=elite_asignar_poderes} @self
 

@@ -1,8 +1,12 @@
 # ============================================================
-#  AURAS: el 40 % de los élites nace con un aura visible (8 tipos).
-#  Se dibuja cada 1,5 s SOLO si hay un jugador a menos de 20 bloques
-#  (los mobs lejanos no generan partículas). Algunas afectan a quien
-#  se acerca a menos de 2,5 bloques.
+#  AURAS: TODOS los élites tienen una (8 tipos), con progresión por nivel:
+#   Nv 1-24    Común      : aura visual suave (sin efecto)
+#   Nv 25-74   Raro       : + efecto leve a quien se acerca (2,5 bloques)
+#   Nv 75-124  Épico      : + segundo anillo y destellos
+#   Nv 125-189 Legendario : + corona de partículas sobre la cabeza
+#   Nv 190-250 Mítico     : + espiral y estallidos, efecto más fuerte
+#  Se dibuja cada 1,5 s SOLO si hay un jugador a menos de 20 bloques.
+#  Partículas con vd=20 (solo las ven los jugadores cercanos).
 # ============================================================
 elite_aura_asignar:
   Skills:
@@ -19,42 +23,70 @@ elite_aura:
   - skill{s=elite_aura_levitacion} @self ?variableequals{var=caster.aura;value=6}
   - skill{s=elite_aura_arcana} @self ?variableequals{var=caster.aura;value=7}
   - skill{s=elite_aura_sangre} @self ?variableequals{var=caster.aura;value=8}
+  - skill{s=elite_aura_epica} @self ?level{l=>74}
+  - skill{s=elite_aura_legendaria} @self ?level{l=>124}
+  - skill{s=elite_aura_mitica} @self ?level{l=>189}
+
+# ---------- Tipos (visual siempre; efecto desde nivel 25, más fuerte desde 190) ----------
 elite_aura_fuego:
   Skills:
   - effect:particlering{p=flame;r=0.9;points=10;a=1;y=0.15;vd=20} @self
   - effect:particles{p=small_flame;a=2;hs=0.3;vs=0.6;y=1;vd=20} @self
-  - ignite{ticks=30} @PIR{r=2.5}
+  - ignite{ticks=30} @PIR{r=2.5} ?level{l=>24}
+  - ignite{ticks=60} @PIR{r=3.5} ?level{l=>189}
 elite_aura_hielo:
   Skills:
   - effect:particlering{p=snowflake;r=0.9;points=10;a=1;y=0.15;vd=20} @self
-  - potion{type=SLOWNESS;duration=30;level=0;hasParticles=false} @PIR{r=2.5}
+  - potion{type=SLOWNESS;duration=30;level=0;hasParticles=false} @PIR{r=2.5} ?level{l=>24}
+  - freeze{ticks=60} @PIR{r=3} ?level{l=>189}
 elite_aura_sombra:
   Skills:
   - effect:particlering{p=soul;r=0.8;points=8;a=1;y=0.2;vd=20} @self
   - effect:particles{p=smoke;a=4;hs=0.3;vs=0.7;s=0.01;y=1;vd=20} @self
+  - potion{type=DARKNESS;duration=40;level=0;hasParticles=false} @PIR{r=3} ?level{l=>124}
 elite_aura_tormenta:
   Skills:
   - effect:particles{p=electric_spark;a=5;hs=0.4;vs=0.8;s=0.1;y=1;vd=20} @self
-  - damage{a=1} @PIR{r=2} 0.3
+  - damage{a=1} @PIR{r=2} ?level{l=>24} 0.3
+  - damage{a=3} @PIR{r=3} ?level{l=>189} 0.3
 elite_aura_veneno:
   Skills:
   - effect:particlering{p=item_slime;r=0.9;points=8;a=1;y=0.15;vd=20} @self
   - effect:particles{p=spore_blossom_air;a=3;hs=0.5;vs=0.5;y=1;vd=20} @self
-  - potion{type=POISON;duration=30;level=0} @PIR{r=2.5} 0.3
+  - potion{type=POISON;duration=30;level=0} @PIR{r=2.5} ?level{l=>24} 0.3
+  - potion{type=POISON;duration=40;level=1} @PIR{r=3} ?level{l=>189} 0.3
 elite_aura_levitacion:
   Skills:
   - effect:particlering{p=end_rod;r=1;points=8;a=1;y=0.1;vd=20} @self
   - effect:particles{p=reverse_portal;a=4;hs=0.3;vs=0.8;y=1;vd=20} @self
-  - potion{type=LEVITATION;duration=20;level=0} @PIR{r=2.5} 0.25
+  - potion{type=LEVITATION;duration=20;level=0} @PIR{r=2.5} ?level{l=>24} 0.25
+  - potion{type=LEVITATION;duration=30;level=1} @PIR{r=3} ?level{l=>189} 0.25
 elite_aura_arcana:
   Skills:
   - effect:particlering{p=enchant;r=1;points=12;a=1;y=1.2;vd=20} @self
   - effect:particles{p=witch;a=2;hs=0.3;vs=0.5;y=1.5;vd=20} @self
+  - potion{type=MINING_FATIGUE;duration=40;level=0;hasParticles=false} @PIR{r=2.5} ?level{l=>24}
+  - potion{type=NAUSEA;duration=60;level=0;hasParticles=false} @PIR{r=3} ?level{l=>189} 0.3
 elite_aura_sangre:
   Skills:
   - effect:particles{p=crimson_spore;a=6;hs=0.5;vs=0.7;y=1;vd=20} @self
   - effect:particles{p=damage_indicator;a=1;hs=0.3;vs=0.3;y=1.2;vd=20} @self
-  - potion{type=WEAKNESS;duration=30;level=0;hasParticles=false} @PIR{r=2.5} 0.3
+  - potion{type=WEAKNESS;duration=30;level=0;hasParticles=false} @PIR{r=2.5} ?level{l=>24} 0.3
+  - potion{type=WITHER;duration=40;level=0} @PIR{r=3} ?level{l=>189} 0.3
+
+# ---------- Capas por rango (se suman al tipo) ----------
+elite_aura_epica:
+  Skills:
+  - effect:particlering{p=enchanted_hit;r=1.4;points=12;a=1;y=0.6;vd=20} @self
+  - effect:particles{p=glow;a=2;hs=0.5;vs=0.8;y=1;vd=20} @self
+elite_aura_legendaria:
+  Skills:
+  - effect:particlering{p=wax_off;r=0.45;points=8;a=1;y=2.3;vd=20} @self
+  - effect:particles{p=end_rod;a=1;hs=0.2;vs=0.1;y=2.4;vd=20} @self
+elite_aura_mitica:
+  Skills:
+  - effect:particlering{p=soul_fire_flame;r=1.8;points=16;a=1;y=0.1;vd=20} @self
+  - effect:particles{p=totem_of_undying;a=3;hs=0.6;vs=1;s=0.1;y=1;vd=20} @self
 elite_aura_set_1:
   Skills:
   - setvariable{var=caster.aura;value=1;type=INTEGER} @self
