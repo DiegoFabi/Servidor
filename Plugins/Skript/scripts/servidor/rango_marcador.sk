@@ -1,0 +1,43 @@
+# ============================================================
+#  rango_marcador.sk - Rango del jugador en el marcador (Typewriter)
+#  El símbolo del prefijo de LuckPerms (①-⑫) no se convierte en el
+#  marcador, así que aquí se mira el grupo por permiso (group.<rango>,
+#  que LuckPerms da a cada grupo y a los que lo heredan) y se guarda
+#  como número en el fact "marcador_rango" de Typewriter. El marcador
+#  muestra la etiqueta (<glyph:..._tag>) de ese número.
+#  Rendimiento: se comprueba al entrar y cada 10 s, y solo se manda el
+#  comando a Typewriter si el rango ha cambiado.
+# ============================================================
+options:
+    fact: A0RjYGKJqajFfMB
+
+on load:
+    delete {-rango::orden::*}
+    # Del más alto al más bajo (mismo orden que el TAB de SunLight)
+    set {-rango::orden::*} to "owner", "moderador", "ayudante", "adminbuilder", "builder", "streamer", "emperador", "obispo", "baron", "soldado", "campesino", "esclavo" and "mercader"
+
+function rangoNumero(p: player) :: number:
+    loop {-rango::orden::*}:
+        if {_p} has permission "group.%loop-value%":
+            return loop-index parsed as number
+    return 0
+
+function rangoActualizar(p: player):
+    set {_n} to rangoNumero({_p})
+    set {_k} to "%uuid of {_p}%"
+    {-rango::actual::%{_k}%} is not {_n}
+    set {-rango::actual::%{_k}%} to {_n}
+    execute console command "tw facts set {@fact} %{_n}% %{_p}%"
+
+on join:
+    wait 2 seconds
+    player is online
+    delete {-rango::actual::%uuid of player%}
+    rangoActualizar(player)
+
+every 10 seconds:
+    loop all players:
+        rangoActualizar(loop-player)
+
+on quit:
+    delete {-rango::actual::%uuid of player%}
