@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "immersivebp:item/battlepass/questbook_gray"
+  }
+}

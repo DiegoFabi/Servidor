@@ -30,7 +30,7 @@ event-status:
 progress-bar:
   complete-color: '&a'
   incomplete-color: '&c'
-  symbol: 'Ϻ'
+  symbol: ''
 
 boosters:
   points: Points

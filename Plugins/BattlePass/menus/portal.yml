@@ -1,472 +1,516 @@
 menu-title: '&f'
-menu-rows: 4
-
+menu-rows: 6
 menu:
   '0':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '1':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '2':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '3':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '9':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '10':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '11':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '12':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '18':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '19':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '20':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
+        - '&7Semana &f%week%'
+        - ''
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
   '21':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#FFAC1C}&lPase de Batalla: {#ffdc9e}Semana %week%'
+      name: '&ePase de Batalla · Temporada 1'
       lore:
-        - '&8Pase %pass_type%'
+        - '&7Pase %pass_type%'
         - ''
-        - '{#71797E}Tu nivel: &f%tier%'
-        - '{#71797E}EXP: &f%points%{#71797E}/%required_points%'
-  '22':
-    item:
-      material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
-      lore:
+        - '&7Semana &f%week%'
         - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
-    actions:
-      - '[menu] {rewards}'
-  '23':
-    item:
-      material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
-      lore:
-        - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
-    actions:
-      - '[menu] {rewards}'
-  '24':
-    item:
-      material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
-      lore:
-        - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
-    actions:
-      - '[menu] {rewards}'
-  '25':
-    item:
-      material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
-      lore:
-        - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
-    actions:
-      - '[menu] {rewards}'
-  '26':
-    item:
-      material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
-      lore:
-        - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
-    actions:
-      - '[menu] {rewards}'
+        - '&eEstadísticas'
+        - '&f• &7Nivel &f%tier%'
+        - '&f• &7Puntos &f%points%&8/&f%required_points%'
+
   '31':
     item:
       material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para explorar las recompensas'
     actions:
       - '[menu] {rewards}'
   '32':
     item:
       material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para explorar las recompensas'
     actions:
       - '[menu] {rewards}'
   '33':
     item:
       material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para explorar las recompensas'
     actions:
       - '[menu] {rewards}'
   '34':
     item:
       material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para explorar las recompensas'
     actions:
       - '[menu] {rewards}'
   '35':
     item:
       material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#FFAC1C}&lRecompensas del Pase'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Completa las misiones del'
-        - '{#71797E}pase para desbloquear una'
-        - '{#71797E}gran variedad de recompensas.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para explorar las recompensas'
     actions:
       - '[menu] {rewards}'
-  '4':
+  '40':
     item:
       material: 'gold_nugget'
-      customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para explorar las recompensas'
     actions:
-      - '[menu] {quest-overview}'
+      - '[menu] {rewards}'
+  '41':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+  '42':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+  '43':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '44':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '45':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '49':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '50':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '51':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '52':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
+  '53':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000 
+      name: '&eRecompensas &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para explorar las recompensas'
+    actions:
+      - '[menu] {rewards}'
   '5':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '6':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '7':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '8':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '13':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '14':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '15':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '16':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
-        - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '17':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#e444c3}&lMisiones del Pase'
+      name: '&eMisiones &7(Clic)'
       lore:
         - ''
-        - '{#71797E}Cada semana salen misiones'
-        - '{#71797E}nuevas: complétalas para'
-        - '{#71797E}ganar EXP del pase.'
+        - '&7Clic para ver las misiones'
+    actions:
+      - '[menu] {quest-overview}'
+  '22':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000
+      name: '&eMisiones &7(Clic)'
+      lore:
         - ''
-        - '&eVer &8[Clic Izquierdo]'
+        - '&7Clic para ver las misiones'
+    actions:
+      - '[menu] {quest-overview}'
+  '23':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000
+      name: '&eMisiones &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para ver las misiones'
+    actions:
+      - '[menu] {quest-overview}'
+  '24':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000
+      name: '&eMisiones &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para ver las misiones'
+    actions:
+      - '[menu] {quest-overview}'
+  '25':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000
+      name: '&eMisiones &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para ver las misiones'
+    actions:
+      - '[menu] {quest-overview}'
+  '26':
+    item:
+      material: 'gold_nugget'
+      customModelData: 7000
+      name: '&eMisiones &7(Clic)'
+      lore:
+        - ''
+        - '&7Clic para ver las misiones'
     actions:
       - '[menu] {quest-overview}'
   '27':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#7CFC00}&lPase Premium'
+      name: '&e¿Qué es el Pase de Batalla?'
       lore:
         - ''
-        - '{#71797E}Consigue el pase premium'
-        - '{#71797E}para no perderte'
-        - '{#71797E}muchas recompensas y'
-        - '{#71797E}hasta 3.5x más de EXP.'
+        - '&7Sube de nivel tu &ePase de Batalla&7'
+        - '&7completando misiones desafiantes.'
         - ''
-        - '&eComprar &8[Clic Izquierdo]'
-    actions:
-      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
-      - '[menu] {close}'
-      - '[sound] {BLOCK_LEVER_CLICK:1:1}'
+        - '&7Juega de forma activa y a cambio'
+        - '&7recibirás increíbles recompensas.'
+        - ''
+        - '&7Puedes comprar el pase premium'
+        - '&7en nuestra tienda.'
   '28':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#7CFC00}&lPase Premium'
+      name: '&e¿Qué es el Pase de Batalla?'
       lore:
         - ''
-        - '{#71797E}Consigue el pase premium'
-        - '{#71797E}para no perderte'
-        - '{#71797E}muchas recompensas y'
-        - '{#71797E}hasta 3.5x más de EXP.'
+        - '&7Sube de nivel tu &ePase de Batalla&7'
+        - '&7completando misiones desafiantes.'
         - ''
-        - '&eComprar &8[Clic Izquierdo]'
-    actions:
-      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
-      - '[menu] {close}'
-      - '[sound] {BLOCK_LEVER_CLICK:1:1}'
+        - '&7Juega de forma activa y a cambio'
+        - '&7recibirás increíbles recompensas.'
+        - ''
+        - '&7Puedes comprar el pase premium'
+        - '&7en nuestra tienda.'
   '29':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#7CFC00}&lPase Premium'
+      name: '&e¿Qué es el Pase de Batalla?'
       lore:
         - ''
-        - '{#71797E}Consigue el pase premium'
-        - '{#71797E}para no perderte'
-        - '{#71797E}muchas recompensas y'
-        - '{#71797E}hasta 3.5x más de EXP.'
+        - '&7Sube de nivel tu &ePase de Batalla&7'
+        - '&7completando misiones desafiantes.'
         - ''
-        - '&eComprar &8[Clic Izquierdo]'
-    actions:
-      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
-      - '[menu] {close}'
-      - '[sound] {BLOCK_LEVER_CLICK:1:1}'
+        - '&7Juega de forma activa y a cambio'
+        - '&7recibirás increíbles recompensas.'
+        - ''
+        - '&7Puedes comprar el pase premium'
+        - '&7en nuestra tienda.'
   '30':
     item:
       material: 'gold_nugget'
       customModelData: 7000
-      name: '{#7CFC00}&lPase Premium'
+      name: '&e¿Qué es el Pase de Batalla?'
       lore:
         - ''
-        - '{#71797E}Consigue el pase premium'
-        - '{#71797E}para no perderte'
-        - '{#71797E}muchas recompensas y'
-        - '{#71797E}hasta 3.5x más de EXP.'
+        - '&7Sube de nivel tu &ePase de Batalla&7'
+        - '&7completando misiones desafiantes.'
         - ''
-        - '&eComprar &8[Clic Izquierdo]'
-    actions:
-      - '[message] { &7Consigue el &aPase Premium &7en la tienda del servidor.}'
-      - '[menu] {close}'
-      - '[sound] {BLOCK_LEVER_CLICK:1:1}'
+        - '&7Juega de forma activa y a cambio'
+        - '&7recibirás increíbles recompensas.'
+        - ''
+        - '&7Puedes comprar el pase premium'
+        - '&7en nuestra tienda.'
