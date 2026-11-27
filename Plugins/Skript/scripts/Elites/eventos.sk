@@ -238,13 +238,13 @@ function evVictoria():
         set {_premio} to 1000
         if {_i} is 1:
             set {_premio} to 2000
-            set {_linea} to "<#FFD36B>   ① %{_n}%"
+            set {_linea} to "<#FFD36B>   1º %{_n}%"
         else if {_i} is 2:
             set {_premio} to 1700
-            set {_linea} to "<#DADDE3>   ② %{_n}%"
+            set {_linea} to "<#DADDE3>   2º %{_n}%"
         else if {_i} is 3:
             set {_premio} to 1500
-            set {_linea} to "<#D49A6A>   ③ %{_n}%"
+            set {_linea} to "<#D49A6A>   3º %{_n}%"
         execute console command "eco give %{_n}% %{_premio}% -sf"
         if {_i} <= 3:
             set {_dmg} to round({-ev::dano::%loop-value%})

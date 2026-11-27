@@ -102,9 +102,9 @@ Plugin:
     villagers: true
     anvil: true
     signs: true
-    # chat: false -> Nexo no reescribe los paquetes de chat. Si los reescribe, TypeWriter
-    # pierde la marca de sus cuadros de diálogo y los repite al cerrar cada conversación.
-    chat: false
+    # chat: true es necesario: los prefijos de rango (①-⑫ en LuckPerms) se convierten
+    # en los tags de glyphs/tags.yml solo si Nexo procesa el chat.
+    chat: true
     chat_standard_tags: true
     translatable: true
     books: true
