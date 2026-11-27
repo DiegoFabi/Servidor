@@ -540,3 +540,22 @@ elite_esbirro_arana:
   Template: elite_esbirro_base
   Type: CAVE_SPIDER
   Display: '<#7E848F>Cría'
+
+# Conejo Asesino (lo invoca el arquetipo Conejero, con su nivel)
+elite_conejo_asesino:
+  Template: elite_esbirro_placa
+  Type: RABBIT
+  Display: '<#FF8FB1>Conejo Asesino'
+  Health: 10
+  Damage: 4
+  LevelModifiers:
+    Health: 0.12
+    Damage: 0.03
+  Options:
+    RabbitType: THE_KILLER_BUNNY
+    MovementSpeed: 0.36
+  Variables:
+    nombre: Conejo Asesino
+  Skills:
+  - effect:particles{p=heart;a=3;hs=0.3;vs=0.3;y=0.5;vd=24} @self ~onSpawn
+  - effect:particles{p=damage_indicator;a=4;hs=0.2;vs=0.2;y=0.4;vd=24} @self ~onAttack

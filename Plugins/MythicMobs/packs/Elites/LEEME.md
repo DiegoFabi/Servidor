@@ -41,3 +41,10 @@ Nivel = distancia al spawn (config-mobs.yml > WorldScaling) + 0-4 aleatorio, top
 - Plantillas `elite_jefe_base` (cuenta para el evento, etiqueta `elite_evento`, BossBar nativa a
   40 bloques y botín) y `elite_jefe_esbirro` (monturas e invocaciones).
 - Cuándo, dónde, rastreo, huida y recompensas: `Skript/scripts/Elites/eventos.sk`.
+
+## Arquetipos (Skills/arquetipos.yml)
+Capa extra de mobs únicos: Infernal, Espectral, Alado, Pirotécnico, Sombrío,
+Conejero (invoca `elite_conejo_asesino`, con barra de vida) y Arcano.
+Probabilidad: Nv 10-74 25 %, Nv 75-189 50 %, Nv 190+ siempre. El nombre lleva
+el arquetipo ("Zombi Infernal"). Temporizador de 1 s por élite que solo actúa
+con un jugador a menos de 24 bloques.

@@ -14,6 +14,7 @@ elite_aparecer:
   - skill{s=elite_aura_asignar} @self
   - skill{s=elite_estilo} @self
   - skill{s=elite_asignar_poderes} @self
+  - skill{s=elite_arquetipo_asignar} @self
 
 # Rango (1-5) y color del nombre según el nivel
 elite_rango:

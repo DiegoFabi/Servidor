@@ -32,6 +32,7 @@ elite_base:
   - remove @Passenger ~onDeath
   - remove @Passenger ~onDespawn
   - skill{s=elite_aura} @self ~onTimer:30
+  - skill{s=elite_arquetipo_tick} @self ~onTimer:20
 
 # Cuerpo a cuerpo con armas (zombis, piglins, vindicadores…)
 elite_guerrero:
@@ -60,6 +61,20 @@ elite_esbirro_base:
   - effect:particles{p=soul;a=12;hs=0.3;vs=0.6;s=0.02;y=0.5;vd=32} @self ~onSpawn
   - attribute{attribute=SCALE;a=0.75} @self ~onSpawn
   - remove{delay=800} @self ~onSpawn
+
+# Invocaciones con barra de vida (p. ej. Conejos Asesinos del arquetipo Conejero):
+# placa propia como los élites, sin poderes ni botín, duran 40 s.
+elite_esbirro_placa:
+  Template: elite_esbirro_base
+  Variables:
+    nombre: Esbirro
+  Skills:
+  - skill{s=elite_rango} @self ~onSpawn
+  - summonpassenger{type=elite_placa} @self ~onSpawn
+  - skill{s=elite_nombre;delay=3} @self ~onSpawn
+  - skill{s=elite_nombre_vida} @self ~onDamaged
+  - remove @Passenger ~onDeath
+  - remove @Passenger ~onDespawn
 
 # A distancia con ballesta (saqueadores)
 elite_ballestero:

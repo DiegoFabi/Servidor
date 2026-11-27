@@ -1,0 +1,209 @@
+# ============================================================
+#  ARQUETIPOS: mobs únicos y visualmente llamativos (capa extra sobre
+#  auras y poderes). Se elige uno al aparecer:
+#    Nv 10-74   25 %   ·   Nv 75-189   50 %   ·   Nv 190-250   siempre
+#  1 Infernal      espiral de fuego, flechas de fuego teledirigidas
+#  2 Espectral     se teletransporta junto a ti entre portales
+#  3 Alado         levita y dispara flechas de fuego desde el aire
+#  4 Pirotécnico   fuegos artificiales que explotan sobre ti
+#  5 Sombrío       oscuridad a quien se acerca, humo y anillos negros
+#  6 Conejero      invoca Conejos Asesinos (con barra de vida)
+#  7 Arcano        figuras geométricas (triángulo y hexágono) y rayo
+#  Escalado: más partículas (por rango), más daño (por nivel) y, desde
+#  Nv 125, una versión reforzada de cada poder.
+#  Rendimiento: un único temporizador cada 1 s que solo trabaja si el
+#  élite tiene arquetipo y hay un jugador a menos de 24 bloques; cada
+#  poder tiene su propio enfriamiento.
+# ============================================================
+elite_arquetipo_asignar:
+  Skills:
+  - skill{s=elite_arquetipo_elegir} @self ?level{l=10to74} 0.25
+  - skill{s=elite_arquetipo_elegir} @self ?level{l=75to189} 0.5
+  - skill{s=elite_arquetipo_elegir} @self ?level{l=>189}
+elite_arquetipo_elegir:
+  Skills:
+  - randomskill{s=arq_set_1,arq_set_2,arq_set_3,arq_set_4,arq_set_5,arq_set_6,arq_set_7} @self
+arq_set_1:
+  Skills:
+  - setvariable{var=caster.arq;value=1;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#FF7A3D>Infernal";type=STRING} @self
+  - potion{type=FIRE_RESISTANCE;duration=2147483000;level=0;hasParticles=false;hasIcon=false} @self
+arq_set_2:
+  Skills:
+  - setvariable{var=caster.arq;value=2;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#B57BFF>Espectral";type=STRING} @self
+arq_set_3:
+  Skills:
+  - setvariable{var=caster.arq;value=3;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#9EE8FF>Alado";type=STRING} @self
+arq_set_4:
+  Skills:
+  - setvariable{var=caster.arq;value=4;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#FFD36B>Pirotécnico";type=STRING} @self
+arq_set_5:
+  Skills:
+  - setvariable{var=caster.arq;value=5;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#7E848F>Sombrío";type=STRING} @self
+arq_set_6:
+  Skills:
+  - setvariable{var=caster.arq;value=6;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#FF8FB1>Conejero";type=STRING} @self
+arq_set_7:
+  Skills:
+  - setvariable{var=caster.arq;value=7;type=INTEGER} @self
+  - setvariable{var=caster.nombre;value="<caster.var.nombre> <#5CE1E6>Arcano";type=STRING} @self
+
+# ---------- Temporizador (1 s) ----------
+elite_arquetipo_tick:
+  Conditions:
+  - variableisset{var=caster.arq} true
+  - playerwithin{d=24} true
+  Skills:
+  - skill{s=arq_infernal} @self ?variableequals{var=caster.arq;value=1}
+  - skill{s=arq_espectral} @self ?variableequals{var=caster.arq;value=2}
+  - skill{s=arq_alado} @self ?variableequals{var=caster.arq;value=3}
+  - skill{s=arq_pirotecnico} @self ?variableequals{var=caster.arq;value=4}
+  - skill{s=arq_sombrio} @self ?variableequals{var=caster.arq;value=5}
+  - skill{s=arq_conejero} @self ?variableequals{var=caster.arq;value=6}
+  - skill{s=arq_arcano} @self ?variableequals{var=caster.arq;value=7}
+
+# ========== 1 INFERNAL ==========
+arq_infernal:
+  Skills:
+  # Espiral: tres anillos a distinta altura y radio que giran (offset aleatorio)
+  - effect:particlering{p=flame;r=1.1;points="6 + <caster.var.rango> * 2";a=1;y=0.2;vd=24} @self
+  - effect:particlering{p=flame;r=0.8;points="5 + <caster.var.rango> * 2";a=1;y=0.9;vd=24} @self
+  - effect:particlering{p=soul_fire_flame;r=0.5;points="4 + <caster.var.rango>";a=1;y=1.6;vd=24} @self
+  - effect:particles{p=lava;a=1;hs=0.3;vs=0.3;y=1;vd=24} @self 0.5
+  - skill{s=arq_infernal_flechas} @target ?targetwithin{d=18}
+  - skill{s=arq_infernal_flechas_mayor} @target ?targetwithin{d=22}
+arq_infernal_flechas:
+  Cooldown: 7
+  Conditions:
+  - level{l=<125} true
+  Skills:
+  - sound{s=entity.blaze.shoot;v=0.7;p=0.8} @self
+  - missile{ot=arq_flecha_estela;oh=arq_flecha_impacto;v=9;i=1;hR=1;vR=1;in=0.75;md=60;hnp=true}
+arq_infernal_flechas_mayor:
+  Cooldown: 5
+  Conditions:
+  - level{l=>124} true
+  Skills:
+  - sound{s=entity.blaze.shoot;v=0.8;p=0.6} @self
+  - missile{ot=arq_flecha_estela;oh=arq_flecha_impacto;v=10;i=1;hR=1;vR=1;in=0.8;md=60;hnp=true;repeat=2;repeatInterval=6}
+arq_flecha_estela:
+  Skills:
+  - effect:particles{p=flame;a=2;hs=0.05;vs=0.05;s=0.01;vd=24} @origin
+  - effect:particles{p=crit;a=1;vd=24} @origin
+arq_flecha_impacto:
+  Skills:
+  - damage{a="2 + <caster.level> * 0.05"}
+  - ignite{ticks="40 + <caster.var.rango> * 20"}
+  - effect:particles{p=flame;a=14;hs=0.4;vs=0.4;s=0.08;vd=24} @origin
+  - sound{s=entity.arrow.hit;v=0.8;p=0.8} @origin
+
+# ========== 2 ESPECTRAL ==========
+arq_espectral:
+  Skills:
+  - effect:particles{p=reverse_portal;a="2 + <caster.var.rango>";hs=0.4;vs=0.8;s=0.02;y=1;vd=24} @self
+  - effect:particlering{p=witch;r=0.9;points=8;a=1;y=0.1;vd=24} @self 0.5
+  - skill{s=arq_espectral_salto} @target ?targetwithin{d=20}
+arq_espectral_salto:
+  Cooldown: 8
+  Conditions:
+  - targetnotwithin{d=3} true
+  Skills:
+  - effect:particlering{p=portal;r=1.2;points=24;a=2;y=1;vd=32} @self
+  - effect:particles{p=portal;a=40;hs=0.4;vs=1;s=0.8;y=1;vd=32} @self
+  - sound{s=entity.enderman.teleport;v=0.8;p=0.7} @self
+  - teleport{spreadh=2;spreadv=0;delay=4}
+  - effect:particlering{p=reverse_portal;r=1.2;points=24;a=2;y=1;delay=5;vd=32} @self
+  - effect:particles{p=dragon_breath;a=12;hs=0.5;vs=0.5;s=0.02;y=1;delay=5;vd=32} @self
+  - potion{type=BLINDNESS;duration=30;level=0;hasParticles=false;delay=5} @PIR{r=4} ?level{l=>124}
+
+# ========== 3 ALADO ==========
+arq_alado:
+  Skills:
+  - effect:particles{p=cloud;a="1 + <caster.var.rango>";hs=0.5;vs=0.1;s=0.01;y=0;vd=24} @self
+  - effect:particles{p=end_rod;a=1;hs=0.6;vs=0.6;y=1.5;vd=24} @self 0.5
+  - skill{s=arq_alado_vuelo} @target ?targetwithin{d=18}
+arq_alado_vuelo:
+  Cooldown: 12
+  Skills:
+  - sound{s=entity.phantom.flap;v=0.9;p=0.8} @self
+  - effect:particlering{p=cloud;r=1.4;points=16;a=1;y=0;vd=32} @self
+  - potion{type=LEVITATION;duration=30;level=1;hasParticles=false;hasIcon=false} @self
+  - potion{type=SLOW_FALLING;duration=120;level=0;hasParticles=false;hasIcon=false;delay=30} @self
+  # Desde el aire: flechas de fuego teledirigidas (más con el rango)
+  - missile{ot=arq_flecha_estela;oh=arq_flecha_impacto;v=9;i=1;hR=1;vR=1;in=0.75;md=60;hnp=true;delay=25;repeat="<caster.var.rango>";repeatInterval=8}
+
+# ========== 4 PIROTÉCNICO ==========
+arq_pirotecnico:
+  Skills:
+  - effect:particles{p=firework;a="1 + <caster.var.rango>";hs=0.4;vs=0.6;s=0.02;y=1;vd=24} @self
+  - skill{s=arq_piro_fuegos} @target ?targetwithin{d=16}
+arq_piro_fuegos:
+  Cooldown: 7
+  Skills:
+  - sound{s=entity.firework_rocket.launch;v=0.9;p=1} @self
+  - effect:particleline{p=firework;db=0.5;fo=true;vd=32}
+  - effect:particles{p=firework;a="20 + <caster.var.rango> * 8";hs=0.7;vs=0.7;s=0.15;y=1.5;delay=8;vd=32}
+  - effect:particles{p=flash;a=1;y=1.5;delay=8;vd=32}
+  - sound{s=entity.firework_rocket.large_blast;v=1;p=1;delay=8}
+  - sound{s=entity.firework_rocket.twinkle;v=0.8;p=1;delay=14}
+  - damage{a="1.5 + <caster.level> * 0.04";delay=8}
+  - skill{s=arq_piro_corona;delay=16} @self ?level{l=>124}
+arq_piro_corona:
+  Skills:
+  - effect:particlering{p=firework;r=3;points=24;a=2;y=2;vd=32} @self
+  - effect:particles{p=flash;a=1;y=3;vd=32} @self
+  - damage{a="1 + <caster.level> * 0.02"} @PIR{r=4}
+  - sound{s=entity.firework_rocket.large_blast_far;v=1;p=0.8} @self
+
+# ========== 5 SOMBRÍO ==========
+arq_sombrio:
+  Skills:
+  - effect:particles{p=large_smoke;a="1 + <caster.var.rango>";hs=0.4;vs=0.6;s=0.01;y=0.8;vd=24} @self
+  - effect:particlering{p=squid_ink;r=1.6;points=4;a=1;y=0.1;vd=24} @self
+  - effect:particlering{p=squid_ink;r=1.6;points=4;a=1;y=0.1;rotation=45;vd=24} @self
+  # Oscuridad a quien se acerca (más radio con el nivel)
+  - potion{type=DARKNESS;duration=60;level=0;hasParticles=false;hasIcon=false} @PIR{r=6} ?level{l=<125}
+  - potion{type=DARKNESS;duration=60;level=0;hasParticles=false;hasIcon=false} @PIR{r=10} ?level{l=>124}
+  - potion{type=WITHER;duration=40;level=0} @PIR{r=4} ?level{l=>189} 0.3
+  - sound{s=ambient.cave;v=0.5;p=0.6} @self 0.08
+
+# ========== 6 CONEJERO ==========
+arq_conejero:
+  Skills:
+  - effect:particles{p=cherry_leaves;a="1 + <caster.var.rango>";hs=0.6;vs=0.4;y=1;vd=24} @self
+  - skill{s=arq_conejero_invocar} @self ?targetwithin{d=16}
+arq_conejero_invocar:
+  Cooldown: 15
+  Conditions:
+  - mobsinradius{types=elite_conejo_asesino;a=<4;r=20} true
+  Skills:
+  - effect:particlering{p=heart;r=1.5;points=10;a=1;y=0.3;vd=32} @self
+  - effect:particles{p=crimson_spore;a=20;hs=1;vs=0.4;y=0.3;vd=32} @self
+  - sound{s=entity.rabbit.attack;v=1;p=0.6} @self
+  - summon{type=elite_conejo_asesino;amount=1;radius=2;level=<caster.level>;delay=10} @self
+  - summon{type=elite_conejo_asesino;amount=1;radius=2;level=<caster.level>;delay=14} @self ?level{l=>74}
+  - summon{type=elite_conejo_asesino;amount=1;radius=2;level=<caster.level>;delay=18} @self ?level{l=>189}
+
+# ========== 7 ARCANO ==========
+arq_arcano:
+  Skills:
+  # Triángulo sobre la cabeza y hexágono a los pies
+  - effect:particlering{p=end_rod;r=0.7;points=3;a=1;y=2.4;vd=24} @self
+  - effect:particlering{p=enchant;r=1.3;points=6;a=2;y=0.1;vd=24} @self
+  - effect:particlering{p=electric_spark;r=1.3;points=6;a=1;y=0.1;rotation=30;vd=24} @self ?level{l=>74}
+  - effect:particlesphere{p=enchant;r=1.2;a=6;y=1;vd=24} @self ?level{l=>124}
+  - skill{s=arq_arcano_rayo} @target ?targetwithin{d=16}
+arq_arcano_rayo:
+  Cooldown: 9
+  Skills:
+  - sound{s=block.beacon.power_select;v=0.8;p=1.6} @self
+  - effect:particleline{p=end_rod;db=0.4;fo=true;vd=32}
+  - effect:particleline{p=enchant;db=0.6;fo=true;vd=32}
+  - damage{a="2 + <caster.level> * 0.045"}
+  - potion{type=LEVITATION;duration=20;level=0;hasParticles=false} ?level{l=>124}
+  - effect:particlesphere{p=end_rod;r=1;a=16;y=1;vd=32}
