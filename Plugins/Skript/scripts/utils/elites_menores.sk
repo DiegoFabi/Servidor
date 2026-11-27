@@ -1,0 +1,114 @@
+# ============================================================
+#  Poderes menores de EliteMobs (niveles 0-9)
+#  EliteMobs solo da poderes a partir del nivel 10. Este script
+#  da a los élites de nivel bajo un poder visual escalonado:
+#    Nv 0-3  Chispa   : destello de partículas + lentitud corta
+#    Nv 4-6  Pulso    : anillo de fuego/veneno + quemadura o veneno
+#    Nv 7-9  Embate   : onda expansiva, empuje hacia arriba,
+#                       debilidad + lentitud y rayo visual
+#  Además, al fijar objetivo muestran un aviso visual (aura).
+#  El nivel se lee del nombre del élite ("Lvl X ..." o "[X] ...").
+# ============================================================
+
+options:
+    mundo: "survivalMain"
+
+# Devuelve el nivel del élite o -1 si no es un élite de EliteMobs
+function emNivel(e: entity) :: integer:
+    set {_n} to uncolored name of {_e}
+    {_n} is set
+    set {_p::*} to split {_n} at " "
+    if {_p::1} is "Lvl":
+        set {_l} to {_p::2} parsed as integer
+    else if {_p::1} starts with "[":
+        replace all "[" and "]" in {_p::1} with ""
+        set {_l} to {_p::1} parsed as integer
+    {_l} is set
+    return {_l}
+
+function emPart(p: player, l: location, tipo: text, cantidad: number, disp: number, vel: number):
+    execute console command "execute at %{_p}% positioned %x-coordinate of {_l}% %y-coordinate of {_l}% %z-coordinate of {_l}% run particle %{_tipo}% ~ ~ ~ %{_disp}% %{_disp}% %{_disp}% %{_vel}% %{_cantidad}% normal"
+
+# Anillo de partículas alrededor de un punto
+function emAnillo(p: player, c: location, radio: number, tipo: text):
+    loop 16 times:
+        set {_a} to loop-number * 22.5
+        set {_l} to {_c} ~ vector(cos({_a}) * {_radio}, 0.2, sin({_a}) * {_radio})
+        emPart({_p}, {_l}, {_tipo}, 1, 0, 0)
+
+function emPoderMenor(e: entity, p: player, lvl: integer):
+    if {_lvl} < 4:
+        # Chispa
+        emPart({_p}, location of {_p} ~ vector(0, 1, 0), "minecraft:crit", 18, 0.4, 0.3)
+        emPart({_p}, location of {_e} ~ vector(0, 1, 0), "minecraft:enchanted_hit", 12, 0.3, 0.2)
+        play sound "entity.allay.hurt" with volume 0.6 and pitch 1.6 at {_p}
+        apply slowness 1 to {_p} for 1 second
+        stop
+    if {_lvl} < 7:
+        # Pulso
+        set {_c} to location of {_e}
+        if chance of 50%:
+            emAnillo({_p}, {_c}, 1.5, "minecraft:flame")
+            emAnillo({_p}, {_c}, 2.5, "minecraft:small_flame")
+            ignite {_p} for 2 seconds
+            play sound "item.firecharge.use" with volume 0.7 and pitch 1.2 at {_p}
+        else:
+            emAnillo({_p}, {_c}, 1.5, "minecraft:item_slime")
+            emAnillo({_p}, {_c}, 2.5, "minecraft:spore_blossom_air")
+            apply poison 1 to {_p} for 2 seconds
+            play sound "entity.slime.squish" with volume 0.8 and pitch 0.8 at {_p}
+        stop
+    # Embate (7-9)
+    set {_c} to location of {_e}
+    emAnillo({_p}, {_c}, 1, "minecraft:sweep_attack")
+    emAnillo({_p}, {_c}, 2, "minecraft:cloud")
+    emAnillo({_p}, {_c}, 3, "minecraft:electric_spark")
+    strike lightning effect at {_p}
+    push {_p} upwards with speed 0.6
+    apply weakness 1 to {_p} for 3 seconds
+    apply slowness 2 to {_p} for 2 seconds
+    play sound "entity.warden.attack_impact" with volume 0.8 and pitch 1.3 at {_p}
+
+# El élite golpea a un jugador
+on damage of player:
+    "%world of victim%" is {@mundo}
+    attacker is a living entity
+    attacker is not a player
+    set {_lvl} to emNivel(attacker)
+    {_lvl} is set
+    {_lvl} >= 0
+    {_lvl} < 10
+    # Probabilidad: más agresivo cuanto más nivel (25% -> 43%)
+    set {_prob} to 25 + {_lvl} * 2
+    if chance of {_prob}%:
+        emPoderMenor(attacker, victim, {_lvl})
+
+# El jugador golpea al élite: contraataque visual ocasional
+on damage of living entity:
+    victim is not a player
+    attacker is a player
+    "%world of victim%" is {@mundo}
+    set {_lvl} to emNivel(victim)
+    {_lvl} is set
+    {_lvl} >= 0
+    {_lvl} < 10
+    if chance of 15%:
+        emPoderMenor(victim, attacker, {_lvl})
+
+# Aviso visual al fijar objetivo (aura breve)
+on target:
+    target is a player
+    "%world of target%" is {@mundo}
+    set {_lvl} to emNivel(event-entity)
+    {_lvl} is set
+    {_lvl} >= 0
+    {_lvl} < 10
+    set {_e} to event-entity
+    set {_p} to target
+    if {_lvl} < 4:
+        emAnillo({_p}, location of {_e}, 0.8, "minecraft:wax_off")
+    else if {_lvl} < 7:
+        emAnillo({_p}, location of {_e}, 0.9, "minecraft:flame")
+    else:
+        emAnillo({_p}, location of {_e}, 1, "minecraft:soul_fire_flame")
+        emPart({_p}, location of {_e} ~ vector(0, 1, 0), "minecraft:angry_villager", 2, 0.3, 0)

@@ -1,12 +1,13 @@
 # Sets the defensive powers natural elites can randomly roll.
 # Both .lua filenames and legacy .yml aliases are accepted.
 defensivePowers:
-- invulnerability_arrow.yml
-- invulnerability_fall_damage.yml
-- invulnerability_fire.yml
-- invulnerability_fireworks.yml
-- invulnerability_knockback.yml
+# EliteMobs da el primer poder (nivel 10+) de esta lista: solo poderes con
+# efecto visual, para que todo élite muestre algo. Las invulnerabilidades
+# (sin visual) pasaron a miscellaneousPowers (nivel 30+).
 - shield_wall.yml
+- aura_sombria.lua
+- pulso_helado.lua
+- circulo_arcano.lua
 # Sets the offensive powers natural elites can randomly roll.
 # Both .lua filenames and legacy .yml aliases are accepted.
 offensivePowers:
@@ -32,6 +33,11 @@ offensivePowers:
 # Sets the miscellaneous powers natural elites can randomly roll.
 # Both .lua filenames and legacy .yml aliases are accepted.
 miscellaneousPowers:
+- invulnerability_arrow.yml
+- invulnerability_fall_damage.yml
+- invulnerability_fire.yml
+- invulnerability_fireworks.yml
+- invulnerability_knockback.yml
 - attack_blinding.yml
 - attack_confusing.yml
 - attack_weakness.yml
