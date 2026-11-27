@@ -43,6 +43,8 @@ scene_market_fisherman:
   - model{mid=scene_market_3;s=1} @self ~onSpawn
   - model{mid=scene_market_3;s=1;delay=5} @self ~onLoad
   - remapmodel{m=scene_market_3;n=<global.var.skin<caster.uuid>|scene_market_3>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_market_3;n=<global.var.skin<caster.uuid>|scene_market_3>;delay=12} @self ~onSpawn
   - changepart{m=scene_market_3;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_market_3;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_market_3;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -80,6 +82,8 @@ scene_market_bookseller:
   - model{mid=scene_market_4;s=1} @self ~onSpawn
   - model{mid=scene_market_4;s=1;delay=5} @self ~onLoad
   - remapmodel{m=scene_market_4;n=<global.var.skin<caster.uuid>|scene_market_4>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_market_4;n=<global.var.skin<caster.uuid>|scene_market_4>;delay=12} @self ~onSpawn
   - changepart{m=scene_market_4;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_market_4;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_market_4;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -116,6 +120,8 @@ scene_market_appleseller:
   - model{mid=scene_market_6;s=1} @self ~onSpawn
   - model{mid=scene_market_6;s=1;delay=5} @self ~onLoad
   - remapmodel{m=scene_market_6;n=<global.var.skin<caster.uuid>|scene_market_6>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_market_6;n=<global.var.skin<caster.uuid>|scene_market_6>;delay=12} @self ~onSpawn
   - changepart{m=scene_market_6;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_market_6;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_market_6;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad

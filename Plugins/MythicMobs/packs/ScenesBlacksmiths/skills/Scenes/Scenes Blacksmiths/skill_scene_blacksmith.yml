@@ -1,0 +1,29 @@
+
+hit_sound:
+  Skills:
+  - state{s=idle;li=0;lo=0} @self
+  - sound{s=block.anvil.place;v=0.1} @self 
+  - sound{s=block.anvil.place;v=0.1;delay=19} @self
+  - sound{s=block.anvil.place;v=0.1;delay=32} @self
+  - sound{s=block.anvil.place;v=0.1;delay=45} @self
+  - sound{s=block.anvil.place;v=0.1;delay=58} @self
+  - sound{s=block.anvil.place;v=0.1;delay=70} @self
+  - sound{s=block.anvil.place;v=0.1;delay=169} @self
+  - sound{s=block.anvil.place;v=0.1;delay=183} @self
+  - sound{s=block.anvil.place;v=0.1;delay=196} @self
+  - sound{s=block.anvil.place;v=0.1;delay=209} @self
+  - sound{s=block.anvil.place;v=0.1;delay=223} @self
+  - sound{s=block.anvil.place;v=0.1;delay=236} @self 
+
+
+blacksmith_greet:
+  Cooldown: 5
+  Conditions:
+  - stance{s=idle} true
+  - playerwithin{d=5} true
+  Skills:
+  - state{s=idle;r=true} @self
+  - setstance{stance=player} @self
+  - state{s=interact;li=3;lo=3} @self
+
+#c4e76a722c541b323426b864689e00e1

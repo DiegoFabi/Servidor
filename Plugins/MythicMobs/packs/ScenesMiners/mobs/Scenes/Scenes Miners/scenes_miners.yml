@@ -22,6 +22,8 @@ scene_miner_sleep:
   - defaultstate{m=scene_miner_1;t=idle;s=sleep} @self ~onSpawn
   - defaultstate{m=scene_miner_1;t=idle;s=sleep;delay=10} @self ~onLoad
   - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=12} @self ~onSpawn
   - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -60,6 +62,8 @@ scene_miner_slab:
   - defaultstate{m=scene_miner_1;t=idle;s=mine_low} @self ~onSpawn
   - defaultstate{m=scene_miner_1;t=idle;s=mine_low;delay=10} @self ~onLoad
   - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=12} @self ~onSpawn
   - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -97,6 +101,8 @@ scene_miner_block:
   - defaultstate{m=scene_miner_1;t=idle;s=mine_block} @self ~onSpawn
   - defaultstate{m=scene_miner_1;t=idle;s=mine_block;delay=10} @self ~onLoad
   - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=12} @self ~onSpawn
   - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -134,6 +140,8 @@ scene_miner_wall:
   - defaultstate{m=scene_miner_1;t=idle;s=mine_wall} @self ~onSpawn
   - defaultstate{m=scene_miner_1;t=idle;s=mine_wall;delay=10} @self ~onLoad
   - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_1;n=<global.var.skin<caster.uuid>|scene_miner_1>;delay=12} @self ~onSpawn
   - changepart{m=scene_miner_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_miner_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -168,6 +176,8 @@ scene_miner_walk:
   - model{mid=scene_miner_2;save=true} @self ~onSpawn
   - model{mid=scene_miner_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
   - skill{s=dialogo_minero} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
@@ -202,6 +212,8 @@ scene_miner_walk2:
   - model{mid=scene_miner_2;save=true} @self ~onSpawn
   - model{mid=scene_miner_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
   - skill{s=dialogo_minero} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
@@ -236,6 +248,8 @@ scene_miner_walk3:
   - model{mid=scene_miner_2;save=true} @self ~onSpawn
   - model{mid=scene_miner_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_2;n=<global.var.skin<caster.uuid>|scene_miner_2>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
   - skill{s=dialogo_minero} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
@@ -271,6 +285,8 @@ scene_miner_interactive:
   - model{mid=scene_miner_3;save=true} @self ~onSpawn
   - model{mid=scene_miner_3;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_miner_3;n=<global.var.skin<caster.uuid>|scene_miner_3>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_miner_3;n=<global.var.skin<caster.uuid>|scene_miner_3>;delay=12} @self ~onSpawn
   - changepart{m=scene_miner_3;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_miner_3;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_miner_3;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad

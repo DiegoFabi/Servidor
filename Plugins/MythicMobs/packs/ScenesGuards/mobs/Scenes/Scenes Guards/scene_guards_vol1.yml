@@ -20,6 +20,8 @@ scene_guard_stand:
   - state{m=scene_guards;s=idle} @self ~onSpawn
   - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -56,6 +58,8 @@ scene_guard_interactive:
   - state{m=scene_guards;s=idle} @self ~onSpawn
   - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -94,6 +98,8 @@ scene_guard_salute:
   - state{m=scene_guards;s=idle} @self ~onSpawn
   - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -131,6 +137,8 @@ scene_guard_salute_2:
   - state{m=scene_guards;s=idle} @self ~onSpawn
   - state{m=scene_guards;s=idle;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -169,6 +177,8 @@ scene_guard_sleep_stand:
   - defaultstate{m=scene_guards;t=idle;s=sleep_stand} @self ~onSpawn
   - defaultstate{m=scene_guards;t=idle;s=sleep_stand;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -208,6 +218,8 @@ scene_guard_walk_1:
   - defaultstate{t=idle;s=idle2} @self ~onSpawn
   - defaultstate{t=idle;s=idle2;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -254,6 +266,8 @@ scene_guard_walk_2:
   - defaultstate{t=idle;s=idle2} @self ~onSpawn
   - defaultstate{t=idle;s=idle2;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -299,6 +313,8 @@ scene_guard_walk_3:
   - defaultstate{t=idle;s=idle2} @self ~onSpawn
   - defaultstate{t=idle;s=idle2;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -344,6 +360,8 @@ scene_guard_march_1:
   - defaultstate{t=idle;s=idle3} @self ~onSpawn
   - defaultstate{t=idle;s=idle3;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -389,6 +407,8 @@ scene_guard_march_2:
   - defaultstate{t=idle;s=idle3} @self ~onSpawn
   - defaultstate{t=idle;s=idle3;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad
@@ -434,6 +454,8 @@ scene_guard_march_3:
   - defaultstate{t=idle;s=idle3} @self ~onSpawn
   - defaultstate{t=idle;s=idle3;delay=10} @self ~onLoad
   - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_guards;n=<global.var.skin<caster.uuid>|scene_guards>;delay=12} @self ~onSpawn
   - changepart{m=scene_guards;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item;delay=20} @self ~onLoad
   - changepart{m=scene_guards;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack;delay=20} @self ~onLoad

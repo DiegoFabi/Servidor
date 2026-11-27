@@ -1,0 +1,178 @@
+scene_blacksmith_2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear  
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 100
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventRenaming: false
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_herrero} @trigger ~onInteract
+  - model{mid=scene_blacksmith_2;save=true} @self ~onSpawn
+  - model{mid=scene_blacksmith_2;save=true;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - remapmodel{m=scene_blacksmith_2;n=<global.var.skin<caster.uuid>|scene_blacksmith_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_blacksmith_2;n=<global.var.skin<caster.uuid>|scene_blacksmith_2>;delay=12} @self ~onSpawn
+  - changepart{m=scene_blacksmith_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_blacksmith_2;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_2;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_2;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_blacksmith_2;type=STRING;save=true} @self ~onInteract
+scene_blacksmith_3:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear  
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 100
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventRenaming: false
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_herrero} @trigger ~onInteract
+  - model{mid=scene_blacksmith_3;save=true} @self ~onSpawn
+  - model{mid=scene_blacksmith_3;save=true;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - remapmodel{m=scene_blacksmith_3;n=<global.var.skin<caster.uuid>|scene_blacksmith_3>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_blacksmith_3;n=<global.var.skin<caster.uuid>|scene_blacksmith_3>;delay=12} @self ~onSpawn
+  - changepart{m=scene_blacksmith_3;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_3;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_3;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_blacksmith_3;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_3;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_3;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_blacksmith_3;type=STRING;save=true} @self ~onInteract
+scene_blacksmith_5_interactive:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear 
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 100
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_herrero} @trigger ~onInteract
+  - model{mid=scene_blacksmith_5_interactive;save=true} @self ~onSpawn
+  - model{mid=scene_blacksmith_5_interactive;save=true;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - state{s=interact;mid=scene_blacksmith_5_interactive;lo=4;li=4} @self ~onInteract
+  - remapmodel{m=scene_blacksmith_5_interactive;n=<global.var.skin<caster.uuid>|scene_blacksmith_5_interactive>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_blacksmith_5_interactive;n=<global.var.skin<caster.uuid>|scene_blacksmith_5_interactive>;delay=12} @self ~onSpawn
+  - changepart{m=scene_blacksmith_5_interactive;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_5_interactive;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_5_interactive;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_blacksmith_5_interactive;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_5_interactive;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_5_interactive;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_blacksmith_5_interactive;type=STRING;save=true} @self ~onInteract
+scene_blacksmith_4:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear  
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 100
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventRenaming: false
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_herrero} @trigger ~onInteract
+  - model{mid=scene_blacksmith_4;save=true} @self ~onSpawn
+  - model{mid=scene_blacksmith_4;save=true;delay=5} @self ~onLoad
+  - cancelevent{sync=true} @self ~onDamaged
+  - remapmodel{m=scene_blacksmith_4;n=<global.var.skin<caster.uuid>|scene_blacksmith_4>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_blacksmith_4;n=<global.var.skin<caster.uuid>|scene_blacksmith_4>;delay=12} @self ~onSpawn
+  - changepart{m=scene_blacksmith_4;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_4;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_4;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_blacksmith_4;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_4;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_4;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_blacksmith_4;type=STRING;save=true} @self ~onInteract
+scene_blacksmith_1:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear  
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 100
+    Collidable: false
+    MovementSpeed: 0
+    Invincible: true
+    Silent: true
+    PreventRenaming: false
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_herrero} @trigger ~onInteract
+  - model{mid=scene_blacksmith_1;save=true} @self ~onSpawn
+  - model{mid=scene_blacksmith_1;save=true;delay=5} @self ~onLoad
+  - skill{s=blacksmith_greet} @self ~onTimer:20
+  - skill{s=hit_sound} @self ~onTimer:249.166
+  - cancelevent{sync=true} @self ~onDamaged
+  - remapmodel{m=scene_blacksmith_1;n=<global.var.skin<caster.uuid>|scene_blacksmith_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_blacksmith_1;n=<global.var.skin<caster.uuid>|scene_blacksmith_1>;delay=12} @self ~onSpawn
+  - changepart{m=scene_blacksmith_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
+  - changepart{m=scene_blacksmith_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
+  - changepart{m=scene_blacksmith_1;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_1;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - changepart{m=scene_blacksmith_1;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
+  - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
+  - setvariable{var=global.skinchange;value=scene_blacksmith_1;type=STRING;save=true} @self ~onInteract
+#c4e76a722c541b323426b864689e00e1

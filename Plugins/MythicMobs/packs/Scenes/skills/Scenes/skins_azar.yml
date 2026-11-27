@@ -1,0 +1,88 @@
+# Skin al azar para cada NPC de Scenes (skin_1..skin_27 en ModelEngine/blueprints/Scenes/Scenes/Skins).
+# Solo se elige una vez: se guarda en global.skin<uuid> igual que el editor de Scenes.
+scene_skin_azar:
+  Conditions:
+  - variableisset{var=global.skin<caster.uuid>} false
+  Skills:
+  - randomskill{s=scene_skin_set_1,scene_skin_set_2,scene_skin_set_3,scene_skin_set_4,scene_skin_set_5,scene_skin_set_6,scene_skin_set_7,scene_skin_set_8,scene_skin_set_9,scene_skin_set_10,scene_skin_set_11,scene_skin_set_12,scene_skin_set_13,scene_skin_set_14,scene_skin_set_15,scene_skin_set_16,scene_skin_set_17,scene_skin_set_18,scene_skin_set_19,scene_skin_set_20,scene_skin_set_21,scene_skin_set_22,scene_skin_set_23,scene_skin_set_24,scene_skin_set_25,scene_skin_set_26,scene_skin_set_27} @self
+scene_skin_set_1:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_1;type=STRING;save=true} @self
+scene_skin_set_2:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_2;type=STRING;save=true} @self
+scene_skin_set_3:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_3;type=STRING;save=true} @self
+scene_skin_set_4:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_4;type=STRING;save=true} @self
+scene_skin_set_5:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_5;type=STRING;save=true} @self
+scene_skin_set_6:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_6;type=STRING;save=true} @self
+scene_skin_set_7:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_7;type=STRING;save=true} @self
+scene_skin_set_8:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_8;type=STRING;save=true} @self
+scene_skin_set_9:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_9;type=STRING;save=true} @self
+scene_skin_set_10:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_10;type=STRING;save=true} @self
+scene_skin_set_11:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_11;type=STRING;save=true} @self
+scene_skin_set_12:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_12;type=STRING;save=true} @self
+scene_skin_set_13:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_13;type=STRING;save=true} @self
+scene_skin_set_14:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_14;type=STRING;save=true} @self
+scene_skin_set_15:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_15;type=STRING;save=true} @self
+scene_skin_set_16:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_16;type=STRING;save=true} @self
+scene_skin_set_17:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_17;type=STRING;save=true} @self
+scene_skin_set_18:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_18;type=STRING;save=true} @self
+scene_skin_set_19:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_19;type=STRING;save=true} @self
+scene_skin_set_20:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_20;type=STRING;save=true} @self
+scene_skin_set_21:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_21;type=STRING;save=true} @self
+scene_skin_set_22:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_22;type=STRING;save=true} @self
+scene_skin_set_23:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_23;type=STRING;save=true} @self
+scene_skin_set_24:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_24;type=STRING;save=true} @self
+scene_skin_set_25:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_25;type=STRING;save=true} @self
+scene_skin_set_26:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_26;type=STRING;save=true} @self
+scene_skin_set_27:
+  Skills:
+  - setvariable{var=global.skin<caster.uuid>;value=skin_27;type=STRING;save=true} @self

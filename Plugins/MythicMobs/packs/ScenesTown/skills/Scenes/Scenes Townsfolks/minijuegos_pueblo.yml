@@ -1,0 +1,166 @@
+# ============================================================
+#  Minijuegos del pueblo (clic derecho, sin agacharse)
+#
+#  ALMACÉN (scene_townsfolk_handler_stock) - "Cajas de Contrabando"
+#   Con 8 lingotes de hierro en la mano: abre 3 cajas una tras otra
+#   (suspense, sonidos y partículas). Cada caja da un premio al azar:
+#   carbón, hierro, oro, esmeraldas, botín de ItemJoin o, muy raro,
+#   un diamante. Si salen 3 premios iguales: bonificación.
+#
+#  CHEF (scene_townsfolk_cook) - "Prueba de Sabor"
+#   Con comida cocinada en la mano: el chef la prueba y la puntúa de
+#   1 a 5 estrellas. Mejor puntuación, mejor postre de ItemJoin.
+#
+#  Cooldown invisible por jugador (30 s) y anti doble clic.
+#  Cobro y premios: itemquitar / itemdar (Skript/scripts/utils/items.sk).
+# ============================================================
+
+# ---------------- ALMACÉN ----------------
+almacen_click:
+  Conditions:
+  - variableisset{var=caster.almacen_tick} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.almacen_tick;type=INTEGER;value=1;duration=5} @self
+  - skill{s=almacen_atender} @trigger
+almacen_atender:
+  TargetConditions:
+  - variableisset{var=target.almacen_cd} false
+  Skills:
+  - skill{s=almacen_hablar} @trigger
+  - skill{s=almacen_jugar} @trigger
+almacen_hablar:
+  TargetConditions:
+  - holding{m=IRON_INGOT} false
+  Skills:
+  - sound{s=block.barrel.open;v=0.8;p=1.1} @self
+  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient>\n<#F9F1E6>Tengo cajas de contrabando sin abrir.\n<#C9CDD6>8 lingotes de hierro y abres tres.";o=0.4;r=12;d=90;sendchatmessage=false;ll=40} @self
+  - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient> <dark_gray>» <#F9F1E6>Psst… tengo cajas que nadie ha reclamado. Por <#D9D9D9>8 lingotes de hierro<#F9F1E6> abres tres."} @trigger
+  - message{m="<#7FB2FF>➜ Sostén 8 lingotes de hierro en la mano y haz clic derecho."} @trigger
+almacen_jugar:
+  TargetConditions:
+  - holding{m=IRON_INGOT} true
+  Skills:
+  - skill{s=almacen_pocos} @trigger ?~hasitem{m=IRON_INGOT;amount=<8}
+  - skill{s=almacen_abrir} @trigger ?~hasitem{m=IRON_INGOT;amount=>7}
+almacen_pocos:
+  Skills:
+  - sound{s=entity.villager.no;v=0.8;p=1} @self
+  - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient> <dark_gray>» <#FF6B6B>Son 8 lingotes. Ni uno menos, que aquí todo se cuenta."} @trigger
+almacen_abrir:
+  Skills:
+  - setvariable{var=target.almacen_cd;type=INTEGER;value=1;duration=600} @trigger
+  - command{c="itemquitar <trigger.name> 8 iron ingot"}
+  - sound{s=entity.villager.yes;v=0.8;p=1} @self
+  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient>\n<#F9F1E6>Trato hecho. A ver qué esconden…";o=0.4;r=12;d=100;sendchatmessage=false;ll=40} @self
+  - skill{s=almacen_caja;delay=20} @trigger
+  - skill{s=almacen_caja;delay=50} @trigger
+  - skill{s=almacen_caja;delay=80} @trigger
+almacen_caja:
+  Skills:
+  - sound{s=block.barrel.open;v=1;p=0.8} @self
+  - sound{s=block.chest.locked;v=0.6;p=1.4} @self
+  - effect:particles{p=block;m=barrel;a=20;hs=0.4;vs=0.3;s=0.1;y=1.2;vd=24} @self
+  - randomskill{s=almacen_p_carbon 5,almacen_p_hierro 4,almacen_p_oro 3,almacen_p_esmeralda 2,almacen_p_botin 2,almacen_p_diamante 0.5} @trigger
+almacen_p_carbon:
+  Skills:
+  - command{c="itemdar <trigger.name> 8 coal"}
+  - message{m="<#7E848F>▣ Caja: <white>8 de carbón"} @trigger
+almacen_p_hierro:
+  Skills:
+  - command{c="itemdar <trigger.name> 4 iron ingot"}
+  - message{m="<#D9D9D9>▣ Caja: <white>4 lingotes de hierro"} @trigger
+almacen_p_oro:
+  Skills:
+  - command{c="itemdar <trigger.name> 3 gold ingot"}
+  - effect:particles{p=wax_off;a=12;hs=0.4;vs=0.4;y=1.4;vd=24} @self
+  - message{m="<#FFD36B>▣ Caja: <white>3 lingotes de oro"} @trigger
+almacen_p_esmeralda:
+  Skills:
+  - command{c="itemdar <trigger.name> 2 emerald"}
+  - sound{s=entity.villager.celebrate;v=0.7;p=1.2} @self
+  - message{m="<#7FFF9E>▣ Caja: <white>2 esmeraldas"} @trigger
+almacen_p_botin:
+  Skills:
+  - randomskill{s=eb_botin_medal_silver,eb_botin_clover,eb_postre_donut,eb_botin_crystals} @trigger
+  - message{m="<#C38BFF>▣ Caja: <white>¡algo curioso de contrabando!"} @trigger
+almacen_p_diamante:
+  Skills:
+  - command{c="itemdar <trigger.name> 1 diamond"}
+  - sound{s=ui.toast.challenge_complete;v=0.8;p=1.2} @trigger
+  - effect:particles{p=totem_of_undying;a=40;hs=0.6;vs=0.7;s=0.3;y=1.5;vd=24} @self
+  - message{m="<#5FE3FF>◆ Caja: <white>¡un diamante! <#7E848F>El almacenero no se lo cree."} @trigger
+
+# ---------------- CHEF ----------------
+chef_click:
+  Conditions:
+  - variableisset{var=caster.chef_tick} false
+  TargetConditions:
+  - crouching false
+  Skills:
+  - setvariable{var=caster.chef_tick;type=INTEGER;value=1;duration=5} @self
+  - skill{s=chef_atender} @trigger
+chef_atender:
+  TargetConditions:
+  - variableisset{var=target.chef_cd} false
+  Skills:
+  - skill{s=chef_hablar} @trigger ?!~holding{m=COOKED_BEEF,COOKED_PORKCHOP,COOKED_CHICKEN,COOKED_MUTTON,COOKED_RABBIT,COOKED_SALMON,COOKED_COD,BAKED_POTATO,BREAD,PUMPKIN_PIE,RABBIT_STEW,MUSHROOM_STEW}
+  - skill{s=chef_probar} @trigger ?~holding{m=COOKED_BEEF,COOKED_PORKCHOP,COOKED_CHICKEN,COOKED_MUTTON,COOKED_RABBIT,COOKED_SALMON,COOKED_COD,BAKED_POTATO,BREAD,PUMPKIN_PIE,RABBIT_STEW,MUSHROOM_STEW}
+chef_hablar:
+  Skills:
+  - sound{s=block.smoker.smoke;v=0.8;p=1} @self
+  - effect:particles{p=campfire_cosy_smoke;a=4;hs=0.2;vs=0.4;s=0.01;y=2;vd=24} @self
+  - speak{m="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient>\n<#FFF1E6>¿Sabes cocinar? Tráeme un plato\n<#FFF1E6>y te diré cuántas estrellas vale.";o=0.4;r=12;d=90;sendchatmessage=false;ll=40} @self
+  - message{m="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient> <dark_gray>» <#FFF1E6>Tráeme comida cocinada y la probaré. Si me gusta, te doy uno de mis postres."} @trigger
+  - message{m="<#7FB2FF>➜ Sostén comida cocinada en la mano y haz clic derecho."} @trigger
+chef_probar:
+  Skills:
+  - setvariable{var=target.chef_cd;type=INTEGER;value=1;duration=600} @trigger
+  - command{c="itemquitar <trigger.name> 1 cooked beef"} @trigger ?~holding{m=COOKED_BEEF}
+  - command{c="itemquitar <trigger.name> 1 cooked porkchop"} @trigger ?~holding{m=COOKED_PORKCHOP}
+  - command{c="itemquitar <trigger.name> 1 cooked chicken"} @trigger ?~holding{m=COOKED_CHICKEN}
+  - command{c="itemquitar <trigger.name> 1 cooked mutton"} @trigger ?~holding{m=COOKED_MUTTON}
+  - command{c="itemquitar <trigger.name> 1 cooked rabbit"} @trigger ?~holding{m=COOKED_RABBIT}
+  - command{c="itemquitar <trigger.name> 1 cooked salmon"} @trigger ?~holding{m=COOKED_SALMON}
+  - command{c="itemquitar <trigger.name> 1 cooked cod"} @trigger ?~holding{m=COOKED_COD}
+  - command{c="itemquitar <trigger.name> 1 baked potato"} @trigger ?~holding{m=BAKED_POTATO}
+  - command{c="itemquitar <trigger.name> 1 bread"} @trigger ?~holding{m=BREAD}
+  - command{c="itemquitar <trigger.name> 1 pumpkin pie"} @trigger ?~holding{m=PUMPKIN_PIE}
+  - command{c="itemquitar <trigger.name> 1 rabbit stew"} @trigger ?~holding{m=RABBIT_STEW}
+  - command{c="itemquitar <trigger.name> 1 mushroom stew"} @trigger ?~holding{m=MUSHROOM_STEW}
+  - sound{s=entity.generic.eat;v=1;p=1} @self
+  - sound{s=entity.generic.eat;v=1;p=1.1;delay=8} @self
+  - sound{s=entity.generic.eat;v=1;p=0.9;delay=16} @self
+  - effect:particles{p=composter;a=10;hs=0.3;vs=0.3;y=1.8;delay=8;vd=24} @self
+  - speak{m="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient>\n<#FFF1E6>Mmm… a ver, a ver…";o=0.4;r=12;d=50;sendchatmessage=false;ll=40} @self
+  - randomskill{s=chef_1 1,chef_2 2,chef_3 3,chef_4 2.5,chef_5 1.2;delay=40} @trigger
+chef_1:
+  Skills:
+  - sound{s=entity.villager.no;v=1;p=0.8} @self
+  - effect:particles{p=smoke;a=16;hs=0.3;vs=0.3;y=1.8;vd=24} @self
+  - potion{type=NAUSEA;duration=60;level=0;hasParticles=false} @trigger
+  - message{m="<#FFB38A>✿ Chef <dark_gray>» <#FF6B6B>★<#3A3F4B>★★★★ <#FFF1E6>¡Esto está crudo por dentro! Toma agua y vuelve a intentarlo."} @trigger
+chef_2:
+  Skills:
+  - sound{s=entity.villager.ambient;v=1;p=0.9} @self
+  - command{c="itemdar <trigger.name> 2 cookie"}
+  - message{m="<#FFB38A>✿ Chef <dark_gray>» <#FFD36B>★★<#3A3F4B>★★★ <#FFF1E6>Comestible. Llévate unas galletas para practicar."} @trigger
+chef_3:
+  Skills:
+  - sound{s=entity.villager.yes;v=1;p=1} @self
+  - randomskill{s=eb_postre_candy1,eb_postre_candy2,eb_postre_chocolate1} @trigger
+  - message{m="<#FFB38A>✿ Chef <dark_gray>» <#FFD36B>★★★<#3A3F4B>★★ <#FFF1E6>Nada mal. Te has ganado un dulce."} @trigger
+chef_4:
+  Skills:
+  - sound{s=entity.villager.celebrate;v=1;p=1.1} @self
+  - effect:particles{p=happy_villager;a=16;hs=0.5;vs=0.5;y=1.8;vd=24} @self
+  - randomskill{s=eb_postre_donut,eb_postre_icecream1,eb_postre_icecream2,eb_postre_chocolate2} @trigger
+  - message{m="<#FFB38A>✿ Chef <dark_gray>» <#FFD36B>★★★★<#3A3F4B>★ <#FFF1E6>¡Delicioso! Esto merece un postre de los buenos."} @trigger
+chef_5:
+  Skills:
+  - sound{s=ui.toast.challenge_complete;v=0.8;p=1.2} @trigger
+  - effect:particles{p=totem_of_undying;a=40;hs=0.6;vs=0.7;s=0.3;y=1.8;vd=24} @self
+  - randomskill{s=eb_postre_cake1,eb_postre_cake2} @trigger
+  - command{c="itemdar <trigger.name> 3 golden carrot"}
+  - message{m="<#FFB38A>✿ Chef <dark_gray>» <#FFD36B>★★★★★ <#FFF1E6>¡Una obra maestra! Toma mi pastel especial y zanahorias doradas."} @trigger

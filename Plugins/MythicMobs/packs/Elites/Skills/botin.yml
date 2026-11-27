@@ -273,3 +273,12 @@ eb_postre_icecream1:
 eb_postre_icecream2:
   Skills:
   - command{c="itemjoin get postre_icecream2 <target.name> 1";asop=false} @target
+eb_botin_medal_silver:
+  Skills:
+  - command{c="itemjoin get botin_medal_silver <target.name> 1";asop=false} @target
+eb_botin_clover:
+  Skills:
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target
+eb_botin_crystals:
+  Skills:
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target

@@ -1,0 +1,356 @@
+scene_wanderer_backpack:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=5}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_viajero} @trigger ~onInteract
+  - remove @self ~onLoad
+  - model{mid=scene_wanderers_1_vol1;save=true} @self ~onSpawn
+  - model{mid=scene_wanderers_1_vol1;save=true;delay=5} @self ~onLoad
+  - defaultstate{t=walk;s=walk} @self ~onSpawn
+  - defaultstate{t=walk;s=walk;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle} @self ~onSpawn
+  - defaultstate{t=idle;s=idle;delay=10} @self ~onLoad
+  - changepart{m=scene_wanderers_1_vol1;pid=hat;nm=straw_hat;npid=hat;delay=10;chance=0.2} @self ~onSpawn
+  - skill{skill=scenes_traveler_day} @self ~onTimer:100 ?day
+  - skill{skill=scenes_traveler_night} @self ~onTimer:100 ?night
+  - blockMask{material=LIGHT;radius=0;duration=25;onlyair=true} @modelpart{p=lantern2} ~onTimer:1 ?night
+  - skill{s=scene_openmenu} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scene_wanderers_1_vol1;type=STRING;save=true} @self ~onInteract
+  - light{m=scene_wanderers_1_vol1;p=lantern;block=15} @self ~onSpawn
+  - light{m=scene_wanderers_1_vol1;p=lantern;block=15} @self ~onLoad
+  - light{m=scene_wanderers_1_vol1;p=lantern2;block=15} @self ~onSpawn
+  - light{m=scene_wanderers_1_vol1;p=lantern2;block=15} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onTimer:200
+  - teleport{spreadh=1;spreadv=0} @self ~onTimer:10 ?mobsinradius{radius=0.3;amount=>0;types=scene_guard_walk_test}
+  # Skins:
+  - randomskill{skills=wanderer1,wanderer2,wanderer3,wanderer4,wanderer5,wanderer6,wanderer7,wanderer8,wanderer9,wanderer10,wanderer11,wanderer12,wanderer13,wanderer14,wanderer15,wanderer16,wanderer17,wanderer18,wanderer19,wanderer20,wanderer21;delay=2} @self ~onSpawn
+  #STANCES:
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>;delay=50} @self ~onLoad
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>_load;delay=5} @self ~onLoad
+  - setStance{stance=stand} @self ~onSpawn
+  #PATHS:
+  #path1
+  - skill{skill=path_1_follow} @self ~onTimer:100 ?stance{stance=path1}
+  - teleportto{location=80.0,68.0,230.0;delay=20} @self ~onTimer:20 ?stance{stance=path1_load}
+  #path2
+  - skill{skill=path_2_follow} @self ~onTimer:100 ?stance{stance=path2}
+  - teleportto{location=-39.0,68.0,211.0;delay=20} @self ~onTimer:20 ?stance{stance=path2_load}
+
+scene_wanderer_stick:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=5}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_viajero} @trigger ~onInteract
+  - remove @self ~onLoad
+  - model{mid=scene_wanderers_1_vol1;save=true} @self ~onSpawn
+  - model{mid=scene_wanderers_1_vol1;save=true;delay=5} @self ~onLoad
+  - randomskill{skills=wanderer1,wanderer2,wanderer3,wanderer4,wanderer5,wanderer6,wanderer7,wanderer8,wanderer9,wanderer10,wanderer11,wanderer12,wanderer13,wanderer14,wanderer15,wanderer16,wanderer17,wanderer18,wanderer19,wanderer20,wanderer21;delay=2} @self ~onSpawn
+  - changepart{m=scene_wanderers_1_vol1;pid=hat;nm=straw_hat;npid=hat;delay=10;chance=0.2} @self ~onSpawn
+  - defaultstate{t=walk;s=walk_stick} @self ~onSpawn
+  - defaultstate{t=walk;s=walk_stick;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle_stick} @self ~onSpawn
+  - defaultstate{t=idle;s=idle_stick;delay=10} @self ~onLoad
+  - skill{s=scene_openmenu} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scene_wanderers_1_vol1;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onTimer:200
+  - teleport{spreadh=1;spreadv=0} @self ~onTimer:10 ?mobsinradius{radius=0.3;amount=>0;types=scene_guard_walk_test}
+  #STANCES:
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>;delay=50} @self ~onLoad
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>_load;delay=5} @self ~onLoad
+  - setStance{stance=stand} @self ~onSpawn
+  #PATHS:
+  #path1
+  - skill{skill=path_1_follow} @self ~onTimer:100 ?stance{stance=path1}
+  - teleportto{location=80.0,68.0,230.0;delay=20} @self ~onTimer:20 ?stance{stance=path1_load}
+  #path2
+  - skill{skill=path_2_follow} @self ~onTimer:100 ?stance{stance=path2}
+  - teleportto{location=-39.0,68.0,211.0;delay=20} @self ~onTimer:20 ?stance{stance=path2_load}
+
+scene_wanderer_default:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=5}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_viajero} @trigger ~onInteract
+  - remove @self ~onLoad
+  - model{mid=scene_wanderers_1_vol1;save=true} @self ~onSpawn
+  - model{mid=scene_wanderers_1_vol1;save=true;delay=5} @self ~onLoad
+  - randomskill{skills=wanderer1,wanderer2,wanderer3,wanderer4,wanderer5,wanderer6,wanderer7,wanderer8,wanderer9,wanderer10,wanderer11,wanderer12,wanderer13,wanderer14,wanderer15,wanderer16,wanderer17,wanderer18,wanderer19,wanderer20,wanderer21;delay=2} @self ~onSpawn
+  - defaultstate{t=walk;s=walk_default} @self ~onSpawn
+  - defaultstate{t=walk;s=walk_default;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle_default} @self ~onSpawn
+  - defaultstate{t=idle;s=idle_default;delay=10} @self ~onLoad
+  - changepart{m=scene_wanderers_1_vol1;pid=hat;nm=straw_hat;npid=hat;delay=10;chance=0.2} @self ~onSpawn
+  - skill{s=scene_openmenu} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scene_wanderers_1_vol1;type=STRING;save=true} @self ~onInteract
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onTimer:200
+  - teleport{spreadh=1;spreadv=0} @self ~onTimer:10 ?mobsinradius{radius=0.3;amount=>0;types=scene_guard_walk_test}
+  #STANCES:
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>;delay=50} @self ~onLoad
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>_load;delay=5} @self ~onLoad
+  - setStance{stance=stand} @self ~onSpawn
+  #PATHS:
+  #path1
+  - skill{skill=path_1_follow} @self ~onTimer:100 ?stance{stance=path1}
+  - teleportto{location=80.0,68.0,230.0;delay=20} @self ~onTimer:20 ?stance{stance=path1_load}
+  #path2
+  - skill{skill=path_2_follow} @self ~onTimer:100 ?stance{stance=path2}
+  - teleportto{location=-39.0,68.0,211.0;delay=20} @self ~onTimer:20 ?stance{stance=path2_load}
+
+scene_wanderer_horse_walk:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=5}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.17
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - skill{s=dialogo_viajero} @trigger ~onInteract
+  - remove @self ~onLoad
+  - model{mid=scene_wanderers_2_vol1;save=true} @self ~onSpawn
+  - model{mid=scene_wanderers_2_vol1;save=true;delay=5} @self ~onLoad
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self ~onSpawn
+  - randomskill{skills=wanderer1,wanderer2,wanderer3,wanderer4,wanderer5,wanderer6,wanderer7,wanderer8,wanderer9,wanderer10,wanderer11,wanderer12,wanderer13,wanderer14,wanderer15,wanderer16,wanderer17,wanderer18,wanderer19,wanderer20,wanderer21;delay=2} @self ~onSpawn
+  - defaultstate{t=walk;s=walk} @self ~onSpawn
+  - defaultstate{t=walk;s=walk;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle} @self ~onSpawn
+  - changepart{m=scene_wanderers_2_vol1;pid=hat;nm=straw_hat;npid=hat;delay=10;chance=0.2} @self ~onSpawn
+  - defaultstate{t=idle;s=idle;delay=10} @self ~onLoad
+  - sound{sound=entity.horse.gallop;radius=15;soundcategory=AMBIENT;volume=0.4} @self ~onTimer:17 ?moving
+  - sound{sound=entity.horse.ambient;radius=15;soundcategory=AMBIENT;volume=0.4} @self ~onTimer:400
+  - skill{skill=scenes_traveler_day} @self ~onTimer:100 ?day
+  - skill{skill=scenes_traveler_night} @self ~onTimer:100 ?night
+  - blockMask{material=LIGHT;radius=0;duration=45;onlyair=true} @modelpart{p=lantern2} ~onTimer:1 ?night
+  - blockMask{material=LIGHT;radius=0;duration=45;onlyair=true} @modelpart{p=lantern2} ~onTimer:1 ?night
+  - skill{s=scene_openmenu} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scene_wanderers_2_vol1;type=STRING;save=true} @self ~onInteract
+  - light{m=scene_wanderers_2_vol1;p=lantern;block=15} @self ~onSpawn
+  - light{m=scene_wanderers_2_vol1;p=lantern;block=15} @self ~onLoad
+  - light{m=scene_wanderers_2_vol1;p=lantern2;block=15} @self ~onSpawn
+  - light{m=scene_wanderers_2_vol1;p=lantern2;block=15} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onTimer:200
+  - teleport{spreadh=1;spreadv=0} @self ~onTimer:10 ?mobsinradius{radius=0.3;amount=>0;types=scene_guard_walk_test}
+  #Horse
+  - changepart{m=<global.var.skinchange>;pid=left_leg_horse;nm=<global.var.horse_color_scenes>;npid=left_leg_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_leg_horse;nm=<global.var.horse_color_scenes>;npid=right_leg_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=left_arm_horse;nm=<global.var.horse_color_scenes>;npid=left_arm_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_arm_horse;nm=<global.var.horse_color_scenes>;npid=right_arm_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=body_horse;nm=<global.var.horse_color_scenes>;npid=body_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=neck_horse;nm=<global.var.horse_color_scenes>;npid=neck_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=tail_horse;nm=<global.var.horse_color_scenes>;npid=tail_horse;delay=30} @self ~onLoad
+  #STANCES:
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>;delay=50} @self ~onLoad
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>_load;delay=5} @self ~onLoad
+  - setStance{stance=stand} @self ~onSpawn
+  #PATHS:
+  #path1
+  - skill{skill=path_1_follow} @self ~onTimer:100 ?stance{stance=path1}
+  - teleportto{location=80.0,68.0,230.0;delay=20} @self ~onTimer:20 ?stance{stance=path1_load}
+  #path2
+  - skill{skill=path_2_follow} @self ~onTimer:100 ?stance{stance=path2}
+  - teleportto{location=-39.0,68.0,211.0;delay=20} @self ~onTimer:20 ?stance{stance=path2_load}
+
+scene_wanderer_horse_trot:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  - lookAtPlayer{range=3}
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.3
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+    Tameable: false
+  Skills:
+  - skill{s=dialogo_viajero} @trigger ~onInteract
+  - remove @self ~onLoad
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self ~onSpawn
+  - model{mid=scene_wanderers_2_vol1;save=true} @self ~onSpawn
+  - model{mid=scene_wanderers_2_vol1;save=true;delay=5} @self ~onLoad
+  - randomskill{skills=wanderer1,wanderer2,wanderer3,wanderer4,wanderer5,wanderer6,wanderer7,wanderer8,wanderer9,wanderer10,wanderer11,wanderer12,wanderer13,wanderer14,wanderer15,wanderer16,wanderer17,wanderer18,wanderer19,wanderer20,wanderer21;delay=2} @self ~onSpawn
+  - changepart{m=scene_wanderers_2_vol1;pid=hat;nm=straw_hat;npid=hat;delay=10;chance=0.2} @self ~onSpawn
+  - defaultstate{t=walk;s=trot} @self ~onSpawn
+  - defaultstate{t=walk;s=trot;delay=10} @self ~onLoad
+  - defaultstate{t=idle;s=idle} @self ~onSpawn
+  - defaultstate{t=idle;s=idle;delay=10} @self ~onLoad
+  - sound{sound=entity.horse.gallop;radius=15;soundcategory=AMBIENT;volume=0.4} @self ~onTimer:12 ?moving
+  - sound{sound=entity.horse.ambient;radius=15;soundcategory=AMBIENT;volume=0.4} @self ~onTimer:400
+  - skill{skill=scenes_traveler_day_horse} @self ~onTimer:100 ?day
+  - skill{skill=scenes_traveler_night_horse} @self ~onTimer:100 ?night
+  - blockMask{material=LIGHT;radius=0;duration=45;onlyair=true} @modelpart{p=lantern2} ~onTimer:1 ?night
+  - skill{s=scene_openmenu} ~onInteract
+  - cancelevent{sync=true} @self ~onDamaged
+  - setvariable{var=global.skinchange;value=scene_wanderers_2_vol1;type=STRING;save=true} @self ~onInteract
+  - light{m=scene_wanderers_2_vol1;p=lantern;block=15} @self ~onSpawn
+  - light{m=scene_wanderers_2_vol1;p=lantern;block=15} @self ~onLoad
+  - light{m=scene_wanderers_2_vol1;p=lantern2;block=15} @self ~onSpawn
+  - light{m=scene_wanderers_2_vol1;p=lantern2;block=15} @self ~onLoad
+  - lockhead{lp=true} @self ~onSpawn 
+  - lockhead{lp=true} @self ~onTimer:200
+  - teleport{spreadh=1;spreadv=0} @self ~onTimer:10 ?mobsinradius{radius=0.3;amount=>0;types=scene_guard_walk_test}
+  #Horse
+  - changepart{m=<global.var.skinchange>;pid=left_leg_horse;nm=<global.var.horse_color_scenes>;npid=left_leg_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_leg_horse;nm=<global.var.horse_color_scenes>;npid=right_leg_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=left_arm_horse;nm=<global.var.horse_color_scenes>;npid=left_arm_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=right_arm_horse;nm=<global.var.horse_color_scenes>;npid=right_arm_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=body_horse;nm=<global.var.horse_color_scenes>;npid=body_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=neck_horse;nm=<global.var.horse_color_scenes>;npid=neck_horse;delay=30} @self ~onLoad
+  - changepart{m=<global.var.skinchange>;pid=tail_horse;nm=<global.var.horse_color_scenes>;npid=tail_horse;delay=30} @self ~onLoad
+  #STANCES:
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>;delay=50} @self ~onLoad
+  - setStance{stance=path<global.var.scenes_path<caster.uuid>>_load;delay=5} @self ~onLoad
+  - setStance{stance=stand} @self ~onSpawn
+  #PATHS:
+  #path1
+  - skill{skill=path_1_follow} @self ~onTimer:100 ?stance{stance=path1}
+  - teleportto{location=80.0,68.0,230.0;delay=20} @self ~onTimer:20 ?stance{stance=path1_load}
+  #path2
+  - skill{skill=path_2_follow} @self ~onTimer:100 ?stance{stance=path2}
+  - teleportto{location=-39.0,68.0,211.0;delay=20} @self ~onTimer:20 ?stance{stance=path2_load}
+
+
+#Spawners
+npc_wanderer_vol1_spawner_1:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    NoGravity: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - randomskill{skills=
+    [- summon{amount=1;type=scene_wanderer_backpack} @self] 0.1,
+    [- summon{amount=1;type=scene_wanderer_default} @self] 0.1,
+    [- summon{amount=1;type=scene_wanderer_stick} @self] 0.4,
+    [- summon{amount=1;type=scene_wanderer_horse_walk} @self] 0.2,
+    [- summon{amount=1;type=scene_wanderer_horse_trot} @self] 0.2} ~onTimer:400 #Change the Ontimer value to speed up or decrease the speed of Npcs summoning
+  - skill{skill=spawner_wanderers_1} @EIR{r=5;limit=1;sort=NEAREST} ~onTimer:1
+  - model{mid=command;save=true} @self ~onSpawn
+  - model{mid=command;save=true;delay=5} @self ~onLoad
+npc_wanderer_vol1_spawner_2:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    NoGravity: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - randomskill{skills=
+    [- summon{amount=1;type=scene_wanderer_backpack} @self] 0.1,
+    [- summon{amount=1;type=scene_wanderer_default} @self] 0.1,
+    [- summon{amount=1;type=scene_wanderer_stick} @self] 0.4,
+    [- summon{amount=1;type=scene_wanderer_horse_walk} @self] 0.2,
+    [- summon{amount=1;type=scene_wanderer_horse_trot} @self] 0.2} ~onTimer:400 #Change the Ontimer value to speed up or decrease the speed of Npcs summoning
+  - skill{skill=spawner_wanderers_2} @EIR{r=5;limit=1;sort=NEAREST} ~onTimer:1
+  - model{mid=command;save=true} @self ~onSpawn
+  - model{mid=command;save=true;delay=5} @self ~onLoad
+
+# Remover
+npc_wanderer_remover:
+  Type: PIG
+  Display: ''
+  Health: 5
+  Damage: 0
+  AIGoalSelectors:
+  - clear
+  Options:
+    Despawn: persistent
+    KnockbackResistance: 10
+    Collidable: false
+    MovementSpeed: 0.12
+    Invincible: true
+    Silent: true
+    PreventLeashing: true
+    AlwaysShowName: true
+  Skills:
+  - model{mid=command;save=true} @self ~onSpawn
+  - model{mid=command;save=true;delay=5} @self ~onLoad
+  - remove @MobsNearOrigin{radius=10;types=scene_wanderer_horse_trot,scene_wanderer_horse_walk,scene_wanderer_backpack,scene_wanderer_stick,scene_wanderer_default} ~onTimer:20
+  - command{command=mm mobs kill scene_wanderer;delay=20} ~onSpawn
+#0bebb8ce10ea029063d10b66939e3d29

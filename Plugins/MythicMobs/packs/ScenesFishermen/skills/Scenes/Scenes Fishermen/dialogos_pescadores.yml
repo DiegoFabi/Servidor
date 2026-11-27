@@ -26,47 +26,35 @@ dialogo_pescador:
 dialogo_pescador_frase1:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescador_f1_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescador_f1_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Shh, que se espantan. Bueno, igual hoy no pican."} @trigger
+  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Shh, que se espantan. Bueno, igual\n<#DFF7FF>hoy no pican.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Shh, que se espantan. Bueno, igual hoy no pican."} @trigger
 
 dialogo_pescador_frase2:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescador_f2_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescador_f2_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>La paciencia es el mejor cebo, eso decía mi padre."} @trigger
+  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>La paciencia es el mejor cebo, eso\n<#DFF7FF>decía mi padre.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>La paciencia es el mejor cebo, eso decía mi padre."} @trigger
 
 dialogo_pescador_frase3:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescador_f3_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescador_f3_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Ayer saqué uno así de grande. No, más grande."} @trigger
+  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Ayer saqué uno así de grande. No,\n<#DFF7FF>más grande.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Ayer saqué uno así de grande. No, más grande."} @trigger
 
 dialogo_pescador_frase4:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescador_f4_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescador_f4_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Al amanecer el agua está tranquila, es la mejor hora."} @trigger
+  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Al amanecer el agua está tranquila,\n<#DFF7FF>es la mejor hora.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Al amanecer el agua está tranquila, es la mejor hora."} @trigger
 
 dialogo_pescador_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescador_f5_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescador_f5_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>A veces no pesco nada, pero el rato me lo llevo."} @trigger
+  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>A veces no pesco nada, pero el rato\n<#DFF7FF>me lo llevo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>A veces no pesco nada, pero el rato me lo llevo."} @trigger
 
 dialogo_pescador_frase6:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - summon{m=holo_pescador_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescador_f6_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescador_f6_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0><bold>Pescador</bold></gradient> <dark_gray>» <#DFF7FF>Si pica algo raro, mejor devolverlo al agua. Por si acaso."} @trigger
+  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Si pica algo raro, mejor devolverlo\n<#DFF7FF>al agua. Por si acaso.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Si pica algo raro, mejor devolverlo al agua. Por si acaso."} @trigger

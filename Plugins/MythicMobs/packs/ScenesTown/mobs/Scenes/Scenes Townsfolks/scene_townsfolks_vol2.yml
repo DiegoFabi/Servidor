@@ -16,11 +16,13 @@ scene_townsfolk_handler:
     PreventLeashing: true
     AlwaysShowName: true
   Skills:
+  - skill{s=dialogo_mozo} @trigger ~onInteract
   - model{mid=scene_townsfolk_handler;save=true} @self ~onSpawn
   - model{mid=scene_townsfolk_handler;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_townsfolk_handler;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_townsfolk_handler;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
-  - skill{s=dialogo_mozo} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
@@ -63,9 +65,12 @@ scene_townsfolk_handler_stock:
     PreventLeashing: true
     AlwaysShowName: true
   Skills:
+  - skill{s=almacen_click} @trigger ~onInteract
   - model{mid=scene_townsfolk_handler_stock;d=false;ride=true;drive=false;save=true} @self ~onSpawn
   - model{mid=scene_townsfolk_handler_stock;d=false;ride=true;drive=false;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_townsfolk_handler_stock;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler_stock>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_townsfolk_handler_stock;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler_stock>;delay=12} @self ~onSpawn
   - changepart{m=scene_townsfolk_handler_stock;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_townsfolk_handler_stock;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_townsfolk_handler_stock;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -73,7 +78,6 @@ scene_townsfolk_handler_stock:
   - changepart{m=scene_townsfolk_handler_stock;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
   - changepart{m=scene_townsfolk_handler_stock;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
   - skill{s=scene_openmenu} ~onInteract
-  - skill{s=dialogo_mozo} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
@@ -101,9 +105,12 @@ scene_townsfolk_handler_provider:
     PreventLeashing: true
     AlwaysShowName: true
   Skills:
+  - skill{s=dialogo_mozo} @trigger ~onInteract
   - model{mid=scene_townsfolk_handler_provider;d=false;ride=true;drive=false;save=true} @self ~onSpawn
   - model{mid=scene_townsfolk_handler_provider;d=false;ride=true;drive=false;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_townsfolk_handler_provider;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler_provider>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_townsfolk_handler_provider;n=<global.var.skin<caster.uuid>|scene_townsfolk_handler_provider>;delay=12} @self ~onSpawn
   - changepart{m=scene_townsfolk_handler_provider;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_townsfolk_handler_provider;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_townsfolk_handler_provider;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -111,7 +118,6 @@ scene_townsfolk_handler_provider:
   - changepart{m=scene_townsfolk_handler_provider;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
   - changepart{m=scene_townsfolk_handler_provider;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
   - skill{s=scene_openmenu} ~onInteract
-  - skill{s=dialogo_mozo} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn 
@@ -139,9 +145,12 @@ scene_townsfolk_cook:
     PreventLeashing: true
     AlwaysShowName: true
   Skills:
+  - skill{s=chef_click} @trigger ~onInteract
   - model{mid=scene_townsfolk_cook;save=true} @self ~onSpawn
   - model{mid=scene_townsfolk_cook;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_townsfolk_cook;n=<global.var.skin<caster.uuid>|scene_townsfolk_cook>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_townsfolk_cook;n=<global.var.skin<caster.uuid>|scene_townsfolk_cook>;delay=12} @self ~onSpawn
   - changepart{m=scene_townsfolk_cook;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_townsfolk_cook;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_townsfolk_cook;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -178,9 +187,12 @@ scene_townsfolk_sweeper:
     PreventLeashing: true
     AlwaysShowName: true
   Skills:
+  - skill{s=dialogo_barrendero} @trigger ~onInteract
   - model{mid=scene_townsfolk_sweeper;save=true} @self ~onSpawn
   - model{mid=scene_townsfolk_sweeper;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_townsfolk_sweeper;n=<global.var.skin<caster.uuid>|scene_townsfolk_sweeper>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_townsfolk_sweeper;n=<global.var.skin<caster.uuid>|scene_townsfolk_sweeper>;delay=12} @self ~onSpawn
   - changepart{m=scene_townsfolk_sweeper;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_townsfolk_sweeper;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_townsfolk_sweeper;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -188,10 +200,26 @@ scene_townsfolk_sweeper:
   - changepart{m=scene_townsfolk_sweeper;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=hat} @self ~onLoad
   - changepart{m=scene_townsfolk_sweeper;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=hat} @self ~onLoad
   - skill{s=scene_openmenu} ~onInteract
-  - skill{s=dialogo_barrendero} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onLoad
   - cullconfig{vc=false;bkc=false;blc=false} @self ~onSpawn
   - setvariable{var=global.skinchange;value=scene_townsfolk_sweeper;type=STRING;save=true} @self ~onInteract
 
 #06d54b3fffc32b7e2281000f77268b91
+# Variante del mozo (Mozo Veterano): misma lógica y modelo, otro diálogo y skin
+scene_townsfolk_handler_veterano:
+  Template: scene_townsfolk_handler
+  Skills:
+  - skill{s=dialogo_mozo_veterano} @trigger ~onInteract
+
+# Variante del mozo (Aprendiz de Mozo): misma lógica y modelo, otro diálogo y skin
+scene_townsfolk_handler_aprendiz:
+  Template: scene_townsfolk_handler
+  Skills:
+  - skill{s=dialogo_mozo_aprendiz} @trigger ~onInteract
+
+# Variante del mozo (Cargador): misma lógica y modelo, otro diálogo y skin
+scene_townsfolk_handler_cargador:
+  Template: scene_townsfolk_handler
+  Skills:
+  - skill{s=dialogo_mozo_cargador} @trigger ~onInteract

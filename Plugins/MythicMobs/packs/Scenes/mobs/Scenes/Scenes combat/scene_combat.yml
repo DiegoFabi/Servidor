@@ -24,6 +24,8 @@ scene_combat_swords_dual:
   - model{mid=scenes_combat_1;save=true} @self ~onSpawn
   - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -68,6 +70,8 @@ scene_combat_shields_dual:
   - model{mid=scenes_combat_1;save=true} @self ~onSpawn
   - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -112,6 +116,8 @@ scene_combat_boxing_dual:
   - model{mid=scenes_combat_1;save=true} @self ~onSpawn
   - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -155,6 +161,8 @@ scene_combat_bow_training:
   - model{mid=scenes_combat_3;save=true} @self ~onSpawn
   - model{mid=scenes_combat_3;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_3;n=<global.var.skin<caster.uuid>|scenes_combat_3>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_3;n=<global.var.skin<caster.uuid>|scenes_combat_3>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_3;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_3;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_3;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -198,6 +206,8 @@ scene_combat_medic:
   - model{mid=scenes_combat_1;save=true} @self ~onSpawn
   - model{mid=scenes_combat_1;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_1;n=<global.var.skin<caster.uuid>|scenes_combat_1>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_1;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_1;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -241,6 +251,8 @@ scene_combat_injured_ground:
   - model{mid=scenes_combat_2;save=true} @self ~onSpawn
   - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -278,6 +290,8 @@ scene_combat_injured_sit:
   - model{mid=scenes_combat_2;save=true} @self ~onSpawn
   - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -315,6 +329,8 @@ scene_combat_audience_1:
   - model{mid=scenes_combat_2;save=true} @self ~onSpawn
   - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -352,6 +368,8 @@ scene_combat_audience_2:
   - model{mid=scenes_combat_2;save=true} @self ~onSpawn
   - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -390,6 +408,8 @@ scene_combat_injured_interactive:
   - model{mid=scenes_combat_2;save=true} @self ~onSpawn
   - model{mid=scenes_combat_2;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scenes_combat_2;n=<global.var.skin<caster.uuid>|scenes_combat_2>;delay=12} @self ~onSpawn
   - changepart{m=scenes_combat_2;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scenes_combat_2;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad

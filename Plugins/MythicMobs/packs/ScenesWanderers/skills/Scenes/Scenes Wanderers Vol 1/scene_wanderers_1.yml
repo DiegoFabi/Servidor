@@ -1,0 +1,215 @@
+scenes_traveler_day:
+  Cooldown: 120
+  Skills:
+  - defaultstate{t=walk;s=walk;li=0;lo=0} @self
+  - defaultstate{t=idle;s=idle;li=0;lo=0} @self
+
+scenes_traveler_night:
+  Cooldown: 120
+  Skills:
+  - defaultstate{t=walk;s=walk_night;li=0;lo=0} @self
+  - defaultstate{t=idle;s=idle_night;li=0;lo=0} @self
+
+scenes_traveler_day_horse:
+  Cooldown: 120
+  Skills:
+  - defaultstate{t=walk;s=trot;li=0;lo=0} @self
+  - defaultstate{t=idle;s=idle;li=0;lo=0} @self
+
+scenes_traveler_night_horse:
+  Cooldown: 120
+  Skills:
+  - defaultstate{t=walk;s=trot_night;li=0;lo=0} @self
+  - defaultstate{t=idle;s=idle_night;li=0;lo=0} @self
+
+#horses
+
+horse_black:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_black;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_black;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_black;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_black;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_black;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_black;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_black;npid=tail_horse} @self
+
+horse_brown:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_brown;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_brown;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_brown;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_brown;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_brown;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_brown;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_brown;npid=tail_horse} @self
+horse_chestnut:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_chestnut;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_chestnut;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_chestnut;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_chestnut;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_chestnut;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_chestnut;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_chestnut;npid=tail_horse} @self
+
+horse_creamy:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_creamy;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_creamy;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_creamy;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_creamy;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_creamy;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_creamy;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_creamy;npid=tail_horse} @self
+
+horse_darkbrown:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_darkbrown;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_darkbrown;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_darkbrown;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_darkbrown;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_darkbrown;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_darkbrown;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_darkbrown;npid=tail_horse} @self
+
+horse_gray:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_gray;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_gray;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_gray;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_gray;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_gray;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_gray;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_gray;npid=tail_horse} @self
+
+horse_white:
+  Skills:
+  - changepart{m=scene_wanderers_2_vol1;pid=left_leg_horse;nm=horse_white;npid=left_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_leg_horse;nm=horse_white;npid=right_leg_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=left_arm_horse;nm=horse_white;npid=left_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=right_arm_horse;nm=horse_white;npid=right_arm_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=body_horse;nm=horse_white;npid=body_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=neck_horse;nm=horse_white;npid=neck_horse} @self
+  - changepart{m=scene_wanderers_2_vol1;pid=tail_horse;nm=horse_white;npid=tail_horse} @self
+#SKins:
+
+wanderer1:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_1} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_1} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer2:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_2} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_2} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer3:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_3} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_3} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer4:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_4} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_4} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer5:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_5} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_5} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer6:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_6} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_6} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer7:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_7} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_7} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer8:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_8} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_8} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer9:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_9} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_9} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer10:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_10} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_10} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer11:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_11} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_11} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer12:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_12} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_12} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer13:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_13} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_13} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer14:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_14} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_14} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer15:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_15} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_15} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer16:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_16} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_16} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer17:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_17} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_17} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer18:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_18} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_18} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer19:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_19} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_19} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer20:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_20} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_20} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+wanderer21:
+  Skills:
+  - remapmodel{m=scene_wanderers_1_vol1;n=wanderer_21} @self
+  - remapmodel{m=scene_wanderers_2_vol1;n=wanderer_21} @self
+  - randomskill{skills=horse_black,horse_brown,horse_chestnut,horse_creamy,horse_darkbrown,horse_gray,horse_white} @self
+
+#Spawners
+
+spawner_wanderers_1:
+  Skills:
+  - skill{skill=path1;delay=20} @EIR{r=5;limit=1;sort=NEAREST}
+
+spawner_wanderers_2:
+  Skills:
+  - skill{skill=path2;delay=20} @EIR{r=5;limit=1;sort=NEAREST}
+
+
+
+#0bebb8ce10ea029063d10b66939e3d29

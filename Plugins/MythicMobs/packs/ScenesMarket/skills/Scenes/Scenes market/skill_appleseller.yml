@@ -41,24 +41,18 @@ appleseller_atender:
   - skill{s=appleseller_jugar} @trigger
 
 # Limpia los hologramas del frutero que sigan visibles
-appleseller_limpiar:
-  Skills:
-  - remove @MobsInRadius{r=4;types=appleseller_holo_saludo_1,appleseller_holo_saludo_2,appleseller_holo_saludo_3,appleseller_holo_pocos,appleseller_holo_revisando,appleseller_holo_dorada,appleseller_holo_encantada,appleseller_holo_suerte_1,appleseller_holo_suerte_2,appleseller_holo_suerte_3,appleseller_holo_garantia}
 
 # ---------- Talk ----------
 appleseller_hablar:
   TargetConditions:
   - holding{m=DIAMOND} false
   Skills:
-  - skill{s=appleseller_limpiar}
-  - summon{m=appleseller_holo_saludo_1;a=1} @selflocation{y=2.6}
-  - summon{m=appleseller_holo_saludo_2;a=1} @selflocation{y=2.35}
-  - summon{m=appleseller_holo_saludo_3;a=1} @selflocation{y=2.1}
+  - speak{m="<#FFD36B>✦ <gradient:#FFE29A:#FFB347>¡Manzanas de la Suerte!</gradient> <#FFD36B>✦\n<#C9CDD6>Canasta sorpresa por <#5FE3FF>10 ◆ diamantes\n<#7FB2FF>➜ Sostén diamantes y haz clic";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
   - sound{s=entity.villager.ambient;v=1;p=1.2} @self
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#E6E8EE>¡Hola, <#FFE29A><trigger.name><#E6E8EE>! Vendo manzanas de la suerte."} @trigger
-  - message{m="<dark_gray>┃ <#C9CDD6>Por <#5FE3FF>10 ◆ diamantes <#C9CDD6>eliges una canasta sorpresa."} @trigger
-  - message{m="<dark_gray>┃  <#FFD36B>✦ Manzana Dorada <dark_gray>• <#FF9BE6>★ Encantada <dark_gray>• <#8FBF5A>☠ Patata Envenenada"} @trigger
-  - message{m="<dark_gray>┃ <#7FB2FF>➜ Sostén diamantes en la mano y haz clic derecho."} @trigger
+  - message{m="<#FFB347>Frutero <dark_gray>» <#E6E8EE>¡Hola, <#FFE29A><trigger.name><#E6E8EE>! Vendo manzanas de la suerte."} @trigger
+  - message{m="<#C9CDD6>Por <#5FE3FF>10 ◆ diamantes <#C9CDD6>eliges una canasta sorpresa."} @trigger
+  - message{m="<#FFD36B>✦ Manzana Dorada <dark_gray>• <#FF9BE6>★ Encantada <dark_gray>• <#8FBF5A>☠ Patata Envenenada"} @trigger
+  - message{m="<#7FB2FF>➜ Sostén diamantes en la mano y haz clic derecho."} @trigger
 
 # ---------- Faltan diamantes ----------
 appleseller_pocos:
@@ -66,10 +60,9 @@ appleseller_pocos:
   - holding{m=DIAMOND} true
   - hasitem{m=DIAMOND;amount=>9} false
   Skills:
-  - skill{s=appleseller_limpiar}
-  - summon{m=appleseller_holo_pocos;a=1} @selflocation{y=2.35}
+  - speak{m="<#FF6B6B>✖ ¡Son 10 diamantes, viajero!";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
   - sound{s=entity.villager.no;v=1;p=1} @self
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#FF6B6B>Una canasta cuesta <#5FE3FF>10 ◆ diamantes<#FF6B6B>, vuelve cuando los tengas."} @trigger
+  - message{m="<#FFB347>Frutero <dark_gray>» <#FF6B6B>Una canasta cuesta <#5FE3FF>10 ◆ diamantes<#FF6B6B>, vuelve cuando los tengas."} @trigger
 
 # ---------- Minijuego ----------
 appleseller_jugar:
@@ -80,11 +73,10 @@ appleseller_jugar:
   # Cobro con la librería global (Skript/scripts/utils/items.sk)
   - command{c="itemquitar <trigger.name> 10 diamond"}
   - setvariable{var=target.appleseller_turno;type=INTEGER;value=1} @trigger
-  - skill{s=appleseller_limpiar}
-  - summon{m=appleseller_holo_revisando;a=1} @selflocation{y=2.35}
+  - speak{m="<#FFE29A>✧ Revisando las canastas <#9EA3AE>. . .";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
   - sound{s=entity.villager.yes;v=0.8;p=1.1} @self
   - sound{s=block.barrel.open;v=1;p=1} @self
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#E6E8EE>¡Trato hecho! Revisando las canastas..."} @trigger
+  - message{m="<#FFB347>Frutero <dark_gray>» <#E6E8EE>¡Trato hecho! Revisando las canastas..."} @trigger
   - sound{s=block.note_block.hat;v=1;p=0.8;delay=10} @self
   - particles{p=composter;a=8;hs=0.4;vs=0.3;y=1.4;delay=10} @self
   - sound{s=block.note_block.hat;v=1;p=1.1;delay=20} @self
@@ -102,7 +94,7 @@ appleseller_garantia:
   - variableinrange{var=target.appleseller_racha;value=>2} true
   Skills:
   - setvariable{var=target.appleseller_turno;type=INTEGER;value=0} @trigger
-  - summon{m=appleseller_holo_garantia;a=1;delay=1} @selflocation{y=2.6}
+  - speak{m="<#9EA3AE>Por tu mala suerte... <#FFD36B>¡va de regalo!";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
   - skill{s=appleseller_premio_dorada} @trigger
 
 appleseller_sorteo:
@@ -116,49 +108,46 @@ appleseller_sorteo:
 # ---------- Premios ----------
 appleseller_premio_dorada:
   Skills:
-  - skill{s=appleseller_limpiar}
   - command{c="itemdar <trigger.name> 1 golden apple"}
   - setvariable{var=target.appleseller_racha;type=INTEGER;value=0;save=true} @trigger
-  - summon{m=appleseller_holo_dorada;a=1} @selflocation{y=2.35}
+  - speak{m="<#FFD36B>✦ <gradient:#FFE29A:#FFB347>¡Manzana Dorada!</gradient> <#FFD36B>✦";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
   - sound{s=entity.villager.yes;v=0.8;p=1.1} @self
   - sound{s=entity.player.levelup;v=1;p=1.2} @trigger
   - particles{p=happy_villager;a=25;hs=0.6;vs=0.5;y=1.6} @self
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#FFD36B>✦ ¡Manzana Dorada! <#C9CDD6>Que te dé fuerzas en el camino."} @trigger
+  - message{m="<#FFB347>Frutero <dark_gray>» <#FFD36B>✦ ¡Manzana Dorada! <#C9CDD6>Que te dé fuerzas en el camino."} @trigger
 
 appleseller_premio_encantada:
   Skills:
-  - skill{s=appleseller_limpiar}
   - command{c="itemdar <trigger.name> 1 enchanted golden apple"}
   - setvariable{var=target.appleseller_racha;type=INTEGER;value=0;save=true} @trigger
-  - summon{m=appleseller_holo_encantada;a=1} @selflocation{y=2.35}
+  - speak{m="<#FF9BE6>★ <gradient:#FFD36B:#FF6BD5:#B45CFF>¡Manzana Encantada!</gradient> <#FF9BE6>★";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
   - sound{s=entity.villager.celebrate;v=0.9;p=1.1} @self
   - sound{s=ui.toast.challenge_complete;v=1;p=1} @trigger
   - sound{s=block.amethyst_block.chime;v=1;p=1.4} @self
   - particles{p=totem_of_undying;a=60;hs=0.7;vs=0.8;s=0.3;y=1.6} @self
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#FF9BE6>★ ¡No puede ser! <#FFE29A><trigger.name> <#FF9BE6>se llevó una <#FFD36B><bold>Manzana Encantada</bold><#FF9BE6>!"} @trigger
+  - message{m="<#FFB347>Frutero <dark_gray>» <#FF9BE6>★ ¡No puede ser! <#FFE29A><trigger.name> <#FF9BE6>se llevó una <#FFD36B>Manzana Encantada<#FF9BE6>!"} @trigger
 
 appleseller_premio_patata:
   Skills:
-  - skill{s=appleseller_limpiar}
   - command{c="itemdar <trigger.name> 1 poisonous potato"}
   - variableadd{var=target.appleseller_racha;amount=1} @trigger
   - sound{s=entity.villager.no;v=1;p=0.9} @self
   - particles{p=smoke;a=20;hs=0.4;vs=0.3;y=1.5} @self
   # Excusa del frutero al azar (lore, sin decir "no ganaste")
   - randomskill{s=appleseller_mala_suerte_1,appleseller_mala_suerte_2,appleseller_mala_suerte_3} @trigger
-  - message{m="<dark_gray>┃ <#9EA3AE>Mala racha <#E6E8EE><trigger.var.appleseller_racha>/3 <dark_gray>• <#9EA3AE>a la tercera te guardo una <#FFD36B>Manzana Dorada<#9EA3AE>."} @trigger
+  - message{m="<#9EA3AE>Mala racha <#E6E8EE><trigger.var.appleseller_racha>/3 <dark_gray>• <#9EA3AE>a la tercera te guardo una <#FFD36B>Manzana Dorada<#9EA3AE>."} @trigger
 
 appleseller_mala_suerte_1:
   Skills:
-  - summon{m=appleseller_holo_suerte_1;a=1} @selflocation{y=2.35}
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#B7D98B>Vaya... se me acabaron las buenas. <#C9CDD6>Solo me queda esta patata, perdona."} @trigger
+  - speak{m="<#B7D98B>Vaya... <#C9CDD6>se me acabaron las buenas";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#FFB347>Frutero <dark_gray>» <#B7D98B>Vaya... se me acabaron las buenas. <#C9CDD6>Solo me queda esta patata, perdona."} @trigger
 
 appleseller_mala_suerte_2:
   Skills:
-  - summon{m=appleseller_holo_suerte_2;a=1} @selflocation{y=2.35}
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#B7D98B>Esta canasta venía del fondo del carro... <#C9CDD6>ni yo sé cómo llegó esta patata ahí."} @trigger
+  - speak{m="<#B7D98B>Esta venía del fondo del carro...";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#FFB347>Frutero <dark_gray>» <#B7D98B>Esta canasta venía del fondo del carro... <#C9CDD6>ni yo sé cómo llegó esta patata ahí."} @trigger
 
 appleseller_mala_suerte_3:
   Skills:
-  - summon{m=appleseller_holo_suerte_3;a=1} @selflocation{y=2.35}
-  - message{m="<dark_gray>┃ <#FFB347><bold>Frutero</bold> <dark_gray>» <#B7D98B>Los cuervos se llevaron las mejores esta mañana. <#C9CDD6>Toma, al menos esta patata."} @trigger
+  - speak{m="<#B7D98B>Los cuervos se llevaron las mejores";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#FFB347>Frutero <dark_gray>» <#B7D98B>Los cuervos se llevaron las mejores esta mañana. <#C9CDD6>Toma, al menos esta patata."} @trigger

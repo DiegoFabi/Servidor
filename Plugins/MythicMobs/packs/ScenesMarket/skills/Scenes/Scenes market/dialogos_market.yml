@@ -27,50 +27,38 @@ dialogo_pescadero:
 dialogo_pescadero_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - summon{m=holo_pescadero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescadero_f1_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescadero_f1_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <dark_gray>» <#DFF4FF>Pescado fresco de esta mañana. Mira esos ojos, brillan todavía."} @trigger
+  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Pescado fresco de esta mañana. Mira\n<#DFF4FF>esos ojos, brillan todavía.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Pescado fresco de esta mañana. Mira esos ojos, brillan todavía."} @trigger
 
 dialogo_pescadero_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - summon{m=holo_pescadero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescadero_f2_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescadero_f2_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <dark_gray>» <#DFF4FF>El salmón se acaba rápido, si lo quieres no lo pienses mucho."} @trigger
+  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>El salmón se acaba rápido, si lo\n<#DFF4FF>quieres no lo pienses mucho.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>El salmón se acaba rápido, si lo quieres no lo pienses mucho."} @trigger
 
 dialogo_pescadero_frase3:
   Skills:
   - sound{s=entity.villager.trade;v=0.8;p=1.05} @self
-  - summon{m=holo_pescadero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescadero_f3_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescadero_f3_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <dark_gray>» <#DFF4FF>Mi primo lo saca del río y yo lo vendo. Negocio de familia."} @trigger
+  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Mi primo lo saca del río y yo lo\n<#DFF4FF>vendo. Negocio de familia.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Mi primo lo saca del río y yo lo vendo. Negocio de familia."} @trigger
 
 dialogo_pescadero_frase4:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - summon{m=holo_pescadero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescadero_f4_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescadero_f4_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <dark_gray>» <#DFF4FF>Con un poco de sal y fuego, cualquier pez sabe a gloria."} @trigger
+  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Con un poco de sal y fuego,\n<#DFF4FF>cualquier pez sabe a gloria.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Con un poco de sal y fuego, cualquier pez sabe a gloria."} @trigger
 
 dialogo_pescadero_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - summon{m=holo_pescadero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescadero_f5_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescadero_f5_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <dark_gray>» <#DFF4FF>No te fíes del que vende pescado sin olor, algo esconde."} @trigger
+  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>No te fíes del que vende pescado sin\n<#DFF4FF>olor, algo esconde.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>No te fíes del que vende pescado sin olor, algo esconde."} @trigger
 
 dialogo_pescadero_frase6:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - summon{m=holo_pescadero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_pescadero_f6_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_pescadero_f6_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC><bold>Pescadero</bold></gradient> <dark_gray>» <#DFF4FF>Hoy el mar estuvo generoso. Ojalá mañana también."} @trigger
+  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Hoy el mar estuvo generoso. Ojalá\n<#DFF4FF>mañana también.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Hoy el mar estuvo generoso. Ojalá mañana también."} @trigger
 
 # ---------- ✎ Librero | paleta #E3C29B -> #A8754A ----------
 # NPCs: scene_market_bookseller
@@ -88,50 +76,38 @@ dialogo_librero:
 dialogo_librero_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - summon{m=holo_librero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_librero_f1_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_librero_f1_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <dark_gray>» <#F7EDE3>Este de aquí lo leí dos veces. La segunda me gustó más."} @trigger
+  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Este de aquí lo leí dos veces. La\n<#F7EDE3>segunda me gustó más.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Este de aquí lo leí dos veces. La segunda me gustó más."} @trigger
 
 dialogo_librero_frase2:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - summon{m=holo_librero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_librero_f2_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_librero_f2_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <dark_gray>» <#F7EDE3>Un buen libro no se termina, se queda contigo un rato."} @trigger
+  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Un buen libro no se termina, se\n<#F7EDE3>queda contigo un rato.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Un buen libro no se termina, se queda contigo un rato."} @trigger
 
 dialogo_librero_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - summon{m=holo_librero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_librero_f3_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_librero_f3_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <dark_gray>» <#F7EDE3>Tengo mapas viejos, poemas y alguna receta. Lo que haga falta."} @trigger
+  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Tengo mapas viejos, poemas y alguna\n<#F7EDE3>receta. Lo que haga falta.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Tengo mapas viejos, poemas y alguna receta. Lo que haga falta."} @trigger
 
 dialogo_librero_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - summon{m=holo_librero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_librero_f4_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_librero_f4_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <dark_gray>» <#F7EDE3>Los de tapa roja son de aventuras, los azules de historia."} @trigger
+  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Los de tapa roja son de aventuras,\n<#F7EDE3>los azules de historia.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Los de tapa roja son de aventuras, los azules de historia."} @trigger
 
 dialogo_librero_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - summon{m=holo_librero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_librero_f5_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_librero_f5_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <dark_gray>» <#F7EDE3>Hay quien compra libros por la portada. Yo no juzgo."} @trigger
+  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Hay quien compra libros por la\n<#F7EDE3>portada. Yo no juzgo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Hay quien compra libros por la portada. Yo no juzgo."} @trigger
 
 dialogo_librero_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - summon{m=holo_librero_nombre;a=1} @selflocation{y=2.60}
-  - summon{m=holo_librero_f6_l1;a=1} @selflocation{y=2.35}
-  - summon{m=holo_librero_f6_l2;a=1} @selflocation{y=2.10}
-  - message{m="<dark_gray>┃ <#A8754A>✎ <gradient:#E3C29B:#A8754A><bold>Librero</bold></gradient> <dark_gray>» <#F7EDE3>Si lees despacio, el libro te dura más. Truco de librero."} @trigger
+  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Si lees despacio, el libro te dura\n<#F7EDE3>más. Truco de librero.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Si lees despacio, el libro te dura más. Truco de librero."} @trigger
 
 # ---------- ⚔ Armero | paleta #DDE3EC -> #8C96A8 ----------
 # NPCs: scene_market_weaponseller

@@ -22,6 +22,8 @@ scene_lumberjack_log:
   - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_log} @self ~onSpawn
   - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_log;delay=10} @self ~onLoad
   - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=12} @self ~onSpawn
   - changepart{m=scene_lumberjack;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_lumberjack;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_lumberjack;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -56,6 +58,8 @@ scene_lumberjack_walk:
   - model{mid=scene_lumberjack;save=true} @self ~onSpawn
   - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
   - skill{s=dialogo_lenador} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
@@ -98,6 +102,8 @@ scene_lumberjack_walk2:
   - model{mid=scene_lumberjack;save=true} @self ~onSpawn
   - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
   - skill{s=dialogo_lenador} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
@@ -140,6 +146,8 @@ scene_lumberjack_walk3:
   - model{mid=scene_lumberjack;save=true} @self ~onSpawn
   - model{mid=scene_lumberjack;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=12} @self ~onSpawn
   - skill{s=scene_openmenu} ~onInteract
   - skill{s=dialogo_lenador} @trigger ~onInteract
   - cancelevent{sync=true} @self ~onDamaged
@@ -220,6 +228,8 @@ scene_lumberjack_cut:
   - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_tree} @self ~onSpawn
   - defaultstate{m=scene_lumberjack;t=idle;s=lumberjack_tree;delay=10} @self ~onLoad
   - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_lumberjack;n=<global.var.skin<caster.uuid>|scene_lumberjack>;delay=12} @self ~onSpawn
   - changepart{m=scene_lumberjack;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_lumberjack;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_lumberjack;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
@@ -254,6 +264,8 @@ scene_lumberjack_interactive:
   - model{mid=scene_lumberjack_interactive;save=true} @self ~onSpawn
   - model{mid=scene_lumberjack_interactive;save=true;delay=5} @self ~onLoad
   - remapmodel{m=scene_lumberjack_interactive;n=<global.var.skin<caster.uuid>|scene_lumberjack_interactive>;delay=10} @self ~onLoad
+  - skill{s=scene_skin_azar} @self ~onSpawn
+  - remapmodel{m=scene_lumberjack_interactive;n=<global.var.skin<caster.uuid>|scene_lumberjack_interactive>;delay=12} @self ~onSpawn
   - changepart{m=scene_lumberjack_interactive;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @self ~onLoad
   - changepart{m=scene_lumberjack_interactive;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @self ~onLoad
   - changepart{m=scene_lumberjack_interactive;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @self ~onLoad
