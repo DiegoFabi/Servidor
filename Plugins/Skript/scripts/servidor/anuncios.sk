@@ -6,10 +6,16 @@
 #  - Tótem de la inmortalidad consumido.
 #  (La entrada/salida la anuncia SunLight: modules/greetings/settings.yml)
 #
-#  Rendimiento: solo eventos, sin temporizadores. "on resurrect" solo se
-#  dispara si el tótem salva al jugador (los eventos cancelados se ignoran).
+#  Rendimiento: solo eventos, sin temporizadores.
+#  El evento "resurrect" se lanza en CADA muerte (si no hay tótem llega
+#  cancelado), así que solo se anuncia si no está cancelado y el jugador
+#  lleva un tótem en alguna mano.
 # ============================================================
 
 on resurrect:
     event-entity is a player
-    broadcast "<#FFD13B>⌛ %event-entity% consumió Tótem"
+    event is not cancelled
+    if tool of event-entity is totem of undying:
+        broadcast "<#FFD13B>⌛ %event-entity% consumió Tótem"
+    else if offhand tool of event-entity is totem of undying:
+        broadcast "<#FFD13B>⌛ %event-entity% consumió Tótem"

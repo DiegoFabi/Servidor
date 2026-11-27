@@ -123,7 +123,7 @@ spawn:
   # This option takes precedence over the `default-respawn-within-same-world` option.
   # ----
   # Set this to false if you want another plugin to handle respawning or do not want this vanilla behavior.
-  default-respawn-in-overworld: true
+  default-respawn-in-overworld: false
   
   # This only applies if the `respawn-world` property is not set for the world that the player died in,
   # and the player does not have bed or anchor set.
@@ -136,13 +136,13 @@ spawn:
   # You can reset `respawn-world` property with the command: `/mv modify <worldname> reset respawn-world`
   # ----
   # Set this to false if you want another plugin to handle respawning.
-  default-respawn-within-same-world: true
+  default-respawn-within-same-world: false
   
   # When this option is enabled, players will always respawn at the world's spawn location of calculated respawn world,
   # unless bed or anchor is set and `bed-respawn` or `anchor-spawn` is enabled respectively.
   # ----
   # Set this to false if you want to use a custom spawn location such as /spawnpoint instead of the world's spawn location.
-  enforce-respawn-at-world-spawn: true
+  enforce-respawn-at-world-spawn: false
   
   
 portal:
