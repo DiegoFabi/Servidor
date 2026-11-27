@@ -1,0 +1,16 @@
+# Botín de ItemJoin (al jugador que mata)
+bandido_botin:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get postre_donut <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get postre_cake1 <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get botin_medal_bronze <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get botin_medal_silver <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get item_24 <target.name> 1";asop=false} @target 0.015
+  - command{c="itemjoin get item_25 <target.name> 1";asop=false} @target 0.015
+  - command{c="itemjoin get item_26 <target.name> 1";asop=false} @target 0.015
+  - command{c="itemjoin get item_28 <target.name> 1";asop=false} @target 0.01
+  - command{c="itemjoin get item_35 <target.name> 1";asop=false} @target 0.03
+  - command{c="itemjoin get item_36 <target.name> 1";asop=false} @target 0.03

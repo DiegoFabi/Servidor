@@ -1,0 +1,157 @@
+# Bandidos: grupos en caminos y zonas abiertas de survivalMain (sustituyen a parte de los
+# zombis/esqueletos/saqueadores). Máx. 3 en 48 bloques. Priority 300 (no son élites).
+banditema1_em_natural:
+  Type: banditema1_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditema2_em_natural:
+  Type: banditema2_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditema3_em_natural:
+  Type: banditema3_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditema_em_natural:
+  Type: banditema_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemb1_em_natural:
+  Type: banditemb1_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemb2_em_natural:
+  Type: banditemb2_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemb3_em_natural:
+  Type: banditemb3_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemb_em_natural:
+  Type: banditemb_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemc1_em_natural:
+  Type: banditemc1_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemc2_em_natural:
+  Type: banditemc2_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemc3_em_natural:
+  Type: banditemc3_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true
+
+banditemc_em_natural:
+  Type: banditemc_em
+  Worlds: survivalMain
+  Chance: 0.012
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SUNFLOWER_PLAINS,SAVANNA,SAVANNA_PLATEAU,BADLANDS,WOODED_BADLANDS,DESERT,TAIGA,MEADOW,FOREST
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,HUSK,PILLAGER} true
+  - outside true
+  - mobsinradius{t=banditema1_em,banditema2_em,banditema3_em,banditema_em,banditemb1_em,banditemb2_em,banditemb3_em,banditemb_em,banditemc1_em,banditemc2_em,banditemc3_em,banditemc_em;a=<3;r=48} true

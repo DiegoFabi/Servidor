@@ -86,6 +86,71 @@ sounds:
   sound: minecraft:hv_tenebris/grab.ogg
 - id: minecraft:hv_tenebris.projectile
   sound: minecraft:hv_tenebris/projectile.ogg
+# Bandidos (MythicMobs usa sound{s=embandits1:custom.embandit1.X})
+- id: embandits1:custom.embandit1.banditem_efforta
+  sounds:
+  - minecraft:custom/mobs/embandit1/banditem_efforta1.ogg
+  - minecraft:custom/mobs/embandit1/banditem_efforta2.ogg
+  - minecraft:custom/mobs/embandit1/banditem_efforta3.ogg
+- id: embandits1:custom.embandit1.banditem_effortb
+  sounds:
+  - minecraft:custom/mobs/embandit1/banditem_effortb1.ogg
+  - minecraft:custom/mobs/embandit1/banditem_effortb2.ogg
+  - minecraft:custom/mobs/embandit1/banditem_effortb3.ogg
+- id: embandits1:custom.embandit1.banditem_hurtbad
+  sounds:
+  - minecraft:custom/mobs/embandit1/banditem_hurtbad1.ogg
+  - minecraft:custom/mobs/embandit1/banditem_hurtbad2.ogg
+  - minecraft:custom/mobs/embandit1/banditem_hurtbad3.ogg
+- id: embandits1:custom.embandit1.channelattack
+  sounds:
+  - minecraft:custom/mobs/embandit1/channelattack1.ogg
+  - minecraft:custom/mobs/embandit1/channelattack2.ogg
+- id: embandits1:custom.embandit1.emweaponclash
+  sounds:
+  - minecraft:custom/mobs/embandit1/emweaponclash1.ogg
+  - minecraft:custom/mobs/embandit1/emweaponclash2.ogg
+- id: embandits1:custom.embandit1.knifewindup
+  sounds:
+  - minecraft:custom/mobs/embandit1/knifewindup1.ogg
+  - minecraft:custom/mobs/embandit1/knifewindup2.ogg
+- id: embandits1:custom.embandit1.macehit
+  sounds:
+  - minecraft:custom/mobs/embandit1/macehit1.ogg
+  - minecraft:custom/mobs/embandit1/macehit2.ogg
+- id: embandits1:custom.embandit1.macewindup
+  sounds:
+  - minecraft:custom/mobs/embandit1/macewindup1.ogg
+  - minecraft:custom/mobs/embandit1/macewindup2.ogg
+- id: embandits1:custom.embandit1.slashhita
+  sounds:
+  - minecraft:custom/mobs/fallenhero/slashhit1.ogg
+  - minecraft:custom/mobs/fallenhero/slashhit2.ogg
+  - minecraft:custom/mobs/fallenhero/slashhit3.ogg
+- id: embandits1:custom.embandit1.slashhitb
+  sounds:
+  - minecraft:custom/mobs/fallenhero/slashhitb1.ogg
+  - minecraft:custom/mobs/fallenhero/slashhitb2.ogg
+  - minecraft:custom/mobs/fallenhero/slashhitb3.ogg
+- id: embandits1:custom.embandit1.herostun
+  sounds:
+  - minecraft:custom/spell/fallenhero/stun1.ogg
+  - minecraft:custom/spell/fallenhero/stun2.ogg
+- id: embandits1:custom.embandit1.attackwindup
+  sounds:
+  - minecraft:custom/mobs/fallenhero/attackwindup1.ogg
+  - minecraft:custom/mobs/fallenhero/attackwindup2.ogg
+  - minecraft:custom/mobs/fallenhero/attackwindup3.ogg
+  - minecraft:custom/mobs/fallenhero/attackwindup4.ogg
+- id: embandits1:custom.embandit1.attack4reaper
+  sounds:
+  - minecraft:custom/spell/fallenreaper/attack4reaper1.ogg
+  - minecraft:custom/spell/fallenhero/attack4reaper2.ogg
+  - minecraft:custom/spell/fallenhero/attack4reaper3.ogg
+- id: embandits1:custom.embandit1.grandslashcast
+  sounds:
+  - minecraft:custom/spell/fallenhero/granslashcast1.ogg
+  - minecraft:custom/spell/fallenhero/granslashcast2.ogg
 - id: nexo:ruleta.spin
   sound: nexo:ruleta/ruleta.ogg
   volume: 1.0

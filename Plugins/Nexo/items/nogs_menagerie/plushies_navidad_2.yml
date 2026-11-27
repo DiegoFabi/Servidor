@@ -1,0 +1,241 @@
+# Nog's Plushies Christmas II (convertido de Oraxen a Nexo). Muebles de suelo.
+
+nm_plushie_angel:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_angel
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_angel
+    custom_model_data: 630100
+  itemname: <white>Peluche de Ángel
+
+nm_plushie_gingerbread_woman:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_gingerbread_woman
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_gingerbread_woman
+    custom_model_data: 630101
+  itemname: <white>Peluche de Galleta de Jengibre
+
+nm_plushie_krampus:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_krampus
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_krampus
+    custom_model_data: 630102
+  itemname: <white>Peluche de Krampus
+
+nm_plushie_nutcracker_blue:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_nutcracker_blue
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_nutcracker_blue
+    custom_model_data: 630103
+  itemname: <white>Peluche de Cascanueces Azul
+
+nm_plushie_nutcracker_green:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_nutcracker_green
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_nutcracker_green
+    custom_model_data: 630104
+  itemname: <white>Peluche de Cascanueces Verde
+
+nm_plushie_nutcracker_red:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_nutcracker_red
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_nutcracker_red
+    custom_model_data: 630105
+  itemname: <white>Peluche de Cascanueces Rojo
+
+nm_plushie_santa_hunky:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_santa_hunky
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_santa_hunky
+    custom_model_data: 630106
+  itemname: <white>Peluche de Papá Noel Fortachón
+
+nm_plushie_scringe:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_scringe
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_scringe
+    custom_model_data: 630107
+  itemname: <white>Peluche de Scringe
+
+nm_plushie_scrooge:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_scrooge
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_scrooge
+    custom_model_data: 630108
+  itemname: <white>Peluche de Scrooge
+
+nm_plushie_snowman:
+  material: PAPER
+  Mechanics:
+    furniture:
+      type: DISPLAY_ENTITY
+      limited_placing:
+        roof: false
+        floor: true
+        wall: false
+      barrier: false
+      block_sounds:
+        break_sound: block.wool.break
+        place_sound: block.wool.place
+        hit_sound: block.wool.hit
+      drop:
+        silktouch: false
+        loots:
+        - nexo_item: nm_plushie_snowman
+          probability: 1.0
+  Pack:
+    model: nogs_menagerie/plushies/nm_plushie_snowman
+    custom_model_data: 630109
+  itemname: <white>Peluche de Muñeco de Nieve

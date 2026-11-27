@@ -1,0 +1,61 @@
+# Ultimate Vanilla Mob: sustituyen a parte de los mobs vanilla de su bioma en survivalMain.
+# Priority 300: por encima de los élites (Priority 1), no son élites.
+ero_spider_natural:
+  Type: ero_spider
+  Worlds: survivalMain
+  Chance: 0.05
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: JUNGLE,SPARSE_JUNGLE,BAMBOO_JUNGLE,DARK_FOREST,DRIPSTONE_CAVES,LUSH_CAVES,FOREST
+  Conditions:
+  - entitytype{t=SPIDER} true
+  - mobsinradius{t=ero_spider;a=<2;r=48} true
+
+ero_skeleton_natural:
+  Type: ero_skeleton
+  Worlds: survivalMain
+  Chance: 0.05
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,SNOWY_PLAINS,SNOWY_TAIGA,BADLANDS,WOODED_BADLANDS,WINDSWEPT_HILLS,MEADOW
+  Conditions:
+  - entitytype{t=SKELETON} true
+  - mobsinradius{t=ero_skeleton;a=<2;r=48} true
+
+ero_witch_natural:
+  Type: ero_witch
+  Worlds: survivalMain
+  Chance: 0.05
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SWAMP,MANGROVE_SWAMP,DARK_FOREST,PALE_GARDEN
+  Conditions:
+  - entitytype{t=WITCH} true
+  - mobsinradius{t=ero_witch;a=<2;r=48} true
+
+ero_vindicator_natural:
+  Type: ero_vindicator
+  Worlds: survivalMain
+  Chance: 0.05
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DARK_FOREST,TAIGA,OLD_GROWTH_SPRUCE_TAIGA,OLD_GROWTH_PINE_TAIGA,PALE_GARDEN
+  Conditions:
+  - entitytype{t=ZOMBIE} true
+  - mobsinradius{t=ero_vindicator;a=<2;r=48} true
+
+ero_zombie_natural:
+  Type: ero_zombie
+  Worlds: survivalMain
+  Chance: 0.05
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: PLAINS,FOREST,BIRCH_FOREST,SAVANNA,DESERT,SUNFLOWER_PLAINS,MEADOW
+  Conditions:
+  - entitytype{t=ZOMBIE} true
+  - mobsinradius{t=ero_zombie;a=<2;r=48} true

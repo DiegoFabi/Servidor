@@ -1,0 +1,42 @@
+# Botín de ItemJoin (al jugador que mata)
+uvm_botin_spider:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get botin_poison_sac <target.name> 1";asop=false} @target 0.35
+  - command{c="itemjoin get botin_bat_wing <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get postre_candy1 <target.name> 1";asop=false} @target 0.06
+uvm_botin_skeleton:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get botin_skull <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get botin_fish_grey <target.name> 1";asop=false} @target 0.25
+  - command{c="itemjoin get item_33 <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get postre_chocolate1 <target.name> 1";asop=false} @target 0.06
+uvm_botin_witch:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get botin_magic_crystals <target.name> 1";asop=false} @target 0.25
+  - command{c="itemjoin get item_22 <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get item_20 <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get item_16 <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get postre_cake2 <target.name> 1";asop=false} @target 0.06
+uvm_botin_vindicator:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get botin_medal_silver <target.name> 1";asop=false} @target 0.2
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get item_32 <target.name> 1";asop=false} @target 0.03
+  - command{c="itemjoin get botin_crown <target.name> 1";asop=false} @target 0.02
+uvm_botin_zombie:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - command{c="itemjoin get postre_chocolate1 <target.name> 1";asop=false} @target 0.15
+  - command{c="itemjoin get postre_chocolate2 <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_candy <target.name> 1";asop=false} @target 0.2
+  - command{c="itemjoin get botin_medal_bronze <target.name> 1";asop=false} @target 0.08

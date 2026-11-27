@@ -1,0 +1,479 @@
+banditemb_em:
+  Type: vindicator
+  Display: '<#C9A86B>Bandido'
+  AIGoalSelectors:
+  Modules:
+    ThreatTable: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 SpecificFaction FallenHero
+  - 2 players
+  - 3 attacker
+  Health: 60
+  Faction: Bandit
+  DamageModifiers:
+  - FIRE 0
+  - MAGIC 1.1
+  - PROJECTILE 0.25
+  Damage: 5.4 #This is the BASE damage. Applies for ALL skills Setting it to 12 will DOUBLE damage. Setting it to 3 will REDUCE damage in 50% from the original.
+  KillMessages:
+  - '<target.name> cayó ante un bandido.'
+  - 'Un bandido acabó con <target.name>.'
+  - "<target.name> se cruzó en el camino de los bandidos."
+  - "Unos bandidos asaltaron a <target.name>."
+  Equipment:
+  - air:4
+  - air:3
+  - air:2
+  - imboots_banditemb:1
+  - air:0
+  - air:5
+  Drops:
+  - exp 10-25 1
+  LevelModifiers:
+    Health: 0.5
+    Damage: 0.03
+  Skills:
+  - skill{s=bandido_botin} @trigger ~onDeath
+#====== MODEL ASSIGNEMENT =============
+  - model{mid=em_bandit_b1;s=idle;n=false} @self ~onSpawn 1
+  - submodel{mid=em_bandit_b1;partid=right_arm2;submodelid=em_bandit_b1;subpartid=right_arm2;remove=true} @self ~onSpawn 1
+  - partvisibility{m=em_bandit_b1;p=sword;v=false;delay=0} @self ~onSpawn
+  - setlevel{a=set;l=0} ~onSpawn
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ~onSpawn
+  - skill{s=banditemb_hp_check} @Self ~onSpawn
+  - setvariable{var=caster.eichpee;value="<caster.mhp>";t=integer} @Self ~onSpawn
+  - DefaultState{type=WALK;state=walk_combat;li=3;lo=2} @self ~onEnterCombat
+  - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b1;npid=right_arm2} @self 0.5 ~onSpawn
+#============ DISGUISE =================
+  - randomskill{s=[
+      - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b2;npid=head} @self
+      - changepart{m=em_bandit_b1;pid=left_arm;nm=em_bandit_b2;npid=left_arm} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b2;npid=right_arm} @self
+      - changepart{m=em_bandit_b1;pid=left_leg;nm=em_bandit_b2;npid=left_leg} @self
+      - changepart{m=em_bandit_b1;pid=right_leg;nm=em_bandit_b2;npid=right_leg} @self
+      - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b2;npid=hip} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b2;npid=right_arm2} @self 0.5],
+      [
+      - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b3;npid=head} @self
+      - changepart{m=em_bandit_b1;pid=left_arm;nm=em_bandit_b3;npid=left_arm} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b3;npid=right_arm} @self
+      - changepart{m=em_bandit_b1;pid=left_leg;nm=em_bandit_b3;npid=left_leg} @self
+      - changepart{m=em_bandit_b1;pid=right_leg;nm=em_bandit_b3;npid=right_leg} @self
+      - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b3;npid=hip} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b3;npid=right_arm2} @self 0.5
+      ]} ~onSpawn 0.62
+
+#============ ATTACK =================
+  
+  - skill{s=meleebanditembtrigger} @Trigger ~onSignal:DEBUG_TEST 1
+  - CancelEvent{sync=true} @self ~onAttack 1 #CANCEL ATTACKS
+
+  - skill{s=meleebanditembtrigger;sync=false} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction} ~onTimer:24 0.65 ?!variableEquals{var=caster.rage;value="1"} ###### 0.6
+  - skill{s=meleebanditembtrigger2;sync=false} @LivingInCone{a=110.0;r=5.5;rot=0.0;ignore=samefaction} ~onTimer:20 0.80 ?variableEquals{var=caster.rage;value="1"}
+  
+  - setvariable{var=caster.combor;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.comboa;value="0";t=integer} @Self ~onSpawn
+
+
+#================ RIP IN PEPSI PROTOCOL
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} ~onDeath
+
+  - sound{s=entity.pillager.hurt;p=0.9;v=1.5} @selflocation ~onDeath 1
+  - sound{s=entity.pillager.death;p=0.9;v=1.5;delay=12} @selflocation ~onDeath 1
+  - effect:particles{particle=cloud;amount=150;hS=1.1;vS=0.55;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=hip;offset=GLOBAL;y=0.2} ~onDeath
+  - effect:particles{particle=cloud;amount=60;hS=0.6;vS=0.2;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=head;offset=GLOBAL;y=0.2} ~onDeath
+  - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b1;npid=head2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=jaw;nm=em_bandit_b1;npid=jaw2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b1;npid=hip2;delay=20} @self ~onDeath
+
+#  
+#==============
+  - skill{s=hurt1banditemb} @self ~onDamaged 0.92 #Hurtmechanic
+
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+  - setvariable{var=caster.vulnerable;value="0";t=integer} @Self ~onSpawn
+
+# ========= Parry protocol protocol
+  - skill{s=countertacked_banditemb_A;sync=false} @self ~onDamaged
+  
+#
+
+# ========= Anti-ranged protocol
+  - skill{s=hurtgenbanditemb;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIARROW
+  - skill{s=hurtgenbanditemb2;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIMMSkills
+  - setvariable{var=caster.rollumterr;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.projrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.running;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.runstacks;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.hurtened;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self ~onSpawn
+#======== RUNNER PROTOCOL (Activate if you remove statue pose)
+  - Aura{auraName=checkrunbanditemb;onTick=banditemb_runprotocolcheck;interval=30;duration=99999} @self ~onSpawn 0.4 #=============== RUN MECHANICUS
+  - setvariable{var=caster.hitrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - message{m="&eCOMBOR &a<caster.var.combor>"} @PlayersNearOrigin{r=75} ~onDamaged 0 #DEBUGMESSAGE
+
+# ======== Dodger Protocol (activate here if you remove statue pose)
+  - sound{s=entity.pillager.hurt;p=0.83;v=1} @selflocation ~onDamaged 1 #Hurtmechanic SOUND
+  - setstance{stance=normal} @self ~onSpawn
+#  - message{m="<caster.var.runstacks>"} @PlayersNearOrigin{r=35} ~onTimer:40 0
+
+  Options:
+    Silent: true
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    Interactable: true
+    PreventOtherDrops: true
+    KnockbackResistance: 0.9
+    PreventSunburn: true
+
+banditemb1_em:
+  Type: vindicator
+  Display: '<#C9A86B>Bandido'
+  AIGoalSelectors:
+  Modules:
+    ThreatTable: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 SpecificFaction FallenHero
+  - 2 players
+  - 3 attacker
+  Health: 60
+  Faction: Bandit
+  DamageModifiers:
+  - FIRE 0
+  - MAGIC 1.1
+  - PROJECTILE 0.25
+  Damage: 5.4 #This is the BASE damage. Applies for ALL skills Setting it to 12 will DOUBLE damage. Setting it to 3 will REDUCE damage in 50% from the original.
+  KillMessages:
+  - '<target.name> cayó ante un bandido.'
+  - 'Un bandido acabó con <target.name>.'
+  - "<target.name> se cruzó en el camino de los bandidos."
+  - "Unos bandidos asaltaron a <target.name>."
+  Equipment:
+  - air:4
+  - air:3
+  - air:2
+  - imboots_banditemb:1
+  - air:0
+  - air:5
+  Drops:
+  - exp 10-25 1
+  LevelModifiers:
+    Health: 0.5
+    Damage: 0.03
+  Skills:
+  - skill{s=bandido_botin} @trigger ~onDeath
+#====== MODEL ASSIGNEMENT =============
+  - model{mid=em_bandit_b1;s=idle;n=false} @self ~onSpawn 1
+  - submodel{mid=em_bandit_b1;partid=right_arm2;submodelid=em_bandit_b1;subpartid=right_arm2;remove=true} @self ~onSpawn 1
+  - partvisibility{m=em_bandit_b1;p=sword;v=false;delay=0} @self ~onSpawn
+  - setlevel{a=set;l=0} ~onSpawn
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ~onSpawn
+  - skill{s=banditemb_hp_check} @Self ~onSpawn
+  - setvariable{var=caster.eichpee;value="<caster.mhp>";t=integer} @Self ~onSpawn
+  - DefaultState{type=WALK;state=walk_combat;li=3;lo=2} @self ~onEnterCombat
+  - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b1;npid=right_arm2} @self 0.5 ~onSpawn
+
+#============ ATTACK =================
+  
+  - skill{s=meleebanditembtrigger} @Trigger ~onSignal:DEBUG_TEST 1
+  - CancelEvent{sync=true} @self ~onAttack 1 #CANCEL ATTACKS
+
+  - skill{s=meleebanditembtrigger;sync=false} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction} ~onTimer:24 0.65 ?!variableEquals{var=caster.rage;value="1"} ###### 0.6
+  - skill{s=meleebanditembtrigger2;sync=false} @LivingInCone{a=110.0;r=5.5;rot=0.0;ignore=samefaction} ~onTimer:20 0.80 ?variableEquals{var=caster.rage;value="1"}
+  
+  - setvariable{var=caster.combor;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.comboa;value="0";t=integer} @Self ~onSpawn
+
+
+#================ RIP IN PEPSI PROTOCOL
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} ~onDeath
+
+  - sound{s=entity.pillager.hurt;p=0.9;v=1.5} @selflocation ~onDeath 1
+  - sound{s=entity.pillager.death;p=0.9;v=1.5;delay=12} @selflocation ~onDeath 1
+  - effect:particles{particle=cloud;amount=150;hS=1.1;vS=0.55;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=hip;offset=GLOBAL;y=0.2} ~onDeath
+  - effect:particles{particle=cloud;amount=60;hS=0.6;vS=0.2;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=head;offset=GLOBAL;y=0.2} ~onDeath
+  - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b1;npid=head2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=jaw;nm=em_bandit_b1;npid=jaw2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b1;npid=hip2;delay=20} @self ~onDeath
+
+#  
+#==============
+  - skill{s=hurt1banditemb} @self ~onDamaged 0.92 #Hurtmechanic
+
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+  - setvariable{var=caster.vulnerable;value="0";t=integer} @Self ~onSpawn
+
+# ========= Parry protocol protocol
+  - skill{s=countertacked_banditemb_A;sync=false} @self ~onDamaged
+  
+#
+
+# ========= Anti-ranged protocol
+  - skill{s=hurtgenbanditemb;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIARROW
+  - skill{s=hurtgenbanditemb2;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIMMSkills
+  - setvariable{var=caster.rollumterr;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.projrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.running;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.runstacks;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.hurtened;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self ~onSpawn
+#======== RUNNER PROTOCOL (Activate if you remove statue pose)
+  - Aura{auraName=checkrunbanditemb;onTick=banditemb_runprotocolcheck;interval=30;duration=99999} @self ~onSpawn 0.4 #=============== RUN MECHANICUS
+  - setvariable{var=caster.hitrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - message{m="&eCOMBOR &a<caster.var.combor>"} @PlayersNearOrigin{r=75} ~onDamaged 0 #DEBUGMESSAGE
+
+# ======== Dodger Protocol (activate here if you remove statue pose)
+  - sound{s=entity.pillager.hurt;p=0.83;v=1} @selflocation ~onDamaged 1 #Hurtmechanic SOUND
+  - setstance{stance=normal} @self ~onSpawn
+#  - message{m="<caster.var.runstacks>"} @PlayersNearOrigin{r=35} ~onTimer:40 0
+
+  Options:
+    Silent: true
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    Interactable: true
+    PreventOtherDrops: true
+    KnockbackResistance: 0.9
+    PreventSunburn: true
+  
+banditemb2_em:
+  Type: vindicator
+  Display: '<#C9A86B>Bandido'
+  AIGoalSelectors:
+  Modules:
+    ThreatTable: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 SpecificFaction FallenHero
+  - 2 players
+  - 3 attacker
+  Health: 60
+  Faction: Bandit
+  DamageModifiers:
+  - FIRE 0
+  - MAGIC 1.1
+  - PROJECTILE 0.25
+  Damage: 5.4 #This is the BASE damage. Applies for ALL skills Setting it to 12 will DOUBLE damage. Setting it to 3 will REDUCE damage in 50% from the original.
+  KillMessages:
+  - '<target.name> cayó ante un bandido.'
+  - 'Un bandido acabó con <target.name>.'
+  - "<target.name> se cruzó en el camino de los bandidos."
+  - "Unos bandidos asaltaron a <target.name>."
+  Equipment:
+  - air:4
+  - air:3
+  - air:2
+  - imboots_banditemb:1
+  - air:0
+  - air:5
+  Drops:
+  - exp 10-25 1
+  LevelModifiers:
+    Health: 0.5
+    Damage: 0.03
+  Skills:
+  - skill{s=bandido_botin} @trigger ~onDeath
+#====== MODEL ASSIGNEMENT =============
+  - model{mid=em_bandit_b1;s=idle;n=false} @self ~onSpawn 1
+  - submodel{mid=em_bandit_b1;partid=right_arm2;submodelid=em_bandit_b1;subpartid=right_arm2;remove=true} @self ~onSpawn 1
+  - partvisibility{m=em_bandit_b1;p=sword;v=false;delay=0} @self ~onSpawn
+  - setlevel{a=set;l=0} ~onSpawn
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ~onSpawn
+  - skill{s=banditemb_hp_check} @Self ~onSpawn
+  - setvariable{var=caster.eichpee;value="<caster.mhp>";t=integer} @Self ~onSpawn
+  - DefaultState{type=WALK;state=walk_combat;li=3;lo=2} @self ~onEnterCombat
+  - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b1;npid=right_arm2} @self 0.5 ~onSpawn
+#============ DISGUISE =================
+  - skill{s=[
+      - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b2;npid=head} @self
+      - changepart{m=em_bandit_b1;pid=left_arm;nm=em_bandit_b2;npid=left_arm} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b2;npid=right_arm} @self
+      - changepart{m=em_bandit_b1;pid=left_leg;nm=em_bandit_b2;npid=left_leg} @self
+      - changepart{m=em_bandit_b1;pid=right_leg;nm=em_bandit_b2;npid=right_leg} @self
+      - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b2;npid=hip} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b2;npid=right_arm2} @self 0.5]} ~onSpawn 0.62
+
+#============ ATTACK =================
+  
+  - skill{s=meleebanditembtrigger} @Trigger ~onSignal:DEBUG_TEST 1
+  - CancelEvent{sync=true} @self ~onAttack 1 #CANCEL ATTACKS
+
+  - skill{s=meleebanditembtrigger;sync=false} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction} ~onTimer:24 0.65 ?!variableEquals{var=caster.rage;value="1"} ###### 0.6
+  - skill{s=meleebanditembtrigger2;sync=false} @LivingInCone{a=110.0;r=5.5;rot=0.0;ignore=samefaction} ~onTimer:20 0.80 ?variableEquals{var=caster.rage;value="1"}
+  
+  - setvariable{var=caster.combor;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.comboa;value="0";t=integer} @Self ~onSpawn
+
+
+#================ RIP IN PEPSI PROTOCOL
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} ~onDeath
+
+  - sound{s=entity.pillager.hurt;p=0.9;v=1.5} @selflocation ~onDeath 1
+  - sound{s=entity.pillager.death;p=0.9;v=1.5;delay=12} @selflocation ~onDeath 1
+  - effect:particles{particle=cloud;amount=150;hS=1.1;vS=0.55;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=hip;offset=GLOBAL;y=0.2} ~onDeath
+  - effect:particles{particle=cloud;amount=60;hS=0.6;vS=0.2;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=head;offset=GLOBAL;y=0.2} ~onDeath
+  - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b1;npid=head2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=jaw;nm=em_bandit_b1;npid=jaw2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b1;npid=hip2;delay=20} @self ~onDeath
+
+#  
+#==============
+  - skill{s=hurt1banditemb} @self ~onDamaged 0.92 #Hurtmechanic
+
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+  - setvariable{var=caster.vulnerable;value="0";t=integer} @Self ~onSpawn
+
+# ========= Parry protocol protocol
+  - skill{s=countertacked_banditemb_A;sync=false} @self ~onDamaged
+  
+#
+
+# ========= Anti-ranged protocol
+  - skill{s=hurtgenbanditemb;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIARROW
+  - skill{s=hurtgenbanditemb2;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIMMSkills
+  - setvariable{var=caster.rollumterr;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.projrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.running;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.runstacks;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.hurtened;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self ~onSpawn
+#======== RUNNER PROTOCOL (Activate if you remove statue pose)
+  - Aura{auraName=checkrunbanditemb;onTick=banditemb_runprotocolcheck;interval=30;duration=99999} @self ~onSpawn 0.4 #=============== RUN MECHANICUS
+  - setvariable{var=caster.hitrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - message{m="&eCOMBOR &a<caster.var.combor>"} @PlayersNearOrigin{r=75} ~onDamaged 0 #DEBUGMESSAGE
+
+# ======== Dodger Protocol (activate here if you remove statue pose)
+  - sound{s=entity.pillager.hurt;p=0.83;v=1} @selflocation ~onDamaged 1 #Hurtmechanic SOUND
+  - setstance{stance=normal} @self ~onSpawn
+#  - message{m="<caster.var.runstacks>"} @PlayersNearOrigin{r=35} ~onTimer:40 0
+
+  Options:
+    Silent: true
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    Interactable: true
+    PreventOtherDrops: true
+    KnockbackResistance: 0.9
+    PreventSunburn: true
+
+banditemb3_em:
+  Type: vindicator
+  Display: '<#C9A86B>Bandido'
+  AIGoalSelectors:
+  Modules:
+    ThreatTable: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 SpecificFaction FallenHero
+  - 2 players
+  - 3 attacker
+  Health: 60
+  Faction: Bandit
+  DamageModifiers:
+  - FIRE 0
+  - MAGIC 1.1
+  - PROJECTILE 0.25
+  Damage: 5.4 #This is the BASE damage. Applies for ALL skills Setting it to 12 will DOUBLE damage. Setting it to 3 will REDUCE damage in 50% from the original.
+  KillMessages:
+  - '<target.name> cayó ante un bandido.'
+  - 'Un bandido acabó con <target.name>.'
+  - "<target.name> se cruzó en el camino de los bandidos."
+  - "Unos bandidos asaltaron a <target.name>."
+  Equipment:
+  - air:4
+  - air:3
+  - air:2
+  - imboots_banditemb:1
+  - air:0
+  - air:5
+  Drops:
+  - exp 10-25 1
+  LevelModifiers:
+    Health: 0.5
+    Damage: 0.03
+  Skills:
+  - skill{s=bandido_botin} @trigger ~onDeath
+#====== MODEL ASSIGNEMENT =============
+  - model{mid=em_bandit_b1;s=idle;n=false} @self ~onSpawn 1
+  - submodel{mid=em_bandit_b1;partid=right_arm2;submodelid=em_bandit_b1;subpartid=right_arm2;remove=true} @self ~onSpawn 1
+  - partvisibility{m=em_bandit_b1;p=sword;v=false;delay=0} @self ~onSpawn
+  - setlevel{a=set;l=0} ~onSpawn
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ~onSpawn
+  - skill{s=banditemb_hp_check} @Self ~onSpawn
+  - setvariable{var=caster.eichpee;value="<caster.mhp>";t=integer} @Self ~onSpawn
+  - DefaultState{type=WALK;state=walk_combat;li=3;lo=2} @self ~onEnterCombat
+#============ DISGUISE =================
+  - skill{s=[
+      - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b3;npid=head} @self
+      - changepart{m=em_bandit_b1;pid=left_arm;nm=em_bandit_b3;npid=left_arm} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b3;npid=right_arm} @self
+      - changepart{m=em_bandit_b1;pid=left_leg;nm=em_bandit_b3;npid=left_leg} @self
+      - changepart{m=em_bandit_b1;pid=right_leg;nm=em_bandit_b3;npid=right_leg} @self
+      - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b3;npid=hip} @self
+      - changepart{m=em_bandit_b1;pid=right_arm;nm=em_bandit_b3;npid=right_arm2} @self 0.5
+      ]} ~onSpawn 
+
+#============ ATTACK =================
+  
+  - skill{s=meleebanditembtrigger} @Trigger ~onSignal:DEBUG_TEST 1
+  - CancelEvent{sync=true} @self ~onAttack 1 #CANCEL ATTACKS
+
+  - skill{s=meleebanditembtrigger;sync=false} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction} ~onTimer:24 0.65 ?!variableEquals{var=caster.rage;value="1"} ###### 0.6
+  - skill{s=meleebanditembtrigger2;sync=false} @LivingInCone{a=110.0;r=5.5;rot=0.0;ignore=samefaction} ~onTimer:20 0.80 ?variableEquals{var=caster.rage;value="1"}
+  
+  - setvariable{var=caster.combor;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.comboa;value="0";t=integer} @Self ~onSpawn
+
+
+#================ RIP IN PEPSI PROTOCOL
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} ~onDeath
+
+  - sound{s=entity.pillager.hurt;p=0.9;v=1.5} @selflocation ~onDeath 1
+  - sound{s=entity.pillager.death;p=0.9;v=1.5;delay=12} @selflocation ~onDeath 1
+  - effect:particles{particle=cloud;amount=150;hS=1.1;vS=0.55;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=hip;offset=GLOBAL;y=0.2} ~onDeath
+  - effect:particles{particle=cloud;amount=60;hS=0.6;vS=0.2;speed=0;size=4.5;repeat=0;repeatinterval=1;sideOffset=0;delay=60} @ModelPart{m=em_bandit_b1;p=head;offset=GLOBAL;y=0.2} ~onDeath
+  - changepart{m=em_bandit_b1;pid=head;nm=em_bandit_b1;npid=head2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=jaw;nm=em_bandit_b1;npid=jaw2;delay=20} @self ~onDeath
+  - changepart{m=em_bandit_b1;pid=hip;nm=em_bandit_b1;npid=hip2;delay=20} @self ~onDeath
+
+#  
+#==============
+  - skill{s=hurt1banditemb} @self ~onDamaged 0.92 #Hurtmechanic
+
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+  - setvariable{var=caster.vulnerable;value="0";t=integer} @Self ~onSpawn
+
+# ========= Parry protocol protocol
+  - skill{s=countertacked_banditemb_A;sync=false} @self ~onDamaged
+  
+#
+
+# ========= Anti-ranged protocol
+  - skill{s=hurtgenbanditemb;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIARROW
+  - skill{s=hurtgenbanditemb2;sync=true} @self ~onDamaged 1 #Hurtmechanic ANTIMMSkills
+  - setvariable{var=caster.rollumterr;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.projrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - setvariable{var=caster.running;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.runstacks;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.hurtened;value="0";t=integer} @Self ~onSpawn
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self ~onSpawn
+#======== RUNNER PROTOCOL (Activate if you remove statue pose)
+  - Aura{auraName=checkrunbanditemb;onTick=banditemb_runprotocolcheck;interval=30;duration=99999} @self ~onSpawn 0.4 #=============== RUN MECHANICUS
+  - setvariable{var=caster.hitrec;value="0";t=integer} @Self ~OnSpawn #Hurtmechanic ANTIARROW
+  - message{m="&eCOMBOR &a<caster.var.combor>"} @PlayersNearOrigin{r=75} ~onDamaged 0 #DEBUGMESSAGE
+
+# ======== Dodger Protocol (activate here if you remove statue pose)
+  - sound{s=entity.pillager.hurt;p=0.83;v=1} @selflocation ~onDamaged 1 #Hurtmechanic SOUND
+  - setstance{stance=normal} @self ~onSpawn
+#  - message{m="<caster.var.runstacks>"} @PlayersNearOrigin{r=35} ~onTimer:40 0
+
+  Options:
+    Silent: true
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    Interactable: true
+    PreventOtherDrops: true
+    KnockbackResistance: 0.9
+    PreventSunburn: true

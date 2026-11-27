@@ -1,0 +1,1489 @@
+em_banditema_stepsound:
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="none"} true
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - stance{s=casting} false
+  - stance{s=normal} true
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - variableEquals{var=caster.casting;value="1"} false
+  - onground true
+  Skills:
+  - blockstepsound{p=1.3;v=0.5} @selflocation{y=-0.3}
+em_banditema_stepsound_run:
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - onground true
+  Skills:
+  - blockstepsound{p=1.3;v=0.5} @selflocation{y=-0.3}
+
+banditema_hp_check:
+  Cooldown: 9999
+  Conditions:
+  - playersinradius{a=>2;r=60} true
+  Skills:
+  - delay 5
+  - skill{s=banditema_hp_checkB} @pir{r=80} #MODIFY THE RANGE TO CHECK FOR PLAYERS
+# GUIDE TO CUSTOMIZE HEALTH SCALING
+banditema_hp_checkB:
+  Conditions:
+  Skills:
+  - setvariable{var=skill.amount_targets;val=<skill.targets>}
+  - setmaxhealth{amount=<caster.var.eichpee>+2*<skill.var.amount_targets>;mode=SCALE} @self
+# AMOUNT = (BASE HEALTH, modified in mob's hp) + (ADDITIONAL NET HEALTH PER PLAYER IN RANGE) * <skill.var.amount_targets>
+# (The last argument is just the variable for number of players, don't touch it.)
+
+
+# HURTSKILLS
+
+hurt1banditema:
+  Cooldown: 0.7
+  Skills:
+  - Aura{auraName=nule_parry;duration=10;delay=1} @self 0.8
+  - skill{s=banditema_backhurtCLEAR;sync=true} @Trigger 0.25
+  - variableadd{var=caster.hitrec;amount=1} @self
+  - variableadd{var=caster.combor;amount=1} @self
+  - randomskill{s=[
+      - state{state=hurt1;li=0;lo=0} @self
+    ],
+      [
+      - state{state=hurt2;li=0;lo=0} @self
+    ],
+      [
+      - state{state=hurt4;li=0;lo=0} @self
+    ],
+      [
+      - state{state=hurt3;li=0;lo=0} @self
+    ];sync=false}
+  - skill{s=countertacked_banditema_A;cooldown=2;sync=true} @self ?variableEquals{var=caster.vulnerable;value="1"}
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=40;mergeSameCaster=true} @self 0.35 ?variableInRange{var=caster.hitrec;value=5to8}
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=40;mergeSameCaster=true} @self 0.58 ?variableInRange{var=caster.hitrec;value=>8}
+  - sound{s=embandits1:custom.embandit1.hurt;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0 #CHANGE
+  - potion{type=SLOW;duration=20;level=0;p=false;force=false} @Self ?!haspotioneffect{type=SLOW} ?!variableEquals{var=caster.casting;value="1"} false ?!stance{s=casting} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - skill{s=hurtbad2_banditema} @self 0.42 ?hasaura{n=banditem_hurtbad}
+  - skill{s=hurtbbanditema} @self 0.15 ?!hasaura{n=quickrunned} ?!hasaura{n=largecast} ?!hasaura{n=parried}
+  - skill{s=hurtbbanditema} @self 0.10 ?hasaura{n=quickrunned}
+  - skill{s=hurtbbanditema} @self 0.05 ?hasaura{n=largecast}
+  - skill{s=hurtbbanditema} @self 0.85 ?hasaura{n=parried}
+  - delay 15
+  - skill{s=meleebanditematrigger;sync=false} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction} 0.14
+
+#HURTBAD
+hurtbbanditema:
+  Cooldown: 6
+  Conditions:
+  - damagecause{cause=FIRE} false
+  - damagecause{cause=FIRE_TICK} false
+  - damagecause{cause=FALL} false
+  - damagecause{cause=LAVA} false
+  - damagecause{cause=POISON} false
+  - damagecause{cause=THORNS} false
+  - damagecause{cause=CONTACT} false
+  - variableEquals{var=caster.casting;value="1"} false
+  - variableEquals{var=caster.running;value="2"} false
+  - hasaura{n=banditem_hurtbad} false
+  - hasaura{n=hurtenedbad} false
+  Skills:
+  - lockmodel{l=true;delay=0} @Self
+  - setstance{stance=casting} @self ?stance{s=normal}
+  - skill{s=banditema_hurtCLEAR;sync=true} 0.35
+  - variableadd{var=caster.hitrec;amount=2} @self
+  - variableadd{var=caster.combor;amount=1} @self
+  - variableadd{var=caster.combor;amount=1} @self 0.5
+  - setvariable{var=caster.casting;value="1";t=integer} @Self ?variableEquals{var=caster.casting;value="0"} 
+
+  - randomskill{s=[
+      - state{state=hurtbad1;li=3;lo=8} @self
+    ],
+      [
+      - state{state=hurtbad2;li=3;lo=8} @self
+    ],
+      [
+      - state{state=hurtbad3;li=3;lo=8} @self
+    ],
+      [
+      - state{state=hurtbad4;li=3;lo=8} @self
+    ];sync=true}
+  - setvariable{var=caster.hurtened;value="1";t=integer} @Self
+  - potion{type=SLOW;duration=1;level=0;p=false;force=true} @Self
+  - potion{type=SLOW;duration=9;level=7;p=false;force=true;delay=1} @Self
+  - potion{type=SLOW;duration=10;level=7;p=false;force=true;delay=9} @Self
+  - potion{type=SLOW;duration=10;level=7;p=false;force=true;delay=19} @Self
+  - potion{type=SLOW;duration=12;level=3;p=false;force=true;delay=29} @Self ?variableEquals{var=caster.rage;value="1"} 
+
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.2>;v=1.5} @selflocation
+#STATEREMOVE
+  - state{remove=true;s=backstep;lo=3} @self
+  - state{remove=true;s=drawback1;lo=3} @self
+  - state{remove=true;s=drawback2;lo=3} @self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;state=attack4;lo=3} @self
+  
+#
+  - Aura{auraName=banditem_hurtbad;duration=36} @self
+  - delay 12
+  - skill{s=[
+    - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=60;mergeSameCaster=true} @self
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self ?stance{s=casting}
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - Aura{auraName=bruttackrest;duration=20} @self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self 0.4 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"} ?variableEquals{var=caster.skillxd;value="none"}
+  - randomskill{s=bruttack4_banditema,bruttack2_banditema;repeat=2;repeatinterval=5} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction}
+  - skill{s=banditema_rage_trigger} @Self =60%-95% 0.45 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"} ?variableEquals{var=caster.skillxd;value="none"}
+  - skill{s=banditema_rage_trigger} @Self =30%-60% 0.55 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"} ?variableEquals{var=caster.skillxd;value="none"}
+  - skill{s=banditema_rage_trigger} @Self <30% 0.65 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"} ?variableEquals{var=caster.skillxd;value="none"}
+  - delay 21
+  - lockmodel{l=false;delay=0} @Self ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - setvariable{var=caster.hurtened;value="0";t=integer} @Self ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - setstance{stance=normal} @self ?stance{s=casting} ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?variableEquals{var=caster.casting;value="1"} ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - skill{s=meleebanditematrigger2;cooldown=1;sync=false} @Trigger 0.6
+  - skill{s=banditema_rage_trigger} @Self =60%-95% 0.65 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - skill{s=banditema_rage_trigger} @Self =30%-60% 0.75 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - skill{s=banditema_rage_trigger} @Self <30% 0.85 ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+
+####
+
+banditem_hurtbad_antilunge1:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} true
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} true
+  Skills:
+  - lunge{v=-0.15} @forward{f=-10}
+banditem_hurtbad_antilunge2:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} true
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} true
+  Skills:
+  - lunge{v=-0.07} @forward{f=-10}
+
+#HURTVERYBAD
+
+hurtbad2_banditema:
+  Cooldown: 4
+  Conditions:
+  - damagecause{cause=FIRE} false
+  - damagecause{cause=FIRE_TICK} false
+  - damagecause{cause=FALL} false
+  - damagecause{cause=LAVA} false
+  - damagecause{cause=POISON} false
+  - damagecause{cause=THORNS} false
+  - damagecause{cause=CONTACT} false
+  - hasaura{n=banditem_hurtbad} true
+  Skills:
+  - lockmodel{l=true;delay=0} @Self
+  - Aura{auraName=hurtenedbad;duration=50} @self
+  - message{m="Casted &ebanditem_hurtbad"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+  - setstance{stance=casting} @self
+  - setvariable{var=caster.skillxd;value="hurtedvbad";t=string} @Self
+  - sound{s=embandits1:custom.embandit1.emweaponclash;p=<random.float.1.2to1.6>;v=1.5} @selflocation
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.8to1>;v=1.5} @selflocation 0.9
+  - variableadd{var=caster.hitrec;amount=4} @self
+  - randomskill{s=[
+      - state{state=hurtverybad1;li=3;lo=8} @self
+    ],
+      [
+      - state{state=hurtverybad2;li=3;lo=8} @self
+    ],
+      [
+      - state{state=hurtverybad3;li=3;lo=8} @self
+    ],
+      [
+      - state{state=hurtverybad4;li=3;lo=8} @self
+    ];sync=true}
+  - Aura{auraName=parried;duration=45} @self
+
+  #
+  - potion{type=SLOW;duration=58;level=15;p=false;force=true} @Self
+  - state{remove=true;s=drawback1;lo=3} @self
+  - state{remove=true;s=drawback2;lo=3} @self
+  - state{remove=true;s=backstep;lo=3} @self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack1_parrying;lo=3} @self
+  - state{remove=true;s=attack2_parrying;lo=3} @self
+  - state{remove=true;s=attack3_parrying;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  #
+  - setvariable{var=caster.hurtened;value="1";t=integer} @Self
+  - setvariable{var=caster.countered;value="1";t=integer} @Self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - skill{s=banditem_hurtbad_antilunge1;delay=1;repeat=14;repeatInterval=1} @Self
+  - skill{s=banditem_hurtbad_antilunge2;repeat=5;repeatInterval=1;delay=15} @Self
+  - delay 20
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=60;mergeSameCaster=true} @self 0.4
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self ?stance{s=casting}
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - Aura{auraName=bruttackrest;duration=30} @self
+    - setvariable{var=caster.skillxd;value="none";t=string} @Self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self 0.25
+  - skill{s=meleebanditematrigger2;cooldown=1;sync=false} @Trigger 0.6
+  - skill{s=banditema_rage_trigger} @Self =60%-95% 0.56
+  - skill{s=banditema_rage_trigger} @Self =30%-60% 0.65
+  - skill{s=banditema_rage_trigger} @Self <30% 0.75
+  - delay 25
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - setvariable{var=caster.skillxd;value="none";t=string} @Self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self ?variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - skill{s=meleebanditematrigger2;cooldown=1;sync=false} @Trigger 0.6
+  - skill{s=banditema_rage_trigger} @Self =60%-95% 0.35
+  - skill{s=banditema_rage_trigger} @Self =30%-60% 0.4
+  - skill{s=banditema_rage_trigger} @Self <30% 0.5
+
+
+#######
+
+
+
+banditema_backhurtCLEAR:
+  Cooldown: 9
+  Conditions:
+  - hasaura{n=changedThreat} false
+  TriggerConditions:
+  - FieldOfView{angle=120;r=0} false
+  Skills:
+  - Aura{auraName=changedThreat;duration=220} @self
+  - clearThreat{} @self
+  - threat{amount=150} @TargetedTarget
+banditema_hurtCLEAR:
+  Cooldown: 6
+  Conditions:
+  - hasaura{n=changedThreat} false
+  TriggerConditions:
+  - FieldOfView{angle=30;r=0} false
+  Skills:
+  - Aura{auraName=changedThreat;duration=200} @self
+  - clearThreat{} @self
+  - threat{amount=100} @TargetedTarget
+
+hurtgenbanditema:
+  Cooldown: 0
+  Conditions:
+  - damagecause{c=PROJECTILE} true
+  Skills:
+  - skill{s=hurtgenbanditemaCLEAR;sync=true} @Trigger 0.15
+  - onShoot{auraName=banditema_arrowWarning;onShoot=signalcheckWarning_banditema;interval=3;duration=200;charges=5;cooldown=5} @trigger 0.5
+  - variableadd{var=caster.projrec;amount=1} @self
+  - variableadd{var=caster.projrec;amount=1} @self 0.5
+  - variableadd{var=caster.runstacks;amount=1} @self
+  - skill{s=hurtgenbanditema_addstacksd1} @Trigger
+  - message{m="Runstacks <caster.var.runstacks> STACKS"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+  - velocity{m=set;x=0;y=0;z=0;repeat=2;Repeatinterval=1} @self
+  - variableadd{var=caster.combor;amount=2} @self
+  - randomskill{s=banditema_rage_trigger;sync=true} @Trigger 0.3
+  - stun{d=1;f=false;stopai=false} @Self
+hurtgenbanditema_addstacksd1:
+  TriggerConditions:
+  - distance{d=5to13} true
+  - distance{d=>13} castinstead hurtgenbanditema_addstacksd2
+  Skills:
+  - variableadd{var=caster.runstacks;amount=1} @self
+  - variableadd{var=caster.runstacks;amount=1} @self 0.5
+hurtgenbanditema_addstacksd2:
+  TriggerConditions:
+  - distance{d=>12} true
+  Skills:
+  - variableadd{var=caster.runstacks;amount=1} @self
+  - variableadd{var=caster.runstacks;amount=1} @self 0.9
+  - variableadd{var=caster.runstacks;amount=1} @self 0.7
+  - variableadd{var=caster.runstacks;amount=1} @self 0.5
+hurtgenbanditemaCLEAR:
+  Skills:
+  - clearThreat{} @self
+  - threat{amount=100} @Trigger
+hurtgenbanditema2:
+  Cooldown: 0
+  Conditions:
+  - damagecause{c=PROJECTILE} false
+  TriggerConditions:
+  - distance{d=>5} true
+  Skills:
+  - skill{s=hurtgenbanditemaCLEAR;sync=true} @Trigger 0.25
+  - variableadd{var=caster.projrec;amount=1} @self
+  - variableadd{var=caster.projrec;amount=1} @self 0.5
+  
+  - variableadd{var=caster.runstacks;amount=2} @self
+  - skill{s=hurtgenbanditema_addstacksd1} @Trigger
+  - velocity{m=set;x=0;y=0;z=0;repeat=2;Repeatinterval=1} @self
+  - variableadd{var=caster.combor;amount=2} @self
+  - skill{s=banditema_rage_trigger;sync=false} @Trigger 0.3
+  - stun{d=1;f=false;stopai=false} @Self
+
+outrun_discharge_banditema:
+  Cooldown: 8
+  TargetConditions:
+  - lineofsight true
+  Skills:
+  - variablesubtract{var=caster.hitrec;amount=1} @self ?variableInRange{var=caster.hitrec;value=>0}
+  - variablesubtract{var=caster.hitrec;amount=1} @self 0.7 ?variableInRange{var=caster.hitrec;value=>0}
+  - variablesubtract{var=caster.hitrec;amount=1} @self 0.4 ?variableInRange{var=caster.hitrec;value=>0}
+  - message{m="FallenPirobo Hitrec: <caster.var.hitrec>"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+outrun_aleviate_banditema:
+  TargetConditions:
+  - lineofsight true
+  Skills:
+  - variablesubtract{var=caster.hitrec;amount=1} @self 0.8 ?variableInRange{var=caster.hitrec;value=>0}
+  - message{m="Hitrec <caster.var.projrec> SUBTRACT-1"} @PlayersNearOrigin{r=75}  0 #DEBUGMESSAGE
+
+## MELEE TRIGGERS
+
+meleebanditematrigger:
+  Cooldown: 2
+  Conditions:
+  - incombat true
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - variableEquals{var=caster.rage;value="1"} CastInstead meleebanditematrigger2
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - variableEquals{var=caster.casting;value="1"} false
+  Skills:
+  - delay 1to30
+  - randomskill{s=bruttack1_banditema,bruttack2_banditema;sync=false} @LivingInCone{a=110.0;r=5.5;rot=0.0;ignore=samefaction}
+  - randomskill{s=bruttack1_banditema,bruttack2_banditema;sync=false} @LivingInCone{a=200.0;r=0.9;rot=0.0;ignore=samefaction}
+#  - randomskill{s=bruttack1_banditema,bruttack1_banditema,bruttack1_banditema,bruttack2_banditema,bruttack2_banditema,bruttack4_banditema;sync=false} @LivingInCone{a=110.0;r=6.5;rot=0.0;ignore=samefaction}
+
+meleebanditematrigger2:
+  Conditions:
+  - incombat true
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - variableEquals{var=caster.rage;value="1"} true
+  Skills:
+  - delay <random.1to15>
+  - randomskill{s=bruttack2_banditema,bruttack3_banditema,bruttack2_banditema,bruttack4_banditema;sync=false} @LivingInCone{a=110.0;r=5.5;rot=0.0;ignore=samefaction}
+  - randomskill{s=bruttack2_banditema,bruttack3_banditema,bruttack2_banditema,bruttack4_banditema;sync=false} @LivingInCone{a=200.0;r=0.9;rot=0.0;ignore=samefaction}
+
+###################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+banditema_sdppcheck:
+  Cooldown: 0.3
+  Conditions:
+  - playersinradius{a=>0;r=7}
+  - variableEquals{var=caster.running;value="2"} false
+  Skills:
+  - effect:particles{particle=reddust;color=#03c982;amount=2;hS=0.01;vS=0.01;size=0.75;forwardOffset=0.4;y=1.5} @Self 0 #DEBUGPARTICLES
+  - skill{s=banditema_sdpcheckB;sync=true;delay=6;repeat=0;repeatinterval=3} @PlayersInRadius{r=7;limit=2;Sort=NEAREST;conditions=[  - distance{d=4to7}]}
+  - skill{s=banditema_sdpcheckA;sync=true;delay=4;repeat=2;repeatinterval=3} @PlayersInRadius{r=4;limit=2;Sort=NEAREST;conditions=[  - distance{d=2to4}  - Moving{} true  - targetinlineofsight{} true]}
+banditema_sdpcheckB:
+  Conditions:
+  - hasaura{n=ShieldennblockA} false
+  TargetConditions:
+  - isSprinting{} true
+  - distance{d=0to5}
+  Skills:
+  - skill{s=[
+    - look{headOnly=false;immediately=true;repeat=5;repeatInterval=1} @TargetedTarget 0
+    - randomskill{s=[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} 0
+    - skill{s=banditemacommuterdefense;sync=false} @TargetedTarget
+    - message{m="&e<caster.name> &bcast &cbanditema_sdppcheckB &e@<target.name>"} @PlayersNearOrigin{r=75} 0
+    - Aura{auraName=ShieldennblockA;duration=20} @self];sync=true} @TargetedTarget{limit=1;Sort=NEAREST} 1 #debugSPECIAL
+  - effect:particles{particle=reddust;color=#1dd7ee;amount=105;hS=0.1;vS=0.1;size=0.8;repeat=1;repeatinterval=1} @Self 0 #DEBUGPARTICLES
+banditema_sdpcheckA:
+  Conditions:
+  - hasaura{n=backstepB} false
+  - hasaura{n=ShieldennblockB} false
+  TargetConditions:
+  - distance{d=0to3}
+  Skills:
+  - skill{s=[
+    - look{headOnly=false;immediately=true;repeat=5;repeatInterval=1} @TargetedTarget 0
+    - randomskill{s=[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} 0
+    - skill{s=banditemacommuterdefense;sync=false} @TargetedTarget
+    - message{m="&e<caster.name> &bcast &cbanditema_sdppcheckA &e@<target.name>"} @TargetedTarget 0
+    - Aura{auraName=ShieldennblockB;duration=15} @self];sync=true} @TargetedTarget{limit=1;Sort=NEAREST} 1 #debugSPECIAL
+  - effect:particles{particle=reddust;color=#1dd7ee;amount=105;hS=0.1;vS=0.1;size=0.8;repeat=1;repeatinterval=1} @Self 0 #DEBUGPARTICLES
+
+
+# COMMUTER
+
+banditemacommuterdefense:
+  Conditions:
+  - variableEquals{var=caster.parrying;value="1"} castinstead banditemacommuterdefenseparryien
+  TargetConditions:
+  - FieldOfView{angle=110;r=0} orElseCast banditemacommuterdefenseRear
+  Skills:
+  - message{m="&e<caster.name> &bcast &cbanditemacommuterdefense &e@<target.name>"} @TargetedTarget 0 #DEBUGMESSAGE
+  - randomskill{s=banditema_drawback1,[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} @TargetedTarget
+banditemacommuterdefenseRear:
+  Skills:
+  - randomskill{s=banditema_drawback1,[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} @TargetedTarget
+  - skill{s=commuterbanditemaCLEAR;sync=true} @TargetedTarget 0.45
+
+banditemacommuterdefenseparryien:
+  Conditions:
+  - variableEquals{var=caster.parrying;value="1"} true
+  TargetConditions:
+  - FieldOfView{angle=110;r=0} orElseCast banditemacommuterdefenseRearParryien
+  Skills:
+  - randomskill{s=banditema_drawback1,banditema_drawback1,banditema_drawback1,[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} @TargetedTarget
+banditemacommuterdefenseRearParryien:
+  Skills:
+  - randomskill{s=banditema_drawback1,banditema_drawback1,[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} @TargetedTarget
+  - skill{s=commuterbanditemaCLEAR;sync=true} @TargetedTarget 0.45
+
+commuterbanditemaCLEAR:
+  Skills:
+  - clearThreat{} @self
+  - threat{amount=150} @TargetedTarget
+
+# QUICKBLOCKS
+
+drawback_antilunge1:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  Skills:
+  - lunge{v=-0.15} @forward{f=-10}
+drawback_antilunge2:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  Skills:
+  - lunge{v=-0.07} @forward{f=-10}
+
+banditema_drawback1:
+  Cooldown: 2
+  Conditions:
+  - variableEquals{var=caster.running;value="1"} castinstead meleebanditematrigger
+  - hasaura{n=backstepB} false
+  - stance{s=normal} true
+  - stance{s=casting} false
+  TargetConditions:
+  - distance{d=0to8}
+  Skills:
+  - message{m="&e<caster.name> &bcast &cbanditema_drawback1 &e@<target.name>"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+  - setstance{stance=casting} @self
+  - bodyclamp{m=em_bandit_a1;c=0} @self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - Aura{auraName=backstepA;interval=10;duration=60} @self
+  - Aura{auraName=ShieldennblockA;refreshDuration=true;duration=60} @self
+  - state{remove=true;s=drawback1;lo=3} @self
+  - state{remove=true;s=drawback2;lo=3} @self
+  - randomskill{s=[
+      - state{state=drawback1;li=3;lo=8} @self
+    ],
+      [
+      - state{state=drawback2;li=3;lo=8} @self
+    ];sync=true}
+
+  # QUICKBLOCK STATE REMOVE
+  - state{remove=true;s=backstep;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;state=attack4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+  #
+  - potion{type=SLOW;duration=30;level=5;p=false;force=true} @Self
+  - skill{s=drawback_antilunge2;repeat=5;repeatInterval=1} @Self
+  - skill{s=drawback_antilunge1;delay=6;repeat=16;repeatInterval=1} @Self
+  - skill{s=drawback_antilunge2;delay=23;repeat=5;repeatInterval=1} @Self
+  - look{headOnly=false;immediately=true;repeat=40;repeatInterval=1} @TargetedTarget
+  - delay 30
+  - randomskill{s=bruttack1_banditema,bruttack2_banditema;repeat=3;repeatinterval=6} @LivingInCone{a=120.0;r=6;rot=0.0;ignore=samefaction} 0.7
+  - bodyclamp{m=em_bandit_a1;c=50} @self
+  - setstance{stance=normal} @self ?stance{s=casting}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?variableEquals{var=caster.casting;value="1"}
+
+#====== BACKSTEPS
+
+banditema_bstpcheck_secondary1:
+  Cooldown: 4
+  Conditions:
+  - targetwithin{d=4.9}
+  - variableEquals{var=caster.running;value="1"} castinstead meleebanditematrigger2
+  - variableEquals{var=caster.casting;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - hasaura{n=backstepB} false
+  - stance{s=normal} true
+  - stance{s=casting} false
+  TargetConditions:
+  - inblock{b=AIR} false
+  - isSprinting{} true
+  Skills:
+  - setstance{stance=casting} @self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - Aura{auraName=backstepA;interval=10;duration=60} @self
+  - state{state=backstep;li=0;lo=6;speed=1;delay=1} @self ?!variableEquals{var=caster.parrying;value="1"}
+  - state{state=backstep_parrying;li=0;lo=6;speed=1;delay=1} @self ?variableEquals{var=caster.parrying;value="1"}
+  #REMOVESTATES
+  - state{remove=true;s=drawback1;lo=3} @self
+  - state{remove=true;s=drawback2;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;state=attack4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+  - spin{d=1;v=45} @self
+  - delay 3
+  - sound{s=embandits1:custom.embandit1.reffortc;p=1;v=1.4} 0.7 @SelfLocation
+  - spin{d=5;v=-3} @self
+  - blockstepsound{p=1.3;v=0.5} @selflocation 
+  - lunge{v=-0.75;repeat=5;repeatInterval=1} @forward{f=-10}
+  - delay 13
+  - potion{type=SLOW;duration=12;lvl=5;p=false} @Self
+  - randomskill{s=bruttack1_banditema,bruttack2_banditema,bruttack4_banditema;repeat=3;repeatinterval=6} @LivingInCone{a=120.0;r=6;rot=0.0;ignore=samefaction} 0.7
+  - blockstepsound{p=1.3;v=0.5} @selflocation 
+  - look{headOnly=false;immediately=true;repeat=5;repeatInterval=1} @Target
+  - setstance{stance=normal} @self ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+banditema_bstpcheck_secondary2:
+  Cooldown: 4
+  Conditions:
+  - targetwithin{d=4.9}
+  - variableEquals{var=caster.running;value="1"} castinstead meleebanditematrigger2
+  - variableEquals{var=caster.casting;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - hasaura{n=backstepB} false
+  - stance{s=normal} true
+  - stance{s=casting} false
+  TargetConditions:
+  - inblock{b=AIR} false
+  - isSprinting{} true
+  Skills:
+  - setstance{stance=casting} @self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - Aura{auraName=backstepA;interval=10;duration=60} @self
+  - effect:particles{particle=reddust;color=#1dd7ee;amount=105;hS=0.1;vS=0.1;size=0.8;repeat=1;repeatinterval=1} @Forward{f=-6;sideOffset=-2;y=1} 0
+  - state{state=backstep;li=0;lo=6;speed=1;delay=1} @self ?!variableEquals{var=caster.parrying;value="1"}
+  - state{state=backstep_parrying;li=0;lo=6;speed=1;delay=1} @self ?variableEquals{var=caster.parrying;value="1"}
+  #REMOVESTATES
+  - state{remove=true;s=drawback1;lo=3} @self
+  - state{remove=true;s=drawback2;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;state=attack4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+  - spin{d=1;v=-45} @self
+  - delay 3
+  - sound{s=embandits1:custom.embandit1.reffortc;p=1;v=1.4} 0.7 @SelfLocation
+  - spin{d=5;v=-3} @self
+  - blockstepsound{p=1.3;v=0.5} @selflocation 
+  - lunge{v=-0.75;repeat=5;repeatInterval=1} @forward{f=-10}
+  - delay 13
+  - potion{type=SLOW;duration=12;lvl=5;p=false} @Self
+  - randomskill{s=bruttack1_banditema,bruttack2_banditema,bruttack4_banditema;repeat=3;repeatinterval=6} @LivingInCone{a=120.0;r=6;rot=0.0;ignore=samefaction} 0.7
+  - blockstepsound{p=1.3;v=0.5} @selflocation 
+  - look{headOnly=false;immediately=true;repeat=5;repeatInterval=1} @Target
+  - setstance{stance=normal} @self ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+
+
+#COUNTERATTACKCS ===
+
+
+
+
+#
+
+#
+
+
+#
+
+
+
+countertacked_banditema_A:
+  Conditions:
+  - variableEquals{var=caster.vulnerable;value="1"} true
+  - variableEquals{var=caster.skillxd;value="bruttack1"} castinstead cakd_banditema_cattack1
+  - variableEquals{var=caster.skillxd;value="bruttack2"} castinstead cakd_banditema_cattack2
+  - variableEquals{var=caster.skillxd;value="bruttack3"} castinstead cakd_banditema_cattack3
+  - variableEquals{var=caster.skillxd;value="bruttack4"} castinstead cakd_banditema_cattack3
+  Skills:
+  - message{m="Casted &ecountertacked_banditema_A"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+
+  
+cakd_antilunge1:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} true
+  Skills:
+  - lunge{v=-0.1} @forward{f=-10}
+  - propel{v=0.15;repeat=4;repeatInterval=1} @forward{f=10} 0
+  - message{m="Saltum 1"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+cakd_banditema_cattack1:
+  Conditions:
+  - hasaura{n=nule_parry} false
+  Skills:
+  - effect:particles{particle=crit;amount=22;hS=0.5;vS=0.7;speed=0.01;y=1.5} @Self
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.9
+  - sound{s=embandits1:custom.embandit1.emweaponclash;p=<random.float.1.2to1.6>;v=1.5} @selflocation
+  - message{m="Casted &eCountered attack 1"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+  - setstance{stance=casting} @self ?stance{s=normal}
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self
+  - variableadd{var=caster.hitrec;amount=3} @self
+  - state{s=attack1_parried;li=1;lo=3} @self
+  - Aura{auraName=parried;duration=35} @self
+
+  #
+  - potion{type=SLOW;duration=22;level=8;p=false;force=true} @Self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack1_parrying;lo=3} @self
+  - state{remove=true;s=attack2_parrying;lo=3} @self
+  - state{remove=true;s=attack3_parrying;lo=3} @self
+  #
+  - setvariable{var=caster.hurtened;value="1";t=integer} @Self
+  - setvariable{var=caster.countered;value="1";t=integer} @Self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - skill{s=cakd_antilunge1;delay=2;repeat=14;repeatInterval=1} @Self
+  - delay 8
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=60;mergeSameCaster=true} @self 0.4
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self ?stance{s=casting}
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - Aura{auraName=bruttackrest;duration=30} @self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self 0.4
+  - delay 25
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self
+    - setvariable{var=caster.casting;value="0";t=integer} @Self];sync=false} @Self ?!variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.skillxd;value="bruttack5"} ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+
+cakd_banditema_cattack2:
+  Conditions:
+  - hasaura{n=nule_parry} false
+  Skills:
+  - effect:particles{particle=crit;amount=22;hS=0.5;vS=0.7;speed=0.5;y=1.5} @Self
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.9
+  - sound{s=embandits1:custom.embandit1.emweaponclash;p=<random.float.1.2to1.6>;v=1.5} @selflocation
+  - message{m="Casted &eCountered attack 2"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+  - setstance{stance=casting} @self ?stance{s=normal}
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self
+  - variableadd{var=caster.hitrec;amount=3} @self
+  - state{s=attack2_parried;li=1;lo=3} @self ?!variableEquals{var=caster.parrying;value="1"}
+  - state{s=attack2_parried_parrying;li=1;lo=3} @self ?variableEquals{var=caster.parrying;value="1"}
+  - Aura{auraName=parried;duration=35} @self
+
+  #
+  - potion{type=SLOW;duration=22;level=8;p=false;force=true} @Self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack1_parrying;lo=3} @self
+  - state{remove=true;s=attack2_parrying;lo=3} @self
+  - state{remove=true;s=attack3_parrying;lo=3} @self
+  #
+  - setvariable{var=caster.hurtened;value="1";t=integer} @Self
+  - setvariable{var=caster.countered;value="1";t=integer} @Self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - skill{s=cakd_antilunge1;delay=2;repeat=14;repeatInterval=1} @Self
+  - delay 8
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=60;mergeSameCaster=true} @self 0.4
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self ?stance{s=casting}
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - Aura{auraName=bruttackrest;duration=30} @self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self 0.4
+  - delay 25
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self ?!variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.skillxd;value="bruttack5"} ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+  
+
+cakd_banditema_cattack3:
+  Conditions:
+  - hasaura{n=nule_parry} false
+  Skills:
+  - effect:particles{particle=crit;amount=22;hS=0.5;vS=0.7;speed=0.5;y=1.5} @Self
+  - message{m="Casted &eCountered attack 3"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+  - setstance{stance=casting} @self ?stance{s=normal}
+  - sound{s=embandits1:custom.embandit1.emweaponclash;p=<random.float.1.2to1.6>;v=1.5} @selflocation
+  - sound{s=embandits1:custom.embandit1.banditem_hurtbad;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.9
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self
+  - variableadd{var=caster.hitrec;amount=4} @self
+  - state{s=attack3_parried;li=1;lo=3} @self ?!variableEquals{var=caster.parrying;value="1"}
+  - state{s=attack3_parried_parrying;li=1;lo=3} @self ?variableEquals{var=caster.parrying;value="1"}
+  - Aura{auraName=parried;duration=50} @self
+
+  #
+  - potion{type=SLOW;duration=32;level=8;p=false;force=true} @Self
+
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=3} @self
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack1_parrying;lo=3} @self
+  - state{remove=true;s=attack2_parrying;lo=3} @self
+  - state{remove=true;s=attack3_parrying;lo=3} @self
+  #
+  - setvariable{var=caster.hurtened;value="1";t=integer} @Self
+  - setvariable{var=caster.countered;value="1";t=integer} @Self
+  - setvariable{var=caster.casting;value="1";t=integer} @Self
+  - skill{s=cakd_antilunge1;delay=2;repeat=14;repeatInterval=1} @Self
+  - delay 8
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=60;mergeSameCaster=true} @self 0.4
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self ?stance{s=casting}
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - Aura{auraName=bruttackrest;duration=30} @self
+    - Aura{auraName=bruttackrest2;duration=30} @self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self 0.4
+  - delay 25
+  - skill{s=[
+    - setvariable{var=caster.hurtened;value="0";t=integer} @Self
+    - setstance{stance=normal} @self
+    - setvariable{var=caster.casting;value="0";t=integer} @Self
+    - lockmodel{l=false;delay=0} @Self];sync=false} @Self ?!variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.skillxd;value="bruttack5"} ?!variableEquals{var=caster.skillxd;value="hurtedvbad"}
+
+# NORMAL COMBO ATTACKS
+
+bruttack1_banditema:
+  Cooldown: 1
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - stance{s=casting} false
+  - stance{s=normal} true
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+#  - variableInRange{var=caster.hitrec;value=>2} true
+  - variableEquals{var=caster.casting;value="1"} false
+  - hasaura{n=bruttackrest} false
+  TargetConditions:
+  - distance{d=0to7} true
+  - fieldofview{angle=40} true
+  Skills:
+  - lockmodel{l=false;delay=2} @Self
+  - setstance{stance=casting} @self
+  - bodyclamp{m=em_bandit_a1;c=0} @self
+  - sound{s=embandits1:custom.embandit1.channelattack;p=1.55;v=1} ######SOUND
+  - state{remove=true;s=run_roll;lo=1;frame=0} @self
+  - variableadd{var=caster.combor;amount=1} @self
+  - state{state=attack1;li=1;lo=10} @self 
+  #
+  - state{remove=true;s=attack2;lo=3} @self
+  - state{remove=true;s=attack2_start;lo=3} @self
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+  
+  #
+  - setvariable{var=caster.comboa;value="1";t=integer} @Self ?variableEquals{var=caster.comboa;value="0"}
+  - setvariable{var=caster.skillxd;value="bruttack1";t=string;delay=2} @Self
+  - potion{type=SLOW;duration=25;level=7;p=false;force=false} @Self
+  - look{headOnly=false;immediately=false;repeat=5;repeatInterval=1} @Target
+  - spin{d=22;v=0;delay=2} @self
+  - lockmodel{l=true;delay=0} @Self
+  - message{m="VULNERABLE &dMADE BY &bENDESMAN";delay=11} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - setvariable{var=caster.vulnerable;value="1";t=integer;delay=11} @Self
+  - setvariable{var=caster.vulnerable;value="0";t=integer;delay=14} @Self
+  - message{m="NOVULNERABLE";delay=14} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - delay 10
+
+  - skill{s=banditema_bruttack1_adaptivelunge;delay=0} @LivingInCone{a=160.0;r=7;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - delay 4
+  - sound{s=embandits1:custom.embandit1.banditem_efforta;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.7 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - setvariable{var=caster.casting;value="1";t=integer;delay=2} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+##  - sound{s=embandits1:custom.embandit1.herostun;p=2;v=1} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+#  - skill{s=banditema_atk1FX_A;delay=1} @self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest} ### EFFECTENN
+  - delay 2
+  - sound{s=embandits1:custom.embandit1.attackwindup;p=<random.float.1.4to1.7>;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - sound{s=embandits1:custom.embandit1.knifewindup;p=<random.float.1to1.4>;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 1 #17
+
+  - Aura{auraName=attack1state;duration=16} @Self ?!variableEquals{var=caster.hurtened;value="1"}
+  
+  
+  
+  - skill{s=bruttack1_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=150.0;r=3.5;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack1_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=120.0;r=3;rot=40;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack1_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=200.0;r=1;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack1_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=180.0;r=1.3;rot=70.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+#  - skill{s=bruttack1_cripple_banditema;sync=true} @LivingInCone{a=160.0;r=3.9;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+  
+#  - skill{s=banditema_atk1FX_B} @self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest} ### EFFECTENN
+  - delay 5 #22
+  - setstance{stance=normal} @self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - randomskill{s=bruttack2_banditema;repeat=2;repeatinterval=4} @LivingInCone{a=120.0;r=5.5;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.5 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 2 #24
+  - spin{d=12;v=0} @self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - potion{type=SLOW;duration=13;level=7;p=false;force=true} @Self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - delay 13
+  - lockmodel{l=false;delay=0} @Self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - bodyclamp{m=em_bandit_a1;c=50} @self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ?variableEquals{var=caster.skillxd;value="bruttack1"} ?!variableEquals{var=caster.hurtened;value="1"}
+
+bruttack1_banditema_hit:
+  TargetConditions:
+  - hasaura{n=hit_bruttack1_banditema} false
+  - samefaction false
+  Skills:
+  - basedamage{m=0.9;ignorearmor=false} @TargetedTarget
+  - basedamage{m=0.4;ignorearmor=false;preventknockback=true;preventimmunity=true} @TargetedTarget @TargetedTarget{conditions=[  - distance{d=<1.3} true ]}
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1.6;v=1} @TargetedTarget
+  - skill{s=outrun_aleviate_banditema;sync=true} @TargetedTarget{limit=1;sort=NEAREST}
+  - Aura{auraName=hit_bruttack1_banditema;duration=7} @TargetedTarget
+  - potion{type=SLOW;duration=10;lvl=7} @TargetedTarget
+  - delay <random.5to6>
+  - randomskill{s=bruttack2_banditema;sync=false;repeat=4;repeatinterval=4} @LivingInCone{a=100.0;r=6.4;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.82 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  
+
+bruttack2_banditema:
+  Cooldown: 1 #CHANGE
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - stance{s=casting} false
+  - stance{s=normal} true
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+#  - variableInRange{var=caster.hitrec;value=>2} true
+  - variableEquals{var=caster.casting;value="1"} false
+  - hasaura{n=bruttackrest} false
+  TargetConditions:
+  - distance{d=0to7} true
+  - fieldofview{angle=60} true
+  Skills:
+  - lockmodel{l=false;delay=2} @Self
+  - message{m="&d<caster.var.skillxd>";delay=9} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - setstance{stance=casting} @self
+  - bodyclamp{m=em_bandit_a1;c=0} @self
+  - sound{s=embandits1:custom.embandit1.channelattack;p=2;v=1} ######SOUND
+  - state{remove=true;s=run_roll;lo=1;frame=0} @self
+  - variableadd{var=caster.combor;amount=1} @self
+  - state{state=attack2_start;li=1;lo=10} @self ?!hasaura{n=attack1state}
+  - state{state=attack2;li=1;lo=10} @Self ?hasaura{n=attack1state}
+  
+#STATEREMOTION
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=attack3;lo=3} @self
+  - state{remove=true;s=attack3_start;lo=3} @self
+  - state{remove=true;s=attack1;lo=5} @self
+  
+  - state{remove=true;s=attack1_parrying;lo=3} @self
+  - state{remove=true;s=attack2_parrying_start;lo=3} @self
+  - state{remove=true;s=attack3_parrying;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+#
+  
+  #
+  - setvariable{var=caster.comboa;value="1";t=integer} @Self ?variableEquals{var=caster.comboa;value="0"}
+  - setvariable{var=caster.skillxd;value="bruttack2";t=string;delay=1} @Self
+  - potion{type=SLOW;duration=22;level=7;p=false;force=false} @Self
+  - look{headOnly=false;immediately=false;repeat=5;repeatInterval=1} @Target
+  - spin{d=20;v=0;delay=2} @self
+  - message{m="VULNERABLE &dMADE BY &bENDESMAN";delay=9} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - message{m="NOTVULNERABLE &dMADE BY &bENDESMAN";delay=12} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - setvariable{var=caster.vulnerable;value="1";t=integer;delay=9} @Self
+  - setvariable{var=caster.vulnerable;value="0";t=integer;delay=12} @Self
+  - delay 8
+  
+  - skill{s=banditema_bruttack1_adaptivelunge;delay=1} @LivingInCone{a=160.0;r=7;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - delay 3
+  - setvariable{var=caster.casting;value="1";t=integer;delay=2} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+#  - sound{s=embandits1:custom.embandit1.herostun;p=1.8;v=1} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+#  - skill{s=banditema_atk2FX_A;delay=2} @self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest} ### EFFECTENN
+  - sound{s=embandits1:custom.embandit1.banditem_efforta;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.7 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - delay 2 #14
+  - sound{s=embandits1:custom.embandit1.attackwindup;p=<random.float.1.4to1.7>;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - sound{s=embandits1:custom.embandit1.knifewindup;p=<random.float.1to1.4>;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 1
+  - Aura{auraName=attack2state;duration=15} @self ?!variableEquals{var=caster.hurtened;value="1"}
+  
+  
+  - skill{s=bruttack2_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=150.0;r=3.5;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack2_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=120.0;r=3.5;rot=-45.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack2_banditema_hit;sync=true;repeat=2;repeatinterval=1;delay=2} @LivingInCone{a=120.0;r=3.5;rot=75.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack2_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=200.0;r=1;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+  - skill{s=outrun_aleviate_banditema;sync=true} @LivingInCone{a=160.0;r=3.9;rot=0.0;ignore=samefaction} 0.8 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+#  - skill{s=banditema_atk2FX_B} @self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest} ### EFFECTENN
+  - delay 5 #19
+  - setstance{stance=normal} @self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - randomskill{s=bruttack3_banditema,bruttack4_banditema;repeat=2;repeatinterval=4} @LivingInCone{a=120.0;r=5.5;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.5 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 2 #21
+  - spin{d=12;v=0} @self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - potion{type=SLOW;duration=13;level=7;p=false;force=true} @Self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - delay 13 #34
+  - lockmodel{l=false;delay=0} @Self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - bodyclamp{m=em_bandit_a1;c=50} @self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ?variableEquals{var=caster.skillxd;value="bruttack2"} ?!variableEquals{var=caster.hurtened;value="1"}
+
+
+bruttack2_banditema_hit:
+  TargetConditions:
+  - hasaura{n=hit_bruttack2_banditema} false
+  - samefaction false
+  Skills:
+  - basedamage{m=0.9;ignorearmor=false} @TargetedTarget
+  - basedamage{m=0.4;ignorearmor=false;preventknockback=true;preventimmunity=true} @TargetedTarget @TargetedTarget{conditions=[  - distance{d=<1.3} true ]}
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1.6;v=1} @TargetedTarget
+  - skill{s=outrun_aleviate_banditema;sync=true} @TargetedTarget{limit=1;sort=NEAREST}
+  - Aura{auraName=hit_bruttack2_banditema;duration=7} @TargetedTarget
+  - potion{type=SLOW;duration=10;lvl=7} @TargetedTarget
+  - delay <random.5to6>
+  - randomskill{s=bruttack3_banditema,bruttack4_banditema;sync=false;repeat=4;repeatinterval=4} @LivingInCone{a=100.0;r=6.4;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.82 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+
+bruttack3_banditema:
+  Cooldown: 4
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - stance{s=casting} false
+  - stance{s=normal} true
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+#  - variableInRange{var=caster.hitrec;value=>2} true
+  - variableEquals{var=caster.casting;value="1"} false
+  - hasaura{n=bruttackrest} false
+  TargetConditions:
+  - distance{d=0to7} true
+  - fieldofview{angle=40} true
+  Skills:
+  - spin{d=1;v=0} @self
+  - lockmodel{l=false;delay=2} @Self
+  - setstance{stance=casting} @self
+  - bodyclamp{m=em_bandit_a1;c=0} @self
+  - sound{s=embandits1:custom.embandit1.channelattack;p=1.2;v=1} ######SOUND
+  - state{remove=true;s=run_roll;lo=1;frame=0} @self
+  - variableadd{var=caster.combor;amount=1} @self
+  - state{state=attack3_start;li=1;lo=10} @self ?!hasaura{n=attack2state}
+  - state{state=attack3;li=1;lo=10} @Self ?hasaura{n=attack2state}
+  #STATEREMOTION
+  - state{remove=true;s=attack4;lo=3} @self
+  - state{remove=true;s=attack4_start;lo=3} @self
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+  #
+  - setvariable{var=caster.comboa;value="1";t=integer} @Self ?variableEquals{var=caster.comboa;value="0"}
+  - setvariable{var=caster.skillxd;value="bruttack3";t=string;delay=0} @Self
+  - potion{type=SLOW;duration=32;level=7;p=false;force=false} @Self
+  - look{headOnly=false;immediately=false;repeat=9;repeatInterval=1} @TargetedTarget
+  - spin{d=23;v=0;delay=10} @self
+  - lockmodel{l=true;delay=10} @Self #LOCKMODEL
+  
+  - message{m="VULNERABLE";delay=16} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - setvariable{var=caster.vulnerable;value="1";t=integer;delay=19} @Self
+  - setvariable{var=caster.vulnerable;value="0";t=integer;delay=22} @Self
+  - message{m="NOVULNERABLE";delay=20} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - delay 12
+  - Aura{auraName=bruttackrest;duration=60} @self 0.6
+  - skill{s=banditema_bruttack1_adaptivelunge;delay=1} @LivingInCone{a=180.0;r=7;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - delay 4
+  - setvariable{var=caster.casting;value="1";t=integer} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+#  - sound{s=embandits1:custom.embandit1.herostun;p=<random.float.1.3to1.6>;v=1} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2} 0
+  - skill{s=banditema_atk3FX_A;delay=3} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - sound{s=embandits1:custom.embandit1.banditem_effortb;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.7 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - delay 2
+  
+  - sound{s=embandits1:custom.embandit1.attack4reaper;p=<random.float.1to1.4>;v=1.5} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - delay 3 #21
+  - skill{s=banditema_atk3FX_B;delay=0} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  #
+  - skill{s=bruttack3_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=150.0;r=4;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack3_banditema_hit;sync=true;repeat=2;repeatinterval=1} @LivingInCone{a=200.0;r=1;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+  - projectile{onTick=banditemaattack3tick;onHit=banditemaattack3hit;mr=3;v=30;i=1;hR=1.6;vR=0.8;hp=true;hnp=true;sB=false;sE=false;hs=false;d=150;syo=1;sso=0.5} @Forward{f=5;y=0.0} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - projectile{onTick=banditemaattack3tick2;mr=4;v=30;i=3;hR=1.6;hp=true;hnp=true;vR=3;sB=false;sE=false;hs=true;d=150;syo=0;hfs=0.1;sso=0.5} @Forward{f=5;y=0.0} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  #
+
+  - sound{s=embandits1:custom.embandit1.attackwindup;p=1.6;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - skill{s=bruttack1_cripple_banditema;sync=true} @LivingInCone{a=40.0;r=4.5;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  
+  - skill{s=outrun_aleviate_banditema;sync=true} @LivingInCone{a=40.0;r=5.5;rot=0.0;ignore=samefaction} 0.8 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - basedamage{m=1.9;ignorearmor=false} @LivingInCone{a=40.0;r=4.5;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1;v=1} @LivingInCone{a=40.0;r=5.5;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - delay 10 #31
+  - setstance{stance=normal} @self ?variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - randomskill{s=bruttack2_banditema;repeat=2;repeatinterval=2} @LivingInCone{a=120.0;r=5.5;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.5 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 2 #33
+  - spin{d=8;v=0} @self ?variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - potion{type=SLOW;duration=10;level=7;p=false;force=true} @Self ?variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - delay 8
+  - lockmodel{l=false;delay=0} @Self ?variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - bodyclamp{m=em_bandit_a1;c=50} @self ?variableEquals{var=caster.skillxd;value="bruttack3"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ?variableEquals{var=caster.skillxd;value="bruttack3"}
+  
+
+bruttack3_banditema_hit:
+  TargetConditions:
+  - hasaura{n=hit_bruttack3_banditema} false
+  - samefaction false
+  Skills:
+  - basedamage{m=1.5;ignorearmor=false} @TargetedTarget
+  - basedamage{m=0.07;ignorearmor=true;preventknockback=true} @TargetedTarget
+  - basedamage{m=0.4;ignorearmor=false;preventknockback=true;preventimmunity=true} @TargetedTarget @TargetedTarget{conditions=[  - distance{d=<1.3} true ]}
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1.6;v=1} @TargetedTarget
+  - skill{s=outrun_aleviate_banditema;sync=true} @TargetedTarget{limit=1;sort=NEAREST}
+  - Aura{auraName=hit_bruttack3_banditema;duration=7} @TargetedTarget
+
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1;v=1}
+  - sound{s=embandits1:custom.embandit1.grandslashcast;pitch=2;v=2}
+  - throw{velocity=2;velocityY=1} 
+  - potion{type=LEVITATION;duration=9;level=1;p=false;delay=0} 
+  - potion{type=LEVITATION;duration=5;level=0;p=false;delay=9}
+  - potion{type=SLOW_FALLING;duration=5;level=0;p=false;delay=14}
+  - potion{type=SLOW;duration=16;lvl=7;particles=false}
+  - potion{type=SLOW;duration=40;lvl=3;delay=16;p=false}
+  - potion{type=SLOW;duration=20;lvl=2;delay=56;p=false}
+  - potion{type=SLOW;duration=20;lvl=1;delay=76;p=false} 0.5
+
+  - delay <random.5to6>
+  - randomskill{s=bruttack2_banditema;sync=false;repeat=4;repeatinterval=4} @LivingInCone{a=100.0;r=6.4;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.82 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+banditemaattack3tick:
+  Skills:
+#  - effect:particles{p=reddust;c=#BEF8E5;a=15;s=20;hs=0.45;vs=0.3;y=0;sideOffset=0;Size=1.4;delay=0} @origin
+#  - effect:particles{p=reddust;c=#BEF8E5;a=5;s=20;hs=0.1;vs=0.1;y=0;sideOffset=0.5.0625;Size=1.7;delay=0} @origin 0
+#  - effect:particles{p=reddust;c=#BEF8E5;a=5;s=20;hs=0.1;vs=0.1;y=0;sideOffset=-0.5.0625;Size=1.7;delay=0} @origin 0
+banditemaattack3tick2:
+  Skills:
+  - sound{s=embandits1:custom.embandit1.slashhitb;pitch=2;v=0.7} @Origin
+banditemaattack3hit:
+  TargetConditions:
+  - samefaction false
+  - hasaura{n=hit_bruttack3_banditema} false
+  Skills:
+
+  - skill{s=outrun_discharge_banditema} @EntitiesNearOrigin{r=3;limit=1;sort=NEAREST;ignore=samefaction}
+  - basedamage{m=1;ignorearmor=false}
+  - basedamage{m=0.07;ignorearmor=true;preventknockback=true}
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1;v=1}
+  - sound{s=embandits1:custom.embandit1.macehit;pitch=2;v=2}
+  - throw{velocity=2;velocityY=1} 
+  - potion{type=LEVITATION;duration=9;level=1;p=false;delay=0} 
+  - potion{type=LEVITATION;duration=5;level=0;p=false;delay=9}
+  - potion{type=SLOW_FALLING;duration=5;level=0;p=false;delay=14}
+  - potion{type=SLOW;duration=16;lvl=7;particles=false}
+  - potion{type=SLOW;duration=40;lvl=4;delay=16;p=false}
+  - potion{type=SLOW;duration=20;lvl=3;delay=56;p=false}
+  - potion{type=SLOW;duration=20;lvl=2;delay=76;p=false} 0.5
+#  - randomskill{s=banditema_rage_trigger;delay=0;repeat=4;repeatinterval=8} @LivingInCone{a=110.0;r=5;rot=0.0;ignore=samefaction} 0.35
+
+bruttack4_banditema:
+  Cooldown: 1
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - stance{s=casting} false
+  - stance{s=normal} true
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+#  - variableInRange{var=caster.hitrec;value=>2} true
+  - variableEquals{var=caster.casting;value="1"} false
+  - hasaura{n=bruttackrest} false
+  TargetConditions:
+  - distance{d=0to7} true
+  - fieldofview{angle=60} true
+  Skills:
+  - lockmodel{l=false;delay=2} @Self
+  - setstance{stance=casting} @self
+  - bodyclamp{m=em_bandit_a1;c=0} @self
+  - sound{s=embandits1:custom.embandit1.channelattack;p=1.2;v=1} ######SOUND
+  - state{remove=true;s=run_roll;lo=1;frame=0} @self
+  - variableadd{var=caster.combor;amount=1} @self
+  - state{state=attack4_start;li=1;lo=10} @self ?!hasaura{n=attack2state}
+  - state{state=attack4;li=1;lo=10} @Self ?hasaura{n=attack2state}
+  #STATEREMOTION
+  - state{remove=true;s=hurtbad1;lo=3} @self
+  - state{remove=true;s=hurtbad2;lo=3} @self
+  - state{remove=true;s=hurtbad3;lo=3} @self
+  - state{remove=true;s=hurtbad4;lo=3} @self
+  - state{remove=true;s=hurtverybad1;lo=3} @self
+  - state{remove=true;s=hurtverybad2;lo=3} @self
+  - state{remove=true;s=hurtverybad3;lo=3} @self
+  - state{remove=true;s=hurtverybad4;lo=3} @self
+  #
+  - setvariable{var=caster.comboa;value="1";t=integer} @Self ?variableEquals{var=caster.comboa;value="0"}
+  - setvariable{var=caster.skillxd;value="bruttack4";t=string;delay=0} @Self
+  - potion{type=SLOW;duration=32;level=7;p=false;force=false} @Self
+  - look{headOnly=false;immediately=false;repeat=9;repeatInterval=1} @TargetedTarget
+  - spin{d=23;v=0;delay=10} @self
+  - lockmodel{l=true;delay=10} @Self #LOCKMODEL
+  
+  - message{m="VULNERABLE";delay=7} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - setvariable{var=caster.vulnerable;value="1";t=integer;delay=7} @Self
+  - setvariable{var=caster.vulnerable;value="0";t=integer;delay=10} @Self
+  - message{m="NOVULNERABLE";delay=10} @PlayersNearOrigin{r=75} 0 #debugMESSAGE
+  - delay 7
+  - sound{s=embandits1:custom.embandit1.banditem_effortb;p=<random.float.0.9to1.1>;v=1.5} @selflocation 0.7 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - skill{s=banditema_bruttack4_assasinlunge;repeat=7;repeatinterval=1} @LivingInCone{a=180.0;r=14;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - delay 2
+  - setvariable{var=caster.casting;value="1";t=integer} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+#  - sound{s=embandits1:custom.embandit1.herostun;p=<random.float.1.3to1.6>;v=1} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2} 0
+  
+  - delay 1
+  - skill{s=banditema_atk4FX_A} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  - sound{s=embandits1:custom.embandit1.attack4reaper;p=<random.float.1.6to1.9>;v=1.5;cooldown=2} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - sound{s=embandits1:custom.embandit1.attackwindup;p=<random.float.1.4to1.7>;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - sound{s=embandits1:custom.embandit1.knifewindup;p=<random.float.1to1.4>;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 2 #21
+  - skill{s=banditema_atk4FX_B;delay=0} @Self ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2}
+  #
+  - skill{s=banditema_bruttack4_hitcheck;repeat=14;repeatinterval=1}
+  #
+  - sound{s=embandits1:custom.embandit1.attackwindup;p=1.6;v=1} @selflocation ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest2}
+  - delay 6 #27
+  - skill{s=bruttack4_banditema_hit;sync=false;repeat=13;repeatinterval=1} @LivingInCone{a=230.0;r=1;rot=-20.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 4 #31
+  - setstance{stance=normal} @self ?variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.casting;value="0";t=integer} @Self ?variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - randomskill{s=banditema_drawback1,[  - skill{s=banditema_bstpcheck_secondary1;sync=true} @Forward{f=-6;sideOffset=-2;y=-2.2}],[  - skill{s=banditema_bstpcheck_secondary2;sync=true} @Forward{f=-6;sideOffset=2;y=-2.2}]} @TargetedTarget 0.5
+#  - randomskill{s=bruttack2_banditema;repeat=2;repeatinterval=2} @LivingInCone{a=120.0;r=5.5;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.5 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - delay 2 #33
+  - spin{d=8;v=0} @self ?variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - potion{type=SLOW;duration=10;level=7;p=false;force=true} @Self ?variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - delay 8
+  - lockmodel{l=false;delay=0} @Self ?variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - bodyclamp{m=em_bandit_a1;c=50} @self ?variableEquals{var=caster.skillxd;value="bruttack4"} ?!variableEquals{var=caster.hurtened;value="1"}
+  - setvariable{var=caster.skillxd;value="none";t=string} @Self ?variableEquals{var=caster.skillxd;value="bruttack4"}
+banditema_bruttack4_hitcheck:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  Skills:
+  - skill{s=bruttack4_banditema_hit;sync=false} @LivingInCone{a=150.0;r=2;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack4_banditema_hit;sync=false} @LivingInCone{a=180.0;r=2;rot=75.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+  - skill{s=bruttack4_banditema_hit;sync=false} @LivingInCone{a=240.0;r=1;rot=0.0;ignore=samefaction} ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+banditema_bruttack4_assasinlunge:
+  TargetConditions:
+  - distance{d=0to1} castinstead banditema_bruttack4_assasinlunge_reach
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  Skills:
+  - propel{v=0.55} @forward{f=10} 
+banditema_bruttack4_assasinlunge_reach:
+  Cooldown: 2
+  TargetConditions:
+  - distance{d=0to1} true 
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  Skills:
+  - propel{v=0.006} @forward{f=10} 
+
+bruttack4_banditema_hit:
+  TargetConditions:
+  - hasaura{n=hit_bruttack4_banditema} false
+  - samefaction false
+  Skills:
+  - Aura{auraName=bruttackrest;duration=60} @self 0.6
+  - basedamage{m=1.5;ignorearmor=false} @TargetedTarget
+  - basedamage{m=0.07;ignorearmor=true;preventknockback=true} @TargetedTarget
+  - basedamage{m=0.4;ignorearmor=false;preventknockback=true;preventimmunity=true} @TargetedTarget @TargetedTarget{conditions=[  - distance{d=<1.3} true ]}
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=2;v=1} @TargetedTarget
+  - sound{s=embandits1:custom.embandit1.slashhita;p=2;v=1} @TargetedTarget
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1.2;v=1} @TargetedTarget
+  - skill{s=outrun_aleviate_banditema;sync=true} @TargetedTarget{limit=1;sort=NEAREST}
+  - Aura{auraName=hit_bruttack4_banditema;duration=15} @TargetedTarget
+  
+  - effect:particles{particle=block_crack;material=red_wool;amount=15;hS=0.4;vS=0.4;size=1.2;y=1.2;repeat=1;repeatinterval=2} @TargetedTarget
+
+  - effect:sound{s=entity.magma_cube.hurt;volume=1.0;pitch=1.5;delay=5} @TargetedTarget
+  - effect:sound{s=entity.turtle.egg_break;volume=0.7;pitch=0.6;delay=5} @TargetedTarget
+
+
+  - sound{s=embandits1:custom.embandit1.slashhitb;p=1;v=1}
+#  - sound{s=embandits1:custom.embandit1.grandslashcast;pitch=2;v=2}
+  - throw{velocity=2;velocityY=0} 
+  - potion{type=LEVITATION;duration=9;level=1;p=false;delay=0} 
+  - potion{type=LEVITATION;duration=5;level=0;p=false;delay=9}
+  - potion{type=SLOW_FALLING;duration=5;level=0;p=false;delay=14}
+  - potion{type=SLOW;duration=16;lvl=7;particles=false}
+  - potion{type=SLOW;duration=40;lvl=3;delay=16;p=false}
+  - potion{type=SLOW;duration=20;lvl=2;delay=56;p=false}
+  - potion{type=SLOW;duration=20;lvl=1;delay=76;p=false} 0.5
+
+  - delay <random.5to6>
+#  - randomskill{s=bruttack2_banditema;sync=false;repeat=4;repeatinterval=4} @LivingInCone{a=100.0;r=6.4;rot=0.0;ignore=samefaction;limit=1;sort=NEAREST} 0.82 ?!variableEquals{var=caster.hurtened;value="1"} ?!hasaura{n=bruttackrest2} ?!hasaura{n=bruttackrest}
+
+
+banditema_bruttack1_adaptivelunge:
+  TargetConditions:
+  - distance{d=0to1} false
+  - distance{d=1to4} orElseCast banditema_bruttack1_adaptivelunge2
+  Conditions:
+  Skills:
+  - propel{v=0.2;repeat=4;repeatInterval=1} @forward{f=10}
+  - message{m="Saltum 1"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+banditema_bruttack1_adaptivelunge2:
+  Conditions:
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - targetwithin{d=8} true
+  Skills:
+  - propel{v=0.3;repeat=7;repeatInterval=1} @forward{f=10}
+  - message{m="Saltum 2"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+bruttack1_cripple_banditema:
+  Skills:
+  - potion{type=LEVITATION;duration=2;level=4;p=false;delay=0}
+  - throw{velocity=1;velocityY=2}
+  - potion{type=LEVITATION;duration=2;level=2;p=false;delay=2}
+  - potion{type=LEVITATION;duration=1;level=1;p=false;delay=4}
+  - potion{type=SLOW_FALLING;duration=5;level=0;p=false;delay=5}
+  - potion{type=SLOW;duration=10;lvl=7}
+  - potion{type=SLOW;duration=20;level=0;p=false;force=true;delay=10}
+
+#
+#
+#
+#
+#################################################
+#################################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#RAGETRIGGERS
+
+banditema_rage_trigger:
+  Cooldown: 10
+  Conditions:
+  - variableEquals{var=caster.skillxd;value="hurtedvbad"} false
+  - stance{s=casting} false
+  - stance{s=normal} true
+  - variableEquals{var=caster.hurtened;value="1"} false
+  - variableEquals{var=caster.skillxd;value="decapitation"} false
+  - variableEquals{var=caster.casting;value="1"} false
+#  - variableInRange{var=caster.runstacks;value=>5} true
+  Skills:
+  - sound{s=entity.pillager.celebrate;p=<random.float.0.9to1.1>;v=1.5;delay=2} @SelfLocation
+  - potion{type=SLOW;duration=1;level=0;p=false;force=true} @Self
+
+  - look{headOnly=false;immediately=false;repeat=10;repeatInterval=1} @TargetedTarget
+
+  - Aura{auraName=shielderbanditema;onTick=banditema_sdppcheck;interval=7;duration=140;mergeSameCaster=true} @self 0.8
+  - DefaultState{type=WALK;state=walk_fast;li=10;lo=10} @self ?!variableEquals{var=caster.running;value="2"} ?!variableEquals{var=caster.running;value="1"}
+  - setspeed{speed=1.45;type=walking} @Self ?!variableEquals{var=caster.running;value="2"} ?!variableEquals{var=caster.running;value="1"}
+  - Aura{desot=true;auraName=checkragebanditema;onTick=banditema_rageproximitycheck;onEnd=banditema_rageproximitycheckEND;interval=15;duration=400} @self
+  - setvariable{var=caster.ragestacks;value="11";t=integer} @Self ?variableInRange{var=caster.ragestacks;value=<10}
+  - setvariable{var=caster.rage;value="1";t=integer} @Self
+  - delay 34
+
+  - randomskill{s=bruttack1_banditema,bruttack1_banditema,bruttack1_banditema,bruttack2_banditema,bruttack2_banditema,bruttack4_banditema;repeat=3;repeatinterval=6} @LivingInCone{a=110.0;r=5;rot=0.0;ignore=samefaction} 0.5
+
+  
+
+
+banditema_rageproximitycheck:
+  Conditions:
+  - targetwithin{d=4} castinstead banditema_rageproximitycheckb
+  - incombat orElseCast banditema_rageproximitycheck_nocombat
+  - variableInRange{var=caster.ragestacks;value=<1} castinstead banditema_rageproximitycheckc
+  Skills:
+  - variablesubtract{var=caster.ragestacks;amount=1} @self 0.7
+  - message{m="ragestax <caster.var.ragestacks> STACKS"} @PlayersNearOrigin{r=75} 0 #DEBUGMESSAGE
+banditema_rageproximitycheck_nocombat:
+  Conditions:
+  - variableEquals{var=caster.parrying;value="1"} true
+  - incombat false
+  Skills:
+  - auraremove{aura=checkragebanditema} @self
+  - auraremove{aura=checkragebanditema1b} @self
+  - Aura{auraName=ragecooldown;duration=40} @self
+  - effect:particles{particle=reddust;color=#e2eb32;amount=15;hS=0.1;vS=0.1;size=0.8;repeat=2;repeatinterval=1} @Origin{y=2.4} 0 #DEBUG
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self
+  - state{state=parrying_to_normal;li=2;lo=3} @self
+  - potion{type=SLOW;duration=8;level=5;p=false;force=true} @Self
+  - DefaultState{type=WALK;state=walk;li=10;lo=15} @self ?!variableEquals{var=caster.running;value="2"} ?!variableEquals{var=caster.running;value="1"}
+  - DefaultState{type=IDLE;state=idle;li=14;lo=15;delay=1} @self
+  - setspeed{speed=1;type=walking} @self
+banditema_rageproximitycheckb:
+  Conditions:
+  - targetwithin{d=4} true
+  - variableEquals{var=caster.running;value="2"} false
+  Skills:
+  - variablesubtract{var=caster.ragestacks;amount=1} @self 1
+  - variablesubtract{var=caster.ragestacks;amount=1} @self 0.55
+  - variablesubtract{var=caster.ragestacks;amount=1} @self 0.3
+  - skill{s=[
+    - auraremove{aura=checkragebanditema} @self
+    - auraremove{aura=checkragebanditema1b} @self
+    - setvariable{var=caster.parrying;value="0";t=integer} @Self
+    - Aura{auraName=ragecooldown;duration=120} @self
+    - setvariable{var=caster.ragestacks;value="0";t=integer} @Self
+    - potion{type=SLOW;duration=8;level=5;p=false;force=true} @Self
+    - state{state=parrying_to_normal;li=2;lo=3} @self
+    - DefaultState{type=WALK;state=walk;li=10;lo=15} @self
+    - DefaultState{type=IDLE;state=idle;li=14;lo=15;delay=1} @self
+    - setspeed{speed=1;type=walking} @self];sync=true} @self 0.16 ############## 0.25
+
+banditema_rageproximitycheckc:
+  Conditions:
+  - variableEquals{var=caster.parrying;value="1"} true
+  Skills:
+  - auraremove{aura=checkragebanditema} @self
+  - auraremove{aura=checkragebanditema1b} @self
+  - Aura{auraName=ragecooldown;duration=120} @self
+  - effect:particles{particle=reddust;color=#e2eb32;amount=15;hS=0.1;vS=0.1;size=0.8;repeat=2;repeatinterval=1} @Origin{y=2.4} 0 #DEBUG
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self
+  - setvariable{var=caster.ragestacks;value="0";t=integer} @Self
+  - potion{type=SLOW;duration=8;level=5;p=false;force=true} @Self
+  - state{state=parrying_to_normal;li=2;lo=3} @self
+  - DefaultState{type=WALK;state=walk;li=10;lo=15} @self ?!variableEquals{var=caster.running;value="2"} ?!variableEquals{var=caster.running;value="1"}
+  - DefaultState{type=IDLE;state=idle;li=14;lo=15;delay=1} @self
+  - setspeed{speed=1;type=walking} @self
+banditema_rageproximitycheckEND:
+  Conditions:
+  - variableEquals{var=caster.parrying;value="1"} true
+  Skills:
+  - Aura{auraName=ragecooldown;duration=120} @self
+  - effect:particles{particle=reddust;color=#e2eb32;amount=15;hS=0.1;vS=0.1;size=0.8;repeat=2;repeatinterval=1} @Origin{y=2.4} 0 #DEBUG
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self
+  - setvariable{var=caster.ragestacks;value="0";t=integer} @Self
+  - potion{type=SLOW;duration=8;level=5;p=false;force=true} @Self
+  - state{state=parrying_to_normal;li=2;lo=3} @self
+  - DefaultState{type=WALK;state=walk;li=10;lo=15} @self ?!variableEquals{var=caster.running;value="2"} ?!variableEquals{var=caster.running;value="1"}
+  - DefaultState{type=IDLE;state=idle;li=14;lo=15;delay=1} @self
+  - setspeed{speed=1;type=walking} @self
+banditema_rageproximitycheckd:
+  Conditions:
+  - variableEquals{var=caster.parrying;value="1"} true
+  Skills:
+  - auraremove{aura=checkragebanditema} @self
+  - auraremove{aura=checkragebanditema1b} @self
+  - Aura{auraName=ragecooldown;duration=180} @self
+  - effect:particles{particle=reddust;color=#e2eb32;amount=15;hS=0.1;vS=0.1;size=0.8;repeat=2;repeatinterval=1} @Origin{y=2.4} 0 #DEBUG
+  - setvariable{var=caster.parrying;value="0";t=integer} @Self
+  - setvariable{var=caster.ragestacks;value="0";t=integer} @Self
+  - state{state=parrying_to_normal;li=2;lo=3} @self
+  - potion{type=SLOW;duration=8;level=5;p=false;force=true} @Self
+  - DefaultState{type=WALK;state=walk;li=10;lo=15} @self ?!variableEquals{var=caster.running;value="2"} ?!variableEquals{var=caster.running;value="1"}
+  - DefaultState{type=IDLE;state=idle;li=14;lo=15;delay=1} @self
+  - setspeed{speed=1;type=walking} @self
+
+####RUNNER PROTOCOL
+
+banditema_runprotocolcheck:
+  Conditions:
+  - incombat true
+  - targetwithin{d=5} false
+  - variableEquals{var=caster.running;value="2"} false
+  Skills:
+  - skill{s=banditema_runprotocol_addstacks;sync=true} 
+  - randomskill{s=banditema_rage_trigger;sync=true} @Target 0.6 ?variableInRange{var=caster.runstacks;value=>10} true
+banditema_runprotocol_addstacks:
+  Conditions:
+  - hasaura{n=rageprotocoled} false
+  Skills:
+  - variableadd{var=caster.runstacks;amount=1} @self 0.9
+  - variableadd{var=caster.runstacks;amount=1} @self 0.4 ?variableInRange{var=caster.runstacks;value=>4}
+  - variableadd{var=caster.runstacks;amount=1} @self 0.7 ?targetnotwithin{d=12}
+  - variableadd{var=caster.runstacks;amount=1} @self 0.56 ?targetnotwithin{d=18}
+
