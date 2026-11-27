@@ -5,12 +5,12 @@
 en-Version: 8
 
 # This is the prefix that will be sent at the beginning of every single message sent in the language file.
-Prefix: '&7[&eItemJoin&7]'
+Prefix: '&#FFD36B✦ &#C9CDD6Objetos &8»'
 
 # These are simply general messages sent from the plugin item usages.
 general:
-  failedOverwrite: '%prefix% &cFailed to give you &4%fail_count% &citems, you are not allowed to overwrite items!'
-  failedInventory: '%prefix% &cFailed to give you &4%fail_count% &citems, your inventory is full!'
+  failedOverwrite: '%prefix% &#FF6B6BNo hay hueco para &f%fail_count% &#FF6B6Bobjetos.'
+  failedInventory: '%prefix% &#FF6B6BTu inventario está lleno: se han perdido &f%fail_count% &#FF6B6Bobjetos. Libera espacio.'
   econSuccess: '%prefix% &aSuccessfully ran the command for &e$%cost%&a.'
   econFailed: '%prefix% &cYou do not have enough to run this command! \n%prefix% &cYou have &4$%balance% &cof the required &4$%cost%.'
   itemSuccess: '%prefix% &aSuccessfully ran the command for &e%cost% %item_type%(s)&a.'
@@ -74,21 +74,21 @@ commands:
     updatesDisabled: '%prefix% &cUpdate checking is currently disabled in the config.yml \n%prefix% &cIf you wish to use the auto update feature, you will need to enable it.'
     tooManyRequests: '%prefix% &c&l[403] &cFailed to check for updates, the update server has detected too many access requests, try again later.'
   get:
-    givenYou: '%prefix% &aYou were given &b%amount%x &7[&e%item%&7]&a.'
-    givenYou_All: '%prefix% &aYou were given &ball items&a.'
-    givenTarget: '%prefix% &aYou gave %target_player% &b%amount%x &7[&e%item%&7]&a.'
-    givenTarget_All: '%prefix% &aYou gave %target_player% &ball items&a.'
+    givenYou: '%prefix% &#C9CDD6Has conseguido &#FFD36B%amount%x %item%&#C9CDD6.'
+    givenYou_All: '%prefix% &#C9CDD6Has recibido todos los objetos.'
+    givenTarget: '%prefix% &#C9CDD6Has dado &#FFD36B%amount%x %item% &#C9CDD6a &f%target_player%&#C9CDD6.'
+    givenTarget_All: '%prefix% &#C9CDD6Has dado todos los objetos a &f%target_player%&#C9CDD6.'
     givenOnline: '%prefix% &aYou have given the item &b%amount% &7[&b%item%&7]&a to the players &e%players%&c.'
     targetTriedGive: '%prefix% &4%target_player% &ctried to give you &7[&b%item%&7]&c but it already exists in your inventory!'
     targetTriedGive_All: '%prefix% &4%target_player% &ctried to give you &ball items &cbut they already exists in your inventory!'
-    failedInventory: '%prefix% &cYou already have the item &7[&b%item%&7]&c!'
-    failedInventory_All: '%prefix% &cYou already have &ball items&c!'
+    failedInventory: '%prefix% &#FF6B6BYa tienes &f%item%&#FF6B6B.'
+    failedInventory_All: '%prefix% &#FF6B6BYa tienes todos estos objetos.'
     targetFailedInventory: '%prefix% &4%target_player% &calready has the item &7[&b%item%&7]&c!'
     targetFailedInventory_All: '%prefix% &4%target_player% &calready has &ball the items&c!'
     onlineFailedInventory: '%prefix% &4All Online Players &calready have the item &7[&b%item%&7]&c!'
     targetNoPermission: '%prefix% &4%target_player% &cdoes not meet the permission requirement to receive the item &7[&b%item%&7]&c.'
     targetNoPermission_All: '%prefix% &4%target_player% &cwas missing permissions for an item so &lnot &ball items &cwere given.'
-    noPermission: '%prefix% &cYou do not meet the permission requirement to receive the item &7[&b%item%&7]&c.'
+    noPermission: '%prefix% &#FF6B6BNo puedes recibir &f%item%&#FF6B6B.'
     noPermission_All: '%prefix% &cYou were missing permissions for an item so &lnot &ball items &cwere given.'
     usageSyntax: '%prefix% &cYou should use /ItemJoin get <itemname> <player> as console.'
     badSyntax: '%prefix% &cIncorrect usage! Syntax: /itemjoin get <itemname> &lOR &c/itemjoin get <itemname> <amount>!'
