@@ -12,31 +12,41 @@ dialogo_mozo_veterano:
 dialogo_mozo_veterano_frase1:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient>\n<#F4EBDD>Treinta años cargando cajas. Mis\n<#F4EBDD>rodillas lo cuentan cada mañana.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient><newline><#F4EBDD>Treinta años cargando cajas. Mis<newline><#F4EBDD>rodillas lo cuentan cada mañana.";delay=1} @Passenger
   - message{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient> <dark_gray>» <#F4EBDD>Treinta años cargando cajas. Mis rodillas lo cuentan cada mañana."} @trigger
 
 dialogo_mozo_veterano_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.10} @self
-  - speak{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient>\n<#F4EBDD>Antes había un barco al día.\n<#F4EBDD>Ahora uno por semana, si hay suerte.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient><newline><#F4EBDD>Antes había un barco al día.<newline><#F4EBDD>Ahora uno por semana, si hay suerte.";delay=1} @Passenger
   - message{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient> <dark_gray>» <#F4EBDD>Antes había un barco al día. Ahora uno por semana, si hay suerte."} @trigger
 
 dialogo_mozo_veterano_frase3:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.15} @self
-  - speak{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient>\n<#F4EBDD>El truco es levantar con\n<#F4EBDD>las piernas, no con el orgullo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient><newline><#F4EBDD>El truco es levantar con<newline><#F4EBDD>las piernas, no con el orgullo.";delay=1} @Passenger
   - message{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient> <dark_gray>» <#F4EBDD>El truco es levantar con las piernas, no con el orgullo."} @trigger
 
 dialogo_mozo_veterano_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.00} @self
-  - speak{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient>\n<#F4EBDD>Una vez cargué una\n<#F4EBDD>caja que hablaba. No preguntes.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient><newline><#F4EBDD>Una vez cargué una<newline><#F4EBDD>caja que hablaba. No preguntes.";delay=1} @Passenger
   - message{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient> <dark_gray>» <#F4EBDD>Una vez cargué una caja que hablaba. No preguntes."} @trigger
 
 dialogo_mozo_veterano_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient>\n<#F4EBDD>Los jóvenes corren mucho y\n<#F4EBDD>cargan poco. Así no se hace.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient><newline><#F4EBDD>Los jóvenes corren mucho y<newline><#F4EBDD>cargan poco. Así no se hace.";delay=1} @Passenger
   - message{m="<#8C6A43>⚓ <gradient:#E8D9C0:#8C6A43>Mozo Veterano</gradient> <dark_gray>» <#F4EBDD>Los jóvenes corren mucho y cargan poco. Así no se hace."} @trigger
 
 dialogo_mozo_aprendiz:
@@ -52,31 +62,41 @@ dialogo_mozo_aprendiz:
 dialogo_mozo_aprendiz_frase1:
   Skills:
   - sound{s=entity.villager.celebrate;v=0.8;p=1.05} @self
-  - speak{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient>\n<#FFF8DC>¡Hoy es mi primer día!\n<#FFF8DC>Bueno, el tercero. ¡Pero cuenta!";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient><newline><#FFF8DC>¡Hoy es mi primer día!<newline><#FFF8DC>Bueno, el tercero. ¡Pero cuenta!";delay=1} @Passenger
   - message{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient> <dark_gray>» <#FFF8DC>¡Hoy es mi primer día! Bueno, el tercero. ¡Pero cuenta!"} @trigger
 
 dialogo_mozo_aprendiz_frase2:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.10} @self
-  - speak{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient>\n<#FFF8DC>¿Esta caja va arriba o\n<#FFF8DC>abajo? Siempre se me olvida.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient><newline><#FFF8DC>¿Esta caja va arriba o<newline><#FFF8DC>abajo? Siempre se me olvida.";delay=1} @Passenger
   - message{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient> <dark_gray>» <#FFF8DC>¿Esta caja va arriba o abajo? Siempre se me olvida."} @trigger
 
 dialogo_mozo_aprendiz_frase3:
   Skills:
   - sound{s=entity.villager.celebrate;v=0.8;p=1.15} @self
-  - speak{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient>\n<#FFF8DC>El veterano dice que algún\n<#FFF8DC>día cargaré dos a la vez.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient><newline><#FFF8DC>El veterano dice que algún<newline><#FFF8DC>día cargaré dos a la vez.";delay=1} @Passenger
   - message{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient> <dark_gray>» <#FFF8DC>El veterano dice que algún día cargaré dos a la vez."} @trigger
 
 dialogo_mozo_aprendiz_frase4:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.00} @self
-  - speak{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient>\n<#FFF8DC>¡Mira cuántas llevo!\n<#FFF8DC>Una. Pero bien llevada.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient><newline><#FFF8DC>¡Mira cuántas llevo!<newline><#FFF8DC>Una. Pero bien llevada.";delay=1} @Passenger
   - message{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient> <dark_gray>» <#FFF8DC>¡Mira cuántas llevo! Una. Pero bien llevada."} @trigger
 
 dialogo_mozo_aprendiz_frase5:
   Skills:
   - sound{s=entity.villager.celebrate;v=0.8;p=1.05} @self
-  - speak{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient>\n<#FFF8DC>Si se me cae algo,\n<#FFF8DC>tú no has visto nada, ¿vale?";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient><newline><#FFF8DC>Si se me cae algo,<newline><#FFF8DC>tú no has visto nada, ¿vale?";delay=1} @Passenger
   - message{m="<#E0B23A>✦ <gradient:#FFF2B3:#E0B23A>Aprendiz de Mozo</gradient> <dark_gray>» <#FFF8DC>Si se me cae algo, tú no has visto nada, ¿vale?"} @trigger
 
 dialogo_mozo_cargador:
@@ -92,30 +112,40 @@ dialogo_mozo_cargador:
 dialogo_mozo_cargador_frase1:
   Skills:
   - sound{s=entity.ravager.step;v=0.8;p=1.05} @self
-  - speak{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient>\n<#EEF0F2>Dame algo pesado y te lo\n<#EEF0F2>llevo al otro lado del puerto.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient><newline><#EEF0F2>Dame algo pesado y te lo<newline><#EEF0F2>llevo al otro lado del puerto.";delay=1} @Passenger
   - message{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient> <dark_gray>» <#EEF0F2>Dame algo pesado y te lo llevo al otro lado del puerto."} @trigger
 
 dialogo_mozo_cargador_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.10} @self
-  - speak{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient>\n<#EEF0F2>Mis brazos no se cansan. Mi\n<#EEF0F2>espalda sí, pero no le hago caso.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient><newline><#EEF0F2>Mis brazos no se cansan. Mi<newline><#EEF0F2>espalda sí, pero no le hago caso.";delay=1} @Passenger
   - message{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient> <dark_gray>» <#EEF0F2>Mis brazos no se cansan. Mi espalda sí, pero no le hago caso."} @trigger
 
 dialogo_mozo_cargador_frase3:
   Skills:
   - sound{s=entity.ravager.step;v=0.8;p=1.15} @self
-  - speak{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient>\n<#EEF0F2>¿Una carrera hasta el\n<#EEF0F2>almacén? Con caja incluida.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient><newline><#EEF0F2>¿Una carrera hasta el<newline><#EEF0F2>almacén? Con caja incluida.";delay=1} @Passenger
   - message{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient> <dark_gray>» <#EEF0F2>¿Una carrera hasta el almacén? Con caja incluida."} @trigger
 
 dialogo_mozo_cargador_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.00} @self
-  - speak{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient>\n<#EEF0F2>Desayuné seis huevos. Hoy no\n<#EEF0F2>hay caja que me pare.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient><newline><#EEF0F2>Desayuné seis huevos. Hoy no<newline><#EEF0F2>hay caja que me pare.";delay=1} @Passenger
   - message{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient> <dark_gray>» <#EEF0F2>Desayuné seis huevos. Hoy no hay caja que me pare."} @trigger
 
 dialogo_mozo_cargador_frase5:
   Skills:
   - sound{s=entity.ravager.step;v=0.8;p=1.05} @self
-  - speak{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient>\n<#EEF0F2>Si me pagaran por\n<#EEF0F2>caja, ya sería noble.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient><newline><#EEF0F2>Si me pagaran por<newline><#EEF0F2>caja, ya sería noble.";delay=1} @Passenger
   - message{m="<#8A9099>⛏ <gradient:#E6E6E6:#8A9099>Cargador</gradient> <dark_gray>» <#EEF0F2>Si me pagaran por caja, ya sería noble."} @trigger
 

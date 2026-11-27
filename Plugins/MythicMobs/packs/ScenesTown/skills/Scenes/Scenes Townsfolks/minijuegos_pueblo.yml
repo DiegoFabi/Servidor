@@ -35,7 +35,9 @@ almacen_hablar:
   - holding{m=IRON_INGOT} false
   Skills:
   - sound{s=block.barrel.open;v=0.8;p=1.1} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient>\n<#F9F1E6>Tengo cajas de contrabando sin abrir.\n<#C9CDD6>8 lingotes de hierro y abres tres.";o=0.4;r=12;d=90;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient><newline><#F9F1E6>Tengo cajas de contrabando sin abrir.<newline><#C9CDD6>8 lingotes de hierro y abres tres.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient> <dark_gray>» <#F9F1E6>Psst… tengo cajas que nadie ha reclamado. Por <#D9D9D9>8 lingotes de hierro<#F9F1E6> abres tres."} @trigger
   - message{m="<#7FB2FF>➜ Sostén 8 lingotes de hierro en la mano y haz clic derecho."} @trigger
 almacen_jugar:
@@ -53,7 +55,9 @@ almacen_abrir:
   - setvariable{var=target.almacen_cd;type=INTEGER;value=1;duration=600} @trigger
   - command{c="itemquitar <trigger.name> 8 iron ingot"}
   - sound{s=entity.villager.yes;v=0.8;p=1} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient>\n<#F9F1E6>Trato hecho. A ver qué esconden…";o=0.4;r=12;d=100;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Almacenero</gradient><newline><#F9F1E6>Trato hecho. A ver qué esconden…";delay=1} @Passenger
   - skill{s=almacen_caja;delay=20} @trigger
   - skill{s=almacen_caja;delay=50} @trigger
   - skill{s=almacen_caja;delay=80} @trigger
@@ -111,7 +115,9 @@ chef_hablar:
   Skills:
   - sound{s=block.smoker.smoke;v=0.8;p=1} @self
   - effect:particles{p=campfire_cosy_smoke;a=4;hs=0.2;vs=0.4;s=0.01;y=2;vd=24} @self
-  - speak{m="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient>\n<#FFF1E6>¿Sabes cocinar? Tráeme un plato\n<#FFF1E6>y te diré cuántas estrellas vale.";o=0.4;r=12;d=90;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient><newline><#FFF1E6>¿Sabes cocinar? Tráeme un plato<newline><#FFF1E6>y te diré cuántas estrellas vale.";delay=1} @Passenger
   - message{m="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient> <dark_gray>» <#FFF1E6>Tráeme comida cocinada y la probaré. Si me gusta, te doy uno de mis postres."} @trigger
   - message{m="<#7FB2FF>➜ Sostén comida cocinada en la mano y haz clic derecho."} @trigger
 chef_probar:
@@ -133,7 +139,9 @@ chef_probar:
   - sound{s=entity.generic.eat;v=1;p=1.1;delay=8} @self
   - sound{s=entity.generic.eat;v=1;p=0.9;delay=16} @self
   - effect:particles{p=composter;a=10;hs=0.3;vs=0.3;y=1.8;delay=8;vd=24} @self
-  - speak{m="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient>\n<#FFF1E6>Mmm… a ver, a ver…";o=0.4;r=12;d=50;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FFB38A>✿ <gradient:#FFE0C2:#E07A45>Chef</gradient><newline><#FFF1E6>Mmm… a ver, a ver…";delay=1} @Passenger
   - randomskill{s=chef_1 1,chef_2 2,chef_3 3,chef_4 2.5,chef_5 1.2;delay=40} @trigger
 chef_1:
   Skills:

@@ -27,37 +27,49 @@ dialogo_pescadero:
 dialogo_pescadero_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Pescado fresco de esta mañana. Mira\n<#DFF4FF>esos ojos, brillan todavía.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈<newline><#DFF4FF>Pescado fresco de esta mañana. Mira<newline><#DFF4FF>esos ojos, brillan todavía.";delay=1} @Passenger
   - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Pescado fresco de esta mañana. Mira esos ojos, brillan todavía."} @trigger
 
 dialogo_pescadero_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>El salmón se acaba rápido, si lo\n<#DFF4FF>quieres no lo pienses mucho.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈<newline><#DFF4FF>El salmón se acaba rápido, si lo<newline><#DFF4FF>quieres no lo pienses mucho.";delay=1} @Passenger
   - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>El salmón se acaba rápido, si lo quieres no lo pienses mucho."} @trigger
 
 dialogo_pescadero_frase3:
   Skills:
   - sound{s=entity.villager.trade;v=0.8;p=1.05} @self
-  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Mi primo lo saca del río y yo lo\n<#DFF4FF>vendo. Negocio de familia.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈<newline><#DFF4FF>Mi primo lo saca del río y yo lo<newline><#DFF4FF>vendo. Negocio de familia.";delay=1} @Passenger
   - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Mi primo lo saca del río y yo lo vendo. Negocio de familia."} @trigger
 
 dialogo_pescadero_frase4:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Con un poco de sal y fuego,\n<#DFF4FF>cualquier pez sabe a gloria.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈<newline><#DFF4FF>Con un poco de sal y fuego,<newline><#DFF4FF>cualquier pez sabe a gloria.";delay=1} @Passenger
   - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Con un poco de sal y fuego, cualquier pez sabe a gloria."} @trigger
 
 dialogo_pescadero_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>No te fíes del que vende pescado sin\n<#DFF4FF>olor, algo esconde.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈<newline><#DFF4FF>No te fíes del que vende pescado sin<newline><#DFF4FF>olor, algo esconde.";delay=1} @Passenger
   - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>No te fíes del que vende pescado sin olor, algo esconde."} @trigger
 
 dialogo_pescadero_frase6:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - speak{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈\n<#DFF4FF>Hoy el mar estuvo generoso. Ojalá\n<#DFF4FF>mañana también.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <#3A9BDC>≈<newline><#DFF4FF>Hoy el mar estuvo generoso. Ojalá<newline><#DFF4FF>mañana también.";delay=1} @Passenger
   - message{m="<#3A9BDC>≈ <gradient:#8FD8FF:#3A9BDC>Pescadero</gradient> <dark_gray>» <#DFF4FF>Hoy el mar estuvo generoso. Ojalá mañana también."} @trigger
 
 # ---------- ✎ Librero | paleta #E3C29B -> #A8754A ----------
@@ -76,37 +88,49 @@ dialogo_librero:
 dialogo_librero_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Este de aquí lo leí dos veces. La\n<#F7EDE3>segunda me gustó más.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎<newline><#F7EDE3>Este de aquí lo leí dos veces. La<newline><#F7EDE3>segunda me gustó más.";delay=1} @Passenger
   - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Este de aquí lo leí dos veces. La segunda me gustó más."} @trigger
 
 dialogo_librero_frase2:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Un buen libro no se termina, se\n<#F7EDE3>queda contigo un rato.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎<newline><#F7EDE3>Un buen libro no se termina, se<newline><#F7EDE3>queda contigo un rato.";delay=1} @Passenger
   - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Un buen libro no se termina, se queda contigo un rato."} @trigger
 
 dialogo_librero_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Tengo mapas viejos, poemas y alguna\n<#F7EDE3>receta. Lo que haga falta.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎<newline><#F7EDE3>Tengo mapas viejos, poemas y alguna<newline><#F7EDE3>receta. Lo que haga falta.";delay=1} @Passenger
   - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Tengo mapas viejos, poemas y alguna receta. Lo que haga falta."} @trigger
 
 dialogo_librero_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Los de tapa roja son de aventuras,\n<#F7EDE3>los azules de historia.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎<newline><#F7EDE3>Los de tapa roja son de aventuras,<newline><#F7EDE3>los azules de historia.";delay=1} @Passenger
   - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Los de tapa roja son de aventuras, los azules de historia."} @trigger
 
 dialogo_librero_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Hay quien compra libros por la\n<#F7EDE3>portada. Yo no juzgo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎<newline><#F7EDE3>Hay quien compra libros por la<newline><#F7EDE3>portada. Yo no juzgo.";delay=1} @Passenger
   - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Hay quien compra libros por la portada. Yo no juzgo."} @trigger
 
 dialogo_librero_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎\n<#F7EDE3>Si lees despacio, el libro te dura\n<#F7EDE3>más. Truco de librero.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <#A8754A>✎<newline><#F7EDE3>Si lees despacio, el libro te dura<newline><#F7EDE3>más. Truco de librero.";delay=1} @Passenger
   - message{m="<#A8754A>✎ <gradient:#E3C29B:#A8754A>Librero</gradient> <dark_gray>» <#F7EDE3>Si lees despacio, el libro te dura más. Truco de librero."} @trigger
 
 # ---------- ⚔ Armero | paleta #DDE3EC -> #8C96A8 ----------

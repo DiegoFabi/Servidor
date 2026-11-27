@@ -1,0 +1,24 @@
+# Bocadillo de diálogo de los NPC de Scenes: texto flotante montado sobre el NPC.
+# Sustituye al "speak" de MythicMobs (salía oscuro y con fondo): brillo máximo,
+# sin fondo y con sombra. Uno por NPC (el anterior se borra al hablar de nuevo),
+# dura 4,5 s y se borra solo si deja de ir montado.
+scene_bocadillo:
+  Type: TEXT_DISPLAY
+  DisplayOptions:
+    Text: ' '
+    Billboard: CENTER
+    BlockLight: 15
+    SkyLight: 15
+    BackgroundColor: 0,0,0,0
+    Shadowed: true
+    Alignment: CENTER
+    Scale: 0.6,0.6,0.6
+    Translation: 0,0.45,0
+    ViewRange: 0.25
+  Options:
+    Despawn: true
+    Persistent: false
+  Skills:
+  - remove{delay=90} @self ~onSpawn
+  - remove @self ~onTimer:20 ?!mounted
+  - remove @self ~onDismounted

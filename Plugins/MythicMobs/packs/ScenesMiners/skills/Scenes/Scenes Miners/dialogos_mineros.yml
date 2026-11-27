@@ -26,37 +26,49 @@ dialogo_minero:
 dialogo_minero_frase1:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏\n<#F4F0EC>Dicen que más abajo hay diamantes.\n<#F4F0EC>Siempre dicen eso.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏<newline><#F4F0EC>Dicen que más abajo hay diamantes.<newline><#F4F0EC>Siempre dicen eso.";delay=1} @Passenger
   - message{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <dark_gray>» <#F4F0EC>Dicen que más abajo hay diamantes. Siempre dicen eso."} @trigger
 
 dialogo_minero_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏\n<#F4F0EC>Lleva siempre antorchas de sobra,\n<#F4F0EC>nunca sabes.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏<newline><#F4F0EC>Lleva siempre antorchas de sobra,<newline><#F4F0EC>nunca sabes.";delay=1} @Passenger
   - message{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <dark_gray>» <#F4F0EC>Lleva siempre antorchas de sobra, nunca sabes."} @trigger
 
 dialogo_minero_frase3:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.85} @self
-  - speak{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏\n<#F4F0EC>El ruido de la piedra ya ni lo\n<#F4F0EC>escucho. Bueno, casi.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏<newline><#F4F0EC>El ruido de la piedra ya ni lo<newline><#F4F0EC>escucho. Bueno, casi.";delay=1} @Passenger
   - message{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <dark_gray>» <#F4F0EC>El ruido de la piedra ya ni lo escucho. Bueno, casi."} @trigger
 
 dialogo_minero_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏\n<#F4F0EC>Hoy encontré hierro. No es oro, pero\n<#F4F0EC>paga el pan.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏<newline><#F4F0EC>Hoy encontré hierro. No es oro, pero<newline><#F4F0EC>paga el pan.";delay=1} @Passenger
   - message{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <dark_gray>» <#F4F0EC>Hoy encontré hierro. No es oro, pero paga el pan."} @trigger
 
 dialogo_minero_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏\n<#F4F0EC>Si escuchas siseos, corre. No\n<#F4F0EC>preguntes, corre.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏<newline><#F4F0EC>Si escuchas siseos, corre. No<newline><#F4F0EC>preguntes, corre.";delay=1} @Passenger
   - message{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <dark_gray>» <#F4F0EC>Si escuchas siseos, corre. No preguntes, corre."} @trigger
 
 dialogo_minero_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏\n<#F4F0EC>Abajo no se sabe si es de día o de\n<#F4F0EC>noche.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <#8D7B68>⛏<newline><#F4F0EC>Abajo no se sabe si es de día o de<newline><#F4F0EC>noche.";delay=1} @Passenger
   - message{m="<#8D7B68>⛏ <gradient:#D9CCBE:#8D7B68>Minero</gradient> <dark_gray>» <#F4F0EC>Abajo no se sabe si es de día o de noche."} @trigger
 
 # ---------- ☁ Minero | paleta #C9C0B7 -> #7A6F66 ----------
@@ -75,35 +87,47 @@ dialogo_minero_cansado:
 dialogo_minero_cansado_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁\n<#EFEDEA>Un rato de descanso y vuelvo al\n<#EFEDEA>túnel... un rato largo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁<newline><#EFEDEA>Un rato de descanso y vuelvo al<newline><#EFEDEA>túnel... un rato largo.";delay=1} @Passenger
   - message{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <dark_gray>» <#EFEDEA>Un rato de descanso y vuelvo al túnel... un rato largo."} @trigger
 
 dialogo_minero_cansado_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁\n<#EFEDEA>Me duelen hasta las ideas de tanto\n<#EFEDEA>picar.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁<newline><#EFEDEA>Me duelen hasta las ideas de tanto<newline><#EFEDEA>picar.";delay=1} @Passenger
   - message{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <dark_gray>» <#EFEDEA>Me duelen hasta las ideas de tanto picar."} @trigger
 
 dialogo_minero_cansado_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁\n<#EFEDEA>Zzz... más hondo... más hondo...";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁<newline><#EFEDEA>Zzz... más hondo... más hondo...";delay=1} @Passenger
   - message{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <dark_gray>» <#EFEDEA>Zzz... más hondo... más hondo..."} @trigger
 
 dialogo_minero_cansado_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁\n<#EFEDEA>Despiértame si alguien grita\n<#EFEDEA>diamante.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁<newline><#EFEDEA>Despiértame si alguien grita<newline><#EFEDEA>diamante.";delay=1} @Passenger
   - message{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <dark_gray>» <#EFEDEA>Despiértame si alguien grita diamante."} @trigger
 
 dialogo_minero_cansado_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁\n<#EFEDEA>Esta piedra es más cómoda de lo que\n<#EFEDEA>parece.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁<newline><#EFEDEA>Esta piedra es más cómoda de lo que<newline><#EFEDEA>parece.";delay=1} @Passenger
   - message{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <dark_gray>» <#EFEDEA>Esta piedra es más cómoda de lo que parece."} @trigger
 
 dialogo_minero_cansado_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁\n<#EFEDEA>Doce horas en la mina. Me lo he\n<#EFEDEA>ganado.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <#7A6F66>☁<newline><#EFEDEA>Doce horas en la mina. Me lo he<newline><#EFEDEA>ganado.";delay=1} @Passenger
   - message{m="<#7A6F66>☁ <gradient:#C9C0B7:#7A6F66>Minero</gradient> <dark_gray>» <#EFEDEA>Doce horas en la mina. Me lo he ganado."} @trigger

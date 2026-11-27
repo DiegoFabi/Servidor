@@ -12,48 +12,64 @@ dialogo_viajero:
 dialogo_viajero_frase1:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>Llevo tres lunas caminando y aún\n<#EEF5E8>no encuentro el fin del camino.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>Llevo tres lunas caminando y aún<newline><#EEF5E8>no encuentro el fin del camino.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>Llevo tres lunas caminando y aún no encuentro el fin del camino."} @trigger
 
 dialogo_viajero_frase2:
   Skills:
   - sound{s=entity.wandering_trader.ambient;v=0.8;p=1.10} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>Más allá de las montañas hay un\n<#EEF5E8>pueblo donde el pan sabe a miel.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>Más allá de las montañas hay un<newline><#EEF5E8>pueblo donde el pan sabe a miel.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>Más allá de las montañas hay un pueblo donde el pan sabe a miel."} @trigger
 
 dialogo_viajero_frase3:
   Skills:
   - sound{s=entity.horse.breathe;v=0.8;p=1.15} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>Si ves ruinas con hiedra\n<#EEF5E8>negra, no entres de noche. Créeme.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>Si ves ruinas con hiedra<newline><#EEF5E8>negra, no entres de noche. Créeme.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>Si ves ruinas con hiedra negra, no entres de noche. Créeme."} @trigger
 
 dialogo_viajero_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.00} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>Mi caballo conoce mejor el camino\n<#EEF5E8>que yo. Por eso le hago caso.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>Mi caballo conoce mejor el camino<newline><#EEF5E8>que yo. Por eso le hago caso.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>Mi caballo conoce mejor el camino que yo. Por eso le hago caso."} @trigger
 
 dialogo_viajero_frase5:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>¿Vas lejos? Lleva agua, comida y\n<#EEF5E8>una antorcha más de las que crees.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>¿Vas lejos? Lleva agua, comida y<newline><#EEF5E8>una antorcha más de las que crees.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>¿Vas lejos? Lleva agua, comida y una antorcha más de las que crees."} @trigger
 
 dialogo_viajero_frase6:
   Skills:
   - sound{s=entity.wandering_trader.ambient;v=0.8;p=1.10} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>He visto un ciervo de luz\n<#EEF5E8>en el bosque. Nadie me cree.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>He visto un ciervo de luz<newline><#EEF5E8>en el bosque. Nadie me cree.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>He visto un ciervo de luz en el bosque. Nadie me cree."} @trigger
 
 dialogo_viajero_frase7:
   Skills:
   - sound{s=entity.horse.breathe;v=0.8;p=1.15} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>Los mapas mienten,\n<#EEF5E8>los caminos no.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>Los mapas mienten,<newline><#EEF5E8>los caminos no.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>Los mapas mienten, los caminos no."} @trigger
 
 dialogo_viajero_frase8:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.00} @self
-  - speak{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient>\n<#EEF5E8>Cada pueblo tiene un secreto. Este\n<#EEF5E8>todavía no me ha contado el suyo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient><newline><#EEF5E8>Cada pueblo tiene un secreto. Este<newline><#EEF5E8>todavía no me ha contado el suyo.";delay=1} @Passenger
   - message{m="<#6FA85A>✧ <gradient:#D9F0C8:#6FA85A>Viajero</gradient> <dark_gray>» <#EEF5E8>Cada pueblo tiene un secreto. Este todavía no me ha contado el suyo."} @trigger
 

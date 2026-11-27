@@ -26,35 +26,47 @@ dialogo_pescador:
 dialogo_pescador_frase1:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Shh, que se espantan. Bueno, igual\n<#DFF7FF>hoy no pican.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓<newline><#DFF7FF>Shh, que se espantan. Bueno, igual<newline><#DFF7FF>hoy no pican.";delay=1} @Passenger
   - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Shh, que se espantan. Bueno, igual hoy no pican."} @trigger
 
 dialogo_pescador_frase2:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>La paciencia es el mejor cebo, eso\n<#DFF7FF>decía mi padre.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓<newline><#DFF7FF>La paciencia es el mejor cebo, eso<newline><#DFF7FF>decía mi padre.";delay=1} @Passenger
   - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>La paciencia es el mejor cebo, eso decía mi padre."} @trigger
 
 dialogo_pescador_frase3:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Ayer saqué uno así de grande. No,\n<#DFF7FF>más grande.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓<newline><#DFF7FF>Ayer saqué uno así de grande. No,<newline><#DFF7FF>más grande.";delay=1} @Passenger
   - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Ayer saqué uno así de grande. No, más grande."} @trigger
 
 dialogo_pescador_frase4:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Al amanecer el agua está tranquila,\n<#DFF7FF>es la mejor hora.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓<newline><#DFF7FF>Al amanecer el agua está tranquila,<newline><#DFF7FF>es la mejor hora.";delay=1} @Passenger
   - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Al amanecer el agua está tranquila, es la mejor hora."} @trigger
 
 dialogo_pescador_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>A veces no pesco nada, pero el rato\n<#DFF7FF>me lo llevo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓<newline><#DFF7FF>A veces no pesco nada, pero el rato<newline><#DFF7FF>me lo llevo.";delay=1} @Passenger
   - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>A veces no pesco nada, pero el rato me lo llevo."} @trigger
 
 dialogo_pescador_frase6:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - speak{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓\n<#DFF7FF>Si pica algo raro, mejor devolverlo\n<#DFF7FF>al agua. Por si acaso.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <#2F7FE0>⚓<newline><#DFF7FF>Si pica algo raro, mejor devolverlo<newline><#DFF7FF>al agua. Por si acaso.";delay=1} @Passenger
   - message{m="<#2F7FE0>⚓ <gradient:#8FE3FF:#2F7FE0>Pescador</gradient> <dark_gray>» <#DFF7FF>Si pica algo raro, mejor devolverlo al agua. Por si acaso."} @trigger

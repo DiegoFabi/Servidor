@@ -27,37 +27,49 @@ dialogo_mozo:
 dialogo_mozo_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣\n<#F9F1E6>Esta caja va al almacén y aquella al\n<#F9F1E6>puerto. O al revés.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣<newline><#F9F1E6>Esta caja va al almacén y aquella al<newline><#F9F1E6>puerto. O al revés.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <dark_gray>» <#F9F1E6>Esta caja va al almacén y aquella al puerto. O al revés."} @trigger
 
 dialogo_mozo_frase2:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.0} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣\n<#F9F1E6>Cuidado con la espalda, me lo dice\n<#F9F1E6>todo el mundo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣<newline><#F9F1E6>Cuidado con la espalda, me lo dice<newline><#F9F1E6>todo el mundo.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <dark_gray>» <#F9F1E6>Cuidado con la espalda, me lo dice todo el mundo."} @trigger
 
 dialogo_mozo_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣\n<#F9F1E6>Hoy llegaron más pedidos de lo\n<#F9F1E6>normal.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣<newline><#F9F1E6>Hoy llegaron más pedidos de lo<newline><#F9F1E6>normal.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <dark_gray>» <#F9F1E6>Hoy llegaron más pedidos de lo normal."} @trigger
 
 dialogo_mozo_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.0} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣\n<#F9F1E6>Si me ayudas con esto te invito a\n<#F9F1E6>algo. Es broma, no tengo un duro.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣<newline><#F9F1E6>Si me ayudas con esto te invito a<newline><#F9F1E6>algo. Es broma, no tengo un duro.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <dark_gray>» <#F9F1E6>Si me ayudas con esto te invito a algo. Es broma, no tengo un duro."} @trigger
 
 dialogo_mozo_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣\n<#F9F1E6>Cuento las cajas tres veces. Siempre\n<#F9F1E6>falta una.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣<newline><#F9F1E6>Cuento las cajas tres veces. Siempre<newline><#F9F1E6>falta una.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <dark_gray>» <#F9F1E6>Cuento las cajas tres veces. Siempre falta una."} @trigger
 
 dialogo_mozo_frase6:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.0} @self
-  - speak{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣\n<#F9F1E6>Lo bueno de cargar todo el día es\n<#F9F1E6>que duermo como un tronco.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <#B5835A>▣<newline><#F9F1E6>Lo bueno de cargar todo el día es<newline><#F9F1E6>que duermo como un tronco.";delay=1} @Passenger
   - message{m="<#B5835A>▣ <gradient:#EDCFA6:#B5835A>Mozo</gradient> <dark_gray>» <#F9F1E6>Lo bueno de cargar todo el día es que duermo como un tronco."} @trigger
 
 # ---------- ❦ Barrendero | paleta #DCE8C6 -> #93AD6C ----------
@@ -76,35 +88,47 @@ dialogo_barrendero:
 dialogo_barrendero_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦\n<#F5F8EF>Barro esta calle cada mañana y cada\n<#F5F8EF>tarde vuelve a estar igual.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦<newline><#F5F8EF>Barro esta calle cada mañana y cada<newline><#F5F8EF>tarde vuelve a estar igual.";delay=1} @Passenger
   - message{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <dark_gray>» <#F5F8EF>Barro esta calle cada mañana y cada tarde vuelve a estar igual."} @trigger
 
 dialogo_barrendero_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦\n<#F5F8EF>Mira por dónde pisas, que acabo de\n<#F5F8EF>pasar por ahí.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦<newline><#F5F8EF>Mira por dónde pisas, que acabo de<newline><#F5F8EF>pasar por ahí.";delay=1} @Passenger
   - message{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <dark_gray>» <#F5F8EF>Mira por dónde pisas, que acabo de pasar por ahí."} @trigger
 
 dialogo_barrendero_frase3:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - speak{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦\n<#F5F8EF>Un pueblo limpio es un pueblo feliz.\n<#F5F8EF>Eso creo yo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦<newline><#F5F8EF>Un pueblo limpio es un pueblo feliz.<newline><#F5F8EF>Eso creo yo.";delay=1} @Passenger
   - message{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <dark_gray>» <#F5F8EF>Un pueblo limpio es un pueblo feliz. Eso creo yo."} @trigger
 
 dialogo_barrendero_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦\n<#F5F8EF>Las hojas de otoño son mi peor\n<#F5F8EF>enemigo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦<newline><#F5F8EF>Las hojas de otoño son mi peor<newline><#F5F8EF>enemigo.";delay=1} @Passenger
   - message{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <dark_gray>» <#F5F8EF>Las hojas de otoño son mi peor enemigo."} @trigger
 
 dialogo_barrendero_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦\n<#F5F8EF>Me sé todos los rincones del pueblo\n<#F5F8EF>de memoria.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦<newline><#F5F8EF>Me sé todos los rincones del pueblo<newline><#F5F8EF>de memoria.";delay=1} @Passenger
   - message{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <dark_gray>» <#F5F8EF>Me sé todos los rincones del pueblo de memoria."} @trigger
 
 dialogo_barrendero_frase6:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦\n<#F5F8EF>No es un trabajo de héroes, pero\n<#F5F8EF>alguien tiene que hacerlo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <#93AD6C>❦<newline><#F5F8EF>No es un trabajo de héroes, pero<newline><#F5F8EF>alguien tiene que hacerlo.";delay=1} @Passenger
   - message{m="<#93AD6C>❦ <gradient:#DCE8C6:#93AD6C>Barrendero</gradient> <dark_gray>» <#F5F8EF>No es un trabajo de héroes, pero alguien tiene que hacerlo."} @trigger

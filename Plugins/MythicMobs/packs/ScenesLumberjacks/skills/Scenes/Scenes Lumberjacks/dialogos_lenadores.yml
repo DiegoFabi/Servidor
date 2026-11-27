@@ -26,35 +26,47 @@ dialogo_lenador:
 dialogo_lenador_frase1:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.9} @self
-  - speak{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣\n<#EAF6DE>Un buen hachazo vale más que diez\n<#EAF6DE>flojos.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣<newline><#EAF6DE>Un buen hachazo vale más que diez<newline><#EAF6DE>flojos.";delay=1} @Passenger
   - message{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <dark_gray>» <#EAF6DE>Un buen hachazo vale más que diez flojos."} @trigger
 
 dialogo_lenador_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
-  - speak{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣\n<#EAF6DE>Siempre planto un árbol por cada uno\n<#EAF6DE>que corto.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣<newline><#EAF6DE>Siempre planto un árbol por cada uno<newline><#EAF6DE>que corto.";delay=1} @Passenger
   - message{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <dark_gray>» <#EAF6DE>Siempre planto un árbol por cada uno que corto."} @trigger
 
 dialogo_lenador_frase3:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.9} @self
-  - speak{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣\n<#EAF6DE>El roble cuesta, pero da la mejor\n<#EAF6DE>leña.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣<newline><#EAF6DE>El roble cuesta, pero da la mejor<newline><#EAF6DE>leña.";delay=1} @Passenger
   - message{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <dark_gray>» <#EAF6DE>El roble cuesta, pero da la mejor leña."} @trigger
 
 dialogo_lenador_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.9} @self
-  - speak{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣\n<#EAF6DE>Cuidado, que este se cae para tu\n<#EAF6DE>lado.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣<newline><#EAF6DE>Cuidado, que este se cae para tu<newline><#EAF6DE>lado.";delay=1} @Passenger
   - message{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <dark_gray>» <#EAF6DE>Cuidado, que este se cae para tu lado."} @trigger
 
 dialogo_lenador_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
-  - speak{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣\n<#EAF6DE>El bosque huele distinto después de\n<#EAF6DE>la lluvia.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣<newline><#EAF6DE>El bosque huele distinto después de<newline><#EAF6DE>la lluvia.";delay=1} @Passenger
   - message{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <dark_gray>» <#EAF6DE>El bosque huele distinto después de la lluvia."} @trigger
 
 dialogo_lenador_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.9} @self
-  - speak{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣\n<#EAF6DE>Al final del día lo único que quiero\n<#EAF6DE>es una sopa caliente.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <#5E8C31>♣<newline><#EAF6DE>Al final del día lo único que quiero<newline><#EAF6DE>es una sopa caliente.";delay=1} @Passenger
   - message{m="<#5E8C31>♣ <gradient:#B5E08A:#5E8C31>Leñador</gradient> <dark_gray>» <#EAF6DE>Al final del día lo único que quiero es una sopa caliente."} @trigger

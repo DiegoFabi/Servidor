@@ -26,37 +26,49 @@ dialogo_luchador:
 dialogo_luchador_frase1:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - speak{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠\n<#FFE2E2>Otra ronda y descanso. Bueno, eso\n<#FFE2E2>dije hace tres rondas.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠<newline><#FFE2E2>Otra ronda y descanso. Bueno, eso<newline><#FFE2E2>dije hace tres rondas.";delay=1} @Passenger
   - message{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <dark_gray>» <#FFE2E2>Otra ronda y descanso. Bueno, eso dije hace tres rondas."} @trigger
 
 dialogo_luchador_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠\n<#FFE2E2>Mantén la guardia arriba, es lo\n<#FFE2E2>primero que se olvida.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠<newline><#FFE2E2>Mantén la guardia arriba, es lo<newline><#FFE2E2>primero que se olvida.";delay=1} @Passenger
   - message{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <dark_gray>» <#FFE2E2>Mantén la guardia arriba, es lo primero que se olvida."} @trigger
 
 dialogo_luchador_frase3:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - speak{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠\n<#FFE2E2>No se trata de golpear fuerte, sino\n<#FFE2E2>de golpear bien.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠<newline><#FFE2E2>No se trata de golpear fuerte, sino<newline><#FFE2E2>de golpear bien.";delay=1} @Passenger
   - message{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <dark_gray>» <#FFE2E2>No se trata de golpear fuerte, sino de golpear bien."} @trigger
 
 dialogo_luchador_frase4:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.95} @self
-  - speak{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠\n<#FFE2E2>Mañana me va a doler todo, pero vale\n<#FFE2E2>la pena.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠<newline><#FFE2E2>Mañana me va a doler todo, pero vale<newline><#FFE2E2>la pena.";delay=1} @Passenger
   - message{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <dark_gray>» <#FFE2E2>Mañana me va a doler todo, pero vale la pena."} @trigger
 
 dialogo_luchador_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.95} @self
-  - speak{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠\n<#FFE2E2>Mi compañero es rápido, pero yo\n<#FFE2E2>aguanto más.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠<newline><#FFE2E2>Mi compañero es rápido, pero yo<newline><#FFE2E2>aguanto más.";delay=1} @Passenger
   - message{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <dark_gray>» <#FFE2E2>Mi compañero es rápido, pero yo aguanto más."} @trigger
 
 dialogo_luchador_frase6:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.95} @self
-  - speak{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠\n<#FFE2E2>Si quieres entrenar, espera tu\n<#FFE2E2>turno. Hay cola.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <#E04848>✠<newline><#FFE2E2>Si quieres entrenar, espera tu<newline><#FFE2E2>turno. Hay cola.";delay=1} @Passenger
   - message{m="<#E04848>✠ <gradient:#FF9A9A:#E04848>Luchador</gradient> <dark_gray>» <#FFE2E2>Si quieres entrenar, espera tu turno. Hay cola."} @trigger
 
 # ---------- ➶ Arquero | paleta #C2F59B -> #6CC24A ----------
@@ -75,37 +87,49 @@ dialogo_arquero:
 dialogo_arquero_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶\n<#EDFCE3>Respira, apunta y suelta. Lo difícil\n<#EDFCE3>es lo de respirar.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶<newline><#EDFCE3>Respira, apunta y suelta. Lo difícil<newline><#EDFCE3>es lo de respirar.";delay=1} @Passenger
   - message{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <dark_gray>» <#EDFCE3>Respira, apunta y suelta. Lo difícil es lo de respirar."} @trigger
 
 dialogo_arquero_frase2:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶\n<#EDFCE3>El viento cambió, hay que corregir\n<#EDFCE3>un poco a la izquierda.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶<newline><#EDFCE3>El viento cambió, hay que corregir<newline><#EDFCE3>un poco a la izquierda.";delay=1} @Passenger
   - message{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <dark_gray>» <#EDFCE3>El viento cambió, hay que corregir un poco a la izquierda."} @trigger
 
 dialogo_arquero_frase3:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.05} @self
-  - speak{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶\n<#EDFCE3>Hoy le di al centro dos veces.\n<#EDFCE3>Récord personal.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶<newline><#EDFCE3>Hoy le di al centro dos veces.<newline><#EDFCE3>Récord personal.";delay=1} @Passenger
   - message{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <dark_gray>» <#EDFCE3>Hoy le di al centro dos veces. Récord personal."} @trigger
 
 dialogo_arquero_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶\n<#EDFCE3>Una buena cuerda vale más que un\n<#EDFCE3>arco caro.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶<newline><#EDFCE3>Una buena cuerda vale más que un<newline><#EDFCE3>arco caro.";delay=1} @Passenger
   - message{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <dark_gray>» <#EDFCE3>Una buena cuerda vale más que un arco caro."} @trigger
 
 dialogo_arquero_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.05} @self
-  - speak{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶\n<#EDFCE3>Practico todos los días, aunque\n<#EDFCE3>llueva.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶<newline><#EDFCE3>Practico todos los días, aunque<newline><#EDFCE3>llueva.";delay=1} @Passenger
   - message{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <dark_gray>» <#EDFCE3>Practico todos los días, aunque llueva."} @trigger
 
 dialogo_arquero_frase6:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.05} @self
-  - speak{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶\n<#EDFCE3>No te pongas detrás de la diana, por\n<#EDFCE3>favor.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <#6CC24A>➶<newline><#EDFCE3>No te pongas detrás de la diana, por<newline><#EDFCE3>favor.";delay=1} @Passenger
   - message{m="<#6CC24A>➶ <gradient:#C2F59B:#6CC24A>Arquero</gradient> <dark_gray>» <#EDFCE3>No te pongas detrás de la diana, por favor."} @trigger
 
 # ---------- ✚ Sanador | paleta #B0FFE0 -> #3FC79A ----------
@@ -124,37 +148,49 @@ dialogo_sanador:
 dialogo_sanador_frase1:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.0} @self
-  - speak{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚\n<#E8FFF6>Quédate quieto, que esto escuece un\n<#E8FFF6>poco.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚<newline><#E8FFF6>Quédate quieto, que esto escuece un<newline><#E8FFF6>poco.";delay=1} @Passenger
   - message{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <dark_gray>» <#E8FFF6>Quédate quieto, que esto escuece un poco."} @trigger
 
 dialogo_sanador_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
-  - speak{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚\n<#E8FFF6>Mucha agua y descanso. La mitad de\n<#E8FFF6>mi trabajo es repetir eso.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚<newline><#E8FFF6>Mucha agua y descanso. La mitad de<newline><#E8FFF6>mi trabajo es repetir eso.";delay=1} @Passenger
   - message{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <dark_gray>» <#E8FFF6>Mucha agua y descanso. La mitad de mi trabajo es repetir eso."} @trigger
 
 dialogo_sanador_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
-  - speak{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚\n<#E8FFF6>Estos chicos se lastiman más\n<#E8FFF6>entrenando que peleando.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚<newline><#E8FFF6>Estos chicos se lastiman más<newline><#E8FFF6>entrenando que peleando.";delay=1} @Passenger
   - message{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <dark_gray>» <#E8FFF6>Estos chicos se lastiman más entrenando que peleando."} @trigger
 
 dialogo_sanador_frase4:
   Skills:
   - sound{s=entity.villager.trade;v=0.8;p=1.0} @self
-  - speak{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚\n<#E8FFF6>Las vendas limpias salvan más vidas\n<#E8FFF6>que cualquier poción.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚<newline><#E8FFF6>Las vendas limpias salvan más vidas<newline><#E8FFF6>que cualquier poción.";delay=1} @Passenger
   - message{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <dark_gray>» <#E8FFF6>Las vendas limpias salvan más vidas que cualquier poción."} @trigger
 
 dialogo_sanador_frase5:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=1.0} @self
-  - speak{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚\n<#E8FFF6>Si te mareas, siéntate. No es\n<#E8FFF6>momento de hacerse el valiente.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚<newline><#E8FFF6>Si te mareas, siéntate. No es<newline><#E8FFF6>momento de hacerse el valiente.";delay=1} @Passenger
   - message{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <dark_gray>» <#E8FFF6>Si te mareas, siéntate. No es momento de hacerse el valiente."} @trigger
 
 dialogo_sanador_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.0} @self
-  - speak{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚\n<#E8FFF6>Tengo hierbas para casi todo, menos\n<#E8FFF6>para la terquedad.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <#3FC79A>✚<newline><#E8FFF6>Tengo hierbas para casi todo, menos<newline><#E8FFF6>para la terquedad.";delay=1} @Passenger
   - message{m="<#3FC79A>✚ <gradient:#B0FFE0:#3FC79A>Sanador</gradient> <dark_gray>» <#E8FFF6>Tengo hierbas para casi todo, menos para la terquedad."} @trigger
 
 # ---------- ❣ Herido | paleta #FFBBA8 -> #D9634B ----------
@@ -173,37 +209,49 @@ dialogo_herido:
 dialogo_herido_frase1:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=0.85} @self
-  - speak{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣\n<#FFEBE6>Estoy bien, estoy bien. Solo\n<#FFEBE6>necesito un momento.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣<newline><#FFEBE6>Estoy bien, estoy bien. Solo<newline><#FFEBE6>necesito un momento.";delay=1} @Passenger
   - message{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <dark_gray>» <#FFEBE6>Estoy bien, estoy bien. Solo necesito un momento."} @trigger
 
 dialogo_herido_frase2:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣\n<#FFEBE6>No vi venir ese golpe. Literalmente.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣<newline><#FFEBE6>No vi venir ese golpe. Literalmente.";delay=1} @Passenger
   - message{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <dark_gray>» <#FFEBE6>No vi venir ese golpe. Literalmente."} @trigger
 
 dialogo_herido_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣\n<#FFEBE6>La próxima vez me agacho, lo\n<#FFEBE6>prometo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣<newline><#FFEBE6>La próxima vez me agacho, lo<newline><#FFEBE6>prometo.";delay=1} @Passenger
   - message{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <dark_gray>» <#FFEBE6>La próxima vez me agacho, lo prometo."} @trigger
 
 dialogo_herido_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣\n<#FFEBE6>Dile al sanador que no tarde, que\n<#FFEBE6>esto pica.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣<newline><#FFEBE6>Dile al sanador que no tarde, que<newline><#FFEBE6>esto pica.";delay=1} @Passenger
   - message{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <dark_gray>» <#FFEBE6>Dile al sanador que no tarde, que esto pica."} @trigger
 
 dialogo_herido_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣\n<#FFEBE6>Ganó mi compañero, pero le costó,\n<#FFEBE6>que conste.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣<newline><#FFEBE6>Ganó mi compañero, pero le costó,<newline><#FFEBE6>que conste.";delay=1} @Passenger
   - message{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <dark_gray>» <#FFEBE6>Ganó mi compañero, pero le costó, que conste."} @trigger
 
 dialogo_herido_frase6:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣\n<#FFEBE6>Ay... mejor no me hagas reír ahora.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <#D9634B>❣<newline><#FFEBE6>Ay... mejor no me hagas reír ahora.";delay=1} @Passenger
   - message{m="<#D9634B>❣ <gradient:#FFBBA8:#D9634B>Herido</gradient> <dark_gray>» <#FFEBE6>Ay... mejor no me hagas reír ahora."} @trigger
 
 # ---------- ♪ Espectador | paleta #A8EBFF -> #3FB6E8 ----------
@@ -222,35 +270,47 @@ dialogo_espectador:
 dialogo_espectador_frase1:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.25} @self
-  - speak{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪\n<#E6F9FF>¡Vamos, vamos! Ese giro estuvo\n<#E6F9FF>buenísimo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪<newline><#E6F9FF>¡Vamos, vamos! Ese giro estuvo<newline><#E6F9FF>buenísimo.";delay=1} @Passenger
   - message{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <dark_gray>» <#E6F9FF>¡Vamos, vamos! Ese giro estuvo buenísimo."} @trigger
 
 dialogo_espectador_frase2:
   Skills:
   - sound{s=entity.villager.yes;v=0.8;p=1.25} @self
-  - speak{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪\n<#E6F9FF>Yo apuesto por el de la izquierda.\n<#E6F9FF>Bueno, depende del día.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪<newline><#E6F9FF>Yo apuesto por el de la izquierda.<newline><#E6F9FF>Bueno, depende del día.";delay=1} @Passenger
   - message{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <dark_gray>» <#E6F9FF>Yo apuesto por el de la izquierda. Bueno, depende del día."} @trigger
 
 dialogo_espectador_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
-  - speak{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪\n<#E6F9FF>Vengo a ver los entrenamientos casi\n<#E6F9FF>todas las tardes.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪<newline><#E6F9FF>Vengo a ver los entrenamientos casi<newline><#E6F9FF>todas las tardes.";delay=1} @Passenger
   - message{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <dark_gray>» <#E6F9FF>Vengo a ver los entrenamientos casi todas las tardes."} @trigger
 
 dialogo_espectador_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
-  - speak{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪\n<#E6F9FF>Algún día me animo a entrar yo\n<#E6F9FF>también. Algún día.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪<newline><#E6F9FF>Algún día me animo a entrar yo<newline><#E6F9FF>también. Algún día.";delay=1} @Passenger
   - message{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <dark_gray>» <#E6F9FF>Algún día me animo a entrar yo también. Algún día."} @trigger
 
 dialogo_espectador_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
-  - speak{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪\n<#E6F9FF>Uy, ese golpe se escuchó hasta aquí.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪<newline><#E6F9FF>Uy, ese golpe se escuchó hasta aquí.";delay=1} @Passenger
   - message{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <dark_gray>» <#E6F9FF>Uy, ese golpe se escuchó hasta aquí."} @trigger
 
 dialogo_espectador_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.25} @self
-  - speak{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪\n<#E6F9FF>Mejor mirar desde aquí, es más\n<#E6F9FF>seguro.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <#3FB6E8>♪<newline><#E6F9FF>Mejor mirar desde aquí, es más<newline><#E6F9FF>seguro.";delay=1} @Passenger
   - message{m="<#3FB6E8>♪ <gradient:#A8EBFF:#3FB6E8>Espectador</gradient> <dark_gray>» <#E6F9FF>Mejor mirar desde aquí, es más seguro."} @trigger

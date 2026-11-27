@@ -26,37 +26,49 @@ dialogo_guardia:
 dialogo_guardia_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨\n<#EEF2F9>Todo tranquilo por aquí. Como debe\n<#EEF2F9>ser.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨<newline><#EEF2F9>Todo tranquilo por aquí. Como debe<newline><#EEF2F9>ser.";delay=1} @Passenger
   - message{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <dark_gray>» <#EEF2F9>Todo tranquilo por aquí. Como debe ser."} @trigger
 
 dialogo_guardia_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.94} @self
-  - speak{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨\n<#EEF2F9>Circula, viajero. Y nada de\n<#EEF2F9>problemas, ¿eh?";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨<newline><#EEF2F9>Circula, viajero. Y nada de<newline><#EEF2F9>problemas, ¿eh?";delay=1} @Passenger
   - message{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <dark_gray>» <#EEF2F9>Circula, viajero. Y nada de problemas, ¿eh?"} @trigger
 
 dialogo_guardia_frase3:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨\n<#EEF2F9>Mi turno termina al anochecer. Falta\n<#EEF2F9>muchísimo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨<newline><#EEF2F9>Mi turno termina al anochecer. Falta<newline><#EEF2F9>muchísimo.";delay=1} @Passenger
   - message{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <dark_gray>» <#EEF2F9>Mi turno termina al anochecer. Falta muchísimo."} @trigger
 
 dialogo_guardia_frase4:
   Skills:
   - sound{s=entity.villager.no;v=0.8;p=0.85} @self
-  - speak{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨\n<#EEF2F9>Si ves algo sospechoso, avísame.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨<newline><#EEF2F9>Si ves algo sospechoso, avísame.";delay=1} @Passenger
   - message{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <dark_gray>» <#EEF2F9>Si ves algo sospechoso, avísame."} @trigger
 
 dialogo_guardia_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨\n<#EEF2F9>Esta armadura pesa más de lo que\n<#EEF2F9>parece.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨<newline><#EEF2F9>Esta armadura pesa más de lo que<newline><#EEF2F9>parece.";delay=1} @Passenger
   - message{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <dark_gray>» <#EEF2F9>Esta armadura pesa más de lo que parece."} @trigger
 
 dialogo_guardia_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.85} @self
-  - speak{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨\n<#EEF2F9>El capitán dice que estemos atentos.\n<#EEF2F9>Siempre lo dice.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <#5B7DB1>⛨<newline><#EEF2F9>El capitán dice que estemos atentos.<newline><#EEF2F9>Siempre lo dice.";delay=1} @Passenger
   - message{m="<#5B7DB1>⛨ <gradient:#C3D3EA:#5B7DB1>Guardia</gradient> <dark_gray>» <#EEF2F9>El capitán dice que estemos atentos. Siempre lo dice."} @trigger
 
 # ---------- ☾ Guardia | paleta #CFC9FF -> #7B6FD6 ----------
@@ -75,35 +87,47 @@ dialogo_guardia_dormido:
 dialogo_guardia_dormido_frase1:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾\n<#F1EFFF>Zzz... no estoy durmiendo, estoy\n<#F1EFFF>vigilando con los ojos cerrados.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾<newline><#F1EFFF>Zzz... no estoy durmiendo, estoy<newline><#F1EFFF>vigilando con los ojos cerrados.";delay=1} @Passenger
   - message{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <dark_gray>» <#F1EFFF>Zzz... no estoy durmiendo, estoy vigilando con los ojos cerrados."} @trigger
 
 dialogo_guardia_dormido_frase2:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾\n<#F1EFFF>¿Eh? ¡Sí, capitán! Ah... eres tú.\n<#F1EFFF>Uf.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾<newline><#F1EFFF>¿Eh? ¡Sí, capitán! Ah... eres tú.<newline><#F1EFFF>Uf.";delay=1} @Passenger
   - message{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <dark_gray>» <#F1EFFF>¿Eh? ¡Sí, capitán! Ah... eres tú. Uf."} @trigger
 
 dialogo_guardia_dormido_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾\n<#F1EFFF>Cinco minutos más y vuelvo a la\n<#F1EFFF>ronda...";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾<newline><#F1EFFF>Cinco minutos más y vuelvo a la<newline><#F1EFFF>ronda...";delay=1} @Passenger
   - message{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <dark_gray>» <#F1EFFF>Cinco minutos más y vuelvo a la ronda..."} @trigger
 
 dialogo_guardia_dormido_frase4:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾\n<#F1EFFF>No le digas a nadie que me viste\n<#F1EFFF>así, ¿vale?";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾<newline><#F1EFFF>No le digas a nadie que me viste<newline><#F1EFFF>así, ¿vale?";delay=1} @Passenger
   - message{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <dark_gray>» <#F1EFFF>No le digas a nadie que me viste así, ¿vale?"} @trigger
 
 dialogo_guardia_dormido_frase5:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾\n<#F1EFFF>Zzz... murallas... seguras... zzz...";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾<newline><#F1EFFF>Zzz... murallas... seguras... zzz...";delay=1} @Passenger
   - message{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <dark_gray>» <#F1EFFF>Zzz... murallas... seguras... zzz..."} @trigger
 
 dialogo_guardia_dormido_frase6:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=0.63} @self
-  - speak{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾\n<#F1EFFF>Anoche hubo doble turno. Tengo los\n<#F1EFFF>ojos pegados.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <#7B6FD6>☾<newline><#F1EFFF>Anoche hubo doble turno. Tengo los<newline><#F1EFFF>ojos pegados.";delay=1} @Passenger
   - message{m="<#7B6FD6>☾ <gradient:#CFC9FF:#7B6FD6>Guardia</gradient> <dark_gray>» <#F1EFFF>Anoche hubo doble turno. Tengo los ojos pegados."} @trigger

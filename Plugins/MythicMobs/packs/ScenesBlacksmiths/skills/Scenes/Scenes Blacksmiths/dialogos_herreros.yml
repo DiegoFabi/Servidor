@@ -12,48 +12,64 @@ dialogo_herrero:
 dialogo_herrero_frase1:
   Skills:
   - sound{s=block.anvil.place;v=0.8;p=1.05} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>El buen acero no\n<#F5E6D6>se apresura. Se escucha.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>El buen acero no<newline><#F5E6D6>se apresura. Se escucha.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>El buen acero no se apresura. Se escucha."} @trigger
 
 dialogo_herrero_frase2:
   Skills:
   - sound{s=entity.villager.work_toolsmith;v=0.8;p=1.10} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>¿Ves esa chispa? Esa es la que\n<#F5E6D6>decide si una espada vive o se rompe.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>¿Ves esa chispa? Esa es la que<newline><#F5E6D6>decide si una espada vive o se rompe.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>¿Ves esa chispa? Esa es la que decide si una espada vive o se rompe."} @trigger
 
 dialogo_herrero_frase3:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.15} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>Mi abuelo forjó espadas para el Imperio.\n<#F5E6D6>Yo forjo herraduras. Así va el mundo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>Mi abuelo forjó espadas para el Imperio.<newline><#F5E6D6>Yo forjo herraduras. Así va el mundo.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>Mi abuelo forjó espadas para el Imperio. Yo forjo herraduras. Así va el mundo."} @trigger
 
 dialogo_herrero_frase4:
   Skills:
   - sound{s=block.anvil.use;v=0.8;p=1.00} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>Si traes hierro, te enseño a templarlo.\n<#F5E6D6>Si traes prisa, mejor vuelve otro día.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>Si traes hierro, te enseño a templarlo.<newline><#F5E6D6>Si traes prisa, mejor vuelve otro día.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>Si traes hierro, te enseño a templarlo. Si traes prisa, mejor vuelve otro día."} @trigger
 
 dialogo_herrero_frase5:
   Skills:
   - sound{s=block.anvil.place;v=0.8;p=1.05} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>El carbón del norte arde mejor,\n<#F5E6D6>pero ya nadie va al norte.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>El carbón del norte arde mejor,<newline><#F5E6D6>pero ya nadie va al norte.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>El carbón del norte arde mejor, pero ya nadie va al norte."} @trigger
 
 dialogo_herrero_frase6:
   Skills:
   - sound{s=entity.villager.work_toolsmith;v=0.8;p=1.10} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>Una armadura bien hecha pesa menos\n<#F5E6D6>que el miedo a no llevarla.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>Una armadura bien hecha pesa menos<newline><#F5E6D6>que el miedo a no llevarla.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>Una armadura bien hecha pesa menos que el miedo a no llevarla."} @trigger
 
 dialogo_herrero_frase7:
   Skills:
   - sound{s=entity.villager.ambient;v=0.8;p=1.15} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>No toques el yunque, está más\n<#F5E6D6>caliente que el genio de Bram.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>No toques el yunque, está más<newline><#F5E6D6>caliente que el genio de Bram.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>No toques el yunque, está más caliente que el genio de Bram."} @trigger
 
 dialogo_herrero_frase8:
   Skills:
   - sound{s=block.anvil.use;v=0.8;p=1.00} @self
-  - speak{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient>\n<#F5E6D6>Dicen que hay un forastero que\n<#F5E6D6>no se rinde. Ojalá tenga buen equipo.";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient><newline><#F5E6D6>Dicen que hay un forastero que<newline><#F5E6D6>no se rinde. Ojalá tenga buen equipo.";delay=1} @Passenger
   - message{m="<#C46A2A>⚒ <gradient:#FFCF9E:#C46A2A>Herrero</gradient> <dark_gray>» <#F5E6D6>Dicen que hay un forastero que no se rinde. Ojalá tenga buen equipo."} @trigger
 

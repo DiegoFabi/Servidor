@@ -47,7 +47,9 @@ appleseller_hablar:
   TargetConditions:
   - holding{m=DIAMOND} false
   Skills:
-  - speak{m="<#FFD36B>✦ <gradient:#FFE29A:#FFB347>¡Manzanas de la Suerte!</gradient> <#FFD36B>✦\n<#C9CDD6>Canasta sorpresa por <#5FE3FF>10 ◆ diamantes\n<#7FB2FF>➜ Sostén diamantes y haz clic";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FFD36B>✦ <gradient:#FFE29A:#FFB347>¡Manzanas de la Suerte!</gradient> <#FFD36B>✦<newline><#C9CDD6>Canasta sorpresa por <#5FE3FF>10 ◆ diamantes<newline><#7FB2FF>➜ Sostén diamantes y haz clic";delay=1} @Passenger
   - sound{s=entity.villager.ambient;v=1;p=1.2} @self
   - message{m="<#FFB347>Frutero <dark_gray>» <#E6E8EE>¡Hola, <#FFE29A><trigger.name><#E6E8EE>! Vendo manzanas de la suerte."} @trigger
   - message{m="<#C9CDD6>Por <#5FE3FF>10 ◆ diamantes <#C9CDD6>eliges una canasta sorpresa."} @trigger
@@ -60,7 +62,9 @@ appleseller_pocos:
   - holding{m=DIAMOND} true
   - hasitem{m=DIAMOND;amount=>9} false
   Skills:
-  - speak{m="<#FF6B6B>✖ ¡Son 10 diamantes, viajero!";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FF6B6B>✖ ¡Son 10 diamantes, viajero!";delay=1} @Passenger
   - sound{s=entity.villager.no;v=1;p=1} @self
   - message{m="<#FFB347>Frutero <dark_gray>» <#FF6B6B>Una canasta cuesta <#5FE3FF>10 ◆ diamantes<#FF6B6B>, vuelve cuando los tengas."} @trigger
 
@@ -73,7 +77,9 @@ appleseller_jugar:
   # Cobro con la librería global (Skript/scripts/utils/items.sk)
   - command{c="itemquitar <trigger.name> 10 diamond"}
   - setvariable{var=target.appleseller_turno;type=INTEGER;value=1} @trigger
-  - speak{m="<#FFE29A>✧ Revisando las canastas <#9EA3AE>. . .";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FFE29A>✧ Revisando las canastas <#9EA3AE>. . .";delay=1} @Passenger
   - sound{s=entity.villager.yes;v=0.8;p=1.1} @self
   - sound{s=block.barrel.open;v=1;p=1} @self
   - message{m="<#FFB347>Frutero <dark_gray>» <#E6E8EE>¡Trato hecho! Revisando las canastas..."} @trigger
@@ -94,7 +100,9 @@ appleseller_garantia:
   - variableinrange{var=target.appleseller_racha;value=>2} true
   Skills:
   - setvariable{var=target.appleseller_turno;type=INTEGER;value=0} @trigger
-  - speak{m="<#9EA3AE>Por tu mala suerte... <#FFD36B>¡va de regalo!";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#9EA3AE>Por tu mala suerte... <#FFD36B>¡va de regalo!";delay=1} @Passenger
   - skill{s=appleseller_premio_dorada} @trigger
 
 appleseller_sorteo:
@@ -110,7 +118,9 @@ appleseller_premio_dorada:
   Skills:
   - command{c="itemdar <trigger.name> 1 golden apple"}
   - setvariable{var=target.appleseller_racha;type=INTEGER;value=0;save=true} @trigger
-  - speak{m="<#FFD36B>✦ <gradient:#FFE29A:#FFB347>¡Manzana Dorada!</gradient> <#FFD36B>✦";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FFD36B>✦ <gradient:#FFE29A:#FFB347>¡Manzana Dorada!</gradient> <#FFD36B>✦";delay=1} @Passenger
   - sound{s=entity.villager.yes;v=0.8;p=1.1} @self
   - sound{s=entity.player.levelup;v=1;p=1.2} @trigger
   - particles{p=happy_villager;a=25;hs=0.6;vs=0.5;y=1.6} @self
@@ -120,7 +130,9 @@ appleseller_premio_encantada:
   Skills:
   - command{c="itemdar <trigger.name> 1 enchanted golden apple"}
   - setvariable{var=target.appleseller_racha;type=INTEGER;value=0;save=true} @trigger
-  - speak{m="<#FF9BE6>★ <gradient:#FFD36B:#FF6BD5:#B45CFF>¡Manzana Encantada!</gradient> <#FF9BE6>★";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#FF9BE6>★ <gradient:#FFD36B:#FF6BD5:#B45CFF>¡Manzana Encantada!</gradient> <#FF9BE6>★";delay=1} @Passenger
   - sound{s=entity.villager.celebrate;v=0.9;p=1.1} @self
   - sound{s=ui.toast.challenge_complete;v=1;p=1} @trigger
   - sound{s=block.amethyst_block.chime;v=1;p=1.4} @self
@@ -139,15 +151,21 @@ appleseller_premio_patata:
 
 appleseller_mala_suerte_1:
   Skills:
-  - speak{m="<#B7D98B>Vaya... <#C9CDD6>se me acabaron las buenas";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B7D98B>Vaya... <#C9CDD6>se me acabaron las buenas";delay=1} @Passenger
   - message{m="<#FFB347>Frutero <dark_gray>» <#B7D98B>Vaya... se me acabaron las buenas. <#C9CDD6>Solo me queda esta patata, perdona."} @trigger
 
 appleseller_mala_suerte_2:
   Skills:
-  - speak{m="<#B7D98B>Esta venía del fondo del carro...";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B7D98B>Esta venía del fondo del carro...";delay=1} @Passenger
   - message{m="<#FFB347>Frutero <dark_gray>» <#B7D98B>Esta canasta venía del fondo del carro... <#C9CDD6>ni yo sé cómo llegó esta patata ahí."} @trigger
 
 appleseller_mala_suerte_3:
   Skills:
-  - speak{m="<#B7D98B>Los cuervos se llevaron las mejores";o=0.4;r=12;d=80;sendchatmessage=false;ll=40} @self
+  - skill{s=scene_bocadillo_quitar} @Passenger
+  - summonpassenger{type=scene_bocadillo} @self
+  - settextdisplay{text="<#B7D98B>Los cuervos se llevaron las mejores";delay=1} @Passenger
   - message{m="<#FFB347>Frutero <dark_gray>» <#B7D98B>Los cuervos se llevaron las mejores esta mañana. <#C9CDD6>Toma, al menos esta patata."} @trigger

@@ -14215,3 +14215,9 @@ reset_cosmetics:
 
 
 #35dd8da810fde8cd410472122f289581
+# Borra el bocadillo anterior del NPC (solo si el pasajero es un bocadillo)
+scene_bocadillo_quitar:
+  TargetConditions:
+  - mobtype{types=scene_bocadillo} true
+  Skills:
+  - remove
