@@ -1,0 +1,65 @@
+# ============================================================
+#  VIDA BAJA (solo efectos, sin mensajes)
+#  Con {@umbral} de vida o menos (3 corazones):
+#   - contorno rojo en la pantalla (borde del mundo virtual, solo
+#     lo ve ese jugador; necesita gráficos "Fantásticos" o superior).
+#   - latido de corazón con noteblock (bombo grave, doble golpe);
+#     más rápido por debajo de {@critico} de vida.
+#  Al curarse, morir o salir se quita el efecto.
+#  Rendimiento: un bucle cada 10 ticks que solo compara la vida.
+#    {-vb::<uuid>} = true mientras el jugador tiene el efecto
+# ============================================================
+options:
+    umbral: 6
+    critico: 3
+
+function vbActivar(p: player):
+    set {-vb::%uuid of {_p}%} to true
+    set {_b} to a virtual world border
+    set world border center of {_b} to location of {_p}
+    set world border radius of {_b} to 29999984
+    set world border warning distance of {_b} to 29999984
+    set world border of {_p} to {_b}
+
+function vbQuitar(p: player):
+    delete {-vb::%uuid of {_p}%}
+    set world border of {_p} to world border of world of {_p}
+
+function vbLatido(p: player):
+    play sound "block.note_block.basedrum" with volume 0.9 and pitch 0.5 to {_p}
+    wait 4 ticks
+    play sound "block.note_block.basedrum" with volume 0.6 and pitch 0.6 to {_p}
+
+every 10 ticks:
+    loop all players:
+        set {_k} to "%uuid of loop-player%"
+        if loop-player is alive:
+            if gamemode of loop-player is survival or adventure:
+                if health of loop-player <= ({@umbral} / 2):
+                    if {-vb::%{_k}%} is not set:
+                        vbActivar(loop-player)
+                    # Latido cada segundo; cada medio segundo si es crítico
+                    if health of loop-player <= ({@critico} / 2):
+                        vbLatido(loop-player)
+                    else:
+                        if {-vb::t::%{_k}%} is set:
+                            delete {-vb::t::%{_k}%}
+                        else:
+                            set {-vb::t::%{_k}%} to true
+                            vbLatido(loop-player)
+                    continue
+        if {-vb::%{_k}%} is set:
+            delete {-vb::t::%{_k}%}
+            vbQuitar(loop-player)
+
+on respawn:
+    {-vb::%uuid of player%} is set
+    vbQuitar(player)
+
+on world change:
+    {-vb::%uuid of player%} is set
+    vbQuitar(player)
+
+on quit:
+    delete {-vb::%uuid of player%}
+    delete {-vb::t::%uuid of player%}
