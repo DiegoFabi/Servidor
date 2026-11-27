@@ -1,0 +1,122 @@
+# ============================================================
+#  PLACAS DE VIDA (sistema general para cualquier mob con placa)
+#  Las placas (text display montado sobre el mob, etiqueta "elite_placa")
+#  están ocultas para todos. Cada jugador solo ve:
+#   - la del mob al que está mirando (hasta {@distancia} bloques), y
+#   - las de los mobs con los que pelea (golpea o le golpean) durante
+#     {@combate} segundos desde el último golpe.
+#  Rendimiento: un bucle cada 5 ticks que solo mira a qué apunta cada
+#  jugador, y otro cada segundo que solo recorre las placas visibles.
+#  Datos en memoria:
+#    {-placa::ver::<jugador>::<placa>}   placa visible para ese jugador
+#    {-placa::fin::<jugador>::<placa>}   hasta cuándo dura por combate
+#    {-placa::mira::<jugador>}           placa a la que está mirando
+#    {-placa::pelea::<jugador>}          jugador con placas de combate activas
+# ============================================================
+options:
+    distancia: 24
+    combate: 15
+
+function placaDe(e: entity) :: entity:
+    loop passengers of {_e}:
+        if loop-value has scoreboard tag "elite_placa":
+            return loop-value
+
+function placaMostrar(p: player, d: entity):
+    set {_k} to "%uuid of {_p}%"
+    set {_i} to "%uuid of {_d}%"
+    if {-placa::ver::%{_k}%::%{_i}%} is not set:
+        set {-placa::ver::%{_k}%::%{_i}%} to {_d}
+        reveal {_d} to {_p}
+
+function placaOcultar(p: player, i: text):
+    set {_k} to "%uuid of {_p}%"
+    set {_d} to {-placa::ver::%{_k}%::%{_i}%}
+    delete {-placa::ver::%{_k}%::%{_i}%}
+    delete {-placa::fin::%{_k}%::%{_i}%}
+    {_d} is valid
+    hide {_d} from {_p}
+
+# Toda placa nueva nace oculta
+on spawn:
+    event-entity is a text display
+    wait 2 ticks
+    event-entity is valid
+    event-entity has scoreboard tag "elite_placa"
+    hide event-entity from all players
+
+# Quien entra no ve las placas que ya existían
+on join:
+    loop all entities in world of player:
+        if loop-entity is a text display:
+            if loop-entity has scoreboard tag "elite_placa":
+                hide loop-entity from player
+
+on world change:
+    loop all entities in world of player:
+        if loop-entity is a text display:
+            if loop-entity has scoreboard tag "elite_placa":
+                if {-placa::ver::%uuid of player%::%uuid of loop-entity%} is not set:
+                    hide loop-entity from player
+
+# Mirar al mob
+every 5 ticks:
+    loop all players:
+        set {_k} to "%uuid of loop-player%"
+        delete {_d}
+        set {_t} to target entity of loop-player
+        if {_t} is set:
+            if distance between loop-player and {_t} <= {@distancia}:
+                set {_d} to placaDe({_t})
+        set {_antes} to {-placa::mira::%{_k}%}
+        if {_d} is set:
+            if {_antes} is not "%uuid of {_d}%":
+                if {_antes} is set:
+                    if {-placa::fin::%{_k}%::%{_antes}%} is not set:
+                        placaOcultar(loop-player, {_antes})
+                set {-placa::mira::%{_k}%} to "%uuid of {_d}%"
+                placaMostrar(loop-player, {_d})
+        else if {_antes} is set:
+            delete {-placa::mira::%{_k}%}
+            if {-placa::fin::%{_k}%::%{_antes}%} is not set:
+                placaOcultar(loop-player, {_antes})
+
+# Pelear con el mob (golpear o recibir golpes)
+on damage:
+    if attacker is a player:
+        set {_p} to attacker
+        set {_m} to victim
+    else if victim is a player:
+        attacker is set
+        set {_p} to victim
+        set {_m} to attacker
+    else:
+        stop
+    {_m} is not a player
+    set {_d} to placaDe({_m})
+    {_d} is set
+    placaMostrar({_p}, {_d})
+    set {_f} to now
+    add {@combate} seconds to {_f}
+    set {-placa::fin::%uuid of {_p}%::%uuid of {_d}%} to {_f}
+    set {-placa::pelea::%uuid of {_p}%} to {_p}
+
+# Fin del combate y limpieza de placas que ya no existen
+every 1 second:
+    loop {-placa::pelea::*}:
+        set {_p} to loop-value
+        set {_k} to loop-index
+        loop indices of {-placa::fin::%{_k}%::*}:
+            if now > {-placa::fin::%{_k}%::%loop-value-2%}:
+                delete {-placa::fin::%{_k}%::%loop-value-2%}
+                if {-placa::mira::%{_k}%} is not loop-value-2:
+                    placaOcultar({_p}, loop-value-2)
+        if size of {-placa::fin::%{_k}%::*} is 0:
+            delete {-placa::pelea::%{_k}%}
+
+on quit:
+    set {_k} to "%uuid of player%"
+    delete {-placa::ver::%{_k}%::*}
+    delete {-placa::fin::%{_k}%::*}
+    delete {-placa::mira::%{_k}%}
+    delete {-placa::pelea::%{_k}%}

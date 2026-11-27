@@ -158,5 +158,8 @@ elite_placa:
     Despawn: true
     Persistent: false
   Skills:
+  # Etiqueta para placas.sk (Skript): la placa está oculta y solo la ve
+  # quien mira al mob o pelea con él (15 s).
+  - addtag{tag=elite_placa} @self ~onSpawn
   - remove @self ~onTimer:40 ?!mounted
   - remove @self ~onDismounted
