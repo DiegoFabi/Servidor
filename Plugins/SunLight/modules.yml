@@ -80,7 +80,9 @@ Modules:
     Name: Scheduler
     Prefix: <gradient:#FFAA00:#FF8833:#FF5500><b>SCHEDULER</b></gradient><dark_gray> » </dark_gray>
   scoreboard:
-    Enabled: true
+    # Desactivado: el marcador lo muestra Typewriter (quests_main > marcador_principal)
+    # y se oculta solo durante diálogos/cinemáticas, sin comandos ni mensajes.
+    Enabled: false
     Name: Scoreboard
     Prefix: ''
   spawns:
