@@ -1,0 +1,19 @@
+# ============================================================
+#  /totemanim <jugador>  (solo consola / OP)
+#  Reproduce la animación del tótem de la inmortalidad en la
+#  pantalla del jugador (usado por el tutorial de TypeWriter).
+#  Si la versión de Skript no reconoce el efecto, hace un
+#  estallido de partículas y sonido de tótem como respaldo.
+# ============================================================
+command /totemanim <player>:
+    permission: op
+    trigger:
+        set {_p} to arg-1
+        set {_ef} to "totem resurrect" parsed as entity effect
+        if {_ef} is not set:
+            set {_ef} to "totem resurrection" parsed as entity effect
+        if {_ef} is set:
+            play {_ef} on {_p}
+        else:
+            play sound "item.totem.use" with volume 0.8 and pitch 1 to {_p}
+        execute console command "execute at %{_p}% run particle minecraft:totem_of_undying ~ ~1 ~ 0.5 0.8 0.5 0.4 60 normal %{_p}%"

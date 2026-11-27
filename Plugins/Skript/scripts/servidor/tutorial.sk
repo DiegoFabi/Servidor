@@ -41,18 +41,18 @@ options:
     prefijo-historia: <gradient:gold:yellow><bold>Historia</bold></gradient> <dark_gray>»<reset>
 
 on load:
-    # Historia por capítulos. Capítulo actual: 1 "Ecos de la Maleza".
+    # Historia por capítulos. Capítulo actual: 1 "Un Mundo Nuevo".
     # Cada entrada es una parte del capítulo; se desbloquea con
     # "tutorial historia <jugador> <parte>" desde TypeWriter.
     delete {-hist::*}
-    set {-hist::capitulo} to "Capítulo 1: Ecos de la Maleza"
+    set {-hist::capitulo} to "Capítulo 1: Un Mundo Nuevo"
     set {-hist::total} to 13
-    set {-hist::nombre::1} to "El Rey Sin Memoria"
-    set {-hist::desc::1::*} to "Despiertas otra vez sin recuerdos.", "King Draemir te devuelve el libro que", "escribiste vida tras vida y recuperas" and "el primer eco de tu pasado."
+    set {-hist::nombre::1} to "El Que Vino de Otro Mundo"
+    set {-hist::desc::1::*} to "Moriste en tu mundo y despertaste en", "otro. King Draemir, el único que sabe", "de dónde vienes, te dio un libro en" and "blanco y recordaste tu antigua vida."
     set {-hist::nombre::2} to "Más Allá de los Muros"
-    set {-hist::desc::2::*} to "El Guardia Real te equipó y te mostró", "el portal, la única salida del reino." and "Cruzaste y el mundo se abrió ante ti."
+    set {-hist::desc::2::*} to "El Guardia Real, que perdió a su", "familia por la Maleza, te equipó y te", "mostró el portal. Cruzaste y este" and "nuevo mundo se abrió ante ti."
     set {-hist::nombre::3} to "Los Supervivientes"
-    set {-hist::desc::3::*} to "Bram la Herrera, Malvor el Chamán y", "Tobías el Granjero siguen en pie. Una", "visión te mostró una raíz bajo el trono" and "y la Maleza ya sabe que has vuelto."
+    set {-hist::desc::3::*} to "Bram, Malvor y Tobías te enseñaron", "cómo sobrevivir aquí. Una visión te", "mostró la raíz de la Maleza: no" and "llegaste a este mundo por azar."
     set {-hist::nombre::4} to "La Raíz Bajo el Trono"
     set {-hist::desc::4::*} to "Derrotaste a los Olvidados y con trigo", "y amatistas Malvor abrió el ritual. La", "Raíz te habló: su corazón está sellado" and "con un juramento enano."
     set {-hist::nombre::5} to "El Juramento del Acero"
