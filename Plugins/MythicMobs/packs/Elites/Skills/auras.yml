@@ -1,0 +1,81 @@
+# ============================================================
+#  AURAS: el 40 % de los élites nace con un aura visible (8 tipos).
+#  Se dibuja cada 1,5 s SOLO si hay un jugador a menos de 20 bloques
+#  (los mobs lejanos no generan partículas). Algunas afectan a quien
+#  se acerca a menos de 2,5 bloques.
+# ============================================================
+elite_aura_asignar:
+  Skills:
+  - randomskill{s=elite_aura_set_1,elite_aura_set_2,elite_aura_set_3,elite_aura_set_4,elite_aura_set_5,elite_aura_set_6,elite_aura_set_7,elite_aura_set_8} @self
+elite_aura:
+  Conditions:
+  - playerwithin{d=20} true
+  Skills:
+  - skill{s=elite_aura_fuego} @self ?variableequals{var=caster.aura;value=1}
+  - skill{s=elite_aura_hielo} @self ?variableequals{var=caster.aura;value=2}
+  - skill{s=elite_aura_sombra} @self ?variableequals{var=caster.aura;value=3}
+  - skill{s=elite_aura_tormenta} @self ?variableequals{var=caster.aura;value=4}
+  - skill{s=elite_aura_veneno} @self ?variableequals{var=caster.aura;value=5}
+  - skill{s=elite_aura_levitacion} @self ?variableequals{var=caster.aura;value=6}
+  - skill{s=elite_aura_arcana} @self ?variableequals{var=caster.aura;value=7}
+  - skill{s=elite_aura_sangre} @self ?variableequals{var=caster.aura;value=8}
+elite_aura_fuego:
+  Skills:
+  - effect:particlering{p=flame;r=0.9;points=10;a=1;y=0.15;vd=20} @self
+  - effect:particles{p=small_flame;a=2;hs=0.3;vs=0.6;y=1;vd=20} @self
+  - ignite{ticks=30} @PIR{r=2.5}
+elite_aura_hielo:
+  Skills:
+  - effect:particlering{p=snowflake;r=0.9;points=10;a=1;y=0.15;vd=20} @self
+  - potion{type=SLOWNESS;duration=30;level=0;hasParticles=false} @PIR{r=2.5}
+elite_aura_sombra:
+  Skills:
+  - effect:particlering{p=soul;r=0.8;points=8;a=1;y=0.2;vd=20} @self
+  - effect:particles{p=smoke;a=4;hs=0.3;vs=0.7;s=0.01;y=1;vd=20} @self
+elite_aura_tormenta:
+  Skills:
+  - effect:particles{p=electric_spark;a=5;hs=0.4;vs=0.8;s=0.1;y=1;vd=20} @self
+  - damage{a=1} @PIR{r=2} 0.3
+elite_aura_veneno:
+  Skills:
+  - effect:particlering{p=item_slime;r=0.9;points=8;a=1;y=0.15;vd=20} @self
+  - effect:particles{p=spore_blossom_air;a=3;hs=0.5;vs=0.5;y=1;vd=20} @self
+  - potion{type=POISON;duration=30;level=0} @PIR{r=2.5} 0.3
+elite_aura_levitacion:
+  Skills:
+  - effect:particlering{p=end_rod;r=1;points=8;a=1;y=0.1;vd=20} @self
+  - effect:particles{p=reverse_portal;a=4;hs=0.3;vs=0.8;y=1;vd=20} @self
+  - potion{type=LEVITATION;duration=20;level=0} @PIR{r=2.5} 0.25
+elite_aura_arcana:
+  Skills:
+  - effect:particlering{p=enchant;r=1;points=12;a=1;y=1.2;vd=20} @self
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.5;y=1.5;vd=20} @self
+elite_aura_sangre:
+  Skills:
+  - effect:particles{p=crimson_spore;a=6;hs=0.5;vs=0.7;y=1;vd=20} @self
+  - effect:particles{p=damage_indicator;a=1;hs=0.3;vs=0.3;y=1.2;vd=20} @self
+  - potion{type=WEAKNESS;duration=30;level=0;hasParticles=false} @PIR{r=2.5} 0.3
+elite_aura_set_1:
+  Skills:
+  - setvariable{var=caster.aura;value=1;type=INTEGER} @self
+elite_aura_set_2:
+  Skills:
+  - setvariable{var=caster.aura;value=2;type=INTEGER} @self
+elite_aura_set_3:
+  Skills:
+  - setvariable{var=caster.aura;value=3;type=INTEGER} @self
+elite_aura_set_4:
+  Skills:
+  - setvariable{var=caster.aura;value=4;type=INTEGER} @self
+elite_aura_set_5:
+  Skills:
+  - setvariable{var=caster.aura;value=5;type=INTEGER} @self
+elite_aura_set_6:
+  Skills:
+  - setvariable{var=caster.aura;value=6;type=INTEGER} @self
+elite_aura_set_7:
+  Skills:
+  - setvariable{var=caster.aura;value=7;type=INTEGER} @self
+elite_aura_set_8:
+  Skills:
+  - setvariable{var=caster.aura;value=8;type=INTEGER} @self

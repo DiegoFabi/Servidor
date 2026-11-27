@@ -10,9 +10,6 @@ elite_base:
   LevelModifiers:
     Armor: 0.04
     KnockbackResistance: 0.002
-  HealthBar:
-    Enabled: true
-    Offset: 0.35
   Options:
     AlwaysShowName: false
     Despawn: true
@@ -31,6 +28,8 @@ elite_base:
   - skill{s=elite_al_atacar} @target ~onAttack
   - skill{s=elite_al_recibir} @trigger ~onDamaged
   - skill{s=elite_al_morir} @self ~onDeath
+  - skill{s=elite_botin} @trigger ~onDeath
+  - skill{s=elite_aura} @self ~onTimer:30
 
 # Cuerpo a cuerpo con armas (zombis, piglins, vindicadores…)
 elite_guerrero:
@@ -104,6 +103,7 @@ elite_jefe_base:
   - skill{s=elite_rango} @self ~onSpawn
   - skill{s=elite_jefe_aparicion} @self ~onSpawn
   - skill{s=elite_muerte_mitica} @self ~onDeath
+  - skill{s=elite_jefe_botin} @trigger ~onDeath
   Drops:
   - exp 80to160
   - experience_bottle 2to6

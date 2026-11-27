@@ -1,0 +1,275 @@
+# ============================================================
+#  BOTÍN DE ÉLITES Y JEFES (items de ItemJoin, al jugador que mata)
+#  Mismo sistema que Skills/BotinCustom.yml de los mobs custom.
+#  - Élites: botín de su familia (según el mob) + postres (todos) +
+#    por rango: runas normales y pergaminos (Épico+), elixires y anillos
+#    (Legendario+), runas poderosas y bastones (Mítico, muy raro).
+#  - Jefes de evento: 3 premios garantizados + extras raros.
+# ============================================================
+elite_botin:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=elite_botin_zombi} @target ?variableequals{var=caster.fam;value=zombi}
+  - skill{s=elite_botin_esqueleto} @target ?variableequals{var=caster.fam;value=esqueleto}
+  - skill{s=elite_botin_arana} @target ?variableequals{var=caster.fam;value=arana}
+  - skill{s=elite_botin_creeper} @target ?variableequals{var=caster.fam;value=creeper}
+  - skill{s=elite_botin_mago} @target ?variableequals{var=caster.fam;value=mago}
+  - skill{s=elite_botin_ender} @target ?variableequals{var=caster.fam;value=ender}
+  - skill{s=elite_botin_fuego} @target ?variableequals{var=caster.fam;value=fuego}
+  - skill{s=elite_botin_illager} @target ?variableequals{var=caster.fam;value=illager}
+  - skill{s=elite_botin_piglin} @target ?variableequals{var=caster.fam;value=piglin}
+  - skill{s=elite_botin_agua} @target ?variableequals{var=caster.fam;value=agua}
+  - skill{s=elite_botin_volador} @target ?variableequals{var=caster.fam;value=volador}
+  - skill{s=elite_botin_plaga} @target ?variableequals{var=caster.fam;value=plaga}
+  - randomskill{s=eb_postre_chocolate1,eb_postre_chocolate2,eb_postre_candy1,eb_postre_candy2,eb_postre_cake1,eb_postre_cake2,eb_postre_donut,eb_postre_icecream1,eb_postre_icecream2} @target 0.04
+  - randomskill{s=eb_item_12,eb_item_32,eb_item_33,eb_item_34,eb_item_35,eb_item_36,eb_item_40,eb_item_41,eb_item_42,eb_item_43,eb_item_44,eb_item_45} @target ?level{l=>74} 0.03
+  - randomskill{s=eb_item_20,eb_item_21,eb_item_22,eb_item_23,eb_item_15,eb_item_24,eb_item_25,eb_item_26,eb_item_27,eb_item_28,eb_item_37,eb_item_38,eb_item_39} @target ?level{l=>124} 0.025
+  - randomskill{s=eb_item_46,eb_item_47,eb_item_48,eb_item_49,eb_item_50} @target ?level{l=>189} 0.01
+  - randomskill{s=eb_item_6,eb_item_8,eb_item_13,eb_item_7} @target ?level{l=>189} 0.004
+
+elite_botin_zombi:
+  Skills:
+  - command{c="itemjoin get postre_chocolate1 <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get postre_chocolate2 <target.name> 1";asop=false} @target 0.03
+  - command{c="itemjoin get botin_candy <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_medal_bronze <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_skull <target.name> 1";asop=false} @target 0.01
+
+elite_botin_esqueleto:
+  Skills:
+  - command{c="itemjoin get botin_skull <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_fish_grey <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_medal_bronze <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_moon <target.name> 1";asop=false} @target 0.008
+
+elite_botin_arana:
+  Skills:
+  - command{c="itemjoin get botin_poison_sac <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_bat_wing <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.02
+
+elite_botin_creeper:
+  Skills:
+  - command{c="itemjoin get botin_ender_powder <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get botin_wither_dust <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get botin_magnet <target.name> 1";asop=false} @target 0.03
+
+elite_botin_mago:
+  Skills:
+  - command{c="itemjoin get botin_magic_crystals <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.06
+  - command{c="itemjoin get botin_purple_orb <target.name> 1";asop=false} @target 0.015
+  - command{c="itemjoin get item_16 <target.name> 1";asop=false} @target 0.01
+
+elite_botin_ender:
+  Skills:
+  - command{c="itemjoin get botin_ender_powder <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_purple_orb <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get item_47 <target.name> 1";asop=false} @target 0.004
+
+elite_botin_fuego:
+  Skills:
+  - command{c="itemjoin get botin_magma_gel <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_ghast_eye <target.name> 1";asop=false} @target 0.03
+  - command{c="itemjoin get botin_sun <target.name> 1";asop=false} @target 0.01
+  - command{c="itemjoin get item_32 <target.name> 1";asop=false} @target 0.006
+
+elite_botin_illager:
+  Skills:
+  - command{c="itemjoin get botin_medal_silver <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get botin_clover <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_crown <target.name> 1";asop=false} @target 0.01
+  - command{c="itemjoin get postre_cake1 <target.name> 1";asop=false} @target 0.03
+
+elite_botin_piglin:
+  Skills:
+  - command{c="itemjoin get botin_medal_gold <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get botin_pig_leather <target.name> 1";asop=false} @target 0.08
+  - command{c="itemjoin get botin_magma_gel <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get postre_donut <target.name> 1";asop=false} @target 0.03
+
+elite_botin_agua:
+  Skills:
+  - command{c="itemjoin get botin_seashell <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_aqua_essence <target.name> 1";asop=false} @target 0.05
+  - command{c="itemjoin get botin_guardian_spike <target.name> 1";asop=false} @target 0.04
+  - command{c="itemjoin get botin_starfish <target.name> 1";asop=false} @target 0.03
+  - command{c="itemjoin get item_29 <target.name> 1";asop=false} @target 0.005
+
+elite_botin_volador:
+  Skills:
+  - command{c="itemjoin get botin_phantom_scale <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_moon <target.name> 1";asop=false} @target 0.02
+  - command{c="itemjoin get item_43 <target.name> 1";asop=false} @target 0.01
+
+elite_botin_plaga:
+  Skills:
+  - command{c="itemjoin get botin_gel <target.name> 1";asop=false} @target 0.1
+  - command{c="itemjoin get botin_crystals <target.name> 1";asop=false} @target 0.03
+
+# Jefes de evento: 3 premios seguros (postre, runa/pergamino, elixir/anillo) + extras
+elite_jefe_botin:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - randomskill{s=eb_postre_chocolate1,eb_postre_chocolate2,eb_postre_candy1,eb_postre_candy2,eb_postre_cake1,eb_postre_cake2,eb_postre_donut,eb_postre_icecream1,eb_postre_icecream2} @target
+  - randomskill{s=eb_item_12,eb_item_32,eb_item_33,eb_item_34,eb_item_35,eb_item_36,eb_item_40,eb_item_41,eb_item_42,eb_item_43,eb_item_44,eb_item_45} @target
+  - randomskill{s=eb_item_20,eb_item_21,eb_item_22,eb_item_23,eb_item_15,eb_item_24,eb_item_25,eb_item_26,eb_item_27,eb_item_28,eb_item_37,eb_item_38,eb_item_39} @target
+  - randomskill{s=eb_item_46,eb_item_47,eb_item_48,eb_item_49,eb_item_50} @target 0.15
+  - randomskill{s=eb_item_30,eb_item_31,eb_item_17,eb_item_16,eb_item_14,eb_item_18,eb_item_19,eb_item_5} @target 0.10
+  - randomskill{s=eb_item_6,eb_item_8,eb_item_13,eb_item_7} @target 0.05
+
+eb_item_12:
+  Skills:
+  - command{c="itemjoin get item_12 <target.name> 1";asop=false} @target
+eb_item_13:
+  Skills:
+  - command{c="itemjoin get item_13 <target.name> 1";asop=false} @target
+eb_item_14:
+  Skills:
+  - command{c="itemjoin get item_14 <target.name> 1";asop=false} @target
+eb_item_15:
+  Skills:
+  - command{c="itemjoin get item_15 <target.name> 1";asop=false} @target
+eb_item_16:
+  Skills:
+  - command{c="itemjoin get item_16 <target.name> 1";asop=false} @target
+eb_item_17:
+  Skills:
+  - command{c="itemjoin get item_17 <target.name> 1";asop=false} @target
+eb_item_18:
+  Skills:
+  - command{c="itemjoin get item_18 <target.name> 1";asop=false} @target
+eb_item_19:
+  Skills:
+  - command{c="itemjoin get item_19 <target.name> 1";asop=false} @target
+eb_item_20:
+  Skills:
+  - command{c="itemjoin get item_20 <target.name> 1";asop=false} @target
+eb_item_21:
+  Skills:
+  - command{c="itemjoin get item_21 <target.name> 1";asop=false} @target
+eb_item_22:
+  Skills:
+  - command{c="itemjoin get item_22 <target.name> 1";asop=false} @target
+eb_item_23:
+  Skills:
+  - command{c="itemjoin get item_23 <target.name> 1";asop=false} @target
+eb_item_24:
+  Skills:
+  - command{c="itemjoin get item_24 <target.name> 1";asop=false} @target
+eb_item_25:
+  Skills:
+  - command{c="itemjoin get item_25 <target.name> 1";asop=false} @target
+eb_item_26:
+  Skills:
+  - command{c="itemjoin get item_26 <target.name> 1";asop=false} @target
+eb_item_27:
+  Skills:
+  - command{c="itemjoin get item_27 <target.name> 1";asop=false} @target
+eb_item_28:
+  Skills:
+  - command{c="itemjoin get item_28 <target.name> 1";asop=false} @target
+eb_item_30:
+  Skills:
+  - command{c="itemjoin get item_30 <target.name> 1";asop=false} @target
+eb_item_31:
+  Skills:
+  - command{c="itemjoin get item_31 <target.name> 1";asop=false} @target
+eb_item_32:
+  Skills:
+  - command{c="itemjoin get item_32 <target.name> 1";asop=false} @target
+eb_item_33:
+  Skills:
+  - command{c="itemjoin get item_33 <target.name> 1";asop=false} @target
+eb_item_34:
+  Skills:
+  - command{c="itemjoin get item_34 <target.name> 1";asop=false} @target
+eb_item_35:
+  Skills:
+  - command{c="itemjoin get item_35 <target.name> 1";asop=false} @target
+eb_item_36:
+  Skills:
+  - command{c="itemjoin get item_36 <target.name> 1";asop=false} @target
+eb_item_37:
+  Skills:
+  - command{c="itemjoin get item_37 <target.name> 1";asop=false} @target
+eb_item_38:
+  Skills:
+  - command{c="itemjoin get item_38 <target.name> 1";asop=false} @target
+eb_item_39:
+  Skills:
+  - command{c="itemjoin get item_39 <target.name> 1";asop=false} @target
+eb_item_40:
+  Skills:
+  - command{c="itemjoin get item_40 <target.name> 1";asop=false} @target
+eb_item_41:
+  Skills:
+  - command{c="itemjoin get item_41 <target.name> 1";asop=false} @target
+eb_item_42:
+  Skills:
+  - command{c="itemjoin get item_42 <target.name> 1";asop=false} @target
+eb_item_43:
+  Skills:
+  - command{c="itemjoin get item_43 <target.name> 1";asop=false} @target
+eb_item_44:
+  Skills:
+  - command{c="itemjoin get item_44 <target.name> 1";asop=false} @target
+eb_item_45:
+  Skills:
+  - command{c="itemjoin get item_45 <target.name> 1";asop=false} @target
+eb_item_46:
+  Skills:
+  - command{c="itemjoin get item_46 <target.name> 1";asop=false} @target
+eb_item_47:
+  Skills:
+  - command{c="itemjoin get item_47 <target.name> 1";asop=false} @target
+eb_item_48:
+  Skills:
+  - command{c="itemjoin get item_48 <target.name> 1";asop=false} @target
+eb_item_49:
+  Skills:
+  - command{c="itemjoin get item_49 <target.name> 1";asop=false} @target
+eb_item_5:
+  Skills:
+  - command{c="itemjoin get item_5 <target.name> 1";asop=false} @target
+eb_item_50:
+  Skills:
+  - command{c="itemjoin get item_50 <target.name> 1";asop=false} @target
+eb_item_6:
+  Skills:
+  - command{c="itemjoin get item_6 <target.name> 1";asop=false} @target
+eb_item_7:
+  Skills:
+  - command{c="itemjoin get item_7 <target.name> 1";asop=false} @target
+eb_item_8:
+  Skills:
+  - command{c="itemjoin get item_8 <target.name> 1";asop=false} @target
+eb_postre_cake1:
+  Skills:
+  - command{c="itemjoin get postre_cake1 <target.name> 1";asop=false} @target
+eb_postre_cake2:
+  Skills:
+  - command{c="itemjoin get postre_cake2 <target.name> 1";asop=false} @target
+eb_postre_candy1:
+  Skills:
+  - command{c="itemjoin get postre_candy1 <target.name> 1";asop=false} @target
+eb_postre_candy2:
+  Skills:
+  - command{c="itemjoin get postre_candy2 <target.name> 1";asop=false} @target
+eb_postre_chocolate1:
+  Skills:
+  - command{c="itemjoin get postre_chocolate1 <target.name> 1";asop=false} @target
+eb_postre_chocolate2:
+  Skills:
+  - command{c="itemjoin get postre_chocolate2 <target.name> 1";asop=false} @target
+eb_postre_donut:
+  Skills:
+  - command{c="itemjoin get postre_donut <target.name> 1";asop=false} @target
+eb_postre_icecream1:
+  Skills:
+  - command{c="itemjoin get postre_icecream1 <target.name> 1";asop=false} @target
+eb_postre_icecream2:
+  Skills:
+  - command{c="itemjoin get postre_icecream2 <target.name> 1";asop=false} @target

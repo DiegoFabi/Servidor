@@ -10,8 +10,8 @@
 # ============================================================
 elite_asignar_poderes:
   Skills:
-  - setvariable{var=caster.of;value=<random.1to12>;type=INTEGER} @self
-  - setvariable{var=caster.def;value=<random.1to7>;type=INTEGER} @self ?level{l=>24}
+  - randomskill{s=elite_of_1,elite_of_2,elite_of_3,elite_of_4,elite_of_5,elite_of_6,elite_of_7,elite_of_8,elite_of_9,elite_of_10,elite_of_11,elite_of_12} @self
+  - randomskill{s=elite_def_1,elite_def_2,elite_def_3,elite_def_4,elite_def_5,elite_def_6,elite_def_7} @self ?level{l=>24}
   - setvariable{var=caster.esp;value="<caster.var.esp2>";type=STRING} @self ?level{l=>74}
   - setvariable{var=caster.esp;value="<caster.var.esp1>";type=STRING} @self ?level{l=>74} 0.5
   - setvariable{var=caster.may;value="<caster.var.may2>";type=STRING} @self ?level{l=>124}
@@ -20,20 +20,20 @@ elite_asignar_poderes:
 
 # Ofensivo: al golpear (máx. 1 cada 4 s por mob, 60 % de las veces)
 elite_of:
-  Cooldown: 4
+  Cooldown: 3
   Skills:
-  - skill{s=po_fuego} @target ?variableequals{var=caster.of;value=1} 0.6
-  - skill{s=po_hielo} @target ?variableequals{var=caster.of;value=2} 0.6
-  - skill{s=po_veneno} @target ?variableequals{var=caster.of;value=3} 0.6
-  - skill{s=po_wither} @target ?variableequals{var=caster.of;value=4} 0.6
-  - skill{s=po_debilidad} @target ?variableequals{var=caster.of;value=5} 0.6
-  - skill{s=po_rayo} @target ?variableequals{var=caster.of;value=6} 0.6
-  - skill{s=po_empuje} @target ?variableequals{var=caster.of;value=7} 0.6
-  - skill{s=po_atraccion} @target ?variableequals{var=caster.of;value=8} 0.6
-  - skill{s=po_gravedad} @target ?variableequals{var=caster.of;value=9} 0.6
-  - skill{s=po_ceguera} @target ?variableequals{var=caster.of;value=10} 0.6
-  - skill{s=po_mareo} @target ?variableequals{var=caster.of;value=11} 0.6
-  - skill{s=po_descarga} @target ?variableequals{var=caster.of;value=12} 0.6
+  - skill{s=po_fuego} @target ?variableequals{var=caster.of;value=1} 0.75
+  - skill{s=po_hielo} @target ?variableequals{var=caster.of;value=2} 0.75
+  - skill{s=po_veneno} @target ?variableequals{var=caster.of;value=3} 0.75
+  - skill{s=po_wither} @target ?variableequals{var=caster.of;value=4} 0.75
+  - skill{s=po_debilidad} @target ?variableequals{var=caster.of;value=5} 0.75
+  - skill{s=po_rayo} @target ?variableequals{var=caster.of;value=6} 0.75
+  - skill{s=po_empuje} @target ?variableequals{var=caster.of;value=7} 0.75
+  - skill{s=po_atraccion} @target ?variableequals{var=caster.of;value=8} 0.75
+  - skill{s=po_gravedad} @target ?variableequals{var=caster.of;value=9} 0.75
+  - skill{s=po_ceguera} @target ?variableequals{var=caster.of;value=10} 0.75
+  - skill{s=po_mareo} @target ?variableequals{var=caster.of;value=11} 0.75
+  - skill{s=po_descarga} @target ?variableequals{var=caster.of;value=12} 0.75
 
 # Defensivo: al recibir daño (máx. 1 cada 6 s)
 elite_def:
@@ -117,3 +117,62 @@ elite_may:
   - skill{s=pf_bola_teledirigida} @trigger ?variableequals{var=caster.may;value=bola_teledirigida} 0.4
   - skill{s=pf_fuegos_artificiales} @trigger ?variableequals{var=caster.may;value=fuegos_artificiales} 0.4
   - skill{s=pf_atraccion_abismal} @trigger ?variableequals{var=caster.may;value=atraccion_abismal} 0.4
+
+# Setters de poderes (evitan depender de placeholders aleatorios)
+elite_of_1:
+  Skills:
+  - setvariable{var=caster.of;value=1;type=INTEGER} @self
+elite_of_2:
+  Skills:
+  - setvariable{var=caster.of;value=2;type=INTEGER} @self
+elite_of_3:
+  Skills:
+  - setvariable{var=caster.of;value=3;type=INTEGER} @self
+elite_of_4:
+  Skills:
+  - setvariable{var=caster.of;value=4;type=INTEGER} @self
+elite_of_5:
+  Skills:
+  - setvariable{var=caster.of;value=5;type=INTEGER} @self
+elite_of_6:
+  Skills:
+  - setvariable{var=caster.of;value=6;type=INTEGER} @self
+elite_of_7:
+  Skills:
+  - setvariable{var=caster.of;value=7;type=INTEGER} @self
+elite_of_8:
+  Skills:
+  - setvariable{var=caster.of;value=8;type=INTEGER} @self
+elite_of_9:
+  Skills:
+  - setvariable{var=caster.of;value=9;type=INTEGER} @self
+elite_of_10:
+  Skills:
+  - setvariable{var=caster.of;value=10;type=INTEGER} @self
+elite_of_11:
+  Skills:
+  - setvariable{var=caster.of;value=11;type=INTEGER} @self
+elite_of_12:
+  Skills:
+  - setvariable{var=caster.of;value=12;type=INTEGER} @self
+elite_def_1:
+  Skills:
+  - setvariable{var=caster.def;value=1;type=INTEGER} @self
+elite_def_2:
+  Skills:
+  - setvariable{var=caster.def;value=2;type=INTEGER} @self
+elite_def_3:
+  Skills:
+  - setvariable{var=caster.def;value=3;type=INTEGER} @self
+elite_def_4:
+  Skills:
+  - setvariable{var=caster.def;value=4;type=INTEGER} @self
+elite_def_5:
+  Skills:
+  - setvariable{var=caster.def;value=5;type=INTEGER} @self
+elite_def_6:
+  Skills:
+  - setvariable{var=caster.def;value=6;type=INTEGER} @self
+elite_def_7:
+  Skills:
+  - setvariable{var=caster.def;value=7;type=INTEGER} @self

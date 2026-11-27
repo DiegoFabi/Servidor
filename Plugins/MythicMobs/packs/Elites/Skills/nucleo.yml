@@ -8,7 +8,9 @@ elite_aparecer:
   - setlevel{a=set;l=250} @self ?level{l=>250}
   - skill{s=elite_rango} @self
   - skill{s=elite_nombre} @self
-  - attribute{attribute=SCALE;a="0.86 + <caster.var.rango> * 0.07 + <random.0to8> / 100"} @self
+  - randomskill{s=elite_escala_060 1,elite_escala_075 3,elite_escala_090 4,elite_escala_100 5,elite_escala_120 4,elite_escala_140 2,elite_escala_165 1} @self
+  - randomskill{s=elite_escala_140 1,elite_escala_165 2,elite_escala_190 1} @self ?level{l=>189} 0.6
+  - skill{s=elite_aura_asignar} @self 0.4
   - skill{s=elite_estilo} @self
   - skill{s=elite_asignar_poderes} @self
 
@@ -29,12 +31,22 @@ elite_rango:
 # Nombre vanilla (solo se ve al mirarlo): "Nv 57 Zombi"
 elite_nombre:
   Skills:
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre>"} @self
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌▌▌"} @self
 
-# Al recibir daño: el nombre muestra la vida actual
+# Al recibir daño: nivel + nombre + barra de vida de 10 segmentos (formato EliteMobs).
+# Cada línea pisa a la anterior; la última que cumple su condición es la que queda.
 elite_nombre_vida:
   Skills:
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>❤ <caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>";delay=1} @self
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>▌<#3A3F4B>▌▌▌▌▌▌▌▌▌";delay=1} @self
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>▌▌<#3A3F4B>▌▌▌▌▌▌▌▌";delay=1} @self ?healthpercent{h=>10%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>▌▌▌<#3A3F4B>▌▌▌▌▌▌▌";delay=1} @self ?healthpercent{h=>20%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FFD36B>▌▌▌▌<#3A3F4B>▌▌▌▌▌▌";delay=1} @self ?healthpercent{h=>30%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FFD36B>▌▌▌▌▌<#3A3F4B>▌▌▌▌▌";delay=1} @self ?healthpercent{h=>40%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FFD36B>▌▌▌▌▌▌<#3A3F4B>▌▌▌▌";delay=1} @self ?healthpercent{h=>50%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌<#3A3F4B>▌▌▌";delay=1} @self ?healthpercent{h=>60%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌<#3A3F4B>▌▌";delay=1} @self ?healthpercent{h=>70%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌▌<#3A3F4B>▌";delay=1} @self ?healthpercent{h=>80%}
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌▌▌<#3A3F4B>";delay=1} @self ?healthpercent{h=>90%}
 
 # Estilo por rango: Legendario puede arder sin quemarse, Mítico brilla y corre más
 elite_estilo:
@@ -231,3 +243,27 @@ elite_jefe_aparicion:
   - effect:particlering{p=soul_fire_flame;r=2;points=24;a=1;y=0.1;vd=48} @self
   - effect:particles{p=large_smoke;a=20;hs=0.8;vs=1;s=0.03;y=1;vd=48} @self
   - sound{s=entity.wither.spawn;v=0.5;p=1.6} @self
+elite_escala_060:
+  Skills:
+  - attribute{attribute=SCALE;a=0.6} @self
+elite_escala_075:
+  Skills:
+  - attribute{attribute=SCALE;a=0.75} @self
+elite_escala_090:
+  Skills:
+  - attribute{attribute=SCALE;a=0.9} @self
+elite_escala_100:
+  Skills:
+  - attribute{attribute=SCALE;a=1.0} @self
+elite_escala_120:
+  Skills:
+  - attribute{attribute=SCALE;a=1.2} @self
+elite_escala_140:
+  Skills:
+  - attribute{attribute=SCALE;a=1.4} @self
+elite_escala_165:
+  Skills:
+  - attribute{attribute=SCALE;a=1.65} @self
+elite_escala_190:
+  Skills:
+  - attribute{attribute=SCALE;a=1.9} @self
