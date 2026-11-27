@@ -1,0 +1,44 @@
+# ============================================================
+#  Arañas BL (bl_spiders v2) - survivalMain, por bioma.
+#  REPLACE solo sustituye arañas vanilla (y arañas de cueva) de noche o
+#  bajo tierra; máx. 2 de cada tipo en 48 bloques.
+#   Tóxica   : pantanos, manglares, selvas y cuevas frondosas
+#   Sombría  : bosque oscuro, jardín pálido, taigas viejas y deep dark
+#   Voladora : bosques, taigas, colinas ventosas y cuevas de goteo
+# ============================================================
+Arana_toxica:
+  Type: bl_toxin_spider
+  Worlds: survivalMain
+  Chance: 0.22
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: SWAMP,MANGROVE_SWAMP,JUNGLE,SPARSE_JUNGLE,BAMBOO_JUNGLE,LUSH_CAVES
+  Conditions:
+  - entitytype{t=SPIDER,CAVE_SPIDER} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=bl_toxin_spider;a=<2;r=48} true
+Arana_sombria:
+  Type: bl_shadow_spider
+  Worlds: survivalMain
+  Chance: 0.2
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: DARK_FOREST,PALE_GARDEN,OLD_GROWTH_SPRUCE_TAIGA,OLD_GROWTH_PINE_TAIGA,DEEP_DARK
+  Conditions:
+  - entitytype{t=SPIDER,CAVE_SPIDER} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=bl_shadow_spider;a=<2;r=48} true
+Arana_voladora:
+  Type: bl_flying_spider
+  Worlds: survivalMain
+  Chance: 0.2
+  Priority: 300
+  Action: REPLACE
+  UseWorldScaling: false
+  Biomes: FOREST,BIRCH_FOREST,OLD_GROWTH_BIRCH_FOREST,TAIGA,WINDSWEPT_HILLS,WINDSWEPT_FOREST,WINDSWEPT_GRAVELLY_HILLS,DRIPSTONE_CAVES
+  Conditions:
+  - entitytype{t=SPIDER,CAVE_SPIDER} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=bl_flying_spider;a=<2;r=48} true

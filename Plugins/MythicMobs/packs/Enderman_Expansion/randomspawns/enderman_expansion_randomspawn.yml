@@ -1,3 +1,4 @@
+# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
 # ============================================================
 #  Enderman Expansion - una variante por bioma
 #  REPLACE: sustituye a los endermen vanilla que aparecen en cada bioma
@@ -7,7 +8,7 @@
 enderman_desert:
   Type: enderman_desert
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -20,7 +21,7 @@ enderman_desert:
 enderman_dark_oak:
   Type: enderman_dark_oak
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -33,7 +34,7 @@ enderman_dark_oak:
 enderman_ice_spikes:
   Type: enderman_ice_spikes
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -46,7 +47,7 @@ enderman_ice_spikes:
 enderman_swamp:
   Type: enderman_swamp
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -59,7 +60,7 @@ enderman_swamp:
 enderman_windswept_hills:
   Type: enderman_windswept_hills
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -72,7 +73,7 @@ enderman_windswept_hills:
 enderman_savanna:
   Type: enderman_savanna
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -85,7 +86,7 @@ enderman_savanna:
 enderman_badlands:
   Type: enderman_badlands
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -98,7 +99,7 @@ enderman_badlands:
 enderman_snowy:
   Type: enderman_snowy
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -111,7 +112,7 @@ enderman_snowy:
 enderman_flower_fields:
   Type: enderman_flower_fields
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -124,7 +125,7 @@ enderman_flower_fields:
 enderman_cave:
   Type: enderman_cave
   Worlds: survivalMain
-  Chance: 0.5
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -138,7 +139,7 @@ enderman_cave:
 enderman_ocean:
   Type: enderman_ocean
   Worlds: survivalMain
-  Chance: 0.1
+  Chance: 0.15
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -150,7 +151,7 @@ enderman_ocean:
 enderman_warped_forest:
   Type: enderman_warped_forest
   Worlds: world_nether
-  Chance: 0.45
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -163,7 +164,7 @@ enderman_warped_forest:
 enderman_crimson_forest:
   Type: enderman_crimson_forest
   Worlds: world_nether
-  Chance: 0.45
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -176,7 +177,7 @@ enderman_crimson_forest:
 enderman_soulsand_valley:
   Type: enderman_soulsand_valley
   Worlds: world_nether
-  Chance: 0.45
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -189,7 +190,7 @@ enderman_soulsand_valley:
 enderman_nether_wastes:
   Type: enderman_nether_wastes
   Worlds: world_nether
-  Chance: 0.45
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -202,7 +203,7 @@ enderman_nether_wastes:
 enderman_end:
   Type: enderman_end
   Worlds: world_the_end
-  Chance: 0.45
+  Chance: 0.6
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -215,7 +216,7 @@ enderman_end:
 enderman_end_islands:
   Type: enderman_end_islands
   Worlds: world_the_end
-  Chance: 0.12
+  Chance: 0.18
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false

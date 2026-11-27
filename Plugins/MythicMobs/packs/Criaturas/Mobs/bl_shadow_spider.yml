@@ -1,0 +1,97 @@
+bl_shadow_spider:
+  Type: HUSK
+  Display: '<#B05050>Araña Sombría'
+  Faction: bl_spiders
+  Health: 80
+  Damage: 0
+  DamageModifiers:
+  - SUFFOCATION 0
+  - FALL 0
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  - lookatplayers
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  Modules:
+    ThreatTable: true
+  Options:
+    MovementSpeed: 0.2
+    FollowRange: 20
+    KnockbackResistance: 1
+    Silent: true
+    Despawn: true
+    Invincible: false
+    PreventSunburn: true
+    PreventBlockInfection: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventJockeyMounts: true
+    Collidable: true
+  Skills:
+  - model{mid=bl_shadow_spider;n=false;step=1;usm=true;save=true;d=true} @self ~onSpawn
+  - model{mid=bl_shadow_spider;n=false;step=1;usm=true;save=true;d=true} @self ~onLoad
+  - CancelEvent{sync=true} @self ~onAttack
+  - setspeed{s=1.2} @self ~onSpawn
+  - skill{s=bl_shadow_spider_death} @self ~onDeath
+  - skill{s=bl_shadow_spider_step} @self ~onTimer:15
+  - skill{s=bl_shadow_spider_idle} @self ~onTimer:80
+  - skill{s=bl_shadow_spider_skills} @target ~onTimer:30
+  - BodyClamp{mh=25;rde=0;rdu=0} @self ~onSpawn
+  Drops:
+  - string 2-4 1
+  - spider_eye 1-2 0.7
+  - ender_pearl 1 0.25
+  - echo_shard 1 0.04
+  - emerald 1 0.1
+  - exp 15to30
+
+bl_shadow_spider_illusion:
+  Type: HUSK
+  Display: '<#B05050>Araña Sombría'
+  Faction: bl_spiders
+  Health: 10
+  Damage: 0
+  DamageModifiers:
+  - SUFFOCATION 0
+  - FALL 0
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  - lookatplayers
+  AITargetSelectors:
+  - clear
+  - attacker
+  - players
+  Modules:
+    ThreatTable: true
+  Options:
+    MovementSpeed: 0.2
+    FollowRange: 20
+    KnockbackResistance: 1
+    Silent: true
+    Despawn: true
+    Invincible: false
+    PreventSunburn: true
+    PreventBlockInfection: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventJockeyMounts: true
+    Collidable: true
+  Skills:
+  - model{mid=bl_shadow_spider;n=false;step=1;usm=true;save=true;d=true} @self ~onSpawn
+  - model{mid=bl_shadow_spider;n=false;step=1;usm=true;save=true;d=true} @self ~onLoad
+  - CancelEvent{sync=true} @self ~onAttack
+  - setspeed{s=1} @self ~onSpawn
+  - skill{s=bl_shadow_spider_death} @self ~onDeath
+  - skill{s=bl_shadow_spider_step} @self ~onTimer:15
+  - skill{s=bl_shadow_spider_idle} @self ~onTimer:80
+  - skill{s=bl_shadow_spider_skills_illusion} @target ~onTimer:30
+  - BodyClamp{mh=25;rde=0;rdu=0} @self ~onSpawn
+  Drops:
+  - exp 1to3
+

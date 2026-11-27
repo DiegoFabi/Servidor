@@ -1,9 +1,10 @@
+# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
 # Solo en survivalMain (como el resto de randomspawns del servidor)
 MSO_Bamboo_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Bamboo
-  Chance: 0.1
+  Chance: 0.15
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -12,7 +13,7 @@ MSO_Hills_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Hills
-  Chance: 0.1
+  Chance: 0.15
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -21,7 +22,7 @@ MSO_Jungle_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Jungle
-  Chance: 0.1
+  Chance: 0.15
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -30,7 +31,7 @@ MSO_Plains_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Plains
-  Chance: 0.1
+  Chance: 0.15
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -39,7 +40,7 @@ MSO_Spruce_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Spruce
-  Chance: 0.1
+  Chance: 0.15
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true

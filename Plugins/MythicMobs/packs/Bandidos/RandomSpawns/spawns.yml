@@ -1,9 +1,10 @@
+# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
 # Bandidos: grupos en caminos y zonas abiertas de survivalMain (sustituyen a parte de los
 # zombis/esqueletos/saqueadores). Máx. 3 en 48 bloques. Priority 300 (no son élites).
 banditema1_em_natural:
   Type: banditema1_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -16,7 +17,7 @@ banditema1_em_natural:
 banditema2_em_natural:
   Type: banditema2_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -29,7 +30,7 @@ banditema2_em_natural:
 banditema3_em_natural:
   Type: banditema3_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -42,7 +43,7 @@ banditema3_em_natural:
 banditema_em_natural:
   Type: banditema_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -55,7 +56,7 @@ banditema_em_natural:
 banditemb1_em_natural:
   Type: banditemb1_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -68,7 +69,7 @@ banditemb1_em_natural:
 banditemb2_em_natural:
   Type: banditemb2_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -81,7 +82,7 @@ banditemb2_em_natural:
 banditemb3_em_natural:
   Type: banditemb3_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -94,7 +95,7 @@ banditemb3_em_natural:
 banditemb_em_natural:
   Type: banditemb_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -107,7 +108,7 @@ banditemb_em_natural:
 banditemc1_em_natural:
   Type: banditemc1_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -120,7 +121,7 @@ banditemc1_em_natural:
 banditemc2_em_natural:
   Type: banditemc2_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -133,7 +134,7 @@ banditemc2_em_natural:
 banditemc3_em_natural:
   Type: banditemc3_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -146,7 +147,7 @@ banditemc3_em_natural:
 banditemc_em_natural:
   Type: banditemc_em
   Worlds: survivalMain
-  Chance: 0.012
+  Chance: 0.018
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
