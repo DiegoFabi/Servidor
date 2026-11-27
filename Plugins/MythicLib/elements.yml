@@ -1,0 +1,66 @@
+
+
+FIRE:
+  name: Fire
+  icon: BLAZE_POWDER
+  lore-icon: '🔥'
+  color: '&c'
+  regular-attack:
+    mythicmobs-skill-id: lemon_fire_element_attack
+  crit-strike:
+    mythicmobs-skill-id: lemon_fire_element_attack_crit
+
+EARTH:
+  name: Earth
+  icon: OAK_SAPLING
+  lore-icon: '₪'
+  color: '&2'
+  regular-attack:
+    mythicmobs-skill-id: lemon_earth_element_attack
+  crit-strike:
+    mythicmobs-skill-id: lemon_earth_element_attack_crit
+
+WIND:
+  name: Wind
+  icon: FEATHER
+  lore-icon: '🌊'
+  color: '&7'
+  regular-attack:
+    mythicmobs-skill-id: lemon_wind_element_attack
+  crit-strike:
+    mythicmobs-skill-id: lemon_wind_element_attack_crit
+
+WATER:
+  name: Water
+  icon: LILY_PAD
+  lore-icon: '🌊'
+  color: '&3'
+  regular-attack:
+    mythicmobs-skill-id: lemon_water_element_attack
+  crit-strike:
+    mythicmobs-skill-id: lemon_water_element_attack_crit
+    
+
+COMBUSTION:
+  name: Combustion
+  icon: SUNFLOWER
+  lore-icon: '☁'
+  color: '&6'
+  regular-attack:
+    mythicmobs-skill-id: lemon_water_element_null
+
+MAGMA:
+  name: Magma
+  icon: FIRE_CHARGE
+  lore-icon: '☀'
+  color: '&4'
+  regular-attack:
+    mythicmobs-skill-id: lemon_water_element_null
+
+PLANT:
+  name: Plant
+  icon: KELP
+  lore-icon: '✾'
+  color: '&2'
+  regular-attack:
+    mythicmobs-skill-id: lemon_water_element_null

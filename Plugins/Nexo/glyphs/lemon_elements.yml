@@ -1,0 +1,6 @@
+# Lemon Elements: fondo del menú de la Estación Elemental (GooP)
+gui_lemon_element_station:
+  texture: gui/gui_lemon_element_station
+  char: "\ue9b0"
+  ascent: 131
+  height: 256

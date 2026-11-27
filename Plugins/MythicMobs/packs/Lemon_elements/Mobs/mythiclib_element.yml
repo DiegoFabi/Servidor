@@ -1,0 +1,29 @@
+lemon_ice:
+  Type: ARMOR_STAND
+  Display: 'Ice effect'
+  Options:
+    Marker: true
+  Skills:
+  - model{m=mythiclib_element_ice;d=false} @self ~onSpawn
+  
+lemon_plant:
+  Type: ARMOR_STAND
+  Display: 'Plant effect'
+  Options:
+    Marker: true
+  Skills:
+  - model{m=mythiclib_element_plant;d=false} @self ~onSpawn
+  - effect:particles{p=scrape;amount=2;speed=0.5;hS=0.3;vS=0;useEyeLocation=true} @self ~onTimer:60
+  
+lemon_spirit:
+  Type: ARMOR_STAND
+  Display: 'Spirit effect'
+  Options:
+    Marker: true
+  Skills:
+  - model{m=mythiclib_element_spirit;d=false} @self ~onSpawn
+  - effect:particles{p=end_rod;amount=2;speed=0.05;hS=0.7;vS=1;y=-0.6;d=true;dir=0,4,0} @self ~onTimer:40
+  - effect:particles{p=wax_off;amount=5;speed=0.05;hS=0.7;vS=1;y=0.6;d=true;dir=0,4,0} @self ~onTimer:40
+  - sound{s=particle.soul_escape;v=4;p=2} @self ~onTimer:20
+
+# 6025AXY3J3E51R

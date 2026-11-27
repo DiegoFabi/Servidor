@@ -1,0 +1,16 @@
+lemon_elements_station:
+  NumberOfRows: 6
+  ContainerType: STATION
+  DisplayTitle: &f
+  Contents:
+  - ELEMENT 4||STORAGE||v YELLOW_DYE 0||1||NME<#bfbfbf>Element shard||HFGHIDE_ATTRIBUTES||CMD2||
+  - ELEMENT 11||STORAGE||v YELLOW_DYE 0||1||NME<#bfbfbf>Element shard||HFGHIDE_ATTRIBUTES||CMD2||
+  - ELEMENT 15||STORAGE||v YELLOW_DYE 0||1||NME<#bfbfbf>Element shard||HFGHIDE_ATTRIBUTES||CMD2||
+  - CAGE 17||STORAGE||v YELLOW_DYE 0||1||NME<#bfbfbf>Element cage||HFGHIDE_ATTRIBUTES||CMD2||
+  - ELEMENT 22||STORAGE||v YELLOW_DYE 0||1||NME<#bfbfbf>Element shard||HFGHIDE_ATTRIBUTES||CMD2||
+  - FLASH 40||DISPLAY||v YELLOW_DYE 0||1||CMD15||
+  - 48||DISPLAY||v YELLOW_DYE 0||1||COCgoop mythicmobs runSkillAs lemon_mythiclib_element_station
+    %player%||NME<#99cc00>Confirm||HFGHIDE_ATTRIBUTES||CMD2||
+  - RESULT 50||STORAGE||v YELLOW_DYE 0||1||HFGHIDE_ATTRIBUTES||CMD2||
+  AllowInventoryDrag: true
+  ProvidedDragToInventory: true

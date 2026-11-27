@@ -1,0 +1,135 @@
+# Lemon Elements (Lemon): elementos de MythicLib, fragmentos, jaula y estación.
+# Convertido de Oraxen a Nexo. YELLOW_DYE con custom_model_data 2 y 15-32
+# (coinciden con MythicMobs/packs/Lemon_elements y la plantilla de GooP).
+
+invisible_item:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 2
+    texture: lemon_mcpets/lemon_invisible
+lemon_mythiclib_element_gui_c0:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 15
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c0
+lemon_mythiclib_element_gui_c1:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 16
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c1
+lemon_mythiclib_element_gui_c2:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 17
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c2
+lemon_mythiclib_element_gui_c3:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 18
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c3
+lemon_mythiclib_element_gui_c4:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 19
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c4
+lemon_mythiclib_element_gui_c5:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 20
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c5
+lemon_mythiclib_element_gui_c6:
+  itemname: <white>
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 21
+    generate_model: false
+    model: minecraft:lemon_mythiclib_element_gui_c6
+lemon_mythiclib_element_fire_shard:
+  itemname: <white>Fragmento de Fuego
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 22
+    texture: lemon_mcpets/lemon_mythiclib_element_fire_shard
+lemon_mythiclib_element_wind_shard:
+  itemname: <white>Fragmento de Viento
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 23
+    texture: lemon_mcpets/lemon_mythiclib_element_wind_shard
+lemon_mythiclib_element_water_shard:
+  itemname: <white>Fragmento de Agua
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 24
+    texture: lemon_mcpets/lemon_mythiclib_element_water_shard
+lemon_mythiclib_element_earth_shard:
+  itemname: <white>Fragmento de Tierra
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 25
+    texture: lemon_mcpets/lemon_mythiclib_element_earth_shard
+lemon_mythiclib_element_cage:
+  itemname: <white>Jaula Elemental
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 26
+    texture: lemon_mcpets/lemon_mythiclib_element_cage
+lemon_mythiclib_element_fire:
+  itemname: <white>Elemento de Fuego
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 27
+    texture: lemon_mcpets/lemon_mythiclib_element_fire
+lemon_mythiclib_element_wind:
+  itemname: <white>Elemento de Viento
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 28
+    texture: lemon_mcpets/lemon_mythiclib_element_wind
+lemon_mythiclib_element_water:
+  itemname: <white>Elemento de Agua
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 29
+    texture: lemon_mcpets/lemon_mythiclib_element_water
+lemon_mythiclib_element_earth:
+  itemname: <white>Elemento de Tierra
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 30
+    texture: lemon_mcpets/lemon_mythiclib_element_earth
+lemon_mythiclib_station_block:
+  itemname: <white>Estación Elemental
+  material: YELLOW_DYE
+  excludeFromInventory: true
+  Pack:
+    custom_model_data: 31
+    generate_model: false
+    model: minecraft:lemon_mythiclib_station_block
+lemon_mythiclib_station_block_item:
+  itemname: <white>Estación Elemental
+  material: YELLOW_DYE
+  Pack:
+    custom_model_data: 32
+    texture: lemon_mcpets/lemon_mythiclib_station_block_item

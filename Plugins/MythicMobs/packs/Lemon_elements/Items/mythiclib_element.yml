@@ -1,0 +1,19 @@
+element_crafting_station:
+  Id: YELLOW_DYE
+  CustomModelData: 32
+  Display: '&dElement crafting station'
+  Type: FURNITURE
+  Furniture:
+    Material: YELLOW_DYE
+    Model: 31
+    Health: 1
+    Barriers:
+    - 0,0,0
+    Lights:
+    - 0,2,0 15
+  FurnitureSkills:
+  - sound{s=block.lodestone.place} @self ~onBlockPlace
+  - sound{s=block.respawn_anchor.set_spawn;v=0.5;p=1.6} @self ~onInteract
+  - command{c="goop containers open lemon_elements_station <target.name>"} @trigger ~onInteract
+  - sound{s=block.lodestone.break} @self ~onBlockBreak
+  - sound{s=block.lodestone.place;v=0.5} @self ~onBlockRotate

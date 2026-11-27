@@ -1,0 +1,23 @@
+{
+	"credit": "198905 / 1197NB3JT30",
+	"textures": {
+		"0": "lemon_mcpets/lemon_mythiclib_element_c2",
+		"particle": "lemon_mcpets/lemon_mythiclib_element_c2"
+	},
+	"elements": [
+		{
+			"from": [-16, 0, 0],
+			"to": [32, 16, 0],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 0], "texture": "#0"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {}
+}

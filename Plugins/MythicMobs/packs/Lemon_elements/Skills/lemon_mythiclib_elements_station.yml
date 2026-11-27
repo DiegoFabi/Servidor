@@ -1,0 +1,166 @@
+lemon_mythiclib_element_station:
+  Cooldown: 0.2
+  Skills:
+  - settargetscore{objective=element_fire;value=0} @Self{targetcreative=true}
+  - settargetscore{objective=element_water;value=0} @Self{targetcreative=true}
+  - settargetscore{objective=element_wind;value=0} @Self{targetcreative=true}
+  - settargetscore{objective=element_earth;value=0} @Self{targetcreative=true}
+  - settargetscore{objective=element_cage;value=0} @Self{targetcreative=true}
+  - settargetscore{objective=element_check;value=0} @Self{targetcreative=true}
+ 
+  - command{c="goop testinventory <target.name> c<ELEMENT> m MATERIAL ELEMENT_FIRE element_fire amount"} @Self{targetcreative=true}
+  - command{c="goop testinventory <target.name> c<ELEMENT> m MATERIAL ELEMENT_WATER element_water amount"} @Self{targetcreative=true}
+  - command{c="goop testinventory <target.name> c<ELEMENT> m MATERIAL ELEMENT_WIND element_wind amount"} @Self{targetcreative=true}
+  - command{c="goop testinventory <target.name> c<ELEMENT> m MATERIAL ELEMENT_EARTH element_earth amount"} @Self{targetcreative=true}
+  - command{c="goop testinventory <target.name> c<CAGE> m MATERIAL ELEMENT_CAGE element_cage amount"} @Self{targetcreative=true}
+
+  - delay 1
+  - sound{s=ui.loom.select_pattern;v=1;p=2} @Self{targetcreative=true}
+ 
+  - skill{s=lemon_mythiclib_element_station-fire} @Self{targetcreative=true}
+ 
+lemon_mythiclib_element_station-fire:
+  Conditions:
+  
+  - score{objective=element_cage;v=1} true
+  - score{objective=element_water;v=4} castinstead lemon_mythiclib_element_station-water
+  - score{objective=element_wind;v=4} castinstead lemon_mythiclib_element_station-wind
+  - score{objective=element_earth;v=4} castinstead lemon_mythiclib_element_station-earth
+  - score{objective=element_fire;v=4} true
+ 
+  Skills:
+  - delay 1
+ 
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_FIRE 4 C"} @Self{targetcreative=true}
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_CAGE 1 C"} @Self{targetcreative=true}
+  
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> -6"} @Self{targetcreative=true}
+  - sound{s=ui.loom.take_result;v=1;p=2} @Self{targetcreative=true}
+  - delay 2
+  - command{c="goop nbt setItem <target.name> c<RESULT> m GEM_STONE ELEMENT_FIRE +0"} @Self{targetcreative=true}
+ 
+lemon_mythiclib_element_station-earth:
+  Conditions:
+  
+  - score{objective=element_cage;v=1} true
+  - score{objective=element_water;v=4} castinstead lemon_mythiclib_element_station-water
+  - score{objective=element_wind;v=4} castinstead lemon_mythiclib_element_station-wind
+  - score{objective=element_earth;v=4} true
+ 
+  Skills:
+  - delay 1
+ 
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_EARTH 4 C"} @Self{targetcreative=true}
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_CAGE 1 C"} @Self{targetcreative=true}
+  
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> -6"} @Self{targetcreative=true}
+  - sound{s=ui.loom.take_result;v=1;p=2} @Self{targetcreative=true}
+  - delay 2
+  - command{c="goop nbt setItem <target.name> c<RESULT> m GEM_STONE ELEMENT_EARTH +0"} @Self{targetcreative=true}
+ 
+lemon_mythiclib_element_station-wind:
+  Conditions:
+  
+  - score{objective=element_cage;v=1} true
+  - score{objective=element_water;v=4} castinstead lemon_mythiclib_element_station-water
+  - score{objective=element_wind;v=4} true
+ 
+  Skills:
+  - delay 1
+ 
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_WIND 4 C"} @Self{targetcreative=true}
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_CAGE 1 C"} @Self{targetcreative=true}
+  
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> -6"} @Self{targetcreative=true}
+  - sound{s=ui.loom.take_result;v=1;p=2} @Self{targetcreative=true}
+  - delay 2
+  - command{c="goop nbt setItem <target.name> c<RESULT> m GEM_STONE ELEMENT_WIND +0"} @Self
+ 
+lemon_mythiclib_element_station-water:
+  Conditions:
+  
+  - score{objective=element_cage;v=1} true
+  - score{objective=element_water;v=4} true
+ 
+  Skills:
+  - delay 1
+ 
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_WATER 4 C"} @Self{targetcreative=true}
+  - command{c="goop consumeitem <target.name> m MATERIAL ELEMENT_CAGE 1 C"} @Self{targetcreative=true}
+  
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> +1"} @Self{targetcreative=true}
+  - sound{s=block.enchantment_table.use;v=1;p=2} @Self{targetcreative=true}
+  - delay 14
+  - command{c="goop nbt cModelData <target.name> c<FLASH> -6"} @Self{targetcreative=true}
+  - sound{s=ui.loom.take_result;v=1;p=2} @Self{targetcreative=true}
+  - delay 2
+  - command{c="goop nbt setItem <target.name> c<RESULT> m GEM_STONE ELEMENT_WATER +0"} @Self{targetcreative=true}
