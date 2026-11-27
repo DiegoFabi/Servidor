@@ -31,22 +31,23 @@ elite_rango:
 # Nombre vanilla (solo se ve al mirarlo): "Nv 57 Zombi"
 elite_nombre:
   Skills:
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌▌▌"} @self
+  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>"} @self
 
-# Al recibir daño: nivel + nombre + barra de vida de 10 segmentos (formato EliteMobs).
+# Nombre en dos líneas (formato EliteMobs): arriba barra de 10 segmentos + vida actual/máxima,
+# abajo nivel y nombre. Se actualiza al recibir daño.
 # Cada línea pisa a la anterior; la última que cumple su condición es la que queda.
 elite_nombre_vida:
   Skills:
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>▌<#3A3F4B>▌▌▌▌▌▌▌▌▌";delay=1} @self
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>▌▌<#3A3F4B>▌▌▌▌▌▌▌▌";delay=1} @self ?healthpercent{h=>10%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>▌▌▌<#3A3F4B>▌▌▌▌▌▌▌";delay=1} @self ?healthpercent{h=>20%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FFD36B>▌▌▌▌<#3A3F4B>▌▌▌▌▌▌";delay=1} @self ?healthpercent{h=>30%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FFD36B>▌▌▌▌▌<#3A3F4B>▌▌▌▌▌";delay=1} @self ?healthpercent{h=>40%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FFD36B>▌▌▌▌▌▌<#3A3F4B>▌▌▌▌";delay=1} @self ?healthpercent{h=>50%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌<#3A3F4B>▌▌▌";delay=1} @self ?healthpercent{h=>60%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌<#3A3F4B>▌▌";delay=1} @self ?healthpercent{h=>70%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌▌<#3A3F4B>▌";delay=1} @self ?healthpercent{h=>80%}
-  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#7FFF9E>▌▌▌▌▌▌▌▌▌▌<#3A3F4B>";delay=1} @self ?healthpercent{h=>90%}
+  - setname{n="<#FF5C5C>▌<#3A3F4B>▌▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self
+  - setname{n="<#FF5C5C>▌▌<#3A3F4B>▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>10%}
+  - setname{n="<#FF5C5C>▌▌▌<#3A3F4B>▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>20%}
+  - setname{n="<#FFD36B>▌▌▌▌<#3A3F4B>▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>30%}
+  - setname{n="<#FFD36B>▌▌▌▌▌<#3A3F4B>▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>40%}
+  - setname{n="<#FFD36B>▌▌▌▌▌▌<#3A3F4B>▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>50%}
+  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌<#3A3F4B>▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>60%}
+  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌<#3A3F4B>▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>70%}
+  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌▌<#3A3F4B>▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>80%}
+  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌▌▌<#3A3F4B> <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>90%}
 
 # Estilo por rango: Legendario puede arder sin quemarse, Mítico brilla y corre más
 elite_estilo:
