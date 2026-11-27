@@ -203,7 +203,7 @@ function evBuscarJefe():
 # ---------- Final ----------
 function evTerminar():
     loop {-ev::rastreo::*}:
-        delete bossbar named "evr_%loop-value%"
+        delete bossbar named "evr_%loop-index%"
     delete {-ev::rastreo::*}
     delete {-ev::activo}
     delete {-ev::boss}
@@ -356,9 +356,12 @@ every 2 seconds:
         set {_vida} to 100 * health of {-ev::boss} / max health of {-ev::boss}
     set {_flechas::*} to "↑", "↗", "→", "↘", "↓", "↙", "←" and "↖"
     loop {-ev::rastreo::*}:
-        set {_j} to loop-value parsed as offline player
+        set {_j} to loop-value
         if {_j} is online:
-            set {_b} to bossbar named "evr_%loop-value%"
+            set {_b} to bossbar named "evr_%loop-index%"
+            if {_b} is not set:
+                set {_b} to new bossbar with id "evr_%loop-index%" with title "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}%" with color red with style segmented_10 with progress 100
+                add {_j} to bossbar players of {_b}
             if world of {_j} is not world of {-ev::loc}:
                 set bossbar title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>· en otro mundo"
             else:
@@ -368,7 +371,7 @@ every 2 seconds:
                 set {_rel} to mod({_rel} + 540, 360) - 180
                 set {_i} to mod(round({_rel} / 45), 8) + 1
                 set {_dist} to round(distance between {_j} and {-ev::loc})
-                set bossbar title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>Nv %{-ev::nivel}% <dark_gray>· <white>%{_dist}% m %{_flechas::%{_i}%}%"
+                set bossbar title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>Nv %{-ev::nivel}% <dark_gray>· <white>a %{_dist}% bloques %{_flechas::%{_i}%}%"
             set bossbar progress of {_b} to {_vida}
 
 command /eventoelite [<text>] [<text>]:
@@ -378,15 +381,15 @@ command /eventoelite [<text>] [<text>]:
                 send "{@p} <#C9CDD6>No hay ningún evento activo." to player
                 stop
             set {_id} to "%uuid of player%"
-            if {-ev::rastreo::*} contains {_id}:
+            if {-ev::rastreo::%{_id}%} is set:
                 stop
-            add {_id} to {-ev::rastreo::*}
-            set {_b} to bossbar named "evr_%{_id}%" with title "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}%" with color red with style segmented 10 with progress 100
+            set {-ev::rastreo::%{_id}%} to player
+            set {_b} to new bossbar with id "evr_%{_id}%" with title "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>· buscando…" with color red with style segmented_10 with progress 100
             add player to bossbar players of {_b}
             send action bar "<#7FD8FF>⌖ <#C9CDD6>Rastreando a <#FFD36B>%{-ev::nombre}%" to player
         else if arg-1 is "dejar":
             set {_id} to "%uuid of player%"
-            remove {_id} from {-ev::rastreo::*}
+            delete {-ev::rastreo::%{_id}%}
             delete bossbar named "evr_%{_id}%"
             send action bar "<#9EA3AE>✖ Rastreo desactivado" to player
         else if player has permission "servidor.eventos.admin":
@@ -410,6 +413,6 @@ command /eventoelite [<text>] [<text>]:
 
 on quit:
     set {_id} to "%uuid of player%"
-    {-ev::rastreo::*} contains {_id}
-    remove {_id} from {-ev::rastreo::*}
+    {-ev::rastreo::%{_id}%} is set
+    delete {-ev::rastreo::%{_id}%}
     delete bossbar named "evr_%{_id}%"
