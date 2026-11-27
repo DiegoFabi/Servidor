@@ -1,13 +1,22 @@
 {
-  "providers": [
-    {
-      "type": "bitmap",
-      "file": "minecraft:bossbar/bl_illusionist_bossbar.png",
-      "ascent": 17,
-      "height": 256,
-      "chars": [
-        "\ue980"
-      ]
-    }
-  ]
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "minecraft:bossbar/bl_illusionist_bossbar.png",
+            "ascent": 17,
+            "height": 256,
+            "chars": [
+                "\ue980"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:bossbar/hv_tenebris_bossbar.png",
+            "ascent": 13,
+            "height": 48,
+            "chars": [
+                "\ue981"
+            ]
+        }
+    ]
 }

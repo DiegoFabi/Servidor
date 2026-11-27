@@ -1,0 +1,134 @@
+
+hv_tenebris_spawner:
+  Type: ARMOR_STAND
+  Display: '&6Tenebris'
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - skill{s=hv_tenebris_spawner_use} @self ~onTimer:20
+  
+hv_tenebris:
+  Type: husk
+  Display: '&6Tenebris'
+  Health: 300
+  Damage: 5
+  DamageModifiers:
+  - SUFFOCATION 0.1
+  - PROJECTILE 0.25
+  - FALL 0.1
+  Faction: hv_tenebris
+  Modules:
+    ThreatTable: true
+  Options:
+    AlwaysShowName: true
+    PreventOtherDrops: true
+    Silent: true
+    FollowRange: 64
+    PreventItemPickup: true
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+    KnockbackResistance: 1
+    Collidable: true
+  BossBar:
+    Enabled: true
+    Title: ''
+    Range: 64
+    Color: PURPLE
+    Style: SOLID
+    CreateFog: false
+    DarkenSky: false
+  Skills:
+  - model{mid=hv_tenebris;ride=true;drive=true;s=1;save=true} @self ~onSpawn
+  - CancelEvent{sync=true} @self ~onAttack
+  - skill{s=hv_tenebris_phase2} @target ~onTimer:20
+  - skill{s=hv_tenebris_staff_particle} @target ~onTimer:10
+  - skill{s=hv_tenebris_spawn} @self ~onSpawn
+  - skill{s=hv_tenebris_death} @self ~onDeath
+  - randomskill{s=hv_tenebris_phase1_skills,hv_tenebris_phase2_skills} @target ~onTimer:15
+  
+hv_tenebris_projectile:
+  Type: ARMOR_STAND
+  Display: '&6Tenebris'
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=hv_tenebris_projectile} @self ~onSpawn
+  - sound{s=hv_tenebris.projectile;v=4;p=0.5} @self ~onSpawn
+  
+hv_tenebris_projectile_vfx:
+  Type: ARMOR_STAND
+  Display: '&6Tenebris'
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=hv_tenebris_projectile_vfx} @self ~onSpawn
+  - remove{delay=20} @self ~onSpawn
+  
+hv_tenebris_portal_tentacles:
+  Type: ARMOR_STAND
+  Display: '&6Tenebris'
+  Damage: 5
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=hv_tenebris_portal_tentacles} @self ~onSpawn
+  - sound{s=entity.illusioner.mirror_move;p=1;v=4} @self ~onSpawn
+  - sound{s=entity.illusioner.mirror_move;p=1;v=4;delay=3} @self ~onSpawn
+  - sound{s=entity.illusioner.mirror_move;p=1;v=4;delay=6} @self ~onSpawn
+  - totem{md=1;oH=hv_tenebris_portal_tentacles_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=4} @modelpart{pid=portal_ring3;o=model} ~onSpawn
+  - totem{md=1;oH=hv_tenebris_portal_tentacles_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=7} @modelpart{pid=portal_ring3;o=model;z=-3} ~onSpawn
+  - totem{md=1;oH=hv_tenebris_portal_tentacles_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=10} @modelpart{pid=portal_ring3;o=model;z=-6} ~onSpawn
+  - remove{delay=30} @self ~onSpawn
+  
+hv_tenebris_portal_bottom:
+  Type: ARMOR_STAND
+  Display: '&6Tenebris'
+  AITargetSelectors:
+  - 0 clear
+  AIGoalSelectors:
+  - 0 clear
+  Options:
+    NoAI: true
+    Marker: true
+    ApplyInvisibility: true
+    Invisible: true
+  Skills:
+  - model{mid=hv_tenebris_portal_bottom} @self ~onSpawn
+  - state{s=aura} @self ~onSpawn
+  - sound{s=entity.illusioner.mirror_move;p=0.5;v=0.5;delay=1} @self ~onSpawn
+  - aura{auraName=hv_tenebris_portal_bottom;onTick=hv_tenebris_portal_bottom_tick;interval=1;duration=595;delay=5} @self ~onSpawn
+  - state{s=death;delay=600} @self ~onSpawn
+  - remove{delay=606} @self ~onSpawn
+  
+  
+
+# 364F4ADNTNWNNRW60TW

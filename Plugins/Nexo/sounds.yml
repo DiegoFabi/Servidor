@@ -77,6 +77,15 @@ sounds:
   sound: minecraft:bl_illusionist/swing_dagger.ogg
 - id: minecraft:bl_illusionist.whoosh
   sound: minecraft:bl_illusionist/whoosh.ogg
+# Boss Tenebris (MythicMobs usa sound{s=hv_tenebris.X}).
+- id: minecraft:hv_tenebris.swoosh
+  sound: minecraft:hv_tenebris/swoosh.ogg
+- id: minecraft:hv_tenebris.ray
+  sound: minecraft:hv_tenebris/ray.ogg
+- id: minecraft:hv_tenebris.grab
+  sound: minecraft:hv_tenebris/grab.ogg
+- id: minecraft:hv_tenebris.projectile
+  sound: minecraft:hv_tenebris/projectile.ogg
 - id: nexo:ruleta.spin
   sound: nexo:ruleta/ruleta.ogg
   volume: 1.0

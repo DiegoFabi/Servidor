@@ -1,0 +1,446 @@
+
+
+hv_tenebris_spawner_use:
+  Cooldown: 99999
+  Conditions:
+  - playerwithin{d=24} true
+  Skills:
+  - summon{t=hv_tenebris} @self
+  - remove @self
+  
+hv_tenebris_spawn:
+  Skills:
+  - gcd{ticks=50} @self
+  - aura{auraName=hv_tenebris_cd;duration=200} @self
+  - setspeed{s=0} @self
+  - cullconfig{vc=false;bkc=false;blc=false} @self 
+  - setspeed{s=1;delay=50} @self
+  - BodyClamp{mh=25;rde=0;rdu=0} @self
+  - sound{s=entity.illusioner.mirror_move;p=0.5;v=4} @self
+  - sound{s=entity.illusioner.mirror_move;p=1.2;v=4;delay=10} @self
+  - effect:particles{p=dragon_breath;amount=16;speed=0.1;hS=1;vS=0;delay=10} @modelpart{pid=root;o=model}
+  - sound{s=block.ancient_debris.fall;p=0.5;v=4;delay=22} @self
+  - partvis{mid=hv_tenebris;p=sword;v=false;child=true} @self
+  - partvis{mid=hv_tenebris;p=main_ray;v=false;child=true} @self
+  - partvis{mid=hv_tenebris;p=portal;v=false;child=true;delay=22} @self
+  - partvis{mid=hv_tenebris;p=spheres;v=false;child=true} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true} @self
+  - state{s=aura} @self
+  - state{s=aura_hair} @self
+    
+hv_tenebris_death:
+  Skills:
+  - partvis{mid=hv_tenebris;p=main_ray;v=false;child=true} @self
+  - partvis{mid=hv_tenebris;p=portal;v=false;child=true} @self
+  - partvis{mid=hv_tenebris;p=spheres;v=false;child=true} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true} @self
+  - sound{s=entity.armadillo.land;p=0.5;v=4;delay=8}
+  - sound{s=ui.toast.challenge_complete;p=0.8;v=4;delay=10}
+  - particles{particle=dragon_breath;amount=90;hS=0.5;vS=0.5;speed=0.1;delay=59} @self
+
+  
+ 
+hv_tenebris_phase2:
+  Conditions:
+  - offgcd
+  - hastag{t=hv_tenebris_phase2} false
+  - health{h=<250} true
+  Skills:
+  - gcd{ticks=28} @self
+  - state{s=take_sword} @self
+  - setspeed{s=0} @self
+  - sound{s=entity.illusioner.mirror_move;p=0.5;v=4} @self
+  - sound{s=entity.illusioner.mirror_move;p=1.5;v=4;delay=7} @self
+  - sound{s=item.trident.throw;p=1;v=4;delay=11} @self
+  - addtag{t=hv_tenebris_phase2} @self
+  - partvis{mid=hv_tenebris;p=portal;v=true;child=true;delay=1} @self
+  - partvis{mid=hv_tenebris;p=portal;v=false;child=true;delay=25} @self
+  - partvis{mid=hv_tenebris;p=sword;v=true;child=true;delay=5} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - defaultstate{t=idle;s=idle;delay=26} @self
+  - defaultstate{t=walk;s=walk;delay=26} @self
+  - delay 2
+  - lockmodel{l=true} @self
+  - delay 23
+  - lockmodel{l=false} @self
+  - delay 3
+  - setspeed{s=1} @self
+  
+
+hv_tenebris_staff_particle:
+  Conditions:
+  - chance{c=0.25}
+  Skills:
+  - effect:particles{p=dragon_breath;amount=2;speed=0;hS=0.1;vS=0.1;delay=10} @modelpart{pid=particle_vfx7;o=model}
+
+hv_tenebris_step:
+  Skills:
+  - randomskill{s=hv_tenebris_step1,hv_tenebris_step2,hv_tenebris_step3}
+  
+hv_tenebris_step1:
+  Skills:
+  - sound{s=block.ancient_debris.fall;p=1.2;v=4} @self
+  
+hv_tenebris_step2:
+  Skills:
+  - sound{s=block.ancient_debris.fall;p=1;v=4} @self
+  
+hv_tenebris_step3:
+  Skills:
+  - sound{s=block.ancient_debris.fall;p=0.8;v=4} @self
+  
+hv_tenebris_staff_step:
+  Skills:
+  - sound{s=block.ancient_debris.fall;p=1.5;v=4} @self
+
+hv_tenebris_phase1_skills:
+  Conditions:
+  - hastag{t=hv_tenebris_phase2} false
+  Skills:
+  - randomskill{s=hv_tenebris_spin,hv_tenebris_portal_tentacles,hv_tenebris_portals,hv_tenebris_teleport,hv_tenebris_head_tentacles} @target
+  
+hv_tenebris_phase2_skills:
+  Conditions:
+  - hastag{t=hv_tenebris_phase2} true
+  Skills:
+  - randomskill{s=hv_tenebris_spin,hv_tenebris_portal_tentacles,hv_tenebris_portals,hv_tenebris_teleport,hv_tenebris_head_tentacles,hv_tenebris_grab_try,hv_tenebris_combo,hv_tenebris_combo2} @target
+ 
+
+hv_tenebris_spin:
+  Cooldown: 40
+  Conditions:
+  - offgcd
+  - hasaura hv_tenebris_cd false
+  TargetConditions:
+  - distance{d=0to8} true
+  Skills:
+  - gcd{ticks=235} @self
+  - state{s=spin} @self
+  - setspeed{s=0} @self
+  - partvis{mid=hv_tenebris;p=spheres;v=true;child=true;delay=15} @self
+  - partvis{mid=hv_tenebris;p=spheres;v=false;child=true;delay=185} @self
+  - projectile{b=MOB;mm=hv_tenebris_projectile;ti=25;v=20;ac=0.9;syo=4;oH=hv_tenebris_projectile_damage;se=false;sb=true;oE=hv_tenebris_projectile_end;delay=183} @Ring{r=32;p=20;y=4}
+  - aura{auraName=hv_tenebris_spin;onTick=hv_tenebris_spin_tick;interval=5;duration=130;delay=20} @self
+  - aura{auraName=hv_tenebris_spin_sound;onTick=hv_tenebris_spin_sound_tick;interval=5;duration=125;delay=10} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - delay 235
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+  
+hv_tenebris_spin_sound_tick:
+  Skills:
+  - sound{s=hv_tenebris.swoosh;v=4;p=0.7} @self
+
+hv_tenebris_spin_tick:
+  Skills:
+  - projectile{b=MOB;mm=hv_tenebris_projectile;ti=25;v=20;ac=0.8;syo=4;tyo=1;oH=hv_tenebris_projectile_damage;se=false;sb=true;oE=hv_tenebris_projectile_end} @EIR{r=16}
+  
+hv_tenebris_projectile_damage:
+  Skills:
+  - basedamage{m=2.5;pi=true;pk=true}
+  
+hv_tenebris_projectile_end:
+  Skills:
+  - summon{m=hv_tenebris_projectile_vfx;amount=1;radius=0}
+  - sound{s=entity.generic.explode;p=2;v=1}
+  
+hv_tenebris_portal_tentacles:
+  Cooldown: 12
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to8} true
+  Skills:
+  - gcd{ticks=36} @self
+  - state{s=portal_tentacles} @self
+  - setspeed{s=0} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - sound{s=hv_tenebris.grab;v=4;p=1;delay=11} @self
+  - delay 10
+  - summon{m=hv_tenebris_portal_tentacles;amount=1;radius=0} @modelpart{pid=root;o=model;y=-1.4;z=-2}
+  - propel{v=2} @forward{f=-2;yo=0.1;lockpitch=true} 
+  - delay 26
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+  
+hv_tenebris_portal_tentacles_damage:
+  Skills:
+  - basedamage{m=3;pi=true}
+  - throw{v=10;vy=3}
+  - shieldbreak{duration=60}
+  
+hv_tenebris_portals:
+  Cooldown: 50
+  Conditions:
+  - offgcd
+  - hasaura hv_tenebris_cd false
+  TargetConditions:
+  - distance{d=0to12} true
+  Skills:
+  - gcd{ticks=40} @self
+  - state{s=portals} @self
+  - setspeed{s=0} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - sound{s=hv_tenebris.grab;v=4;p=0.6;delay=13} @self
+  - sound{s=block.ancient_debris.fall;p=0.4;v=4;delay=18} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=true;child=true;delay=12} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true;delay=20} @self
+  - summon{m=hv_tenebris_portal_bottom;amount=1;radius=0;delay=17} @Ring{r=8;p=3}
+  - summon{m=hv_tenebris_portal_bottom;amount=1;radius=0;delay=18} @Ring{r=16;p=7}
+  - summon{m=hv_tenebris_portal_bottom;amount=1;radius=0;delay=19} @Ring{r=24;p=12}
+  - delay 17
+  - throw{v=10;vy=3} @EIR{r=7} 
+  - shieldbreak{duration=40} @EIR{r=7}
+  - basedamage{m=1;pi=true} @EIR{r=7}
+  - effect:particles{p=dragon_breath;amount=16;speed=0.1;hS=1;vS=0} @modelpart{pid=root;o=model}
+  - lockmodel{l=true} @self
+  - delay 13
+  - lockmodel{l=false} @self
+  - delay 10
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+
+hv_tenebris_portal_bottom_tick:
+  Skills:
+  - pull{v=4;to=true} @PIR{r=4}
+  - skill{s=hv_tenebris_portal_bottom_teleport}
+  
+hv_tenebris_portal_bottom_teleport:
+  Conditions:
+  - playerwithin{d=1} true
+  Skills:
+  - teleportto{location=@selflocation{y=10}} @PIR{r=1}
+  - sound{s=entity.illusioner.mirror_move;p=1.2;v=4} @self
+  - potion{type=darkness;duration=100;level=2} @PIR{r=1}
+  - state{s=death} @self
+  - remove{delay=6} @self
+
+hv_tenebris_teleport:
+  Cooldown: 16
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to16} true
+  Skills:
+  - gcd{ticks=90} @self
+  - state{s=teleport} @self
+  - setspeed{s=0} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - sound{s=entity.illusioner.mirror_move;p=0.5;v=4;delay=8} @self
+  - sound{s=entity.illusioner.mirror_move;p=1.2;v=4;delay=25} @self
+  - sound{s=entity.illusioner.mirror_move;p=0.5;v=4;delay=40} @self
+  - sound{s=entity.illusioner.mirror_move;p=1.2;v=4;delay=52} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=true;child=true;delay=15} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true;delay=30} @self
+  - partvis{mid=hv_tenebris;p=portal;v=true;child=true;delay=10} @self
+  - partvis{mid=hv_tenebris;p=portal;v=false;child=true;delay=80} @self
+  - delay 10
+  - effect:particles{p=dragon_breath;amount=16;speed=0.1;hS=1;vS=0} @modelpart{pid=root;o=model}
+  - lockmodel{l=true} @self
+  - delay 22
+  - hide{d=8} @PIR{r=32}
+  - delay 3
+  - teleport{spreadh=8;spreadv=0} @target
+  - delay 5
+  - lockmodel{l=false} @self
+  - delay 15
+  - throw{v=15;vy=3} @EIR{r=6} 
+  - shieldbreak{duration=40} @EIR{r=6}
+  - effect:particles{p=dragon_breath;amount=16;speed=0.1;hS=1;vS=0} @modelpart{pid=root;o=model}
+  - delay 10
+  - lockmodel{l=true} @self
+  - delay 10
+  - lockmodel{l=false} @self
+  - delay 15
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+  
+hv_tenebris_head_tentacles:
+  Cooldown: 12
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to6} true
+  Skills:
+  - gcd{ticks=22} @self
+  - state{s=head_tentacles} @self
+  - setspeed{s=0} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - sound{s=hv_tenebris.swoosh;v=4;p=1.2;delay=5} @self
+  - sound{s=hv_tenebris.swoosh;v=4;p=1.3;delay=7} @self
+  - sound{s=hv_tenebris.swoosh;v=4;p=1.4;delay=9} @self
+  - totem{md=2;oH=hv_tenebris_head_tentacles_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=9} @modelpart{pid=right_big_hair8;o=model}
+  - totem{md=2;oH=hv_tenebris_head_tentacles_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=8} @modelpart{pid=right_big_hair4;o=model}
+  - totem{md=2;oH=hv_tenebris_head_tentacles_damagee;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=9} @modelpart{pid=left_big_hair4;o=model}
+  - totem{md=2;oH=hv_tenebris_head_tentacles_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=10} @modelpart{pid=left_big_hair8;o=model}
+  - delay 7
+  - lockmodel{l=true} @self
+  - delay 5
+  - lockmodel{l=false} @self
+  - delay 10
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+  
+hv_tenebris_head_tentacles_damage:
+  Skills:
+  - basedamage{m=3;pi=true}
+  - shieldbreak{duration=40}
+
+hv_tenebris_grab_try:
+  Cooldown: 12
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=7to14} true
+  Skills:
+  - gcd{ticks=20} @self
+  - state{s=grab_try} @self
+  - setspeed{s=0} @self
+  - sound{s=hv_tenebris.grab;v=4;p=0.6;delay=4} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=true;child=true;delay=4} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true;delay=15} @self
+  - totem{md=3;oH=hv_tenebris_grab;hr=5;vr=5;drawhitbox=false;ti=25;delay=7} @modelpart{pid=seat}
+  - effect:particles{p=dragon_breath;amount=8;speed=0.1;hS=1;vS=0} @modelpart{pid=seat}
+  - delay 8
+  - lockmodel{l=true} @self
+  - delay 3
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - skill{s=check_passengers_hv_tenebris_grab_try} @modelpart{pid=seat}
+  
+check_passengers_hv_tenebris_grab_try:
+  Conditions:
+  - ModelHasPassenger{p=seat} false
+  Skills:
+  - lockmodel{l=false} @self
+  - setspeed{s=1} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true} @self
+   
+hv_tenebris_grab:
+  Skills:
+  - gcd{ticks=22} @self
+  - basedamage{m=1.5;pi=true}
+  - mountmodel{mid=hv_tenebris;driver=false;pbone=seat;dmg=false}
+  - state{s=grab_try;r=true} @self
+  - state{s=grab} @self
+  - sound{s=hv_tenebris.grab;v=4;p=1} @self
+  - sound{s=entity.drowned.shoot;p=0.8;v=4;delay=5} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true;delay=17} @self
+  - delay 6
+  - basedamage{m=3;pi=true;pk=true} @ModelPassengers{p=seat}
+  - shieldbreak{duration=200} @ModelPassengers{p=seat}
+  - delay 7
+  - dismountall{mid=hv_tenebris;p=seat} @self
+  - delay 3
+  - lockmodel{l=false} @self
+  - delay 6
+  - setspeed{s=1} @self
+  
+hv_tenebris_combo:
+  Cooldown: 12
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to6} true
+  Skills:
+  - gcd{ticks=42} @self
+  - state{s=combo} @self
+  - setspeed{s=0} @self
+  - partvis{mid=hv_tenebris;p=main_ray;v=true;child=true;delay=15} @self
+  - partvis{mid=hv_tenebris;p=main_ray;v=false;child=true;delay=35} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - sound{s=hv_tenebris.ray;v=4;p=1.2;delay=16} @self
+  - sound{s=hv_tenebris.swoosh;v=4;p=1;delay=7} @self
+  - totem{md=2;oH=hv_tenebris_combo_sword_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25;delay=12} @modelpart{pid=root;o=model;z=-3;x=-1}
+  - delay 14
+  - lockmodel{l=true} @self
+  - delay 2
+  - lockmodel{l=false} @self
+  - delay 1
+  - propel{v=0.5} @forward{f=-2;yo=0.1;lockpitch=true} 
+  - delay 3
+  - lockmodel{l=true} @self
+  - Aura{auraName=hv_tenebris_combo_ray;onTick=hv_tenebris_combo_tick;interval=1;duration=7} @self
+  - delay 10
+  - lockmodel{l=false} @self
+  - delay 12
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+  
+hv_tenebris_combo_sword_damage:
+  Skills:
+  - basedamage{m=3;pi=true}
+  - shieldbreak{duration=100}
+  
+hv_tenebris_combo_tick:
+  Skills:
+  - totem{md=2;oH=hv_tenebris_combo_ray_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage_ray;o=model}
+  - totem{md=2;oH=hv_tenebris_combo_ray_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage_ray;o=model;x=4}
+  - totem{md=2;oH=hv_tenebris_combo_ray_damage;hr=1.5;vr=1.5;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=damage_ray;o=model;x=8}
+  
+hv_tenebris_combo_ray_damage:
+  Skills:
+  - basedamage{m=1;pi=true}
+  
+hv_tenebris_combo2:
+  Cooldown: 12
+  Conditions:
+  - offgcd
+  TargetConditions:
+  - distance{d=0to7} true
+  Skills:
+  - gcd{ticks=55} @self
+  - state{s=combo2} @self
+  - setspeed{s=0} @self
+  - defaultstate{t=idle;s=not} @self
+  - defaultstate{t=walk;s=not} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=true;child=true;delay=31} @self
+  - partvis{mid=hv_tenebris;p=grab_vfx;v=false;child=true;delay=42} @self
+  - sound{s=hv_tenebris.grab;v=4;p=0.8;delay=30} @self
+  - sound{s=entity.drowned.shoot;p=0.8;v=4;delay=8} @self
+  - delay 8
+  - setspeed{s=3.5} @self
+  - delay 3
+  - totem{md=3;oH=hv_tenebris_combo2_sword_damage;hr=2;vr=2;hnp=true;drawhitbox=false;ti=25} @modelpart{pid=root;o=model;z=-3}
+  - setspeed{s=0} @self
+  - lockmodel{l=true} @self
+  - delay 4
+  - lockmodel{l=false} @self
+  - delay 4
+  - propel{v=2} @forward{f=-2;yo=0.4;lockpitch=true} 
+  - delay 8
+  - lockmodel{l=true} @self
+  - delay 3
+  - lockmodel{l=false} @self
+  - delay 5
+  - basedamage{m=3;pi=true;pk=true} @target
+  - throw{v=0;vy=12} @target
+  - blockwave{duration=25;material=crying_obsidian;radius=8;radiusY=1;velocity=2.5;shape=sphere;hs=false;n=0.2} @targetlocation
+  - blockwave{duration=25;material=obsidian;radius=8;radiusY=1;velocity=2.5;shape=sphere;hs=false;n=0.2} @targetlocation
+  - blockwave{duration=25;material=blackstone;radius=8;radiusY=1;velocity=2.5;shape=sphere;hs=false;n=0.2} @targetlocation 
+  - shieldbreak{duration=100} @target
+  - delay 20
+  - defaultstate{t=idle;s=idle} @self
+  - defaultstate{t=walk;s=walk} @self
+  - setspeed{s=1} @self
+  
+hv_tenebris_combo2_sword_damage:
+  Skills:
+  - basedamage{m=3;pi=true}
+  - shieldbreak{duration=20}
+   
