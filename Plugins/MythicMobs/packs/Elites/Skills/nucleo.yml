@@ -7,7 +7,8 @@ elite_aparecer:
   - setlevel{a=add;l=<random.0to4>} @self
   - setlevel{a=set;l=250} @self ?level{l=>250}
   - skill{s=elite_rango} @self
-  - skill{s=elite_nombre} @self
+  - summon{type=elite_placa;amount=1} @self
+  - skill{s=elite_nombre;delay=3} @self
   - randomskill{s=elite_escala_060 1,elite_escala_075 3,elite_escala_090 4,elite_escala_100 5,elite_escala_120 4,elite_escala_140 2,elite_escala_165 1} @self
   - randomskill{s=elite_escala_140 1,elite_escala_165 2,elite_escala_190 1} @self ?level{l=>189} 0.6
   - skill{s=elite_aura_asignar} @self 0.4
@@ -31,23 +32,23 @@ elite_rango:
 # Nombre vanilla (solo se ve al mirarlo): "Nv 57 Zombi"
 elite_nombre:
   Skills:
-  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>"} @self
+  - settextdisplay{text="<#7FFF9E>▌▌▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>"} @Passenger
 
 # Nombre en dos líneas (formato EliteMobs): arriba barra de 10 segmentos + vida actual/máxima,
 # abajo nivel y nombre. Se actualiza al recibir daño.
 # Cada línea pisa a la anterior; la última que cumple su condición es la que queda.
 elite_nombre_vida:
   Skills:
-  - setname{n="<#FF5C5C>▌<#3A3F4B>▌▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self
-  - setname{n="<#FF5C5C>▌▌<#3A3F4B>▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>10%}
-  - setname{n="<#FF5C5C>▌▌▌<#3A3F4B>▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>20%}
-  - setname{n="<#FFD36B>▌▌▌▌<#3A3F4B>▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>30%}
-  - setname{n="<#FFD36B>▌▌▌▌▌<#3A3F4B>▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>40%}
-  - setname{n="<#FFD36B>▌▌▌▌▌▌<#3A3F4B>▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>50%}
-  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌<#3A3F4B>▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>60%}
-  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌<#3A3F4B>▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>70%}
-  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌▌<#3A3F4B>▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>80%}
-  - setname{n="<#7FFF9E>▌▌▌▌▌▌▌▌▌▌<#3A3F4B> <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @self ?healthpercent{h=>90%}
+  - settextdisplay{text="<#FF5C5C>▌<#3A3F4B>▌▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger
+  - settextdisplay{text="<#FF5C5C>▌▌<#3A3F4B>▌▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>10%}
+  - settextdisplay{text="<#FF5C5C>▌▌▌<#3A3F4B>▌▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>20%}
+  - settextdisplay{text="<#FFD36B>▌▌▌▌<#3A3F4B>▌▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>30%}
+  - settextdisplay{text="<#FFD36B>▌▌▌▌▌<#3A3F4B>▌▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>40%}
+  - settextdisplay{text="<#FFD36B>▌▌▌▌▌▌<#3A3F4B>▌▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>50%}
+  - settextdisplay{text="<#7FFF9E>▌▌▌▌▌▌▌<#3A3F4B>▌▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>60%}
+  - settextdisplay{text="<#7FFF9E>▌▌▌▌▌▌▌▌<#3A3F4B>▌▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>70%}
+  - settextdisplay{text="<#7FFF9E>▌▌▌▌▌▌▌▌▌<#3A3F4B>▌ <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>80%}
+  - settextdisplay{text="<#7FFF9E>▌▌▌▌▌▌▌▌▌▌<#3A3F4B> <#FF6B6B><caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>\n<caster.var.color>Nv <caster.level> <white><caster.var.nombre>";delay=1} @Passenger ?healthpercent{h=>90%}
 
 # Estilo por rango: Legendario puede arder sin quemarse, Mítico brilla y corre más
 elite_estilo:

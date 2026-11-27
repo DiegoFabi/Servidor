@@ -7,7 +7,7 @@
 elite_zombie:
   Template: elite_guerrero
   Type: ZOMBIE
-  Display: '<#9EA3AE>Nv <caster.level> <white>Zombi'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -26,7 +26,7 @@ elite_zombie:
 elite_husk:
   Template: elite_guerrero
   Type: HUSK
-  Display: '<#9EA3AE>Nv <caster.level> <white>Momia'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -43,7 +43,7 @@ elite_husk:
 elite_drowned:
   Template: elite_guerrero
   Type: DROWNED
-  Display: '<#9EA3AE>Nv <caster.level> <white>Ahogado'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -61,7 +61,7 @@ elite_drowned:
 elite_zombie_villager:
   Template: elite_guerrero
   Type: ZOMBIE_VILLAGER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Aldeano Zombi'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -78,7 +78,7 @@ elite_zombie_villager:
 elite_skeleton:
   Template: elite_arquero
   Type: SKELETON
-  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -95,7 +95,7 @@ elite_skeleton:
 elite_stray:
   Template: elite_arquero
   Type: STRAY
-  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto Glacial'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -113,7 +113,7 @@ elite_stray:
 elite_bogged:
   Template: elite_arquero
   Type: BOGGED
-  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto Pantanoso'
+  Display: ''
   Health: 16
   Damage: 3
   Variables:
@@ -130,7 +130,7 @@ elite_bogged:
 elite_wither_skeleton:
   Template: elite_guerrero
   Type: WITHER_SKELETON
-  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto Wither'
+  Display: ''
   Health: 20
   Damage: 8
   Variables:
@@ -148,7 +148,7 @@ elite_wither_skeleton:
 elite_spider:
   Template: elite_base
   Type: SPIDER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Araña'
+  Display: ''
   Health: 16
   Damage: 2
   Variables:
@@ -165,7 +165,7 @@ elite_spider:
 elite_cave_spider:
   Template: elite_base
   Type: CAVE_SPIDER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Araña de Cueva'
+  Display: ''
   Health: 12
   Damage: 2
   Variables:
@@ -182,7 +182,7 @@ elite_cave_spider:
 elite_creeper:
   Template: elite_base
   Type: CREEPER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Creeper'
+  Display: ''
   Health: 20
   Damage: 3
   Variables:
@@ -198,7 +198,7 @@ elite_creeper:
 elite_enderman:
   Template: elite_base
   Type: ENDERMAN
-  Display: '<#9EA3AE>Nv <caster.level> <white>Enderman'
+  Display: ''
   Health: 40
   Damage: 7
   Variables:
@@ -214,7 +214,7 @@ elite_enderman:
 elite_witch:
   Template: elite_base
   Type: WITCH
-  Display: '<#9EA3AE>Nv <caster.level> <white>Bruja'
+  Display: ''
   Health: 26
   Damage: 3
   Variables:
@@ -234,7 +234,7 @@ elite_witch:
 elite_evoker:
   Template: elite_base
   Type: EVOKER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Invocador'
+  Display: ''
   Health: 24
   Damage: 6
   Variables:
@@ -251,7 +251,7 @@ elite_evoker:
 elite_pillager:
   Template: elite_ballestero
   Type: PILLAGER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Saqueador'
+  Display: ''
   Health: 24
   Damage: 4
   Variables:
@@ -267,7 +267,7 @@ elite_pillager:
 elite_vindicator:
   Template: elite_guerrero
   Type: VINDICATOR
-  Display: '<#9EA3AE>Nv <caster.level> <white>Vindicador'
+  Display: ''
   Health: 24
   Damage: 13
   Variables:
@@ -283,7 +283,7 @@ elite_vindicator:
 elite_blaze:
   Template: elite_tirador
   Type: BLAZE
-  Display: '<#9EA3AE>Nv <caster.level> <white>Blaze'
+  Display: ''
   Health: 20
   Damage: 6
   Variables:
@@ -299,7 +299,7 @@ elite_blaze:
 elite_ghast:
   Template: elite_tirador
   Type: GHAST
-  Display: '<#9EA3AE>Nv <caster.level> <white>Ghast'
+  Display: ''
   Health: 10
   Damage: 6
   Variables:
@@ -316,7 +316,7 @@ elite_ghast:
 elite_magma_cube:
   Template: elite_base
   Type: MAGMA_CUBE
-  Display: '<#9EA3AE>Nv <caster.level> <white>Cubo de Magma'
+  Display: ''
   Health: 16
   Damage: 4
   Variables:
@@ -332,7 +332,7 @@ elite_magma_cube:
 elite_slime:
   Template: elite_base
   Type: SLIME
-  Display: '<#9EA3AE>Nv <caster.level> <white>Slime'
+  Display: ''
   Health: 16
   Damage: 4
   Variables:
@@ -348,7 +348,7 @@ elite_slime:
 elite_phantom:
   Template: elite_base
   Type: PHANTOM
-  Display: '<#9EA3AE>Nv <caster.level> <white>Phantom'
+  Display: ''
   Health: 20
   Damage: 6
   Variables:
@@ -364,7 +364,7 @@ elite_phantom:
 elite_breeze:
   Template: elite_tirador
   Type: BREEZE
-  Display: '<#9EA3AE>Nv <caster.level> <white>Breeze'
+  Display: ''
   Health: 30
   Damage: 3
   Variables:
@@ -380,7 +380,7 @@ elite_breeze:
 elite_zombified_piglin:
   Template: elite_guerrero
   Type: ZOMBIFIED_PIGLIN
-  Display: '<#9EA3AE>Nv <caster.level> <white>Piglin Zombi'
+  Display: ''
   Health: 20
   Damage: 8
   Variables:
@@ -398,7 +398,7 @@ elite_zombified_piglin:
 elite_piglin:
   Template: elite_guerrero
   Type: PIGLIN
-  Display: '<#9EA3AE>Nv <caster.level> <white>Piglin'
+  Display: ''
   Health: 16
   Damage: 5
   Variables:
@@ -414,7 +414,7 @@ elite_piglin:
 elite_piglin_brute:
   Template: elite_guerrero
   Type: PIGLIN_BRUTE
-  Display: '<#9EA3AE>Nv <caster.level> <white>Piglin Bruto'
+  Display: ''
   Health: 50
   Damage: 13
   Variables:
@@ -430,7 +430,7 @@ elite_piglin_brute:
 elite_hoglin:
   Template: elite_base
   Type: HOGLIN
-  Display: '<#9EA3AE>Nv <caster.level> <white>Hoglin'
+  Display: ''
   Health: 40
   Damage: 6
   Variables:
@@ -447,7 +447,7 @@ elite_hoglin:
 elite_zoglin:
   Template: elite_base
   Type: ZOGLIN
-  Display: '<#9EA3AE>Nv <caster.level> <white>Zoglin'
+  Display: ''
   Health: 40
   Damage: 6
   Variables:
@@ -463,7 +463,7 @@ elite_zoglin:
 elite_guardian:
   Template: elite_base
   Type: GUARDIAN
-  Display: '<#9EA3AE>Nv <caster.level> <white>Guardián'
+  Display: ''
   Health: 30
   Damage: 6
   Variables:
@@ -481,7 +481,7 @@ elite_guardian:
 elite_silverfish:
   Template: elite_base
   Type: SILVERFISH
-  Display: '<#9EA3AE>Nv <caster.level> <white>Lepisma'
+  Display: ''
   Health: 8
   Damage: 1
   Variables:
@@ -496,7 +496,7 @@ elite_silverfish:
 elite_endermite:
   Template: elite_base
   Type: ENDERMITE
-  Display: '<#9EA3AE>Nv <caster.level> <white>Endermite'
+  Display: ''
   Health: 8
   Damage: 2
   Variables:
@@ -511,7 +511,7 @@ elite_endermite:
 elite_shulker:
   Template: elite_base
   Type: SHULKER
-  Display: '<#9EA3AE>Nv <caster.level> <white>Shulker'
+  Display: ''
   Health: 30
   Damage: 4
   Variables:
