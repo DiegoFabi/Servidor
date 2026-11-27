@@ -220,6 +220,8 @@ on damage:
 # ------------------------------------------------------------
 function historiaMenu(p: player):
     set {_prog} to {historia::%uuid of {_p}%} ? 0
+    # Quien avanzó más allá de las partes que existen ahora ve el capítulo completo
+    set {_prog} to min({_prog}, {-hist::total})
     set {_total} to {-hist::total}
     set {_gui} to chest inventory with 5 rows named "<#FFD36B>✦ <dark_gray>%{-hist::capitulo}% <gray>(%{_prog}%/%{_total}%)"
     set {_barra} to ""
@@ -296,6 +298,8 @@ on inventory click:
     {_e} is set
     set {_n} to (subtext of {_e} from character 3 to (length of {_e})) parsed as integer
     set {_prog} to {historia::%uuid of player%} ? 0
+    # Quien avanzó más allá de las partes que existen ahora ve el capítulo completo
+    set {_prog} to min({_prog}, {-hist::total})
     if first character of {_e} is "m":
         if {-hist::mtipo::%{_n}%} is "jefe":
             {_prog} >= {_n}
