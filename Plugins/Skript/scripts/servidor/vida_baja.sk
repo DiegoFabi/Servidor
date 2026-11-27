@@ -18,17 +18,22 @@ function vbActivar(p: player):
     set {_b} to a virtual world border
     set world border center of {_b} to location of {_p}
     set world border radius of {_b} to 29999984
-    set world border warning distance of {_b} to 29999984
+    # El rojo es más intenso cuanto mayor es la distancia de aviso frente a la
+    # distancia real al borde: con un aviso enorme la pantalla queda roja fija.
+    set world border warning distance of {_b} to 2000000000
     set world border of {_p} to {_b}
 
 function vbQuitar(p: player):
     delete {-vb::%uuid of {_p}%}
     set world border of {_p} to world border of world of {_p}
 
+# Dos capas (bombo + bajo) por golpe para que suene fuerte y grave
 function vbLatido(p: player):
-    play sound "block.note_block.basedrum" with volume 0.9 and pitch 0.5 to {_p}
+    play sound "block.note_block.basedrum" with volume 2 and pitch 0.5 to {_p}
+    play sound "block.note_block.bass" with volume 2 and pitch 0.5 to {_p}
     wait 4 ticks
-    play sound "block.note_block.basedrum" with volume 0.6 and pitch 0.6 to {_p}
+    play sound "block.note_block.basedrum" with volume 1.6 and pitch 0.6 to {_p}
+    play sound "block.note_block.bass" with volume 1.6 and pitch 0.55 to {_p}
 
 every 10 ticks:
     loop all players:
