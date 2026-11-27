@@ -102,7 +102,9 @@ Plugin:
     villagers: true
     anvil: true
     signs: true
-    chat: true
+    # chat: false -> Nexo no reescribe los paquetes de chat. Si los reescribe, TypeWriter
+    # pierde la marca de sus cuadros de diálogo y los repite al cerrar cada conversación.
+    chat: false
     chat_standard_tags: true
     translatable: true
     books: true
