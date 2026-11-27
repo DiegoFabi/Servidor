@@ -73,7 +73,7 @@ commands:
     average_entry: "<white>{rank}. <aqua>{player} <white>- {level}"
 leveler_format:
   title: "<green>{skill}"
-  subtitle: ""
+  subtitle: "<gold>{old} ➜ {new}"
   chat: |-
     <dark_aqua><strikethrough>----------------------------------------
     <reset> <dark_aqua>{{leveler.skill_level_up}} <aqua><bold>{skill}</bold> <dark_gray>{old}➜<dark_aqua><bold>{new}</bold>

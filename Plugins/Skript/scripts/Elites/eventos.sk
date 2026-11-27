@@ -1,8 +1,10 @@
 # ============================================================
 #  EVENTOS DE JEFE (sustituyen a los eventos de EliteMobs)
 #  Globales y comunitarios: un solo evento a la vez, cerca de un
-#  jugador al azar, anunciado a todo el servidor.
-#  - Por tiempo: cada {@int_min}-{@int_max} min, según mundo, hora y bioma del jugador.
+#  jugador al azar de survivalMain, anunciado con sus coordenadas.
+#  - Por tiempo: cada {@int_min} min, según hora y bioma del jugador.
+#    Solo cuenta si hay al menos 1 jugador en survivalMain; si no hay
+#    nadie, el temporizador queda en pausa (no gasta recursos).
 #  - Por acción: picar ciertos bloques, pescar o arar (probabilidad baja).
 #  - Rastreo: botón en el chat -> barra (SkBee) con distancia, dirección y vida.
 #  - Huida: si nadie le pega en {@huida} min, el jefe escapa sin dejar botín.
@@ -13,7 +15,7 @@
 # ============================================================
 options:
     int_min: 15
-    int_max: 30
+    mundo: survivalMain
     huida: 10
     dist_min: 30
     dist_max: 110
@@ -150,7 +152,7 @@ function evNivel(l: location) :: integer:
     return min(250, max(1, {_n}))
 
 # ---------- Inicio ----------
-function evIniciar(def: text, l: location, cerca: text):
+function evIniciar(def: text, l: location):
     {-ev::activo} is not set
     set {_d::*} to split {_def} at "|"
     set {_nombre} to {_d::%size of {_d::*} - 1%}
@@ -181,7 +183,7 @@ function evIniciar(def: text, l: location, cerca: text):
     loop all players:
         send " " to loop-player
         send formatted "{@p} <#FFD36B><bold>%{_nombre}%</bold> <#7E848F>Nv %{_lvl}%" to loop-player
-        send formatted "<#C9CDD6>   Ha aparecido %{_cerca}% en <white>%{_mundo}%</white>." to loop-player
+        send formatted "<#C9CDD6>   Ha aparecido en <white>%{_mundo}%</white> <#7E848F>· <white>X %rounded x-coordinate of {_l}% <#7E848F>· <white>Y %rounded y-coordinate of {_l}% <#7E848F>· <white>Z %rounded z-coordinate of {_l}%" to loop-player
         send formatted "<#C9CDD6>   Los 3 que más daño hagan se llevan la mejor recompensa." to loop-player
         send formatted "   <click:run_command:'/eventoelite rastrear'><hover:show_text:'<#7FD8FF>Muestra una barra con distancia, dirección y vida'><#7FD8FF>[⌖ Rastrear]</hover></click>  <click:run_command:'/eventoelite dejar'><hover:show_text:'<#9EA3AE>Quita la barra de rastreo'><#9EA3AE>[✖ Dejar de rastrear]</hover></click>" to loop-player
         send " " to loop-player
@@ -210,9 +212,8 @@ function evTerminar():
     delete {-ev::loc}
     delete {-ev::dano::*}
     delete {-ev::nombrej::*}
-    set {_min} to random integer between {@int_min} and {@int_max}
     set {-ev::proximo} to now
-    add {_min} minutes to {-ev::proximo}
+    add {@int_min} minutes to {-ev::proximo}
 
 function evHuida():
     set {-ev::huyendo} to true
@@ -262,16 +263,18 @@ function evVictoria():
 # ---------- Programador (1 comprobación por minuto, sin trabajo si hay evento) ----------
 every 1 minute:
     {-ev::activo} is not set
+    loop all players in world "{@mundo}":
+        if gamemode of loop-player is survival:
+            add loop-player to {_cand::*}
+    # Nadie en survivalMain: el temporizador queda en pausa
+    if size of {_cand::*} is 0:
+        delete {-ev::proximo}
+        stop
     if {-ev::proximo} is not set:
         set {-ev::proximo} to now
         add {@int_min} minutes to {-ev::proximo}
         stop
     now > {-ev::proximo}
-    loop all players:
-        if gamemode of loop-player is survival:
-            if evMundo(world of loop-player) is not "ninguno":
-                add loop-player to {_cand::*}
-    size of {_cand::*} > 0
     set {_p} to random element out of {_cand::*}
     loop {-ev::lista::*}:
         set {_d::*} to split loop-value at "|"
@@ -280,7 +283,7 @@ every 1 minute:
     size of {_validos::*} > 0
     set {_l} to evSitio(location of {_p})
     {_l} is set
-    evIniciar(random element out of {_validos::*}, {_l}, "cerca de <white>%{_p}%</white>")
+    evIniciar(random element out of {_validos::*}, {_l})
 
 # ---------- Eventos por acción ----------
 on break:
@@ -291,7 +294,7 @@ on break:
         set {_d::*} to split loop-value at "|"
         set {_c} to ({_d::3} parsed as number) * 100
         if chance of {_c}%:
-            evIniciar(loop-value, location of event-block, "donde <white>%player%</white> estaba picando")
+            evIniciar(loop-value, location of event-block)
             stop
 
 on fishing state of caught fish:
@@ -302,7 +305,7 @@ on fishing state of caught fish:
         if {_d::2} is "FISH":
             set {_c} to ({_d::3} parsed as number) * 100
             if chance of {_c}%:
-                evIniciar(loop-value, location of player, "mientras <white>%player%</white> pescaba")
+                evIniciar(loop-value, location of player)
                 stop
 
 on right click on dirt or grass block or dirt path:
@@ -314,7 +317,7 @@ on right click on dirt or grass block or dirt path:
         if {_d::2} is "TILL_SOIL":
             set {_c} to ({_d::3} parsed as number) * 100
             if chance of {_c}%:
-                evIniciar(loop-value, location of player, "mientras <white>%player%</white> araba la tierra")
+                evIniciar(loop-value, location of player)
                 stop
 
 # ---------- Daño, muerte y huida ----------
@@ -399,7 +402,7 @@ command /eventoelite [<text>] [<text>]:
                         set {_l} to evSitio(location of player)
                         if {_l} is not set:
                             set {_l} to location of player
-                        evIniciar(loop-value, {_l}, "cerca de <white>%player%</white>")
+                        evIniciar(loop-value, {_l})
                         stop
                 send "{@p} <#C9CDD6>Evento no encontrado (o ya hay uno activo)." to player
             else if arg-1 is "terminar":

@@ -2,7 +2,7 @@
 
 jefe_moonlight_devourer_fase:
   Conditions:
-  - healthpercent{h=<50%} true
+  - healthpercent{p=<50%} true
   Skills:
   - effect:particles{p=explosion;a=3;hs=0.6;vs=0.6;y=1;vd=40} @self
   - effect:particlering{p=soul_fire_flame;r=2.5;points=24;a=1;y=0.2;vd=40} @self
@@ -13,7 +13,7 @@ jefe_moonlight_devourer_fase:
 
 jefe_storm_caller_fase:
   Conditions:
-  - healthpercent{h=<96%} true
+  - healthpercent{p=<96%} true
   Skills:
   - effect:particles{p=explosion;a=3;hs=0.6;vs=0.6;y=1;vd=40} @self
   - effect:particlering{p=soul_fire_flame;r=2.5;points=24;a=1;y=0.2;vd=40} @self
@@ -24,7 +24,7 @@ jefe_storm_caller_fase:
 
 jefe_tree_trampler_fase:
   Conditions:
-  - healthpercent{h=<60%} true
+  - healthpercent{p=<60%} true
   Skills:
   - effect:particles{p=explosion;a=3;hs=0.6;vs=0.6;y=1;vd=40} @self
   - effect:particlering{p=soul_fire_flame;r=2.5;points=24;a=1;y=0.2;vd=40} @self

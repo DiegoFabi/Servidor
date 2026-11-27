@@ -1,9 +1,0 @@
-potionEffects: []
-isEnabled: true
-material: SHIELD
-name: '&aEnduring Shield'
-lore:
-- '&aLet them come! The shield will hold!'
-enchantments:
-- DURABILITY,3
-itemType: UNIQUE

@@ -13,13 +13,6 @@ Currencies:
       Icon:
         Material: minecraft:experience_bottle
         Lore: []
-  elitemobs:
-    Settings:
-      Name: Elite Tokens
-      Format: '%amount% %name%'
-      Icon:
-        Material: minecraft:emerald
-        Lore: []
 Items:
   gold:
     Tag:

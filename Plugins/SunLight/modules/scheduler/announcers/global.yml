@@ -1,5 +1,5 @@
-# Interval (in seconds) between messages. (17 min; los scripts de anuncios de Skript usan este valor para no coincidir)
-Interval: 1020
+# Interval (in seconds) between messages. (25 min)
+Interval: 1500
 # Whether messages should go in random order. Otherwise the same as defined in the config.
 RandomOrder: true
 # Player ranks (permission group names) that are allowed to see this announcer messages.

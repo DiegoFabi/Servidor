@@ -12,7 +12,7 @@
 #
 #  Comandos: /tresenraya unirse | salir | abrir
 #            /tresenraya iniciar (admin: tresenraya.admin)
-#  Rendimiento: un solo "every 55 minutes"; los clics solo se procesan
+#  Rendimiento: un turno por reloj cada 60 min; los clics solo se procesan
 #  si el inventario es el de la partida. Variables en memoria {-tt::*}.
 # ============================================================
 
@@ -210,7 +210,10 @@ on quit:
         if {_rival} is online:
             ttGanar({_rival})
 
-every 55 minutes:
+# Turno fijo por reloj: cada 60 min (minuto 5 del ciclo). Los minijuegos usan
+# ciclos 45/60/90 con desfase 0/5/10, así nunca coinciden y quedan al menos 5 min entre ellos.
+every 1 minute:
+    mod(floor(unix timestamp of now / 60), 60) is 5
     number of all players >= 2
     loop 20 times:
         if ttLibre() is true:

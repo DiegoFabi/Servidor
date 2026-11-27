@@ -1,7 +1,0 @@
-isEnabled: true
-entityType: BEE
-name: '&fLvl &2$level &fElite &eBee'
-deathMessages:
-- $player &cwas stung by $entity!
-baseDamageV2: 3.0
-behavior: basic_melee.lua

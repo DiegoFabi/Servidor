@@ -34,7 +34,8 @@ MegBiteTotemDamageHigh:
   TargetConditions:
   Cooldown: 0
   Skills:
-  - damage{amount=12;pi=true;ignoreArmor=false}
+  - damage{amount=15;pi=true;ignoreArmor=false}
+  - skill{s=agarre_acuatico}
   - effect:particles{p=block_crack;m=redstone_block;amount=15;speed=0;hS=0.3;vS=0.3;y=1}
   - delay 1
   - throw{velocity=3;velocityY=-1} @EntitiesNearOrigin{r=7}
@@ -65,7 +66,7 @@ MegRipTotem:
 MegRipDamageHigh:
   Cooldown: 0
   Skills:
-  - damage{amount=8;pi=true;ignoreArmor=false}
+  - damage{amount=10;pi=true;ignoreArmor=false}
   - effect:particles{p=block_crack;m=redstone_block;amount=15;speed=0;hS=0.3;vS=0.3;y=1} 
     
 ##=============================================##
@@ -134,7 +135,8 @@ shark_bite1_damage:
   Cooldown: 1
   Skills:
   - sound{s=entity.evoker_fangs.attack;v=1;sc=HOSTILE;p=<random.float.0.8to1.2>} @self
-  - damage{a=5}
+  - damage{a=7}
+  - skill{s=agarre_acuatico}
   - throw{v=5;v=1}
   - recoil{r=5;pitch=-3to3} 
   - effect:particle{p=reddust;color=#E96F6F;a=5;hs=.25;vs=.25;y=1;delay=15;repeat=15;repeatInterval=1} ?inblock{b=water}
@@ -234,3 +236,21 @@ recoil:
   - recoil{r=8;pitch=.1}
     
 #U0Z5M1QxRXNYRlbhxWNGRVZrdVW3tGRPRTRq10dnRlTwMmVkxmVNZVYkdFbyUTTTJ3d44UO
+##=============================================##
+##        AGARRE ACUÁTICO (general)            ##
+##=============================================##
+# Reutilizable por cualquier mob acuático con modelo: si el objetivo es un
+# jugador dentro del agua lo inmoviliza 3 s y le pone la pantalla roja
+# (efecto de borde del mundo, "sangre"). Llamar con skill{s=agarre_acuatico}
+# desde la skill de daño (hereda el objetivo golpeado).
+agarre_acuatico:
+  TargetConditions:
+  - entitytype{t=PLAYER} true
+  - inblock{b=water} true
+  Skills:
+  - aura{auraName=agarre_acuatico;d=60;refreshDuration=false;components=[
+    - stun{f=false;kb=true}
+    ]}
+  - effect:bloodyscreen{d=60}
+  - potion{type=SLOWNESS;duration=60;level=4;hasParticles=false;hasIcon=false}
+  - sound{s=entity.player.hurt_drown;v=0.8;p=0.7}

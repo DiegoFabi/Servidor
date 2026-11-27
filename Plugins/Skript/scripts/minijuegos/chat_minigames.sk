@@ -40,7 +40,10 @@ on load:
 #  Programador: 1 minijuego cada 35 minutos (separado de los demás
 #  anuncios con mgLibre/mgMarcar, al final del script)
 # ------------------------------------------------------------
-every 35 minutes:
+# Turno fijo por reloj: cada 45 min (minuto 0 del ciclo). Los minijuegos usan
+# ciclos 45/60/90 con desfase 0/5/10, así nunca coinciden y quedan al menos 5 min entre ellos.
+every 1 minute:
+    mod(floor(unix timestamp of now / 60), 45) is 0
     {-mg::activo} is true
     {-mg::id} is not set
     number of all players >= {@min-jugadores}

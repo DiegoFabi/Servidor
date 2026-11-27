@@ -204,7 +204,7 @@ enderman_ocean:
   - state{m=ocean_enderman;s=hurt} @self ~onDamaged
   - sound{s=entity.enderman.hurt;v=0.23;p=1.40-1.1} @self ~onDamaged
   - state{m=ocean_enderman;s=attack} @self ~onAttack
-  - damage{a=6} @target ~onAttack
+  - damage{a=8} @target ~onAttack
   - sound{s=entity.enderman.death;v=0.21;p=1.2-1.1} @self ~onDeath
   - sound{s=entity.enderman.teleport;v=0.21;p=1.2to0.9} @self ~onTeleport
   - sound{s=entity.enderman.ambient;v=0.21;p=1.1to0.8} @self ~onTimer:100 0.09

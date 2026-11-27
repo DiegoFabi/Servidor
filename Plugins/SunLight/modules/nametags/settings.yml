@@ -30,7 +30,7 @@ Nametags:
     # Global, en una sola línea:  [RANGO] Nombre (Clan) • ❤ 20 ⇧ 12
     # - Rango: prefijo de LuckPerms (%player_prefix%).
     # - Clan: justTeams (%justteams_name%, muestra "No Team" si no tiene).
-    # - Vida (expansión Player de PlaceholderAPI) y nivel de combate de EliteMobs
+    # - Vida (expansión Player de PlaceholderAPI) y poder de AuraSkills
     #   (%auraskills_power%) con la flecha verde de Nexo (essential_icons_level_up).
     #   Se refrescan con Update_Interval (40 ticks = 2 s).
     todos:

@@ -19,7 +19,7 @@
 #  Comandos: /buscaobjetos unirse | salir
 #            /buscaobjetos iniciar (admin: busca.admin)
 #  Rendimiento:
-#   - Un solo "every 80 minutes" (lanza el anuncio si no hay partida).
+#   - Turno por reloj cada 90 min (lanza el anuncio si no hay partida).
 #   - La detección es por eventos (recoger, craftear, mover objetos en el
 #     inventario) y solo comprueba a los 2 participantes.
 #   - Solo variables en memoria {-bo::*}.
@@ -190,7 +190,10 @@ on quit:
         if {_rival} is online:
             boGanar({_rival})
 
-every 80 minutes:
+# Turno fijo por reloj: cada 90 min (minuto 10 del ciclo). Los minijuegos usan
+# ciclos 45/60/90 con desfase 0/5/10, así nunca coinciden y quedan al menos 5 min entre ellos.
+every 1 minute:
+    mod(floor(unix timestamp of now / 60), 90) is 10
     number of all players >= {@min-jugadores}
     loop 20 times:
         if boLibre() is true:
