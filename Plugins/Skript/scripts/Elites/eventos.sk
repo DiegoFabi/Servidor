@@ -6,7 +6,7 @@
 #    Solo cuenta si hay al menos 1 jugador en survivalMain; si no hay
 #    nadie, el temporizador queda en pausa (no gasta recursos).
 #  - Por acción: picar ciertos bloques, pescar o arar (probabilidad baja).
-#  - Rastreo: botón en el chat -> barra (SkBee) con distancia, dirección y vida.
+#  - Rastreo: botón en el chat -> boss bar (Skript) con distancia, dirección y vida.
 #  - Huida: si nadie le pega en {@huida} min, el jefe escapa sin dejar botín.
 #  - Recompensas por daño: 1.º 2000, 2.º 1700, 3.º 1500, resto 1000.
 #  Los jefes y sus poderes están en MythicMobs (packs/Elites/Mobs/jefes_eventos.yml).
@@ -151,6 +151,26 @@ function evNivel(l: location) :: integer:
     set {_n} to floor({_d} / {_per}) + random integer between 3 and 8
     return min(250, max(1, {_n}))
 
+# ---------- Barra de rastreo (boss bars nativas de Skript 2.16+) ----------
+# SkBee desactiva sus boss bars cuando Skript ya trae las suyas, así que se
+# usan las nativas. Una barra por jugador, guardada en memoria:
+#   {-ev::barra::<uuid>} = boss bar del jugador
+function evBarra(p: player, id: text, titulo: text) :: bossbar:
+    set {_b} to {-ev::barra::%{_id}%}
+    if {_b} is not set:
+        set {_b} to a new red boss bar with title {_titulo}:
+            set progress of event-bossbar to 1
+            set style of event-bossbar to 10 notches
+        add {_p} to viewers of {_b}
+        set {-ev::barra::%{_id}%} to {_b}
+    return {_b}
+
+function evBarraQuitar(id: text):
+    set {_b} to {-ev::barra::%{_id}%}
+    delete {-ev::barra::%{_id}%}
+    {_b} is set
+    delete viewers of {_b}
+
 # ---------- Inicio ----------
 function evIniciar(def: text, l: location):
     {-ev::activo} is not set
@@ -205,7 +225,7 @@ function evBuscarJefe():
 # ---------- Final ----------
 function evTerminar():
     loop {-ev::rastreo::*}:
-        delete bossbar named "evr_%loop-index%"
+        evBarraQuitar(loop-index)
     delete {-ev::rastreo::*}
     delete {-ev::activo}
     delete {-ev::boss}
@@ -361,12 +381,9 @@ every 2 seconds:
     loop {-ev::rastreo::*}:
         set {_j} to loop-value
         if {_j} is online:
-            set {_b} to bossbar named "evr_%loop-index%"
-            if {_b} is not set:
-                set {_b} to new bossbar with id "evr_%loop-index%" with title "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}%" with color red with style segmented_10 with progress 100
-                add {_j} to bossbar players of {_b}
+            set {_b} to evBarra({_j}, loop-index, "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}%")
             if world of {_j} is not world of {-ev::loc}:
-                set bossbar title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>· en otro mundo"
+                set title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>· en otro mundo"
             else:
                 set {_dx} to x-coordinate of {-ev::loc} - x-coordinate of {_j}
                 set {_dz} to z-coordinate of {-ev::loc} - z-coordinate of {_j}
@@ -374,8 +391,8 @@ every 2 seconds:
                 set {_rel} to mod({_rel} + 540, 360) - 180
                 set {_i} to mod(round({_rel} / 45), 8) + 1
                 set {_dist} to round(distance between {_j} and {-ev::loc})
-                set bossbar title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>Nv %{-ev::nivel}% <dark_gray>· <white>a %{_dist}% bloques %{_flechas::%{_i}%}%"
-            set bossbar progress of {_b} to {_vida}
+                set title of {_b} to "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>Nv %{-ev::nivel}% <dark_gray>· <white>a %{_dist}% bloques %{_flechas::%{_i}%}%"
+            set progress of {_b} to {_vida} / 100
 
 command /eventoelite [<text>] [<text>]:
     trigger:
@@ -387,13 +404,12 @@ command /eventoelite [<text>] [<text>]:
             if {-ev::rastreo::%{_id}%} is set:
                 stop
             set {-ev::rastreo::%{_id}%} to player
-            set {_b} to new bossbar with id "evr_%{_id}%" with title "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>· buscando…" with color red with style segmented_10 with progress 100
-            add player to bossbar players of {_b}
+            evBarra(player, {_id}, "<#FF5C5C>☠ <#FFD36B>%{-ev::nombre}% <#7E848F>· buscando…")
             send action bar "<#7FD8FF>⌖ <#C9CDD6>Rastreando a <#FFD36B>%{-ev::nombre}%" to player
         else if arg-1 is "dejar":
             set {_id} to "%uuid of player%"
             delete {-ev::rastreo::%{_id}%}
-            delete bossbar named "evr_%{_id}%"
+            evBarraQuitar({_id})
             send action bar "<#9EA3AE>✖ Rastreo desactivado" to player
         else if player has permission "servidor.eventos.admin":
             if arg-1 is "iniciar":
@@ -418,4 +434,4 @@ on quit:
     set {_id} to "%uuid of player%"
     {-ev::rastreo::%{_id}%} is set
     delete {-ev::rastreo::%{_id}%}
-    delete bossbar named "evr_%{_id}%"
+    evBarraQuitar({_id})
