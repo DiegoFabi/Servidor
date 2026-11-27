@@ -25,7 +25,8 @@ function rangoNumero(p: player) :: number:
 function rangoActualizar(p: player):
     set {_n} to rangoNumero({_p})
     set {_k} to "%uuid of {_p}%"
-    {-rango::actual::%{_k}%} is not {_n}
+    if {-rango::actual::%{_k}%} is set:
+        {-rango::actual::%{_k}%} is not {_n}
     set {-rango::actual::%{_k}%} to {_n}
     execute console command "tw facts set {@fact} %{_n}% %{_p}%"
 
