@@ -1,8 +1,20 @@
+# Amonde: jefe de EVENTO (Skript/Elites/eventos.sk, desiertos y badlands).
+# Ya no aparece solo por RandomSpawn. Al entrar en combate invoca a sus esqueletos.
 skeleton_boss:
-  Display: skeleton_boss
+  Display: '<#FF5C5C>☠ <#FFD36B>Amonde, el Rey de Hueso <#7E848F>Nv <caster.level>'
   Type: HUSK
-  Health: 30
-  Damage: 5
+  Health: 650
+  Damage: 7
+  LevelModifiers:
+    Armor: 0.06
+  BossBar:
+    Enabled: true
+    Title: '<caster.name>'
+    Range: 40
+    Color: YELLOW
+    Style: SEGMENTED_10
+  Variables:
+    nombre: Amonde
   Faction: skellies
   Options:
     PreventOtherDrops: true
@@ -14,6 +26,11 @@ skeleton_boss:
     Collidable: true
     Invisible: true
   Skills:
+  - addtag{tag=elite_evento} @self ~onSpawn
+  - skill{s=elite_rango} @self ~onSpawn
+  - skill{s=amonde_legion} @self ~onDamaged
+  - summon{type=skeleton_minion;amount=1;radius=5} @self ~onDamaged 0.12
+  - skill{s=amonde_botin} @trigger ~onDeath
   - look{i=true} @target ~onTimer:2
   - skill{s=skeleboss_roar} ~onCombat
   - randomskill{s=skeleboss_rswipe,skeleboss_lswipe,skeleboss_roar,skeleboss_poisonbreath,skeleboss_rstomp,skeleboss_lstomp} @self ~onTimer:20
@@ -57,10 +74,11 @@ skeleton_boss:
   - bone 5-10 1
   - bone_block 1-2 1
   - gold_ingot 2-4 1
-  - diamond 1 0.5
+  - diamond 1to3 0.6
+  - exp 120to220
 
 skeleton_minion:
-  Display: skeleton_minion
+  Display: '<#C9B26B>Esqueleto de Amonde'
   Type: HUSK
   Health: 8
   Damage: 5
@@ -75,6 +93,7 @@ skeleton_minion:
     Collidable: true
     Invisible: true
   Skills:
+  - addtag{tag=elite_evento_esbirro} @self ~onSpawn
   - setai{ai=false;delay=10} @self ~onSpawn
   - setai{ai=true;delay=90} @self ~onSpawn
   - particle{p=block;a=15;hs=0.25;vs=0.25

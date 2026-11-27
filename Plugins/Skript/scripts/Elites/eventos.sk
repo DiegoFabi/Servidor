@@ -26,6 +26,7 @@ on load:
     delete {-ev::lista::*}
     delete {-ev::accion::*}
     delete {-ev::rompe::*}
+    add "amonde|bioma:desert,badlands,eroded_badlands,wooded_badlands|Amonde, el Rey de Hueso|mm:skeleton_boss" to {-ev::lista::*}
     add "animated_armor|normal|Armadura Animada|animated_armor" to {-ev::lista::*}
     add "banshee|normal|Banshee|banshee" to {-ev::lista::*}
     add "beach_bug|bioma:beach,snowy_beach|Bicho de Playa|beach_bug" to {-ev::lista::*}
@@ -167,7 +168,11 @@ function evIniciar(def: text, l: location, cerca: text):
     delete {-ev::huyendo}
     delete {-ev::boss}
     loop {_jefes::*}:
-        execute console command "mm mobs spawn jefe_%loop-value%:%{_lvl}% 1 %world of {_l}%,%rounded x-coordinate of {_l}%,%rounded y-coordinate of {_l}%,%rounded z-coordinate of {_l}%"
+        set {_mob} to "jefe_%loop-value%"
+        if loop-value starts with "mm:":
+            set {_mob} to loop-value
+            replace all "mm:" in {_mob} with ""
+        execute console command "mm mobs spawn %{_mob}%:%{_lvl}% 1 %world of {_l}%,%rounded x-coordinate of {_l}%,%rounded y-coordinate of {_l}%,%rounded z-coordinate of {_l}%"
     set {_mundo} to "Supervivencia"
     if evMundo(world of {_l}) is "nether":
         set {_mundo} to "el Nether"

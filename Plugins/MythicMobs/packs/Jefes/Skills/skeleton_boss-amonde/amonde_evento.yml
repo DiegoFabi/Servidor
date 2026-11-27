@@ -1,0 +1,20 @@
+# Amonde como evento: legión al entrar en combate (una vez) y botín de ItemJoin.
+amonde_legion:
+  Conditions:
+  - variableequals{var=caster.legion;value=1} false
+  Skills:
+  - setvariable{var=caster.legion;value=1;type=INTEGER} @self
+  - message{m="<#FF5C5C>☠ <#FFD36B>Amonde<dark_gray> » <white>¡Levantaos, hijos de la arena!"} @PIR{r=40}
+  - effect:particlering{p=soul;r=4;points=28;a=1;y=0.2;vd=48} @self
+  - summon{type=skeleton_minion;amount=4;radius=6;delay=20} @self
+
+# Mínimo 3 premios: los 3 garantizados de jefe + los propios de Amonde
+amonde_botin:
+  TargetConditions:
+  - isplayer true
+  Skills:
+  - skill{s=elite_jefe_botin} @target
+  - command{c="itemjoin get botin_skull <target.name> 1";asop=false} @target
+  - command{c="itemjoin get botin_desert_cloth <target.name> 1";asop=false} @target 0.6
+  - command{c="itemjoin get item_49 <target.name> 1";asop=false} @target 0.25
+  - command{c="itemjoin get botin_crown <target.name> 1";asop=false} @target 0.15
