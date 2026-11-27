@@ -135,6 +135,10 @@ elite_jefe_esbirro:
 #  Placa del élite: texto flotante (2 líneas) montado sobre el mob.
 #  Brillo máximo (se lee de noche y en cuevas), sin fondo y con sombra.
 #  El élite actualiza el texto con settextdisplay @Passenger.
+#  Limpieza a prueba de todo (fuego, caída, lava, /kill, despawn, chunk):
+#   - El élite la borra al morir o desaparecer (si aún va montada).
+#   - La placa se vigila sola cada 2 s: si ya no va montada en nada, se borra.
+#   - Al descargarse el chunk, MythicMobs la elimina (Despawn: true, no persistente).
 # ============================================================
 elite_placa:
   Type: TEXT_DISPLAY
@@ -154,3 +158,5 @@ elite_placa:
     Persistent: false
   Skills:
   - mounttarget @Parent ~onSpawn
+  - remove @self ~onTimer:40 ?!mounted
+  - remove @self ~onDismounted
