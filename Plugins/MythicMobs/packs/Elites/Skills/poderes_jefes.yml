@@ -1,0 +1,99 @@
+# ============================================================
+#  PODERES EXCLUSIVOS DE JEFES DE EVENTO (además de los po_/pd_/pf_)
+#  Solo los usan los jefes, que son pocos a la vez, así que pueden
+#  ser más vistosos. Todos avisan antes de golpear.
+# ============================================================
+
+# Flechas de fuego guiadas: 3 proyectiles teledirigidos con estela de llamas
+pj_flechas_guiadas:
+  Skills:
+  - sound{s=item.crossbow.loading_middle;v=1;p=0.8} @self
+  - effect:particlering{p=flame;r=0.8;points=10;a=1;y=2.2;vd=40} @self
+  - missile{ot=pj_flecha_guiada_estela;oh=pj_flecha_guiada_impacto;v=10;i=1;hR=0.8;vR=0.8;in=0.8;md=80;hnp=true;delay=10}
+  - missile{ot=pj_flecha_guiada_estela;oh=pj_flecha_guiada_impacto;v=10;i=1;hR=0.8;vR=0.8;in=0.8;md=80;hnp=true;delay=18}
+  - missile{ot=pj_flecha_guiada_estela;oh=pj_flecha_guiada_impacto;v=10;i=1;hR=0.8;vR=0.8;in=0.8;md=80;hnp=true;delay=26}
+pj_flecha_guiada_estela:
+  Skills:
+  - effect:particles{p=flame;a=2;hs=0.02;vs=0.02;s=0.01;vd=40} @origin
+  - effect:particles{p=smoke;a=1;vd=40} @origin
+pj_flecha_guiada_impacto:
+  Skills:
+  - damage{a="2 + <caster.level> * 0.05"}
+  - ignite{ticks=80}
+  - effect:particles{p=lava;a=6;hs=0.2;vs=0.2;vd=40} @origin
+  - sound{s=entity.arrow.hit_player;v=1;p=0.8} @origin
+
+# Lluvia de meteoros: círculos de aviso y caída de fuego 1,5 s después
+pj_lluvia_meteoros:
+  Skills:
+  - sound{s=entity.blaze.ambient;v=1;p=0.5} @self
+  - summon{type=elite_marca_meteoro;amount=1} @RandomLocationsNearCaster{a=5;r=8}
+
+# Tormenta: rayos encadenados alrededor del objetivo
+pj_tormenta:
+  Skills:
+  - sound{s=entity.lightning_bolt.thunder;v=0.8;p=0.8} @self
+  - summon{type=elite_marca_rayo;amount=1}
+  - summon{type=elite_marca_rayo;amount=1;delay=15} @RandomLocationsNearCaster{a=1;r=6}
+  - summon{type=elite_marca_rayo;amount=1;delay=30}
+  - summon{type=elite_marca_rayo;amount=1;delay=45} @RandomLocationsNearCaster{a=1;r=6}
+
+# Cono helado: ráfaga de nieve hacia delante
+pj_cono_helado:
+  Skills:
+  - sound{s=entity.player.hurt_freeze;v=1;p=0.6} @self
+  - effect:particleline{p=snowflake;db=0.3;vd=40}
+  - effect:particlesphere{p=snowflake;r=1.6;a=30;y=1;vd=40}
+  - freeze{ticks=140} @PIR{r=3}
+  - potion{type=SLOWNESS;duration=80;level=2;hasParticles=false} @PIR{r=3}
+  - damage{a="1 + <caster.level> * 0.03"}
+
+# Lanzallamas: tres chorros de fuego seguidos
+pj_lanzallamas:
+  Skills:
+  - sound{s=item.firecharge.use;v=1;p=0.5} @self
+  - effect:particleline{p=flame;db=0.35;vd=40}
+  - effect:particleline{p=flame;db=0.35;delay=6;vd=40}
+  - effect:particleline{p=soul_fire_flame;db=0.35;delay=12;vd=40}
+  - ignite{ticks=100;delay=6}
+  - damage{a="1 + <caster.level> * 0.035";delay=12}
+
+# Explosión dorada: anillo de oro y onda que empuja
+pj_explosion_dorada:
+  Skills:
+  - effect:particlering{p=wax_off;r=1.5;points=16;a=1;y=0.5;vd=40} @self
+  - sound{s=block.note_block.bell;v=1;p=0.7} @self
+  - skill{s=pj_explosion_dorada_golpe;delay=20} @self
+pj_explosion_dorada_golpe:
+  Skills:
+  - effect:particlering{p=wax_off;r=3.5;points=28;a=1;y=0.5;vd=40} @self
+  - effect:particles{p=flash;a=1;y=1;vd=40} @self
+  - damage{a="2 + <caster.level> * 0.045"} @PIR{r=4}
+  - throw{velocity=6;velocityY=1.2} @PIR{r=4}
+  - sound{s=entity.generic.explode;v=0.8;p=1.6} @self
+
+# Escopeta dorada: abanico de 5 perdigones
+pj_escopeta_dorada:
+  Skills:
+  - sound{s=item.crossbow.shoot;v=1;p=0.6} @self
+  - effect:particleline{p=wax_off;db=0.5;vd=40}
+  - damage{a="1.5 + <caster.level> * 0.04"}
+  - throw{velocity=3;velocityY=0.6}
+
+# Provocar: frase en el chat a los jugadores cercanos
+pj_provocar:
+  Cooldown: 20
+  Skills:
+  - randomskill{s=pj_provocar_1,pj_provocar_2,pj_provocar_3,pj_provocar_4} @self
+pj_provocar_1:
+  Skills:
+  - message{m="<#FF5C5C><caster.var.nombre><dark_gray> » <white>¿Eso es todo lo que tienes?"} @PIR{r=24}
+pj_provocar_2:
+  Skills:
+  - message{m="<#FF5C5C><caster.var.nombre><dark_gray> » <white>Huye mientras puedas."} @PIR{r=24}
+pj_provocar_3:
+  Skills:
+  - message{m="<#FF5C5C><caster.var.nombre><dark_gray> » <white>Tu mundo no te salvará aquí."} @PIR{r=24}
+pj_provocar_4:
+  Skills:
+  - message{m="<#FF5C5C><caster.var.nombre><dark_gray> » <white>Otro más para mi colección."} @PIR{r=24}

@@ -29,3 +29,15 @@ Nivel = distancia al spawn (config-mobs.yml > WorldScaling) + 0-4 aleatorio, top
 - Nombre vanilla (solo se ve al mirarlo) con la vida actualizada al recibir daño;
   la barra de vida es la nativa de MythicMobs y solo aparece tras recibir daño.
 - Partículas con cantidades bajas y distancia de visión de 32 bloques.
+
+## Jefes de evento
+- `Mobs/jefes_eventos.yml` (GENERADO por `gen_jefes.py` desde EliteMobs event_megapack_2):
+  99 jefes (50 eventos) con nombre en español, vida/daño/velocidad, equipo, tamaño,
+  monturas (`Mount`), rastros de partículas, fases (`Skills/jefes_fases.yml`) e invocaciones.
+- Poderes: los de EliteMobs se traducen a `po_`/`pd_`/`pf_` y a los exclusivos de
+  `Skills/poderes_jefes.yml` (flechas de fuego guiadas, meteoros, tormenta, cono helado,
+  lanzallamas, explosión/escopeta dorada, provocar). Rotación cada 3 s si tiene objetivo.
+- `Mobs/marcas.yml`: marcadores invisibles para los golpes con aviso (se esquivan apartándose).
+- Plantillas `elite_jefe_base` (cuenta para el evento, etiqueta `elite_evento`, BossBar nativa a
+  40 bloques y botín) y `elite_jefe_esbirro` (monturas e invocaciones).
+- Cuándo, dónde, rastreo, huida y recompensas: `Skript/scripts/Elites/eventos.sk`.

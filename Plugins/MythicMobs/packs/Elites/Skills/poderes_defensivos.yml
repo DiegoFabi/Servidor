@@ -42,6 +42,6 @@ pd_aura_helada:
   - sound{s=block.powder_snow.step;v=0.8;p=0.8} @self
 pd_piel_ignea:
   Skills:
-  - ignite{ticks=60} @trigger
+  - ignite{ticks=60}
   - effect:particles{p=flame;a=12;hs=0.4;vs=0.8;s=0.02;y=1;vd=32} @self
   - sound{s=entity.blaze.hurt;v=0.5;p=1.2} @self

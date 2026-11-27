@@ -1,0 +1,84 @@
+# ============================================================
+#  MARCADORES de golpes en un punto (invisibles, sin IA, 2-3 s de vida).
+#  Aparecen donde estaba el jugador, avisan con un círculo y golpean
+#  AHÍ: si el jugador se aparta a tiempo, esquiva el ataque.
+#  Heredan el nivel de quien los invoca (el daño escala igual).
+# ============================================================
+elite_marca_base:
+  Type: ARMOR_STAND
+  Display: ''
+  Health: 1
+  Options:
+    Invisible: true
+    Invincible: true
+    Marker: true
+    NoAI: true
+    NoGravity: true
+    Silent: true
+    Despawn: true
+    PreventOtherDrops: true
+    AlwaysShowName: false
+
+elite_marca_rayo:
+  Template: elite_marca_base
+  Skills:
+  - effect:particlering{p=electric_spark;r=1.4;points=16;a=1;y=0.1;vd=32} @self ~onSpawn
+  - skill{s=elite_marca_rayo_golpe;delay=30} @self ~onSpawn
+  - remove{delay=40} @self ~onSpawn
+elite_marca_rayo_golpe:
+  Skills:
+  - fakelightning @self
+  - damage{a="2.5 + <caster.level> * 0.05"} @PIR{r=1.8}
+
+elite_marca_flechas:
+  Template: elite_marca_base
+  Skills:
+  - effect:particlering{p=crit;r=2.5;points=18;a=1;y=0.1;vd=32} @self ~onSpawn
+  - skill{s=elite_marca_flechas_golpe;delay=25} @self ~onSpawn
+  - remove{delay=35} @self ~onSpawn
+elite_marca_flechas_golpe:
+  Skills:
+  - effect:particles{p=crit;a=40;hs=2;vs=3;s=0.6;y=3;vd=32} @self
+  - damage{a="1.5 + <caster.level> * 0.035"} @PIR{r=2.8}
+  - sound{s=entity.arrow.shoot;v=1;p=0.5} @self
+
+elite_marca_circulo:
+  Template: elite_marca_base
+  Skills:
+  - effect:particlering{p=enchant;r=2;points=24;a=1;y=0.1;vd=32} @self ~onSpawn
+  - effect:particlering{p=witch;r=1.2;points=14;a=1;y=0.1;vd=32} @self ~onSpawn
+  - skill{s=elite_marca_circulo_golpe;delay=35} @self ~onSpawn
+  - remove{delay=45} @self ~onSpawn
+elite_marca_circulo_golpe:
+  Skills:
+  - effect:particles{p=enchanted_hit;a=30;hs=1.2;vs=0.6;s=0.3;y=0.5;vd=32} @self
+  - damage{a="2 + <caster.level> * 0.045"} @PIR{r=2}
+  - potion{type=LEVITATION;duration=25;level=1} @PIR{r=2}
+
+elite_marca_pilar:
+  Template: elite_marca_base
+  Skills:
+  - effect:particlering{p=crit;r=1;points=12;a=1;y=0.1;vd=32} @self ~onSpawn
+  - skill{s=elite_marca_pilar_golpe;delay=20} @self ~onSpawn
+  - remove{delay=30} @self ~onSpawn
+elite_marca_pilar_golpe:
+  Skills:
+  - effect:particles{p=block;m=bone_block;a=30;hs=0.3;vs=1.2;s=0.1;y=1;vd=32} @self
+  - damage{a="2 + <caster.level> * 0.04"} @PIR{r=1.6}
+  - throw{velocity=0;velocityY=1.2} @PIR{r=1.6}
+  - sound{s=block.bone_block.break;v=1;p=0.7} @self
+
+elite_marca_meteoro:
+  Template: elite_marca_base
+  Skills:
+  - effect:particlering{p=flame;r=1.3;points=12;a=1;y=0.1;vd=40} @self ~onSpawn
+  - skill{s=elite_marca_meteoro_golpe;delay=30} @self ~onSpawn
+  - remove{delay=40} @self ~onSpawn
+elite_marca_meteoro_golpe:
+  Skills:
+  - effect:particles{p=flame;a=24;hs=0.3;vs=4;s=0.02;y=4;vd=40} @self
+  - effect:particles{p=explosion;a=1;vd=40} @self
+  - effect:particles{p=lava;a=8;hs=0.6;vs=0.3;vd=40} @self
+  - damage{a="2 + <caster.level> * 0.05"} @PIR{r=2}
+  - ignite{ticks=60} @PIR{r=2}
+  - sound{s=entity.generic.explode;v=0.8;p=1.2} @self

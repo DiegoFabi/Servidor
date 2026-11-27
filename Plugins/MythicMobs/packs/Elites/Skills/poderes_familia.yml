@@ -30,15 +30,8 @@ pf_nido:
   - summon{type=elite_esbirro_arana;amount=3;radius=2;delay=10} @self
 pf_pilar_huesos:
   Skills:
-  - effect:particlering{p=crit;r=1;points=12;a=1;y=0.1;vd=32} @trigger
-  - sound{s=entity.skeleton.ambient;v=0.8;p=0.6} @trigger
-  - skill{s=pf_pilar_huesos_golpe;delay=20} @trigger
-pf_pilar_huesos_golpe:
-  Skills:
-  - effect:particles{p=block;m=bone_block;a=30;hs=0.3;vs=1.2;s=0.1;y=1;vd=32} @selflocation
-  - damage{a="2 + <caster.level> * 0.04"} @PIR{r=1.6}
-  - throw{velocity=0;velocityY=1.2} @PIR{r=1.6}
-  - sound{s=block.bone_block.break;v=1;p=0.7} @selflocation
+  - sound{s=entity.skeleton.ambient;v=0.8;p=0.6}
+  - summon{type=elite_marca_pilar;amount=1}
 
 # ---------- Golpes de área ----------
 pf_golpe_suelo:
@@ -94,36 +87,31 @@ pf_pulso_helado:
 # ---------- Proyectiles ----------
 pf_flecha_arcana:
   Skills:
-  - missile{ot=pf_flecha_arcana_estela;oh=pf_flecha_arcana_impacto;v=12;i=1;hR=0.7;vR=0.7;in=0.85;md=60;hnp=true} @trigger
+  - missile{ot=pf_flecha_arcana_estela;oh=pf_flecha_arcana_impacto;v=12;i=1;hR=0.7;vR=0.7;in=0.85;md=60;hnp=true}
 pf_flecha_arcana_estela:
   Skills:
   - effect:particles{p=enchanted_hit;a=2;hs=0;vs=0;s=0;vd=32} @origin
 pf_flecha_arcana_impacto:
   Skills:
-  - damage{a="2 + <caster.level> * 0.04"} @target
+  - damage{a="2 + <caster.level> * 0.04"}
   - effect:particles{p=witch;a=14;hs=0.3;vs=0.3;s=0.2;vd=32} @origin
   - sound{s=entity.arrow.hit_player;v=0.8;p=1.2} @origin
 pf_rafaga_flechas:
   Skills:
   - sound{s=item.crossbow.loading_end;v=0.8;p=1.4} @self
-  - volley{amount="6 + <caster.var.rango> * 2";spread=35;velocity=1.6;delay=10} @trigger
+  - volley{amount="6 + <caster.var.rango> * 2";spread=35;velocity=1.6;delay=10}
 pf_lluvia_flechas:
   Skills:
-  - effect:particlering{p=crit;r=2.5;points=18;a=1;y=0.1;vd=32} @trigger
-  - sound{s=entity.skeleton.shoot;v=0.8;p=0.6} @trigger
-  - skill{s=pf_lluvia_flechas_caida;delay=25} @trigger
-pf_lluvia_flechas_caida:
-  Skills:
-  - effect:particles{p=crit;a=40;hs=2;vs=3;s=0.6;y=3;vd=32} @selflocation
-  - damage{a="1.5 + <caster.level> * 0.035"} @PIR{r=2.8}
-  - sound{s=entity.arrow.shoot;v=1;p=0.5} @selflocation
+  - sound{s=entity.skeleton.shoot;v=0.8;p=0.6}
+  - summon{type=elite_marca_flechas;amount=1}
+
 pf_bola_fuego:
   Skills:
-  - shootfireball{y=0.2;v=1.6;incendiary=false} @trigger
+  - shootfireball{y=0.2;v=1.6;incendiary=false}
   - sound{s=entity.blaze.shoot;v=0.8;p=1} @self
 pf_bola_teledirigida:
   Skills:
-  - missile{ot=pf_bola_estela;oh=pf_bola_impacto;v=8;i=1;hR=1;vR=1;in=0.7;md=80;hnp=true} @trigger
+  - missile{ot=pf_bola_estela;oh=pf_bola_impacto;v=8;i=1;hR=1;vR=1;in=0.7;md=80;hnp=true}
   - sound{s=entity.ghast.warn;v=0.6;p=1.2} @self
 pf_bola_estela:
   Skills:
@@ -136,33 +124,29 @@ pf_bola_impacto:
   - sound{s=entity.generic.explode;v=0.6;p=1.2} @origin
 pf_fuegos_artificiales:
   Skills:
-  - effect:particles{p=firework;a=30;hs=0.6;vs=0.6;s=0.15;y=1.5;vd=32} @trigger
-  - effect:particles{p=flash;a=1;y=1.5;vd=32} @trigger
-  - damage{a="1 + <caster.level> * 0.035"} @trigger
-  - sound{s=entity.firework_rocket.large_blast;v=0.8;p=1} @trigger
+  - effect:particles{p=firework;a=30;hs=0.6;vs=0.6;s=0.15;y=1.5;vd=32}
+  - effect:particles{p=flash;a=1;y=1.5;vd=32}
+  - damage{a="1 + <caster.level> * 0.035"}
+  - sound{s=entity.firework_rocket.large_blast;v=0.8;p=1}
 pf_plasma:
   Skills:
-  - effect:particleline{p=portal;db=0.4;vd=32} @trigger
-  - effect:particleline{p=end_rod;db=0.8;vd=32} @trigger
-  - damage{a="2 + <caster.level> * 0.045"} @trigger
+  - effect:particleline{p=portal;db=0.4;vd=32}
+  - effect:particleline{p=end_rod;db=0.8;vd=32}
+  - damage{a="2 + <caster.level> * 0.045"}
   - sound{s=entity.ender_dragon.shoot;v=0.5;p=1.6} @self
 
 # ---------- Rayos ----------
 pf_rayo_castigador:
   Skills:
-  - effect:particlering{p=electric_spark;r=1.4;points=16;a=1;y=0.1;vd=32} @trigger
-  - sound{s=block.beacon.power_select;v=0.6;p=1.8} @trigger
-  - skill{s=pf_rayo_castigador_caida;delay=30} @trigger
-pf_rayo_castigador_caida:
-  Skills:
-  - fakelightning @selflocation
-  - damage{a="2.5 + <caster.level> * 0.05"} @PIR{r=1.8}
+  - sound{s=block.beacon.power_select;v=0.6;p=1.8}
+  - summon{type=elite_marca_rayo;amount=1}
+
 pf_tormenta_rayos:
   Skills:
   - sound{s=entity.lightning_bolt.thunder;v=0.5;p=1.4} @self
-  - skill{s=pf_rayo_castigador} @trigger
-  - skill{s=pf_rayo_castigador;delay=20} @PIR{r=10}
-  - skill{s=pf_rayo_castigador;delay=40} @trigger
+  - summon{type=elite_marca_rayo;amount=1}
+  - summon{type=elite_marca_rayo;amount=1;delay=20} @RandomLocationsNearCaster{a=1;r=6}
+  - summon{type=elite_marca_rayo;amount=1;delay=40}
 pf_carga_tormenta:
   Skills:
   - fakelightning @self
@@ -182,41 +166,35 @@ pf_pira_llamas:
 pf_tormenta_fuego:
   Skills:
   - sound{s=entity.blaze.ambient;v=1;p=0.6} @self
-  - skill{s=pf_bola_fuego} @trigger
-  - skill{s=pf_bola_fuego;delay=12} @trigger
-  - skill{s=pf_bola_fuego;delay=24} @trigger
+  - skill{s=pf_bola_fuego}
+  - skill{s=pf_bola_fuego;delay=12}
+  - skill{s=pf_bola_fuego;delay=24}
 
 # ---------- Movimiento, pantalla y maldiciones ----------
 pf_telarana:
   Skills:
-  - blockmask{m=COBWEB;r=0;d=60} @trigger
-  - potion{type=SLOWNESS;duration=60;level=3;hasParticles=false} @trigger
-  - effect:particles{p=block;m=cobweb;a=16;hs=0.4;vs=0.4;y=0.5;vd=32} @trigger
-  - sound{s=entity.spider.step;v=1;p=0.6} @trigger
+  - blockmask{m=COBWEB;r=0;d=60}
+  - potion{type=SLOWNESS;duration=60;level=3;hasParticles=false}
+  - effect:particles{p=block;m=cobweb;a=16;hs=0.4;vs=0.4;y=0.5;vd=32}
+  - sound{s=entity.spider.step;v=1;p=0.6}
 pf_salto_sombrio:
   Skills:
   - effect:particles{p=portal;a=30;hs=0.4;vs=1;s=0.6;y=1;vd=32} @self
-  - teleport @trigger
+  - teleport
   - effect:particles{p=reverse_portal;a=20;hs=0.4;vs=1;s=0.3;y=1;vd=32} @self
-  - potion{type=DARKNESS;duration=40;level=0;hasParticles=false} @trigger
+  - potion{type=DARKNESS;duration=40;level=0;hasParticles=false}
   - sound{s=entity.enderman.teleport;v=0.8;p=0.8} @self
 pf_mareo_arcano:
   Skills:
-  - potion{type=NAUSEA;duration=140;level=0;hasParticles=false} @trigger
-  - velocity{m=ADD;x=<random.-1to1>;y=0.4;z=<random.-1to1>} @trigger
-  - effect:particlering{p=witch;r=1;points=14;a=1;y=2.2;vd=32} @trigger
-  - sound{s=entity.evoker.cast_spell;v=0.6;p=1.4} @trigger
+  - potion{type=NAUSEA;duration=140;level=0;hasParticles=false}
+  - velocity{m=ADD;x=<random.-1to1>;y=0.4;z=<random.-1to1>}
+  - effect:particlering{p=witch;r=1;points=14;a=1;y=2.2;vd=32}
+  - sound{s=entity.evoker.cast_spell;v=0.6;p=1.4}
 pf_circulo_arcano:
   Skills:
-  - effect:particlering{p=enchant;r=2;points=24;a=1;y=0.1;vd=32} @trigger
-  - effect:particlering{p=witch;r=1.2;points=14;a=1;y=0.1;vd=32} @trigger
-  - sound{s=block.enchantment_table.use;v=0.8;p=0.8} @trigger
-  - skill{s=pf_circulo_arcano_cierre;delay=35} @trigger
-pf_circulo_arcano_cierre:
-  Skills:
-  - effect:particles{p=enchanted_hit;a=30;hs=1.2;vs=0.6;s=0.3;y=0.5;vd=32} @selflocation
-  - damage{a="2 + <caster.level> * 0.045"} @PIR{r=2}
-  - potion{type=LEVITATION;duration=25;level=1} @PIR{r=2}
+  - sound{s=block.enchantment_table.use;v=0.8;p=0.8}
+  - summon{type=elite_marca_circulo;amount=1}
+
 pf_maldicion:
   Skills:
   - potion{type=DARKNESS;duration=80;level=0;hasParticles=false} @PIR{r=8}
@@ -231,7 +209,7 @@ pf_vacio:
   - sound{s=entity.enderman.scream;v=0.6;p=0.6} @self
 pf_atraccion_abismal:
   Skills:
-  - pull{velocity=5} @trigger
-  - potion{type=MINING_FATIGUE;duration=100;level=1;hasParticles=false} @trigger
-  - effect:particleline{p=bubble_pop;db=0.5;vd=32} @trigger
-  - sound{s=entity.elder_guardian.curse;v=0.4;p=1.4} @trigger
+  - pull{velocity=5}
+  - potion{type=MINING_FATIGUE;duration=100;level=1;hasParticles=false}
+  - effect:particleline{p=bubble_pop;db=0.5;vd=32}
+  - sound{s=entity.elder_guardian.curse;v=0.4;p=1.4}

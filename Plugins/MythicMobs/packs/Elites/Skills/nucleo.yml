@@ -223,3 +223,11 @@ elite_arma_t5_espada:
 elite_arma_t5_hacha:
   Skills:
   - equip{i=elite_t5_hacha HAND} @self
+
+# Aparición de un jefe de evento
+elite_jefe_aparicion:
+  Skills:
+  - effect:particles{p=explosion;a=2;hs=0.5;vs=0.5;y=1;vd=48} @self
+  - effect:particlering{p=soul_fire_flame;r=2;points=24;a=1;y=0.1;vd=48} @self
+  - effect:particles{p=large_smoke;a=20;hs=0.8;vs=1;s=0.03;y=1;vd=48} @self
+  - sound{s=entity.wither.spawn;v=0.5;p=1.6} @self

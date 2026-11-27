@@ -1,0 +1,78 @@
+# Fases y refuerzos de los jefes de evento (GENERADO por gen_jefes.py)
+
+jefe_moonlight_devourer_fase:
+  Conditions:
+  - healthpercent{h=<50%} true
+  Skills:
+  - effect:particles{p=explosion;a=3;hs=0.6;vs=0.6;y=1;vd=40} @self
+  - effect:particlering{p=soul_fire_flame;r=2.5;points=24;a=1;y=0.2;vd=40} @self
+  - sound{s=entity.wither.spawn;v=0.6;p=1.4} @self
+  - message{m="<#FF5C5C>☠ <#FFD36B><caster.var.nombre> <white>cambia de forma…"} @PIR{r=40}
+  - summon{type=jefe_moonlight_devourer_p2;amount=1} @selflocation
+  - remove @self
+
+jefe_storm_caller_fase:
+  Conditions:
+  - healthpercent{h=<96%} true
+  Skills:
+  - effect:particles{p=explosion;a=3;hs=0.6;vs=0.6;y=1;vd=40} @self
+  - effect:particlering{p=soul_fire_flame;r=2.5;points=24;a=1;y=0.2;vd=40} @self
+  - sound{s=entity.wither.spawn;v=0.6;p=1.4} @self
+  - message{m="<#FF5C5C>☠ <#FFD36B><caster.var.nombre> <white>cambia de forma…"} @PIR{r=40}
+  - summon{type=jefe_storm_caller_p2;amount=1} @selflocation
+  - remove @self
+
+jefe_tree_trampler_fase:
+  Conditions:
+  - healthpercent{h=<60%} true
+  Skills:
+  - effect:particles{p=explosion;a=3;hs=0.6;vs=0.6;y=1;vd=40} @self
+  - effect:particlering{p=soul_fire_flame;r=2.5;points=24;a=1;y=0.2;vd=40} @self
+  - sound{s=entity.wither.spawn;v=0.6;p=1.4} @self
+  - message{m="<#FF5C5C>☠ <#FFD36B><caster.var.nombre> <white>cambia de forma…"} @PIR{r=40}
+  - summon{type=jefe_tree_trampler_p2;amount=1} @selflocation
+  - remove @self
+
+jefe_banshee_refuerzos:
+  Conditions:
+  - variableequals{var=caster.refuerzos;value=1} false
+  Skills:
+  - setvariable{var=caster.refuerzos;value=1;type=INTEGER} @self
+  - summon{type=jefe_banshee_summon;amount=10;radius=4} @self
+
+jefe_beast_tamer_refuerzos:
+  Conditions:
+  - variableequals{var=caster.refuerzos;value=1} false
+  Skills:
+  - setvariable{var=caster.refuerzos;value=1;type=INTEGER} @self
+  - summon{type=jefe_beast_tamer_summon;amount=1;radius=4} @self
+  - summon{type=jefe_beast_tamer_summon_1;amount=1;radius=4} @self
+
+jefe_circus_ringmaster_refuerzos:
+  Conditions:
+  - variableequals{var=caster.refuerzos;value=1} false
+  Skills:
+  - setvariable{var=caster.refuerzos;value=1;type=INTEGER} @self
+  - summon{type=jefe_circus_ringmaster_summon;amount=1;radius=4} @self
+  - summon{type=jefe_circus_ringmaster_summon_1;amount=1;radius=4} @self
+
+jefe_mutated_mermaid_refuerzos:
+  Conditions:
+  - variableequals{var=caster.refuerzos;value=1} false
+  Skills:
+  - setvariable{var=caster.refuerzos;value=1;type=INTEGER} @self
+  - summon{type=jefe_mutated_mermaid_summon;amount=2;radius=4} @self
+
+jefe_storm_caller_refuerzos:
+  Conditions:
+  - variableequals{var=caster.refuerzos;value=1} false
+  Skills:
+  - setvariable{var=caster.refuerzos;value=1;type=INTEGER} @self
+  - summon{type=jefe_storm_caller_summon;amount=2;radius=4} @self
+
+jefe_the_great_weaver_refuerzos:
+  Conditions:
+  - variableequals{var=caster.refuerzos;value=1} false
+  Skills:
+  - setvariable{var=caster.refuerzos;value=1;type=INTEGER} @self
+  - summon{type=jefe_the_great_weaver_summon;amount=3;radius=4} @self

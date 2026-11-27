@@ -72,3 +72,59 @@ elite_tirador:
   Template: elite_base
   Skills:
   - skill{s=elite_of} @target ~onShoot
+
+# ============================================================
+#  JEFES DE EVENTO (Mobs/jefes_eventos.yml)
+#  La etiqueta elite_evento permite a Skript (Elites/eventos.sk) seguir
+#  el evento: rastreo, último golpe (huida a los 10 min), daño por jugador
+#  y recompensas. La barra de vida es la BossBar nativa de MythicMobs
+#  (solo a 40 bloques); la de rastreo a distancia es de Skript.
+# ============================================================
+elite_jefe_base:
+  Health: 100
+  Damage: 5
+  LevelModifiers:
+    Armor: 0.06
+  BossBar:
+    Enabled: true
+    Title: '<caster.name>'
+    Range: 40
+    Color: RED
+    Style: SEGMENTED_10
+  Options:
+    AlwaysShowName: true
+    Despawn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+    KnockbackResistance: 0.6
+  Skills:
+  - addtag{tag=elite_evento} @self ~onSpawn
+  - skill{s=elite_rango} @self ~onSpawn
+  - skill{s=elite_jefe_aparicion} @self ~onSpawn
+  - skill{s=elite_muerte_mitica} @self ~onDeath
+  Drops:
+  - exp 80to160
+  - experience_bottle 2to6
+  - emerald 2to6 0.7
+  - diamond 1to2 0.45
+  - golden_apple 1to2 0.4
+  - enchanted_golden_apple 1 0.03
+
+# Monturas, invocaciones y piezas de los jefes (no cuentan para el evento)
+elite_jefe_esbirro:
+  Health: 30
+  Damage: 3
+  Options:
+    AlwaysShowName: false
+    Despawn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: true
+  Skills:
+  - addtag{tag=elite_evento_esbirro} @self ~onSpawn
+  - skill{s=elite_rango} @self ~onSpawn
+  Drops:
+  - exp 5to15

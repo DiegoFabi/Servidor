@@ -1,0 +1,1997 @@
+# ============================================================
+#  JEFES DE EVENTO (convertidos de EliteMobs event_megapack_2).
+#  GENERADO por gen_jefes.py: nombres en español, vida/daño/velocidad,
+#  equipo, tamaño, monturas, rastros, fases e invocaciones. Los poderes
+#  de EliteMobs se traducen a los de Skills/ (rotación cada 3 s si tiene
+#  objetivo). Cuándo y dónde salen: Skript/Elites/eventos.sk.
+#  Principales (cuentan para el evento): plantilla elite_jefe_base.
+#  Monturas, invocaciones y piezas: elite_jefe_esbirro.
+# ============================================================
+
+jefe_ancient_corpse:
+  Template: elite_jefe_base
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Cadáver Ancestral <#7E848F>Nv <caster.level>'
+  Health: 248
+  Damage: 3.8
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 40
+    Scale: 0.6
+  Variables:
+    nombre: Cadáver Ancestral
+  Skills:
+  - randomskill{s=po_empuje,pf_tormenta_fuego} @target ~onTimer:60
+
+jefe_animated_armor:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Armadura Animada <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 12.0
+  Options:
+    MovementSpeed: 0.35
+    FollowRange: 66
+  Equipment:
+  - iron_axe HAND
+  - iron_axe OFFHAND
+  - netherite_helmet HEAD
+  - netherite_chestplate CHEST
+  - netherite_leggings LEGS
+  - netherite_boots FEET
+  Variables:
+    nombre: Armadura Animada
+  Skills:
+  - randomskill{s=pf_rafaga_flechas} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+
+jefe_annoyed_drowned:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Ahogado Furioso <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 4.5
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - trident HAND
+  Variables:
+    nombre: Ahogado Furioso
+  Skills:
+  - randomskill{s=po_fuego} @target ~onTimer:60
+  - effect:particles{p=bubble;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=bubble;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=bubble_pop;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_banshee:
+  Template: elite_jefe_base
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Banshee <#7E848F>Nv <caster.level>'
+  Health: 320
+  Damage: 9.0
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+    Scale: 0.66
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Banshee
+  Skills:
+  - randomskill{s=po_rayo,pf_rafaga_flechas} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - summon{type=jefe_banshee_summon;amount=1;radius=3} @self ~onDamaged 0.1
+  - skill{s=jefe_banshee_refuerzos} @self ~onDamaged
+
+jefe_banshee_summon:
+  Template: elite_jefe_esbirro
+  Type: SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Pena <#7E848F>Nv <caster.level>'
+  Health: 16
+  Damage: 0.0
+  Options:
+    MovementSpeed: 0.12
+    FollowRange: 80
+  DamageModifiers:
+  - PROJECTILE 0.1
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pena
+  Skills:
+  - randomskill{s=pf_flecha_arcana,pj_flechas_guiadas} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+
+jefe_beach_bug:
+  Template: elite_jefe_base
+  Type: SILVERFISH
+  Display: '<#FF5C5C>☠ <#FFD36B>Bicho de Playa <#7E848F>Nv <caster.level>'
+  Health: 83
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Bicho de Playa
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_flecha_arcana,pf_lluvia_flechas} @target ~onTimer:60
+
+jefe_beast_tamer:
+  Template: elite_jefe_base
+  Type: VINDICATOR
+  Display: '<#FF5C5C>☠ <#FFD36B>Domador de Bestias <#7E848F>Nv <caster.level>'
+  Health: 317
+  Damage: 7.8
+  Options:
+    MovementSpeed: 0.31
+    FollowRange: 80
+  Equipment:
+  - netherite_axe HAND
+  Variables:
+    nombre: Domador de Bestias
+  Skills:
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+  - skill{s=jefe_beast_tamer_refuerzos} @self ~onDamaged
+
+jefe_beast_tamer_summon:
+  Template: elite_jefe_esbirro
+  Type: RAVAGER
+  Display: '<#FF5C5C>☠ <#FFD36B>Gran Bestia <#7E848F>Nv <caster.level>'
+  Health: 4950
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  Variables:
+    nombre: Gran Bestia
+  Skills:
+  - randomskill{s=po_empuje} @target ~onTimer:60
+
+jefe_beast_tamer_summon_1:
+  Template: elite_jefe_esbirro
+  Type: ZOGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Bestia <#7E848F>Nv <caster.level>'
+  Health: 1980
+  Damage: 0.6
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  Variables:
+    nombre: Bestia
+  Skills:
+  - randomskill{s=po_gravedad} @target ~onTimer:60
+
+jefe_big_bad_wolf:
+  Template: elite_jefe_base
+  Type: WOLF
+  Display: '<#FF5C5C>☠ <#FFD36B>Lobo Feroz <#7E848F>Nv <caster.level>'
+  Health: 480
+  Damage: 5.3
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 70
+    Scale: 2.11
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Lobo Feroz
+  Skills:
+  - randomskill{s=po_gravedad,po_atraccion,po_empuje,pf_golpe_suelo} @target ~onTimer:60
+
+jefe_bloated_jeffrey:
+  Template: elite_jefe_base
+  Type: GHAST
+  Display: '<#FF5C5C>☠ <#FFD36B>Jeffrey el Hinchado <#7E848F>Nv <caster.level>'
+  Health: 120
+  Damage: 4.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 70
+    Scale: 0.73
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Jeffrey el Hinchado
+  Skills:
+  - randomskill{s=pf_rafaga_flechas} @target ~onTimer:60
+
+jefe_bloated_jeffrey_summon:
+  Template: elite_jefe_esbirro
+  Type: GHAST
+  Display: '<#FF5C5C>☠ <#FFD36B>Amigo de Jeffrey <#7E848F>Nv <caster.level>'
+  Health: 15
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 70
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Amigo de Jeffrey
+
+jefe_bone_fiend:
+  Template: elite_jefe_base
+  Type: SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Demonio de Hueso <#7E848F>Nv <caster.level>'
+  Health: 200
+  Damage: 2.7
+  Mount: jefe_bone_fiend_mount
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  DamageModifiers:
+  - PROJECTILE 0.1
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Demonio de Hueso
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_flecha_arcana,pf_lluvia_flechas} @target ~onTimer:60
+
+jefe_bone_fiend_mount:
+  Template: elite_jefe_esbirro
+  Type: STRAY
+  Display: '<#FF5C5C>☠ <#FFD36B>Portador de Huesos <#7E848F>Nv <caster.level>'
+  Health: 45
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 80
+  DamageModifiers:
+  - PROJECTILE 0.1
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Portador de Huesos
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_flecha_arcana,pf_fuegos_artificiales} @target ~onTimer:60
+
+jefe_bone_skeleton:
+  Template: elite_jefe_base
+  Type: SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Esqueleto de Hueso <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 4.5
+  Options:
+    MovementSpeed: 0.3
+    FollowRange: 80
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Esqueleto de Hueso
+  Skills:
+  - randomskill{s=pf_flecha_arcana,pf_lluvia_flechas,pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+  - effect:particles{p=soul;a=30;hs=0.6;vs=1;s=0.05;y=1;vd=40} @self ~onDeath
+
+jefe_circus_ringmaster:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Maestro de Ceremonias <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 6.0
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Maestro de Ceremonias
+  Skills:
+  - summon{type=jefe_circus_ringmaster_summon_2;amount=1;radius=3} @self ~onDamaged 0.13
+  - skill{s=jefe_circus_ringmaster_refuerzos} @self ~onDamaged
+
+jefe_circus_ringmaster_summon:
+  Template: elite_jefe_esbirro
+  Type: POLAR_BEAR
+  Display: '<#FF5C5C>☠ <#FFD36B>Animal Torturado <#7E848F>Nv <caster.level>'
+  Health: 56
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Animal Torturado
+  Skills:
+  - randomskill{s=po_hielo} @target ~onTimer:60
+
+jefe_circus_ringmaster_summon_1:
+  Template: elite_jefe_esbirro
+  Type: ZOMBIE
+  Display: '<#FF5C5C>☠ <#FFD36B>Payaso Maltratado <#7E848F>Nv <caster.level>'
+  Health: 38
+  Damage: 0.8
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Payaso Maltratado
+  Skills:
+  - randomskill{s=pf_implosion} @target ~onTimer:60
+
+jefe_circus_ringmaster_summon_2:
+  Template: elite_jefe_esbirro
+  Type: GHAST
+  Display: '<#FF5C5C>☠ <#FFD36B>Globo Maldito <#7E848F>Nv <caster.level>'
+  Health: 8
+  Damage: 0.9
+  Options:
+    MovementSpeed: 0.2
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Globo Maldito
+  Skills:
+  - randomskill{s=pf_bola_fuego} @target ~onTimer:60
+
+jefe_cursed_bandit:
+  Template: elite_jefe_base
+  Type: PILLAGER
+  Display: '<#FF5C5C>☠ <#FFD36B>Bandido Maldito <#7E848F>Nv <caster.level>'
+  Health: 288
+  Damage: 8.0
+  Mount: jefe_cursed_bandit_mount
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 80
+  Equipment:
+  - crossbow HAND
+  Variables:
+    nombre: Bandido Maldito
+  Skills:
+  - randomskill{s=po_hielo} @target ~onTimer:60
+
+jefe_cursed_bandit_mount:
+  Template: elite_jefe_esbirro
+  Type: SPIDER
+  Display: '<#FF5C5C>☠ <#FFD36B>Araña Domesticada <#7E848F>Nv <caster.level>'
+  Health: 48
+  Damage: 0.3
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 80
+  Variables:
+    nombre: Araña Domesticada
+  Skills:
+  - randomskill{s=pf_lluvia_flechas} @target ~onTimer:60
+
+jefe_divine_cinder:
+  Template: elite_jefe_base
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Ceniza Divina <#7E848F>Nv <caster.level>'
+  Health: 320
+  Damage: 9.0
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 70
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Ceniza Divina
+  Skills:
+  - randomskill{s=pf_bola_teledirigida,pf_tormenta_fuego} @target ~onTimer:60
+
+jefe_earth_mite:
+  Template: elite_jefe_base
+  Type: SILVERFISH
+  Display: '<#FF5C5C>☠ <#FFD36B>Ácaro de Tierra <#7E848F>Nv <caster.level>'
+  Health: 64
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 80
+  Variables:
+    nombre: Ácaro de Tierra
+  Skills:
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=dripping_lava;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_ender_guardian:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Guardián del End <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 4.5
+  Options:
+    MovementSpeed: 0.3
+    FollowRange: 80
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - trident HAND
+  - shield OFFHAND
+  - netherite_helmet HEAD
+  - netherite_chestplate CHEST
+  - netherite_leggings LEGS
+  - netherite_boots FEET
+  Variables:
+    nombre: Guardián del End
+  Skills:
+  - randomskill{s=pj_explosion_dorada,pf_flecha_arcana,po_descarga,pf_implosion} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=portal;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=portal;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=soul;a=30;hs=0.6;vs=1;s=0.05;y=1;vd=40} @self ~onDeath
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_ender_lapin:
+  Template: elite_jefe_base
+  Type: RABBIT
+  Display: '<#FF5C5C>☠ <#FFD36B>Conejo del End <#7E848F>Nv <caster.level>'
+  Health: 39
+  Damage: 4.7
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 35
+    Scale: 0.6
+  Variables:
+    nombre: Conejo del End
+  Skills:
+  - randomskill{s=pj_lluvia_meteoros,pf_tormenta_fuego} @target ~onTimer:60
+
+jefe_enders_1:
+  Template: elite_jefe_base
+  Type: ENDERMAN
+  Display: '<#FF5C5C>☠ <#FFD36B>Enderchico <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 3.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 100
+  Variables:
+    nombre: Enderchico
+  Skills:
+  - randomskill{s=po_empuje} @target ~onTimer:60
+
+jefe_enders_2:
+  Template: elite_jefe_base
+  Type: ENDERMAN
+  Display: '<#FF5C5C>☠ <#FFD36B>Endertipo <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 3.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 100
+  Variables:
+    nombre: Endertipo
+  Skills:
+  - randomskill{s=po_fuego} @target ~onTimer:60
+
+jefe_enders_3:
+  Template: elite_jefe_base
+  Type: ENDERMAN
+  Display: '<#FF5C5C>☠ <#FFD36B>Enderamigo <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 3.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 100
+  Variables:
+    nombre: Enderamigo
+  Skills:
+  - randomskill{s=po_hielo} @target ~onTimer:60
+
+jefe_endless_pursuer:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Perseguidor Eterno <#7E848F>Nv <caster.level>'
+  Health: 640
+  Damage: 6.0
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 300
+    Scale: 0.51
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Perseguidor Eterno
+  Skills:
+  - randomskill{s=po_empuje} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_enraged_snowman:
+  Template: elite_jefe_base
+  Type: POLAR_BEAR
+  Display: '<#FF5C5C>☠ <#FFD36B>Muñeco de Nieve Furioso <#7E848F>Nv <caster.level>'
+  Health: 600
+  Damage: 10.1
+  Options:
+    MovementSpeed: 0.4
+    FollowRange: 77
+    KnockbackResistance: 1
+  DamageModifiers:
+  - FALL 0
+  Variables:
+    nombre: Muñeco de Nieve Furioso
+  Skills:
+  - randomskill{s=po_empuje,pf_golpe_suelo,po_hielo,pj_cono_helado} @target ~onTimer:60
+  - randomskill{s=pd_aura_helada} @trigger ~onDamaged 0.35
+
+jefe_exhumed_dead:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Muerto Exhumado <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 3.6
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 80
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - trident HAND
+  Variables:
+    nombre: Muerto Exhumado
+  Skills:
+  - randomskill{s=po_mareo,pf_tormenta_rayos} @target ~onTimer:60
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_fire_conjurer:
+  Template: elite_jefe_base
+  Type: EVOKER
+  Display: '<#FF5C5C>☠ <#FFD36B>Conjurador de Fuego <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 5.4
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Conjurador de Fuego
+  Skills:
+  - randomskill{s=po_fuego,pf_tormenta_fuego,pf_pira_llamas} @target ~onTimer:60
+  - summon{type=jefe_fire_conjurer_summon;amount=1;radius=3} @self ~onDamaged 0.18
+
+jefe_fire_conjurer_summon:
+  Template: elite_jefe_esbirro
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Llama Invocada <#7E848F>Nv <caster.level>'
+  Health: 8
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 80
+  Variables:
+    nombre: Llama Invocada
+
+jefe_firestarter:
+  Template: elite_jefe_base
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Incendiario <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 9.0
+  Mount: jefe_firestarter_mount
+  Options:
+    MovementSpeed: 0.3
+    FollowRange: 50
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Incendiario
+  Skills:
+  - randomskill{s=pf_bola_fuego} @target ~onTimer:60
+
+jefe_firestarter_mount:
+  Template: elite_jefe_esbirro
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Chispa <#7E848F>Nv <caster.level>'
+  Health: 60
+  Damage: 3.0
+  Options:
+    MovementSpeed: 0.364
+    FollowRange: 50
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Chispa
+  Skills:
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+
+jefe_giant_magi:
+  Template: elite_jefe_base
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Gigante Mago <#7E848F>Nv <caster.level>'
+  Health: 640
+  Damage: 11.2
+  Options:
+    MovementSpeed: 0.44
+    FollowRange: 80
+    KnockbackResistance: 1
+  DamageModifiers:
+  - FALL 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - stick HAND
+  - leather_helmet HEAD
+  - leather_chestplate CHEST
+  - leather_leggings LEGS
+  - leather_boots FEET
+  Variables:
+    nombre: Gigante Mago
+  Skills:
+  - randomskill{s=pf_tormenta_rayos,pf_bola_teledirigida} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+
+jefe_gremlin_1:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_10:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_2:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_3:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_4:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_5:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_6:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_7:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_8:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_gremlin_9:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Gremlin <#7E848F>Nv <caster.level>'
+  Health: 80
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Gremlin
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_jungle_lion:
+  Template: elite_jefe_base
+  Type: WOLF
+  Display: '<#FF5C5C>☠ <#FFD36B>León de la Selva <#7E848F>Nv <caster.level>'
+  Health: 280
+  Damage: 6.6
+  Options:
+    MovementSpeed: 0.42
+    FollowRange: 80
+    Scale: 1.5
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: León de la Selva
+  Skills:
+  - randomskill{s=po_debilidad,po_empuje,pf_golpe_suelo} @target ~onTimer:60
+
+jefe_magma_construct:
+  Template: elite_jefe_base
+  Type: ZOMBIE
+  Display: '<#FF5C5C>☠ <#FFD36B>Constructo de Magma <#7E848F>Nv <caster.level>'
+  Health: 360
+  Damage: 2.2
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 50
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Constructo de Magma
+  Skills:
+  - randomskill{s=pf_bola_teledirigida,pj_lanzallamas,pf_pira_llamas,pj_lluvia_meteoros,po_fuego} @target ~onTimer:60
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=dripping_lava;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=flame;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_moonlight_devourer:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Devorador Lunar <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 10.8
+  Options:
+    MovementSpeed: 0.32
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - bow HAND
+  - netherite_sword OFFHAND
+  Variables:
+    nombre: Devorador Lunar
+  Skills:
+  - randomskill{s=pf_bola_fuego} @target ~onTimer:60
+  - skill{s=jefe_moonlight_devourer_fase} @self ~onDamaged
+
+jefe_moonlight_devourer_p2:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Devorador Lunar Despierto <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 10.8
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - netherite_sword HAND
+  Variables:
+    nombre: Devorador Lunar Despierto
+  Skills:
+  - randomskill{s=pj_lluvia_meteoros} @target ~onTimer:60
+
+jefe_morgana:
+  Template: elite_jefe_base
+  Type: WITCH
+  Display: '<#FF5C5C>☠ <#FFD36B>Morgana <#7E848F>Nv <caster.level>'
+  Health: 510
+  Damage: 4.5
+  Mount: jefe_morgana_mount
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Morgana
+  Skills:
+  - randomskill{s=pj_tormenta,po_fuego,po_ceguera} @target ~onTimer:60
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_morgana_mount:
+  Template: elite_jefe_esbirro
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Escoba de Bruja <#7E848F>Nv <caster.level>'
+  Health: 60
+  Damage: 1.2
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Escoba de Bruja
+  Skills:
+  - randomskill{s=pf_lluvia_flechas} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+
+jefe_mutated_mermaid:
+  Template: elite_jefe_base
+  Type: GUARDIAN
+  Display: '<#FF5C5C>☠ <#FFD36B>Sirena Mutada <#7E848F>Nv <caster.level>'
+  Health: 360
+  Damage: 7.2
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Sirena Mutada
+  Skills:
+  - randomskill{s=po_debilidad} @target ~onTimer:60
+  - summon{type=jefe_mutated_mermaid_summon;amount=1;radius=3} @self ~onDamaged 0.04
+  - skill{s=jefe_mutated_mermaid_refuerzos} @self ~onDamaged
+
+jefe_mutated_mermaid_summon:
+  Template: elite_jefe_esbirro
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Sirenito <#7E848F>Nv <caster.level>'
+  Health: 15
+  Damage: 0.4
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 80
+    Scale: 0.6
+  Equipment:
+  - trident HAND
+  - netherite_chestplate CHEST
+  - netherite_leggings LEGS
+  - netherite_boots FEET
+  Variables:
+    nombre: Sirenito
+
+jefe_nether_bovine:
+  Template: elite_jefe_base
+  Type: ZOGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Bovino Infernal <#7E848F>Nv <caster.level>'
+  Health: 608
+  Damage: 9.0
+  Options:
+    MovementSpeed: 0.48
+    FollowRange: 40
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Bovino Infernal
+  Skills:
+  - randomskill{s=po_veneno,po_empuje,po_hielo,po_fuego} @target ~onTimer:60
+  - randomskill{s=pd_escudo} @trigger ~onDamaged 0.35
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_nether_hag:
+  Template: elite_jefe_base
+  Type: WITCH
+  Display: '<#FF5C5C>☠ <#FFD36B>Bruja del Nether <#7E848F>Nv <caster.level>'
+  Health: 572
+  Damage: 5.6
+  Options:
+    MovementSpeed: 0.364
+    FollowRange: 50
+    KnockbackResistance: 1
+    Scale: 0.6
+  DamageModifiers:
+  - PROJECTILE 0.1
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  - FALL 0
+  Variables:
+    nombre: Bruja del Nether
+  Skills:
+  - randomskill{s=pf_telarana,pj_flechas_guiadas,po_rayo,pf_tormenta_rayos} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_nether_wasp:
+  Template: elite_jefe_base
+  Type: BEE
+  Display: '<#FF5C5C>☠ <#FFD36B>Avispa Infernal <#7E848F>Nv <caster.level>'
+  Health: 128
+  Damage: 2.3
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 70
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Avispa Infernal
+  Skills:
+  - randomskill{s=po_veneno} @target ~onTimer:60
+
+jefe_nether_wasp_summon_1:
+  Template: elite_jefe_esbirro
+  Type: BEE
+  Display: '<#FF5C5C>☠ <#FFD36B>Invocadora de Colmena <#7E848F>Nv <caster.level>'
+  Health: 15
+  Damage: 1.0
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 70
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Invocadora de Colmena
+  Skills:
+  - randomskill{s=po_empuje} @target ~onTimer:60
+
+jefe_nether_wasp_summon_2:
+  Template: elite_jefe_esbirro
+  Type: BEE
+  Display: '<#FF5C5C>☠ <#FFD36B>Avispa de Colmena <#7E848F>Nv <caster.level>'
+  Health: 15
+  Damage: 0.5
+  Options:
+    MovementSpeed: 0.25
+    FollowRange: 35
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Avispa de Colmena
+
+jefe_night_horder:
+  Template: elite_jefe_base
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Acaparador Nocturno <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 9.0
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  Equipment:
+  - diamond_helmet HEAD
+  - diamond_chestplate CHEST
+  - diamond_leggings LEGS
+  - diamond_boots FEET
+  Variables:
+    nombre: Acaparador Nocturno
+  Skills:
+  - randomskill{s=pj_explosion_dorada,pj_escopeta_dorada,pf_salto_sombrio} @target ~onTimer:60
+  - effect:particles{p=wax_off;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_rotting_diver:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Buzo Podrido <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 3.5
+  Options:
+    MovementSpeed: 0.26
+    FollowRange: 80
+  Equipment:
+  - trident HAND
+  - diamond_hoe OFFHAND
+  - iron_helmet HEAD
+  Variables:
+    nombre: Buzo Podrido
+  Skills:
+  - randomskill{s=po_empuje} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_sand_fiend:
+  Template: elite_jefe_base
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Demonio de Arena <#7E848F>Nv <caster.level>'
+  Health: 160
+  Damage: 2.2
+  Options:
+    MovementSpeed: 0.37
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Demonio de Arena
+  Skills:
+  - randomskill{s=po_atraccion} @target ~onTimer:60
+  - effect:particles{p=ash;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_sand_fiend_1:
+  Template: elite_jefe_base
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Demonio de Arena <#7E848F>Nv <caster.level>'
+  Health: 160
+  Damage: 2.2
+  Options:
+    MovementSpeed: 0.35
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Demonio de Arena
+  Skills:
+  - randomskill{s=po_empuje} @target ~onTimer:60
+  - effect:particles{p=ash;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_sand_fiend_2:
+  Template: elite_jefe_base
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Demonio de Arena <#7E848F>Nv <caster.level>'
+  Health: 160
+  Damage: 2.2
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Demonio de Arena
+  Skills:
+  - randomskill{s=po_ceguera} @target ~onTimer:60
+  - effect:particles{p=ash;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_skeleton_knight:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Caballero Esqueleto <#7E848F>Nv <caster.level>'
+  Health: 320
+  Damage: 14.6
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 80
+    KnockbackResistance: 1
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.1
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - netherite_sword HAND
+  - shield OFFHAND
+  - iron_chestplate CHEST
+  Variables:
+    nombre: Caballero Esqueleto
+  Skills:
+  - randomskill{s=pj_provocar,pf_rafaga_flechas} @target ~onTimer:60
+
+jefe_sky_archer:
+  Template: elite_jefe_base
+  Type: SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Arquero del Cielo <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 6.8
+  Mount: jefe_sky_archer_mount
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Arquero del Cielo
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_plasma,pf_tormenta_rayos} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_sky_archer_mount:
+  Template: elite_jefe_esbirro
+  Type: PHANTOM
+  Display: '<#FF5C5C>☠ <#FFD36B>Corcel Celeste <#7E848F>Nv <caster.level>'
+  Health: 270
+  Damage: 0.6
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 50
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Corcel Celeste
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_plasma} @target ~onTimer:60
+
+jefe_smallstack:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Cima) <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 0.5
+  Mount: jefe_smallstack_1
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Cima)
+  Skills:
+  - randomskill{s=pj_flechas_guiadas} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_smallstack_1:
+  Template: elite_jefe_esbirro
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Medio) <#7E848F>Nv <caster.level>'
+  Health: 60
+  Damage: 0.3
+  Mount: jefe_smallstack_2
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Medio)
+  Skills:
+  - randomskill{s=pf_plasma} @target ~onTimer:60
+
+jefe_smallstack_2:
+  Template: elite_jefe_esbirro
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Medio) <#7E848F>Nv <caster.level>'
+  Health: 60
+  Damage: 0.3
+  Mount: jefe_smallstack_3
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Medio)
+  Skills:
+  - randomskill{s=pf_flecha_arcana} @target ~onTimer:60
+
+jefe_smallstack_3:
+  Template: elite_jefe_esbirro
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Medio) <#7E848F>Nv <caster.level>'
+  Health: 30
+  Damage: 0.3
+  Mount: jefe_smallstack_4
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Medio)
+  Skills:
+  - randomskill{s=pf_lluvia_flechas} @target ~onTimer:60
+
+jefe_smallstack_4:
+  Template: elite_jefe_esbirro
+  Type: ZOMBIE
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Base) <#7E848F>Nv <caster.level>'
+  Health: 30
+  Damage: 0.3
+  Mount: jefe_smallstack_5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Base)
+  Skills:
+  - randomskill{s=po_rayo} @target ~onTimer:60
+
+jefe_smallstack_5:
+  Template: elite_jefe_esbirro
+  Type: ZOMBIE
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Base) <#7E848F>Nv <caster.level>'
+  Health: 15
+  Damage: 0.3
+  Mount: jefe_smallstack_6
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Base)
+  Skills:
+  - randomskill{s=pj_cono_helado} @target ~onTimer:60
+
+jefe_smallstack_6:
+  Template: elite_jefe_esbirro
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Pilacorta (Portador) <#7E848F>Nv <caster.level>'
+  Health: 15
+  Damage: 0.8
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 50
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pilacorta (Portador)
+  Skills:
+  - randomskill{s=pf_bola_fuego} @target ~onTimer:60
+
+jefe_sorcerer_supreme:
+  Template: elite_jefe_base
+  Type: ILLUSIONER
+  Display: '<#FF5C5C>☠ <#FFD36B>Hechicero Supremo <#7E848F>Nv <caster.level>'
+  Health: 384
+  Damage: 7.2
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+    Scale: 0.77
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  - PROJECTILE 0.1
+  Variables:
+    nombre: Hechicero Supremo
+  Skills:
+  - randomskill{s=pf_lluvia_flechas,pj_tormenta,pj_lluvia_meteoros,pf_bola_fuego} @target ~onTimer:60
+  - randomskill{s=pd_escudo} @trigger ~onDamaged 0.35
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+  - summon{type=jefe_sorcerer_supreme_summon;amount=1;radius=3} @self ~onDamaged 0.18
+  - summon{type=jefe_sorcerer_supreme_summon;amount=1;radius=3} @self ~onDamaged 0.09
+  - summon{type=jefe_sorcerer_supreme_summon;amount=2;radius=4} @self ~onSpawn 0.85
+
+jefe_sorcerer_supreme_summon:
+  Template: elite_jefe_esbirro
+  Type: HUSK
+  Display: '<#FF5C5C>☠ <#FFD36B>Siervo Eterno <#7E848F>Nv <caster.level>'
+  Health: 9
+  Damage: 0.0
+  Options:
+    MovementSpeed: 0.23
+    FollowRange: 80
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Siervo Eterno
+  Skills:
+  - randomskill{s=pd_curacion} @trigger ~onDamaged 0.35
+
+jefe_starving_hog:
+  Template: elite_jefe_base
+  Type: ZOGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Cerdo Hambriento <#7E848F>Nv <caster.level>'
+  Health: 480
+  Damage: 8.1
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+    Scale: 0.6
+  Variables:
+    nombre: Cerdo Hambriento
+  Skills:
+  - randomskill{s=po_empuje,po_hielo} @target ~onTimer:60
+
+jefe_storm_caller:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Invocador de Tormentas <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 3.4
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - trident HAND
+  - iron_helmet HEAD
+  - iron_chestplate CHEST
+  - iron_leggings LEGS
+  - iron_boots FEET
+  Variables:
+    nombre: Invocador de Tormentas
+  Skills:
+  - randomskill{s=po_rayo} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - skill{s=jefe_storm_caller_fase} @self ~onDamaged
+  - skill{s=jefe_storm_caller_refuerzos} @self ~onDamaged
+
+jefe_storm_caller_p2:
+  Template: elite_jefe_base
+  Type: DROWNED
+  Display: '<#FF5C5C>☠ <#FFD36B>Invocador de Tormentas Desatado <#7E848F>Nv <caster.level>'
+  Health: 400
+  Damage: 2.7
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - trident HAND
+  - iron_helmet HEAD
+  - iron_chestplate CHEST
+  - iron_leggings LEGS
+  - iron_boots FEET
+  Variables:
+    nombre: Invocador de Tormentas Desatado
+  Skills:
+  - randomskill{s=po_fuego,pf_tormenta_rayos,pj_tormenta} @target ~onTimer:60
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=witch;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - summon{type=jefe_storm_caller_summon;amount=1;radius=3} @self ~onDamaged 0.08
+
+jefe_storm_caller_summon:
+  Template: elite_jefe_esbirro
+  Type: ZOMBIE
+  Display: '<#FF5C5C>☠ <#FFD36B>Siervo de la Tormenta <#7E848F>Nv <caster.level>'
+  Health: 20
+  Damage: 0.6
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+    Scale: 0.6
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - iron_helmet HEAD
+  - iron_chestplate CHEST
+  - iron_leggings LEGS
+  - iron_boots FEET
+  Variables:
+    nombre: Siervo de la Tormenta
+  Skills:
+  - randomskill{s=po_descarga} @target ~onTimer:60
+  - effect:particles{p=electric_spark;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_suspicious_phantom:
+  Template: elite_jefe_base
+  Type: PHANTOM
+  Display: '<#FF5C5C>☠ <#FFD36B>Phantom Sospechoso <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 4.5
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Phantom Sospechoso
+  Skills:
+  - effect:particles{p=flame;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=flame;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=flame;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+  - summon{type=jefe_suspicious_phantom_summon;amount=1;radius=3} @self ~onDamaged 0.26
+  - summon{type=jefe_suspicious_phantom_summon_1;amount=1;radius=3} @self ~onDamaged 0.13
+
+jefe_suspicious_phantom_summon:
+  Template: elite_jefe_esbirro
+  Type: BLAZE
+  Display: '<#FF5C5C>☠ <#FFD36B>Llamarada <#7E848F>Nv <caster.level>'
+  Health: 8
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 80
+  Variables:
+    nombre: Llamarada
+
+jefe_suspicious_phantom_summon_1:
+  Template: elite_jefe_esbirro
+  Type: GHAST
+  Display: '<#FF5C5C>☠ <#FFD36B>Bombardero <#7E848F>Nv <caster.level>'
+  Health: 4
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.33
+    FollowRange: 80
+  Variables:
+    nombre: Bombardero
+  Skills:
+  - randomskill{s=pf_bola_fuego} @target ~onTimer:60
+
+jefe_the_great_weaver:
+  Template: elite_jefe_base
+  Type: SPIDER
+  Display: '<#FF5C5C>☠ <#FFD36B>La Gran Tejedora <#7E848F>Nv <caster.level>'
+  Health: 256
+  Damage: 1.5
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: La Gran Tejedora
+  Skills:
+  - randomskill{s=po_atraccion} @target ~onTimer:60
+  - effect:particles{p=white_ash;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=white_ash;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=white_ash;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - skill{s=jefe_the_great_weaver_refuerzos} @self ~onDamaged
+
+jefe_the_great_weaver_summon:
+  Template: elite_jefe_esbirro
+  Type: SPIDER
+  Display: '<#FF5C5C>☠ <#FFD36B>Madre de la Prole <#7E848F>Nv <caster.level>'
+  Health: 24
+  Damage: 0.2
+  Options:
+    MovementSpeed: 0.2
+    FollowRange: 80
+  Variables:
+    nombre: Madre de la Prole
+  Skills:
+  - randomskill{s=pf_telarana} @target ~onTimer:60
+  - summon{type=jefe_the_great_weaver_summon_1;amount=3;radius=4} @self ~onSpawn 0.45
+
+jefe_the_great_weaver_summon_1:
+  Template: elite_jefe_esbirro
+  Type: CAVE_SPIDER
+  Display: '<#FF5C5C>☠ <#FFD36B>Prole <#7E848F>Nv <caster.level>'
+  Health: 9
+  Damage: 0.1
+  Options:
+    MovementSpeed: 0.24
+    FollowRange: 50
+  Variables:
+    nombre: Prole
+
+jefe_the_hunter:
+  Template: elite_jefe_base
+  Type: PILLAGER
+  Display: '<#FF5C5C>☠ <#FFD36B>El Cazador <#7E848F>Nv <caster.level>'
+  Health: 288
+  Damage: 4.8
+  Mount: jefe_the_hunter_mount
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - crossbow HAND
+  Variables:
+    nombre: El Cazador
+  Skills:
+  - randomskill{s=po_ceguera,pj_lluvia_meteoros} @target ~onTimer:60
+
+jefe_the_hunter_mount:
+  Template: elite_jefe_esbirro
+  Type: RAVAGER
+  Display: '<#FF5C5C>☠ <#FFD36B>Bestia Domada <#7E848F>Nv <caster.level>'
+  Health: 150
+  Damage: 6.0
+  Options:
+    MovementSpeed: 1.3
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Bestia Domada
+  Skills:
+  - randomskill{s=po_empuje,pj_lanzallamas} @target ~onTimer:60
+
+jefe_tiny_giant:
+  Template: elite_jefe_base
+  Type: ZOMBIE
+  Display: '<#FF5C5C>☠ <#FFD36B>Gigante Diminuto <#7E848F>Nv <caster.level>'
+  Health: 320
+  Damage: 5.4
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+    Scale: 1.66
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - netherite_chestplate CHEST
+  - netherite_leggings LEGS
+  Variables:
+    nombre: Gigante Diminuto
+  Skills:
+  - randomskill{s=pf_hinchazon,pf_golpe_suelo,po_debilidad} @target ~onTimer:60
+
+jefe_tree_trampler:
+  Template: elite_jefe_base
+  Type: RABBIT
+  Display: '<#FF5C5C>☠ <#FFD36B>Pisoteador <#7E848F>Nv <caster.level>'
+  Health: 48
+  Damage: 4.5
+  Options:
+    MovementSpeed: 0.4
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Pisoteador
+  Skills:
+  - randomskill{s=po_gravedad} @target ~onTimer:60
+  - skill{s=jefe_tree_trampler_fase} @self ~onDamaged
+
+jefe_tree_trampler_p2:
+  Template: elite_jefe_base
+  Type: RAVAGER
+  Display: '<#FF5C5C>☠ <#FFD36B>Pisoteador Furioso <#7E848F>Nv <caster.level>'
+  Health: 1600
+  Damage: 18.0
+  Options:
+    MovementSpeed: 0.52
+    FollowRange: 80
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  - PROJECTILE 0.1
+  Variables:
+    nombre: Pisoteador Furioso
+  Skills:
+  - randomskill{s=po_empuje,pf_golpe_suelo,pf_implosion} @target ~onTimer:60
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=large_smoke;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+  - effect:particles{p=poof;a=2;hs=0.3;vs=0.4;s=0.01;y=0.5;vd=32} @self ~onTimer:10
+
+jefe_undead_farmer:
+  Template: elite_jefe_base
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Granjero No Muerto <#7E848F>Nv <caster.level>'
+  Health: 240
+  Damage: 6.0
+  Options:
+    MovementSpeed: 0.28
+    FollowRange: 80
+  Variables:
+    nombre: Granjero No Muerto
+  Skills:
+  - summon{type=jefe_undead_farmer_summon;amount=1;radius=4} @self ~onSpawn 1.0
+  - summon{type=jefe_undead_farmer_summon_1;amount=2;radius=4} @self ~onSpawn 1.0
+
+jefe_undead_farmer_summon:
+  Template: elite_jefe_esbirro
+  Type: ZOGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Orgullo del Granjero <#7E848F>Nv <caster.level>'
+  Health: 120
+  Damage: 3.0
+  Options:
+    MovementSpeed: 0.38
+    FollowRange: 80
+  Variables:
+    nombre: Orgullo del Granjero
+  Skills:
+  - summon{type=jefe_undead_farmer_summon_1;amount=1;radius=3} @self ~onDamaged 0.18
+
+jefe_undead_farmer_summon_1:
+  Template: elite_jefe_esbirro
+  Type: ZOGLIN
+  Display: '<#FF5C5C>☠ <#FFD36B>Cerdo Fallido <#7E848F>Nv <caster.level>'
+  Health: 60
+  Damage: 0.6
+  Options:
+    MovementSpeed: 0.4
+    FollowRange: 80
+    Scale: 0.6
+  Variables:
+    nombre: Cerdo Fallido
+
+jefe_unwanted_visitor:
+  Template: elite_jefe_base
+  Type: STRAY
+  Display: '<#FF5C5C>☠ <#FFD36B>Visitante Indeseado <#7E848F>Nv <caster.level>'
+  Health: 280
+  Damage: 3.8
+  Options:
+    MovementSpeed: 0.3
+    FollowRange: 70
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Visitante Indeseado
+  Skills:
+  - randomskill{s=po_hielo} @target ~onTimer:60
+
+jefe_unwanted_visitor_summon:
+  Template: elite_jefe_esbirro
+  Type: STRAY
+  Display: '<#FF5C5C>☠ <#FFD36B>Clon de Hielo <#7E848F>Nv <caster.level>'
+  Health: 45
+  Damage: 0.6
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 70
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - bow HAND
+  Variables:
+    nombre: Clon de Hielo
+  Skills:
+  - randomskill{s=pj_cono_helado} @target ~onTimer:60
+
+jefe_wandering_giant:
+  Template: elite_jefe_base
+  Type: WITHER_SKELETON
+  Display: '<#FF5C5C>☠ <#FFD36B>Gigante Errante <#7E848F>Nv <caster.level>'
+  Health: 800
+  Damage: 15.0
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 80
+    KnockbackResistance: 1
+  DamageModifiers:
+  - FALL 0
+  - PROJECTILE 0.1
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Equipment:
+  - bow HAND
+  - netherite_helmet HEAD
+  - netherite_chestplate CHEST
+  - netherite_leggings LEGS
+  - netherite_boots FEET
+  Variables:
+    nombre: Gigante Errante
+  Skills:
+  - randomskill{s=pf_golpe_suelo,po_empuje} @target ~onTimer:60
+
+jefe_warlock:
+  Template: elite_jefe_base
+  Type: EVOKER
+  Display: '<#FF5C5C>☠ <#FFD36B>Brujo <#7E848F>Nv <caster.level>'
+  Health: 288
+  Damage: 6.3
+  Mount: jefe_warlock_mount
+  Options:
+    MovementSpeed: 0.3
+    FollowRange: 50
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Brujo
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_plasma,pj_tormenta} @target ~onTimer:60
+  - addtag{tag=elite_evento_bonus} @self ~onSpawn
+
+jefe_warlock_mount:
+  Template: elite_jefe_esbirro
+  Type: ENDERMAN
+  Display: '<#FF5C5C>☠ <#FFD36B>Demonio <#7E848F>Nv <caster.level>'
+  Health: 46
+  Damage: 0.0
+  Options:
+    MovementSpeed: 0.36
+    FollowRange: 50
+  DamageModifiers:
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - HOT_FLOOR 0
+  Variables:
+    nombre: Demonio
+  Skills:
+  - randomskill{s=pj_flechas_guiadas,pf_plasma} @target ~onTimer:60
+  - randomskill{s=pd_invisibilidad} @trigger ~onDamaged 0.35
