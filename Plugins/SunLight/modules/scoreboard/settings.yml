@@ -16,7 +16,7 @@
 #           - %animation:[name]% - include dynamic text (animation) from the 'animations.yml'.
 #           - %player_name% - Player name.
 #           - %player_display_name% - Player display (custom) name.
-#           - %player_prefix% - Player prefix.
+#           - %luckperms_prefix% - Player prefix.
 #           - %player_suffix% - Player suffix.
 #           - %player_world% - Player world.
 #           - PlaceholderAPI - https://wiki.placeholderapi.com/
@@ -36,7 +36,7 @@ Boards:
     - <gray>      ⌚ %localtime_time_dd/MM/yyyy%
     - <gray>
     - ' <glyph:star> <green>%player_name%'
-    - ' <glyph:crown> <white>Rango: <white>%player_prefix%</white>'
+    - ' <glyph:crown> <white>Rango: <white>%luckperms_prefix%</white>'
     - <gray>
     - '  <glyph:gold_coin> <white>Billetera: <gold>%excellenteconomy_balance_short_legacy_money%'
     - '  <glyph:castle_entrance> <white>Clan: <white>%justteams_name%'

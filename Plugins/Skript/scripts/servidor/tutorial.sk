@@ -46,57 +46,13 @@ on load:
     # "tutorial historia <jugador> <parte>" desde TypeWriter.
     delete {-hist::*}
     set {-hist::capitulo} to "Capítulo 1: Un Mundo Nuevo"
-    set {-hist::total} to 13
+    set {-hist::total} to 3
     set {-hist::nombre::1} to "El Que Vino de Otro Mundo"
     set {-hist::desc::1::*} to "Moriste en tu mundo y despertaste en", "otro. King Draemir, el único que sabe", "de dónde vienes, te dio un libro en" and "blanco y recordaste tu antigua vida."
     set {-hist::nombre::2} to "Más Allá de los Muros"
-    set {-hist::desc::2::*} to "El Guardia Real, que perdió a su", "familia por la Maleza, te equipó y te", "mostró el portal. Cruzaste y este" and "nuevo mundo se abrió ante ti."
+    set {-hist::desc::2::*} to "El Guardia Real, que lo perdió todo", "una noche sin luna, te equipó y te", "mostró el portal. Cruzaste y este" and "nuevo mundo se abrió ante ti."
     set {-hist::nombre::3} to "Los Supervivientes"
-    set {-hist::desc::3::*} to "Bram, Malvor y Tobías te enseñaron", "cómo sobrevivir aquí. Una visión te", "mostró la raíz de la Maleza: no" and "llegaste a este mundo por azar."
-    set {-hist::nombre::4} to "La Raíz Bajo el Trono"
-    set {-hist::desc::4::*} to "Venciste a los Olvidados y Malvor abrió", "el ritual. La Raíz habló: su corazón", "está sellado con un juramento enano" and "que solo un forastero puede romper."
-    set {-hist::nombre::5} to "El Juramento del Acero"
-    set {-hist::desc::5::*} to "Dijiste la palabra que King te confió:", "«Recuerda». Con hierro, carbón y", "pizarra profunda, Bram forjó para ti" and "la Llave de Raíz."
-    set {-hist::nombre::6} to "Las Puertas de Orian"
-    set {-hist::desc::6::*} to "King reconoció la llave de inmediato.", "Junto al Guardia despejaste la entrada", "y las puertas de Orian se abrieron," and "aunque el portal sigue dormido."
-    set {-hist::nombre::7} to "La Cosecha Torcida"
-    set {-hist::desc::7::*} to "La Maleza pudrió los campos de Tobías.", "Salvaste su cosecha y Malvor purificó", "la tierra con polvo de hueso: este" and "mundo empieza a confiar en ti."
-    set {-hist::nombre::8} to "Las Crónicas Perdidas"
-    set {-hist::desc::8::*} to "Aldric reescribió las crónicas borradas", "y apareció un nombre olvidado: el", "Alquimista de la corte… otro que" and "también vino de lejos."
-    set {-hist::nombre::9} to "La Noche de la Maleza"
-    set {-hist::desc::9::*} to "Defendiste el reino junto al Guardia", "la noche en que el Alquimista envió", "a sus criaturas. El Guardia ya no te" and "ve como un forastero."
-    set {-hist::nombre::10} to "La Crónica de los Llegados"
-    set {-hist::desc::10::*} to "King leyó la crónica a solas contigo:", "el Alquimista llegó de otro mundo como", "tú y eligió la Maleza. Ahora sabes" and "por qué este mundo te llamó."
-    # Epílogo con el Mago Overking (TypeWriter, fact "orian_paso")
-    set {-hist::nombre::11} to "El Portal de Orian"
-    set {-hist::desc::11::*} to "El Mago Overking siguió el rastro del", "Alquimista hasta Orian. Cruzaste el", "portal hacia la ciudad del otro lado" and "del reino."
-    set {-hist::nombre::12} to "Ármate Con Hierro"
-    set {-hist::desc::12::*} to "Sir Aldren, guardián de la Ciudad de", "Orian, no te dejó entrar hasta verte" and "con armadura de hierro completa."
-    # Las misiones tipo dungeon se muestran con otro objeto (cabeza de zombi)
-    set {-hist::nombre::13} to "Misión: La Ciudad de Orian"
-    set {-hist::tipo::13} to "dungeon"
-    set {-hist::desc::13::*} to "Entraste en la Ciudad de Orian y", "acabaste con los muertos que el" and "Alquimista usaba como guardianes."
-    # Misiones: si un episodio tiene misión, en el menú sale justo después
-    # un LIBRO Y PLUMA que explica qué hay que hacer. Se ve mientras juegas ese
-    # episodio (progreso = N-1) y queda como completada al terminarlo.
-    set {-hist::mision::4} to "El Ritual de Malvor"
-    set {-hist::mdesc::4::*} to "<#E6E6E6>• Mata 5 Esqueletos (los Olvidados)", "<#E8D27A>• Ten 10 de Trigo en el Inventario", "<#C38BFF>• Ten 8 Fragmentos de Amatista" and "<#FFD36B>➜ Vuelve Con Malvor el Chamán"
-    set {-hist::mision::5} to "La Llave de Raíz"
-    set {-hist::mdesc::5::*} to "<#D9D9D9>• Ten 24 Lingotes de Hierro", "<#8A8A8A>• Ten 32 de Carbón", "<#8A8AB0>• Ten 48 de Pizarra Profunda" and "<#FFD36B>➜ Vuelve Con Bram la Herrera"
-    set {-hist::mision::6} to "La Purga de las Puertas"
-    set {-hist::mdesc::6::*} to "<#F86363>• Derrota 30 Zombis en la Entrada de Orian" and "<#FFD36B>➜ Informa al Guardia Real"
-    set {-hist::mision::7} to "La Cosecha Torcida"
-    set {-hist::mdesc::7::*} to "<#E8D27A>• Ten 64 de Trigo", "<#FFA34D>• Ten 12 Calabazas", "<#FFD36B>➜ Vuelve Con Tobías el Granjero", "<#F2F2F2>• Ten 32 de Polvo de Hueso" and "<#FFD36B>➜ Llévaselo a Malvor el Chamán"
-    set {-hist::mision::8} to "La Tinta de las Crónicas"
-    set {-hist::mdesc::8::*} to "<#7FB2FF>• Derrota 10 Calamares (Tinta)", "<#E0C28A>• Ten 6 Libros en el Inventario" and "<#FFD36B>➜ Vuelve Con Aldric el Cronista"
-    set {-hist::mision::9} to "La Noche de la Maleza"
-    set {-hist::mdesc::9::*} to "<#E6E6E6>• Derrota 10 Esqueletos", "<#B05050>• Derrota 12 Arañas", "<#7FD86B>• Derrota 6 Creepers" and "<#FFD36B>➜ Informa al Guardia Real"
-    # Jefe entre la parte 10 y la 11 (jefes/jefe1.sk): sale como DIAMANTE
-    set {-hist::mision::10} to "Jefe: El Ilusionista"
-    set {-hist::mtipo::10} to "jefe"
-    set {-hist::mdesc::10::*} to "<#C38BFF>• Vence al Ilusionista en su arena", "<#9EA3AE>• Combate en solitario: cada jugador tiene su jefe", "<#9EA3AE>• Sin comandos durante el combate (/abandonar)" and "<#FFD36B>➜ Después habla con el Mago Overking"
-    set {-hist::mision::12} to "Armadura de Hierro"
-    set {-hist::mdesc::12::*} to "<#D9D9D9>• Equípate Casco, Peto, Pantalones y Botas" and "<#FFD36B>➜ Vuelve Con Sir Aldren"
+    set {-hist::desc::3::*} to "Bram, Malvor y Tobías te enseñaron", "cómo sobrevivir aquí. Una visión te", "mostró que no despertaste por azar:" and "este mundo te llamó por un motivo."
     # Orden del menú: cada parte ("p:N") seguida de su misión ("m:N") si tiene
     delete {-hist::orden::*}
     loop {-hist::total} times:

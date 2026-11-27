@@ -1979,65 +1979,6 @@ items:
     itemflags: PLACEMENT, GLOWING, DEATH-KEEP, ITEM-MODIFIABLE
     triggers: DISABLED
 
-  # ================================================================
-  # OBJETOS DE HISTORIA (los entrega TypeWriter con "itemjoin get").
-  # No se pueden soltar (SELF-DROPS) ni modificar (ITEM-MODIFIABLE), se
-  # conservan al morir y la llave y la crónica se consumen al entregarlas.
-  # ================================================================
-  historia_llave_raiz:
-    id: TRIAL_KEY
-    model-data: '990001'
-    name: '&#C38BFF★ Llave de Raíz'
-    lore:
-    - '&f<glyph:lz_item> &#FFD36B&lHistoria'
-    - ' &7Forjada por Bram con el juramento'
-    - ' &7de su clan: &#FFD36B«Recuerda»&7.'
-    - ''
-    - '&#7FFF9E→ &#C9CDD6Llévasela al Rey Draemir.'
-    itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP, DISPOSABLE, PLACEMENT
-    triggers: DISABLED
-  historia_escudo_guardia:
-    id: SHIELD
-    model-data: '990003'
-    name: '&#F86363★ Escudo de la Guardia'
-    lore:
-    - '&f<glyph:lz_armor> &#FFD36B&lHistoria'
-    - ' &7Lo llevó la guardia que custodiaba'
-    - ' &7las puertas de Orian.'
-    itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP
-    triggers: DISABLED
-  historia_semillas_limpias:
-    id: WHEAT_SEEDS
-    model-data: '990005'
-    name: '&#9EE37D★ Semillas Limpias'
-    lore:
-    - '&f<glyph:lz_item> &#FFD36B&lHistoria'
-    - ' &7Purificadas por Malvor.'
-    - ' &7Lo primero sano que crece en años.'
-    itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP
-    triggers: DISABLED
-  historia_cronica:
-    id: WRITABLE_BOOK
-    model-data: '990002'
-    name: '&#E0C28A★ Crónica Restaurada'
-    lore:
-    - '&f<glyph:lz_item> &#FFD36B&lHistoria'
-    - ' &7Las páginas que la Maleza borró,'
-    - ' &7reescritas por Aldric el Cronista.'
-    - ''
-    - '&#7FFF9E→ &#C9CDD6Llévasela al Rey Draemir.'
-    itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP, DISPOSABLE
-    triggers: DISABLED
-  historia_coraza_guardia:
-    id: IRON_CHESTPLATE
-    model-data: '990004'
-    name: '&#F86363★ Coraza de la Guardia'
-    lore:
-    - '&f<glyph:lz_armor> &#FFD36B&lHistoria'
-    - ' &7Forjada para la guardia del Rey.'
-    - ' &7Ganada en la Noche de la Maleza.'
-    itemflags: SELF-DROPS, ITEM-MODIFIABLE, DEATH-KEEP
-    triggers: DISABLED
   jefe1_baraja:
     id: PAPER
     properties: 'tooltip_style:minecraft:purple, usos:40'
