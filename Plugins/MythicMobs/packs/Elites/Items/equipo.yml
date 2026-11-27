@@ -1,0 +1,131 @@
+# Equipo encantado de los élites por rango (3 Épico, 4 Legendario, 5 Mítico).
+# Los élites tienen PreventOtherDrops: este equipo NUNCA cae al morir.
+
+elite_t3_casco:
+  Id: IRON_HELMET
+  Enchantments:
+  - PROTECTION:1
+
+elite_t3_peto:
+  Id: IRON_CHESTPLATE
+  Enchantments:
+  - PROTECTION:1
+
+elite_t3_pantalon:
+  Id: IRON_LEGGINGS
+  Enchantments:
+  - PROTECTION:1
+
+elite_t3_botas:
+  Id: IRON_BOOTS
+  Enchantments:
+  - PROTECTION:1
+
+elite_t3_espada:
+  Id: IRON_SWORD
+  Enchantments:
+  - SHARPNESS:2
+
+elite_t3_hacha:
+  Id: IRON_AXE
+  Enchantments:
+  - SHARPNESS:1
+
+elite_t3_arco:
+  Id: BOW
+  Enchantments:
+  - POWER:2
+
+elite_t3_ballesta:
+  Id: CROSSBOW
+  Enchantments:
+  - QUICK_CHARGE:1
+
+elite_t4_casco:
+  Id: DIAMOND_HELMET
+  Enchantments:
+  - PROTECTION:2
+
+elite_t4_peto:
+  Id: DIAMOND_CHESTPLATE
+  Enchantments:
+  - PROTECTION:2
+
+elite_t4_pantalon:
+  Id: DIAMOND_LEGGINGS
+  Enchantments:
+  - PROTECTION:2
+
+elite_t4_botas:
+  Id: DIAMOND_BOOTS
+  Enchantments:
+  - PROTECTION:2
+
+elite_t4_espada:
+  Id: DIAMOND_SWORD
+  Enchantments:
+  - SHARPNESS:3
+  - FIRE_ASPECT:1
+
+elite_t4_hacha:
+  Id: DIAMOND_AXE
+  Enchantments:
+  - SHARPNESS:2
+
+elite_t4_arco:
+  Id: BOW
+  Enchantments:
+  - POWER:3
+  - FLAME:1
+
+elite_t4_ballesta:
+  Id: CROSSBOW
+  Enchantments:
+  - QUICK_CHARGE:2
+  - PIERCING:2
+
+elite_t5_casco:
+  Id: NETHERITE_HELMET
+  Enchantments:
+  - PROTECTION:3
+
+elite_t5_peto:
+  Id: NETHERITE_CHESTPLATE
+  Enchantments:
+  - PROTECTION:3
+  - THORNS:2
+
+elite_t5_pantalon:
+  Id: NETHERITE_LEGGINGS
+  Enchantments:
+  - PROTECTION:3
+
+elite_t5_botas:
+  Id: NETHERITE_BOOTS
+  Enchantments:
+  - PROTECTION:3
+
+elite_t5_espada:
+  Id: NETHERITE_SWORD
+  Enchantments:
+  - SHARPNESS:5
+  - FIRE_ASPECT:2
+  - KNOCKBACK:1
+
+elite_t5_hacha:
+  Id: NETHERITE_AXE
+  Enchantments:
+  - SHARPNESS:4
+
+elite_t5_arco:
+  Id: BOW
+  Enchantments:
+  - POWER:5
+  - FLAME:1
+  - PUNCH:1
+
+elite_t5_ballesta:
+  Id: CROSSBOW
+  Enchantments:
+  - QUICK_CHARGE:3
+  - MULTISHOT:1

@@ -1,0 +1,178 @@
+# ============================================================
+#  Parties (sistema general, sustituye a las parties de EliteMobs)
+#  Grupos temporales (se borran al salir del servidor o reiniciar):
+#    /party crear | invitar <jugador> | aceptar | salir | expulsar <jugador> | lista
+#    /pc <mensaje>  chat de party
+#  - Sin daño entre miembros.
+#  - La experiencia de cada mob que mata un miembro se reparte entre
+#    los miembros a menos de {@rango} bloques.
+#  Datos en memoria: {-party::de::<uuid>} = uuid del líder,
+#                    {-party::miembros::<líder>::*} = uuids de los miembros
+# ============================================================
+options:
+    max: 6
+    rango: 64
+    p: <#7FD8FF>Party <dark_gray>» <#C9CDD6>
+
+function partyDe(p: player) :: text:
+    return {-party::de::%uuid of {_p}%}
+
+function partyAviso(lider: text, msg: text):
+    loop {-party::miembros::%{_lider}%::*}:
+        set {_j} to loop-value parsed as offline player
+        if {_j} is online:
+            send "{@p}%{_msg}%" to {_j}
+
+function partySalir(p: player):
+    set {_id} to uuid of {_p}
+    set {_l} to partyDe({_p})
+    {_l} is set
+    if {_l} is {_id}:
+        partyAviso({_l}, "La party se ha disuelto.")
+        loop {-party::miembros::%{_l}%::*}:
+            delete {-party::de::%loop-value%}
+        delete {-party::miembros::%{_l}%::*}
+    else:
+        remove {_id} from {-party::miembros::%{_l}%::*}
+        delete {-party::de::%{_id}%}
+        partyAviso({_l}, "<white>%{_p}%</white> ha salido de la party.")
+        send "{@p}Has salido de la party." to {_p}
+
+command /party [<text>] [<player>]:
+    aliases: grupo
+    trigger:
+        set {_id} to uuid of player
+        if arg-1 is "crear":
+            if partyDe(player) is set:
+                send "{@p}Ya estás en una party." to player
+                stop
+            set {-party::de::%{_id}%} to {_id}
+            add {_id} to {-party::miembros::%{_id}%::*}
+            send "{@p}Party creada. Invita con <#7FD8FF>/party invitar <jugador>" to player
+        else if arg-1 is "invitar":
+            set {_l} to partyDe(player)
+            if {_l} is not set:
+                send "{@p}No estás en ninguna party. Crea una con <#7FD8FF>/party crear" to player
+                stop
+            if {_l} is not {_id}:
+                send "{@p}Solo el líder de la party puede invitar." to player
+                stop
+            if arg-2 is not set:
+                send "{@p}Uso: <#7FD8FF>/party invitar <jugador>" to player
+                stop
+            if partyDe(arg-2) is set:
+                send "{@p}Ese jugador ya está en una party." to player
+                stop
+            if size of {-party::miembros::%{_id}%::*} >= {@max}:
+                send "{@p}La party está llena ({@max})." to player
+                stop
+            set {-party::invitacion::%uuid of arg-2%} to {_id}
+            set {-party::invitacion_t::%uuid of arg-2%} to now
+            send "{@p}Invitación enviada a <white>%arg-2%" to player
+            send formatted "{@p}<white>%player%</white> te invita a su party. <click:run_command:'/party aceptar'><#7FFF9E><underlined>[Aceptar]</underlined></click> <#7E848F>(60 s)" to arg-2
+        else if arg-1 is "aceptar":
+            set {_l} to {-party::invitacion::%{_id}%}
+            if {_l} is not set:
+                send "{@p}No tienes invitaciones." to player
+                stop
+            if difference between {-party::invitacion_t::%{_id}%} and now is more than 60 seconds:
+                delete {-party::invitacion::%{_id}%}
+                send "{@p}La invitación ha caducado." to player
+                stop
+            delete {-party::invitacion::%{_id}%}
+            set {_ld} to {-party::de::%{_l}%}
+            if {_ld} is not set:
+                send "{@p}Esa party ya no existe." to player
+                stop
+            if {_ld} is not {_l}:
+                send "{@p}Esa party ya no existe." to player
+                stop
+            if partyDe(player) is set:
+                partySalir(player)
+            set {-party::de::%{_id}%} to {_l}
+            add {_id} to {-party::miembros::%{_l}%::*}
+            partyAviso({_l}, "<white>%player%</white> se ha unido a la party.")
+        else if arg-1 is "salir":
+            if partyDe(player) is not set:
+                send "{@p}No estás en ninguna party." to player
+                stop
+            partySalir(player)
+        else if arg-1 is "expulsar":
+            set {_l} to partyDe(player)
+            if {_l} is not set:
+                send "{@p}No estás en ninguna party." to player
+                stop
+            if {_l} is not {_id}:
+                send "{@p}Solo el líder puede expulsar." to player
+                stop
+            if arg-2 is not set:
+                send "{@p}Uso: <#7FD8FF>/party expulsar <jugador>" to player
+                stop
+            set {_o} to partyDe(arg-2)
+            if {_o} is not set:
+                send "{@p}Ese jugador no está en tu party." to player
+                stop
+            if {_o} is not {_id}:
+                send "{@p}Ese jugador no está en tu party." to player
+                stop
+            if arg-2 is player:
+                stop
+            partySalir(arg-2)
+        else if arg-1 is "lista":
+            set {_l} to partyDe(player)
+            if {_l} is not set:
+                send "{@p}No estás en ninguna party." to player
+                stop
+            send "{@p}Miembros (%size of {-party::miembros::%{_l}%::*}%/{@max}):" to player
+            loop {-party::miembros::%{_l}%::*}:
+                set {_j} to loop-value parsed as offline player
+                if loop-value is {_l}:
+                    send "<dark_gray>│ <#FFD36B>★ <white>%{_j}%" to player
+                else:
+                    send "<dark_gray>│ <#7E848F>• <white>%{_j}%" to player
+        else:
+            send "{@p}<#7FD8FF>/party crear<#C9CDD6>, <#7FD8FF>invitar <jugador><#C9CDD6>, <#7FD8FF>aceptar<#C9CDD6>, <#7FD8FF>salir<#C9CDD6>, <#7FD8FF>expulsar <jugador><#C9CDD6>, <#7FD8FF>lista<#C9CDD6> · Chat: <#7FD8FF>/pc <mensaje>" to player
+
+command /pc <text>:
+    trigger:
+        set {_l} to partyDe(player)
+        if {_l} is not set:
+            send "{@p}No estás en ninguna party." to player
+            stop
+        partyAviso({_l}, "<white>%player%<dark_gray>: <#C9CDD6>%arg-1%")
+
+# Sin daño entre miembros de la misma party
+on damage of player:
+    attacker is a player
+    attacker is not victim
+    set {_a} to partyDe(attacker)
+    {_a} is set
+    set {_v} to partyDe(victim)
+    {_v} is set
+    {_a} is {_v}
+    cancel event
+
+# Experiencia compartida entre los miembros cercanos
+on death:
+    victim is not a player
+    attacker is a player
+    set {_l} to partyDe(attacker)
+    {_l} is set
+    set {_xp} to dropped experience
+    {_xp} > 0
+    loop {-party::miembros::%{_l}%::*}:
+        set {_j} to loop-value parsed as offline player
+        if {_j} is online:
+            if world of {_j} is world of victim:
+                if distance between {_j} and victim <= {@rango}:
+                    add {_j} to {_cerca::*}
+    size of {_cerca::*} > 1
+    set {_parte} to ceil({_xp} / size of {_cerca::*})
+    set dropped experience to {_parte}
+    loop {_cerca::*}:
+        loop-value is not attacker
+        give {_parte} xp to loop-value
+
+on quit:
+    partyDe(player) is set
+    partySalir(player)

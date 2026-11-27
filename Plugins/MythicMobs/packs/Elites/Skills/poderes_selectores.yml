@@ -1,0 +1,119 @@
+# ============================================================
+#  SELECTORES DE PODERES
+#  Al aparecer se eligen los poderes del élite (variables) según el nivel:
+#    of  (1-12)   ofensivo genérico      -> desde nivel 1, al ATACAR
+#    def (1-7)    defensivo genérico     -> desde nivel 25, al RECIBIR daño
+#    esp (texto)  especial de su familia -> desde nivel 75
+#    may (texto)  mayor de su familia    -> desde nivel 125
+#  Cada élite define esp1/esp2/may1/may2 en Mobs/elites.yml.
+#  Los enfriamientos limitan cuántas partículas genera cada mob.
+# ============================================================
+elite_asignar_poderes:
+  Skills:
+  - setvariable{var=caster.of;value=<random.1to12>;type=INTEGER} @self
+  - setvariable{var=caster.def;value=<random.1to7>;type=INTEGER} @self ?level{l=>24}
+  - setvariable{var=caster.esp;value="<caster.var.esp2>";type=STRING} @self ?level{l=>74}
+  - setvariable{var=caster.esp;value="<caster.var.esp1>";type=STRING} @self ?level{l=>74} 0.5
+  - setvariable{var=caster.may;value="<caster.var.may2>";type=STRING} @self ?level{l=>124}
+  - setvariable{var=caster.may;value="<caster.var.may1>";type=STRING} @self ?level{l=>124} 0.5
+  - skill{s=elite_def_pasivo} @self ?level{l=>24}
+
+# Ofensivo: al golpear (máx. 1 cada 4 s por mob, 60 % de las veces)
+elite_of:
+  Cooldown: 4
+  Skills:
+  - skill{s=po_fuego} @target ?variableequals{var=caster.of;value=1} 0.6
+  - skill{s=po_hielo} @target ?variableequals{var=caster.of;value=2} 0.6
+  - skill{s=po_veneno} @target ?variableequals{var=caster.of;value=3} 0.6
+  - skill{s=po_wither} @target ?variableequals{var=caster.of;value=4} 0.6
+  - skill{s=po_debilidad} @target ?variableequals{var=caster.of;value=5} 0.6
+  - skill{s=po_rayo} @target ?variableequals{var=caster.of;value=6} 0.6
+  - skill{s=po_empuje} @target ?variableequals{var=caster.of;value=7} 0.6
+  - skill{s=po_atraccion} @target ?variableequals{var=caster.of;value=8} 0.6
+  - skill{s=po_gravedad} @target ?variableequals{var=caster.of;value=9} 0.6
+  - skill{s=po_ceguera} @target ?variableequals{var=caster.of;value=10} 0.6
+  - skill{s=po_mareo} @target ?variableequals{var=caster.of;value=11} 0.6
+  - skill{s=po_descarga} @target ?variableequals{var=caster.of;value=12} 0.6
+
+# Defensivo: al recibir daño (máx. 1 cada 6 s)
+elite_def:
+  Cooldown: 6
+  Skills:
+  - skill{s=pd_escudo} @trigger ?variableequals{var=caster.def;value=1} 0.5
+  - skill{s=pd_anti_flechas} @trigger ?variableequals{var=caster.def;value=2} 0.5
+  - skill{s=pd_invisibilidad} @trigger ?variableequals{var=caster.def;value=3} 0.5
+  - skill{s=pd_curacion} @trigger ?variableequals{var=caster.def;value=4} 0.5
+  - skill{s=pd_salto_lunar} @trigger ?variableequals{var=caster.def;value=5} 0.5
+  - skill{s=pd_aura_helada} @trigger ?variableequals{var=caster.def;value=6} 0.5
+  - skill{s=pd_piel_ignea} @trigger ?variableequals{var=caster.def;value=7} 0.5
+
+# Efectos permanentes de algunos defensivos (se aplican una vez al aparecer)
+elite_def_pasivo:
+  Skills:
+  - potion{type=JUMP_BOOST;duration=2147483000;level=1;hasParticles=false;hasIcon=false} @self ?variableequals{var=caster.def;value=5}
+  - potion{type=FIRE_RESISTANCE;duration=2147483000;level=0;hasParticles=false;hasIcon=false} @self ?variableequals{var=caster.def;value=7}
+
+# Especial de familia (máx. 1 cada 10 s) y mayor (máx. 1 cada 16 s)
+elite_esp:
+  Cooldown: 10
+  Skills:
+  - skill{s=pf_invocar_aliados} @trigger ?variableequals{var=caster.esp;value=invocar_aliados} 0.45
+  - skill{s=pf_golpe_suelo} @trigger ?variableequals{var=caster.esp;value=golpe_suelo} 0.45
+  - skill{s=pf_hinchazon} @trigger ?variableequals{var=caster.esp;value=hinchazon} 0.45
+  - skill{s=pf_horda} @trigger ?variableequals{var=caster.esp;value=horda} 0.45
+  - skill{s=pf_flecha_arcana} @trigger ?variableequals{var=caster.esp;value=flecha_arcana} 0.45
+  - skill{s=pf_lluvia_flechas} @trigger ?variableequals{var=caster.esp;value=lluvia_flechas} 0.45
+  - skill{s=pf_rafaga_flechas} @trigger ?variableequals{var=caster.esp;value=rafaga_flechas} 0.45
+  - skill{s=pf_pilar_huesos} @trigger ?variableequals{var=caster.esp;value=pilar_huesos} 0.45
+  - skill{s=pf_telarana} @trigger ?variableequals{var=caster.esp;value=telarana} 0.45
+  - skill{s=pf_salto_sombrio} @trigger ?variableequals{var=caster.esp;value=salto_sombrio} 0.45
+  - skill{s=pf_mareo_arcano} @trigger ?variableequals{var=caster.esp;value=mareo_arcano} 0.45
+  - skill{s=pf_nido} @trigger ?variableequals{var=caster.esp;value=nido} 0.45
+  - skill{s=pf_pulso_helado} @trigger ?variableequals{var=caster.esp;value=pulso_helado} 0.45
+  - skill{s=pf_implosion} @trigger ?variableequals{var=caster.esp;value=implosion} 0.45
+  - skill{s=pf_carga_tormenta} @trigger ?variableequals{var=caster.esp;value=carga_tormenta} 0.45
+  - skill{s=pf_onda_explosiva} @trigger ?variableequals{var=caster.esp;value=onda_explosiva} 0.45
+  - skill{s=pf_circulo_arcano} @trigger ?variableequals{var=caster.esp;value=circulo_arcano} 0.45
+  - skill{s=pf_rayo_castigador} @trigger ?variableequals{var=caster.esp;value=rayo_castigador} 0.45
+  - skill{s=pf_tormenta_rayos} @trigger ?variableequals{var=caster.esp;value=tormenta_rayos} 0.45
+  - skill{s=pf_maldicion} @trigger ?variableequals{var=caster.esp;value=maldicion} 0.45
+  - skill{s=pf_plasma} @trigger ?variableequals{var=caster.esp;value=plasma} 0.45
+  - skill{s=pf_vacio} @trigger ?variableequals{var=caster.esp;value=vacio} 0.45
+  - skill{s=pf_bola_fuego} @trigger ?variableequals{var=caster.esp;value=bola_fuego} 0.45
+  - skill{s=pf_pira_llamas} @trigger ?variableequals{var=caster.esp;value=pira_llamas} 0.45
+  - skill{s=pf_tormenta_fuego} @trigger ?variableequals{var=caster.esp;value=tormenta_fuego} 0.45
+  - skill{s=pf_bola_teledirigida} @trigger ?variableequals{var=caster.esp;value=bola_teledirigida} 0.45
+  - skill{s=pf_fuegos_artificiales} @trigger ?variableequals{var=caster.esp;value=fuegos_artificiales} 0.45
+  - skill{s=pf_atraccion_abismal} @trigger ?variableequals{var=caster.esp;value=atraccion_abismal} 0.45
+
+elite_may:
+  Cooldown: 16
+  Skills:
+  - skill{s=pf_invocar_aliados} @trigger ?variableequals{var=caster.may;value=invocar_aliados} 0.4
+  - skill{s=pf_golpe_suelo} @trigger ?variableequals{var=caster.may;value=golpe_suelo} 0.4
+  - skill{s=pf_hinchazon} @trigger ?variableequals{var=caster.may;value=hinchazon} 0.4
+  - skill{s=pf_horda} @trigger ?variableequals{var=caster.may;value=horda} 0.4
+  - skill{s=pf_flecha_arcana} @trigger ?variableequals{var=caster.may;value=flecha_arcana} 0.4
+  - skill{s=pf_lluvia_flechas} @trigger ?variableequals{var=caster.may;value=lluvia_flechas} 0.4
+  - skill{s=pf_rafaga_flechas} @trigger ?variableequals{var=caster.may;value=rafaga_flechas} 0.4
+  - skill{s=pf_pilar_huesos} @trigger ?variableequals{var=caster.may;value=pilar_huesos} 0.4
+  - skill{s=pf_telarana} @trigger ?variableequals{var=caster.may;value=telarana} 0.4
+  - skill{s=pf_salto_sombrio} @trigger ?variableequals{var=caster.may;value=salto_sombrio} 0.4
+  - skill{s=pf_mareo_arcano} @trigger ?variableequals{var=caster.may;value=mareo_arcano} 0.4
+  - skill{s=pf_nido} @trigger ?variableequals{var=caster.may;value=nido} 0.4
+  - skill{s=pf_pulso_helado} @trigger ?variableequals{var=caster.may;value=pulso_helado} 0.4
+  - skill{s=pf_implosion} @trigger ?variableequals{var=caster.may;value=implosion} 0.4
+  - skill{s=pf_carga_tormenta} @trigger ?variableequals{var=caster.may;value=carga_tormenta} 0.4
+  - skill{s=pf_onda_explosiva} @trigger ?variableequals{var=caster.may;value=onda_explosiva} 0.4
+  - skill{s=pf_circulo_arcano} @trigger ?variableequals{var=caster.may;value=circulo_arcano} 0.4
+  - skill{s=pf_rayo_castigador} @trigger ?variableequals{var=caster.may;value=rayo_castigador} 0.4
+  - skill{s=pf_tormenta_rayos} @trigger ?variableequals{var=caster.may;value=tormenta_rayos} 0.4
+  - skill{s=pf_maldicion} @trigger ?variableequals{var=caster.may;value=maldicion} 0.4
+  - skill{s=pf_plasma} @trigger ?variableequals{var=caster.may;value=plasma} 0.4
+  - skill{s=pf_vacio} @trigger ?variableequals{var=caster.may;value=vacio} 0.4
+  - skill{s=pf_bola_fuego} @trigger ?variableequals{var=caster.may;value=bola_fuego} 0.4
+  - skill{s=pf_pira_llamas} @trigger ?variableequals{var=caster.may;value=pira_llamas} 0.4
+  - skill{s=pf_tormenta_fuego} @trigger ?variableequals{var=caster.may;value=tormenta_fuego} 0.4
+  - skill{s=pf_bola_teledirigida} @trigger ?variableequals{var=caster.may;value=bola_teledirigida} 0.4
+  - skill{s=pf_fuegos_artificiales} @trigger ?variableequals{var=caster.may;value=fuegos_artificiales} 0.4
+  - skill{s=pf_atraccion_abismal} @trigger ?variableequals{var=caster.may;value=atraccion_abismal} 0.4

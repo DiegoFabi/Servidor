@@ -4,7 +4,7 @@ MSO_Beach_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Beach
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=BEACH,SNOWY_BEACH}
@@ -13,7 +13,7 @@ MSO_Badlands_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Badlands
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS}

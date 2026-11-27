@@ -1,9 +1,9 @@
 # Sets if naturally spawned elites will spawn. Note: event mobs like the zombie king are not naturally spawned elites! You will have to disable events if you want to disable event bosses.
-doNaturalEliteMobSpawning: true
+doNaturalEliteMobSpawning: false
 # Sets if spawns spawned from mob spawners can be converted to elites. Not recommended!
 doSpawnersSpawnEliteMobs: false
 # Sets the percentage of naturally spawned mobs that get converted to elite mobs.
-eliteMobsSpawnPercentage: 1.0
+eliteMobsSpawnPercentage: 0.0
 # Sets the maximum level elites can spawn at.
 # Note: elite mob level is based on player skill levels and gear. The skill system scales up to level 100.
 naturalEliteMobsLevelCap: 120

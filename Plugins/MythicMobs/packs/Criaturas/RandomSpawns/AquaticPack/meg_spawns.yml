@@ -13,7 +13,7 @@ shark:
   Type: shark
   Worlds: survivalMain
   Chance: 0.03
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
   Conditions:
@@ -24,7 +24,7 @@ shark_hammer:
   Type: shark_hammer
   Worlds: survivalMain
   Chance: 0.03
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
   Conditions:
@@ -35,7 +35,7 @@ t_jellypink:
   Type: t_jellypink
   Worlds: survivalMain
   Chance: 0.03
-  Priority: 75
+  Priority: 7500
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
   Conditions:
@@ -47,7 +47,7 @@ t_jellyblue:
   Type: t_jellyblue
   Worlds: survivalMain
   Chance: 0.03
-  Priority: 75
+  Priority: 7500
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
   Conditions:
@@ -58,7 +58,7 @@ t_jellygreen:
   Type: t_jellygreen
   Worlds: survivalMain
   Chance: 0.03
-  Priority: 75
+  Priority: 7500
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
   Conditions:

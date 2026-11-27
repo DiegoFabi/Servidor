@@ -4,7 +4,7 @@ MSO_Bamboo_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Bamboo
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=BAMBOO_JUNGLE}
@@ -13,7 +13,7 @@ MSO_Hills_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Hills
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=STONY_PEAKS,JAGGED_PEAKS,WINDSWEPT_HILLS,WINDSWEPT_GRAVELLY_HILLS}
@@ -22,7 +22,7 @@ MSO_Jungle_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Jungle
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=JUNGLE,SPARSE_JUNGLE}
@@ -31,7 +31,7 @@ MSO_Plains_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Plains
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=PLAINS,SUNFLOWER_PLAINS}
@@ -40,7 +40,7 @@ MSO_Spruce_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Spruce
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=OLD_GROWTH_SPRUCE_TAIGA,TAIGA}

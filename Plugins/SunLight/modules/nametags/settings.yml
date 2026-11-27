@@ -31,12 +31,12 @@ Nametags:
     # - Rango: prefijo de LuckPerms (%player_prefix%).
     # - Clan: justTeams (%justteams_name%, muestra "No Team" si no tiene).
     # - Vida (expansión Player de PlaceholderAPI) y nivel de combate de EliteMobs
-    #   (%elitemobs_player_combat_tier%) con la flecha verde de Nexo (essential_icons_level_up).
+    #   (%auraskills_power%) con la flecha verde de Nexo (essential_icons_level_up).
     #   Se refrescan con Update_Interval (40 ticks = 2 s).
     todos:
       Priority: 1
       Ranks:
       - '*'
       Prefix: '<white>%player_prefix%</white> '
-      Suffix: ' <#8C93A8>(%justteams_name%)</#8C93A8> <dark_gray>•</dark_gray> <#FF6B6B>❤ %player_health_rounded%</#FF6B6B> <white><glyph:essential_icons_level_up></white> <#7FFF9E>%elitemobs_player_combat_tier%</#7FFF9E>'
+      Suffix: ' <#8C93A8>(%justteams_name%)</#8C93A8> <dark_gray>•</dark_gray> <#FF6B6B>❤ %player_health_rounded%</#FF6B6B> <white><glyph:essential_icons_level_up></white> <#7FFF9E>%auraskills_power%</#7FFF9E>'
       Color: white

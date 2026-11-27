@@ -1,0 +1,346 @@
+# ============================================================
+#  Conversión natural: cada hostil vanilla que aparece de forma natural
+#  se REEMPLAZA por su élite. Priority 1: las RandomSpawns de los demás
+#  packs (prioridad x100) siguen teniendo preferencia.
+#  Nivel = 1 + escala por distancia del mundo (config-mobs.yml).
+# ============================================================
+elite_zombie_natural:
+  Type: elite_zombie
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=ZOMBIE} true
+
+elite_husk_natural:
+  Type: elite_husk
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=HUSK} true
+
+elite_drowned_natural:
+  Type: elite_drowned
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=DROWNED} true
+
+elite_zombie_villager_natural:
+  Type: elite_zombie_villager
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=ZOMBIE_VILLAGER} true
+
+elite_skeleton_natural:
+  Type: elite_skeleton
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=SKELETON} true
+
+elite_stray_natural:
+  Type: elite_stray
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=STRAY} true
+
+elite_bogged_natural:
+  Type: elite_bogged
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=BOGGED} true
+
+elite_wither_skeleton_natural:
+  Type: elite_wither_skeleton
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=WITHER_SKELETON} true
+
+elite_spider_natural:
+  Type: elite_spider
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=SPIDER} true
+
+elite_cave_spider_natural:
+  Type: elite_cave_spider
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=CAVE_SPIDER} true
+
+elite_creeper_natural:
+  Type: elite_creeper
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=CREEPER} true
+
+elite_enderman_natural:
+  Type: elite_enderman
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=ENDERMAN} true
+
+elite_witch_natural:
+  Type: elite_witch
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=WITCH} true
+
+elite_evoker_natural:
+  Type: elite_evoker
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=EVOKER} true
+
+elite_pillager_natural:
+  Type: elite_pillager
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=PILLAGER} true
+
+elite_vindicator_natural:
+  Type: elite_vindicator
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=VINDICATOR} true
+
+elite_blaze_natural:
+  Type: elite_blaze
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=BLAZE} true
+
+elite_ghast_natural:
+  Type: elite_ghast
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=GHAST} true
+
+elite_magma_cube_natural:
+  Type: elite_magma_cube
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=MAGMA_CUBE} true
+
+elite_slime_natural:
+  Type: elite_slime
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=SLIME} true
+
+elite_phantom_natural:
+  Type: elite_phantom
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=PHANTOM} true
+
+elite_breeze_natural:
+  Type: elite_breeze
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=BREEZE} true
+
+elite_zombified_piglin_natural:
+  Type: elite_zombified_piglin
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=ZOMBIFIED_PIGLIN} true
+
+elite_piglin_natural:
+  Type: elite_piglin
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=PIGLIN} true
+
+elite_piglin_brute_natural:
+  Type: elite_piglin_brute
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=PIGLIN_BRUTE} true
+
+elite_hoglin_natural:
+  Type: elite_hoglin
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=HOGLIN} true
+
+elite_zoglin_natural:
+  Type: elite_zoglin
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=ZOGLIN} true
+
+elite_guardian_natural:
+  Type: elite_guardian
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=GUARDIAN} true
+
+elite_silverfish_natural:
+  Type: elite_silverfish
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=SILVERFISH} true
+
+elite_endermite_natural:
+  Type: elite_endermite
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=ENDERMITE} true
+
+elite_shulker_natural:
+  Type: elite_shulker
+  Action: REPLACE
+  Chance: 1
+  Priority: 1
+  Level: 1
+  UseWorldScaling: true
+  Worlds: survivalMain,world_nether,world_the_end
+  Conditions:
+  - entitytype{t=SHULKER} true

@@ -13,7 +13,8 @@ Configuration:
     SpawningLimit: -1
     LocalSpawningLimit: -1
     IgnoreVanillaMobs: false
-    IgnoreUnnaturalMobs: false
+    # true: los RandomSpawns (élites incluidos) no tocan mobs de spawners ni huevos
+    IgnoreUnnaturalMobs: true
     ReplaceObeysCap: false
     SharedCooldown: true
     MaxGenerationAttempts: 10

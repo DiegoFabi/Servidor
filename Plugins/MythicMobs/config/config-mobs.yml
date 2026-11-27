@@ -54,9 +54,11 @@ Configuration:
       LinePrefix: <white>
       Offset: 0.4
   MobLeveling:
+    # Élites (pack Elites, niveles 1-250). Lineal para que el nivel 250 no se
+    # dispare: vida x9,7 y daño x4 al nivel 250. Solo afecta a mobs con nivel > 1.
     ScalingEquations:
-      Health: V * ((1.05)^(L-1))
-      Damage: V * ((1.05)^(L-1))
+      Health: V * (1 + (L-1) * 0.035)
+      Damage: V * (1 + (L-1) * 0.012)
     DefaultLevelModifiers:
       Health: 0.1
       Armor: 0
@@ -68,9 +70,15 @@ Configuration:
         Enabled: true
         ScaleVanillaMobs: true
         PerBlocksFromSpawn: 250
-      world2:
+      # Nivel de los élites según la distancia al spawn del mundo:
+      # survivalMain 1 nivel cada 32 bloques (nivel 250 a ~8000 bloques),
+      # nether 1 cada 4 (escala 1:8) y end 1 cada 24.
+      survivalMain:
         Enabled: true
-        PerBlocksFromSpawn: 250
-      world2_nether:
-        Enabled: false
-        PerBlocksFromSpawn: 100
+        PerBlocksFromSpawn: 32
+      world_nether:
+        Enabled: true
+        PerBlocksFromSpawn: 4
+      world_the_end:
+        Enabled: true
+        PerBlocksFromSpawn: 24

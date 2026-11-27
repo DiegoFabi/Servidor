@@ -9,7 +9,7 @@ RandomSkeletonMinion:
   Type: skeleton_minion
   Worlds: survivalMain
   Chance: 0.35
-  Priority: 5
+  Priority: 500
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DESERT
@@ -23,7 +23,7 @@ RandomSkeletonBoss:
   Type: skeleton_boss
   Worlds: survivalMain
   Chance: 0.006
-  Priority: 8
+  Priority: 800
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DESERT

@@ -1,0 +1,225 @@
+# ============================================================
+#  NÚCLEO DE ÉLITES: aparición, rango, nombre, tamaño, estilo,
+#  equipo y reparto de poderes. Sin temporizadores por mob.
+# ============================================================
+elite_aparecer:
+  Skills:
+  - setlevel{a=add;l=<random.0to4>} @self
+  - setlevel{a=set;l=250} @self ?level{l=>250}
+  - skill{s=elite_rango} @self
+  - skill{s=elite_nombre} @self
+  - attribute{attribute=SCALE;a="0.86 + <caster.var.rango> * 0.07 + <random.0to8> / 100"} @self
+  - skill{s=elite_estilo} @self
+  - skill{s=elite_asignar_poderes} @self
+
+# Rango (1-5) y color del nombre según el nivel
+elite_rango:
+  Skills:
+  - setvariable{var=caster.rango;value=1;type=INTEGER} @self ?level{l=<25}
+  - setvariable{var=caster.rango;value=2;type=INTEGER} @self ?level{l=25to74}
+  - setvariable{var=caster.rango;value=3;type=INTEGER} @self ?level{l=75to124}
+  - setvariable{var=caster.rango;value=4;type=INTEGER} @self ?level{l=125to189}
+  - setvariable{var=caster.rango;value=5;type=INTEGER} @self ?level{l=>189}
+  - setvariable{var=caster.color;value="<#9EE37D>";type=STRING} @self ?variableequals{var=caster.rango;value=1}
+  - setvariable{var=caster.color;value="<#7FB2FF>";type=STRING} @self ?variableequals{var=caster.rango;value=2}
+  - setvariable{var=caster.color;value="<#C38BFF>";type=STRING} @self ?variableequals{var=caster.rango;value=3}
+  - setvariable{var=caster.color;value="<#FFB347>";type=STRING} @self ?variableequals{var=caster.rango;value=4}
+  - setvariable{var=caster.color;value="<#FF5C5C>";type=STRING} @self ?variableequals{var=caster.rango;value=5}
+
+# Nombre vanilla (solo se ve al mirarlo): "Nv 57 Zombi"
+elite_nombre:
+  Skills:
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre>"} @self
+
+# Al recibir daño: el nombre muestra la vida actual
+elite_nombre_vida:
+  Skills:
+  - setname{n="<caster.var.color>Nv <caster.level> <white><caster.var.nombre> <#FF5C5C>❤ <caster.hp{round=0}><#7E848F>/<caster.mhp{round=0}>";delay=1} @self
+
+# Estilo por rango: Legendario puede arder sin quemarse, Mítico brilla y corre más
+elite_estilo:
+  Skills:
+  - skill{s=elite_fuego_eterno} @self ?level{l=>124} 0.35
+  - potion{type=GLOWING;duration=2147483000;level=0;hasParticles=false;hasIcon=false} @self ?variableequals{var=caster.rango;value=5}
+  - potion{type=SPEED;duration=2147483000;level=0;hasParticles=false;hasIcon=false} @self ?variableequals{var=caster.rango;value=5}
+elite_fuego_eterno:
+  Skills:
+  - potion{type=FIRE_RESISTANCE;duration=2147483000;level=0;hasParticles=false;hasIcon=false} @self
+  - ignite{ticks=2147483000} @self
+
+# ---------- Eventos ----------
+elite_al_atacar:
+  Skills:
+  - skill{s=elite_of} @target
+elite_al_recibir:
+  Skills:
+  - skill{s=elite_nombre_vida} @self
+  - skill{s=elite_def} @trigger
+  - skill{s=elite_esp} @trigger
+  - skill{s=elite_may} @trigger
+elite_al_morir:
+  Skills:
+  - effect:particles{p=soul;a=10;hs=0.4;vs=0.6;s=0.03;y=0.8;vd=32} @self
+  - skill{s=elite_muerte_mitica} @self ?variableequals{var=caster.rango;value=5}
+elite_muerte_mitica:
+  Skills:
+  - effect:particlering{particle=soul_fire_flame;radius=1.6;points=20;amount=1;y=0.2;vd=32} @self
+  - effect:particles{p=totem_of_undying;a=30;hs=0.6;vs=0.8;s=0.3;y=1;vd=32} @self
+  - sound{s=entity.wither.death;v=0.6;p=1.6} @self
+
+elite_equipo_guerrero:
+  Skills:
+  - skill{s=elite_equipo_guerrero_t1} @self ?variableequals{var=caster.rango;value=1}
+  - skill{s=elite_equipo_guerrero_t2} @self ?variableequals{var=caster.rango;value=2}
+  - skill{s=elite_equipo_guerrero_t3} @self ?variableequals{var=caster.rango;value=3}
+  - skill{s=elite_equipo_guerrero_t4} @self ?variableequals{var=caster.rango;value=4}
+  - skill{s=elite_equipo_guerrero_t5} @self ?variableequals{var=caster.rango;value=5}
+elite_equipo_guerrero_t1:
+  Skills:
+  - equip{i=leather_helmet HEAD} @self 0.35
+  - equip{i=leather_chestplate CHEST} @self 0.35
+  - equip{i=leather_leggings LEGS} @self 0.35
+  - equip{i=leather_boots FEET} @self 0.35
+  - randomskill{s=elite_arma_madera 2,elite_arma_piedra 1,elite_sin_arma 3} @self
+elite_equipo_guerrero_t2:
+  Skills:
+  - equip{i=chainmail_helmet HEAD} @self 0.5
+  - equip{i=chainmail_chestplate CHEST} @self 0.5
+  - equip{i=chainmail_leggings LEGS} @self 0.5
+  - equip{i=chainmail_boots FEET} @self 0.5
+  - randomskill{s=elite_arma_piedra 1,elite_arma_hierro 2,elite_sin_arma 1} @self
+elite_equipo_guerrero_t3:
+  Skills:
+  - equip{i=elite_t3_casco HEAD} @self 0.65
+  - equip{i=elite_t3_peto CHEST} @self 0.65
+  - equip{i=elite_t3_pantalon LEGS} @self 0.65
+  - equip{i=elite_t3_botas FEET} @self 0.65
+  - randomskill{s=elite_arma_t3_espada 3,elite_arma_t3_hacha 1} @self
+elite_equipo_guerrero_t4:
+  Skills:
+  - equip{i=elite_t4_casco HEAD} @self 0.75
+  - equip{i=elite_t4_peto CHEST} @self 0.75
+  - equip{i=elite_t4_pantalon LEGS} @self 0.75
+  - equip{i=elite_t4_botas FEET} @self 0.75
+  - randomskill{s=elite_arma_t4_espada 3,elite_arma_t4_hacha 1} @self
+elite_equipo_guerrero_t5:
+  Skills:
+  - equip{i=elite_t5_casco HEAD} @self 0.85
+  - equip{i=elite_t5_peto CHEST} @self 0.85
+  - equip{i=elite_t5_pantalon LEGS} @self 0.85
+  - equip{i=elite_t5_botas FEET} @self 0.85
+  - randomskill{s=elite_arma_t5_espada 3,elite_arma_t5_hacha 1} @self
+elite_equipo_arquero:
+  Skills:
+  - skill{s=elite_equipo_arquero_t1} @self ?variableequals{var=caster.rango;value=1}
+  - skill{s=elite_equipo_arquero_t2} @self ?variableequals{var=caster.rango;value=2}
+  - skill{s=elite_equipo_arquero_t3} @self ?variableequals{var=caster.rango;value=3}
+  - skill{s=elite_equipo_arquero_t4} @self ?variableequals{var=caster.rango;value=4}
+  - skill{s=elite_equipo_arquero_t5} @self ?variableequals{var=caster.rango;value=5}
+elite_equipo_arquero_t1:
+  Skills:
+  - equip{i=leather_helmet HEAD} @self 0.35
+  - equip{i=leather_chestplate CHEST} @self 0.35
+  - equip{i=leather_leggings LEGS} @self 0.35
+  - equip{i=leather_boots FEET} @self 0.35
+  - equip{i=bow HAND} @self
+elite_equipo_arquero_t2:
+  Skills:
+  - equip{i=chainmail_helmet HEAD} @self 0.5
+  - equip{i=chainmail_chestplate CHEST} @self 0.5
+  - equip{i=chainmail_leggings LEGS} @self 0.5
+  - equip{i=chainmail_boots FEET} @self 0.5
+  - equip{i=bow HAND} @self
+elite_equipo_arquero_t3:
+  Skills:
+  - equip{i=elite_t3_casco HEAD} @self 0.65
+  - equip{i=elite_t3_peto CHEST} @self 0.65
+  - equip{i=elite_t3_pantalon LEGS} @self 0.65
+  - equip{i=elite_t3_botas FEET} @self 0.65
+  - equip{i=elite_t3_arco HAND} @self
+elite_equipo_arquero_t4:
+  Skills:
+  - equip{i=elite_t4_casco HEAD} @self 0.75
+  - equip{i=elite_t4_peto CHEST} @self 0.75
+  - equip{i=elite_t4_pantalon LEGS} @self 0.75
+  - equip{i=elite_t4_botas FEET} @self 0.75
+  - equip{i=elite_t4_arco HAND} @self
+elite_equipo_arquero_t5:
+  Skills:
+  - equip{i=elite_t5_casco HEAD} @self 0.85
+  - equip{i=elite_t5_peto CHEST} @self 0.85
+  - equip{i=elite_t5_pantalon LEGS} @self 0.85
+  - equip{i=elite_t5_botas FEET} @self 0.85
+  - equip{i=elite_t5_arco HAND} @self
+elite_equipo_ballestero:
+  Skills:
+  - skill{s=elite_equipo_ballestero_t1} @self ?variableequals{var=caster.rango;value=1}
+  - skill{s=elite_equipo_ballestero_t2} @self ?variableequals{var=caster.rango;value=2}
+  - skill{s=elite_equipo_ballestero_t3} @self ?variableequals{var=caster.rango;value=3}
+  - skill{s=elite_equipo_ballestero_t4} @self ?variableequals{var=caster.rango;value=4}
+  - skill{s=elite_equipo_ballestero_t5} @self ?variableequals{var=caster.rango;value=5}
+elite_equipo_ballestero_t1:
+  Skills:
+  - equip{i=leather_helmet HEAD} @self 0.35
+  - equip{i=leather_chestplate CHEST} @self 0.35
+  - equip{i=leather_leggings LEGS} @self 0.35
+  - equip{i=leather_boots FEET} @self 0.35
+  - equip{i=crossbow HAND} @self
+elite_equipo_ballestero_t2:
+  Skills:
+  - equip{i=chainmail_helmet HEAD} @self 0.5
+  - equip{i=chainmail_chestplate CHEST} @self 0.5
+  - equip{i=chainmail_leggings LEGS} @self 0.5
+  - equip{i=chainmail_boots FEET} @self 0.5
+  - equip{i=crossbow HAND} @self
+elite_equipo_ballestero_t3:
+  Skills:
+  - equip{i=elite_t3_casco HEAD} @self 0.65
+  - equip{i=elite_t3_peto CHEST} @self 0.65
+  - equip{i=elite_t3_pantalon LEGS} @self 0.65
+  - equip{i=elite_t3_botas FEET} @self 0.65
+  - equip{i=elite_t3_ballesta HAND} @self
+elite_equipo_ballestero_t4:
+  Skills:
+  - equip{i=elite_t4_casco HEAD} @self 0.75
+  - equip{i=elite_t4_peto CHEST} @self 0.75
+  - equip{i=elite_t4_pantalon LEGS} @self 0.75
+  - equip{i=elite_t4_botas FEET} @self 0.75
+  - equip{i=elite_t4_ballesta HAND} @self
+elite_equipo_ballestero_t5:
+  Skills:
+  - equip{i=elite_t5_casco HEAD} @self 0.85
+  - equip{i=elite_t5_peto CHEST} @self 0.85
+  - equip{i=elite_t5_pantalon LEGS} @self 0.85
+  - equip{i=elite_t5_botas FEET} @self 0.85
+  - equip{i=elite_t5_ballesta HAND} @self
+elite_sin_arma:
+  Skills:
+  - delay 0
+elite_arma_madera:
+  Skills:
+  - equip{i=wooden_sword HAND} @self
+elite_arma_piedra:
+  Skills:
+  - equip{i=stone_sword HAND} @self
+elite_arma_hierro:
+  Skills:
+  - equip{i=iron_sword HAND} @self
+elite_arma_t3_espada:
+  Skills:
+  - equip{i=elite_t3_espada HAND} @self
+elite_arma_t3_hacha:
+  Skills:
+  - equip{i=elite_t3_hacha HAND} @self
+elite_arma_t4_espada:
+  Skills:
+  - equip{i=elite_t4_espada HAND} @self
+elite_arma_t4_hacha:
+  Skills:
+  - equip{i=elite_t4_hacha HAND} @self
+elite_arma_t5_espada:
+  Skills:
+  - equip{i=elite_t5_espada HAND} @self
+elite_arma_t5_hacha:
+  Skills:
+  - equip{i=elite_t5_hacha HAND} @self

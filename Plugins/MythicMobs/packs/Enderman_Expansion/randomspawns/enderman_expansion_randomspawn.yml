@@ -8,7 +8,7 @@ enderman_desert:
   Type: enderman_desert
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DESERT
@@ -21,7 +21,7 @@ enderman_dark_oak:
   Type: enderman_dark_oak
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DARK_FOREST,PALE_GARDEN
@@ -34,7 +34,7 @@ enderman_ice_spikes:
   Type: enderman_ice_spikes
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: ICE_SPIKES,FROZEN_PEAKS
@@ -47,7 +47,7 @@ enderman_swamp:
   Type: enderman_swamp
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: SWAMP,MANGROVE_SWAMP
@@ -60,7 +60,7 @@ enderman_windswept_hills:
   Type: enderman_windswept_hills
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: WINDSWEPT_HILLS,WINDSWEPT_SAVANNA,WINDSWEPT_FOREST,WINDSWEPT_GRAVELLY_HILLS
@@ -73,7 +73,7 @@ enderman_savanna:
   Type: enderman_savanna
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: SAVANNA,SAVANNA_PLATEAU
@@ -86,7 +86,7 @@ enderman_badlands:
   Type: enderman_badlands
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS
@@ -99,7 +99,7 @@ enderman_snowy:
   Type: enderman_snowy
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: SNOWY_PLAINS,SNOWY_TAIGA,SNOWY_SLOPES,GROVE
@@ -112,7 +112,7 @@ enderman_flower_fields:
   Type: enderman_flower_fields
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: FLOWER_FOREST,SUNFLOWER_PLAINS,MEADOW,CHERRY_GROVE
@@ -125,7 +125,7 @@ enderman_cave:
   Type: enderman_cave
   Worlds: survivalMain
   Chance: 0.5
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DRIPSTONE_CAVES,LUSH_CAVES,DEEP_DARK
@@ -139,7 +139,7 @@ enderman_ocean:
   Type: enderman_ocean
   Worlds: survivalMain
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: OCEAN,WARM_OCEAN,COLD_OCEAN,DEEP_COLD_OCEAN,DEEP_LUKEWARM_OCEAN,DEEP_OCEAN,LUKEWARM_OCEAN
@@ -151,7 +151,7 @@ enderman_warped_forest:
   Type: enderman_warped_forest
   Worlds: world_nether
   Chance: 0.45
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: WARPED_FOREST
@@ -164,7 +164,7 @@ enderman_crimson_forest:
   Type: enderman_crimson_forest
   Worlds: world_nether
   Chance: 0.45
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: CRIMSON_FOREST
@@ -177,7 +177,7 @@ enderman_soulsand_valley:
   Type: enderman_soulsand_valley
   Worlds: world_nether
   Chance: 0.45
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: SOUL_SAND_VALLEY
@@ -190,7 +190,7 @@ enderman_nether_wastes:
   Type: enderman_nether_wastes
   Worlds: world_nether
   Chance: 0.45
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: NETHER_WASTES
@@ -203,7 +203,7 @@ enderman_end:
   Type: enderman_end
   Worlds: world_the_end
   Chance: 0.45
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: THE_END,END_BARRENS,END_HIGHLANDS,END_MIDLANDS,SMALL_END_ISLANDS
@@ -216,7 +216,7 @@ enderman_end_islands:
   Type: enderman_end_islands
   Worlds: world_the_end
   Chance: 0.12
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: END_BARRENS,END_HIGHLANDS,END_MIDLANDS,SMALL_END_ISLANDS

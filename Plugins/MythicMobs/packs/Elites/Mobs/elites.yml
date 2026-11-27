@@ -1,0 +1,542 @@
+# ============================================================
+#  ÉLITES: un mob por cada hostil vanilla. Solo datos (tipo, nombre,
+#  familia de poderes, vida/daño vanilla y drops). La lógica está
+#  en las plantillas y en Skills/. Ver LEEME.md del pack.
+#  Drops = botín vanilla + experiencia (el equipo nunca cae).
+# ============================================================
+elite_zombie:
+  Template: elite_guerrero
+  Type: ZOMBIE
+  Display: '<#9EA3AE>Nv <caster.level> <white>Zombi'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Zombi
+    fam: zombi
+    esp1: invocar_aliados
+    esp2: golpe_suelo
+    may1: hinchazon
+    may2: horda
+  Drops:
+  - exp 5to12
+  - rotten_flesh 0to2
+  - iron_ingot 1 0.02
+  - carrot 1 0.02
+  - potato 1 0.02
+elite_husk:
+  Template: elite_guerrero
+  Type: HUSK
+  Display: '<#9EA3AE>Nv <caster.level> <white>Momia'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Momia
+    fam: zombi
+    esp1: invocar_aliados
+    esp2: golpe_suelo
+    may1: hinchazon
+    may2: horda
+  Drops:
+  - exp 5to12
+  - rotten_flesh 0to2
+  - iron_ingot 1 0.02
+elite_drowned:
+  Template: elite_guerrero
+  Type: DROWNED
+  Display: '<#9EA3AE>Nv <caster.level> <white>Ahogado'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Ahogado
+    fam: agua
+    esp1: pulso_helado
+    esp2: atraccion_abismal
+    may1: tormenta_rayos
+    may2: vacio
+  Drops:
+  - exp 5to12
+  - rotten_flesh 0to2
+  - copper_ingot 1 0.11
+  - trident 1 0.02
+elite_zombie_villager:
+  Template: elite_guerrero
+  Type: ZOMBIE_VILLAGER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Aldeano Zombi'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Aldeano Zombi
+    fam: zombi
+    esp1: invocar_aliados
+    esp2: golpe_suelo
+    may1: hinchazon
+    may2: horda
+  Drops:
+  - exp 5to12
+  - rotten_flesh 0to2
+  - iron_ingot 1 0.02
+elite_skeleton:
+  Template: elite_arquero
+  Type: SKELETON
+  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Esqueleto
+    fam: esqueleto
+    esp1: flecha_arcana
+    esp2: lluvia_flechas
+    may1: rafaga_flechas
+    may2: pilar_huesos
+  Drops:
+  - exp 5to12
+  - bone 0to2
+  - arrow 0to2
+elite_stray:
+  Template: elite_arquero
+  Type: STRAY
+  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto Glacial'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Esqueleto Glacial
+    fam: esqueleto
+    esp1: flecha_arcana
+    esp2: lluvia_flechas
+    may1: rafaga_flechas
+    may2: pilar_huesos
+  Drops:
+  - exp 5to12
+  - bone 0to2
+  - arrow 0to2
+  - tipped_arrow 1 0.1
+elite_bogged:
+  Template: elite_arquero
+  Type: BOGGED
+  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto Pantanoso'
+  Health: 16
+  Damage: 3
+  Variables:
+    nombre: Esqueleto Pantanoso
+    fam: esqueleto
+    esp1: flecha_arcana
+    esp2: lluvia_flechas
+    may1: rafaga_flechas
+    may2: pilar_huesos
+  Drops:
+  - exp 5to12
+  - bone 0to2
+  - arrow 0to2
+elite_wither_skeleton:
+  Template: elite_guerrero
+  Type: WITHER_SKELETON
+  Display: '<#9EA3AE>Nv <caster.level> <white>Esqueleto Wither'
+  Health: 20
+  Damage: 8
+  Variables:
+    nombre: Esqueleto Wither
+    fam: esqueleto
+    esp1: flecha_arcana
+    esp2: lluvia_flechas
+    may1: rafaga_flechas
+    may2: pilar_huesos
+  Drops:
+  - exp 5to12
+  - bone 0to2
+  - coal 0to1
+  - wither_skeleton_skull 1 0.025
+elite_spider:
+  Template: elite_base
+  Type: SPIDER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Araña'
+  Health: 16
+  Damage: 2
+  Variables:
+    nombre: Araña
+    fam: arana
+    esp1: telarana
+    esp2: salto_sombrio
+    may1: mareo_arcano
+    may2: nido
+  Drops:
+  - exp 5to12
+  - string 0to2
+  - spider_eye 1 0.33
+elite_cave_spider:
+  Template: elite_base
+  Type: CAVE_SPIDER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Araña de Cueva'
+  Health: 12
+  Damage: 2
+  Variables:
+    nombre: Araña de Cueva
+    fam: arana
+    esp1: telarana
+    esp2: salto_sombrio
+    may1: mareo_arcano
+    may2: nido
+  Drops:
+  - exp 5to12
+  - string 0to2
+  - spider_eye 1 0.33
+elite_creeper:
+  Template: elite_base
+  Type: CREEPER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Creeper'
+  Health: 20
+  Damage: 3
+  Variables:
+    nombre: Creeper
+    fam: creeper
+    esp1: pulso_helado
+    esp2: implosion
+    may1: carga_tormenta
+    may2: onda_explosiva
+  Drops:
+  - exp 5to12
+  - gunpowder 0to2
+elite_enderman:
+  Template: elite_base
+  Type: ENDERMAN
+  Display: '<#9EA3AE>Nv <caster.level> <white>Enderman'
+  Health: 40
+  Damage: 7
+  Variables:
+    nombre: Enderman
+    fam: ender
+    esp1: plasma
+    esp2: salto_sombrio
+    may1: vacio
+    may2: rayo_castigador
+  Drops:
+  - exp 5to12
+  - ender_pearl 1 0.5
+elite_witch:
+  Template: elite_base
+  Type: WITCH
+  Display: '<#9EA3AE>Nv <caster.level> <white>Bruja'
+  Health: 26
+  Damage: 3
+  Variables:
+    nombre: Bruja
+    fam: mago
+    esp1: circulo_arcano
+    esp2: rayo_castigador
+    may1: tormenta_rayos
+    may2: maldicion
+  Drops:
+  - exp 5to12
+  - redstone 0to2
+  - glowstone_dust 0to2
+  - sugar 0to2
+  - glass_bottle 0to2
+  - spider_eye 0to1
+elite_evoker:
+  Template: elite_base
+  Type: EVOKER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Invocador'
+  Health: 24
+  Damage: 6
+  Variables:
+    nombre: Invocador
+    fam: mago
+    esp1: circulo_arcano
+    esp2: rayo_castigador
+    may1: tormenta_rayos
+    may2: maldicion
+  Drops:
+  - exp 5to12
+  - totem_of_undying 1
+  - emerald 0to1
+elite_pillager:
+  Template: elite_ballestero
+  Type: PILLAGER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Saqueador'
+  Health: 24
+  Damage: 4
+  Variables:
+    nombre: Saqueador
+    fam: illager
+    esp1: rayo_castigador
+    esp2: fuegos_artificiales
+    may1: tormenta_rayos
+    may2: golpe_suelo
+  Drops:
+  - exp 5to12
+  - arrow 0to2
+elite_vindicator:
+  Template: elite_guerrero
+  Type: VINDICATOR
+  Display: '<#9EA3AE>Nv <caster.level> <white>Vindicador'
+  Health: 24
+  Damage: 13
+  Variables:
+    nombre: Vindicador
+    fam: illager
+    esp1: rayo_castigador
+    esp2: fuegos_artificiales
+    may1: tormenta_rayos
+    may2: golpe_suelo
+  Drops:
+  - exp 5to12
+  - emerald 0to1
+elite_blaze:
+  Template: elite_tirador
+  Type: BLAZE
+  Display: '<#9EA3AE>Nv <caster.level> <white>Blaze'
+  Health: 20
+  Damage: 6
+  Variables:
+    nombre: Blaze
+    fam: fuego
+    esp1: bola_fuego
+    esp2: pira_llamas
+    may1: tormenta_fuego
+    may2: bola_teledirigida
+  Drops:
+  - exp 5to12
+  - blaze_rod 0to1
+elite_ghast:
+  Template: elite_tirador
+  Type: GHAST
+  Display: '<#9EA3AE>Nv <caster.level> <white>Ghast'
+  Health: 10
+  Damage: 6
+  Variables:
+    nombre: Ghast
+    fam: fuego
+    esp1: bola_fuego
+    esp2: pira_llamas
+    may1: tormenta_fuego
+    may2: bola_teledirigida
+  Drops:
+  - exp 5to12
+  - ghast_tear 0to1
+  - gunpowder 0to2
+elite_magma_cube:
+  Template: elite_base
+  Type: MAGMA_CUBE
+  Display: '<#9EA3AE>Nv <caster.level> <white>Cubo de Magma'
+  Health: 16
+  Damage: 4
+  Variables:
+    nombre: Cubo de Magma
+    fam: fuego
+    esp1: bola_fuego
+    esp2: pira_llamas
+    may1: tormenta_fuego
+    may2: bola_teledirigida
+  Drops:
+  - exp 5to12
+  - magma_cream 1 0.25
+elite_slime:
+  Template: elite_base
+  Type: SLIME
+  Display: '<#9EA3AE>Nv <caster.level> <white>Slime'
+  Health: 16
+  Damage: 4
+  Variables:
+    nombre: Slime
+    fam: plaga
+    esp1: telarana
+    esp2: pulso_helado
+    may1: mareo_arcano
+    may2: implosion
+  Drops:
+  - exp 5to12
+  - slime_ball 0to2
+elite_phantom:
+  Template: elite_base
+  Type: PHANTOM
+  Display: '<#9EA3AE>Nv <caster.level> <white>Phantom'
+  Health: 20
+  Damage: 6
+  Variables:
+    nombre: Phantom
+    fam: volador
+    esp1: rayo_castigador
+    esp2: bola_fuego
+    may1: tormenta_rayos
+    may2: lluvia_flechas
+  Drops:
+  - exp 5to12
+  - phantom_membrane 0to1
+elite_breeze:
+  Template: elite_tirador
+  Type: BREEZE
+  Display: '<#9EA3AE>Nv <caster.level> <white>Breeze'
+  Health: 30
+  Damage: 3
+  Variables:
+    nombre: Breeze
+    fam: volador
+    esp1: rayo_castigador
+    esp2: bola_fuego
+    may1: tormenta_rayos
+    may2: lluvia_flechas
+  Drops:
+  - exp 5to12
+  - breeze_rod 1to2
+elite_zombified_piglin:
+  Template: elite_guerrero
+  Type: ZOMBIFIED_PIGLIN
+  Display: '<#9EA3AE>Nv <caster.level> <white>Piglin Zombi'
+  Health: 20
+  Damage: 8
+  Variables:
+    nombre: Piglin Zombi
+    fam: piglin
+    esp1: golpe_suelo
+    esp2: fuegos_artificiales
+    may1: pira_llamas
+    may2: invocar_aliados
+  Drops:
+  - exp 5to12
+  - rotten_flesh 0to1
+  - gold_nugget 0to1
+  - gold_ingot 1 0.025
+elite_piglin:
+  Template: elite_guerrero
+  Type: PIGLIN
+  Display: '<#9EA3AE>Nv <caster.level> <white>Piglin'
+  Health: 16
+  Damage: 5
+  Variables:
+    nombre: Piglin
+    fam: piglin
+    esp1: golpe_suelo
+    esp2: fuegos_artificiales
+    may1: pira_llamas
+    may2: invocar_aliados
+  Drops:
+  - exp 5to12
+  - gold_nugget 0to2
+elite_piglin_brute:
+  Template: elite_guerrero
+  Type: PIGLIN_BRUTE
+  Display: '<#9EA3AE>Nv <caster.level> <white>Piglin Bruto'
+  Health: 50
+  Damage: 13
+  Variables:
+    nombre: Piglin Bruto
+    fam: piglin
+    esp1: golpe_suelo
+    esp2: fuegos_artificiales
+    may1: pira_llamas
+    may2: invocar_aliados
+  Drops:
+  - exp 5to12
+  - gold_ingot 1 0.08
+elite_hoglin:
+  Template: elite_base
+  Type: HOGLIN
+  Display: '<#9EA3AE>Nv <caster.level> <white>Hoglin'
+  Health: 40
+  Damage: 6
+  Variables:
+    nombre: Hoglin
+    fam: piglin
+    esp1: golpe_suelo
+    esp2: fuegos_artificiales
+    may1: pira_llamas
+    may2: invocar_aliados
+  Drops:
+  - exp 5to12
+  - porkchop 2to4
+  - leather 0to1
+elite_zoglin:
+  Template: elite_base
+  Type: ZOGLIN
+  Display: '<#9EA3AE>Nv <caster.level> <white>Zoglin'
+  Health: 40
+  Damage: 6
+  Variables:
+    nombre: Zoglin
+    fam: piglin
+    esp1: golpe_suelo
+    esp2: fuegos_artificiales
+    may1: pira_llamas
+    may2: invocar_aliados
+  Drops:
+  - exp 5to12
+  - rotten_flesh 1to3
+elite_guardian:
+  Template: elite_base
+  Type: GUARDIAN
+  Display: '<#9EA3AE>Nv <caster.level> <white>Guardián'
+  Health: 30
+  Damage: 6
+  Variables:
+    nombre: Guardián
+    fam: agua
+    esp1: pulso_helado
+    esp2: atraccion_abismal
+    may1: tormenta_rayos
+    may2: vacio
+  Drops:
+  - exp 5to12
+  - prismarine_shard 0to2
+  - cod 1 0.4
+  - prismarine_crystals 1 0.33
+elite_silverfish:
+  Template: elite_base
+  Type: SILVERFISH
+  Display: '<#9EA3AE>Nv <caster.level> <white>Lepisma'
+  Health: 8
+  Damage: 1
+  Variables:
+    nombre: Lepisma
+    fam: plaga
+    esp1: telarana
+    esp2: pulso_helado
+    may1: mareo_arcano
+    may2: implosion
+  Drops:
+  - exp 5to12
+elite_endermite:
+  Template: elite_base
+  Type: ENDERMITE
+  Display: '<#9EA3AE>Nv <caster.level> <white>Endermite'
+  Health: 8
+  Damage: 2
+  Variables:
+    nombre: Endermite
+    fam: plaga
+    esp1: telarana
+    esp2: pulso_helado
+    may1: mareo_arcano
+    may2: implosion
+  Drops:
+  - exp 5to12
+elite_shulker:
+  Template: elite_base
+  Type: SHULKER
+  Display: '<#9EA3AE>Nv <caster.level> <white>Shulker'
+  Health: 30
+  Damage: 4
+  Variables:
+    nombre: Shulker
+    fam: ender
+    esp1: plasma
+    esp2: salto_sombrio
+    may1: vacio
+    may2: rayo_castigador
+  Drops:
+  - exp 5to12
+  - shulker_shell 1 0.5
+
+# ---------- Esbirros (invocaciones, sin poderes) ----------
+elite_esbirro_zombi:
+  Template: elite_esbirro_base
+  Type: ZOMBIE
+  Display: '<#7E848F>Esbirro'
+elite_esbirro_esqueleto:
+  Template: elite_esbirro_base
+  Type: SKELETON
+  Display: '<#7E848F>Esbirro'
+  Equipment:
+  - bow HAND
+elite_esbirro_arana:
+  Template: elite_esbirro_base
+  Type: CAVE_SPIDER
+  Display: '<#7E848F>Cría'

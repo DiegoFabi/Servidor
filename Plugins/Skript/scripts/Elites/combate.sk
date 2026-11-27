@@ -1,0 +1,51 @@
+# ============================================================
+#  Combate (sistema general, sustituye al combat tag de EliteMobs)
+#  - Quien golpea o recibe daño de un jugador o un mob hostil queda
+#    "en combate" {@segundos} s.
+#  - En combate no se pueden usar comandos de teletransporte.
+#  - Sin bucles ni temporizadores: solo guarda la hora del último golpe.
+#  - Permiso para saltarlo: servidor.combate.saltar
+# ============================================================
+options:
+    segundos: 15
+    prefijo: <#FF6B6B>⚔ <#C9CDD6>
+
+function combateMarcar(p: player):
+    set {_id} to uuid of {_p}
+    if {-combate::%{_id}%} is not set:
+        send action bar "{@prefijo}Estás en combate <#7E848F>({@segundos} s)" to {_p}
+    else if difference between {-combate::%{_id}%} and now is more than {@segundos} seconds:
+        send action bar "{@prefijo}Estás en combate <#7E848F>({@segundos} s)" to {_p}
+    set {-combate::%{_id}%} to now
+
+function combateActivo(p: player) :: boolean:
+    set {_t} to {-combate::%uuid of {_p}%}
+    {_t} is set
+    difference between {_t} and now is less than {@segundos} seconds
+    return true
+
+on damage:
+    attacker is set
+    if victim is a player:
+        if attacker is a player:
+            combateMarcar(victim)
+            combateMarcar(attacker)
+        else if attacker is a monster:
+            combateMarcar(victim)
+    else if attacker is a player:
+        victim is a monster
+        combateMarcar(attacker)
+
+on command:
+    sender is a player
+    player does not have permission "servidor.combate.saltar"
+    combateActivo(player) is true
+    command is "spawn", "lobby", "hub", "home", "homes", "warp", "warps", "tpa", "tpahere", "tpaccept", "tpyes", "back", "rtp", "ptp" or "tp"
+    cancel event
+    send action bar "{@prefijo}No puedes teletransportarte en combate" to player
+
+on death of player:
+    delete {-combate::%uuid of victim%}
+
+on quit:
+    delete {-combate::%uuid of player%}

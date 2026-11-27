@@ -6,7 +6,7 @@ actionEventMinimumCooldownMinutes: 10
 timedEventMinimumCooldownMinutes: 15
 # Sets if action events will happen.
 # https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#action-events
-actionEventsEnabled: true
+actionEventsEnabled: false
 # Sets if timed events will happen.
 # https://github.com/MagmaGuy/EliteMobs/wiki/Creating-Custom-Events#timed-events
-timedEventsEnabled: true
+timedEventsEnabled: false

@@ -1,0 +1,74 @@
+# ============================================================
+#  Plantillas de élites. Cada élite de Mobs/elites.yml usa una.
+#  Variables que define cada élite: nombre (texto), fam (familia)
+# ============================================================
+elite_base:
+  Display: '<#9EA3AE>Élite'
+  Health: 20
+  Damage: 3
+  Armor: 0
+  LevelModifiers:
+    Armor: 0.04
+    KnockbackResistance: 0.002
+  HealthBar:
+    Enabled: true
+    Offset: 0.35
+  Options:
+    AlwaysShowName: false
+    Despawn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventSunburn: false
+  Variables:
+    nombre: Élite
+    of: 0
+    def: 0
+    esp: 0
+    may: 0
+  Skills:
+  - skill{s=elite_aparecer} @self ~onSpawn
+  - skill{s=elite_al_atacar} @target ~onAttack
+  - skill{s=elite_al_recibir} @trigger ~onDamaged
+  - skill{s=elite_al_morir} @self ~onDeath
+
+# Cuerpo a cuerpo con armas (zombis, piglins, vindicadores…)
+elite_guerrero:
+  Template: elite_base
+  Skills:
+  - skill{s=elite_equipo_guerrero;delay=1} @self ~onSpawn
+
+# A distancia: armadura y arco/ballesta propio (esqueletos, saqueadores)
+elite_arquero:
+  Template: elite_base
+  Skills:
+  - skill{s=elite_equipo_arquero;delay=1} @self ~onSpawn
+  - skill{s=elite_of} @target ~onShoot
+
+# Esbirros invocados por los poderes de invocación (sin poderes, duran 40 s)
+elite_esbirro_base:
+  Health: 8
+  Damage: 2
+  Options:
+    AlwaysShowName: false
+    Despawn: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+  Skills:
+  - effect:particles{p=soul;a=12;hs=0.3;vs=0.6;s=0.02;y=0.5;vd=32} @self ~onSpawn
+  - attribute{attribute=SCALE;a=0.75} @self ~onSpawn
+  - remove{delay=800} @self ~onSpawn
+
+# A distancia con ballesta (saqueadores)
+elite_ballestero:
+  Template: elite_base
+  Skills:
+  - skill{s=elite_equipo_ballestero;delay=1} @self ~onSpawn
+  - skill{s=elite_of} @target ~onShoot
+
+# A distancia sin equipo (blaze, ghast, breeze): también lanza su ofensivo al disparar
+elite_tirador:
+  Template: elite_base
+  Skills:
+  - skill{s=elite_of} @target ~onShoot

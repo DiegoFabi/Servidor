@@ -12,7 +12,7 @@ Raton_black_mouse:
   Type: black_mouse
   Worlds: survivalMain
   Chance: 0.07
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DARK_FOREST,PALE_GARDEN,OLD_GROWTH_SPRUCE_TAIGA,OLD_GROWTH_PINE_TAIGA,TAIGA,SWAMP,MANGROVE_SWAMP
@@ -26,7 +26,7 @@ Raton_brown_mouse:
   Type: brown_mouse
   Worlds: survivalMain
   Chance: 0.07
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: FOREST,BIRCH_FOREST,OLD_GROWTH_BIRCH_FOREST,FLOWER_FOREST,JUNGLE,SPARSE_JUNGLE,BAMBOO_JUNGLE,SAVANNA,SAVANNA_PLATEAU,WINDSWEPT_SAVANNA,DESERT,BADLANDS,ERODED_BADLANDS,WOODED_BADLANDS
@@ -40,7 +40,7 @@ Raton_gray_mouse:
   Type: gray_mouse
   Worlds: survivalMain
   Chance: 0.07
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: PLAINS,SUNFLOWER_PLAINS,MEADOW,CHERRY_GROVE,WINDSWEPT_HILLS,WINDSWEPT_GRAVELLY_HILLS,WINDSWEPT_FOREST,STONY_SHORE,BEACH,RIVER,MUSHROOM_FIELDS
@@ -54,7 +54,7 @@ Raton_white_mouse:
   Type: white_mouse
   Worlds: survivalMain
   Chance: 0.07
-  Priority: 1
+  Priority: 100
   Action: REPLACE
   UseWorldScaling: false
   Biomes: SNOWY_PLAINS,ICE_SPIKES,SNOWY_TAIGA,GROVE,SNOWY_SLOPES,SNOWY_BEACH,FROZEN_RIVER,JAGGED_PEAKS,FROZEN_PEAKS

@@ -9,7 +9,7 @@ RandomGhoul:
   Type: Ghoul
   Worlds: survivalMain
   Chance: 0.3
-  Priority: 5
+  Priority: 500
   Action: REPLACE
   UseWorldScaling: false
   Biomes: SNOWY_PLAINS,SNOWY_TAIGA,SNOWY_SLOPES,GROVE,FROZEN_PEAKS,ICE_SPIKES
@@ -24,7 +24,7 @@ RandomSpecter:
   Type: Specter
   Worlds: survivalMain
   Chance: 0.25
-  Priority: 5
+  Priority: 500
   Action: REPLACE
   UseWorldScaling: false
   Biomes: DRIPSTONE_CAVES,LUSH_CAVES,DEEP_DARK,PLAINS,FOREST,BIRCH_FOREST,TAIGA,DARK_FOREST,MEADOW,WINDSWEPT_HILLS,SAVANNA,JUNGLE,DESERT,BADLANDS,SNOWY_PLAINS,SNOWY_TAIGA
@@ -40,7 +40,7 @@ RandomZombieBrute:
   Type: Zombie_Brute
   Worlds: survivalMain
   Chance: 0.06
-  Priority: 5
+  Priority: 500
   Action: REPLACE
   UseWorldScaling: false
   Biomes: PLAINS,SUNFLOWER_PLAINS,FOREST,BIRCH_FOREST,SAVANNA,MEADOW
@@ -55,7 +55,7 @@ RandomWendigo:
   Type: Nightharrow_Wendigo
   Worlds: survivalMain
   Chance: 0.01
-  Priority: 8
+  Priority: 800
   Action: REPLACE
   UseWorldScaling: false
   Biomes: TAIGA,OLD_GROWTH_PINE_TAIGA,OLD_GROWTH_SPRUCE_TAIGA,SNOWY_TAIGA,DARK_FOREST,PALE_GARDEN

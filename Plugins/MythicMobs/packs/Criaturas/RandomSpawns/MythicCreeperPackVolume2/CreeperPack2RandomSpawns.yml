@@ -4,7 +4,7 @@ MSO_Desert_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Desert
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=DESERT}
@@ -13,7 +13,7 @@ MSO_Dripstone_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Dripstone
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=DRIPSTONE_CAVES}
@@ -22,7 +22,7 @@ MSO_Cave_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_Cave
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=DRIPSTONE_CAVES,LUSH_CAVES}
@@ -31,7 +31,7 @@ MSO_DarkOak_Creeper_Randomspawn:
   Worlds: survivalMain
   MobType: MSO_Creeper_DarkOak
   Chance: 0.1
-  Priority: 1
+  Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=DARK_FOREST}

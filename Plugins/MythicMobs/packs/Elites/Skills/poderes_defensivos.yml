@@ -1,0 +1,47 @@
+# ============================================================
+#  PODERES DEFENSIVOS GENÉRICOS (desde nivel 25, al recibir daño)
+#  @trigger = quien golpeó al élite.
+# ============================================================
+pd_escudo:
+  Skills:
+  - potion{type=RESISTANCE;duration="30 + <caster.var.rango> * 10";level=1;hasParticles=false} @self
+  - effect:particlesphere{p=wax_on;r=1.1;a=20;y=1;vd=32} @self
+  - sound{s=item.shield.block;v=0.8;p=0.9} @self
+pd_anti_flechas:
+  Conditions:
+  - damagecause{c=PROJECTILE} true
+  Skills:
+  - cancelevent @self
+  - effect:particles{p=crit;a=10;hs=0.4;vs=0.6;s=0.2;y=1;vd=32} @self
+  - sound{s=entity.arrow.hit;v=0.6;p=0.6} @self
+pd_invisibilidad:
+  Conditions:
+  - entitytype{t=CREEPER} false
+  Skills:
+  - potion{type=INVISIBILITY;duration=50;level=0;hasParticles=false} @self
+  - effect:particles{p=large_smoke;a=14;hs=0.4;vs=0.8;s=0.02;y=1;vd=32} @self
+  - sound{s=entity.illusioner.mirror_move;v=0.7;p=1.2} @self
+pd_curacion:
+  Conditions:
+  - healthpercent{h=<50%} true
+  Skills:
+  - heal{amount="<caster.mhp> * 0.12"} @self
+  - effect:particlering{p=heart;r=0.8;points=6;a=1;y=1.2;vd=32} @self
+  - effect:particles{p=happy_villager;a=10;hs=0.5;vs=0.8;y=1;vd=32} @self
+  - sound{s=entity.zombie_villager.converted;v=0.4;p=1.8} @self
+pd_salto_lunar:
+  Skills:
+  - velocity{m=SET;x=0;y=0.9;z=0} @self
+  - potion{type=SLOW_FALLING;duration=40;level=0;hasParticles=false} @self
+  - effect:particlering{p=cloud;r=1;points=12;a=1;y=0.1;vd=32} @self
+  - sound{s=entity.breeze.jump;v=0.6;p=1.2} @self
+pd_aura_helada:
+  Skills:
+  - potion{type=SLOWNESS;duration=40;level=1;hasParticles=false} @PIR{r=4}
+  - effect:particlering{p=snowflake;r=3;points=20;a=1;y=0.2;vd=32} @self
+  - sound{s=block.powder_snow.step;v=0.8;p=0.8} @self
+pd_piel_ignea:
+  Skills:
+  - ignite{ticks=60} @trigger
+  - effect:particles{p=flame;a=12;hs=0.4;vs=0.8;s=0.02;y=1;vd=32} @self
+  - sound{s=entity.blaze.hurt;v=0.5;p=1.2} @self
