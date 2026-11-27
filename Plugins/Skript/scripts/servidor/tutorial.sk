@@ -52,7 +52,7 @@ on load:
     set {-hist::nombre::2} to "Más Allá de los Muros"
     set {-hist::desc::2::*} to "El Guardia Real, que lo perdió todo", "una noche sin luna, te equipó y te", "mostró el portal. Cruzaste y este" and "nuevo mundo se abrió ante ti."
     set {-hist::nombre::3} to "Los Supervivientes"
-    set {-hist::desc::3::*} to "Bram, Malvor y Tobías te enseñaron", "cómo sobrevivir aquí. Una visión te", "mostró que no despertaste por azar:" and "este mundo te llamó por un motivo."
+    set {-hist::desc::3::*} to "Al volver del portal, el Guardia te", "llevó con los supervivientes del reino.", "Una visión del chamán te mostró que" and "no despertaste aquí por azar."
     # Orden del menú: cada parte ("p:N") seguida de su misión ("m:N") si tiene
     delete {-hist::orden::*}
     loop {-hist::total} times:
