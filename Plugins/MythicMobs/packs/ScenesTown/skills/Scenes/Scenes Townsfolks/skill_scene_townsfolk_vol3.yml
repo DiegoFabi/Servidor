@@ -1,0 +1,68 @@
+see_player_beggar:
+  Cooldown: 10
+  TargetConditions:
+  - isplayer
+  Conditions:
+  - targets{a=>0}  
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - state{s=idle;li=0;lo=0;r=true} @self
+  - state{s=see;li=0;lo=3} @self
+  - state{s=see;li=0;lo=0;r=true;delay=149} @self
+  - state{s=idle;li=0;lo=0;delay=149} @self
+
+lock_head_beggar: 
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - lockhead{lp=true} @self
+
+interact_beggar:
+  Cooldown: 3
+  Skills:
+  # - sound{s=your_sound_name} @self
+  - lockhead{lp=true} @self
+  - state{s=idle;li=0;lo=0;r=true} @self
+  - state{s=see;li=0;lo=3;r=true} @self
+  - state{s=interact;lo=0;li=0} @self
+  - state{s=interact;li=0;lo=0;r=true;delay=44} @self
+  - state{s=idle;li=3;lo=0;delay=44} @self
+
+# Replace your_sound_name with the name of a sound of your choice, and remove # 
+
+sit_swing:
+  Cooldown: 30
+  TriggerConditions:
+  - isSneaking false
+  Skills:
+  - mountmodel{mid=scene_townsfolk_vol3_swing_mount;driver=false;pbone=seat} @PIR{radius=5;limit=1;sort=NEAREST}
+  - state{s=play;li=0;lo=0} @self
+  - delay 610
+  - state{s=play;li=0;lo=0;r=true} @self
+  - state{s=idle;li=0;lo=0} @self
+  # - sound{s=your_sound_name} @self
+
+# Replace your_sound_name with the name of a sound of your choice, and remove # 
+
+resummon_swing: 
+  Skills:
+  - summon{type=scene_townsfolk_swing_ride} @self
+  - delay 10
+  - remapmodel{m=scene_townsfolk_vol3_swing_mount;n=<global.var.skin<caster.uuid>>} @EIR{r=10;limit=1;sort=NEAREST}
+  - delay 15
+  - changepart{m=scene_townsfolk_vol3_swing_mount;pid=right_item;nm=<global.var.rightitem<caster.uuid>>;npid=right_item} @EIR{r=10;limit=1;sort=NEAREST} 
+  - changepart{m=scene_townsfolk_vol3_swing_mount;pid=left_item;nm=<global.var.leftitem<caster.uuid>>;npid=left_item} @EIR{r=10;limit=1;sort=NEAREST} 
+  - changepart{m=scene_townsfolk_vol3_swing_mount;pid=backpack;nm=<global.var.backpack<caster.uuid>>;npid=backpack} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=scene_townsfolk_vol3_swing_mount;pid=hat;nm=<global.var.hat<caster.uuid>>;npid=hat} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=scene_townsfolk_vol3_swing_mount;pid=left_pant;nm=<global.var.leftpant<caster.uuid>>;npid=left_pant} @EIR{r=10;limit=1;sort=NEAREST}
+  - changepart{m=scene_townsfolk_vol3_swing_mount;pid=right_pant;nm=<global.var.rightpant<caster.uuid>>;npid=right_pant} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.skin<target.uuid>;value=<global.var.skin<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.backpack<target.uuid>;value=<global.var.backpack<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightitem<target.uuid>;value=<global.var.rightitem<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.leftitem<target.uuid>;value=<global.var.leftitem<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.hat<target.uuid>;value=<global.var.hat<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.leftpant<target.uuid>;value=<global.var.leftpant<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - setvariable{var=global.rightpant<target.uuid>;value=<global.var.rightpant<caster.uuid>>;type=STRING;save=true} @EIR{r=10;limit=1;sort=NEAREST}
+  - delay 3
+  - remove @self 
+
+#afe52df596132f0a82b69ad9ab475dd9
