@@ -21,6 +21,9 @@ options:
     # Recompensa aleatoria (money de ExcellentEconomy)
     min-premio: 500
     max-premio: 1000
+    # Recompensa del traductor (inglés -> español)
+    min-traductor: 200
+    max-traductor: 500
     # Segundos para responder antes de que el juego expire
     duracion: 60
     # Jugadores minimos conectados para lanzar un juego
@@ -35,6 +38,8 @@ on load:
     delete {-mg::*}
     set {-mg::palabras::*} to "minecraft", "diamante", "esmeralda", "creeper", "aldeano", "espada", "armadura", "obsidiana", "portal", "dragon", "encantamiento", "pocion", "redstone", "castillo", "molino", "servidor", "aventura", "tesoro", "calabaza", "esqueleto", "zombie", "netherita", "biblioteca", "antorcha", "caballo", "arquero", "herrero", "cofre", "mineral" and "bosque"
     set {-mg::activo} to true
+    # Traductor: "inglés|español" (se aceptan varias traducciones separadas por /)
+    set {-mg::traducciones::*} to "apple|manzana", "house|casa", "sword|espada", "dog|perro", "cat|gato", "water|agua", "fire|fuego", "tree|arbol", "book|libro", "moon|luna", "sun|sol", "king|rey", "queen|reina", "horse|caballo", "bread|pan", "gold|oro", "iron|hierro", "stone|piedra/roca", "river|rio", "mountain|montaña", "forest|bosque", "castle|castillo", "dragon|dragon", "shield|escudo", "bow|arco", "arrow|flecha", "night|noche", "day|dia", "friend|amigo/amiga", "chicken|pollo/gallina", "cheese|queso", "door|puerta", "window|ventana", "key|llave", "bridge|puente", "village|aldea/pueblo", "flower|flor", "snow|nieve", "rain|lluvia", "wolf|lobo", "bear|oso", "fish|pez/pescado", "ship|barco", "star|estrella", "heart|corazon", "magic|magia", "potion|pocion", "treasure|tesoro", "ghost|fantasma", "witch|bruja", "spider|araña", "bone|hueso", "egg|huevo", "milk|leche", "sugar|azucar", "wheat|trigo", "chest|cofre", "crown|corona", "map|mapa" and "bell|campana"
 
 # ------------------------------------------------------------
 #  Programador: 1 minijuego cada 35 minutos (separado de los demás
@@ -58,7 +63,7 @@ every 1 minute:
 # ------------------------------------------------------------
 #  Logica del juego
 # ------------------------------------------------------------
-# tipo:  aleatorio | matematicas | suma | resta | multiplicacion | division | palabra
+# tipo:  aleatorio | matematicas | suma | resta | multiplicacion | division | palabra | traductor
 # premio: -1 = aleatorio entre min-premio y max-premio
 function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
     {-mg::id} is not set
@@ -78,8 +83,10 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
         set {_juego} to 1
     else if {_tipo} is "palabra":
         set {_juego} to 2
+    else if {_tipo} is "traductor":
+        set {_juego} to 3
     else:
-        set {_juego} to random integer between 1 and 2
+        set {_juego} to random integer between 1 and 3
     if {_juego} = 1:
         if {_op} = 0:
             set {_op} to random integer between 1 and 4
@@ -107,6 +114,13 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
         set {-mg::respuesta} to "%{_r}%"
         set {_reto} to "<white>¡Resuelve <#FFD36B>(%{_a}% %{_s}% %{_b}%)</#FFD36B> en menos de <#7FFF9E>{@duracion}s</#7FFF9E> para ganar!"
         set {_plano} to "¡Resuelve (%{_a}% %{_s}% %{_b}%) en menos de {@duracion}s para ganar!"
+    else if {_juego} = 3:
+        # Traductor: una palabra en inglés, gana quien escriba antes su traducción
+        set {_par::*} to split (random element out of {-mg::traducciones::*}) at "|"
+        set {-mg::respuesta} to {_par::2}
+        set {-mg::premio_traductor} to true
+        set {_reto} to "<white>¡Traduce <#FFD36B>%{_par::1}%</#FFD36B> al español en menos de <#7FFF9E>{@duracion}s</#7FFF9E>!"
+        set {_plano} to {_reto}
     else:
         set {_w} to random element out of {-mg::palabras::*}
         set {-mg::respuesta} to {_w}
@@ -123,6 +137,8 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
 
     if {_premio} > 0:
         set {-mg::premio} to rounded {_premio}
+    else if {-mg::premio_traductor} is set:
+        set {-mg::premio} to random integer between {@min-traductor} and {@max-traductor}
     else:
         set {-mg::premio} to random integer between {@min-premio} and {@max-premio}
     set {-mg::id} to {_id}
@@ -140,27 +156,31 @@ function mgIniciar(tipo: text = "aleatorio", premio: number = -1):
 # ------------------------------------------------------------
 #  Anuncio con el formato de eventos (líneas centradas en el chat)
 # ------------------------------------------------------------
-function mgCentrar(t: text, plano: text) :: text:
-    set {_n} to rounded down ((320 - (length of {_plano}) * 5.6) / 8)
-    set {_pad} to ""
-    if {_n} > 0:
-        loop {_n} times:
-            set {_pad} to "%{_pad}% "
-    return "%{_pad}%%{_t}%"
-
 function mgAnuncio(a: text, aplano: text, b: text, bplano: text):
     send "" to all players
-    send "                     <#7FDCE6>— ✧ Anuncios de Eventos ✧ —" to all players
+    send formatted centrar("<#7FDCE6>— ✧ Anuncios de Eventos ✧ —") to all players
     send "" to all players
-    send "                        <#3FD0DE><bold>MINIJUEGOS DEL CHAT" to all players
+    send formatted centrar("<#3FD0DE><bold>MINIJUEGOS DEL CHAT") to all players
     send "" to all players
-    send mgCentrar({_a}, {_aplano}) to all players
-    send mgCentrar({_b}, {_bplano}) to all players
+    send centrar({_a}) to all players
+    send centrar({_b}) to all players
     send "" to all players
-    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to all players
+    send formatted centrar("<#C9CDD6>⟐ ¡Apoya al Servidor!") to all players
     send "" to all players
 
+function mgNorm(t: text) :: text:
+    set {_t} to {_t}
+    replace all "á" with "a" in {_t}
+    replace all "é" with "e" in {_t}
+    replace all "í" with "i" in {_t}
+    replace all "ó" with "o" in {_t}
+    replace all "ú" with "u" in {_t}
+    replace all "ü" with "u" in {_t}
+    replace all "ñ" with "n" in {_t}
+    return {_t}
+
 function mgLimpiar():
+    delete {-mg::premio_traductor}
     delete {-mg::id}
     delete {-mg::respuesta}
     delete {-mg::premio}
@@ -173,8 +193,13 @@ on chat:
     {-mg::id} is set
     set {_m} to message
     replace all " " in {_m} with ""
-    # Comparacion sin distinguir mayusculas (case sensitive: false en config.sk)
-    {_m} is {-mg::respuesta}
+    # Sin distinguir mayúsculas ni tildes; el traductor acepta varias respuestas (a/b)
+    set {_m} to mgNorm({_m})
+    set {_ok} to false
+    loop split {-mg::respuesta} at "/":
+        if {_m} is mgNorm(loop-value):
+            set {_ok} to true
+    {_ok} is true
     cancel event
     set {_id} to {-mg::id}
     # Pasar al hilo principal: aqui la reclamacion es atomica
@@ -211,10 +236,10 @@ command /minijuego [<text>] [<text>] [<text>]:
                 set {_n} to arg-2 parsed as number
                 if {_n} is set:
                     set {_premio} to {_n}
-                else if arg-2 is "aleatorio" or "matematicas" or "suma" or "resta" or "multiplicacion" or "division" or "palabra":
+                else if arg-2 is "aleatorio" or "matematicas" or "suma" or "resta" or "multiplicacion" or "division" or "palabra" or "traductor":
                     set {_tipo} to arg-2
                 else:
-                    send "{@prefijo} <red>Tipo inválido. <gray>Usa: <yellow>aleatorio, matematicas, suma, resta, multiplicacion, division, palabra"
+                    send "{@prefijo} <red>Tipo inválido. <gray>Usa: <yellow>aleatorio, matematicas, suma, resta, multiplicacion, division, palabra, traductor"
                     stop
             if arg-3 is set:
                 set {_n} to arg-3 parsed as number
@@ -248,7 +273,7 @@ command /minijuego [<text>] [<text>] [<text>]:
             send "  <yellow>/mj stop <dark_gray>» <gray>Detiene el juego actual"
             send "  <yellow>/mj on|off <dark_gray>» <gray>Juegos automáticos (10 min)"
             send "  <gray>Tipos: <white>aleatorio, matematicas, suma, resta,"
-            send "  <white>multiplicacion, division, palabra"
+            send "  <white>multiplicacion, division, palabra, traductor"
             send "  <dark_gray>Ej: /mj iniciar division 2500  |  /mj iniciar 1500"
             send "<dark_gray><strikethrough>                                        "
 

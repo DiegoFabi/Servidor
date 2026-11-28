@@ -34,14 +34,6 @@ on load:
 # ------------------------------------------------------------
 #  Anuncio en el chat
 # ------------------------------------------------------------
-function ttCentrar(t: text, plano: text) :: text:
-    set {_n} to rounded down ((320 - (length of {_plano}) * 5.6) / 8)
-    set {_pad} to ""
-    if {_n} > 0:
-        loop {_n} times:
-            set {_pad} to "%{_pad}% "
-    return "%{_pad}%%{_t}%"
-
 function ttAnunciar():
     {-tt::estado} is not set
     add 1 to {-tt::id}
@@ -51,19 +43,19 @@ function ttAnunciar():
     delete {-tt::jugadores::*}
     set {_a} to "<white>¡Reta a otro jugador y apuesta <#7FFF9E>$%{-tt::apuesta}%</#7FFF9E> en el <#FFD36B>tres en raya</#FFD36B>!"
     set {_ap} to "¡Reta a otro jugador y apuesta $%{-tt::apuesta}% en el tres en raya!"
-    set {_b} to "<#7FDCE6>✧ <click:run_command:'/tresenraya unirse'><hover:show_text:'<#7FB2FF>Apostar $%{-tt::apuesta}% y unirte'><#7FDCE6>¡Click para <bold>UNIRTE</bold>!</hover></click> <#7FDCE6>✧"
+    set {_b} to "<#7FDCE6>✧ <click:run_command:'/tresenraya unirse'><hover:show_text:'<#7FB2FF>Apostar $%{-tt::apuesta}% y unirte'><#7FDCE6>¡Clic para <bold>UNIRTE</bold>!</hover></click> <#7FDCE6>✧"
     loop all players:
         notificar(loop-player)
         send "" to loop-player
-        send "                     <#7FDCE6>— ✧ Anuncios de Eventos ✧ —" to loop-player
+        send formatted centrar("<#7FDCE6>— ✧ Anuncios de Eventos ✧ —") to loop-player
         send "" to loop-player
-        send "                           <#3FD0DE><bold>TRES EN RAYA" to loop-player
+        send formatted centrar("<#3FD0DE><bold>TRES EN RAYA") to loop-player
         send "" to loop-player
-        send formatted ttCentrar({_a}, {_ap}) to loop-player
+        send formatted centrar({_a}) to loop-player
         send "" to loop-player
-        send formatted ttCentrar({_b}, "✧ ¡Click para UNIRTE! ✧") to loop-player
+        send formatted centrar({_b}) to loop-player
         send "" to loop-player
-        send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to loop-player
+        send formatted centrar("<#C9CDD6>⟐ ¡Apoya al Servidor!") to loop-player
         send "" to loop-player
     wait {@inscripcion} seconds
     {-tt::id} = {_id}

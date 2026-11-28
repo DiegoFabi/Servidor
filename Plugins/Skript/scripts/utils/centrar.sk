@@ -1,0 +1,63 @@
+# ============================================================
+#  centrar.sk - Centrado automático de texto en el chat
+#  MiniMessage no tiene etiqueta <center>, así que se mide el ancho real
+#  de la línea con los anchos de la fuente de Minecraft (en píxeles,
+#  contando el píxel de separación), ignorando las etiquetas <...> y
+#  sumando 1 px por letra en negrita. El chat mide 320 px y el espacio 4 px.
+#  Uso general:   send formatted centrar("<#FFD36B><bold>TÍTULO") to all players
+# ============================================================
+on load:
+    delete {-cw::*}
+    loop 33, 44, 46, 58, 59, 105, 124, 39 and 161:
+        set {-cw::%loop-value%} to 2
+    loop 96 and 108:
+        set {-cw::%loop-value%} to 3
+    loop 32, 73, 91, 93 and 116:
+        set {-cw::%loop-value%} to 4
+    loop 34, 40, 41, 42, 60, 62, 102, 107, 123 and 125:
+        set {-cw::%loop-value%} to 5
+    loop 64 and 126:
+        set {-cw::%loop-value%} to 7
+
+function anchoTexto(t: text) :: number:
+    set {_w} to 0
+    set {_tag} to false
+    set {_bold} to false
+    loop length of {_t} times:
+        set {_c} to subtext of {_t} from characters loop-number to loop-number
+        if {_tag} is true:
+            set {_q} to "%{_q}%%{_c}%"
+            # Comillas dentro de la etiqueta (hover/click): el ">" de dentro no la cierra
+            if {_comilla} is set:
+                if {_c} is {_comilla}:
+                    delete {_comilla}
+            else if {_c} is "'" or """":
+                set {_comilla} to {_c}
+            else if {_c} is ">":
+                set {_tag} to false
+                if {_q} is "<bold>" or "<b>":
+                    set {_bold} to true
+                else if {_q} is "</bold>" or "</b>" or "<reset>":
+                    set {_bold} to false
+        else if {_c} is "<":
+            set {_tag} to true
+            set {_q} to "<"
+        else:
+            set {_cp} to codepoint of {_c}
+            if {-cw::%{_cp}%} is set:
+                add {-cw::%{_cp}%} to {_w}
+            else if {_cp} < 384:
+                add 6 to {_w}
+            else:
+                add 8 to {_w}
+            if {_bold} is true:
+                add 1 to {_w}
+    return {_w}
+
+function centrar(t: text) :: text:
+    set {_n} to rounded ((320 - anchoTexto({_t})) / 8)
+    set {_pad} to ""
+    if {_n} > 0:
+        loop {_n} times:
+            set {_pad} to "%{_pad}% "
+    return "%{_pad}%%{_t}%"

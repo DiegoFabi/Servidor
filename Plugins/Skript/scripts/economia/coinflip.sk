@@ -316,59 +316,18 @@ command /coinflip [<text>] [<text>]:
 # ------------------------------------------------------------
 #  Formato del anuncio (centrado automático, sin etiquetas)
 # ------------------------------------------------------------
-function cfAncho(t: text) :: number:
-    set {_w} to 0
-    set {_tag} to false
-    set {_bold} to false
-    set {_nombre} to ""
-    loop length of {_t} times:
-        set {_c} to subtext of {_t} from characters loop-number to loop-number
-        if {_tag} is true:
-            # Lo que va entre comillas (texto de hover, comandos) no se ve
-            if {_c} is "'" or """":
-                if {_q} is not set:
-                    set {_q} to {_c}
-                else if {_q} is {_c}:
-                    delete {_q}
-            else if {_q} is set:
-                set {_nombre} to {_nombre}
-            else if {_c} is ">":
-                set {_tag} to false
-                if {_nombre} is "bold" or "b":
-                    set {_bold} to true
-                else if {_nombre} is "/bold" or "/b" or "reset":
-                    set {_bold} to false
-            else:
-                set {_nombre} to "%{_nombre}%%{_c}%"
-        else if {_c} is "<":
-            set {_tag} to true
-            set {_nombre} to ""
-        else:
-            add 5.6 to {_w}
-            if {_bold} is true:
-                add 1 to {_w}
-    return {_w}
-
-function cfCentrar(t: text) :: text:
-    set {_n} to rounded down ((320 - cfAncho({_t})) / 8)
-    set {_pad} to ""
-    if {_n} > 0:
-        loop {_n} times:
-            set {_pad} to "%{_pad}% "
-    return "%{_pad}%%{_t}%"
-
 function cfArriba(p: players, cabecera: text, titulo: text):
     send "" to {_p::*}
-    send formatted cfCentrar({_cabecera}) to {_p::*}
+    send formatted centrar({_cabecera}) to {_p::*}
     send "" to {_p::*}
-    send formatted cfCentrar({_titulo}) to {_p::*}
+    send formatted centrar({_titulo}) to {_p::*}
     send "" to {_p::*}
 
 function cfLinea(p: players, t: text):
-    send formatted cfCentrar({_t}) to {_p::*}
+    send formatted centrar({_t}) to {_p::*}
 
 function cfAbajo(p: players):
     send "" to {_p::*}
-    send "                           <#C9CDD6>⟐ ¡Apoya al Servidor!" to {_p::*}
+    send formatted centrar("<#C9CDD6>⟐ ¡Apoya al Servidor!") to {_p::*}
     send "" to {_p::*}
 
