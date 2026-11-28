@@ -250,6 +250,9 @@ function hvTreecapitator(p: player, o: block, ini: items):
     # 4) Hojas naturales junto a los troncos (antes de quitarlos)
     set {_hojas::*} to hvBuscarHojas({_talar::*})
     hvRomper({_p}, {_talar::*}, "axes", "log", "", {_ini::*})
+    # Golpe final del árbol al caer
+    play sound "block.wood.fall" with volume 1 and pitch 0.6 at location of {_o}
+    play sound "entity.zombie.break_wooden_door" with volume 0.45 and pitch 0.7 at location of {_o}
     if {_hojas::*} is set:
         hvRomperHojas({_p}, {_hojas::*})
 
@@ -290,14 +293,28 @@ function hvRomperHojas(p: player, hojas: blocks):
         if {_b} is tagged with minecraft block tag "leaves":
             add drops of {_b} to {_d::*}
             set {_ultimo} to location of {_b}
+            set {_hid} to hvId({_b})
             set block at {_ultimo} to air
             add 1 to {_i}
+            # Hojas: crujido y lluvia de hojas en 1 de cada 3 (sin saturar)
+            if mod({_i}, 3) is 0:
+                hvEfecto({_ultimo}, {_hid}, {_i}, "block.azalea_leaves.break")
             if mod({_i}, 20) is 0:
                 apGive({_p}, {_d::*}, {_ultimo})
                 delete {_d::*}
                 wait 1 tick
     if {_d::*} is set:
         apGive({_p}, {_d::*}, {_ultimo})
+
+# Efecto de un bloque talado: sonido (con tono que sube) y partículas de
+# rotura del propio bloque (comando vanilla, se ven a 32 bloques)
+function hvEfecto(l: location, id: text, i: number, sonido: text):
+    play sound {_sonido} with volume 0.7 and pitch (0.8 + min({_i}, 25) * 0.025) at {_l}
+    set {_x} to x-coordinate of {_l} + 0.5
+    set {_y} to y-coordinate of {_l} + 0.5
+    set {_z} to z-coordinate of {_l} + 0.5
+    set {_w} to "%world of {_l}%" in lower case
+    execute console command "execute in minecraft:%{_w}% run particle minecraft:block{block_state:""minecraft:%{_id}%""} %{_x}% %{_y}% %{_z}% 0.3 0.3 0.3 0 12 normal"
 
 # ------------------------------------------------------------
 #  Rotura comun: salta el bloque 1 (lo rompe el propio evento),
@@ -316,6 +333,11 @@ function hvRomper(p: player, bloques: blocks, sufijo: text, tipo: text, grupo: t
     # XP de las menas extra (la del bloque inicial la suelta vanilla).
     # Se decide UNA vez: con Toque de Seda no hay XP.
     set {_xp} to 0
+    # Tala: 2 troncos por tick, de abajo arriba, para que se vea caer el árbol
+    set {_lote} to {@vm-lote}
+    if {_tipo} is "log":
+        set {_lote} to 2
+        play sound "entity.player.attack.sweep" with volume 0.7 and pitch 0.8 at {_ultimo}
     if {_tipo} is "ore":
         if {_p}'s tool is not enchanted with silk touch:
             set {_conxp} to true
@@ -342,10 +364,12 @@ function hvRomper(p: player, bloques: blocks, sufijo: text, tipo: text, grupo: t
         set block at {_ultimo} to air
         add 1 to damage of {_p}'s tool
         add 1 to {_i}
+        if {_tipo} is "log":
+            hvEfecto({_ultimo}, {_id}, {_i}, "block.wood.break")
         if {_conxp} is set:
             if {-hv::xpmax::%{_id}%} is set:
                 add (random integer between {-hv::xpmin::%{_id}%} and {-hv::xpmax::%{_id}%}) to {_xp}
-        if mod({_i}, {@vm-lote}) is 0:
+        if mod({_i}, {_lote}) is 0:
             apGive({_p}, {_d::*}, {_ultimo}, {_xp})
             apXp({_p}, {_xp}, {_ultimo})
             delete {_d::*}
