@@ -1,4 +1,4 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 ##=============================================##
 ##                                             ##
 ##             Developed by T1n C4n            ##
@@ -13,7 +13,7 @@
 shark:
   Type: shark
   Worlds: survivalMain
-  Chance: 0.045
+  Chance: 0.063
   Priority: 100
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
@@ -24,7 +24,7 @@ shark:
 shark_hammer:
   Type: shark_hammer
   Worlds: survivalMain
-  Chance: 0.045
+  Chance: 0.063
   Priority: 100
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
@@ -35,7 +35,7 @@ shark_hammer:
 t_jellypink:
   Type: t_jellypink
   Worlds: survivalMain
-  Chance: 0.045
+  Chance: 0.063
   Priority: 7500
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
@@ -47,7 +47,7 @@ t_jellypink:
 t_jellyblue:
   Type: t_jellyblue
   Worlds: survivalMain
-  Chance: 0.045
+  Chance: 0.063
   Priority: 7500
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN
@@ -58,7 +58,7 @@ t_jellyblue:
 t_jellygreen:
   Type: t_jellygreen
   Worlds: survivalMain
-  Chance: 0.045
+  Chance: 0.063
   Priority: 7500
   Action: REPLACE
   Biomes: WARM_OCEAN, OCEAN, DEEP_OCEAN

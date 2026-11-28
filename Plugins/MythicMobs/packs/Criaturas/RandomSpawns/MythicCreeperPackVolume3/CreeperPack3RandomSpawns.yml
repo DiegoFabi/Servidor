@@ -1,10 +1,10 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # Solo en survivalMain (como el resto de randomspawns del servidor)
 MSO_Beach_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Beach
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -13,7 +13,7 @@ MSO_Badlands_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Badlands
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true

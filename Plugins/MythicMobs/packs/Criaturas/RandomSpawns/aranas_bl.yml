@@ -9,7 +9,7 @@
 Arana_toxica:
   Type: bl_toxin_spider
   Worlds: survivalMain
-  Chance: 0.22
+  Chance: 0.308
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -21,7 +21,7 @@ Arana_toxica:
 Arana_sombria:
   Type: bl_shadow_spider
   Worlds: survivalMain
-  Chance: 0.2
+  Chance: 0.28
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -33,7 +33,7 @@ Arana_sombria:
 Arana_voladora:
   Type: bl_flying_spider
   Worlds: survivalMain
-  Chance: 0.2
+  Chance: 0.28
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false

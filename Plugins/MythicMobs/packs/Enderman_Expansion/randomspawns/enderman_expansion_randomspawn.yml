@@ -1,4 +1,4 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # ============================================================
 #  Enderman Expansion - una variante por bioma
 #  REPLACE: sustituye a los endermen vanilla que aparecen en cada bioma
@@ -139,7 +139,7 @@ enderman_cave:
 enderman_ocean:
   Type: enderman_ocean
   Worlds: survivalMain
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -216,7 +216,7 @@ enderman_end:
 enderman_end_islands:
   Type: enderman_end_islands
   Worlds: world_the_end
-  Chance: 0.18
+  Chance: 0.252
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false

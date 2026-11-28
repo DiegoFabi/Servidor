@@ -1,4 +1,4 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # ============================================================
 #  Ratones (Mice Pack) - survivalMain, aparición moderada.
 #  REPLACE: con GenerateSpawnPoints desactivado (config-spawning) ADD no
@@ -12,7 +12,7 @@
 Raton_black_mouse:
   Type: black_mouse
   Worlds: survivalMain
-  Chance: 0.105
+  Chance: 0.147
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -26,7 +26,7 @@ Raton_black_mouse:
 Raton_brown_mouse:
   Type: brown_mouse
   Worlds: survivalMain
-  Chance: 0.105
+  Chance: 0.147
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -40,7 +40,7 @@ Raton_brown_mouse:
 Raton_gray_mouse:
   Type: gray_mouse
   Worlds: survivalMain
-  Chance: 0.105
+  Chance: 0.147
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -54,7 +54,7 @@ Raton_gray_mouse:
 Raton_white_mouse:
   Type: white_mouse
   Worlds: survivalMain
-  Chance: 0.105
+  Chance: 0.147
   Priority: 100
   Action: REPLACE
   UseWorldScaling: false
@@ -65,3 +65,33 @@ Raton_white_mouse:
   - inblock{b=WATER,LAVA} false
   - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<3;r=48} true
 
+
+# ---------- Cuevas (cualquier bioma, bajo tierra) ----------
+# Ratas en las cuevas: sustituyen a parte de los monstruos que aparecen
+# a oscuras por debajo de Y 50. Máximo 4 en 40 bloques.
+Raton_cueva_gris:
+  Type: gray_mouse
+  Worlds: survivalMain
+  Chance: 0.3
+  Priority: 150
+  Action: REPLACE
+  UseWorldScaling: false
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,SPIDER,CAVE_SPIDER} true
+  - outside false
+  - heightbelow{h=50} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<4;r=40} true
+Raton_cueva_negro:
+  Type: black_mouse
+  Worlds: survivalMain
+  Chance: 0.2
+  Priority: 150
+  Action: REPLACE
+  UseWorldScaling: false
+  Conditions:
+  - entitytype{t=ZOMBIE,SKELETON,SPIDER,CAVE_SPIDER} true
+  - outside false
+  - heightbelow{h=50} true
+  - inblock{b=WATER,LAVA} false
+  - mobsinradius{t=black_mouse,brown_mouse,gray_mouse,white_mouse;a=<4;r=40} true

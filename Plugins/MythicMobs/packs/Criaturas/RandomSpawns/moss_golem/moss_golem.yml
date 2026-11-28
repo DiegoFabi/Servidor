@@ -1,4 +1,4 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # ============================================================
 #  Moss Golem - selvas
 #  Mundo: survivalMain (moderado: probabilidades bajas y límite de
@@ -9,7 +9,7 @@
 RandomMossGolem:
   Type: MossGolem
   Worlds: survivalMain
-  Chance: 0.33
+  Chance: 0.462
   Priority: 500
   Action: REPLACE
   UseWorldScaling: false

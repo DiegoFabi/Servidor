@@ -1,10 +1,10 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # Solo en survivalMain (como el resto de randomspawns del servidor)
 MSO_Desert_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Desert
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -13,7 +13,7 @@ MSO_Dripstone_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Dripstone
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -22,7 +22,7 @@ MSO_Cave_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_Cave
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
@@ -31,8 +31,33 @@ MSO_DarkOak_Creeper_Randomspawn:
   Action: REPLACE
   Worlds: survivalMain
   MobType: MSO_Creeper_DarkOak
-  Chance: 0.15
+  Chance: 0.21
   Priority: 100
   Conditions:
   - entitytype{t=CREEPER} true
   - biome{b=DARK_FOREST}
+# ---------- Cuevas (cualquier bioma, bajo tierra) ----------
+# Creepers de cueva y de estalactitas en todas las cuevas por debajo de Y 50
+# (no solo en los biomas de cueva). Máximo 3 en 40 bloques.
+MSO_Cave_Creeper_Cuevas:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Cave
+  Chance: 0.35
+  Priority: 150
+  Conditions:
+  - entitytype{t=CREEPER} true
+  - outside false
+  - heightbelow{h=50} true
+  - mobsinradius{t=MSO_Creeper_Cave,MSO_Creeper_Dripstone;a=<3;r=40} true
+MSO_Dripstone_Creeper_Cuevas:
+  Action: REPLACE
+  Worlds: survivalMain
+  MobType: MSO_Creeper_Dripstone
+  Chance: 0.25
+  Priority: 150
+  Conditions:
+  - entitytype{t=CREEPER} true
+  - outside false
+  - heightbelow{h=0} true
+  - mobsinradius{t=MSO_Creeper_Cave,MSO_Creeper_Dripstone;a=<3;r=40} true

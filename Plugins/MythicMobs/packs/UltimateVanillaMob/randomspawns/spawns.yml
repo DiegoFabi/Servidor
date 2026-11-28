@@ -1,10 +1,10 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # Ultimate Vanilla Mob: sustituyen a parte de los mobs vanilla de su bioma en survivalMain.
 # Priority 300: por encima de los élites (Priority 1), no son élites.
 ero_spider_natural:
   Type: ero_spider
   Worlds: survivalMain
-  Chance: 0.075
+  Chance: 0.105
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -16,7 +16,7 @@ ero_spider_natural:
 ero_skeleton_natural:
   Type: ero_skeleton
   Worlds: survivalMain
-  Chance: 0.075
+  Chance: 0.105
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -28,7 +28,7 @@ ero_skeleton_natural:
 ero_witch_natural:
   Type: ero_witch
   Worlds: survivalMain
-  Chance: 0.075
+  Chance: 0.105
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -40,7 +40,7 @@ ero_witch_natural:
 ero_vindicator_natural:
   Type: ero_vindicator
   Worlds: survivalMain
-  Chance: 0.075
+  Chance: 0.105
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false
@@ -52,7 +52,7 @@ ero_vindicator_natural:
 ero_zombie_natural:
   Type: ero_zombie
   Worlds: survivalMain
-  Chance: 0.075
+  Chance: 0.105
   Priority: 300
   Action: REPLACE
   UseWorldScaling: false

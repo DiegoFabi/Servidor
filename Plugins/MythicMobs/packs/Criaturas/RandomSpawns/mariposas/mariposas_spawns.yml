@@ -1,4 +1,4 @@
-# Probabilidades x1,5 (aumento moderado de mobs custom; máx. 0,6)
+# Probabilidades x2,1 en total (dos aumentos moderados de mobs custom con textura; máx. 0,6)
 # ============================================================
 #  Mariposas (ScenesEnvironment, mob "butterfly") - survivalMain.
 #  REPLACE: GenerateSpawnPoints está desactivado, así que sustituyen
@@ -9,7 +9,7 @@
 Mariposa_superficie:
   Type: butterfly
   Worlds: survivalMain
-  Chance: 0.18
+  Chance: 0.252
   Priority: 200
   Action: REPLACE
   UseWorldScaling: false
