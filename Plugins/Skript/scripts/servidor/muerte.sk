@@ -1,0 +1,22 @@
+# ============================================================
+#  muerte.sk - Aviso privado al reaparecer tras morir
+#  Solo lo ve el jugador que murió: dónde cayó y un botón que ejecuta
+#  /deathback (SunLight, una vez por muerte) para volver a ese punto.
+#  Rendimiento: solo eventos (muerte y reaparición), sin temporizadores.
+# ============================================================
+on death of player:
+    set {-muerte::%uuid of victim%} to location of victim
+
+on respawn:
+    set {_l} to {-muerte::%uuid of player%}
+    delete {-muerte::%uuid of player%}
+    {_l} is set
+    wait 10 ticks
+    player is online
+    send "" to player
+    send formatted centrar("<#FF6B6B>☠ <white>Has muerto en <#FFD36B>%world of {_l}%</#FFD36B> <dark_gray>· <#9EA3AE>X %rounded x-coordinate of {_l}% Y %rounded y-coordinate of {_l}% Z %rounded z-coordinate of {_l}%") to player
+    send formatted centrar("<click:run_command:'/deathback'><hover:show_text:'<#7FD8FF>Volver al lugar donde moriste<newline><#9EA3AE>Solo una vez por muerte'><#7FD8FF>[⟲ Volver al punto de muerte]</hover></click>") to player
+    send "" to player
+
+on quit:
+    delete {-muerte::%uuid of player%}
